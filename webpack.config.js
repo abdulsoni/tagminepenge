@@ -40,14 +40,21 @@ module.exports = {
         test: /\.json$/,
         loader: 'json-loader',
       },
+		/**
+		 * For CSS Modules Support. Web pack only works on client side
+		 * 
+		 */
 		{
-			test: /\.scss$/,
-			loaders: ['style', 'css', 'sass']
-		}
-    ],
+			test: /\.css$/,
+			loaders: [
+				'style',
+				'css?module&localIdentName=[local]',
+			],
+		}			
+    ]
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json','.scss'],
+    extensions: ['', '.js', '.jsx', '.json','.css'],
   },
 };
