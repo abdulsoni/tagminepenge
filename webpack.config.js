@@ -50,11 +50,18 @@ module.exports = {
 				'style',
 				'css?module&localIdentName=[local]',
 			],
-		}			
+		},{
+			test: /\.scss$/,
+			loaders: [
+				'style',
+				'css?module&localIdentName=[local]',
+				"sass"
+			],
+		},			
     ]
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json','.css'],
+    extensions: ['', '.js', '.jsx', '.json','.css','.scss'],
   },
 };

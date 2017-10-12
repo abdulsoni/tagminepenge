@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Styles from "./style.css"
+import Styles from "./style.scss"
 var view = function() {
 	console.log(Styles.sample)
 	return (
