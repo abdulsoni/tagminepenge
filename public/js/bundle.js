@@ -52883,7 +52883,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".sample {\n  background: yellow; }\n\n.test .sample {\n  background: green; }\n", ""]);
+	exports.push([module.id, ".sample {\n  background: yellow; }\n\n.test .sample {\n  background: red; }\n\n.sample {\n  background: yellow; }\n", ""]);
 	
 	// exports
 	exports.locals = {
