@@ -16,9 +16,6 @@
 \*-------------------------------------------------------------------------------------------------------------------*/
 
 const production = process.env.NODE_ENV === 'production' ? true : false;
-
-'use strict';
-
 module.exports = {
   devtool: production ? null : 'sourcemaps',
 
@@ -43,10 +40,14 @@ module.exports = {
         test: /\.json$/,
         loader: 'json-loader',
       },
+		{
+			test: /\.scss$/,
+			loaders: ['style', 'css', 'sass']
+		}
     ],
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json'],
+    extensions: ['', '.js', '.jsx', '.json','.scss'],
   },
 };

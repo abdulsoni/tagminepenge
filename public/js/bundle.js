@@ -48086,8 +48086,8 @@
 	var map = {
 		"./index": 326,
 		"./index.jsx": 326,
-		"./index2": 391,
-		"./index2.jsx": 391
+		"./index2": 392,
+		"./index2.jsx": 392
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -52144,20 +52144,42 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _index = __webpack_require__(388);
+	var _styles = __webpack_require__(388);
+	
+	var _styles2 = _interopRequireDefault(_styles);
+	
+	var _index = __webpack_require__(389);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		return _react2.default.createElement(_index2.default, null);
+		return _react2.default.createElement(
+			'div',
+			{ style: _styles2.default.sampleContainer },
+			_react2.default.createElement(_index2.default, null)
+		);
 	};
-	//import './styles.scss';
 	exports.default = view;
 
 /***/ }),
 /* 388 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = {
+		sampleContainer: {
+			color: 'red'
+		}
+	};
+
+/***/ }),
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52166,7 +52188,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(389);
+	var _main = __webpack_require__(390);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -52175,7 +52197,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 389 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52190,7 +52212,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(390);
+	var _view = __webpack_require__(391);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -52242,7 +52264,7 @@
 	Main.displayName = 'Sample-Component';
 
 /***/ }),
-/* 390 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52269,7 +52291,7 @@
 	exports.default = view;
 
 /***/ }),
-/* 391 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';

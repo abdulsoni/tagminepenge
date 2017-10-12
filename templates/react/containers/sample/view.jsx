@@ -1,9 +1,11 @@
 import React from 'react';
-//import './styles.scss';
+import Styles from './styles.js';
 import SampleComponent from '../../components/sample/index'
 var view = function() {
 	return (
-		<SampleComponent/>
+		<div style = {Styles.sampleContainer}>
+			<SampleComponent/>
+		</div>
 	);
 };
 export default view;
