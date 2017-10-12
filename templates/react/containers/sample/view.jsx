@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from './styles.js';
+import Styles from './styles';
 import SampleComponent from '../../components/sample/index'
 var view = function() {
 	return (
