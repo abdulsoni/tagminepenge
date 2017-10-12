@@ -1,10 +1,10 @@
 import React from 'react';
 
-const FlashMessages = (props) => {
+const FlashMessages = props => {
     // TODO: recreate this component
-    return (
+	return (
         <div />
-    );
+	);
 };
 
 export default FlashMessages;
