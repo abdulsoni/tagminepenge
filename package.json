@@ -30,6 +30,7 @@
     "webpack": "^1.15.0"
   },
   "devDependencies": {
+    "concurrently": "^3.5.0",
     "css-loader": "^0.28.7",
     "eslint": "3.15.0",
     "eslint-config-egg": "^5.1.1",
@@ -40,6 +41,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "webpack && node preprocessor.js"
+    "start": "concurrently --kill-others \"npm run dev-watch\" \"npm run dev-server\"",
+    "dev-watch": "webpack --watch",
+    "dev-server": "nodemon preprocessor.js"
   }
 }

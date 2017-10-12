@@ -1,3 +1,3 @@
-.sample-component {
-  
+export default {
+	
 }
