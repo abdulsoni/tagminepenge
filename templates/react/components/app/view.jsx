@@ -1,8 +1,10 @@
 import React from 'react';
-import Styles from './styles.js';
-var view = function() {
+import Header from '../../components/header';
+var view = function () {
 	return (
-		<h1>Sample Component</h1>
+		<div className="app">
+			<Header/>
+		</div>
 	);
 };
 export default view;

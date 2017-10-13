@@ -41,13 +41,13 @@ module.exports = {
         loader: 'json-loader',
       },
 		{
-			test: /\.scss$/,
-			loaders: ['style', 'css', 'sass']
+			test: /\.css/,
+			loaders: ['style', 'css']
 		}
     ],
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx', '.json','.scss'],
+    extensions: ['', '.js', '.jsx', '.json','.css'],
   },
 };

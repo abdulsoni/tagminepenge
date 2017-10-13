@@ -1,10 +1,9 @@
 import React from 'react';
-import Styles from './styles';
-import SampleComponent from '../../components/sample/index'
+import Header from '../../components/header';
 var view = function() {
 	return (
-		<div style = {Styles.sampleContainer}>
-			<SampleComponent/>
+		<div className="app">
+			<Header/>
 		</div>
 	);
 };

@@ -48086,10 +48086,10 @@
 	var map = {
 		"./index": 326,
 		"./index.jsx": 326,
-		"./index2": 393,
-		"./index2.jsx": 393,
-		"./test": 394,
-		"./test.jsx": 394
+		"./index2": 391,
+		"./index2.jsx": 391,
+		"./test": 392,
+		"./test.jsx": 392
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -48125,9 +48125,9 @@
 	
 	var _redux2 = _interopRequireDefault(_redux);
 	
-	var _sample = __webpack_require__(385);
+	var _app = __webpack_require__(385);
 	
-	var _sample2 = _interopRequireDefault(_sample);
+	var _app2 = _interopRequireDefault(_app);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -48139,7 +48139,7 @@
 			_react2.default.createElement(
 				_reactRedux.Provider,
 				{ store: store },
-				_react2.default.createElement(_sample2.default, null)
+				_react2.default.createElement(_app2.default, null)
 			)
 		);
 	};
@@ -48184,6 +48184,8 @@
 				),
 				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }),
 				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
+				_react2.default.createElement('link', { href: '/styles/app.css', rel: 'stylesheet' }),
+				_react2.default.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Oswald:300,400,500,700', rel: 'stylesheet' }),
 				props.user && props.user.canAccessKeystone && _react2.default.createElement('link', { href: '/keystone/styles/content/editor.min.css', rel: 'stylesheet' }),
 				props.css,
 				props.head
@@ -48193,128 +48195,10 @@
 				null,
 				_react2.default.createElement(
 					'div',
-					{ id: 'header' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'container' },
-						_react2.default.createElement(
-							'div',
-							{ role: 'navigation', className: 'navbar navbar-default' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'container-fluid' },
-								_react2.default.createElement(
-									'div',
-									{ className: 'navbar-header' },
-									_react2.default.createElement(
-										'button',
-										{
-											type: 'button',
-											'data-toggle': 'collapse',
-											'data-target': '.navbar-collapse',
-											className: 'navbar-toggle'
-										},
-										_react2.default.createElement(
-											'span',
-											{ className: 'sr-only' },
-											'Toggle navigation'
-										),
-										_react2.default.createElement('span', { className: 'icon-bar' }),
-										_react2.default.createElement('span', { className: 'icon-bar' }),
-										_react2.default.createElement('span', { className: 'icon-bar' })
-									),
-									_react2.default.createElement(
-										'a',
-										{ href: '/', className: 'navbar-brand' },
-										'React-example'
-									)
-								),
-								_react2.default.createElement(
-									'div',
-									{ className: 'collapse navbar-collapse' },
-									_react2.default.createElement(
-										'ul',
-										{ className: 'nav navbar-nav navbar-left' },
-										props.navLinks.map(function (link) {
-											return _react2.default.createElement(
-												'li',
-												{ key: link.key, className: props.section == link.key ? 'active' : null },
-												_react2.default.createElement(
-													'a',
-													{ href: link.href },
-													link.label
-												)
-											);
-										})
-									),
-									_react2.default.createElement(
-										'ul',
-										{ className: 'nav navbar-nav navbar-right' },
-										props.user && props.user.canAccessKeystone && _react2.default.createElement(
-											'li',
-											null,
-											_react2.default.createElement(
-												'a',
-												{ href: '/keystone' },
-												'Open Keystone'
-											)
-										),
-										props.user && _react2.default.createElement(
-											'li',
-											null,
-											_react2.default.createElement(
-												'a',
-												{ href: '/keystone/signout' },
-												'Sign Out'
-											)
-										),
-										!props.user && _react2.default.createElement(
-											'li',
-											null,
-											_react2.default.createElement(
-												'a',
-												{ href: '/keystone/signin' },
-												'Sign In'
-											)
-										)
-									)
-								)
-							)
-						)
-					)
-				),
-				_react2.default.createElement(
-					'div',
 					{ id: 'body' },
-	
-					// - The Intro block appears above flash messages (used for temporary information display)
-					props.intro,
-	
-					// - Flash messages allow you to display once-off status messages to users, e.g. form
-					// - validation errors, success messages, etc.
-					_react2.default.createElement(_flashMessages2.default, { messages: props.messages }),
 	
 					// - The children block should contain the body of your template's content
 					props.children
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'container' },
-					_react2.default.createElement(
-						'div',
-						{ id: 'footer' },
-						_react2.default.createElement(
-							'p',
-							null,
-							'Powered by ',
-							_react2.default.createElement(
-								'a',
-								{ href: 'http://keystonejs.com', target: '_blank' },
-								'KeystoneJS'
-							),
-							'.'
-						)
-					)
 				),
 				_react2.default.createElement('script', { src: '/js/jquery/jquery-1.11.3.min.js' }),
 				_react2.default.createElement('script', { src: '/js/bootstrap/bootstrap-3.3.5.min.js' }),
@@ -52056,10 +51940,6 @@
 	
 	var _view2 = _interopRequireDefault(_view);
 	
-	var _reactRedux = __webpack_require__(295);
-	
-	var _index = __webpack_require__(332);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52069,8 +51949,8 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	/**
-	 * @name Sample Container
-	 * @type Container
+	 * @name Sample Component
+	 * @type Component
 	 * @author Inderdeep Singh
 	 */
 	var Main = function (_Component) {
@@ -52088,6 +51968,7 @@
 	
 		/**
 	  * Render the view
+	  * @returns {*}
 	  */
 	
 	
@@ -52100,37 +51981,11 @@
 	
 		return Main;
 	}(_react.Component);
-	
-	/**
-	 * Bind Actions
-	 * @param dispatch
-	 * @returns Object
-	 */
-	
-	
-	function bindAction(dispatch) {
-		return {
-			sampleAction: function sampleAction() {
-				return dispatch((0, _index.sampleAction)());
-			}
-		};
-	}
-	
-	/**
-	 * Map the shared state to properties
-	 * @param state
-	 * @returns Object
-	 */
-	var mapStateToProps = function mapStateToProps(state) {
-		// console.log(state)
-		return {
-			sample: state.sample
-		};
-	};
 	//Set display name to be used in React Dev Tools
-	Main.displayName = 'Sample-Container';
-	//Connect to Redux
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
+	
+	
+	exports.default = Main;
+	Main.displayName = 'Sample-Component';
 
 /***/ }),
 /* 387 */
@@ -52146,42 +52001,23 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _styles = __webpack_require__(388);
+	var _header = __webpack_require__(388);
 	
-	var _styles2 = _interopRequireDefault(_styles);
-	
-	var _index = __webpack_require__(389);
-	
-	var _index2 = _interopRequireDefault(_index);
+	var _header2 = _interopRequireDefault(_header);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
 		return _react2.default.createElement(
 			'div',
-			{ style: _styles2.default.sampleContainer },
-			_react2.default.createElement(_index2.default, null)
+			{ className: 'app' },
+			_react2.default.createElement(_header2.default, null)
 		);
 	};
 	exports.default = view;
 
 /***/ }),
 /* 388 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.default = {
-		sampleContainer: {
-			color: 'red'
-		}
-	};
-
-/***/ }),
-/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52190,7 +52026,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(390);
+	var _main = __webpack_require__(389);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -52199,7 +52035,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 390 */
+/* 389 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52214,7 +52050,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(391);
+	var _view = __webpack_require__(390);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -52266,10 +52102,10 @@
 	Main.displayName = 'Sample-Component';
 
 /***/ }),
-/* 391 */
+/* 390 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -52279,34 +52115,172 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _styles = __webpack_require__(392);
-	
-	var _styles2 = _interopRequireDefault(_styles);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
 		return _react2.default.createElement(
-			'h1',
-			null,
-			'Sample Component1'
+			"div",
+			{ className: "header" },
+			_react2.default.createElement(
+				"div",
+				{ className: "header-top" },
+				_react2.default.createElement(
+					"div",
+					{ className: "container content" },
+					_react2.default.createElement(
+						"div",
+						{ className: "search" },
+						_react2.default.createElement(
+							"form",
+							{ className: "navbar-form", role: "search" },
+							_react2.default.createElement(
+								"div",
+								{ className: "input-group add-on" },
+								_react2.default.createElement("input", { className: "form-control", placeholder: "Search", type: "text" }),
+								_react2.default.createElement(
+									"div",
+									{ className: "input-group-btn" },
+									_react2.default.createElement(
+										"button",
+										{ className: "btn btn-default", type: "submit" },
+										_react2.default.createElement("i", { className: "glyphicon glyphicon-search" })
+									)
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "logo" },
+						_react2.default.createElement("img", { src: "/images/logo.png", alt: "logo" })
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "actions" },
+						_react2.default.createElement(
+							"a",
+							null,
+							"Login"
+						),
+						_react2.default.createElement(
+							"span",
+							null,
+							" | "
+						),
+						_react2.default.createElement(
+							"a",
+							null,
+							"Register"
+						)
+					)
+				)
+			),
+			_react2.default.createElement(
+				"div",
+				{ className: "header-nav" },
+				_react2.default.createElement("div", { className: "nav-accent nav-accent-left" }),
+				_react2.default.createElement("div", { className: "nav-accent nav-accent-right" }),
+				_react2.default.createElement(
+					"ul",
+					null,
+					_react2.default.createElement(
+						"li",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ className: "nav-link" },
+							_react2.default.createElement(
+								"span",
+								{ className: "icon" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-home", "aria-hidden": "true" })
+							),
+							_react2.default.createElement(
+								"span",
+								{ className: "text" },
+								"New"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"li",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ className: "nav-link" },
+							_react2.default.createElement(
+								"span",
+								{ className: "icon" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-cog", "aria-hidden": "true" })
+							),
+							_react2.default.createElement(
+								"span",
+								{ className: "text" },
+								"Gadgets"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"li",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ className: "nav-link" },
+							_react2.default.createElement(
+								"span",
+								{ className: "icon" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-globe", "aria-hidden": "true" })
+							),
+							_react2.default.createElement(
+								"span",
+								{ className: "text" },
+								"Experiences"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"li",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ className: "nav-link" },
+							_react2.default.createElement(
+								"span",
+								{ className: "icon" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-fire", "aria-hidden": "true" })
+							),
+							_react2.default.createElement(
+								"span",
+								{ className: "text" },
+								"Food & Drink"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"li",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ className: "nav-link" },
+							_react2.default.createElement(
+								"span",
+								{ className: "icon" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-menu-hamburger", "aria-hidden": "true" })
+							),
+							_react2.default.createElement(
+								"span",
+								{ className: "text" },
+								"Others"
+							)
+						)
+					)
+				)
+			)
 		);
 	};
 	exports.default = view;
 
 /***/ }),
-/* 392 */
-/***/ (function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.default = {};
-
-/***/ }),
-/* 393 */
+/* 391 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52444,7 +52418,7 @@
 	module.exports = Index;
 
 /***/ }),
-/* 394 */
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
