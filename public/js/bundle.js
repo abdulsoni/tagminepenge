@@ -48086,10 +48086,10 @@
 	var map = {
 		"./index": 326,
 		"./index.jsx": 326,
-		"./index2": 401,
-		"./index2.jsx": 401,
-		"./test": 402,
-		"./test.jsx": 402
+		"./index2": 409,
+		"./index2.jsx": 409,
+		"./test": 410,
+		"./test.jsx": 410
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -52005,9 +52005,13 @@
 	
 	var _header2 = _interopRequireDefault(_header);
 	
-	var _sample = __webpack_require__(396);
+	var _home = __webpack_require__(396);
 	
-	var _sample2 = _interopRequireDefault(_sample);
+	var _home2 = _interopRequireDefault(_home);
+	
+	var _style = __webpack_require__(407);
+	
+	var _style2 = _interopRequireDefault(_style);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -52016,7 +52020,7 @@
 			'div',
 			{ className: 'app' },
 			_react2.default.createElement(_header2.default, null),
-			_react2.default.createElement(_sample2.default, null)
+			_react2.default.createElement(_home2.default, null)
 		);
 	};
 	exports.default = view;
@@ -52328,7 +52332,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".header .header-top {\n  height: 57px;\n  background: #f5f5f5; }\n  .header .header-top .content {\n    position: relative; }\n    .header .header-top .content .search {\n      position: absolute;\n      left: 0;\n      top: 2px; }\n      .header .header-top .content .search input {\n        height: 33px; }\n    .header .header-top .content .logo {\n      text-align: center; }\n      .header .header-top .content .logo img {\n        width: 180px; }\n    .header .header-top .content .actions {\n      position: absolute;\n      right: 10px;\n      top: 15px; }\n\n.header .header-nav .nav-accent {\n  display: block;\n  width: 50%;\n  height: 66px;\n  position: absolute;\n  top: 57px;\n  z-index: -10;\n  -webkit-transition: height .5s;\n  -moz-transition: height .5s;\n  -o-transition: height .5s;\n  -ms-transition: height .5s;\n  transition: height .5s;\n  z-index: 1; }\n\n.header .header-nav .nav-accent-left {\n  background-color: #e3ad7f; }\n\n.header .header-nav .nav-accent-right {\n  background-color: #858e95;\n  right: 0; }\n\n.header .header-nav ul {\n  text-align: center;\n  padding: 0;\n  list-style: none;\n  font-size: 1.5em;\n  font-weight: 300;\n  position: relative;\n  z-index: 2;\n  margin-top: -6px; }\n  .header .header-nav ul li {\n    display: inline-block;\n    width: 10%;\n    text-align: center;\n    -webkit-transition: border .5s;\n    -moz-transition: border .5s;\n    -o-transition: border .5s;\n    -ms-transition: border .5s;\n    transition: border .5s;\n    box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n    .header .header-nav ul li a {\n      display: block;\n      width: auto;\n      height: 76.91px;\n      color: rgba(249, 249, 249, 0.9);\n      text-decoration: none;\n      -webkit-transition: color .5s, background .5s, height .5s;\n      -moz-transition: color .5s, background .5s, height .5s;\n      -o-transition: color .5s, background .5s, height .5s;\n      -ms-transition: color .5s, background .5s, height .5s;\n      transition: color .5s, background .5s, height .5s;\n      cursor: pointer; }\n      .header .header-nav ul li a .icon {\n        display: block;\n        padding-top: .5em; }\n      .header .header-nav ul li a .text {\n        display: block;\n        font-size: 14.4px;\n        font-weight: 600; }\n      .header .header-nav ul li a:hover {\n        height: 82.77px; }\n    .header .header-nav ul li:nth-child(1) {\n      background: #ededed;\n      background: -moz-linear-gradient(top, #fafafa 0, #ededed 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fafafa), color-stop(100%, #ededed));\n      background: -webkit-linear-gradient(top, #fafafa 0, #ededed 100%);\n      background: -o-linear-gradient(top, #fafafa 0, #ededed 100%);\n      background: -ms-linear-gradient(top, #fafafa 0, #ededed 100%);\n      background: linear-gradient(to bottom, #fafafa 0, #ededed 100%);\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n      .header .header-nav ul li:nth-child(1) a {\n        color: #333; }\n        .header .header-nav ul li:nth-child(1) a:hover {\n          border-bottom: 4px solid #c7c7c7; }\n    .header .header-nav ul li:nth-child(2) {\n      background: #d06503;\n      background: -moz-linear-gradient(top, #e97103 0, #d06503 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e97103), color-stop(100%, #d06503));\n      background: -webkit-linear-gradient(top, #e97103 0, #d06503 100%);\n      background: -o-linear-gradient(top, #e97103 0, #d06503 100%);\n      background: -ms-linear-gradient(top, #e97103 0, #d06503 100%);\n      background: linear-gradient(to bottom, #e97103 0, #d06503 100%); }\n      .header .header-nav ul li:nth-child(2) a:hover {\n        border-bottom: 4px solid #ae4e01; }\n    .header .header-nav ul li:nth-child(3) {\n      background: #e9931a;\n      background: -moz-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eb9e31), color-stop(100%, #e9931a));\n      background: -webkit-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n      background: -o-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n      background: -ms-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n      background: linear-gradient(to bottom, #eb9e31 0, #e9931a 100%);\n      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n      .header .header-nav ul li:nth-child(3) a:hover {\n        border-bottom: 4px solid #bf7514; }\n    .header .header-nav ul li:nth-child(4) {\n      background: #1691be;\n      background: -moz-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #19a2d5), color-stop(100%, #1691be));\n      background: -webkit-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: -o-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: -ms-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: linear-gradient(to bottom, #19a2d5 0, #1691be 100%); }\n      .header .header-nav ul li:nth-child(4) a:hover {\n        border-bottom: 4px solid #0a4b75; }\n    .header .header-nav ul li:nth-child(5) {\n      background: #1b3647;\n      background: -moz-linear-gradient(top, #224459 0, #1b3647 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #224459), color-stop(100%, #1b3647));\n      background: -webkit-linear-gradient(top, #224459 0, #1b3647 100%);\n      background: -o-linear-gradient(top, #224459 0, #1b3647 100%);\n      background: -ms-linear-gradient(top, #224459 0, #1b3647 100%);\n      background: linear-gradient(to bottom, #224459 0, #1b3647 100%); }\n      .header .header-nav ul li:nth-child(5) a:hover {\n        border-bottom: 4px solid #000; }\n    .header .header-nav ul li:nth-child(6) {\n      background: #152836;\n      background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n      background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n      background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n      background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n      background: linear-gradient(to bottom, #1c3648 0, #152836 100%);\n      -webkit-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n      -moz-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n      .header .header-nav ul li:nth-child(6) a:hover {\n        border-bottom: 4px solid #000; }\n", ""]);
+	exports.push([module.id, ".header {\n  position: fixed;\n  width: 100%;\n  top: 0px; }\n  .header .header-top {\n    height: 57px;\n    background: #f5f5f5; }\n    .header .header-top .content {\n      position: relative; }\n      .header .header-top .content .search {\n        position: absolute;\n        left: 0;\n        top: 2px; }\n        .header .header-top .content .search input {\n          height: 33px; }\n      .header .header-top .content .logo {\n        text-align: center; }\n        .header .header-top .content .logo img {\n          width: 180px; }\n      .header .header-top .content .actions {\n        position: absolute;\n        right: 10px;\n        top: 15px; }\n  .header .header-nav .nav-accent {\n    display: block;\n    width: 50%;\n    height: 66px;\n    position: absolute;\n    top: 57px;\n    z-index: -10;\n    -webkit-transition: height .5s;\n    -moz-transition: height .5s;\n    -o-transition: height .5s;\n    -ms-transition: height .5s;\n    transition: height .5s;\n    z-index: 1; }\n  .header .header-nav .nav-accent-left {\n    background-color: #e3ad7f; }\n  .header .header-nav .nav-accent-right {\n    background-color: #858e95;\n    right: 0; }\n  .header .header-nav ul {\n    text-align: center;\n    padding: 0;\n    list-style: none;\n    font-size: 1.5em;\n    font-weight: 300;\n    position: relative;\n    z-index: 2;\n    margin-top: -6px; }\n    .header .header-nav ul li {\n      display: inline-block;\n      width: 10%;\n      text-align: center;\n      -webkit-transition: border .5s;\n      -moz-transition: border .5s;\n      -o-transition: border .5s;\n      -ms-transition: border .5s;\n      transition: border .5s;\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n      .header .header-nav ul li a {\n        display: block;\n        width: auto;\n        height: 76.91px;\n        color: rgba(249, 249, 249, 0.9);\n        text-decoration: none;\n        -webkit-transition: color .5s, background .5s, height .5s;\n        -moz-transition: color .5s, background .5s, height .5s;\n        -o-transition: color .5s, background .5s, height .5s;\n        -ms-transition: color .5s, background .5s, height .5s;\n        transition: color .5s, background .5s, height .5s;\n        cursor: pointer; }\n        .header .header-nav ul li a .icon {\n          display: block;\n          padding-top: .5em; }\n        .header .header-nav ul li a .text {\n          display: block;\n          font-size: 14.4px;\n          font-weight: 600; }\n        .header .header-nav ul li a:hover {\n          height: 82.77px; }\n      .header .header-nav ul li:nth-child(1) {\n        background: #ededed;\n        background: -moz-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fafafa), color-stop(100%, #ededed));\n        background: -webkit-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -o-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -ms-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: linear-gradient(to bottom, #fafafa 0, #ededed 100%);\n        box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n        .header .header-nav ul li:nth-child(1) a {\n          color: #333; }\n          .header .header-nav ul li:nth-child(1) a:hover {\n            border-bottom: 4px solid #c7c7c7; }\n      .header .header-nav ul li:nth-child(2) {\n        background: #d06503;\n        background: -moz-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e97103), color-stop(100%, #d06503));\n        background: -webkit-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -o-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -ms-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: linear-gradient(to bottom, #e97103 0, #d06503 100%); }\n        .header .header-nav ul li:nth-child(2) a:hover {\n          border-bottom: 4px solid #ae4e01; }\n      .header .header-nav ul li:nth-child(3) {\n        background: #e9931a;\n        background: -moz-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eb9e31), color-stop(100%, #e9931a));\n        background: -webkit-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -o-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -ms-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: linear-gradient(to bottom, #eb9e31 0, #e9931a 100%);\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n        .header .header-nav ul li:nth-child(3) a:hover {\n          border-bottom: 4px solid #bf7514; }\n      .header .header-nav ul li:nth-child(4) {\n        background: #1691be;\n        background: -moz-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #19a2d5), color-stop(100%, #1691be));\n        background: -webkit-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -o-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -ms-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: linear-gradient(to bottom, #19a2d5 0, #1691be 100%); }\n        .header .header-nav ul li:nth-child(4) a:hover {\n          border-bottom: 4px solid #0a4b75; }\n      .header .header-nav ul li:nth-child(5) {\n        background: #1b3647;\n        background: -moz-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #224459), color-stop(100%, #1b3647));\n        background: -webkit-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -o-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -ms-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: linear-gradient(to bottom, #224459 0, #1b3647 100%); }\n        .header .header-nav ul li:nth-child(5) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li:nth-child(6) {\n        background: #152836;\n        background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n        background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: linear-gradient(to bottom, #1c3648 0, #152836 100%);\n        -webkit-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n        -moz-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n        box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n        .header .header-nav ul li:nth-child(6) a:hover {\n          border-bottom: 4px solid #000; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -52992,7 +52996,7 @@
 /* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -53006,18 +53010,17 @@
 	
 	var _style2 = _interopRequireDefault(_style);
 	
+	var _banner = __webpack_require__(401);
+	
+	var _banner2 = _interopRequireDefault(_banner);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		console.log(_style2.default.sample);
 		return _react2.default.createElement(
-			"div",
-			{ className: [_style2.default.sample, _style2.default.sample2].join(" ") },
-			_react2.default.createElement(
-				"h1",
-				null,
-				"Sample Component1"
-			)
+			'div',
+			{ className: 'main-container home' },
+			_react2.default.createElement(_banner2.default, null)
 		);
 	};
 	exports.default = view;
@@ -53072,6 +53075,228 @@
 
 /***/ }),
 /* 401 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(402);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 402 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(403);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _axios = __webpack_require__(335);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Component
+	 * @type Component
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+		}
+	
+		_createClass(Main, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				console.log(_axios2.default);
+			}
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	//Set display name to be used in React Dev Tools
+	
+	
+	exports.default = Main;
+	Main.displayName = 'Sample-Component';
+
+/***/ }),
+/* 403 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(404);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		return _react2.default.createElement(
+			"div",
+			{ className: "banner content-center background" },
+			_react2.default.createElement(
+				"p",
+				null,
+				"banner"
+			)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 404 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(405);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(394)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 405 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(393)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".banner {\n  height: 300px;\n  background-color: #e6e6e6; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"banner": "banner"
+	};
+
+/***/ }),
+/* 406 */,
+/* 407 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(408);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(394)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 408 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(393)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".main-container {\n  margin-top: 123px; }\n\n.content-center {\n  -ms-flex-pack: center;\n  justify-content: center;\n  -ms-flex-align: center;\n  align-items: center;\n  vertical-align: middle;\n  text-align: center;\n  display: -ms-flexbox;\n  display: flex; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"main-container": "main-container",
+		"content-center": "content-center"
+	};
+
+/***/ }),
+/* 409 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53209,7 +53434,7 @@
 	module.exports = Index;
 
 /***/ }),
-/* 402 */
+/* 410 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';

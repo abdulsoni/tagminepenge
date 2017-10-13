@@ -1,0 +1,14 @@
+.main-container {
+  margin-top: 123px; }
+
+.content-center {
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  text-align: center;
+  display: -ms-flexbox;
+  display: flex; }
+
+/*# sourceMappingURL=style.css.map */
