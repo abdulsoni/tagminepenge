@@ -48086,17 +48086,10 @@
 	var map = {
 		"./index": 326,
 		"./index.jsx": 326,
-<<<<<<< HEAD
-		"./index2": 391,
-		"./index2.jsx": 391,
-		"./test": 392,
-		"./test.jsx": 392
-=======
-		"./index2": 398,
-		"./index2.jsx": 398,
-		"./test": 399,
-		"./test.jsx": 399
->>>>>>> c5ef316f6691ec755dc956f6cee12d420d5aeeb9
+		"./index2": 401,
+		"./index2.jsx": 401,
+		"./test": 402,
+		"./test.jsx": 402
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -52008,43 +52001,353 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-<<<<<<< HEAD
 	var _header = __webpack_require__(388);
 	
 	var _header2 = _interopRequireDefault(_header);
-=======
-	var _style = __webpack_require__(400);
 	
-	var _style2 = _interopRequireDefault(_style);
+	var _sample = __webpack_require__(396);
 	
-	var _index = __webpack_require__(393);
-	
-	var _index2 = _interopRequireDefault(_index);
->>>>>>> c5ef316f6691ec755dc956f6cee12d420d5aeeb9
+	var _sample2 = _interopRequireDefault(_sample);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
 		return _react2.default.createElement(
 			'div',
-<<<<<<< HEAD
 			{ className: 'app' },
-			_react2.default.createElement(_header2.default, null)
-=======
-			{ className: _style2.default.test },
-			_react2.default.createElement(_index2.default, null)
->>>>>>> c5ef316f6691ec755dc956f6cee12d420d5aeeb9
+			_react2.default.createElement(_header2.default, null),
+			_react2.default.createElement(_sample2.default, null)
 		);
 	};
 	exports.default = view;
 
 /***/ }),
-<<<<<<< HEAD
 /* 388 */
-=======
-/* 388 */,
-/* 389 */,
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(389);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 389 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(390);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Component
+	 * @type Component
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+		}
+	
+		/**
+	  * Render the view
+	  * @returns {*}
+	  */
+	
+	
+		_createClass(Main, [{
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	//Set display name to be used in React Dev Tools
+	
+	
+	exports.default = Main;
+	Main.displayName = 'Sample-Component';
+
+/***/ }),
 /* 390 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(391);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		return _react2.default.createElement(
+			"div",
+			{ className: "header" },
+			_react2.default.createElement(
+				"div",
+				{ className: "header-top" },
+				_react2.default.createElement(
+					"div",
+					{ className: "container content" },
+					_react2.default.createElement(
+						"div",
+						{ className: "search" },
+						_react2.default.createElement(
+							"form",
+							{ className: "navbar-form", role: "search" },
+							_react2.default.createElement(
+								"div",
+								{ className: "input-group add-on" },
+								_react2.default.createElement("input", { className: "form-control", placeholder: "Search", type: "text" }),
+								_react2.default.createElement(
+									"div",
+									{ className: "input-group-btn" },
+									_react2.default.createElement(
+										"button",
+										{ className: "btn btn-default", type: "submit" },
+										_react2.default.createElement("i", { className: "glyphicon glyphicon-search" })
+									)
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "logo" },
+						_react2.default.createElement("img", { src: "/images/logo.png", alt: "logo" })
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "actions" },
+						_react2.default.createElement(
+							"a",
+							null,
+							"Login"
+						),
+						_react2.default.createElement(
+							"span",
+							null,
+							" | "
+						),
+						_react2.default.createElement(
+							"a",
+							null,
+							"Register"
+						)
+					)
+				)
+			),
+			_react2.default.createElement(
+				"div",
+				{ className: "header-nav" },
+				_react2.default.createElement("div", { className: "nav-accent nav-accent-left" }),
+				_react2.default.createElement("div", { className: "nav-accent nav-accent-right" }),
+				_react2.default.createElement(
+					"ul",
+					null,
+					_react2.default.createElement(
+						"li",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ className: "nav-link" },
+							_react2.default.createElement(
+								"span",
+								{ className: "icon" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-home", "aria-hidden": "true" })
+							),
+							_react2.default.createElement(
+								"span",
+								{ className: "text" },
+								"New"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"li",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ className: "nav-link" },
+							_react2.default.createElement(
+								"span",
+								{ className: "icon" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-cog", "aria-hidden": "true" })
+							),
+							_react2.default.createElement(
+								"span",
+								{ className: "text" },
+								"Gadgets"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"li",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ className: "nav-link" },
+							_react2.default.createElement(
+								"span",
+								{ className: "icon" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-globe", "aria-hidden": "true" })
+							),
+							_react2.default.createElement(
+								"span",
+								{ className: "text" },
+								"Experiences"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"li",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ className: "nav-link" },
+							_react2.default.createElement(
+								"span",
+								{ className: "icon" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-fire", "aria-hidden": "true" })
+							),
+							_react2.default.createElement(
+								"span",
+								{ className: "text" },
+								"Food & Drink"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"li",
+						null,
+						_react2.default.createElement(
+							"a",
+							{ className: "nav-link" },
+							_react2.default.createElement(
+								"span",
+								{ className: "icon" },
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-menu-hamburger", "aria-hidden": "true" })
+							),
+							_react2.default.createElement(
+								"span",
+								{ className: "text" },
+								"Others"
+							)
+						)
+					)
+				)
+			)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 391 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(392);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(394)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 392 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(393)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".header .header-top {\n  height: 57px;\n  background: #f5f5f5; }\n  .header .header-top .content {\n    position: relative; }\n    .header .header-top .content .search {\n      position: absolute;\n      left: 0;\n      top: 2px; }\n      .header .header-top .content .search input {\n        height: 33px; }\n    .header .header-top .content .logo {\n      text-align: center; }\n      .header .header-top .content .logo img {\n        width: 180px; }\n    .header .header-top .content .actions {\n      position: absolute;\n      right: 10px;\n      top: 15px; }\n\n.header .header-nav .nav-accent {\n  display: block;\n  width: 50%;\n  height: 66px;\n  position: absolute;\n  top: 57px;\n  z-index: -10;\n  -webkit-transition: height .5s;\n  -moz-transition: height .5s;\n  -o-transition: height .5s;\n  -ms-transition: height .5s;\n  transition: height .5s;\n  z-index: 1; }\n\n.header .header-nav .nav-accent-left {\n  background-color: #e3ad7f; }\n\n.header .header-nav .nav-accent-right {\n  background-color: #858e95;\n  right: 0; }\n\n.header .header-nav ul {\n  text-align: center;\n  padding: 0;\n  list-style: none;\n  font-size: 1.5em;\n  font-weight: 300;\n  position: relative;\n  z-index: 2;\n  margin-top: -6px; }\n  .header .header-nav ul li {\n    display: inline-block;\n    width: 10%;\n    text-align: center;\n    -webkit-transition: border .5s;\n    -moz-transition: border .5s;\n    -o-transition: border .5s;\n    -ms-transition: border .5s;\n    transition: border .5s;\n    box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n    .header .header-nav ul li a {\n      display: block;\n      width: auto;\n      height: 76.91px;\n      color: rgba(249, 249, 249, 0.9);\n      text-decoration: none;\n      -webkit-transition: color .5s, background .5s, height .5s;\n      -moz-transition: color .5s, background .5s, height .5s;\n      -o-transition: color .5s, background .5s, height .5s;\n      -ms-transition: color .5s, background .5s, height .5s;\n      transition: color .5s, background .5s, height .5s;\n      cursor: pointer; }\n      .header .header-nav ul li a .icon {\n        display: block;\n        padding-top: .5em; }\n      .header .header-nav ul li a .text {\n        display: block;\n        font-size: 14.4px;\n        font-weight: 600; }\n      .header .header-nav ul li a:hover {\n        height: 82.77px; }\n    .header .header-nav ul li:nth-child(1) {\n      background: #ededed;\n      background: -moz-linear-gradient(top, #fafafa 0, #ededed 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fafafa), color-stop(100%, #ededed));\n      background: -webkit-linear-gradient(top, #fafafa 0, #ededed 100%);\n      background: -o-linear-gradient(top, #fafafa 0, #ededed 100%);\n      background: -ms-linear-gradient(top, #fafafa 0, #ededed 100%);\n      background: linear-gradient(to bottom, #fafafa 0, #ededed 100%);\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n      .header .header-nav ul li:nth-child(1) a {\n        color: #333; }\n        .header .header-nav ul li:nth-child(1) a:hover {\n          border-bottom: 4px solid #c7c7c7; }\n    .header .header-nav ul li:nth-child(2) {\n      background: #d06503;\n      background: -moz-linear-gradient(top, #e97103 0, #d06503 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e97103), color-stop(100%, #d06503));\n      background: -webkit-linear-gradient(top, #e97103 0, #d06503 100%);\n      background: -o-linear-gradient(top, #e97103 0, #d06503 100%);\n      background: -ms-linear-gradient(top, #e97103 0, #d06503 100%);\n      background: linear-gradient(to bottom, #e97103 0, #d06503 100%); }\n      .header .header-nav ul li:nth-child(2) a:hover {\n        border-bottom: 4px solid #ae4e01; }\n    .header .header-nav ul li:nth-child(3) {\n      background: #e9931a;\n      background: -moz-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eb9e31), color-stop(100%, #e9931a));\n      background: -webkit-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n      background: -o-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n      background: -ms-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n      background: linear-gradient(to bottom, #eb9e31 0, #e9931a 100%);\n      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n      .header .header-nav ul li:nth-child(3) a:hover {\n        border-bottom: 4px solid #bf7514; }\n    .header .header-nav ul li:nth-child(4) {\n      background: #1691be;\n      background: -moz-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #19a2d5), color-stop(100%, #1691be));\n      background: -webkit-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: -o-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: -ms-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: linear-gradient(to bottom, #19a2d5 0, #1691be 100%); }\n      .header .header-nav ul li:nth-child(4) a:hover {\n        border-bottom: 4px solid #0a4b75; }\n    .header .header-nav ul li:nth-child(5) {\n      background: #1b3647;\n      background: -moz-linear-gradient(top, #224459 0, #1b3647 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #224459), color-stop(100%, #1b3647));\n      background: -webkit-linear-gradient(top, #224459 0, #1b3647 100%);\n      background: -o-linear-gradient(top, #224459 0, #1b3647 100%);\n      background: -ms-linear-gradient(top, #224459 0, #1b3647 100%);\n      background: linear-gradient(to bottom, #224459 0, #1b3647 100%); }\n      .header .header-nav ul li:nth-child(5) a:hover {\n        border-bottom: 4px solid #000; }\n    .header .header-nav ul li:nth-child(6) {\n      background: #152836;\n      background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n      background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n      background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n      background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n      background: linear-gradient(to bottom, #1c3648 0, #152836 100%);\n      -webkit-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n      -moz-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n      .header .header-nav ul li:nth-child(6) a:hover {\n        border-bottom: 4px solid #000; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"header": "header",
+		"header-top": "header-top",
+		"content": "content",
+		"search": "search",
+		"logo": "logo",
+		"actions": "actions",
+		"header-nav": "header-nav",
+		"nav-accent": "nav-accent",
+		"nav-accent-left": "nav-accent-left",
+		"nav-accent-right": "nav-accent-right",
+		"icon": "icon",
+		"text": "text"
+	};
+
+/***/ }),
+/* 393 */
 /***/ (function(module, exports) {
 
 	/*
@@ -52126,7 +52429,7 @@
 
 
 /***/ }),
-/* 391 */
+/* 394 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -52182,7 +52485,7 @@
 	var	singletonCounter = 0;
 	var	stylesInsertedAtTop = [];
 	
-	var	fixUrls = __webpack_require__(392);
+	var	fixUrls = __webpack_require__(395);
 	
 	module.exports = function(list, options) {
 		if (false) {
@@ -52498,7 +52801,7 @@
 
 
 /***/ }),
-/* 392 */
+/* 395 */
 /***/ (function(module, exports) {
 
 	
@@ -52593,8 +52896,7 @@
 
 
 /***/ }),
-/* 393 */
->>>>>>> c5ef316f6691ec755dc956f6cee12d420d5aeeb9
+/* 396 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52603,11 +52905,7 @@
 	  value: true
 	});
 	
-<<<<<<< HEAD
-	var _main = __webpack_require__(389);
-=======
-	var _main = __webpack_require__(394);
->>>>>>> c5ef316f6691ec755dc956f6cee12d420d5aeeb9
+	var _main = __webpack_require__(397);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -52616,11 +52914,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-<<<<<<< HEAD
-/* 389 */
-=======
-/* 394 */
->>>>>>> c5ef316f6691ec755dc956f6cee12d420d5aeeb9
+/* 397 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52635,11 +52929,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-<<<<<<< HEAD
-	var _view = __webpack_require__(390);
-=======
-	var _view = __webpack_require__(395);
->>>>>>> c5ef316f6691ec755dc956f6cee12d420d5aeeb9
+	var _view = __webpack_require__(398);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -52699,11 +52989,7 @@
 	Main.displayName = 'Sample-Component';
 
 /***/ }),
-<<<<<<< HEAD
-/* 390 */
-=======
-/* 395 */
->>>>>>> c5ef316f6691ec755dc956f6cee12d420d5aeeb9
+/* 398 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -52716,197 +53002,34 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-<<<<<<< HEAD
-=======
-	var _style = __webpack_require__(396);
+	var _style = __webpack_require__(399);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
->>>>>>> c5ef316f6691ec755dc956f6cee12d420d5aeeb9
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
 		console.log(_style2.default.sample);
 		return _react2.default.createElement(
 			"div",
-<<<<<<< HEAD
-			{ className: "header" },
-			_react2.default.createElement(
-				"div",
-				{ className: "header-top" },
-				_react2.default.createElement(
-					"div",
-					{ className: "container content" },
-					_react2.default.createElement(
-						"div",
-						{ className: "search" },
-						_react2.default.createElement(
-							"form",
-							{ className: "navbar-form", role: "search" },
-							_react2.default.createElement(
-								"div",
-								{ className: "input-group add-on" },
-								_react2.default.createElement("input", { className: "form-control", placeholder: "Search", type: "text" }),
-								_react2.default.createElement(
-									"div",
-									{ className: "input-group-btn" },
-									_react2.default.createElement(
-										"button",
-										{ className: "btn btn-default", type: "submit" },
-										_react2.default.createElement("i", { className: "glyphicon glyphicon-search" })
-									)
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "logo" },
-						_react2.default.createElement("img", { src: "/images/logo.png", alt: "logo" })
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "actions" },
-						_react2.default.createElement(
-							"a",
-							null,
-							"Login"
-						),
-						_react2.default.createElement(
-							"span",
-							null,
-							" | "
-						),
-						_react2.default.createElement(
-							"a",
-							null,
-							"Register"
-						)
-					)
-				)
-			),
-			_react2.default.createElement(
-				"div",
-				{ className: "header-nav" },
-				_react2.default.createElement("div", { className: "nav-accent nav-accent-left" }),
-				_react2.default.createElement("div", { className: "nav-accent nav-accent-right" }),
-				_react2.default.createElement(
-					"ul",
-					null,
-					_react2.default.createElement(
-						"li",
-						null,
-						_react2.default.createElement(
-							"a",
-							{ className: "nav-link" },
-							_react2.default.createElement(
-								"span",
-								{ className: "icon" },
-								_react2.default.createElement("span", { className: "glyphicon glyphicon-home", "aria-hidden": "true" })
-							),
-							_react2.default.createElement(
-								"span",
-								{ className: "text" },
-								"New"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"li",
-						null,
-						_react2.default.createElement(
-							"a",
-							{ className: "nav-link" },
-							_react2.default.createElement(
-								"span",
-								{ className: "icon" },
-								_react2.default.createElement("span", { className: "glyphicon glyphicon-cog", "aria-hidden": "true" })
-							),
-							_react2.default.createElement(
-								"span",
-								{ className: "text" },
-								"Gadgets"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"li",
-						null,
-						_react2.default.createElement(
-							"a",
-							{ className: "nav-link" },
-							_react2.default.createElement(
-								"span",
-								{ className: "icon" },
-								_react2.default.createElement("span", { className: "glyphicon glyphicon-globe", "aria-hidden": "true" })
-							),
-							_react2.default.createElement(
-								"span",
-								{ className: "text" },
-								"Experiences"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"li",
-						null,
-						_react2.default.createElement(
-							"a",
-							{ className: "nav-link" },
-							_react2.default.createElement(
-								"span",
-								{ className: "icon" },
-								_react2.default.createElement("span", { className: "glyphicon glyphicon-fire", "aria-hidden": "true" })
-							),
-							_react2.default.createElement(
-								"span",
-								{ className: "text" },
-								"Food & Drink"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"li",
-						null,
-						_react2.default.createElement(
-							"a",
-							{ className: "nav-link" },
-							_react2.default.createElement(
-								"span",
-								{ className: "icon" },
-								_react2.default.createElement("span", { className: "glyphicon glyphicon-menu-hamburger", "aria-hidden": "true" })
-							),
-							_react2.default.createElement(
-								"span",
-								{ className: "text" },
-								"Others"
-							)
-						)
-					)
-				)
-=======
-			{ className: _style2.default.sample },
+			{ className: [_style2.default.sample, _style2.default.sample2].join(" ") },
 			_react2.default.createElement(
 				"h1",
 				null,
 				"Sample Component1"
->>>>>>> c5ef316f6691ec755dc956f6cee12d420d5aeeb9
 			)
 		);
 	};
 	exports.default = view;
 
 /***/ }),
-<<<<<<< HEAD
-/* 391 */
-=======
-/* 396 */
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(397);
+	var content = __webpack_require__(400);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -52914,7 +53037,7 @@
 	var options = {"hmr":true}
 	options.transform = transform
 	// add the styles to the DOM
-	var update = __webpack_require__(391)(content, options);
+	var update = __webpack_require__(394)(content, options);
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -52931,25 +53054,24 @@
 	}
 
 /***/ }),
-/* 397 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(390)(undefined);
+	exports = module.exports = __webpack_require__(393)(undefined);
 	// imports
 	
 	
 	// module
-	exports.push([module.id, ".sample {\n  background: yellow; }\n\n.test .sample {\n  background: red; }\n\n.sample {\n  background: yellow; }\n", ""]);
+	exports.push([module.id, ".sample {\n  background: yellow; }\n\n.sample2 {\n  background: red; }\n", ""]);
 	
 	// exports
 	exports.locals = {
 		"sample": "sample",
-		"test": "test"
+		"sample2": "sample2"
 	};
 
 /***/ }),
-/* 398 */
->>>>>>> c5ef316f6691ec755dc956f6cee12d420d5aeeb9
+/* 401 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53087,11 +53209,7 @@
 	module.exports = Index;
 
 /***/ }),
-<<<<<<< HEAD
-/* 392 */
-=======
-/* 399 */
->>>>>>> c5ef316f6691ec755dc956f6cee12d420d5aeeb9
+/* 402 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -53131,53 +53249,6 @@
 	
 	// React Engine needs exports, don't export default
 	module.exports = Index;
-
-/***/ }),
-/* 400 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(401);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// Prepare cssTransformation
-	var transform;
-	
-	var options = {"hmr":true}
-	options.transform = transform
-	// add the styles to the DOM
-	var update = __webpack_require__(391)(content, options);
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
-				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 401 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(390)(undefined);
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".test {\n  border: 1px solid black; }\n", ""]);
-	
-	// exports
-	exports.locals = {
-		"test": "test"
-	};
 
 /***/ })
 /******/ ]);
