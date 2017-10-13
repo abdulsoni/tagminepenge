@@ -21,6 +21,7 @@
 // var Routes = require('./routes.jsx');
 
 // import the react-engine's client side booter
+
 var ReactEngineClient = require('react-engine/lib/client');
 
 // boot options

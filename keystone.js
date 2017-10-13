@@ -1,7 +1,22 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
 require('dotenv').config();
-
+/**
+ * For CSS Modules Support. Webpack only works on client side
+ * On Server side compilation of JSX templates, We need this hook
+ * to tell how to handle CSS Modules
+ */
+const hook = require('css-modules-require-hook');
+const sass = require('node-sass');
+hook({
+	generateScopedName: '[local]',
+	extensions: [ '.scss', '.css' ],
+	preprocessCss: (data, filename) =>
+		sass.renderSync({
+			data,
+			file: filename,
+		}).css,
+});
 // Require keystone
 var keystone = require('keystone');
 // Require the react engine

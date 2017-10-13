@@ -17,37 +17,51 @@
 
 const production = process.env.NODE_ENV === 'production' ? true : false;
 module.exports = {
-  devtool: production ? null : 'sourcemaps',
+	devtool: production ? null : 'sourcemaps',
 
-  entry: __dirname + '/index.js',
+	entry: __dirname + '/index.js',
 
-  output: {
-    path: __dirname + '/public/js',
-    filename: 'bundle.js',
-  },
+	output: {
+		path: __dirname + '/public/js',
+		filename: 'bundle.js',
+	},
 
-  module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015', 'stage-1'],
-        },
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader',
-      },
-		{
-			test: /\.css/,
-			loaders: ['style', 'css']
-		}
-    ],
-  },
+	module: {
+		loaders: [
+			{
+				test: /\.jsx?$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader',
+				query: {
+					presets: ['react', 'es2015', 'stage-1'],
+				},
+			},
+			{
+				test: /\.json$/,
+				loader: 'json-loader',
+			},
+			/**
+			 * For CSS Modules Support. Web pack only works on client side
+			 *
+			 */
+			{
+				test: /\.css$/,
+				loaders: [
+					'style',
+					'css?module&localIdentName=[local]',
+				],
+			},{
+				test: /\.scss$/,
+				loaders: [
+					'style',
+					'css?module&localIdentName=[local]',
+					"sass"
+				],
+			},
+		]
+	},
 
-  resolve: {
-    extensions: ['', '.js', '.jsx', '.json','.css'],
-  },
+	resolve: {
+		extensions: ['', '.js', '.jsx', '.json','.css','.scss'],
+	},
 };
