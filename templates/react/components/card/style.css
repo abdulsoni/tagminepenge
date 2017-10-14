@@ -1,0 +1,30 @@
+.card {
+  width: 302px; }
+  .card .card-header .product-title {
+    margin-bottom: 2px;
+    text-align: center;
+    font-weight: 400;
+    margin-top: 0;
+    font-size: 18px;
+    color: #606060;
+    display: block; }
+  .card .card-body .product-image .image {
+    display: block;
+    width: 100%;
+    height: 252px;
+    background-color: #e6e6e6; }
+  .card .card-body .product-text {
+    line-height: 17px;
+    text-align: justify;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px; }
+  .card .card-footer {
+    display: flex;
+    justify-content: space-between; }
+    .card .card-footer .product-range {
+      color: #606060;
+      font-size: 16px;
+      letter-spacing: 1px; }
+
+/*# sourceMappingURL=style.css.map */

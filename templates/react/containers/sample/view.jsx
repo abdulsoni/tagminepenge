@@ -1,9 +1,9 @@
 import React from 'react';
-import Styles from './style.scss';
+import styles from './style.scss';
 import SampleComponent from '../../components/sample/index'
 var view = function() {
 	return (
-		<div className=  {Styles.test}>
+		<div className="sample">
 			<SampleComponent/>
 		</div>
 	);
