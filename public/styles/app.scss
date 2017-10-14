@@ -1,4 +1,6 @@
+@import './variables.scss';
+
 .app{
-  background:#fff;
-  font-family: Oswald,Arial,sans-serif;
+  background: $brand-white;
+  font-family: $app-font;
 }

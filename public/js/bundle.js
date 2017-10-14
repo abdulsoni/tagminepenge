@@ -48086,10 +48086,10 @@
 	var map = {
 		"./index": 326,
 		"./index.jsx": 326,
-		"./index2": 428,
-		"./index2.jsx": 428,
-		"./test": 429,
-		"./test.jsx": 429
+		"./index2": 433,
+		"./index2.jsx": 433,
+		"./test": 434,
+		"./test.jsx": 434
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -52009,7 +52009,7 @@
 	
 	var _home2 = _interopRequireDefault(_home);
 	
-	var _style = __webpack_require__(426);
+	var _style = __webpack_require__(431);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
@@ -53026,7 +53026,7 @@
 	
 	var _productGrid2 = _interopRequireDefault(_productGrid);
 	
-	var _footer = __webpack_require__(421);
+	var _footer = __webpack_require__(426);
 	
 	var _footer2 = _interopRequireDefault(_footer);
 	
@@ -53085,13 +53085,10 @@
 	
 	
 	// module
-	exports.push([module.id, ".sample {\n  background: yellow; }\n\n.sample2 {\n  background: red; }\n", ""]);
+	exports.push([module.id, "", ""]);
 	
 	// exports
-	exports.locals = {
-		"sample": "sample",
-		"sample2": "sample2"
-	};
+
 
 /***/ }),
 /* 401 */
@@ -53259,7 +53256,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".banner {\n  height: 300px;\n  background-color: #e6e6e6; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.banner {\n  height: 300px;\n  background-color: #e6e6e6; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -53751,7 +53748,7 @@
 	
 	var _style2 = _interopRequireDefault(_style);
 	
-	var _card = __webpack_require__(430);
+	var _card = __webpack_require__(421);
 	
 	var _card2 = _interopRequireDefault(_card);
 	
@@ -53806,13 +53803,10 @@
 	
 	
 	// module
-	exports.push([module.id, ".sample {\n  background: yellow; }\n\n.sample2 {\n  background: red; }\n", ""]);
+	exports.push([module.id, "", ""]);
 	
 	// exports
-	exports.locals = {
-		"sample": "sample",
-		"sample2": "sample2"
-	};
+
 
 /***/ }),
 /* 421 */
@@ -53930,8 +53924,84 @@
 	var view = function view() {
 		return _react2.default.createElement(
 			"div",
-			{ className: "footer" },
-			"Footer"
+			{ className: "card" },
+			_react2.default.createElement(
+				"div",
+				{ className: "card-header" },
+				_react2.default.createElement(
+					"a",
+					{ className: "product-title" },
+					"Twinkling Star Skirt"
+				)
+			),
+			_react2.default.createElement(
+				"div",
+				{ className: "card-body" },
+				_react2.default.createElement(
+					"div",
+					{ className: "product-image" },
+					_react2.default.createElement(
+						"a",
+						null,
+						_react2.default.createElement("span", { className: "image" })
+					),
+					_react2.default.createElement(
+						"button",
+						null,
+						"Save"
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "product-text" },
+					_react2.default.createElement(
+						"p",
+						{ className: "text" },
+						"Brighten up any room you walk into by slipping into this eye-catching twinkling stars skirt. The skirt features a lovely blue hue and is accented with over 250 tiny LEDs powered by a battery pack that discreetly tucks away inside the waist."
+					)
+				)
+			),
+			_react2.default.createElement(
+				"div",
+				{ className: "card-footer" },
+				_react2.default.createElement(
+					"div",
+					{ className: "product-range" },
+					_react2.default.createElement(
+						"p",
+						{ className: "cost" },
+						"$59.99"
+					),
+					_react2.default.createElement(
+						"span",
+						{ className: "saves" },
+						_react2.default.createElement(
+							"a",
+							{ className: "icon" },
+							_react2.default.createElement("i", { className: "glyphicon glyphicon-heart-empty" })
+						),
+						_react2.default.createElement(
+							"span",
+							{ className: "count" },
+							"828"
+						),
+						_react2.default.createElement(
+							"span",
+							null,
+							"saves"
+						)
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "product-action" },
+					_react2.default.createElement(
+						"button",
+						null,
+						"Check it out"
+					)
+				)
+			)
 		);
 	};
 	exports.default = view;
@@ -53976,21 +54046,151 @@
 	
 	
 	// module
-	exports.push([module.id, ".footer {\n  background: #e6e6e6;\n  height: 200px;\n  margin-top: 100px; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.card {\n  width: 302px; }\n  .card .card-header .product-title {\n    margin-bottom: 2px;\n    text-align: center;\n    font-weight: 400;\n    margin-top: 0;\n    font-size: 18px;\n    color: #606060;\n    display: block; }\n  .card .card-body .product-image .image {\n    display: block;\n    width: 100%;\n    height: 252px;\n    background-color: #e6e6e6; }\n  .card .card-body .product-text {\n    line-height: 17px;\n    text-align: justify;\n    font-size: 12px;\n    margin-top: 5px;\n    margin-bottom: 5px; }\n  .card .card-footer {\n    display: flex;\n    justify-content: space-between; }\n    .card .card-footer .product-range {\n      color: #606060;\n      font-size: 16px;\n      letter-spacing: 1px; }\n", ""]);
 	
 	// exports
 	exports.locals = {
-		"footer": "footer"
+		"card": "card",
+		"card-header": "card-header",
+		"product-title": "product-title",
+		"card-body": "card-body",
+		"product-image": "product-image",
+		"image": "image",
+		"product-text": "product-text",
+		"card-footer": "card-footer",
+		"product-range": "product-range"
 	};
 
 /***/ }),
 /* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(427);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 427 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(428);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _axios = __webpack_require__(335);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Component
+	 * @type Component
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+		}
+	
+		_createClass(Main, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				console.log(_axios2.default);
+			}
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	//Set display name to be used in React Dev Tools
+	
+	
+	exports.default = Main;
+	Main.displayName = 'Sample-Component';
+
+/***/ }),
+/* 428 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(429);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		return _react2.default.createElement(
+			"div",
+			{ className: "footer" },
+			"Footer"
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 429 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(427);
+	var content = __webpack_require__(430);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -54015,7 +54215,7 @@
 	}
 
 /***/ }),
-/* 427 */
+/* 430 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(393)(undefined);
@@ -54023,7 +54223,54 @@
 	
 	
 	// module
-	exports.push([module.id, ".app a {\n  text-decoration: none;\n  cursor: pointer; }\n\n.main-container {\n  margin-top: 123px; }\n\n.content-center {\n  -ms-flex-pack: center;\n  justify-content: center;\n  -ms-flex-align: center;\n  align-items: center;\n  vertical-align: middle;\n  text-align: center;\n  display: -ms-flexbox;\n  display: flex; }\n", ""]);
+	exports.push([module.id, ".footer {\n  background: #e6e6e6;\n  height: 200px;\n  margin-top: 100px; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"footer": "footer"
+	};
+
+/***/ }),
+/* 431 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(432);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(394)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 432 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(393)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.app a {\n  text-decoration: none;\n  cursor: pointer; }\n\n.main-container {\n  margin-top: 123px; }\n\n.content-center {\n  -ms-flex-pack: center;\n  justify-content: center;\n  -ms-flex-align: center;\n  align-items: center;\n  vertical-align: middle;\n  text-align: center;\n  display: -ms-flexbox;\n  display: flex; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -54033,7 +54280,7 @@
 	};
 
 /***/ }),
-/* 428 */
+/* 433 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54171,7 +54418,7 @@
 	module.exports = Index;
 
 /***/ }),
-/* 429 */
+/* 434 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -54211,259 +54458,6 @@
 	
 	// React Engine needs exports, don't export default
 	module.exports = Index;
-
-/***/ }),
-/* 430 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _main = __webpack_require__(431);
-	
-	var _main2 = _interopRequireDefault(_main);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _main2.default;
-
-/***/ }),
-/* 431 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _view = __webpack_require__(432);
-	
-	var _view2 = _interopRequireDefault(_view);
-	
-	var _axios = __webpack_require__(335);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	/**
-	 * @name Sample Component
-	 * @type Component
-	 * @author Inderdeep Singh
-	 */
-	var Main = function (_Component) {
-		_inherits(Main, _Component);
-	
-		/**
-	  * Constructor
-	  * @param props
-	  */
-		function Main(props) {
-			_classCallCheck(this, Main);
-	
-			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
-		}
-	
-		_createClass(Main, [{
-			key: 'componentDidMount',
-			value: function componentDidMount() {
-				console.log(_axios2.default);
-			}
-			/**
-	   * Render the view
-	   * @returns {*}
-	   */
-	
-		}, {
-			key: 'render',
-			value: function render() {
-				return _view2.default.bind(this)();
-			}
-		}]);
-	
-		return Main;
-	}(_react.Component);
-	//Set display name to be used in React Dev Tools
-	
-	
-	exports.default = Main;
-	Main.displayName = 'Sample-Component';
-
-/***/ }),
-/* 432 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _style = __webpack_require__(433);
-	
-	var _style2 = _interopRequireDefault(_style);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var view = function view() {
-		return _react2.default.createElement(
-			"div",
-			{ className: "card" },
-			_react2.default.createElement(
-				"div",
-				{ className: "card-header" },
-				_react2.default.createElement(
-					"a",
-					{ className: "product-title" },
-					"Twinkling Star Skirt"
-				)
-			),
-			_react2.default.createElement(
-				"div",
-				{ className: "card-body" },
-				_react2.default.createElement(
-					"div",
-					{ className: "product-image" },
-					_react2.default.createElement(
-						"a",
-						null,
-						_react2.default.createElement("span", { className: "image" })
-					),
-					_react2.default.createElement(
-						"button",
-						null,
-						"Save"
-					)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "product-text" },
-					_react2.default.createElement(
-						"p",
-						{ className: "text" },
-						"Brighten up any room you walk into by slipping into this eye-catching twinkling stars skirt. The skirt features a lovely blue hue and is accented with over 250 tiny LEDs powered by a battery pack that discreetly tucks away inside the waist."
-					)
-				)
-			),
-			_react2.default.createElement(
-				"div",
-				{ className: "card-footer" },
-				_react2.default.createElement(
-					"div",
-					{ className: "product-range" },
-					_react2.default.createElement(
-						"p",
-						{ className: "cost" },
-						"$59.99"
-					),
-					_react2.default.createElement(
-						"span",
-						{ className: "saves" },
-						_react2.default.createElement(
-							"a",
-							{ className: "icon" },
-							_react2.default.createElement("i", { className: "glyphicon glyphicon-heart-empty" })
-						),
-						_react2.default.createElement(
-							"span",
-							{ className: "count" },
-							"828"
-						),
-						_react2.default.createElement(
-							"span",
-							null,
-							"saves"
-						)
-					)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "product-action" },
-					_react2.default.createElement(
-						"button",
-						null,
-						"Check it out"
-					)
-				)
-			)
-		);
-	};
-	exports.default = view;
-
-/***/ }),
-/* 433 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(434);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// Prepare cssTransformation
-	var transform;
-	
-	var options = {"hmr":true}
-	options.transform = transform
-	// add the styles to the DOM
-	var update = __webpack_require__(394)(content, options);
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
-				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 434 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(393)(undefined);
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".card {\n  width: 302px; }\n  .card .card-header .product-title {\n    margin-bottom: 2px;\n    text-align: center;\n    font-weight: 400;\n    margin-top: 0;\n    font-size: 18px;\n    color: #606060;\n    display: block; }\n  .card .card-body .product-image .image {\n    display: block;\n    width: 100%;\n    height: 252px;\n    background-color: #e6e6e6; }\n  .card .card-body .product-text {\n    line-height: 17px;\n    text-align: justify;\n    font-size: 12px;\n    margin-top: 5px;\n    margin-bottom: 5px; }\n  .card .card-footer {\n    display: flex;\n    justify-content: space-between; }\n    .card .card-footer .product-range {\n      color: #606060;\n      font-size: 16px;\n      letter-spacing: 1px; }\n", ""]);
-	
-	// exports
-	exports.locals = {
-		"card": "card",
-		"card-header": "card-header",
-		"product-title": "product-title",
-		"card-body": "card-body",
-		"product-image": "product-image",
-		"image": "image",
-		"product-text": "product-text",
-		"card-footer": "card-footer",
-		"product-range": "product-range"
-	};
 
 /***/ })
 /******/ ]);
