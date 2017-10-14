@@ -9,7 +9,7 @@ var view = function() {
 			<div className="card-body">
 				<div className="product-image">
 					<a><span className="image"></span></a>
-					<button>Save</button>
+					<button className="btn btn-red save-btn">Save</button>
 				</div>
 				<div className="product-text">
 					<p className="text">Brighten up any room you walk into by slipping into this eye-catching twinkling stars skirt. The skirt features a lovely blue hue and is accented with over 250 tiny LEDs powered by a battery pack that discreetly tucks away inside the waist.</p>
@@ -19,13 +19,13 @@ var view = function() {
 				<div className="product-range">
 					<p className="cost">$59.99</p>
 					<span className="saves">
-						<a className="icon"><i className="glyphicon glyphicon-heart-empty"></i></a>
+						<a className="icon"><i className="glyphicon glyphicon-heart-empty"></i> </a>
 						<span className="count">828</span>
-						<span>saves</span>
+						<span> saves</span>
 					</span>
 				</div>
 				<div className="product-action">
-					<button>Check it out</button>
+					<button className="btn btn-yellow">Check it out</button>
 				</div>
 			</div>
 		</div>

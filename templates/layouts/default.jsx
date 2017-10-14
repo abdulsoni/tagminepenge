@@ -14,7 +14,6 @@ const Default = props => {
 			<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 
 			<link href="/styles/site.css" rel="stylesheet"/>
-			<link href="/styles/app.css" rel="stylesheet"/>
 			<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700" rel="stylesheet"/>
 
 			{props.user && props.user.canAccessKeystone

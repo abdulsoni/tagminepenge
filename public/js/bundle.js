@@ -48184,7 +48184,6 @@
 				),
 				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.ico', type: 'image/x-icon' }),
 				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
-				_react2.default.createElement('link', { href: '/styles/app.css', rel: 'stylesheet' }),
 				_react2.default.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Oswald:300,400,500,700', rel: 'stylesheet' }),
 				props.user && props.user.canAccessKeystone && _react2.default.createElement('link', { href: '/keystone/styles/content/editor.min.css', rel: 'stylesheet' }),
 				props.css,
@@ -52332,7 +52331,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".header {\n  position: fixed;\n  width: 100%;\n  top: 0px; }\n  .header .header-top {\n    height: 57px;\n    background: #f5f5f5; }\n    .header .header-top .content {\n      position: relative; }\n      .header .header-top .content .search {\n        position: absolute;\n        left: 0;\n        top: 2px; }\n        .header .header-top .content .search input {\n          height: 33px; }\n      .header .header-top .content .logo {\n        text-align: center; }\n        .header .header-top .content .logo img {\n          width: 180px; }\n      .header .header-top .content .actions {\n        position: absolute;\n        right: 10px;\n        top: 15px; }\n  .header .header-nav .nav-accent {\n    display: block;\n    width: 50%;\n    height: 66px;\n    position: absolute;\n    top: 57px;\n    z-index: -10;\n    -webkit-transition: height .5s;\n    -moz-transition: height .5s;\n    -o-transition: height .5s;\n    -ms-transition: height .5s;\n    transition: height .5s;\n    z-index: 1; }\n  .header .header-nav .nav-accent-left {\n    background-color: #e3ad7f; }\n  .header .header-nav .nav-accent-right {\n    background-color: #858e95;\n    right: 0; }\n  .header .header-nav ul {\n    text-align: center;\n    padding: 0;\n    list-style: none;\n    font-size: 1.5em;\n    font-weight: 300;\n    position: relative;\n    z-index: 2;\n    margin-top: -6px; }\n    .header .header-nav ul li {\n      display: inline-block;\n      width: 10%;\n      text-align: center;\n      -webkit-transition: border .5s;\n      -moz-transition: border .5s;\n      -o-transition: border .5s;\n      -ms-transition: border .5s;\n      transition: border .5s;\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n      .header .header-nav ul li a {\n        display: block;\n        width: auto;\n        height: 76.91px;\n        color: rgba(249, 249, 249, 0.9);\n        text-decoration: none;\n        -webkit-transition: color .5s, background .5s, height .5s;\n        -moz-transition: color .5s, background .5s, height .5s;\n        -o-transition: color .5s, background .5s, height .5s;\n        -ms-transition: color .5s, background .5s, height .5s;\n        transition: color .5s, background .5s, height .5s;\n        cursor: pointer; }\n        .header .header-nav ul li a .icon {\n          display: block;\n          padding-top: .5em; }\n        .header .header-nav ul li a .text {\n          display: block;\n          font-size: 14.4px;\n          font-weight: 600; }\n        .header .header-nav ul li a:hover {\n          height: 82.77px; }\n      .header .header-nav ul li:nth-child(1) {\n        background: #ededed;\n        background: -moz-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fafafa), color-stop(100%, #ededed));\n        background: -webkit-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -o-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -ms-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: linear-gradient(to bottom, #fafafa 0, #ededed 100%);\n        box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n        .header .header-nav ul li:nth-child(1) a {\n          color: #333; }\n          .header .header-nav ul li:nth-child(1) a:hover {\n            border-bottom: 4px solid #c7c7c7; }\n      .header .header-nav ul li:nth-child(2) {\n        background: #d06503;\n        background: -moz-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e97103), color-stop(100%, #d06503));\n        background: -webkit-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -o-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -ms-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: linear-gradient(to bottom, #e97103 0, #d06503 100%); }\n        .header .header-nav ul li:nth-child(2) a:hover {\n          border-bottom: 4px solid #ae4e01; }\n      .header .header-nav ul li:nth-child(3) {\n        background: #e9931a;\n        background: -moz-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eb9e31), color-stop(100%, #e9931a));\n        background: -webkit-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -o-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -ms-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: linear-gradient(to bottom, #eb9e31 0, #e9931a 100%);\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n        .header .header-nav ul li:nth-child(3) a:hover {\n          border-bottom: 4px solid #bf7514; }\n      .header .header-nav ul li:nth-child(4) {\n        background: #1691be;\n        background: -moz-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #19a2d5), color-stop(100%, #1691be));\n        background: -webkit-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -o-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -ms-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: linear-gradient(to bottom, #19a2d5 0, #1691be 100%); }\n        .header .header-nav ul li:nth-child(4) a:hover {\n          border-bottom: 4px solid #0a4b75; }\n      .header .header-nav ul li:nth-child(5) {\n        background: #1b3647;\n        background: -moz-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #224459), color-stop(100%, #1b3647));\n        background: -webkit-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -o-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -ms-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: linear-gradient(to bottom, #224459 0, #1b3647 100%); }\n        .header .header-nav ul li:nth-child(5) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li:nth-child(6) {\n        background: #152836;\n        background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n        background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: linear-gradient(to bottom, #1c3648 0, #152836 100%);\n        -webkit-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n        -moz-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n        box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n        .header .header-nav ul li:nth-child(6) a:hover {\n          border-bottom: 4px solid #000; }\n", ""]);
+	exports.push([module.id, ".header {\n  position: fixed;\n  width: 100%;\n  top: 0px;\n  z-index: 1; }\n  .header .header-top {\n    height: 57px;\n    background: #f5f5f5; }\n    .header .header-top .content {\n      position: relative; }\n      .header .header-top .content .search {\n        position: absolute;\n        left: 0;\n        top: 2px; }\n        .header .header-top .content .search input {\n          height: 33px; }\n      .header .header-top .content .logo {\n        text-align: center; }\n        .header .header-top .content .logo img {\n          width: 180px; }\n      .header .header-top .content .actions {\n        position: absolute;\n        right: 10px;\n        top: 15px; }\n  .header .header-nav .nav-accent {\n    display: block;\n    width: 50%;\n    height: 66px;\n    position: absolute;\n    top: 57px;\n    z-index: -10;\n    -webkit-transition: height .5s;\n    -moz-transition: height .5s;\n    -o-transition: height .5s;\n    -ms-transition: height .5s;\n    transition: height .5s;\n    z-index: 1; }\n  .header .header-nav .nav-accent-left {\n    background-color: #e3ad7f; }\n  .header .header-nav .nav-accent-right {\n    background-color: #858e95;\n    right: 0; }\n  .header .header-nav ul {\n    text-align: center;\n    padding: 0;\n    list-style: none;\n    font-size: 1.5em;\n    font-weight: 300;\n    position: relative;\n    z-index: 2;\n    margin-top: -6px; }\n    .header .header-nav ul li {\n      display: inline-block;\n      width: 10%;\n      text-align: center;\n      -webkit-transition: border .5s;\n      -moz-transition: border .5s;\n      -o-transition: border .5s;\n      -ms-transition: border .5s;\n      transition: border .5s;\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n      .header .header-nav ul li a {\n        display: block;\n        width: auto;\n        height: 76.91px;\n        color: rgba(249, 249, 249, 0.9);\n        text-decoration: none;\n        -webkit-transition: color .5s, background .5s, height .5s;\n        -moz-transition: color .5s, background .5s, height .5s;\n        -o-transition: color .5s, background .5s, height .5s;\n        -ms-transition: color .5s, background .5s, height .5s;\n        transition: color .5s, background .5s, height .5s;\n        cursor: pointer; }\n        .header .header-nav ul li a .icon {\n          display: block;\n          padding-top: .5em; }\n        .header .header-nav ul li a .text {\n          display: block;\n          font-size: 14.4px;\n          font-weight: 600; }\n        .header .header-nav ul li a:hover {\n          height: 82.77px; }\n      .header .header-nav ul li:nth-child(1) {\n        background: #ededed;\n        background: -moz-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fafafa), color-stop(100%, #ededed));\n        background: -webkit-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -o-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -ms-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: linear-gradient(to bottom, #fafafa 0, #ededed 100%);\n        box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n        .header .header-nav ul li:nth-child(1) a {\n          color: #333; }\n          .header .header-nav ul li:nth-child(1) a:hover {\n            border-bottom: 4px solid #c7c7c7; }\n      .header .header-nav ul li:nth-child(2) {\n        background: #d06503;\n        background: -moz-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e97103), color-stop(100%, #d06503));\n        background: -webkit-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -o-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -ms-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: linear-gradient(to bottom, #e97103 0, #d06503 100%); }\n        .header .header-nav ul li:nth-child(2) a:hover {\n          border-bottom: 4px solid #ae4e01; }\n      .header .header-nav ul li:nth-child(3) {\n        background: #e9931a;\n        background: -moz-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eb9e31), color-stop(100%, #e9931a));\n        background: -webkit-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -o-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -ms-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: linear-gradient(to bottom, #eb9e31 0, #e9931a 100%);\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n        .header .header-nav ul li:nth-child(3) a:hover {\n          border-bottom: 4px solid #bf7514; }\n      .header .header-nav ul li:nth-child(4) {\n        background: #1691be;\n        background: -moz-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #19a2d5), color-stop(100%, #1691be));\n        background: -webkit-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -o-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -ms-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: linear-gradient(to bottom, #19a2d5 0, #1691be 100%); }\n        .header .header-nav ul li:nth-child(4) a:hover {\n          border-bottom: 4px solid #0a4b75; }\n      .header .header-nav ul li:nth-child(5) {\n        background: #1b3647;\n        background: -moz-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #224459), color-stop(100%, #1b3647));\n        background: -webkit-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -o-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -ms-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: linear-gradient(to bottom, #224459 0, #1b3647 100%); }\n        .header .header-nav ul li:nth-child(5) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li:nth-child(6) {\n        background: #152836;\n        background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n        background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: linear-gradient(to bottom, #1c3648 0, #152836 100%);\n        -webkit-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n        -moz-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n        box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n        .header .header-nav ul li:nth-child(6) a:hover {\n          border-bottom: 4px solid #000; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -53758,7 +53757,25 @@
 		return _react2.default.createElement(
 			'div',
 			{ className: 'container' },
-			_react2.default.createElement(_card2.default, null)
+			_react2.default.createElement(
+				'div',
+				{ className: 'row' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'col-md-4' },
+					_react2.default.createElement(_card2.default, null)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'col-md-4' },
+					_react2.default.createElement(_card2.default, null)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'col-md-4' },
+					_react2.default.createElement(_card2.default, null)
+				)
+			)
 		);
 	};
 	exports.default = view;
@@ -53947,7 +53964,7 @@
 					),
 					_react2.default.createElement(
 						"button",
-						null,
+						{ className: "btn btn-red save-btn" },
 						"Save"
 					)
 				),
@@ -53978,7 +53995,8 @@
 						_react2.default.createElement(
 							"a",
 							{ className: "icon" },
-							_react2.default.createElement("i", { className: "glyphicon glyphicon-heart-empty" })
+							_react2.default.createElement("i", { className: "glyphicon glyphicon-heart-empty" }),
+							" "
 						),
 						_react2.default.createElement(
 							"span",
@@ -53988,7 +54006,7 @@
 						_react2.default.createElement(
 							"span",
 							null,
-							"saves"
+							" saves"
 						)
 					)
 				),
@@ -53997,7 +54015,7 @@
 					{ className: "product-action" },
 					_react2.default.createElement(
 						"button",
-						null,
+						{ className: "btn btn-yellow" },
 						"Check it out"
 					)
 				)
@@ -54046,7 +54064,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.card {\n  width: 302px; }\n  .card .card-header .product-title {\n    margin-bottom: 2px;\n    text-align: center;\n    font-weight: 400;\n    margin-top: 0;\n    font-size: 18px;\n    color: #606060;\n    display: block; }\n  .card .card-body .product-image .image {\n    display: block;\n    width: 100%;\n    height: 252px;\n    background-color: #e6e6e6; }\n  .card .card-body .product-text {\n    line-height: 17px;\n    text-align: justify;\n    font-size: 12px;\n    margin-top: 5px;\n    margin-bottom: 5px; }\n  .card .card-footer {\n    display: flex;\n    justify-content: space-between; }\n    .card .card-footer .product-range {\n      color: #606060;\n      font-size: 16px;\n      letter-spacing: 1px; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.card {\n  width: 302px; }\n  .card .card-header .product-title {\n    margin-bottom: 2px;\n    text-align: center;\n    font-weight: 400;\n    margin-top: 0;\n    font-size: 18px;\n    color: #606060;\n    display: block; }\n  .card .card-body .product-image {\n    position: relative; }\n    .card .card-body .product-image .save-btn {\n      display: none;\n      position: absolute;\n      top: 15px;\n      right: 15px;\n      padding: 5px;\n      width: 76px;\n      font-size: 20px; }\n    .card .card-body .product-image .image {\n      display: block;\n      width: 100%;\n      height: 252px;\n      background-color: #e6e6e6; }\n    .card .card-body .product-image:hover .save-btn {\n      display: block; }\n  .card .card-body .product-text {\n    line-height: 17px;\n    text-align: justify;\n    font-size: 12px;\n    margin-top: 5px;\n    margin-bottom: 5px;\n    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; }\n  .card .card-footer {\n    display: flex;\n    justify-content: space-between; }\n    .card .card-footer .product-range {\n      color: #606060;\n      font-size: 16px;\n      letter-spacing: 1px; }\n      .card .card-footer .product-range .saves {\n        font-size: 14px; }\n        .card .card-footer .product-range .saves i {\n          color: #606060; }\n          .card .card-footer .product-range .saves i:hover {\n            color: #cb1d00; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -54055,10 +54073,12 @@
 		"product-title": "product-title",
 		"card-body": "card-body",
 		"product-image": "product-image",
+		"save-btn": "save-btn",
 		"image": "image",
 		"product-text": "product-text",
 		"card-footer": "card-footer",
-		"product-range": "product-range"
+		"product-range": "product-range",
+		"saves": "saves"
 	};
 
 /***/ }),
@@ -54178,7 +54198,278 @@
 		return _react2.default.createElement(
 			"div",
 			{ className: "footer" },
-			"Footer"
+			_react2.default.createElement(
+				"div",
+				{ className: "container" },
+				_react2.default.createElement(
+					"div",
+					{ className: "row" },
+					_react2.default.createElement(
+						"div",
+						{ className: "col-md-3" },
+						_react2.default.createElement(
+							"div",
+							{ className: "title" },
+							_react2.default.createElement(
+								"p",
+								null,
+								"By Recipient"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "links" },
+							_react2.default.createElement(
+								"ul",
+								null,
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Gifts for Men"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Gifts for Women"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Gifts for Kids"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Gifts for Animal Lovers"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Gifts for Couples"
+									)
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "col-md-3" },
+						_react2.default.createElement(
+							"div",
+							{ className: "title" },
+							_react2.default.createElement(
+								"p",
+								null,
+								"Affordable Gift Ideas"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "links" },
+							_react2.default.createElement(
+								"ul",
+								null,
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Gifts under $50"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Gifts under $40"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Gifts under $30"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Gifts under $20"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Gifts under $10"
+									)
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "col-md-3" },
+						_react2.default.createElement(
+							"div",
+							{ className: "title" },
+							_react2.default.createElement(
+								"p",
+								null,
+								"Helpful Links"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "links" },
+							_react2.default.createElement(
+								"ul",
+								null,
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Contact us"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"About us"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Submit a product"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Privacy Policy"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Blog"
+									)
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "col-md-3" },
+						_react2.default.createElement(
+							"div",
+							{ className: "title" },
+							_react2.default.createElement(
+								"p",
+								null,
+								"Follow TagMinePenge"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "links" },
+							_react2.default.createElement(
+								"ul",
+								null,
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Facebook"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Twitter"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Tumblr"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"Pinterest"
+									)
+								),
+								_react2.default.createElement(
+									"li",
+									null,
+									_react2.default.createElement(
+										"a",
+										null,
+										"RSS"
+									)
+								)
+							)
+						)
+					)
+				)
+			)
 		);
 	};
 	exports.default = view;
@@ -54223,11 +54514,13 @@
 	
 	
 	// module
-	exports.push([module.id, ".footer {\n  background: #e6e6e6;\n  height: 200px;\n  margin-top: 100px; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.footer {\n  padding: 50px;\n  margin-top: 100px;\n  background-color: #f7f7f7; }\n  .footer .title {\n    font-size: 18px;\n    margin-bottom: 14px;\n    font-weight: 700; }\n  .footer .links ul {\n    padding: 0px; }\n    .footer .links ul li {\n      list-style: none; }\n      .footer .links ul li a {\n        font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;\n        font-size: 14px;\n        color: #333;\n        line-height: 28px; }\n        .footer .links ul li a:hover {\n          color: #faab37; }\n", ""]);
 	
 	// exports
 	exports.locals = {
-		"footer": "footer"
+		"footer": "footer",
+		"title": "title",
+		"links": "links"
 	};
 
 /***/ }),
@@ -54270,13 +54563,18 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.app a {\n  text-decoration: none;\n  cursor: pointer; }\n\n.main-container {\n  margin-top: 123px; }\n\n.content-center {\n  -ms-flex-pack: center;\n  justify-content: center;\n  -ms-flex-align: center;\n  align-items: center;\n  vertical-align: middle;\n  text-align: center;\n  display: -ms-flexbox;\n  display: flex; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.app {\n  background: #ffffff;\n  font-family: Oswald, Arial, sans-serif; }\n  .app .container {\n    width: 1000px; }\n  .app p {\n    margin: 0;\n    padding: 0; }\n  .app a {\n    text-decoration: none;\n    cursor: pointer; }\n  .app .main-container {\n    margin-top: 123px; }\n  .app .content-center {\n    -ms-flex-pack: center;\n    justify-content: center;\n    -ms-flex-align: center;\n    align-items: center;\n    vertical-align: middle;\n    text-align: center;\n    display: -ms-flexbox;\n    display: flex; }\n  .app .btn-yellow {\n    color: #ffffff;\n    background-color: #faab37;\n    border-color: #faab37; }\n  .app .btn-red {\n    color: #ffffff;\n    background-color: #cb1d00;\n    border-color: #cb1d00; }\n  .app .btn {\n    border-radius: 0px;\n    font-size: 22px;\n    font-weight: 400;\n    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);\n    padding: 2px 8px; }\n  .app .input-group-btn .btn {\n    border-bottom-right-radius: 4px;\n    border-top-right-radius: 4px;\n    text-shadow: none;\n    padding: 6px 12px;\n    font-size: 14px; }\n", ""]);
 	
 	// exports
 	exports.locals = {
 		"app": "app",
+		"container": "container",
 		"main-container": "main-container",
-		"content-center": "content-center"
+		"content-center": "content-center",
+		"btn-yellow": "btn-yellow",
+		"btn-red": "btn-red",
+		"btn": "btn",
+		"input-group-btn": "input-group-btn"
 	};
 
 /***/ }),

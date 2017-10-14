@@ -4,7 +4,17 @@ import Card from '../../components/card'
 var view = function() {
 	return (
 		<div className="container">
-			<Card/>
+			<div className="row">
+				<div className="col-md-4">
+					<Card/>
+				</div>
+				<div className="col-md-4">
+					<Card/>
+				</div>
+				<div className="col-md-4">
+					<Card/>
+				</div>
+			</div>
 		</div>
 	);
 };
