@@ -52008,6 +52008,10 @@
 	
 	var _home2 = _interopRequireDefault(_home);
 	
+	var _productGroup = __webpack_require__(435);
+	
+	var _productGroup2 = _interopRequireDefault(_productGroup);
+	
 	var _style = __webpack_require__(431);
 	
 	var _style2 = _interopRequireDefault(_style);
@@ -52018,8 +52022,12 @@
 		return _react2.default.createElement(
 			'div',
 			{ className: 'app' },
-			_react2.default.createElement(_header2.default, null),
-			_react2.default.createElement(_home2.default, null)
+			_react2.default.createElement(
+				'div',
+				{ className: 'main-container' },
+				_react2.default.createElement(_header2.default, null),
+				_react2.default.createElement(_productGroup2.default, null)
+			)
 		);
 	};
 	exports.default = view;
@@ -53034,7 +53042,7 @@
 	var view = function view() {
 		return _react2.default.createElement(
 			'div',
-			{ className: 'main-container home' },
+			{ className: 'home' },
 			_react2.default.createElement(_banner2.default, null),
 			_react2.default.createElement(_filters2.default, null),
 			_react2.default.createElement(_PriceRange2.default, null),
@@ -53463,7 +53471,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".filters ul li {\n  display: inline-block; }\n  .filters ul li a {\n    display: block;\n    padding: 20px;\n    font-size: 18px; }\n", ""]);
+	exports.push([module.id, ".filters ul li {\n  display: inline-block; }\n  .filters ul li a {\n    display: block;\n    padding: 20px 20px 20px 0px;\n    font-size: 18px; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -54064,7 +54072,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.card {\n  width: 302px; }\n  .card .card-header .product-title {\n    margin-bottom: 2px;\n    text-align: center;\n    font-weight: 400;\n    margin-top: 0;\n    font-size: 18px;\n    color: #606060;\n    display: block; }\n  .card .card-body .product-image {\n    position: relative; }\n    .card .card-body .product-image .save-btn {\n      display: none;\n      position: absolute;\n      top: 15px;\n      right: 15px;\n      padding: 5px;\n      width: 76px;\n      font-size: 20px; }\n    .card .card-body .product-image .image {\n      display: block;\n      width: 100%;\n      height: 252px;\n      background-color: #e6e6e6; }\n    .card .card-body .product-image:hover .save-btn {\n      display: block; }\n  .card .card-body .product-text {\n    line-height: 17px;\n    text-align: justify;\n    font-size: 12px;\n    margin-top: 5px;\n    margin-bottom: 5px;\n    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; }\n  .card .card-footer {\n    display: flex;\n    justify-content: space-between; }\n    .card .card-footer .product-range {\n      color: #606060;\n      font-size: 16px;\n      letter-spacing: 1px; }\n      .card .card-footer .product-range .saves {\n        font-size: 14px; }\n        .card .card-footer .product-range .saves i {\n          color: #606060; }\n          .card .card-footer .product-range .saves i:hover {\n            color: #cb1d00; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.card {\n  width: 100%; }\n  .card .card-header .product-title {\n    margin-bottom: 2px;\n    text-align: center;\n    font-weight: 400;\n    margin-top: 0;\n    font-size: 18px;\n    color: #606060;\n    display: block; }\n  .card .card-body .product-image {\n    position: relative; }\n    .card .card-body .product-image .save-btn {\n      display: none;\n      position: absolute;\n      top: 15px;\n      right: 15px;\n      padding: 5px;\n      width: 76px;\n      font-size: 20px; }\n    .card .card-body .product-image .image {\n      display: block;\n      width: 100%;\n      height: 252px;\n      background-color: #e6e6e6; }\n    .card .card-body .product-image:hover .save-btn {\n      display: block; }\n  .card .card-body .product-text {\n    line-height: 17px;\n    text-align: justify;\n    font-size: 12px;\n    margin-top: 5px;\n    margin-bottom: 5px;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .card .card-footer {\n    display: flex;\n    justify-content: space-between; }\n    .card .card-footer .product-range {\n      color: #606060;\n      font-size: 16px;\n      letter-spacing: 1px; }\n      .card .card-footer .product-range .saves {\n        font-size: 14px; }\n        .card .card-footer .product-range .saves i {\n          color: #606060; }\n          .card .card-footer .product-range .saves i:hover {\n            color: #cb1d00; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -54514,7 +54522,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.footer {\n  padding: 50px;\n  margin-top: 100px;\n  background-color: #f7f7f7; }\n  .footer .title {\n    font-size: 18px;\n    margin-bottom: 14px;\n    font-weight: 700; }\n  .footer .links ul {\n    padding: 0px; }\n    .footer .links ul li {\n      list-style: none; }\n      .footer .links ul li a {\n        font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;\n        font-size: 14px;\n        color: #333;\n        line-height: 28px; }\n        .footer .links ul li a:hover {\n          color: #faab37; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.footer {\n  padding: 50px;\n  margin-top: 100px;\n  background-color: #f7f7f7; }\n  .footer .title {\n    font-size: 18px;\n    margin-bottom: 14px;\n    font-weight: 700; }\n  .footer .links ul li {\n    list-style: none; }\n    .footer .links ul li a {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      font-size: 14px;\n      color: #333;\n      line-height: 28px; }\n      .footer .links ul li a:hover {\n        color: #faab37; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -54563,7 +54571,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.app {\n  background: #ffffff;\n  font-family: Oswald, Arial, sans-serif; }\n  .app .container {\n    width: 1000px; }\n  .app p {\n    margin: 0;\n    padding: 0; }\n  .app a {\n    text-decoration: none;\n    cursor: pointer; }\n  .app .main-container {\n    margin-top: 123px; }\n  .app .content-center {\n    -ms-flex-pack: center;\n    justify-content: center;\n    -ms-flex-align: center;\n    align-items: center;\n    vertical-align: middle;\n    text-align: center;\n    display: -ms-flexbox;\n    display: flex; }\n  .app .btn-yellow {\n    color: #ffffff;\n    background-color: #faab37;\n    border-color: #faab37; }\n  .app .btn-red {\n    color: #ffffff;\n    background-color: #cb1d00;\n    border-color: #cb1d00; }\n  .app .btn {\n    border-radius: 0px;\n    font-size: 22px;\n    font-weight: 400;\n    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);\n    padding: 2px 8px; }\n  .app .input-group-btn .btn {\n    border-bottom-right-radius: 4px;\n    border-top-right-radius: 4px;\n    text-shadow: none;\n    padding: 6px 12px;\n    font-size: 14px; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.app {\n  background: #ffffff;\n  font-family: Oswald, Arial, sans-serif; }\n  .app .container {\n    width: 1000px; }\n  .app ul {\n    padding: 0px; }\n  .app p {\n    margin: 0;\n    padding: 0; }\n  .app a {\n    text-decoration: none;\n    cursor: pointer; }\n  .app .main-container {\n    margin-top: 123px; }\n  .app .content-center {\n    -ms-flex-pack: center;\n    justify-content: center;\n    -ms-flex-align: center;\n    align-items: center;\n    vertical-align: middle;\n    text-align: center;\n    display: -ms-flexbox;\n    display: flex; }\n  .app .btn-yellow {\n    color: #ffffff;\n    background-color: #faab37;\n    border-color: #faab37; }\n  .app .btn-red {\n    color: #ffffff;\n    background-color: #cb1d00;\n    border-color: #cb1d00; }\n  .app .btn {\n    border-radius: 0px;\n    font-size: 22px;\n    font-weight: 400;\n    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);\n    padding: 2px 8px; }\n  .app .input-group-btn .btn {\n    border-bottom-right-radius: 4px;\n    border-top-right-radius: 4px;\n    text-shadow: none;\n    padding: 6px 12px;\n    font-size: 14px; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -54756,6 +54764,327 @@
 	
 	// React Engine needs exports, don't export default
 	module.exports = Index;
+
+/***/ }),
+/* 435 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(436);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 436 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(437);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _axios = __webpack_require__(335);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Component
+	 * @type Component
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+		}
+	
+		_createClass(Main, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				console.log(_axios2.default);
+			}
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	//Set display name to be used in React Dev Tools
+	
+	
+	exports.default = Main;
+	Main.displayName = 'Sample-Component';
+
+/***/ }),
+/* 437 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(438);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	var _productGrid = __webpack_require__(416);
+	
+	var _productGrid2 = _interopRequireDefault(_productGrid);
+	
+	var _footer = __webpack_require__(426);
+	
+	var _footer2 = _interopRequireDefault(_footer);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		return _react2.default.createElement(
+			'div',
+			{ className: 'product-group' },
+			_react2.default.createElement(
+				'div',
+				{ className: 'container' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-3 column' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'categories' },
+							_react2.default.createElement(
+								'ul',
+								null,
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(
+										'a',
+										{ className: 'selected' },
+										'Gifts For Men'
+									),
+									_react2.default.createElement(
+										'div',
+										{ className: 'sub-categories' },
+										_react2.default.createElement(
+											'a',
+											null,
+											'Man Cave'
+										),
+										_react2.default.createElement(
+											'a',
+											null,
+											'Alcholic Gear'
+										)
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(
+										'a',
+										null,
+										'Gifts For Women'
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(
+										'a',
+										null,
+										'Gifts For Dad'
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(
+										'a',
+										null,
+										'Gifts For Mom'
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(
+										'a',
+										null,
+										'Gadgets'
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(
+										'a',
+										null,
+										'Food + Drinks'
+									)
+								),
+								_react2.default.createElement(
+									'li',
+									null,
+									_react2.default.createElement(
+										'a',
+										null,
+										'Gifts For Pets'
+									)
+								)
+							)
+						)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-9 column' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'category-wise' },
+							_react2.default.createElement(
+								'div',
+								{ className: 'category-title' },
+								_react2.default.createElement(
+									'p',
+									null,
+									'Gifts For Men'
+								)
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'category-description' },
+								_react2.default.createElement(
+									'p',
+									null,
+									'Buying gifts for men is difficult \u2013 especially for the man who has everything. Our unique list of hand picked men\u2019s gifts has everything you need to find a suitable gift for any type of gentleman. Whether you\u2019re trying to find a gift for the guy who has it all or just your regular Joe, we\u2019ve got hundreds of gift ideas for guys to make sure you never again buy a boring gift for your brother, husband, boyfriend, or just a friend.'
+								)
+							),
+							_react2.default.createElement('div', { className: 'price-range' }),
+							_react2.default.createElement(
+								'div',
+								{ className: 'products' },
+								_react2.default.createElement(_productGrid2.default, null)
+							)
+						)
+					)
+				)
+			),
+			_react2.default.createElement(_footer2.default, null)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 438 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(439);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(394)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 439 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(393)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.product-group {\n  padding-top: 70px; }\n  .product-group .container .column .categories {\n    border-right: 1px solid #e9e9e9;\n    padding-left: 60px; }\n    .product-group .container .column .categories ul li {\n      list-style: none; }\n      .product-group .container .column .categories ul li a {\n        display: block;\n        padding: 10px 20px 10px 20px;\n        font-size: 16px;\n        font-weight: bold;\n        color: #333; }\n        .product-group .container .column .categories ul li a:hover {\n          color: #faab37; }\n        .product-group .container .column .categories ul li a.selected {\n          color: #faab37; }\n      .product-group .container .column .categories ul li .sub-categories a {\n        padding: 10px 10px 10px 30px;\n        font-weight: normal;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .product-group .container .column .category-wise .category-title {\n    font-size: 25px;\n    font-weight: bold;\n    margin-bottom: 10px; }\n  .product-group .container .column .category-wise .category-description {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-size: 12px;\n    line-height: 30px;\n    padding-bottom: 20px;\n    margin-bottom: 20px;\n    border-bottom: 1px solid #e9e9e9; }\n  .product-group .container .column .category-wise .products .container {\n    width: 100%; }\n    .product-group .container .column .category-wise .products .container .card .card-header .product-title {\n      font-size: 15px; }\n    .product-group .container .column .category-wise .products .container .card .card-body .product-image .image {\n      height: 200px; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"product-group": "product-group",
+		"container": "container",
+		"column": "column",
+		"categories": "categories",
+		"selected": "selected",
+		"sub-categories": "sub-categories",
+		"category-wise": "category-wise",
+		"category-title": "category-title",
+		"category-description": "category-description",
+		"products": "products",
+		"card": "card",
+		"card-header": "card-header",
+		"product-title": "product-title",
+		"card-body": "card-body",
+		"product-image": "product-image",
+		"image": "image"
+	};
 
 /***/ })
 /******/ ]);

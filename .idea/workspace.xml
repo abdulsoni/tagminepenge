@@ -2,30 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3da159ba-5407-4bd2-a67a-736ef8bcc996" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/styles/app.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/styles/app.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/styles/app.scss" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/react/components/productGroup/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/react/components/productGroup/main.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/react/components/productGroup/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/react/components/productGroup/style.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/react/components/productGroup/style.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/react/components/productGroup/test.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/react/components/productGroup/view.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/bundle.js" afterPath="$PROJECT_DIR$/public/js/bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/bundle.js.map" afterPath="$PROJECT_DIR$/public/js/bundle.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/styles/variables.scss" afterPath="$PROJECT_DIR$/public/styles/variables.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/layouts/default.jsx" afterPath="$PROJECT_DIR$/templates/layouts/default.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/app/style.css" afterPath="$PROJECT_DIR$/templates/react/components/app/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/app/style.css.map" afterPath="$PROJECT_DIR$/templates/react/components/app/style.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/app/style.scss" afterPath="$PROJECT_DIR$/templates/react/components/app/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/app/view.jsx" afterPath="$PROJECT_DIR$/templates/react/components/app/view.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/banner/style.css.map" afterPath="$PROJECT_DIR$/templates/react/components/banner/style.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/card/style.css" afterPath="$PROJECT_DIR$/templates/react/components/card/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/card/style.css.map" afterPath="$PROJECT_DIR$/templates/react/components/card/style.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/card/style.scss" afterPath="$PROJECT_DIR$/templates/react/components/card/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/card/view.jsx" afterPath="$PROJECT_DIR$/templates/react/components/card/view.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/filters/style.css" afterPath="$PROJECT_DIR$/templates/react/components/filters/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/filters/style.css.map" afterPath="$PROJECT_DIR$/templates/react/components/filters/style.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/filters/style.scss" afterPath="$PROJECT_DIR$/templates/react/components/filters/style.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/footer/style.css" afterPath="$PROJECT_DIR$/templates/react/components/footer/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/footer/style.css.map" afterPath="$PROJECT_DIR$/templates/react/components/footer/style.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/footer/style.scss" afterPath="$PROJECT_DIR$/templates/react/components/footer/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/footer/view.jsx" afterPath="$PROJECT_DIR$/templates/react/components/footer/view.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/header/style.css" afterPath="$PROJECT_DIR$/templates/react/components/header/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/header/style.css.map" afterPath="$PROJECT_DIR$/templates/react/components/header/style.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/header/style.scss" afterPath="$PROJECT_DIR$/templates/react/components/header/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/productGrid/view.jsx" afterPath="$PROJECT_DIR$/templates/react/components/productGrid/view.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/home/view.jsx" afterPath="$PROJECT_DIR$/templates/react/components/home/view.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -45,11 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="view.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/card/view.jsx">
+      <file leaf-file-name="view.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/react/components/productGroup/view.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="96" lean-forward="false" selection-start-line="21" selection-start-column="96" selection-end-line="21" selection-end-column="96" />
+            <state relative-caret-position="585">
+              <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -58,92 +60,10 @@
         </entry>
       </file>
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/card/style.scss">
+        <entry file="file://$PROJECT_DIR$/templates/react/components/productGroup/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/footer/view.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/footer/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/productGrid/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/productGrid/view.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="variables.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/styles/variables.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/app/test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/header/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/app/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="330">
+              <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -185,13 +105,19 @@
       <find>arivaa</find>
       <find>&lt;title&gt;</find>
       <find>class</find>
+      <find>main-c</find>
+      <find>$app-font</find>
+      <find>'Helvetica Neue',Helvetica,Arial,sans-serif</find>
     </findStrings>
     <replaceStrings>
       <replace>thisiswhyimbroke</replace>
+      <replace>$default-font</replace>
+      <replace>$helvetica-font</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/templates/react</dir>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/templates/react/components</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -200,9 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/containers/sample/view.jsx" />
-        <option value="$PROJECT_DIR$/templates/redux/actions/index.js" />
-        <option value="$PROJECT_DIR$/templates/redux/config/middleware/index.js" />
         <option value="$PROJECT_DIR$/templates/redux/config/api.js" />
         <option value="$PROJECT_DIR$/templates/redux/config/index.js" />
         <option value="$PROJECT_DIR$/templates/redux/reducers/index.js" />
@@ -224,14 +147,10 @@
         <option value="$PROJECT_DIR$/templates/react/containers/sample/styles.js" />
         <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/templates/react/components/header/style.css" />
-        <option value="$PROJECT_DIR$/templates/react/components/app/style.css" />
         <option value="$PROJECT_DIR$/templates/react/utils/css-util.js" />
         <option value="$PROJECT_DIR$/templates/react/components/header/view.jsx" />
-        <option value="$PROJECT_DIR$/templates/react/components/app/view.jsx" />
         <option value="$PROJECT_DIR$/templates/react/components/banner/view.jsx" />
-        <option value="$PROJECT_DIR$/templates/react/components/home/view.jsx" />
         <option value="$PROJECT_DIR$/templates/react/components/filters/view.jsx" />
-        <option value="$PROJECT_DIR$/templates/react/components/filters/style.scss" />
         <option value="$PROJECT_DIR$/templates/react/components/sample/view.jsx" />
         <option value="$PROJECT_DIR$/templates/react/components/sample/style.scss" />
         <option value="$PROJECT_DIR$/templates/react/components/priceRange/view.jsx" />
@@ -245,12 +164,19 @@
         <option value="$PROJECT_DIR$/templates/layouts/default.jsx" />
         <option value="$PROJECT_DIR$/templates/react/components/header/style.scss" />
         <option value="$PROJECT_DIR$/templates/react/components/card/view.jsx" />
-        <option value="$PROJECT_DIR$/templates/react/components/card/style.scss" />
-        <option value="$PROJECT_DIR$/templates/react/components/app/style.scss" />
         <option value="$PROJECT_DIR$/templates/react/components/footer/view.jsx" />
         <option value="$PROJECT_DIR$/templates/react/components/productGrid/view.jsx" />
-        <option value="$PROJECT_DIR$/public/styles/variables.scss" />
         <option value="$PROJECT_DIR$/templates/react/components/footer/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/app/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/filters/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/card/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/home/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/app/view.jsx" />
+        <option value="$PROJECT_DIR$/public/styles/variables.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/app/style.css" />
+        <option value="$PROJECT_DIR$/templates/react/components/card/style.css" />
+        <option value="$PROJECT_DIR$/templates/react/components/productGroup/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/productGroup/view.jsx" />
       </list>
     </option>
   </component>
@@ -335,46 +261,6 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="react" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="react" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="react" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="card" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="react" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="footer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="react" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="react" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="productGrid" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -511,18 +397,17 @@
       <workItem from="1507800111509" duration="169000" />
       <workItem from="1507800304626" duration="5121000" />
       <workItem from="1507876219054" duration="11074000" />
-      <workItem from="1507965857908" duration="7398000" />
+      <workItem from="1507965857908" duration="10841000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34956000" />
+    <option name="totallyTimeSpent" value="38399000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1888654" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1888654" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5109232" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.70616686" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -540,6 +425,25 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5109232" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889965" sideWeight="0.48907682" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.118500605" sideWeight="0.49753347" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38935912" sideWeight="0.49753347" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1888654" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.70616686" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -552,29 +456,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/styles/site.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/sample/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/sample/styles.js" />
     <entry file="file://$PROJECT_DIR$/templates/react/containers/sample/styles.js" />
     <entry file="file://$PROJECT_DIR$/templates/react/containers/preprocess.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -600,14 +481,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/react/components/header/styles.js" />
-    <entry file="file://$PROJECT_DIR$/templates/react/components/app/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/react/utils/css-util.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -659,6 +532,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -683,16 +557,6 @@
         <state relative-caret-position="90">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/home/view.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -776,14 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/home/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/react/components/sample/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -840,28 +696,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/filters/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/app/view.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/react/components/card/main.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -871,7 +711,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -881,7 +721,7 @@
         <state relative-caret-position="315">
           <caret line="21" column="96" lean-forward="false" selection-start-line="21" selection-start-column="96" selection-end-line="21" selection-end-column="96" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -894,10 +734,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/app/style.scss">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/footer/view.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/filters/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/home/view.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/app/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="19" lean-forward="true" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/productGrid/view.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/app/view.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/app/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/card/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="38" column="17" lean-forward="false" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/card/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/productGroup/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -910,43 +832,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/productGrid/view.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/footer/view.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/card/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/styles/variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/react/components/footer/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="27" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="51" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/home/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/productGroup/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/productGroup/view.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="58" column="21" lean-forward="false" selection-start-line="58" selection-start-column="21" selection-end-line="58" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

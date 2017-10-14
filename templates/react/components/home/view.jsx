@@ -7,7 +7,7 @@ import ProductGrid from '../../components/productGrid';
 import Footer from '../../components/footer';
 var view = function() {
 	return (
-		<div className="main-container home">
+		<div className="home">
 			<Banner/>
 			<Filters/>
 			<PriceRange/>

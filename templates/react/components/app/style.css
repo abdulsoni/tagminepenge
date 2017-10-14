@@ -8,6 +8,8 @@
   font-family: Oswald, Arial, sans-serif; }
   .app .container {
     width: 1000px; }
+  .app ul {
+    padding: 0px; }
   .app p {
     margin: 0;
     padding: 0; }

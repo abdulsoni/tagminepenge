@@ -2,7 +2,7 @@
   display: inline-block; }
   .filters ul li a {
     display: block;
-    padding: 20px;
+    padding: 20px 20px 20px 0px;
     font-size: 18px; }
 
 /*# sourceMappingURL=style.css.map */
