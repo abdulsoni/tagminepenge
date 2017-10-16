@@ -1,0 +1,23 @@
+/*fonts*/
+/*colors*/
+/*text*/
+/*backgrounds*/
+/*border*/
+.product-page {
+  padding-top: 70px; }
+  .product-page .product {
+    margin-bottom: 100px; }
+    .product-page .product .column {
+      padding: 0px; }
+      .product-page .product .column .product-details .product-title {
+        font-size: 30px;
+        margin-bottom: 8px; }
+      .product-page .product .column .product-details .product-description {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        line-height: 24px;
+        margin-bottom: 8px; }
+      .product-page .product .column .product-details .product-price {
+        font-size: 30px;
+        margin-bottom: 12px; }
+
+/*# sourceMappingURL=style.css.map */

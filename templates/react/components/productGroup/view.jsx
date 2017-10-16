@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from "./style.scss";
 import ProductGrid from '../../components/productGrid';
-import Footer from '../../components/footer';
 var view = function() {
 	return (
 		<div className="product-group">
@@ -56,7 +55,6 @@ var view = function() {
 					</div>
 				</div>
 			</div>
-			<Footer/>
 		</div>
 	);
 };

@@ -1,0 +1,26 @@
+@import '../../../../public/styles/variables.scss';
+
+.product-page {
+  padding-top: 70px;
+  .product {
+	margin-bottom:100px;
+	.column {
+	  padding: 0px;
+	  .product-details {
+		.product-title {
+		  font-size: 30px;
+		  margin-bottom: 8px;
+		}
+		.product-description {
+		  font-family: $helvetica-font;
+		  line-height: 24px;
+		  margin-bottom: 8px;
+		}
+		.product-price {
+		  font-size: 30px;
+		  margin-bottom: 12px;
+		}
+	  }
+	}
+  }
+}

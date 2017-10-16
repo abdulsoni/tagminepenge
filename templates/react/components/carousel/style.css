@@ -1,0 +1,39 @@
+/*fonts*/
+/*colors*/
+/*text*/
+/*backgrounds*/
+/*border*/
+.carousel {
+  position: relative; }
+  .carousel .left {
+    background-image: none; }
+  .carousel .right {
+    background-image: none; }
+  .carousel .carousel-inner .item img {
+    margin: auto; }
+  .carousel .carousel-control {
+    opacity: 1;
+    color: #faab37;
+    top: -60px;
+    z-index: 1; }
+  .carousel .carousel-indicators {
+    position: inherit;
+    margin: auto;
+    left: initial;
+    z-index: 0;
+    top: 10px; }
+    .carousel .carousel-indicators li {
+      width: 50px;
+      height: 50px;
+      border-radius: 0px;
+      text-indent: inherit;
+      border: 2px solid #ffffff;
+      overflow: hidden;
+      vertical-align: top; }
+      .carousel .carousel-indicators li.active {
+        width: 50px;
+        height: 50px;
+        border: 2px solid #faab37;
+        margin: 1px; }
+
+/*# sourceMappingURL=style.css.map */

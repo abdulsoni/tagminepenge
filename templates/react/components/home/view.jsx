@@ -4,7 +4,6 @@ import Banner from '../../components/banner';
 import Filters from '../../components/filters';
 import PriceRange from '../../components/PriceRange';
 import ProductGrid from '../../components/productGrid';
-import Footer from '../../components/footer';
 var view = function() {
 	return (
 		<div className="home">
@@ -12,7 +11,6 @@ var view = function() {
 			<Filters/>
 			<PriceRange/>
 			<ProductGrid/>
-			<Footer/>
 		</div>
 	);
 };
