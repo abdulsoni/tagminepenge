@@ -15,7 +15,7 @@ var view = function () {
 		<div className="app">
 			<div className="main-container">
 				<Header/>
-				<AboutUs/>
+				<WishList/>
 				<Footer/>
 			</div>
 		</div>

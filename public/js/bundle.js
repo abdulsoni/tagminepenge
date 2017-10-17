@@ -52050,7 +52050,7 @@
 				'div',
 				{ className: 'main-container' },
 				_react2.default.createElement(_header2.default, null),
-				_react2.default.createElement(_aboutUs2.default, null),
+				_react2.default.createElement(_wishlist2.default, null),
 				_react2.default.createElement(_footer2.default, null)
 			)
 		);
@@ -55031,7 +55031,7 @@
 /* 443 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -55045,10 +55045,80 @@
 	
 	var _style2 = _interopRequireDefault(_style);
 	
+	var _productGrid = __webpack_require__(416);
+	
+	var _productGrid2 = _interopRequireDefault(_productGrid);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		return _react2.default.createElement("div", null);
+		return _react2.default.createElement(
+			'div',
+			{ className: 'wish-list' },
+			_react2.default.createElement(
+				'div',
+				{ className: 'heading container' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'title' },
+					_react2.default.createElement(
+						'p',
+						null,
+						'My Wish List'
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'share' },
+					_react2.default.createElement(
+						'span',
+						{ className: 'title' },
+						'Share: '
+					),
+					_react2.default.createElement(
+						'ul',
+						null,
+						_react2.default.createElement(
+							'li',
+							null,
+							_react2.default.createElement(
+								'a',
+								{ className: 'facebook' },
+								_react2.default.createElement('i', { className: 'fa fa-facebook-square', 'aria-hidden': 'true' })
+							)
+						),
+						_react2.default.createElement(
+							'li',
+							null,
+							_react2.default.createElement(
+								'a',
+								{ className: 'twitter' },
+								_react2.default.createElement('i', { className: 'fa fa-twitter-square', 'aria-hidden': 'true' })
+							)
+						),
+						_react2.default.createElement(
+							'li',
+							null,
+							_react2.default.createElement(
+								'a',
+								{ className: 'pinterest' },
+								_react2.default.createElement('i', { className: 'fa fa-pinterest-square', 'aria-hidden': 'true' })
+							)
+						),
+						_react2.default.createElement(
+							'li',
+							null,
+							_react2.default.createElement(
+								'a',
+								{ className: 'link' },
+								_react2.default.createElement('i', { className: 'fa fa-share-square-o', 'aria-hidden': 'true' })
+							)
+						)
+					)
+				)
+			),
+			_react2.default.createElement(_productGrid2.default, null)
+		);
 	};
 	exports.default = view;
 
@@ -55092,10 +55162,19 @@
 	
 	
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.wish-list {\n  padding-top: 70px; }\n  .wish-list .heading {\n    overflow: hidden;\n    margin-bottom: 80px; }\n    .wish-list .heading .title {\n      float: left;\n      font-size: 32px;\n      margin-right: 10px; }\n    .wish-list .heading .share {\n      float: right;\n      display: flex; }\n      .wish-list .heading .share ul li {\n        display: inline-block; }\n        .wish-list .heading .share ul li a {\n          display: block;\n          font-size: 40px;\n          margin: 5px 5px 0px 0px;\n          line-height: 0px; }\n          .wish-list .heading .share ul li a.facebook {\n            color: #3c5a98; }\n          .wish-list .heading .share ul li a.twitter {\n            color: #1ea1f2; }\n          .wish-list .heading .share ul li a.pinterest {\n            color: #bd081b; }\n          .wish-list .heading .share ul li a.link {\n            color: #555; }\n", ""]);
 	
 	// exports
-
+	exports.locals = {
+		"wish-list": "wish-list",
+		"heading": "heading",
+		"title": "title",
+		"share": "share",
+		"facebook": "facebook",
+		"twitter": "twitter",
+		"pinterest": "pinterest",
+		"link": "link"
+	};
 
 /***/ }),
 /* 446 */
