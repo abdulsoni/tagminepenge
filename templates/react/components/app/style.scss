@@ -17,6 +17,15 @@
 	text-decoration: none;
 	cursor: pointer;
   }
+  input{
+	font-family:$helvetica-font;
+  }
+  textarea{
+	max-height: 200px;
+	height:180px;
+	resize: none;
+	font-family:$helvetica-font;
+  }
   .main-container {
 	margin-top: 123px;
   }

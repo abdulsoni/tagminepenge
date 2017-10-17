@@ -3,6 +3,10 @@ import Header from '../../components/header';
 import Home from '../../components/home';
 import ProductGroup from '../../components/productGroup';
 import ProductPage from '../../components/productPage';
+import WishList from '../../components/wishlist';
+import Profile from '../../components/profile';
+import AboutUs from '../../components/aboutUs';
+import ContactUs from '../../components/contactUs';
 import Footer from '../../components/footer';
 import styles from "./style.scss";
 
@@ -11,7 +15,7 @@ var view = function () {
 		<div className="app">
 			<div className="main-container">
 				<Header/>
-				<ProductPage/>
+				<AboutUs/>
 				<Footer/>
 			</div>
 		</div>

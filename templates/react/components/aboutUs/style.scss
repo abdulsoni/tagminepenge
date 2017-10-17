@@ -1,0 +1,24 @@
+@import '../../../../public/styles/variables.scss';
+
+.about-us{
+  .details{
+	padding-top: 100px;
+	.row{
+	  .image-box{
+		.image{
+		  display:block;
+		  width:100%;
+		  height:300px;
+		  background: $thumbnail-bg;
+		}
+	  }
+	  .text{
+		font-family: $helvetica-font;
+		line-height: 26px;
+	  }
+	  &.one{
+		margin-bottom: 70px;
+	  }
+	}
+  }
+}
