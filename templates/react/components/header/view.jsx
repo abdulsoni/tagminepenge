@@ -55,10 +55,20 @@ var view = function () {
 						</a>
 					</li>
 					<li>
-						<a className="nav-link">
-							<span className="icon"><span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span></span>
+						<a className="nav-link dropdown-toggle" data-toggle="dropdown">
+							<span className="icon">
+								<span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+							</span>
 							<span className="text">Others</span>
 						</a>
+						<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							<a className="dropdown-item" href="#">Home & Office Gifts</a>
+							<a className="dropdown-item" href="#">Wearables</a>
+							<a className="dropdown-item" href="#">Gifts For Kids</a>
+							<div className="dropdown-divider"></div>
+							<a className="dropdown-item" href="#">Submit A Product</a>
+							<a className="dropdown-item" href="#">Contact Us</a>
+						</div>
 					</li>
 				</ul>
 			</div>

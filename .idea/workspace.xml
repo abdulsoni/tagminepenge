@@ -5,13 +5,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/bundle.js" afterPath="$PROJECT_DIR$/public/js/bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/bundle.js.map" afterPath="$PROJECT_DIR$/public/js/bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/app/view.jsx" afterPath="$PROJECT_DIR$/templates/react/components/app/view.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/header/style.css" afterPath="$PROJECT_DIR$/templates/react/components/header/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/header/style.css.map" afterPath="$PROJECT_DIR$/templates/react/components/header/style.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/header/style.scss" afterPath="$PROJECT_DIR$/templates/react/components/header/style.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/header/view.jsx" afterPath="$PROJECT_DIR$/templates/react/components/header/view.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/login/style.css" afterPath="$PROJECT_DIR$/templates/react/components/login/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/login/style.css.map" afterPath="$PROJECT_DIR$/templates/react/components/login/style.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/login/style.scss" afterPath="$PROJECT_DIR$/templates/react/components/login/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/login/view.jsx" afterPath="$PROJECT_DIR$/templates/react/components/login/view.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/signUp/view.jsx" afterPath="$PROJECT_DIR$/templates/react/components/signUp/view.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,77 +29,43 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="view.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/login/view.jsx">
+        <entry file="file://$PROJECT_DIR$/templates/react/components/header/view.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/signUp/view.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="99" lean-forward="false" selection-start-line="26" selection-start-column="99" selection-end-line="26" selection-end-column="99" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/signUp/style.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="585">
+              <caret line="61" column="64" lean-forward="true" selection-start-line="61" selection-start-column="64" selection-end-line="62" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/login/style.scss">
+        <entry file="file://$PROJECT_DIR$/templates/react/components/header/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            <state relative-caret-position="902">
+              <caret line="125" column="11" lean-forward="false" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/react/components/carousel/view.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-52">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/app/style.scss">
+        <entry file="file://$PROJECT_DIR$/templates/react/components/carousel/style.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="51" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/header/view.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="24" column="68" lean-forward="false" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/react/components/app/view.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -186,7 +149,6 @@
         <option value="$PROJECT_DIR$/templates/react/components/productPage/view.jsx" />
         <option value="$PROJECT_DIR$/templates/react/components/productPage/style.scss" />
         <option value="$PROJECT_DIR$/templates/react/components/carousel/style.scss" />
-        <option value="$PROJECT_DIR$/templates/react/components/header/style.scss" />
         <option value="$PROJECT_DIR$/templates/react/components/sample/view.jsx" />
         <option value="$PROJECT_DIR$/templates/react/components/contactUs/view.jsx" />
         <option value="$PROJECT_DIR$/templates/react/components/app/style.scss" />
@@ -216,9 +178,10 @@
         <option value="$PROJECT_DIR$/templates/react/components/app/view.jsx" />
         <option value="$PROJECT_DIR$/templates/react/components/signUp/style.scss" />
         <option value="$PROJECT_DIR$/templates/react/components/login/view.jsx" />
-        <option value="$PROJECT_DIR$/templates/react/components/header/view.jsx" />
         <option value="$PROJECT_DIR$/templates/react/components/signUp/view.jsx" />
         <option value="$PROJECT_DIR$/templates/react/components/login/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/header/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/header/style.scss" />
       </list>
     </option>
   </component>
@@ -304,7 +267,7 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="react" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="carousel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
@@ -313,22 +276,6 @@
               <item name="react" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="react" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="react" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="signUp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -472,12 +419,12 @@
       <workItem from="1508155360821" duration="5198000" />
       <workItem from="1508242485046" duration="3223000" />
       <workItem from="1508257322346" duration="4174000" />
-      <workItem from="1508345801924" duration="1781000" />
+      <workItem from="1508345801924" duration="3715000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54249000" />
+    <option name="totallyTimeSpent" value="56183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -532,21 +479,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/react/components/header/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/sample/view.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="8" lean-forward="false" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/react/components/aboutUs/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -586,14 +518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/carousel/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,26 +779,8 @@
         <state relative-caret-position="375">
           <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/login/view.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/header/view.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="24" column="68" lean-forward="false" selection-start-line="24" selection-start-column="68" selection-end-line="24" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -883,7 +789,7 @@
         <state relative-caret-position="390">
           <caret line="26" column="99" lean-forward="false" selection-start-line="26" selection-start-column="99" selection-end-line="26" selection-end-column="99" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -892,6 +798,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/login/view.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/carousel/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/carousel/view.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/header/view.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="61" column="64" lean-forward="true" selection-start-line="61" selection-start-column="64" selection-end-line="62" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/header/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="125" column="11" lean-forward="false" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
           <folding />
         </state>
       </provider>

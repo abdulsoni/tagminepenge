@@ -1,3 +1,5 @@
+@import '../../../../public/styles/variables.scss';
+
 .header {
   position:fixed;
   width:100%;
@@ -70,29 +72,57 @@
 		-ms-transition: border .5s;
 		transition: border .5s;
 		box-shadow: 3px 3.25px 7px rgba(0, 0, 0, .3);
+		position: relative;
 		a {
-		  display: block;
-		  width: auto;
-		  height: 76.91px;
-		  color: rgba(249, 249, 249, .9);
-		  text-decoration: none;
-		  -webkit-transition: color .5s, background .5s, height .5s;
-		  -moz-transition: color .5s, background .5s, height .5s;
-		  -o-transition: color .5s, background .5s, height .5s;
-		  -ms-transition: color .5s, background .5s, height .5s;
-		  transition: color .5s, background .5s, height .5s;
-		  cursor: pointer;
-		  .icon {
+		  &.nav-link{
 			display: block;
-			padding-top: .5em;
+			width: auto;
+			height: 76.91px;
+			color: rgba(249, 249, 249, .9);
+			text-decoration: none;
+			-webkit-transition: color .5s, background .5s, height .5s;
+			-moz-transition: color .5s, background .5s, height .5s;
+			-o-transition: color .5s, background .5s, height .5s;
+			-ms-transition: color .5s, background .5s, height .5s;
+			transition: color .5s, background .5s, height .5s;
+			cursor: pointer;
+			.icon {
+			  display: block;
+			  padding-top: .5em;
+			}
+			.text {
+			  display: block;
+			  font-size: 14.4px;
+			  font-weight: 600;
+			}
+			&:hover {
+			  height: 82.77px;
+			}
 		  }
-		  .text {
+		}
+		.dropdown-menu{
+		  top:98%;
+		  min-width: 145px;
+		  border-radius: 0px;
+		  background-color: #ededed;
+		  box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
+		  border:none;
+		  padding: 0px;
+		  a{
+			color:$brand-black;
+			padding: 8px 10px;
+			text-decoration: none;
 			display: block;
-			font-size: 14.4px;
-			font-weight: 600;
+			font-size: 17px;
+			font-weight:400;
+			&:hover{
+			  border:none !important;
+			  background: $thumbnail-bg;
+			}
 		  }
-		  &:hover {
-			height: 82.77px;
+		  .dropdown-divider{
+			background-color: #858e94;
+			height: 1px;
 		  }
 		}
 		&:nth-child(1) {
