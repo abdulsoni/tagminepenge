@@ -7,6 +7,8 @@ import WishList from '../../components/wishlist';
 import Profile from '../../components/profile';
 import AboutUs from '../../components/aboutUs';
 import ContactUs from '../../components/contactUs';
+import LoginModal from '../../components/login';
+import SignUpModal from '../../components/signUp';
 import Footer from '../../components/footer';
 import styles from "./style.scss";
 
@@ -17,6 +19,8 @@ var view = function () {
 				<Header/>
 				<WishList/>
 				<Footer/>
+				<LoginModal/>
+				<SignUpModal/>
 			</div>
 		</div>
 	);

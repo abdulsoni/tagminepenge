@@ -20,9 +20,9 @@ var view = function () {
 						<img src="/images/logo.png" alt="logo"/>
 					</div>
 					<div className="actions">
-						<a>Login</a>
+						<a data-toggle="modal" data-target="#login-modal">Login</a>
 						<span> | </span>
-						<a>Register</a>
+						<a data-toggle="modal" data-target="#sign-up-modal">Register</a>
 					</div>
 				</div>
 			</div>
