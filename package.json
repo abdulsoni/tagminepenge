@@ -47,5 +47,8 @@
     "start": "concurrently --kill-others \"npm run dev-watch\" \"npm run dev-server\"",
     "dev-watch": "webpack --watch",
     "dev-server": "nodemon preprocessor.js"
+  },
+  "engines": {
+    "node": ">= 7.0.0"
   }
 }
