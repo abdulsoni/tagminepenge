@@ -17,7 +17,8 @@ class Main extends Component {
 		this.state = {
 			"email" : "",
 			"password" : "",
-			"loading" : false
+			"loading" : false,
+			"message" : null
 		}
 	}
 	componentDidMount(){
@@ -41,9 +42,24 @@ class Main extends Component {
 			email,password
 		}).then(action=>{
 			console.log(action);
-			this.setState({
-				loading : false
-			});
+			if(action.error){
+				this.setState({
+					loading : false,
+					message : {
+						type : "danger",
+						text : "Your username or password was incorrect."
+					}
+				});		
+			} else {
+				this.setState({
+					loading : false,
+					message : {
+						type : "success",
+						text : "You are successfully logged in"
+					}
+				});
+				window.location.reload();
+			}
 		})
 		
 	}

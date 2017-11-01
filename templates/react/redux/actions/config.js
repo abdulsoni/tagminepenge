@@ -78,7 +78,15 @@ const config = [
       url : api.REGISTER,
       method : 'POST'
     }
-  }
+  },
+	{
+		name : ActionNames.CHECK_DUPLICATE_EMAIL,
+		type : "ajax",
+		config : {
+			url : api.CHECK_DUPLICATE_EMAIL,
+			method : 'GET'
+		}
+	}
 ];
 /**
  * Create a map so that it is easy to query

@@ -31,7 +31,7 @@ keystone.pre('routes', keystone.security.csrf.middleware.init);
 var routes = {
 	views: importRoutes('./views'),
 };
-
+var authApis = require('./api/auth');
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	console.log(clientSideRoutes)
@@ -45,5 +45,6 @@ exports = module.exports = function (app) {
 	}
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
-
+	app.get('/auth/checkDuplicate',authApis.checkDuplicate);
+	app.post('/auth/register',authApis.register);
 };

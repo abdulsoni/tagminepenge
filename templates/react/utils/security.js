@@ -9,10 +9,10 @@ import axios from 'axios';
  */
 export function saveAuthData(data) {
 	localStorage.setItem('auth', JSON.stringify(data));
-	axios.defaults.headers.get.authorization = 'Bearer ' + data.token;
-	axios.defaults.headers.post.authorization = 'Bearer ' + data.token;
-	axios.defaults.headers.put.authorization = 'Bearer ' + data.token;
-	axios.defaults.headers.delete.authorization = 'Bearer ' + data.token;
+	// axios.defaults.headers.get.authorization = 'Bearer ' + data.token;
+	// axios.defaults.headers.post.authorization = 'Bearer ' + data.token;
+	// axios.defaults.headers.put.authorization = 'Bearer ' + data.token;
+	// axios.defaults.headers.delete.authorization = 'Bearer ' + data.token;
 	return true;
 }
 /**
@@ -24,10 +24,10 @@ export function getAuthData() {
 	let data = localStorage.getItem('auth');
 	if (data) {
 		data = JSON.parse(data);
-		axios.defaults.headers.get.authorization = 'Bearer ' + data.token;
-		axios.defaults.headers.post.authorization = 'Bearer ' + data.token;
-		axios.defaults.headers.put.authorization = 'Bearer ' + data.token;
-		axios.defaults.headers.delete.authorization = 'Bearer ' + data.token;
+		// axios.defaults.headers.get.authorization = 'Bearer ' + data.token;
+		// axios.defaults.headers.post.authorization = 'Bearer ' + data.token;
+		// axios.defaults.headers.put.authorization = 'Bearer ' + data.token;
+		// axios.defaults.headers.delete.authorization = 'Bearer ' + data.token;
 		return data;
 	}
 	return null;
@@ -38,6 +38,6 @@ export function getAuthData() {
  * @returns {boolean}
  */
 export function removeAuthData() {
-	axios.defaults.headers.get.authorization = null;
+	//axios.defaults.headers.get.authorization = null;
 	localStorage.removeItem('auth');
 }

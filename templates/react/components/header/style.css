@@ -7,7 +7,36 @@
   position: fixed;
   width: 100%;
   top: 0px;
-  z-index: 2; }
+  z-index: 2;
+  /**
+  		Added By Inder - Edit this jass
+   */ }
+  .header .my-account-dropdown {
+    position: absolute;
+    top: 10px;
+    right: 20px; }
+    .header .my-account-dropdown .dropdown-menu {
+      background-color: #ededed;
+      min-width: 140px;
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
+      .header .my-account-dropdown .dropdown-menu a {
+        font-size: 15px !important;
+        font-weight: bold;
+        color: #000;
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+        height: 40px !important;
+        font-size: .8em;
+        text-align: left;
+        border-bottom: 0 solid #e0e0e0 !important;
+        width: auto; }
+    .header .my-account-dropdown a.dropdown-toggle {
+      color: #000;
+      font-size: 16px;
+      font-weight: bold; }
+    .header .my-account-dropdown li {
+      list-style: none; }
   .header .header-top {
     height: 57px;
     background: #f5f5f5; }

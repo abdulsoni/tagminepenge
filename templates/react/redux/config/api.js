@@ -7,5 +7,6 @@
 export const HOST = '';
 export const SERVER = HOST + '/keystone/api/';
 export const AUTHENTICATE = SERVER + "session/signin";
-export const REGISTER = SERVER + "user/create";
+export const REGISTER = HOST + "auth/register";
 export const FORGOT = SERVER + "session/signin";
+export const CHECK_DUPLICATE_EMAIL = HOST+"auth/checkDuplicate";

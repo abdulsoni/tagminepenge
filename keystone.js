@@ -51,6 +51,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	'signout redirect' : "/"
 });
 
 // Load your project's Models
@@ -72,6 +73,8 @@ keystone.set('routes', require('./routes'));
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
 	users: 'users',
+	posts: 'posts',
+	categories: 'PostCategory',
 });
 
 

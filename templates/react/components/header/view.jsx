@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./style.scss";
 
 var view = function () {
-	const {navLinks} = this.props;
+	const {navLinks, user} = this.props;
 	return (
 		<div className="header">
 			<div className="header-top">
@@ -12,7 +12,8 @@ var view = function () {
 							<div className="input-group add-on">
 								<input className="form-control" placeholder="Search" type="text"/>
 								<div className="input-group-btn">
-									<button className="btn btn-default" type="submit"><i className="glyphicon glyphicon-search"></i></button>
+									<button className="btn btn-default" type="submit"><i
+										className="glyphicon glyphicon-search"></i></button>
 								</div>
 							</div>
 						</form>
@@ -20,11 +21,36 @@ var view = function () {
 					<div className="logo">
 						<img src="/images/logo.png" alt="logo"/>
 					</div>
-					<div className="actions">
-						<a data-toggle="modal" data-target="#login-modal">Login</a>
-						<span> | </span>
-						<a data-toggle="modal" data-target="#sign-up-modal">Register</a>
-					</div>
+					{
+						!user ? (
+							<div className="actions">
+								<a data-toggle="modal" data-target="#login-modal">Login</a>
+								<span> | </span>
+								<a data-toggle="modal" data-target="#sign-up-modal">Register</a>
+							</div>
+						) : (
+							<div className="my-account-dropdown">
+								<li>
+									<a className="nav-link dropdown-toggle" data-toggle="dropdown">
+										<span className="icon">
+											<span className="glyphicon glyphicon-user" aria-hidden="true"></span>
+										</span>
+										<span className="text">My Account</span>
+									</a>
+									<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+										{
+											user.isAdmin?(
+												<a className="dropdown-item" href="/keystone">Admin</a>
+											):null
+										}
+										<a className="dropdown-item" href="/profile">My Settings</a>
+										<a className="dropdown-item" href="/wishlist">My Wishlist</a>
+										<a className="dropdown-item" href="/keystone/signout">Logout</a>
+									</div>
+								</li>
+							</div>
+						)
+					}
 				</div>
 			</div>
 			<div className="header-nav">
@@ -44,8 +70,9 @@ var view = function () {
 						</a>
 					</li>
 					<li>
-						<a  href="/" className="nav-link">
-							<span className="icon"><span className="glyphicon glyphicon-globe" aria-hidden="true"></span></span>
+						<a href="/" className="nav-link">
+							<span className="icon"><span className="glyphicon glyphicon-globe"
+														 aria-hidden="true"></span></span>
 							<span className="text">Experiences</span>
 						</a>
 					</li>
@@ -56,7 +83,7 @@ var view = function () {
 						</a>
 					</li>
 					<li>
-						<a  className="nav-link dropdown-toggle" data-toggle="dropdown">
+						<a className="nav-link dropdown-toggle" data-toggle="dropdown">
 							<span className="icon">
 								<span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
 							</span>

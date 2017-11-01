@@ -48707,6 +48707,13 @@
 	    url: _config.api.REGISTER,
 	    method: 'POST'
 	  }
+	}, {
+	  name: ActionNames.CHECK_DUPLICATE_EMAIL,
+	  type: "ajax",
+	  config: {
+	    url: _config.api.CHECK_DUPLICATE_EMAIL,
+	    method: 'GET'
+	  }
 	}];
 	/**
 	 * Create a map so that it is easy to query
@@ -48779,8 +48786,9 @@
 	var HOST = exports.HOST = '';
 	var SERVER = exports.SERVER = HOST + '/keystone/api/';
 	var AUTHENTICATE = exports.AUTHENTICATE = SERVER + "session/signin";
-	var REGISTER = exports.REGISTER = SERVER + "user/create";
+	var REGISTER = exports.REGISTER = HOST + "auth/register";
 	var FORGOT = exports.FORGOT = SERVER + "session/signin";
+	var CHECK_DUPLICATE_EMAIL = exports.CHECK_DUPLICATE_EMAIL = HOST + "auth/checkDuplicate";
 
 /***/ }),
 /* 336 */
@@ -50074,10 +50082,10 @@
 	 */
 	function saveAuthData(data) {
 		localStorage.setItem('auth', JSON.stringify(data));
-		_axios2.default.defaults.headers.get.authorization = 'Bearer ' + data.token;
-		_axios2.default.defaults.headers.post.authorization = 'Bearer ' + data.token;
-		_axios2.default.defaults.headers.put.authorization = 'Bearer ' + data.token;
-		_axios2.default.defaults.headers.delete.authorization = 'Bearer ' + data.token;
+		// axios.defaults.headers.get.authorization = 'Bearer ' + data.token;
+		// axios.defaults.headers.post.authorization = 'Bearer ' + data.token;
+		// axios.defaults.headers.put.authorization = 'Bearer ' + data.token;
+		// axios.defaults.headers.delete.authorization = 'Bearer ' + data.token;
 		return true;
 	}
 	/**
@@ -50092,10 +50100,10 @@
 		var data = localStorage.getItem('auth');
 		if (data) {
 			data = JSON.parse(data);
-			_axios2.default.defaults.headers.get.authorization = 'Bearer ' + data.token;
-			_axios2.default.defaults.headers.post.authorization = 'Bearer ' + data.token;
-			_axios2.default.defaults.headers.put.authorization = 'Bearer ' + data.token;
-			_axios2.default.defaults.headers.delete.authorization = 'Bearer ' + data.token;
+			// axios.defaults.headers.get.authorization = 'Bearer ' + data.token;
+			// axios.defaults.headers.post.authorization = 'Bearer ' + data.token;
+			// axios.defaults.headers.put.authorization = 'Bearer ' + data.token;
+			// axios.defaults.headers.delete.authorization = 'Bearer ' + data.token;
 			return data;
 		}
 		return null;
@@ -50106,7 +50114,7 @@
 	 * @returns {boolean}
 	 */
 	function removeAuthData() {
-		_axios2.default.defaults.headers.get.authorization = null;
+		//axios.defaults.headers.get.authorization = null;
 		localStorage.removeItem('auth');
 	}
 
@@ -52601,7 +52609,7 @@
 	
 	var _login2 = _interopRequireDefault(_login);
 	
-	var _index3 = __webpack_require__(411);
+	var _index3 = __webpack_require__(491);
 	
 	var _index4 = _interopRequireDefault(_index3);
 	
@@ -52618,7 +52626,8 @@
 	var view = function view() {
 		var _props = this.props,
 		    routeInfo = _props.routeInfo,
-		    navLinks = _props.navLinks;
+		    navLinks = _props.navLinks,
+		    user = _props.user;
 	
 		return _react2.default.createElement(
 			'div',
@@ -52626,7 +52635,7 @@
 			_react2.default.createElement(
 				'div',
 				{ className: 'main-container' },
-				_react2.default.createElement(_index2.default, { navLinks: navLinks }),
+				_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user }),
 				_react2.default.createElement(routeInfo.component, null),
 				_react2.default.createElement(_index6.default, null),
 				_react2.default.createElement(_login2.default, null),
@@ -52742,7 +52751,9 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		var navLinks = this.props.navLinks;
+		var _props = this.props,
+		    navLinks = _props.navLinks,
+		    user = _props.user;
 	
 		return _react2.default.createElement(
 			"div",
@@ -52769,7 +52780,8 @@
 									_react2.default.createElement(
 										"button",
 										{ className: "btn btn-default", type: "submit" },
-										_react2.default.createElement("i", { className: "glyphicon glyphicon-search" })
+										_react2.default.createElement("i", {
+											className: "glyphicon glyphicon-search" })
 									)
 								)
 							)
@@ -52780,7 +52792,7 @@
 						{ className: "logo" },
 						_react2.default.createElement("img", { src: "/images/logo.png", alt: "logo" })
 					),
-					_react2.default.createElement(
+					!user ? _react2.default.createElement(
 						"div",
 						{ className: "actions" },
 						_react2.default.createElement(
@@ -52797,6 +52809,51 @@
 							"a",
 							{ "data-toggle": "modal", "data-target": "#sign-up-modal" },
 							"Register"
+						)
+					) : _react2.default.createElement(
+						"div",
+						{ className: "my-account-dropdown" },
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(
+								"a",
+								{ className: "nav-link dropdown-toggle", "data-toggle": "dropdown" },
+								_react2.default.createElement(
+									"span",
+									{ className: "icon" },
+									_react2.default.createElement("span", { className: "glyphicon glyphicon-user", "aria-hidden": "true" })
+								),
+								_react2.default.createElement(
+									"span",
+									{ className: "text" },
+									"My Account"
+								)
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "dropdown-menu", "aria-labelledby": "dropdownMenuLink" },
+								user.isAdmin ? _react2.default.createElement(
+									"a",
+									{ className: "dropdown-item", href: "/keystone" },
+									"Admin"
+								) : null,
+								_react2.default.createElement(
+									"a",
+									{ className: "dropdown-item", href: "/profile" },
+									"My Settings"
+								),
+								_react2.default.createElement(
+									"a",
+									{ className: "dropdown-item", href: "/wishlist" },
+									"My Wishlist"
+								),
+								_react2.default.createElement(
+									"a",
+									{ className: "dropdown-item", href: "/keystone/signout" },
+									"Logout"
+								)
+							)
 						)
 					)
 				)
@@ -52854,7 +52911,8 @@
 							_react2.default.createElement(
 								"span",
 								{ className: "icon" },
-								_react2.default.createElement("span", { className: "glyphicon glyphicon-globe", "aria-hidden": "true" })
+								_react2.default.createElement("span", { className: "glyphicon glyphicon-globe",
+									"aria-hidden": "true" })
 							),
 							_react2.default.createElement(
 								"span",
@@ -52975,11 +53033,14 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.header {\n  position: fixed;\n  width: 100%;\n  top: 0px;\n  z-index: 2; }\n  .header .header-top {\n    height: 57px;\n    background: #f5f5f5; }\n    .header .header-top .content {\n      position: relative; }\n      .header .header-top .content .search {\n        position: absolute;\n        left: 0;\n        top: 2px; }\n        .header .header-top .content .search input {\n          height: 33px; }\n      .header .header-top .content .logo {\n        text-align: center; }\n        .header .header-top .content .logo img {\n          width: 180px; }\n      .header .header-top .content .actions {\n        position: absolute;\n        right: 10px;\n        top: 15px; }\n  .header .header-nav .nav-accent {\n    display: block;\n    width: 50%;\n    height: 66px;\n    position: absolute;\n    top: 57px;\n    z-index: -10;\n    -webkit-transition: height .5s;\n    -moz-transition: height .5s;\n    -o-transition: height .5s;\n    -ms-transition: height .5s;\n    transition: height .5s;\n    z-index: 1; }\n  .header .header-nav .nav-accent-left {\n    background-color: #e3ad7f; }\n  .header .header-nav .nav-accent-right {\n    background-color: #858e95;\n    right: 0; }\n  .header .header-nav ul {\n    text-align: center;\n    padding: 0;\n    list-style: none;\n    font-size: 1.5em;\n    font-weight: 300;\n    position: relative;\n    z-index: 2;\n    margin-top: -6px; }\n    .header .header-nav ul li {\n      display: inline-block;\n      width: 10%;\n      text-align: center;\n      -webkit-transition: border .5s;\n      -moz-transition: border .5s;\n      -o-transition: border .5s;\n      -ms-transition: border .5s;\n      transition: border .5s;\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n      position: relative; }\n      .header .header-nav ul li a.nav-link {\n        display: block;\n        width: auto;\n        height: 76.91px;\n        color: rgba(249, 249, 249, 0.9);\n        text-decoration: none;\n        -webkit-transition: color .5s, background .5s, height .5s;\n        -moz-transition: color .5s, background .5s, height .5s;\n        -o-transition: color .5s, background .5s, height .5s;\n        -ms-transition: color .5s, background .5s, height .5s;\n        transition: color .5s, background .5s, height .5s;\n        cursor: pointer; }\n        .header .header-nav ul li a.nav-link .icon {\n          display: block;\n          padding-top: .5em; }\n        .header .header-nav ul li a.nav-link .text {\n          display: block;\n          font-size: 14.4px;\n          font-weight: 600; }\n        .header .header-nav ul li a.nav-link:hover {\n          height: 82.77px; }\n      .header .header-nav ul li .dropdown-menu {\n        top: 98%;\n        min-width: 145px;\n        border-radius: 0px;\n        background-color: #ededed;\n        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n        border: none;\n        padding: 0px; }\n        .header .header-nav ul li .dropdown-menu a {\n          color: #333;\n          padding: 8px 10px;\n          text-decoration: none;\n          display: block;\n          font-size: 17px;\n          font-weight: 400; }\n          .header .header-nav ul li .dropdown-menu a:hover {\n            border: none !important;\n            background: #e6e6e6; }\n        .header .header-nav ul li .dropdown-menu .dropdown-divider {\n          background-color: #858e94;\n          height: 1px; }\n      .header .header-nav ul li:nth-child(1) {\n        background: #ededed;\n        background: -moz-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fafafa), color-stop(100%, #ededed));\n        background: -webkit-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -o-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -ms-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: linear-gradient(to bottom, #fafafa 0, #ededed 100%);\n        box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n        .header .header-nav ul li:nth-child(1) a {\n          color: #333; }\n          .header .header-nav ul li:nth-child(1) a:hover {\n            border-bottom: 4px solid #c7c7c7; }\n      .header .header-nav ul li:nth-child(2) {\n        background: #d06503;\n        background: -moz-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e97103), color-stop(100%, #d06503));\n        background: -webkit-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -o-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -ms-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: linear-gradient(to bottom, #e97103 0, #d06503 100%); }\n        .header .header-nav ul li:nth-child(2) a:hover {\n          border-bottom: 4px solid #ae4e01; }\n      .header .header-nav ul li:nth-child(3) {\n        background: #e9931a;\n        background: -moz-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eb9e31), color-stop(100%, #e9931a));\n        background: -webkit-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -o-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -ms-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: linear-gradient(to bottom, #eb9e31 0, #e9931a 100%);\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n        .header .header-nav ul li:nth-child(3) a:hover {\n          border-bottom: 4px solid #bf7514; }\n      .header .header-nav ul li:nth-child(4) {\n        background: #1691be;\n        background: -moz-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #19a2d5), color-stop(100%, #1691be));\n        background: -webkit-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -o-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -ms-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: linear-gradient(to bottom, #19a2d5 0, #1691be 100%); }\n        .header .header-nav ul li:nth-child(4) a:hover {\n          border-bottom: 4px solid #0a4b75; }\n      .header .header-nav ul li:nth-child(5) {\n        background: #1b3647;\n        background: -moz-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #224459), color-stop(100%, #1b3647));\n        background: -webkit-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -o-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -ms-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: linear-gradient(to bottom, #224459 0, #1b3647 100%); }\n        .header .header-nav ul li:nth-child(5) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li:nth-child(6) {\n        background: #152836;\n        background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n        background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: linear-gradient(to bottom, #1c3648 0, #152836 100%);\n        -webkit-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n        -moz-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n        box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n        .header .header-nav ul li:nth-child(6) a:hover {\n          border-bottom: 4px solid #000; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.header {\n  position: fixed;\n  width: 100%;\n  top: 0px;\n  z-index: 2;\n  /**\n  \t\tAdded By Inder - Edit this jass\n   */ }\n  .header .my-account-dropdown {\n    position: absolute;\n    top: 10px;\n    right: 20px; }\n    .header .my-account-dropdown .dropdown-menu {\n      background-color: #ededed;\n      min-width: 140px;\n      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }\n      .header .my-account-dropdown .dropdown-menu a {\n        font-size: 15px !important;\n        font-weight: bold;\n        color: #000;\n        padding: 10px;\n        text-decoration: none;\n        display: block;\n        height: 40px !important;\n        font-size: .8em;\n        text-align: left;\n        border-bottom: 0 solid #e0e0e0 !important;\n        width: auto; }\n    .header .my-account-dropdown a.dropdown-toggle {\n      color: #000;\n      font-size: 16px;\n      font-weight: bold; }\n    .header .my-account-dropdown li {\n      list-style: none; }\n  .header .header-top {\n    height: 57px;\n    background: #f5f5f5; }\n    .header .header-top .content {\n      position: relative; }\n      .header .header-top .content .search {\n        position: absolute;\n        left: 0;\n        top: 2px; }\n        .header .header-top .content .search input {\n          height: 33px; }\n      .header .header-top .content .logo {\n        text-align: center; }\n        .header .header-top .content .logo img {\n          width: 180px; }\n      .header .header-top .content .actions {\n        position: absolute;\n        right: 10px;\n        top: 15px; }\n  .header .header-nav .nav-accent {\n    display: block;\n    width: 50%;\n    height: 66px;\n    position: absolute;\n    top: 57px;\n    z-index: -10;\n    -webkit-transition: height .5s;\n    -moz-transition: height .5s;\n    -o-transition: height .5s;\n    -ms-transition: height .5s;\n    transition: height .5s;\n    z-index: 1; }\n  .header .header-nav .nav-accent-left {\n    background-color: #e3ad7f; }\n  .header .header-nav .nav-accent-right {\n    background-color: #858e95;\n    right: 0; }\n  .header .header-nav ul {\n    text-align: center;\n    padding: 0;\n    list-style: none;\n    font-size: 1.5em;\n    font-weight: 300;\n    position: relative;\n    z-index: 2;\n    margin-top: -6px; }\n    .header .header-nav ul li {\n      display: inline-block;\n      width: 10%;\n      text-align: center;\n      -webkit-transition: border .5s;\n      -moz-transition: border .5s;\n      -o-transition: border .5s;\n      -ms-transition: border .5s;\n      transition: border .5s;\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n      position: relative; }\n      .header .header-nav ul li a.nav-link {\n        display: block;\n        width: auto;\n        height: 76.91px;\n        color: rgba(249, 249, 249, 0.9);\n        text-decoration: none;\n        -webkit-transition: color .5s, background .5s, height .5s;\n        -moz-transition: color .5s, background .5s, height .5s;\n        -o-transition: color .5s, background .5s, height .5s;\n        -ms-transition: color .5s, background .5s, height .5s;\n        transition: color .5s, background .5s, height .5s;\n        cursor: pointer; }\n        .header .header-nav ul li a.nav-link .icon {\n          display: block;\n          padding-top: .5em; }\n        .header .header-nav ul li a.nav-link .text {\n          display: block;\n          font-size: 14.4px;\n          font-weight: 600; }\n        .header .header-nav ul li a.nav-link:hover {\n          height: 82.77px; }\n      .header .header-nav ul li .dropdown-menu {\n        top: 98%;\n        min-width: 145px;\n        border-radius: 0px;\n        background-color: #ededed;\n        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n        border: none;\n        padding: 0px; }\n        .header .header-nav ul li .dropdown-menu a {\n          color: #333;\n          padding: 8px 10px;\n          text-decoration: none;\n          display: block;\n          font-size: 17px;\n          font-weight: 400; }\n          .header .header-nav ul li .dropdown-menu a:hover {\n            border: none !important;\n            background: #e6e6e6; }\n        .header .header-nav ul li .dropdown-menu .dropdown-divider {\n          background-color: #858e94;\n          height: 1px; }\n      .header .header-nav ul li:nth-child(1) {\n        background: #ededed;\n        background: -moz-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fafafa), color-stop(100%, #ededed));\n        background: -webkit-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -o-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: -ms-linear-gradient(top, #fafafa 0, #ededed 100%);\n        background: linear-gradient(to bottom, #fafafa 0, #ededed 100%);\n        box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n        .header .header-nav ul li:nth-child(1) a {\n          color: #333; }\n          .header .header-nav ul li:nth-child(1) a:hover {\n            border-bottom: 4px solid #c7c7c7; }\n      .header .header-nav ul li:nth-child(2) {\n        background: #d06503;\n        background: -moz-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e97103), color-stop(100%, #d06503));\n        background: -webkit-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -o-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -ms-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: linear-gradient(to bottom, #e97103 0, #d06503 100%); }\n        .header .header-nav ul li:nth-child(2) a:hover {\n          border-bottom: 4px solid #ae4e01; }\n      .header .header-nav ul li:nth-child(3) {\n        background: #e9931a;\n        background: -moz-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eb9e31), color-stop(100%, #e9931a));\n        background: -webkit-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -o-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: -ms-linear-gradient(top, #eb9e31 0, #e9931a 100%);\n        background: linear-gradient(to bottom, #eb9e31 0, #e9931a 100%);\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n        .header .header-nav ul li:nth-child(3) a:hover {\n          border-bottom: 4px solid #bf7514; }\n      .header .header-nav ul li:nth-child(4) {\n        background: #1691be;\n        background: -moz-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #19a2d5), color-stop(100%, #1691be));\n        background: -webkit-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -o-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: -ms-linear-gradient(top, #19a2d5 0, #1691be 100%);\n        background: linear-gradient(to bottom, #19a2d5 0, #1691be 100%); }\n        .header .header-nav ul li:nth-child(4) a:hover {\n          border-bottom: 4px solid #0a4b75; }\n      .header .header-nav ul li:nth-child(5) {\n        background: #1b3647;\n        background: -moz-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #224459), color-stop(100%, #1b3647));\n        background: -webkit-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -o-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: -ms-linear-gradient(top, #224459 0, #1b3647 100%);\n        background: linear-gradient(to bottom, #224459 0, #1b3647 100%); }\n        .header .header-nav ul li:nth-child(5) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li:nth-child(6) {\n        background: #152836;\n        background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n        background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: linear-gradient(to bottom, #1c3648 0, #152836 100%);\n        -webkit-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n        -moz-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n        box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n        .header .header-nav ul li:nth-child(6) a:hover {\n          border-bottom: 4px solid #000; }\n", ""]);
 	
 	// exports
 	exports.locals = {
 		"header": "header",
+		"my-account-dropdown": "my-account-dropdown",
+		"dropdown-menu": "dropdown-menu",
+		"dropdown-toggle": "dropdown-toggle",
 		"header-top": "header-top",
 		"content": "content",
 		"search": "search",
@@ -52992,7 +53053,6 @@
 		"nav-link": "nav-link",
 		"icon": "icon",
 		"text": "text",
-		"dropdown-menu": "dropdown-menu",
 		"dropdown-divider": "dropdown-divider"
 	};
 
@@ -53619,7 +53679,8 @@
 			_this.state = {
 				"email": "",
 				"password": "",
-				"loading": false
+				"loading": false,
+				"message": null
 			};
 			return _this;
 		}
@@ -53654,9 +53715,24 @@
 					email: email, password: password
 				}).then(function (action) {
 					console.log(action);
-					_this2.setState({
-						loading: false
-					});
+					if (action.error) {
+						_this2.setState({
+							loading: false,
+							message: {
+								type: "danger",
+								text: "Your username or password was incorrect."
+							}
+						});
+					} else {
+						_this2.setState({
+							loading: false,
+							message: {
+								type: "success",
+								text: "You are successfully logged in"
+							}
+						});
+						window.location.reload();
+					}
 				});
 			}
 			/**
@@ -53727,7 +53803,11 @@
 	
 	var view = function view() {
 		var handleChange = this.handleChange,
-		    submit = this.submit;
+		    submit = this.submit,
+		    state = this.state;
+		var _state = this.state,
+		    loading = _state.loading,
+		    message = _state.message;
 	
 		return _react2.default.createElement(
 			"div",
@@ -53758,6 +53838,11 @@
 						_react2.default.createElement(
 							"form",
 							{ onSubmit: submit.bind(this) },
+							message ? _react2.default.createElement(
+								"div",
+								{ className: "alert alert-" + message.type },
+								message.text
+							) : null,
 							_react2.default.createElement(
 								"div",
 								{ className: "form-group" },
@@ -53766,7 +53851,7 @@
 									{ htmlFor: "exampleInputEmail1" },
 									"Email address"
 								),
-								_react2.default.createElement("input", { onChange: handleChange.bind(this), name: "email", value: this.state.email, type: "email", className: "form-control", id: "exampleInputEmail1",
+								_react2.default.createElement("input", { readOnly: loading, onChange: handleChange.bind(this), name: "email", value: this.state.email, type: "email", className: "form-control", id: "exampleInputEmail1",
 									"aria-describedby": "emailHelp", placeholder: "Enter email", required: true })
 							),
 							_react2.default.createElement(
@@ -53777,7 +53862,7 @@
 									{ htmlFor: "exampleInputPassword1" },
 									"Password"
 								),
-								_react2.default.createElement("input", { onChange: handleChange.bind(this), name: "password", value: this.state.password, type: "password", className: "form-control", id: "exampleInputPassword1",
+								_react2.default.createElement("input", { readOnly: loading, onChange: handleChange.bind(this), name: "password", value: this.state.password, type: "password", className: "form-control", id: "exampleInputPassword1",
 									placeholder: "Password", required: true })
 							),
 							_react2.default.createElement(
@@ -53799,7 +53884,7 @@
 								),
 								_react2.default.createElement(
 									"button",
-									{ type: "submit", className: "btn btn-yellow submit-btn" },
+									{ disabled: loading, type: "submit", className: "btn btn-yellow submit-btn" },
 									"Submit"
 								)
 							)
@@ -53885,245 +53970,11 @@
 	var _reactRedux = __webpack_require__(295);
 
 /***/ }),
-/* 411 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _main = __webpack_require__(412);
-	
-	var _main2 = _interopRequireDefault(_main);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _main2.default;
-
-/***/ }),
-/* 412 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _view = __webpack_require__(413);
-	
-	var _view2 = _interopRequireDefault(_view);
-	
-	var _axios = __webpack_require__(354);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	/**
-	 * @name Sample Component
-	 * @type Component
-	 * @author Inderdeep Singh
-	 */
-	var Main = function (_Component) {
-		_inherits(Main, _Component);
-	
-		/**
-	  * Constructor
-	  * @param props
-	  */
-		function Main(props) {
-			_classCallCheck(this, Main);
-	
-			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
-		}
-	
-		_createClass(Main, [{
-			key: 'componentDidMount',
-			value: function componentDidMount() {}
-			/**
-	   * Render the view
-	   * @returns {*}
-	   */
-	
-		}, {
-			key: 'render',
-			value: function render() {
-				return _view2.default.bind(this)();
-			}
-		}]);
-	
-		return Main;
-	}(_react.Component);
-	//Set display name to be used in React Dev Tools
-	
-	
-	exports.default = Main;
-	Main.displayName = 'Sample-Component';
-
-/***/ }),
-/* 413 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _style = __webpack_require__(414);
-	
-	var _style2 = _interopRequireDefault(_style);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var view = function view() {
-		return _react2.default.createElement(
-			"div",
-			{ id: "sign-up-modal", className: "modal fade join", role: "dialog" },
-			_react2.default.createElement(
-				"div",
-				{ className: "modal-dialog" },
-				_react2.default.createElement(
-					"div",
-					{ className: "modal-content" },
-					_react2.default.createElement(
-						"div",
-						{ className: "modal-header" },
-						_react2.default.createElement(
-							"button",
-							{ type: "button", className: "close", "data-dismiss": "modal" },
-							"\xD7"
-						),
-						_react2.default.createElement(
-							"h2",
-							{ className: "modal-title" },
-							"Create Account"
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "modal-body" },
-						_react2.default.createElement(
-							"form",
-							null,
-							_react2.default.createElement(
-								"div",
-								{ className: "form-group" },
-								_react2.default.createElement(
-									"label",
-									{ htmlFor: "exampleInputEmail1" },
-									"Email address"
-								),
-								_react2.default.createElement("input", { type: "email", className: "form-control", id: "exampleInputEmail1",
-									"aria-describedby": "emailHelp", placeholder: "Enter email", required: true })
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "form-group" },
-								_react2.default.createElement(
-									"label",
-									{ htmlFor: "exampleInputPassword1" },
-									"Password"
-								),
-								_react2.default.createElement("input", { type: "password", className: "form-control", id: "exampleInputPassword1",
-									placeholder: "Password", required: true })
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "actions" },
-								_react2.default.createElement(
-									"div",
-									{ className: "secondary-action" },
-									_react2.default.createElement(
-										"span",
-										null,
-										"By signing up you agree to our ",
-										_react2.default.createElement(
-											"a",
-											{ className: "inline-block" },
-											"Terms and Policies"
-										)
-									)
-								),
-								_react2.default.createElement(
-									"button",
-									{ type: "submit", className: "btn btn-yellow submit-btn" },
-									"Submit"
-								)
-							)
-						)
-					)
-				)
-			)
-		);
-	};
-	exports.default = view;
-
-/***/ }),
-/* 414 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(415);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// Prepare cssTransformation
-	var transform;
-	
-	var options = {"hmr":true}
-	options.transform = transform
-	// add the styles to the DOM
-	var update = __webpack_require__(403)(content, options);
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
-				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 415 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(402)(undefined);
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "", ""]);
-	
-	// exports
-
-
-/***/ }),
+/* 411 */,
+/* 412 */,
+/* 413 */,
+/* 414 */,
+/* 415 */,
 /* 416 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -57700,6 +57551,414 @@
 	
 	// React Engine needs exports, don't export default
 	module.exports = Index;
+
+/***/ }),
+/* 491 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(492);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 492 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(493);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _preprocess = __webpack_require__(410);
+	
+	var _preprocess2 = _interopRequireDefault(_preprocess);
+	
+	var _actions = __webpack_require__(332);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Login Form
+	 * @type Component
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+	
+			_this.state = {
+				"email": "",
+				"password": "",
+				"loading": false,
+				"message": null
+			};
+			return _this;
+		}
+	
+		_createClass(Main, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				//
+			}
+		}, {
+			key: 'handleChange',
+			value: function handleChange(event) {
+				var obj = _extends({}, this.state);
+				obj[event.target.name] = event.target.value;
+				this.setState(obj);
+			}
+		}, {
+			key: 'checkDuplicate',
+			value: function checkDuplicate() {
+				var _this2 = this;
+	
+				var checkDuplicateEmail = this.props.checkDuplicateEmail;
+	
+				return checkDuplicateEmail({
+					email: this.state.email
+				}).then(function (action) {
+					console.log(action);
+					if (action.error) {
+						_this2.setState({
+							loading: false,
+							message: {
+								type: "danger",
+								text: "Error while registering you in, please contact us"
+							}
+						});
+						return false;
+					} else {
+						if (action.payload.data) {
+							_this2.setState({
+								loading: false,
+								message: {
+									type: "danger",
+									text: "This email already exists in our system"
+								}
+							});
+							return false;
+						} else {
+							return true;
+						}
+					}
+				});
+			}
+		}, {
+			key: 'submit',
+			value: function submit(event) {
+				var _this3 = this;
+	
+				event.preventDefault();
+				var _props = this.props,
+				    register = _props.register,
+				    login = _props.login;
+				var _state = this.state,
+				    email = _state.email,
+				    password = _state.password;
+	
+				this.setState({
+					loading: true
+				});
+				this.checkDuplicate().then(function (result) {
+					if (result) {
+						register({
+							email: email, password: password
+						}).then(function (action) {
+							console.log(action);
+							if (action.error) {
+								_this3.setState({
+									loading: false,
+									message: {
+										type: "danger",
+										text: "A user with this email already exists."
+									}
+								});
+							} else {
+								_this3.setState({
+									//loading : false,
+									message: {
+										type: "success",
+										text: "You are successfully registered. Logging you in..."
+									}
+								});
+	
+								login({
+									email: email, password: password
+								}).then(function (action2) {
+									if (action2.error) {
+										_this3.setState({
+											loading: false,
+											message: {
+												type: "danger",
+												text: "Error while logging you in, please contact us"
+											}
+										});
+									} else {
+										_this3.setState({
+											loading: false,
+											message: {
+												type: "success",
+												text: "You are successfully logged in"
+											}
+										});
+										window.location.reload();
+									}
+								});
+							}
+						});
+					} else {
+						return;
+					}
+				});
+			}
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	/**
+	 * Bind Redux Actions
+	 * @param dispatch
+	 * @returns {{Object}}
+	 */
+	
+	
+	var bindAction = function bindAction(dispatch) {
+		return {
+			register: function register(data) {
+				return dispatch((0, _actions.createAction)(_actions.ActionNames.REGISTER, data));
+			},
+			login: function login(data) {
+				return dispatch((0, _actions.createAction)(_actions.ActionNames.LOGIN, data));
+			},
+			checkDuplicateEmail: function checkDuplicateEmail(data) {
+				return dispatch((0, _actions.createAction)(_actions.ActionNames.CHECK_DUPLICATE_EMAIL, data));
+			}
+		};
+	};
+	/**
+	 * Bind State to props
+	 * @param dispatch
+	 * @returns {{Object}}
+	 */
+	var mapStateToProps = function mapStateToProps(state) {
+		return {
+			//emitter : state.emitter
+		};
+	};
+	//Set display name to be used in React Dev Tools
+	Main.displayName = 'Signup-Form';
+	//Pre process the container with Redux Plugins
+	exports.default = (0, _preprocess2.default)(Main, {
+		connect: [mapStateToProps, bindAction],
+		localize: false
+	});
+
+/***/ }),
+/* 493 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(494);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		var handleChange = this.handleChange,
+		    submit = this.submit,
+		    state = this.state;
+		var _state = this.state,
+		    loading = _state.loading,
+		    message = _state.message;
+	
+		return _react2.default.createElement(
+			"div",
+			{ id: "sign-up-modal", className: "modal fade join", role: "dialog" },
+			_react2.default.createElement(
+				"div",
+				{ className: "modal-dialog" },
+				_react2.default.createElement(
+					"div",
+					{ className: "modal-content" },
+					_react2.default.createElement(
+						"div",
+						{ className: "modal-header" },
+						_react2.default.createElement(
+							"button",
+							{ type: "button", className: "close", "data-dismiss": "modal" },
+							"\xD7"
+						),
+						_react2.default.createElement(
+							"h2",
+							{ className: "modal-title" },
+							"Create Account"
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "modal-body" },
+						_react2.default.createElement(
+							"form",
+							{ onSubmit: submit.bind(this) },
+							message ? _react2.default.createElement(
+								"div",
+								{ className: "alert alert-" + message.type },
+								message.text
+							) : null,
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									{ htmlFor: "exampleInputEmail1" },
+									"Email address"
+								),
+								_react2.default.createElement("input", { readOnly: loading, onChange: handleChange.bind(this), name: "email", value: this.state.email, type: "email", className: "form-control", id: "exampleInputEmail1",
+									"aria-describedby": "emailHelp", placeholder: "Enter email", required: true })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "form-group" },
+								_react2.default.createElement(
+									"label",
+									{ htmlFor: "exampleInputPassword1" },
+									"Password"
+								),
+								_react2.default.createElement("input", { readOnly: loading, onChange: handleChange.bind(this), name: "password", value: this.state.password, type: "password", className: "form-control", id: "exampleInputPassword1",
+									placeholder: "Password", required: true })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "actions" },
+								_react2.default.createElement(
+									"div",
+									{ className: "secondary-action" },
+									_react2.default.createElement(
+										"span",
+										null,
+										"By signing up you agree to our ",
+										_react2.default.createElement(
+											"a",
+											{ className: "inline-block" },
+											"Terms and Policies"
+										)
+									)
+								),
+								_react2.default.createElement(
+									"button",
+									{ type: "submit", className: "btn btn-yellow submit-btn" },
+									"Submit"
+								)
+							)
+						)
+					)
+				)
+			)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 494 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(495);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(403)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 495 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(402)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
 
 /***/ })
 /******/ ]);

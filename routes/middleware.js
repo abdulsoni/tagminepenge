@@ -23,7 +23,7 @@ exports.initLocals = function (req, res, next) {
 	
 	if (req.user) {
 		res.locals.user = {
-			...req.user,
+			...req.user.toObject(),
 			canAccessKeystone: req.user.canAccessKeystone, // convert from virtual to value, virtual doesn't work from Props
 		};
 	}
