@@ -1,3 +1,4 @@
+import _ from 'lodash';
 /**
  * This file is where you define your application routes and controllers.
  *
@@ -21,11 +22,11 @@
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
-
+var clientSideRoutes = require('../templates/react/routes');
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
-
+keystone.pre('routes', keystone.security.csrf.middleware.init);
 // Import Route Controllers
 var routes = {
 	views: importRoutes('./views'),
@@ -33,10 +34,15 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
-	// Views
-	app.get('/', routes.views.index);
-	//app.get('/test', routes.views.test);
-
+	console.log(clientSideRoutes)
+	/**
+	 * Dynamically construct routes
+	 */
+	
+	for(var key in clientSideRoutes){
+		console.log("Key is"+key)
+		app.get(key,routes.views.index)
+	}
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 

@@ -15,7 +15,7 @@ export default class Main extends Component {
 		super(props);
 	}
 	componentDidMount(){
-		console.log(axios)
+		
 	}
 	/**
 	 * Render the view

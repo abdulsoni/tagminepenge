@@ -18,9 +18,9 @@ var _ = require('lodash');
 	or replace it with your own templates / logic.
 */
 exports.initLocals = function (req, res, next) {
-	res.locals.navLinks = [
-		{ label: 'Home', key: 'home', href: '/' },
-	];
+	
+	res.locals.url = req.url;
+	
 	if (req.user) {
 		res.locals.user = {
 			...req.user,
@@ -57,3 +57,4 @@ exports.requireUser = function (req, res, next) {
 		next();
 	}
 };
+

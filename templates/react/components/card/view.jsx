@@ -4,11 +4,11 @@ var view = function() {
 	return (
 		<div className="card">
 			<div className="card-header">
-				<a className="product-title">Twinkling Star Skirt</a>
+				<a href="/product" className="product-title">Twinkling Star Skirt</a>
 			</div>
 			<div className="card-body">
 				<div className="product-image">
-					<a><span className="image"></span></a>
+					<a href="/product"><span className="image"></span></a>
 					<button className="btn btn-red save-btn">Save</button>
 				</div>
 				<div className="product-text">

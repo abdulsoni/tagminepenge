@@ -2,31 +2,33 @@ import React from 'react';
 import styles from "./style.scss";
 
 var view = function () {
+	const {handleChange,submit} = this;
 	return (
-		<div id="sign-up-modal" className="modal fade join" role="dialog">
+		<div id="login-modal" className="modal fade join" role="dialog">
 			<div className="modal-dialog">
 				<div className="modal-content">
 					<div className="modal-header">
 						<button type="button" className="close" data-dismiss="modal">&times;</button>
-						<h2 className="modal-title">Create Account</h2>
+						<h2 className="modal-title">Login</h2>
 					</div>
 					<div className="modal-body">
-						<form>
+						<form onSubmit={submit.bind(this)}>
 							<div className="form-group">
 								<label htmlFor="exampleInputEmail1">Email address</label>
-								<input type="email" className="form-control" id="exampleInputEmail1"
+								<input onChange = {handleChange.bind(this)} name="email" value = {this.state.email} type="email" className="form-control" id="exampleInputEmail1"
 									   aria-describedby="emailHelp" placeholder="Enter email" required/>
 							</div>
 							<div className="form-group">
 								<label htmlFor="exampleInputPassword1">Password</label>
-								<input type="password" className="form-control" id="exampleInputPassword1"
+								<input onChange = {handleChange.bind(this)} name="password" value = {this.state.password} type="password" className="form-control" id="exampleInputPassword1"
 									   placeholder="Password" required/>
 							</div>
 							<div className="actions">
 								<div className="secondary-action">
-									<span>By signing up you agree to our <a className="inline-block">Terms and Policies</a></span>
+									<a data-dismiss="modal" data-toggle="modal" data-target="#forgot-modal" className="forgot-password">Forgot Password ?</a>
+									<a data-dismiss="modal" data-toggle="modal" data-target="#sign-up-modal">>> Not a member yet? Click here to create an account</a>
 								</div>
-								<button type="submit" className="btn btn-yellow submit-btn">Submit</button>
+								<button type="submit"  className="btn btn-yellow submit-btn">Submit</button>
 							</div>
 						</form>
 					</div>

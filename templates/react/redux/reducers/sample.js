@@ -2,8 +2,8 @@
   Sample Reducer
 */
 import {
-    SAMPLE_ACTION,
-} from '../actions/index';
+  ActionNames
+} from '../actions';
 
 /**
  * Reducer Function
@@ -12,16 +12,16 @@ import {
  * @returns {{}}
  */
 export default function(state = {}, action) {
-	const payload = action.payload;
-	const status = action.payload ? action.payload.status : null;
-	switch (action.type) {
-		case SAMPLE_ACTION:
-			if (status == 200 || status == 201) {
-				const data = action.payload.data;
-				return {
-					...data,
-				};
-			}
-	}
-	return state;
+    let payload = action.payload
+    let status = action.payload ? action.payload.status : null;
+    switch (action.type) {
+        case ActionNames.SAMPLE_ACTION:
+          if (status == 200 || status == 201) {
+            let data = payload.data;
+            return {
+              ...data
+            };
+          }
+    }
+    return state;
 }
