@@ -1,0 +1,24 @@
+/*fonts*/
+/*colors*/
+/*text*/
+/*backgrounds*/
+/*border*/
+.footer {
+  padding: 50px;
+  margin-top: 100px;
+  background-color: #f7f7f7; }
+  .footer .title {
+    font-size: 18px;
+    margin-bottom: 14px;
+    font-weight: 700; }
+  .footer .links ul li {
+    list-style: none; }
+    .footer .links ul li a {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #333;
+      line-height: 28px; }
+      .footer .links ul li a:hover {
+        color: #faab37; }
+
+/*# sourceMappingURL=style.css.map */

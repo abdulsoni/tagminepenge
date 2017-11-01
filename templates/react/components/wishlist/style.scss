@@ -1,0 +1,41 @@
+@import '../../../../public/styles/variables.scss';
+
+.wish-list{
+  padding-top:70px;
+  .heading{
+	overflow: hidden;
+	margin-bottom: 80px;
+	.title{
+	  float:left;
+	  font-size: 32px;
+	  margin-right:10px;
+	}
+	.share{
+	  float:right;
+	  display: flex;
+	  ul{
+		li{
+		  display:inline-block;
+		  a{
+			display:block;
+			font-size: 40px;
+			margin:5px 5px 0px 0px;
+			line-height: 0px;
+			&.facebook{
+			  color: #3c5a98;
+			}
+			&.twitter{
+			  color: #1ea1f2;
+			}
+			&.pinterest{
+			  color: #bd081b;
+			}
+			&.link{
+			  color: #555;
+			}
+		  }
+		}
+	  }
+	}
+  }
+}

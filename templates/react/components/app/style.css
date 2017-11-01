@@ -1,0 +1,58 @@
+/*fonts*/
+/*colors*/
+/*text*/
+/*backgrounds*/
+/*border*/
+.app {
+  background: #ffffff;
+  font-family: Oswald, Arial, sans-serif; }
+  .app .container {
+    width: 1000px; }
+  .app ul {
+    padding: 0px; }
+  .app p {
+    margin: 0;
+    padding: 0; }
+  .app a {
+    text-decoration: none;
+    cursor: pointer; }
+  .app input {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .app textarea {
+    max-height: 200px;
+    height: 180px;
+    resize: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .app .main-container {
+    margin-top: 123px; }
+  .app .content-center {
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    display: -ms-flexbox;
+    display: flex; }
+  .app .btn-yellow {
+    color: #ffffff;
+    background-color: #faab37;
+    border-color: #faab37; }
+  .app .btn-red {
+    color: #ffffff;
+    background-color: #cb1d00;
+    border-color: #cb1d00; }
+  .app .btn {
+    border-radius: 0px;
+    font-size: 22px;
+    font-weight: 400;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+    padding: 2px 8px; }
+  .app .input-group-btn .btn {
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    text-shadow: none;
+    padding: 6px 12px;
+    font-size: 14px; }
+
+/*# sourceMappingURL=style.css.map */

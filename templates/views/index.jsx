@@ -2,13 +2,13 @@ import React from 'react';
 import Default from '../layouts/default';
 import { Provider } from 'react-redux';
 import createStore,{initialState} from '../react/redux';
-import Sample from '../react/containers/sample';
+import App from '../react/components/app';
 const store = createStore(initialState);
 const Index = props => {
 	return (
 		<Default {...props}>
 			<Provider store={store}>
-				<Sample></Sample>
+				<App></App>
 			</Provider>
 		</Default>
 	);

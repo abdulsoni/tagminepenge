@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3da159ba-5407-4bd2-a67a-736ef8bcc996" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/bundle.js" afterPath="$PROJECT_DIR$/public/js/bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/bundle.js.map" afterPath="$PROJECT_DIR$/public/js/bundle.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/header/style.css" afterPath="$PROJECT_DIR$/templates/react/components/header/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/header/style.css.map" afterPath="$PROJECT_DIR$/templates/react/components/header/style.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/header/style.scss" afterPath="$PROJECT_DIR$/templates/react/components/header/style.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/react/components/header/view.jsx" afterPath="$PROJECT_DIR$/templates/react/components/header/view.jsx" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,7 +25,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileColors">
     <fileColor scope="Non-Project Files (Material Default)" color="2E3C43" />
     <fileColor scope="Non-Project Files (Material Darker)" color="323232" />
@@ -23,12 +32,53 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf>
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="248">
               <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="view.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/react/components/header/view.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="61" column="64" lean-forward="true" selection-start-line="61" selection-start-column="64" selection-end-line="62" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/react/components/header/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="902">
+              <caret line="125" column="11" lean-forward="false" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/react/components/carousel/view.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-52">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/react/components/carousel/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="51" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
               <folding />
             </state>
           </provider>
@@ -36,9 +86,15 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>arivaa-travel</find>
       <find>k</find>
       <find>ke</find>
       <find>key</find>
@@ -61,15 +117,26 @@
       <find>arivaa-c</find>
       <find>arivaa-</find>
       <find>arivaa</find>
-      <find>style.css</find>
-      <find>.sample</find>
-      <find>yellow</find>
+      <find>&lt;title&gt;</find>
+      <find>main-c</find>
+      <find>$app-font</find>
+      <find>'Helvetica Neue',Helvetica,Arial,sans-serif</find>
+      <find>class</find>
+      <find>class=</find>
+      <find>../fonts</find>
+      <find>font-awesome</find>
     </findStrings>
     <replaceStrings>
       <replace>thisiswhyimbroke</replace>
+      <replace>$default-font</replace>
+      <replace>$helvetica-font</replace>
+      <replace>className</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/templates/react/components</dir>
+      <dir>$PROJECT_DIR$/templates/react/components/productPage</dir>
+      <dir>$PROJECT_DIR$/templates/react</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -78,6 +145,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/templates/views/index.pug" />
         <option value="$PROJECT_DIR$/templates/layouts/default.pug" />
         <option value="$PROJECT_DIR$/.babelrc" />
@@ -114,6 +182,59 @@
         <option value="$PROJECT_DIR$/templates/react/components/style.scss" />
         <option value="$PROJECT_DIR$/templates/react/components/sample/style.scss" />
         <option value="$PROJECT_DIR$/.gitignore" />
+=======
+        <option value="$PROJECT_DIR$/public/styles/app.scss" />
+        <option value="$PROJECT_DIR$/public/js/bundle.js" />
+        <option value="$PROJECT_DIR$/templates/react/components/card/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/footer/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/productGrid/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/footer/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/filters/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/card/style.scss" />
+        <option value="$PROJECT_DIR$/public/styles/variables.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/app/style.css" />
+        <option value="$PROJECT_DIR$/templates/react/components/card/style.css" />
+        <option value="$PROJECT_DIR$/templates/react/components/productGroup/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/home/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/productGroup/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/carousel/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/productPage/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/productPage/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/carousel/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/sample/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/contactUs/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/app/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/contactUs/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/aboutUs/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/aboutUs/style.scss" />
+        <option value="$PROJECT_DIR$/templates/layouts/default.jsx" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/font-awesome.css" />
+        <option value="$PROJECT_DIR$/public/styles/site.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_animated.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_bordered-pulled.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_core.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_fixed-width.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_icons.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_larger.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_list.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_mixins.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_path.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_rotated-flipped.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_screen-reader.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_stacked.scss" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/font-awesome.scss" />
+        <option value="$PROJECT_DIR$/public/styles/site.css" />
+        <option value="$PROJECT_DIR$/public/styles/font-awesome/scss/_variables.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/wishlist/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/wishlist/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/app/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/signUp/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/login/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/signUp/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/login/style.scss" />
+        <option value="$PROJECT_DIR$/templates/react/components/header/view.jsx" />
+        <option value="$PROJECT_DIR$/templates/react/components/header/style.scss" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
       </list>
     </option>
   </component>
@@ -139,9 +260,10 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="813" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -165,6 +287,7 @@
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
+<<<<<<< HEAD
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="thisiswhyimbroke" />
@@ -345,6 +468,54 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+=======
+          <expand>
+            <path>
+              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="react" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="react" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="react" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="carousel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="thisiswhyimbroke" type="b2602c69:ProjectViewProjectNode" />
+              <item name="thisiswhyimbroke" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="react" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </subPane>
       </pane>
     </panes>
@@ -352,7 +523,6 @@
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path" value="$USER_HOME$/.nvm/versions/node/v6.9.1/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="true" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -366,18 +536,23 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.standard" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/fonts" />
       <recent name="$PROJECT_DIR$/templates/react/components" />
+      <recent name="$PROJECT_DIR$/templates/react/components/app" />
+      <recent name="$PROJECT_DIR$/templates/react/components/header" />
       <recent name="$PROJECT_DIR$/routes/views" />
-      <recent name="$PROJECT_DIR$/templates/views" />
-      <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/templates/temp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/react" />
-      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/public/js/bootstrap" />
+      <recent name="$PROJECT_DIR$/public/styles" />
+      <recent name="$PROJECT_DIR$/public/styles/font-awesome/scss" />
+      <recent name="$PROJECT_DIR$/public/styles/font-awesome" />
+      <recent name="$PROJECT_DIR$/public/fonts/font-awesome" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -393,6 +568,14 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
@@ -428,15 +611,6 @@
       <option name="cucumberJsArguments" value="" />
       <option name="executablePath" />
       <option name="filePath" />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -475,20 +649,35 @@
       <workItem from="1507798757420" duration="782000" />
       <workItem from="1507799681534" duration="426000" />
       <workItem from="1507800111509" duration="169000" />
+<<<<<<< HEAD
       <workItem from="1507800304626" duration="10502000" />
       <workItem from="1509519012095" duration="57000" />
+=======
+      <workItem from="1507800304626" duration="5121000" />
+      <workItem from="1507876219054" duration="11074000" />
+      <workItem from="1507965857908" duration="12315000" />
+      <workItem from="1508155360821" duration="5198000" />
+      <workItem from="1508242485046" duration="3223000" />
+      <workItem from="1508257322346" duration="4174000" />
+      <workItem from="1508345801924" duration="3715000" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="15043000" />
+=======
+    <option name="totallyTimeSpent" value="56183000" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23749119" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -497,17 +686,50 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4795181" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+=======
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5109232" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.48907682" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.118500605" sideWeight="0.49753347" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30229747" sideWeight="0.49753347" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+<<<<<<< HEAD
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.70616686" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5109232" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.48907682" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.118500605" sideWeight="0.49753347" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30229747" sideWeight="0.49753347" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23749119" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.70616686" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -517,106 +739,184 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/templates/react/redux/actions/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/templates/react/components/aboutUs/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/redux/config/middleware/index.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/login/test.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/signUp/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="171">
           <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/redux/config/api.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/wishlist/test.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="38">
           <caret line="7" column="37" lean-forward="false" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/redux/config/enhancer.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/profile/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/redux/config/index.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/sample/style.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="95">
           <caret line="5" column="28" lean-forward="false" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/redux/config/initial-state.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/contactUs/test.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="152">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/redux/reducers/index.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/home/view.jsx">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="285">
           <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+=======
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="45" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Koodoit/package.json">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/aboutUs/view.jsx">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="307">
           <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="51" selection-end-column="28" />
+=======
+        <state relative-caret-position="240">
+          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/utils/common.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/aboutUs/style.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+        <state relative-caret-position="285">
+          <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/utils/date-util.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/productGroup/view.jsx">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="55" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/utils/image.js">
+    <entry file="file://$USER_HOME$/Downloads/font-awesome-4.7.0/css/font-awesome.css" />
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/font-awesome.css" />
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_bordered-pulled.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+<<<<<<< HEAD
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/utils/messaging-utils.js">
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_core.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+<<<<<<< HEAD
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/utils/spinner.js">
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_fixed-width.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="659">
           <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/utils/web.js">
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_icons.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="266">
           <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/utils/file.js">
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_larger.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-68">
           <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
         </state>
@@ -627,39 +927,84 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/styles/index.js">
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_list.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/fonts/fontawesome-webfont.woff" />
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/fonts/fontawesome-webfont.svg" />
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_screen-reader.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+<<<<<<< HEAD
           <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+=======
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/views/index2.jsx">
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_rotated-flipped.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+<<<<<<< HEAD
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Koodoit/src/client/routes.jsx">
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_animated.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="513">
           <caret line="62" column="26" lean-forward="false" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
+=======
+        <state relative-caret-position="255">
+          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../create-react-app-redux-starter/src/index.js">
+    <entry file="file://$PROJECT_DIR$/public/fonts/font-awesome/css/font-awesome.css" />
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_path.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="361">
           <caret line="19" column="18" lean-forward="false" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../create-react-app-redux-starter/package.json">
+    <entry file="file://$PROJECT_DIR$/public/styles/site.css.map">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="266">
           <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="22" />
         </state>
@@ -670,45 +1015,82 @@
         <state relative-caret-position="551">
           <caret line="31" column="15" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="31" selection-end-column="15" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/redux/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
+=======
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
+      <provider editor-type-id="sourcemapFileViewerProvider">
+        <state />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/layouts/default.jsx">
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/font-awesome.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="414">
+          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="9" lean-forward="true" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/site.scss">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+        <state relative-caret-position="360">
+          <caret line="24" column="44" lean-forward="false" selection-start-line="24" selection-start-column="44" selection-end-line="24" selection-end-column="44" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/styles/variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="817">
           <caret line="44" column="16" lean-forward="true" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+=======
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="15" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/views/index.js">
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_stacked.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="228">
           <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/views/test.js">
+    <entry file="file://$PROJECT_DIR$/public/styles/site.css">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="171">
           <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+=======
+        <state relative-caret-position="784">
+          <caret line="5854" column="25" lean-forward="true" selection-start-line="5854" selection-start-column="25" selection-end-line="5854" selection-end-column="25" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
+    <entry file="file://$PROJECT_DIR$/public/styles/font-awesome/scss/_variables.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="578">
           <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
         </state>
@@ -719,13 +1101,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+=======
+        <state relative-caret-position="195">
+          <caret line="13" column="23" lean-forward="true" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/containers/sample/test.js">
+    <entry file="file://$PROJECT_DIR$/public/js/bootstrap/bootstrap-3.3.5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3253">
+          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/layouts/default.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="49" column="51" lean-forward="true" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/contactUs/main.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
@@ -733,25 +1135,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+=======
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/PostCategory.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/contactUs/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
+<<<<<<< HEAD
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="51" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/User.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/contactUs/view.jsx">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="247">
           <caret line="13" column="16" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+=======
+        <state relative-caret-position="270">
+          <caret line="19" column="88" lean-forward="false" selection-start-line="19" selection-start-column="88" selection-end-line="19" selection-end-column="88" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/menu.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/wishlist/style.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
@@ -762,18 +1181,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
           <caret line="9176" column="18" lean-forward="false" selection-start-line="9176" selection-start-column="18" selection-end-line="9176" selection-end-column="18" />
+=======
+        <state relative-caret-position="450">
+          <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/sample/main.jsx">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/wishlist/view.jsx">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="49" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/app/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="51" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/signUp/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="38">
           <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/app/view.jsx">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="667">
           <caret line="45" column="40" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="63" />
         </state>
@@ -797,32 +1244,70 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+=======
+        <state relative-caret-position="375">
+          <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessor.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/signUp/view.jsx">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="99" lean-forward="false" selection-start-line="26" selection-start-column="99" selection-end-line="26" selection-end-column="99" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/login/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="114">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+=======
+        <state relative-caret-position="285">
+          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/components/sample/view.jsx">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/login/view.jsx">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="249">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+=======
+        <state relative-caret-position="75">
+          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/carousel/style.scss">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="205">
           <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+=======
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="51" />
+          <folding />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/react/containers/sample/view.jsx">
+    <entry file="file://$PROJECT_DIR$/templates/react/components/carousel/view.jsx">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="152">
           <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
@@ -847,6 +1332,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+=======
+        <state relative-caret-position="-52">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/header/view.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="61" column="64" lean-forward="true" selection-start-line="61" selection-start-column="64" selection-end-line="62" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/react/components/header/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="125" column="11" lean-forward="false" selection-start-line="125" selection-start-column="11" selection-end-line="125" selection-end-column="11" />
+>>>>>>> c769d16ea8273a89907a134f7c8b7056054c9e11
           <folding />
         </state>
       </provider>

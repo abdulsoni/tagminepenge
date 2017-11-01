@@ -1,0 +1,34 @@
+/*fonts*/
+/*colors*/
+/*text*/
+/*backgrounds*/
+/*border*/
+.wish-list {
+  padding-top: 70px; }
+  .wish-list .heading {
+    overflow: hidden;
+    margin-bottom: 80px; }
+    .wish-list .heading .title {
+      float: left;
+      font-size: 32px;
+      margin-right: 10px; }
+    .wish-list .heading .share {
+      float: right;
+      display: flex; }
+      .wish-list .heading .share ul li {
+        display: inline-block; }
+        .wish-list .heading .share ul li a {
+          display: block;
+          font-size: 40px;
+          margin: 5px 5px 0px 0px;
+          line-height: 0px; }
+          .wish-list .heading .share ul li a.facebook {
+            color: #3c5a98; }
+          .wish-list .heading .share ul li a.twitter {
+            color: #1ea1f2; }
+          .wish-list .heading .share ul li a.pinterest {
+            color: #bd081b; }
+          .wish-list .heading .share ul li a.link {
+            color: #555; }
+
+/*# sourceMappingURL=style.css.map */
