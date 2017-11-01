@@ -54513,6 +54513,13 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// var Home = require('./containers/home');
+	// var Profile = require('./containers/home');
+	// var ProductGroup = require('./containers/home');
+	// var Product = require('./containers/productPage');
+	// var WishList = require('./containers/wishlist');
+	// var About = require('./containers/aboutUs');
+	// var Contact = require('./containers/contactUs');
 	var Routes = {
 		"/": {
 			component: _home2.default

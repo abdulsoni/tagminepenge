@@ -22,10 +22,9 @@ exports.initLocals = function (req, res, next) {
 	res.locals.url = req.url;
 	
 	if (req.user) {
-		res.locals.user = {
-			...req.user.toObject(),
+		res.locals.user = Object.assign({},req.user.toObject(),{
 			canAccessKeystone: req.user.canAccessKeystone, // convert from virtual to value, virtual doesn't work from Props
-		};
+		});
 	}
 	next();
 };
