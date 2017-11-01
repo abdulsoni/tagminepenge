@@ -1,4 +1,4 @@
-import _ from 'lodash';
+
 /**
  * This file is where you define your application routes and controllers.
  *
@@ -23,6 +23,7 @@ var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
 var clientSideRoutes = require('../templates/react/routes');
+var _ = require('lodash')
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
