@@ -34,8 +34,8 @@ var engine = renderer.server.create({
 // and documentation.
 
 keystone.init({
-	'name': 'thisiswhyimbroke-CMS',
-	'brand': 'thisiswhyimbroke CMS',
+	'name': 'TAGMINEPENGE-CMS',
+	'brand': 'TAGMINEPENGE',
 
 	'sass': 'public',
 	'static': 'public',

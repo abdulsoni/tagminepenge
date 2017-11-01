@@ -31,10 +31,11 @@
         text-align: left;
         border-bottom: 0 solid #e0e0e0 !important;
         width: auto; }
-    .header .my-account-dropdown a.dropdown-toggle {
+    .header .my-account-dropdown a.nav-link {
       color: #000;
       font-size: 16px;
-      font-weight: bold; }
+      font-weight: bold;
+      margin-left: 10px; }
     .header .my-account-dropdown li {
       list-style: none; }
   .header .header-top {

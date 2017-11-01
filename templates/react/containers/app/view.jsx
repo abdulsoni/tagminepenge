@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../components/header/index';
 import LoginModal from '../login';
 import SignUpModal from '../signUp/index';
+import ForgotModal from '../forgot/index';
 import Footer from '../../components/footer/index';
 import styles from "./style.scss";
 
@@ -17,6 +18,7 @@ var view = function () {
 				<Footer/>
 				<LoginModal/>
 				<SignUpModal/>
+				<ForgotModal/>
 			</div>
 		</div>
 	);
