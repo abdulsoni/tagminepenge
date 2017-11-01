@@ -51,6 +51,7 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	'signin url' : '/',
 	'signin redirect' : "/",
 	'signout redirect' : "/"
 });
