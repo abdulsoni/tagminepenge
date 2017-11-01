@@ -22,8 +22,8 @@ Product.add({
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
 	categories: { type: Types.Relationship, ref: 'Category', many: true },
-	link : { type: String, required: true,default : "" },
-	price : { type: Number, required: true,default : 0 },
+	link : { type: String, required: false,default : "" },
+	price : { type: Number, required: false,default : 0 },
 	
 });
 
