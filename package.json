@@ -49,6 +49,6 @@
     "dev-server": "nodemon preprocessor.js"
   },
   "engines": {
-    "node": ">= 7.0.0"
+    "node": "= 7.0.0"
   }
 }
