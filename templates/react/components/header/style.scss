@@ -1,51 +1,13 @@
 @import '../../../../public/styles/variables.scss';
 
 .header {
-  position:fixed;
-  width:100%;
-  top:0px;
+  position: fixed;
+  width: 100%;
+  top: 0px;
   z-index: 2;
-  /**
-  		Added By Inder - Edit this jass
-   */
-  .my-account-dropdown{
-	position: absolute;
-	top:10px;
-	right:20px;
-	
-	.dropdown-menu{
-	  background-color: #ededed;
-	  min-width: 140px;
-	  box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
-	  a{
-		font-size: 15px !important;
-		font-weight:bold;
-		color: #000;
-		padding: 10px;
-		text-decoration: none;
-		display: block;
-		height: 40px!important;
-		font-size: .8em;
-		text-align: left;
-		border-bottom: 0 solid #e0e0e0!important;
-		width: auto;
-		
-	  }
-	}
-	a.nav-link{
-	  color: #000;
-	  font-size : 16px;
-	  font-weight: bold;
-	  margin-left: 10px;
-	}
-	li {
-	  list-style: none;
-	}
-	
-  }
   .header-top {
 	height: 57px;
-	background: #f5f5f5;
+	background: $light-bg;
 	.content {
 	  position: relative;
 	  .search {
@@ -66,6 +28,32 @@
 		position: absolute;
 		right: 10px;
 		top: 15px;
+		.dropdown-menu {
+		  min-width: 140px;
+		  border-radius: 0px;
+		  background-color: #ededed;
+		  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+		  border: none;
+		  padding: 0px;
+		  a {
+			font-size:15px;
+			padding: 10px;
+			display: block;
+			margin: 0px;
+			&:hover {
+			  background: $thumbnail-bg;
+			}
+		  }
+		}
+		a{
+		  color: #000;
+		  font-size: 16px;
+		  font-weight: bold;
+		  margin-left: 10px;
+		  .icon {
+			margin-right: 5px;
+		  }
+		}
 	  }
 	}
   }
@@ -112,7 +100,7 @@
 		box-shadow: 3px 3.25px 7px rgba(0, 0, 0, .3);
 		position: relative;
 		a {
-		  &.nav-link{
+		  &.nav-link {
 			display: block;
 			width: auto;
 			height: 76.91px;
@@ -138,27 +126,27 @@
 			}
 		  }
 		}
-		.dropdown-menu{
-		  top:98%;
+		.dropdown-menu {
+		  top: 98%;
 		  min-width: 145px;
 		  border-radius: 0px;
 		  background-color: #ededed;
-		  box-shadow: 0 8px 16px 0 rgba(0,0,0,.2);
-		  border:none;
+		  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, .2);
+		  border: none;
 		  padding: 0px;
-		  a{
-			color:$brand-black;
+		  a {
+			color: $brand-black;
 			padding: 8px 10px;
 			text-decoration: none;
 			display: block;
 			font-size: 17px;
-			font-weight:400;
-			&:hover{
-			  border:none !important;
+			font-weight: 400;
+			&:hover {
+			  border: none !important;
 			  background: $thumbnail-bg;
 			}
 		  }
-		  .dropdown-divider{
+		  .dropdown-divider {
 			background-color: #858e94;
 			height: 1px;
 		  }

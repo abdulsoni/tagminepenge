@@ -29,8 +29,8 @@ var view = function () {
 								<a data-toggle="modal" data-target="#sign-up-modal">Register</a>
 							</div>
 						) : (
-							<div className="my-account-dropdown">
-								<li>
+							<div className="actions">
+								<div>
 									<a className="nav-link dropdown-toggle" data-toggle="dropdown">
 										<span className="icon">
 											<span className="glyphicon glyphicon-user" aria-hidden="true"></span>
@@ -38,16 +38,18 @@ var view = function () {
 										<span className="text">My Account</span>
 									</a>
 									{
-										user.isAdmin?(
-											<a className="nav-link" href="/keystone"><span className="glyphicon glyphicon-home" aria-hidden="true"></span><span className="text">Go To Admin</span></a>
-										):null
+										user.isAdmin ? (
+											<a className="nav-link" href="/keystone"><span
+												className="glyphicon glyphicon-home" aria-hidden="true"></span><span
+												className="text">Go To Admin</span></a>
+										) : null
 									}
 									<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
 										<a className="dropdown-item" href="/profile">My Settings</a>
 										<a className="dropdown-item" href="/wishlist">My Wishlist</a>
 										<a className="dropdown-item" href="/keystone/signout">Logout</a>
 									</div>
-								</li>
+								</div>
 							</div>
 						)
 					}
