@@ -61,10 +61,10 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 		}).send({
 			to: admins,
 			from: {
-				name: 'keystone-blog',
-				email: 'contact@keystone-blog.com',
+				name: 'tagminepinge-contact',
+				email: process.env.CONTACT_EMAIL || 'contact@tagminepinge.com',
 			},
-			subject: 'New Enquiry for keystone-blog',
+			subject: 'New Enquiry for tagminepinge',
 			enquiry: enquiry,
 			brand: brand,
 		}, callback);
