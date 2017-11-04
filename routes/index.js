@@ -26,6 +26,7 @@ var clientSideRoutes = require('../templates/react/routes');
 var _ = require('lodash')
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
+keystone.pre('routes', middleware.populateCategories);
 keystone.pre('render', middleware.flashMessages);
 keystone.pre('routes', keystone.security.csrf.middleware.init);
 // Import Route Controllers

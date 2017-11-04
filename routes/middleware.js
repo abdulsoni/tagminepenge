@@ -8,8 +8,9 @@
  * modules in your project's /lib directory.
  */
 var _ = require('lodash');
-
-
+var keystone = require('keystone');
+var Configuration = keystone.list('Configuration');
+var Category = keystone.list('Category');
 /**
 	Initialises the standard view locals
 
@@ -27,10 +28,35 @@ exports.initLocals = function (req, res, next) {
 			canAccessKeystone: req.user.canAccessKeystone, // convert from virtual to value, virtual doesn't work from Props
 		};
 	}
-	next();
+	//if(req.url=='/'){
+		var query = Configuration.model.find();
+		query.exec(function(err, doc) {
+			if(doc){
+				res.locals.config= {};
+				(doc || []).map((item)=>{
+					res.locals.config[item.name] = item;
+				})
+			}
+			next();
+		});
+		
+	//} else {
+	//	next();
+	//}
 };
 
+exports.populateCategories = function (req, res, next) {
 
+	var query = Category.model.find().sort( { displayType:1,menuOrder: 1 } );
+	query.exec(function(err, doc) {
+		if(doc){
+			res.locals.categories = doc;
+		} else {
+			res.locals.categories = [];
+		}
+		next();
+	});
+};
 /**
 	Fetches and clears the flashMessages before a view is rendered
 */

@@ -13,6 +13,7 @@ User.add({
 	password: { type: Types.Password, initial: true, required: true },
 }, 'Permissions', {
 	isAdmin: { type: Boolean, label: 'Admin User', index: true },
+	savedProducts : { type: Types.Relationship, ref: 'Product', many: true ,noedit:true}
 });
 
 // Provide access to Keystone

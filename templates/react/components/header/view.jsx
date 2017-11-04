@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./style.scss";
 
 var view = function () {
-	const {navLinks, user} = this.props;
+	const {user,categories} = this.props;
 	return (
 		<div className="header">
 			<div className="header-top">
@@ -57,31 +57,19 @@ var view = function () {
 				<div className="nav-accent nav-accent-left"></div>
 				<div className="nav-accent nav-accent-right"></div>
 				<ul>
-					<li>
-						<a href="/" className="nav-link">
-							<span className="icon"><span className="glyphicon glyphicon-home" aria-hidden="true"></span></span>
-							<span className="text">New</span>
-						</a>
-					</li>
-					<li>
-						<a href="/" className="nav-link">
-							<span className="icon"><span className="glyphicon glyphicon-cog" aria-hidden="true"></span></span>
-							<span className="text">Gadgets</span>
-						</a>
-					</li>
-					<li>
-						<a href="/" className="nav-link">
-							<span className="icon"><span className="glyphicon glyphicon-globe"
-														 aria-hidden="true"></span></span>
-							<span className="text">Experiences</span>
-						</a>
-					</li>
-					<li>
-						<a href="/" className="nav-link">
-							<span className="icon"><span className="glyphicon glyphicon-fire" aria-hidden="true"></span></span>
-							<span className="text">Food & Drink</span>
-						</a>
-					</li>
+					
+					{
+						(categories || []).filter(category=>category.displayType==1).map((category)=>{
+							return (
+								<li key={category._id}>
+									<a href="/" className="nav-link">
+										<span className="icon"><span className={category.iconClass} aria-hidden="true"></span></span>
+										<span className="text">{category.name}</span>
+									</a>
+								</li>
+							)
+						})
+					}
 					<li>
 						<a className="nav-link dropdown-toggle" data-toggle="dropdown">
 							<span className="icon">
@@ -90,11 +78,15 @@ var view = function () {
 							<span className="text">Others</span>
 						</a>
 						<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<a className="dropdown-item" href="/">Home & Office Gifts</a>
-							<a className="dropdown-item" href="/">Wearables</a>
-							<a className="dropdown-item" href="/">Gifts For Kids</a>
+							{
+								(categories || []).filter(category=>category.displayType==2).map((category)=>{
+									return (
+										<a key = {category._id} className="dropdown-item" href="/">{category.name}</a>
+									)
+								})
+							}
 							<div className="dropdown-divider"></div>
-							<a className="dropdown-item" href="/">Submit A Product</a>
+							<a className="dropdown-item" href="/submit-product">Submit A Product</a>
 							<a className="dropdown-item" href="/contact">Contact Us</a>
 						</div>
 					</li>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ComponentView from './view';
+import axios from 'axios';
 /**
  * @name Sample Component
  * @type Component
@@ -13,7 +14,9 @@ export default class Main extends Component {
 	constructor(props){
 		super(props);
 	}
-
+	componentDidMount(){
+		
+	}
 	/**
 	 * Render the view
 	 * @returns {*}
@@ -23,4 +26,4 @@ export default class Main extends Component {
 	}
 }
 //Set display name to be used in React Dev Tools
-Main.displayName = 'Header';
+Main.displayName = 'Sample-Component';

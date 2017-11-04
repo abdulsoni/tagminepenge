@@ -44,3 +44,37 @@ export  function register(req, res) {
 	});
 
 };
+
+export  function forgot(req, res) {
+	if(!req.body.email){
+		console.log("Email absent")
+		return res.sendStatus(500)
+	}
+	keystone.list('User').model.find().where('email', req.query.email).exec(function (err, user) {
+		if (err) {
+			console.log("Error while getting user",err)
+			return res.sendStatus(500)
+		}
+		if(user){
+			new keystone.Email({
+				templateName: 'Forgot Password',
+				transport: 'mailgun',
+			}).send({
+				to: user.email,
+				from: {
+					name: 'Admin-TAGMINEPENGE',
+					email: 'contact@tagminepenge.com',
+				},
+				subject: 'Instructions for resetting password'
+				//Put the template here
+			}, (response)=>{
+				console.log(response)
+				return res.json(true)
+			});
+		} else {
+			return res.json(false)
+		}
+		
+	});
+
+};

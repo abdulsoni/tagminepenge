@@ -2,17 +2,19 @@ import {api} from '../config';
 import {} from './custom';
 import {getAuthData} from '../../utils/security';
 import uuid from 'uuid';
-const ActionNames =  {
-  SAMPLE_ACTION : "SAMPLE_ACTION",
-  LOGIN : "LOGIN",
-  LOGOUT : "LOGOUT",
-  FORGOT : "FORGOT",
-  CHECK_LOGIN : "CHECK_LOGIN",
-  REGISTER : "REGISTER",
-  UI_SET_PROPERTY : "UI_SET_PROPERTY",
-  UI_DELETE_PROPERTY : "UI_DELETE_PROPERTY",
-  GET_PROFILE : "GET_PROFILE",
-  CHECK_DUPLICATE_EMAIL : "CHECK_DUPLICATE_EMAIL"
+const ActionNames = {
+	SAMPLE_ACTION: "SAMPLE_ACTION",
+	LOGIN: "LOGIN",
+	LOGOUT: "LOGOUT",
+	FORGOT: "FORGOT",
+	CHECK_LOGIN: "CHECK_LOGIN",
+	REGISTER: "REGISTER",
+	UI_SET_PROPERTY: "UI_SET_PROPERTY",
+	UI_DELETE_PROPERTY: "UI_DELETE_PROPERTY",
+	GET_PROFILE: "GET_PROFILE",
+	CHECK_DUPLICATE_EMAIL: "CHECK_DUPLICATE_EMAIL",
+	GET_PRODUCTS: "GET_PRODUCTS",
+	SUBMIT_PRODUCT : "SUBMIT_PRODUCT"
 };
 export const Names = ActionNames;
 /**
@@ -33,58 +35,77 @@ export const Names = ActionNames;
  * @type {[*]}
  */
 const config = [
-  {
-    name : ActionNames.SAMPLE_ACTION
-  },
-  {
-    name : ActionNames.UI_SET_PROPERTY
-  },
-  {
-    name : ActionNames.UI_DELETE_PROPERTY
-  },
-  {
-    name : ActionNames.LOGIN,
-    type : "ajax",
-    config : {
-      url : api.AUTHENTICATE,
-      method : 'POST'
-    }
-  },
-  {
-    name : ActionNames.CHECK_LOGIN,
-    config : {
-      getData : getAuthData,
-      promise : true
-    }
-  },
-  {
-    name : ActionNames.LOGOUT,
-    config : {
-      promise: true
-    }
-  },
-  {
-    name : ActionNames.FORGOT,
-    type : "ajax",
-    config : {
-      url : api.FORGOT,
-      method : 'POST'
-    }
-  },
-  {
-    name : ActionNames.REGISTER,
-    type : "ajax",
-    config : {
-      url : api.REGISTER,
-      method : 'POST'
-    }
-  },
 	{
-		name : ActionNames.CHECK_DUPLICATE_EMAIL,
-		type : "ajax",
-		config : {
-			url : api.CHECK_DUPLICATE_EMAIL,
-			method : 'GET'
+		name: ActionNames.SAMPLE_ACTION
+	},
+	{
+		name: ActionNames.UI_SET_PROPERTY
+	},
+	{
+		name: ActionNames.UI_DELETE_PROPERTY
+	},
+	{
+		name: ActionNames.LOGIN,
+		type: "ajax",
+		config: {
+			url: api.AUTHENTICATE,
+			method: 'POST'
+		}
+	},
+	{
+		name: ActionNames.CHECK_LOGIN,
+		config: {
+			getData: getAuthData,
+			promise: true
+		}
+	},
+	{
+		name: ActionNames.LOGOUT,
+		config: {
+			promise: true
+		}
+	},
+	{
+		name: ActionNames.FORGOT,
+		type: "ajax",
+		config: {
+			url: api.FORGOT,
+			method: 'POST'
+		}
+	},
+	{
+		name: ActionNames.REGISTER,
+		type: "ajax",
+		config: {
+			url: api.REGISTER,
+			method: 'POST'
+		}
+	},
+	{
+		name: ActionNames.CHECK_DUPLICATE_EMAIL,
+		type: "ajax",
+		config: {
+			url: api.CHECK_DUPLICATE_EMAIL,
+			method: 'GET'
+		}
+	},
+	{
+		name: ActionNames.GET_PRODUCTS,
+		type: "ajax",
+		config: {
+			url: api.PRODUCTS,
+			method: 'GET',
+			getParams : (data)=>{
+				return data;
+			}
+		}
+	},
+	{
+		name: ActionNames.SUBMIT_PRODUCT,
+		type: "ajax",
+		config: {
+			url: api.PRODUCTS,
+			method: 'POST'
 		}
 	}
 ];
@@ -93,10 +114,10 @@ const config = [
  * @type {{}}
  */
 let configMap = {};
-config.map((item)=>{
-  configMap[item.name] = item;
+config.map((item) => {
+	configMap[item.name] = item;
 });
-export function getActionConfig(name){
-  return configMap[name];
+export function getActionConfig(name) {
+	return configMap[name];
 }
 export default config;
