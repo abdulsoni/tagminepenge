@@ -11,7 +11,8 @@ var Category = new keystone.List('Category', {
 
 Category.add({
 	name: { type: String, required: true },
-	displayType: { type: Types.Select,label:"Display Type", numeric: true, options: [{ value: 1, label: 'Menu' }, { value: 2, label: 'Others' },{ value: 3, label: 'None' }],default : 3 },
+	displayType: { type: Types.Select,label:"Display Type", numeric: true, options: [{ value: 1, label: 'Menu' }, { value: 2, label: 'Others in header' },{ value: 3, label: 'None' }],default : 3 },
+	footerDisplayType: { type: Types.Select,label:"Display Category in Footer", numeric: true, options: [{ value: 1, label: 'Recipients' }, { value: 2, label: 'More Gift Ideas' },{ value: 3, label: 'None' }],default : 3 },
 	iconClass : { type: String, required: false,label : "Icon",default : "",
 		note : "This represents the icon. To add a icon just copy the class from this link -> https://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp or http://fontawesome.io/icons/"
 	},

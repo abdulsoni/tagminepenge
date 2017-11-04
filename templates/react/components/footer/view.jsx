@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./style.scss";
 
 var view = function () {
-	const {config} = this.props;
+	const {config,categories} = this.props;
 	return (
 		<div className="footer">
 			<div className="container">
@@ -13,11 +13,13 @@ var view = function () {
 						</div>
 						<div className="links">
 							<ul>
-								<li><a>Gifts for Men</a></li>
-								<li><a>Gifts for Women</a></li>
-								<li><a>Gifts for Kids</a></li>
-								<li><a>Gifts for Animal Lovers</a></li>
-								<li><a>Gifts for Couples</a></li>
+								{
+									(categories || []).filter(category=>category.footerDisplayType==1).map((category)=>{
+										return (
+											<li key = {category._id}><a href="/">{category.name}</a></li>
+										)
+									})
+								}
 							</ul>
 						</div>
 					</div>
@@ -27,11 +29,13 @@ var view = function () {
 						</div>
 						<div className="links">
 							<ul>
-								<li><a>Gifts under $50</a></li>
-								<li><a>Gifts under $40</a></li>
-								<li><a>Gifts under $30</a></li>
-								<li><a>Gifts under $20</a></li>
-								<li><a>Gifts under $10</a></li>
+								{
+									(categories || []).filter(category=>category.footerDisplayType==2).map((category)=>{
+										return (
+											<li key = {category._id}><a href="/">{category.name}</a></li>
+										)
+									})
+								}
 							</ul>
 						</div>
 					</div>
@@ -41,10 +45,10 @@ var view = function () {
 						</div>
 						<div className="links">
 							<ul>
-								<li href="/contact"><a>Contact us</a></li>
+								<li><a href="/contact">Contact us</a></li>
 								<li><a href="/about">About us</a></li>
-								<li href="/submit-product"><a>Submit a product</a></li>
-								<li href="/privacy-policy"><a>Privacy Policy</a></li>
+								<li><a href="/submit-product">Submit a product</a></li>
+								<li><a href="/privacy-policy">Privacy Policy</a></li>
 								{/*<li><a>Blog</a></li>*/}
 							</ul>
 						</div>

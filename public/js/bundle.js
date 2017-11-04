@@ -52672,7 +52672,7 @@
 				{ className: 'main-container' },
 				_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user, categories: categories }),
 				_react2.default.createElement(routeInfo.component, { user: user, config: config }),
-				_react2.default.createElement(_index8.default, { config: config }),
+				_react2.default.createElement(_index8.default, { config: config, categories: categories }),
 				_react2.default.createElement(_login2.default, null),
 				_react2.default.createElement(_index4.default, null),
 				_react2.default.createElement(_index6.default, null)
@@ -54789,7 +54789,9 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		var config = this.props.config;
+		var _props = this.props,
+		    config = _props.config,
+		    categories = _props.categories;
 	
 		return _react2.default.createElement(
 			"div",
@@ -54818,51 +54820,19 @@
 							_react2.default.createElement(
 								"ul",
 								null,
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										null,
-										"Gifts for Men"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										null,
-										"Gifts for Women"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										null,
-										"Gifts for Kids"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										null,
-										"Gifts for Animal Lovers"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										null,
-										"Gifts for Couples"
-									)
-								)
+								(categories || []).filter(function (category) {
+									return category.footerDisplayType == 1;
+								}).map(function (category) {
+									return _react2.default.createElement(
+										"li",
+										{ key: category._id },
+										_react2.default.createElement(
+											"a",
+											{ href: "/" },
+											category.name
+										)
+									);
+								})
 							)
 						)
 					),
@@ -54884,51 +54854,19 @@
 							_react2.default.createElement(
 								"ul",
 								null,
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										null,
-										"Gifts under $50"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										null,
-										"Gifts under $40"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										null,
-										"Gifts under $30"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										null,
-										"Gifts under $20"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										null,
-										"Gifts under $10"
-									)
-								)
+								(categories || []).filter(function (category) {
+									return category.footerDisplayType == 2;
+								}).map(function (category) {
+									return _react2.default.createElement(
+										"li",
+										{ key: category._id },
+										_react2.default.createElement(
+											"a",
+											{ href: "/" },
+											category.name
+										)
+									);
+								})
 							)
 						)
 					),
@@ -54952,10 +54890,10 @@
 								null,
 								_react2.default.createElement(
 									"li",
-									{ href: "/contact" },
+									null,
 									_react2.default.createElement(
 										"a",
-										null,
+										{ href: "/contact" },
 										"Contact us"
 									)
 								),
@@ -54970,19 +54908,19 @@
 								),
 								_react2.default.createElement(
 									"li",
-									{ href: "/submit-product" },
+									null,
 									_react2.default.createElement(
 										"a",
-										null,
+										{ href: "/submit-product" },
 										"Submit a product"
 									)
 								),
 								_react2.default.createElement(
 									"li",
-									{ href: "/privacy-policy" },
+									null,
 									_react2.default.createElement(
 										"a",
-										null,
+										{ href: "/privacy-policy" },
 										"Privacy Policy"
 									)
 								)

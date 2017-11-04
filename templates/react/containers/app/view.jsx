@@ -15,7 +15,7 @@ var view = function () {
 				{
 					<routeInfo.component  user = {user} config = {config}/>
 				}
-				<Footer config = {config}/>
+				<Footer config = {config} categories = {categories}/>
 				<LoginModal/>
 				<SignUpModal/>
 				<ForgotModal/>
