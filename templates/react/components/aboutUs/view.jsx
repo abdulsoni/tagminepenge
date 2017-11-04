@@ -22,14 +22,14 @@ var view = function() {
 					</div>
 					<div className="col-md-7">
 						<div className="text">
-							<p>{text?text.description:null}</p>
+							<p dangerouslySetInnerHTML={{__html:text?text.description:null}}></p>
 						</div>
 					</div>
 				</div>
 				<div className="row">
 					<div className="col-md-7">
 						<div className="text">
-							<p>{text2?text2.description:null}</p>
+							<p dangerouslySetInnerHTML={{__html:text2?text2.description:null}}></p>
 						</div>
 					</div>
 					<div className="col-md-5">

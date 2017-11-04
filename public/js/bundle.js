@@ -57709,11 +57709,7 @@
 						_react2.default.createElement(
 							'div',
 							{ className: 'text' },
-							_react2.default.createElement(
-								'p',
-								null,
-								text ? text.description : null
-							)
+							_react2.default.createElement('p', { dangerouslySetInnerHTML: { __html: text ? text.description : null } })
 						)
 					)
 				),
@@ -57726,11 +57722,7 @@
 						_react2.default.createElement(
 							'div',
 							{ className: 'text' },
-							_react2.default.createElement(
-								'p',
-								null,
-								text2 ? text2.description : null
-							)
+							_react2.default.createElement('p', { dangerouslySetInnerHTML: { __html: text2 ? text2.description : null } })
 						)
 					),
 					_react2.default.createElement(
