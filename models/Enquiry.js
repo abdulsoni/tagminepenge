@@ -12,7 +12,7 @@ var Enquiry = new keystone.List('Enquiry', {
 });
 
 Enquiry.add({
-	name: { type: Types.Name, required: true },
+	name: { type: String, required: true },
 	email: { type: Types.Email, required: true },
 	phone: { type: String },
 	subject: { type: String },
@@ -21,7 +21,7 @@ Enquiry.add({
 		{ value: 'question', label: 'I\'ve got a question' },
 		{ value: 'other', label: 'Something else...' },
 	] },
-	message: { type: Types.Markdown, required: true },
+	message: { type: Types.Html, required: true },
 	createdAt: { type: Date, default: Date.now },
 });
 

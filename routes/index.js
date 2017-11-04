@@ -34,6 +34,7 @@ var routes = {
 	views: importRoutes('./views'),
 };
 var authApis = require('./api/auth');
+var contactApis = require('./api/contact');
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	console.log(clientSideRoutes)
@@ -49,4 +50,5 @@ exports = module.exports = function (app) {
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 	app.get('/auth/checkDuplicate',authApis.checkDuplicate);
 	app.post('/auth/register',authApis.register);
+	app.post('/contact',contactApis);
 };

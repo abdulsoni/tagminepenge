@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ComponentView from './view';
 /**
- * @name Sample Component
+ * @name Main Container
  * @type Component
  * @author Inderdeep Singh
  */
@@ -19,9 +19,9 @@ export default class Main extends Component {
 	 * @returns {*}
 	 */
 	render() {
-		console.log(this.props)
+		
 		return (ComponentView.bind(this))();
 	}
 }
 //Set display name to be used in React Dev Tools
-Main.displayName = 'Sample-Component';
+Main.displayName = 'Main';

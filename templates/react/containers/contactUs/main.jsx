@@ -4,8 +4,8 @@ import preProcess from '../preprocess';
 import {createAction,ActionNames} from '../../redux/actions';
 import {handleChange} from '../../utils/common'
 /**
- * @name Login Form
- * @type Component
+ * @name Sample Container
+ * @type Container
  * @author Inderdeep Singh
  */
 class Main extends Component {
@@ -15,27 +15,27 @@ class Main extends Component {
 	 */
 	constructor(props){
 		super(props);
-		this.state = {
-			"email" : "",
-			"password" : "",
+		console.log(props)
+		this.initialState = {
+			"email" : props.user?props.user.email:"",
+			"name" : "",
+			"contactMessage" : "",
+			"subject" : "",
 			"loading" : false,
 			"message" : null
-		}
+		};
+		this.state = this.initialState;
 		this.handleChange = handleChange.bind(this)
 	}
-	componentDidMount(){
-		//
-	}
-	
 	submit(event){
 		event.preventDefault();
-		const {login} = this.props;
-		const {email,password} = this.state;
+		const {contactUs} = this.props;
+		const {name,email,subject,contactMessage} = this.state;
 		this.setState({
 			loading : true
 		});
-		login({
-			email,password
+		contactUs({
+			name,email,subject,message : contactMessage
 		}).then(action=>{
 			console.log(action);
 			if(action.error){
@@ -43,30 +43,33 @@ class Main extends Component {
 					loading : false,
 					message : {
 						type : "danger",
-						text : "Your username or password was incorrect."
+						text : "Error while sending your message"
 					}
-				});		
+				});
 			} else {
+				this.reset();
 				this.setState({
 					loading : false,
 					message : {
 						type : "success",
-						text : "You are successfully logged in"
+						text : "We have received your message. We will get back to you shortly"
 					}
 				});
-				window.location.reload();
 			}
 		})
-		
+
+	}
+	reset(){
+		this.setState(this.initialState)
 	}
 	/**
 	 * Render the view
-	 * @returns {*}
 	 */
 	render() {
 		return (ComponentView.bind(this))();
 	}
 }
+
 /**
  * Bind Redux Actions
  * @param dispatch
@@ -74,8 +77,8 @@ class Main extends Component {
  */
 const bindAction = (dispatch)=>{
 	return {
-		login : (data)=>{
-			return dispatch(createAction(ActionNames.LOGIN,data));
+		contactUs : (data)=>{
+			return dispatch(createAction(ActionNames.CONTACT_US,data));
 		}
 	}
 };
@@ -90,7 +93,7 @@ const mapStateToProps = (state) => {
 	}
 };
 //Set display name to be used in React Dev Tools
-Main.displayName = 'Login-Form';
+Main.displayName = 'Contact-Us';
 //Pre process the container with Redux Plugins
 export default preProcess(Main, {
 	connect: [mapStateToProps, bindAction],

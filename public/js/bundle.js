@@ -48651,7 +48651,8 @@
 		GET_PROFILE: "GET_PROFILE",
 		CHECK_DUPLICATE_EMAIL: "CHECK_DUPLICATE_EMAIL",
 		GET_PRODUCTS: "GET_PRODUCTS",
-		SUBMIT_PRODUCT: "SUBMIT_PRODUCT"
+		SUBMIT_PRODUCT: "SUBMIT_PRODUCT",
+		CONTACT_US: "CONTACT_US"
 	};
 	var Names = exports.Names = ActionNames;
 	/**
@@ -48733,6 +48734,13 @@
 			url: _config.api.PRODUCTS,
 			method: 'POST'
 		}
+	}, {
+		name: ActionNames.CONTACT_US,
+		type: "ajax",
+		config: {
+			url: _config.api.ENQUIRY,
+			method: 'POST'
+		}
 	}];
 	/**
 	 * Create a map so that it is easy to query
@@ -48808,7 +48816,8 @@
 	var REGISTER = exports.REGISTER = HOST + "auth/register";
 	var FORGOT = exports.FORGOT = SERVER + "session/signin";
 	var CHECK_DUPLICATE_EMAIL = exports.CHECK_DUPLICATE_EMAIL = HOST + "auth/checkDuplicate";
-	var PRODUCTS = exports.PRODUCTS = HOST + "products";
+	var PRODUCTS = exports.PRODUCTS = SERVER + "products";
+	var ENQUIRY = exports.ENQUIRY = HOST + "contact";
 
 /***/ }),
 /* 336 */
@@ -52568,7 +52577,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	/**
-	 * @name Sample Component
+	 * @name Main Container
 	 * @type Component
 	 * @author Inderdeep Singh
 	 */
@@ -52594,7 +52603,7 @@
 		_createClass(Main, [{
 			key: 'render',
 			value: function render() {
-				console.log(this.props);
+	
 				return _view2.default.bind(this)();
 			}
 		}]);
@@ -52605,7 +52614,7 @@
 	
 	
 	exports.default = Main;
-	Main.displayName = 'Sample-Component';
+	Main.displayName = 'Main';
 
 /***/ }),
 /* 396 */
@@ -52662,7 +52671,7 @@
 				'div',
 				{ className: 'main-container' },
 				_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user, categories: categories }),
-				_react2.default.createElement(routeInfo.component, { config: config }),
+				_react2.default.createElement(routeInfo.component, { user: user, config: config }),
 				_react2.default.createElement(_index8.default, { config: config }),
 				_react2.default.createElement(_login2.default, null),
 				_react2.default.createElement(_index4.default, null),
@@ -53608,8 +53617,6 @@
 		value: true
 	});
 	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(237);
@@ -53625,6 +53632,8 @@
 	var _preprocess2 = _interopRequireDefault(_preprocess);
 	
 	var _actions = __webpack_require__(332);
+	
+	var _common = __webpack_require__(489);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -53657,6 +53666,7 @@
 				"loading": false,
 				"message": null
 			};
+			_this.handleChange = _common.handleChange.bind(_this);
 			return _this;
 		}
 	
@@ -53664,13 +53674,6 @@
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				//
-			}
-		}, {
-			key: 'handleChange',
-			value: function handleChange(event) {
-				var obj = _extends({}, this.state);
-				obj[event.target.name] = event.target.value;
-				this.setState(obj);
 			}
 		}, {
 			key: 'submit',
@@ -53972,8 +53975,6 @@
 		value: true
 	});
 	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(237);
@@ -53989,6 +53990,8 @@
 	var _preprocess2 = _interopRequireDefault(_preprocess);
 	
 	var _actions = __webpack_require__(332);
+	
+	var _common = __webpack_require__(489);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -54021,6 +54024,7 @@
 				"loading": false,
 				"message": null
 			};
+			_this.handleChange = _common.handleChange.bind(_this);
 			return _this;
 		}
 	
@@ -54028,13 +54032,6 @@
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				//
-			}
-		}, {
-			key: 'handleChange',
-			value: function handleChange(event) {
-				var obj = _extends({}, this.state);
-				obj[event.target.name] = event.target.value;
-				this.setState(obj);
 			}
 		}, {
 			key: 'checkDuplicate',
@@ -55197,7 +55194,7 @@
 	
 	var _aboutUs2 = _interopRequireDefault(_aboutUs);
 	
-	var _contactUs = __webpack_require__(490);
+	var _contactUs = __webpack_require__(503);
 	
 	var _contactUs2 = _interopRequireDefault(_contactUs);
 	
@@ -57868,11 +57865,15 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	exports.camelize = camelize;
 	exports.jsUcfirst = jsUcfirst;
 	exports.dateCompare = dateCompare;
 	exports.isNumeric = isNumeric;
 	exports.getBackgroundImageStyle = getBackgroundImageStyle;
+	exports.handleChange = handleChange;
 	/**
 	 * Commonly used helper methods
 	 */
@@ -57928,235 +57929,22 @@
 		}
 		return 'url(' + image + ')';
 	}
-
-/***/ }),
-/* 490 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _main = __webpack_require__(491);
-	
-	var _main2 = _interopRequireDefault(_main);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _main2.default;
-
-/***/ }),
-/* 491 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _view = __webpack_require__(492);
-	
-	var _view2 = _interopRequireDefault(_view);
-	
-	var _axios = __webpack_require__(354);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
 	/**
-	 * @name Sample Component
-	 * @type Component
-	 * @author Inderdeep Singh
+	 * Handle input change
+	 * @param event
 	 */
-	var Main = function (_Component) {
-		_inherits(Main, _Component);
-	
-		/**
-	  * Constructor
-	  * @param props
-	  */
-		function Main(props) {
-			_classCallCheck(this, Main);
-	
-			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
-		}
-	
-		_createClass(Main, [{
-			key: 'componentDidMount',
-			value: function componentDidMount() {}
-			/**
-	   * Render the view
-	   * @returns {*}
-	   */
-	
-		}, {
-			key: 'render',
-			value: function render() {
-				return _view2.default.bind(this)();
-			}
-		}]);
-	
-		return Main;
-	}(_react.Component);
-	//Set display name to be used in React Dev Tools
-	
-	
-	exports.default = Main;
-	Main.displayName = 'Sample-Component';
-
-/***/ }),
-/* 492 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _style = __webpack_require__(493);
-	
-	var _style2 = _interopRequireDefault(_style);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var view = function view() {
-		return _react2.default.createElement(
-			"div",
-			{ className: "container contact-us" },
-			_react2.default.createElement(
-				"div",
-				{ className: "form" },
-				_react2.default.createElement(
-					"p",
-					{ className: "title" },
-					"Contact Us"
-				),
-				_react2.default.createElement(
-					"form",
-					null,
-					_react2.default.createElement(
-						"div",
-						{ className: "form-group" },
-						_react2.default.createElement(
-							"label",
-							null,
-							"Your Name"
-						),
-						_react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "Enter full name", required: true })
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "form-group" },
-						_react2.default.createElement(
-							"label",
-							null,
-							"Your Email"
-						),
-						_react2.default.createElement("input", { type: "email", className: "form-control", placeholder: "Enter email", required: true })
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "form-group" },
-						_react2.default.createElement(
-							"label",
-							null,
-							"Subject"
-						),
-						_react2.default.createElement("input", { type: "text", className: "form-control", placeholder: "Subject", required: true })
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "form-group" },
-						_react2.default.createElement(
-							"label",
-							null,
-							"Your Message"
-						),
-						_react2.default.createElement("textarea", { className: "form-control", placeholder: "Enter your message", required: true })
-					),
-					_react2.default.createElement(
-						"button",
-						{ type: "submit", className: "btn btn-yellow pull-right" },
-						"Submit"
-					)
-				)
-			)
-		);
-	};
-	exports.default = view;
-
-/***/ }),
-/* 493 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(494);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// Prepare cssTransformation
-	var transform;
-	
-	var options = {"hmr":true}
-	options.transform = transform
-	// add the styles to the DOM
-	var update = __webpack_require__(403)(content, options);
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
-				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
+	function handleChange(event) {
+		var obj = _extends({}, this.state);
+		obj[event.target.name] = event.target.value;
+		this.setState(obj);
 	}
 
 /***/ }),
-/* 494 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(402)(undefined);
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.contact-us {\n  padding-top: 50px; }\n  .contact-us .form {\n    width: 70%;\n    margin: auto; }\n    .contact-us .form .title {\n      font-size: 32px;\n      margin-bottom: 10px; }\n    .contact-us .form form {\n      background: #f7f7f7;\n      border-radius: 4px;\n      border: 1px solid #e9e9e9;\n      padding: 20px;\n      overflow: hidden; }\n      .contact-us .form form .btn {\n        margin-top: 10px; }\n", ""]);
-	
-	// exports
-	exports.locals = {
-		"contact-us": "contact-us",
-		"form": "form",
-		"title": "title",
-		"btn": "btn"
-	};
-
-/***/ }),
+/* 490 */,
+/* 491 */,
+/* 492 */,
+/* 493 */,
+/* 494 */,
 /* 495 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -58592,6 +58380,330 @@
 		}
 		return image;
 	}
+
+/***/ }),
+/* 503 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(504);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 504 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(505);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _preprocess = __webpack_require__(410);
+	
+	var _preprocess2 = _interopRequireDefault(_preprocess);
+	
+	var _actions = __webpack_require__(332);
+	
+	var _common = __webpack_require__(489);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Container
+	 * @type Container
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+	
+			console.log(props);
+			_this.initialState = {
+				"email": props.user ? props.user.email : "",
+				"name": "",
+				"contactMessage": "",
+				"subject": "",
+				"loading": false,
+				"message": null
+			};
+			_this.state = _this.initialState;
+			_this.handleChange = _common.handleChange.bind(_this);
+			return _this;
+		}
+	
+		_createClass(Main, [{
+			key: 'submit',
+			value: function submit(event) {
+				var _this2 = this;
+	
+				event.preventDefault();
+				var contactUs = this.props.contactUs;
+				var _state = this.state,
+				    name = _state.name,
+				    email = _state.email,
+				    subject = _state.subject,
+				    contactMessage = _state.contactMessage;
+	
+				this.setState({
+					loading: true
+				});
+				contactUs({
+					name: name, email: email, subject: subject, message: contactMessage
+				}).then(function (action) {
+					console.log(action);
+					if (action.error) {
+						_this2.setState({
+							loading: false,
+							message: {
+								type: "danger",
+								text: "Error while sending your message"
+							}
+						});
+					} else {
+						_this2.reset();
+						_this2.setState({
+							loading: false,
+							message: {
+								type: "success",
+								text: "We have received your message. We will get back to you shortly"
+							}
+						});
+					}
+				});
+			}
+		}, {
+			key: 'reset',
+			value: function reset() {
+				this.setState(this.initialState);
+			}
+			/**
+	   * Render the view
+	   */
+	
+		}, {
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	
+	/**
+	 * Bind Redux Actions
+	 * @param dispatch
+	 * @returns {{Object}}
+	 */
+	
+	
+	var bindAction = function bindAction(dispatch) {
+		return {
+			contactUs: function contactUs(data) {
+				return dispatch((0, _actions.createAction)(_actions.ActionNames.CONTACT_US, data));
+			}
+		};
+	};
+	/**
+	 * Bind State to props
+	 * @param dispatch
+	 * @returns {{Object}}
+	 */
+	var mapStateToProps = function mapStateToProps(state) {
+		return {
+			//emitter : state.emitter
+		};
+	};
+	//Set display name to be used in React Dev Tools
+	Main.displayName = 'Contact-Us';
+	//Pre process the container with Redux Plugins
+	exports.default = (0, _preprocess2.default)(Main, {
+		connect: [mapStateToProps, bindAction],
+		localize: false
+	});
+
+/***/ }),
+/* 505 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(506);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		var handleChange = this.handleChange,
+		    submit = this.submit,
+		    state = this.state;
+		var _state = this.state,
+		    loading = _state.loading,
+		    message = _state.message;
+	
+		return _react2.default.createElement(
+			"div",
+			{ className: "container contact-us" },
+			_react2.default.createElement(
+				"div",
+				{ className: "form" },
+				_react2.default.createElement(
+					"p",
+					{ className: "title" },
+					"Contact Us"
+				),
+				_react2.default.createElement(
+					"form",
+					{ onSubmit: submit.bind(this) },
+					message ? _react2.default.createElement(
+						"div",
+						{ className: "alert alert-" + message.type },
+						message.text
+					) : null,
+					_react2.default.createElement(
+						"div",
+						{ className: "form-group" },
+						_react2.default.createElement(
+							"label",
+							null,
+							"Your Name"
+						),
+						_react2.default.createElement("input", { readOnly: loading, type: "text", onChange: handleChange.bind(this), value: this.state.name, name: "name", className: "form-control", placeholder: "Enter full name", required: true })
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "form-group" },
+						_react2.default.createElement(
+							"label",
+							null,
+							"Your Email"
+						),
+						_react2.default.createElement("input", { readOnly: loading, type: "email", onChange: handleChange.bind(this), value: this.state.email, name: "email", className: "form-control", placeholder: "Enter email", required: true })
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "form-group" },
+						_react2.default.createElement(
+							"label",
+							null,
+							"Subject"
+						),
+						_react2.default.createElement("input", { readOnly: loading, type: "text", onChange: handleChange.bind(this), value: this.state.subject, name: "subject", className: "form-control", placeholder: "Subject", required: true })
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "form-group" },
+						_react2.default.createElement(
+							"label",
+							null,
+							"Your Message"
+						),
+						_react2.default.createElement("textarea", { readOnly: loading, className: "form-control", onChange: handleChange.bind(this), value: this.state.contactMessage, name: "contactMessage", placeholder: "Enter your message", required: true })
+					),
+					_react2.default.createElement(
+						"button",
+						{ disabled: loading, type: "submit", className: "btn btn-yellow pull-right" },
+						"Submit"
+					)
+				)
+			)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 506 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(507);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(403)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 507 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(402)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.contact-us {\n  padding-top: 50px; }\n  .contact-us .form {\n    width: 70%;\n    margin: auto; }\n    .contact-us .form .title {\n      font-size: 32px;\n      margin-bottom: 10px; }\n    .contact-us .form form {\n      background: #f7f7f7;\n      border-radius: 4px;\n      border: 1px solid #e9e9e9;\n      padding: 20px;\n      overflow: hidden; }\n      .contact-us .form form .btn {\n        margin-top: 10px; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"contact-us": "contact-us",
+		"form": "form",
+		"title": "title",
+		"btn": "btn"
+	};
 
 /***/ })
 /******/ ]);

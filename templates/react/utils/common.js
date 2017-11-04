@@ -54,3 +54,14 @@ export function getBackgroundImageStyle(image){
 	}
 	return 'url(' + image + ')'
 }
+/**
+ * Handle input change
+ * @param event
+ */
+export function handleChange(event){
+	let obj = {
+		...this.state
+	};
+	obj[event.target.name] = event.target.value
+	this.setState(obj)
+}

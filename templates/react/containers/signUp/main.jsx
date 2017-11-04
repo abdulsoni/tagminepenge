@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ComponentView from './view';
 import preProcess from '../preprocess';
 import {createAction,ActionNames} from '../../redux/actions';
+import {handleChange} from '../../utils/common'
 /**
  * @name Login Form
  * @type Component
@@ -20,17 +21,12 @@ class Main extends Component {
 			"loading" : false,
 			"message" : null
 		}
+		this.handleChange = handleChange.bind(this)
 	}
 	componentDidMount(){
 		//
 	}
-	handleChange(event){
-		let obj = {
-			...this.state
-		};
-		obj[event.target.name] = event.target.value
-		this.setState(obj)
-	}
+	
 	checkDuplicate(){
 		const {checkDuplicateEmail} = this.props;
 		return checkDuplicateEmail({

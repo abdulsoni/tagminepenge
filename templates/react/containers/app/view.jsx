@@ -13,7 +13,7 @@ var view = function () {
 			<div className="main-container">
 				<Header navLinks = {navLinks} user = {user} categories = {categories}/>
 				{
-					<routeInfo.component config = {config}/>
+					<routeInfo.component  user = {user} config = {config}/>
 				}
 				<Footer config = {config}/>
 				<LoginModal/>
