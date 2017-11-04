@@ -12,8 +12,9 @@ var Configuration = new keystone.List('Configuration', {
 
 Configuration.add({
 	name: { type: String, required: true },
-	value: { type: String, required: true,default:'value' },
-	media: { type: Types.CloudinaryImage, required: false }
+	value: { type: String, required: false},
+	media: { type: Types.CloudinaryImage, required: false },
+	description : { type: Types.Html, required: false },
 });
 
 

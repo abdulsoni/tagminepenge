@@ -2,6 +2,7 @@ import React from 'react';
 import styles from "./style.scss";
 
 var view = function () {
+	const {config} = this.props;
 	return (
 		<div className="footer">
 			<div className="container">
@@ -40,11 +41,11 @@ var view = function () {
 						</div>
 						<div className="links">
 							<ul>
-								<li><a>Contact us</a></li>
-								<li><a>About us</a></li>
-								<li><a>Submit a product</a></li>
-								<li><a>Privacy Policy</a></li>
-								<li><a>Blog</a></li>
+								<li href="/contact"><a>Contact us</a></li>
+								<li><a href="/about">About us</a></li>
+								<li href="/submit-product"><a>Submit a product</a></li>
+								<li href="/privacy-policy"><a>Privacy Policy</a></li>
+								{/*<li><a>Blog</a></li>*/}
 							</ul>
 						</div>
 					</div>
@@ -54,11 +55,11 @@ var view = function () {
 						</div>
 						<div className="links">
 							<ul>
-								<li><a>Facebook</a></li>
-								<li><a>Twitter</a></li>
-								<li><a>Tumblr</a></li>
-								<li><a>Pinterest</a></li>
-								<li><a>RSS</a></li>
+								<li><a href={config.facebook?config.facebook.value:""}>Facebook</a></li>
+								<li><a href={config.twitter?config.twitter.value:""}>Twitter</a></li>
+								<li><a href={config.tumbler?config.tumbler.value:""}>Tumblr</a></li>
+								<li><a href={config.pinterest?config.pinterest.value:""}>Pinterest</a></li>
+								<li><a href={config.rss?config.rss.value:""}>RSS</a></li>
 							</ul>
 						</div>
 					</div>

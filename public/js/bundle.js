@@ -52663,7 +52663,7 @@
 				{ className: 'main-container' },
 				_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user, categories: categories }),
 				_react2.default.createElement(routeInfo.component, { config: config }),
-				_react2.default.createElement(_index8.default, null),
+				_react2.default.createElement(_index8.default, { config: config }),
 				_react2.default.createElement(_login2.default, null),
 				_react2.default.createElement(_index4.default, null),
 				_react2.default.createElement(_index6.default, null)
@@ -54792,6 +54792,8 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
+		var config = this.props.config;
+	
 		return _react2.default.createElement(
 			"div",
 			{ className: "footer" },
@@ -54953,7 +54955,7 @@
 								null,
 								_react2.default.createElement(
 									"li",
-									null,
+									{ href: "/contact" },
 									_react2.default.createElement(
 										"a",
 										null,
@@ -54965,13 +54967,13 @@
 									null,
 									_react2.default.createElement(
 										"a",
-										null,
+										{ href: "/about" },
 										"About us"
 									)
 								),
 								_react2.default.createElement(
 									"li",
-									null,
+									{ href: "/submit-product" },
 									_react2.default.createElement(
 										"a",
 										null,
@@ -54980,20 +54982,11 @@
 								),
 								_react2.default.createElement(
 									"li",
-									null,
+									{ href: "/privacy-policy" },
 									_react2.default.createElement(
 										"a",
 										null,
 										"Privacy Policy"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										null,
-										"Blog"
 									)
 								)
 							)
@@ -55022,7 +55015,7 @@
 									null,
 									_react2.default.createElement(
 										"a",
-										null,
+										{ href: config.facebook ? config.facebook.value : "" },
 										"Facebook"
 									)
 								),
@@ -55031,7 +55024,7 @@
 									null,
 									_react2.default.createElement(
 										"a",
-										null,
+										{ href: config.twitter ? config.twitter.value : "" },
 										"Twitter"
 									)
 								),
@@ -55040,7 +55033,7 @@
 									null,
 									_react2.default.createElement(
 										"a",
-										null,
+										{ href: config.tumbler ? config.tumbler.value : "" },
 										"Tumblr"
 									)
 								),
@@ -55049,7 +55042,7 @@
 									null,
 									_react2.default.createElement(
 										"a",
-										null,
+										{ href: config.pinterest ? config.pinterest.value : "" },
 										"Pinterest"
 									)
 								),
@@ -55058,7 +55051,7 @@
 									null,
 									_react2.default.createElement(
 										"a",
-										null,
+										{ href: config.rss ? config.rss.value : "" },
 										"RSS"
 									)
 								)
@@ -55204,11 +55197,11 @@
 	
 	var _aboutUs2 = _interopRequireDefault(_aboutUs);
 	
-	var _contactUs = __webpack_require__(489);
+	var _contactUs = __webpack_require__(490);
 	
 	var _contactUs2 = _interopRequireDefault(_contactUs);
 	
-	var _stage = __webpack_require__(494);
+	var _stage = __webpack_require__(495);
 	
 	var _stage2 = _interopRequireDefault(_stage);
 	
@@ -57735,13 +57728,24 @@
 	
 	var _banner2 = _interopRequireDefault(_banner);
 	
+	var _common = __webpack_require__(489);
+	
+	var _appUtil = __webpack_require__(502);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
+		var config = this.props.config;
+	
+		var banner = config["about-us-banner"];
+		var image1 = config["about-us-image-1"];
+		var image2 = config["about-us-image-2"];
+		var text = config["about-us-text"];
+		var text2 = config["about-us-text-2"];
 		return _react2.default.createElement(
 			'div',
 			{ className: 'about-us' },
-			_react2.default.createElement(_banner2.default, null),
+			_react2.default.createElement(_banner2.default, { banner: (0, _appUtil.getImage)(banner) }),
 			_react2.default.createElement(
 				'div',
 				{ className: 'container details' },
@@ -57754,7 +57758,7 @@
 						_react2.default.createElement(
 							'div',
 							{ className: 'image-box' },
-							_react2.default.createElement('span', { className: 'image' })
+							_react2.default.createElement('span', { className: 'image', style: { backgroundImage: (0, _common.getBackgroundImageStyle)((0, _appUtil.getImage)(image1)) } })
 						)
 					),
 					_react2.default.createElement(
@@ -57766,7 +57770,7 @@
 							_react2.default.createElement(
 								'p',
 								null,
-								'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.'
+								text ? text.description : null
 							)
 						)
 					)
@@ -57783,7 +57787,7 @@
 							_react2.default.createElement(
 								'p',
 								null,
-								'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.'
+								text2 ? text2.description : null
 							)
 						)
 					),
@@ -57793,7 +57797,7 @@
 						_react2.default.createElement(
 							'div',
 							{ className: 'image-box' },
-							_react2.default.createElement('span', { className: 'image' })
+							_react2.default.createElement('span', { className: 'image', style: { backgroundImage: (0, _common.getBackgroundImageStyle)((0, _appUtil.getImage)(image2)) } })
 						)
 					)
 				)
@@ -57857,6 +57861,76 @@
 
 /***/ }),
 /* 489 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.camelize = camelize;
+	exports.jsUcfirst = jsUcfirst;
+	exports.dateCompare = dateCompare;
+	exports.isNumeric = isNumeric;
+	exports.getBackgroundImageStyle = getBackgroundImageStyle;
+	/**
+	 * Commonly used helper methods
+	 */
+	/**
+	 * To convert a string to camel case
+	 * @param str
+	 */
+	function camelize(str) {
+		return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
+			if (+match === 0) return ''; // or if (/\s+/.test(match)) for white spaces
+			return index == 0 ? match.toLowerCase() : match.toUpperCase();
+		});
+	}
+	/**
+	 * To convert first character of a string to uppercase
+	 * @param string
+	 * @returns {string}
+	 */
+	function jsUcfirst(string) {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+	
+	function dateCompare(a, b) {
+		var dateA = new Date(a.date);
+		var dateB = new Date(b.date);
+		return dateA - dateB;
+	}
+	
+	var emailRegex = exports.emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	
+	/**
+	 * Check if typed number is numeric
+	 * @param evt
+	 * @returns {boolean}
+	 */
+	function isNumeric(evt) {
+		evt = evt ? evt : window.event;
+		var charCode = evt.which ? evt.which : evt.keyCode;
+		if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+			return false;
+		}
+		return true;
+	}
+	
+	/**
+	 * Get background image style
+	 * @param image
+	 * @returns Object
+	 */
+	function getBackgroundImageStyle(image) {
+		if (!image || image == '') {
+			return null;
+		}
+		return 'url(' + image + ')';
+	}
+
+/***/ }),
+/* 490 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -57865,7 +57939,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(490);
+	var _main = __webpack_require__(491);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -57874,7 +57948,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 490 */
+/* 491 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -57889,7 +57963,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(491);
+	var _view = __webpack_require__(492);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -57947,7 +58021,7 @@
 	Main.displayName = 'Sample-Component';
 
 /***/ }),
-/* 491 */
+/* 492 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -57960,7 +58034,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _style = __webpack_require__(492);
+	var _style = __webpack_require__(493);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
@@ -58033,13 +58107,13 @@
 	exports.default = view;
 
 /***/ }),
-/* 492 */
+/* 493 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(493);
+	var content = __webpack_require__(494);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -58064,7 +58138,7 @@
 	}
 
 /***/ }),
-/* 493 */
+/* 494 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(402)(undefined);
@@ -58083,7 +58157,7 @@
 	};
 
 /***/ }),
-/* 494 */
+/* 495 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58092,7 +58166,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(495);
+	var _main = __webpack_require__(496);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -58101,7 +58175,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 495 */
+/* 496 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58116,7 +58190,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(496);
+	var _view = __webpack_require__(497);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -58174,7 +58248,7 @@
 	Main.displayName = 'Sample-Component';
 
 /***/ }),
-/* 496 */
+/* 497 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -58187,11 +58261,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _style = __webpack_require__(497);
+	var _style = __webpack_require__(498);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
-	var _common = __webpack_require__(499);
+	var _common = __webpack_require__(489);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -58272,13 +58346,13 @@
 	exports.default = view;
 
 /***/ }),
-/* 497 */
+/* 498 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(498);
+	var content = __webpack_require__(499);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -58303,7 +58377,7 @@
 	}
 
 /***/ }),
-/* 498 */
+/* 499 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(402)(undefined);
@@ -58320,63 +58394,6 @@
 		"title": "title",
 		"btn": "btn"
 	};
-
-/***/ }),
-/* 499 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.camelize = camelize;
-	exports.jsUcfirst = jsUcfirst;
-	exports.dateCompare = dateCompare;
-	exports.isNumeric = isNumeric;
-	/**
-	 * Commonly used helper methods
-	 */
-	/**
-	 * To convert a string to camel case
-	 * @param str
-	 */
-	function camelize(str) {
-		return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
-			if (+match === 0) return ''; // or if (/\s+/.test(match)) for white spaces
-			return index == 0 ? match.toLowerCase() : match.toUpperCase();
-		});
-	}
-	/**
-	 * To convert first character of a string to uppercase
-	 * @param string
-	 * @returns {string}
-	 */
-	function jsUcfirst(string) {
-		return string.charAt(0).toUpperCase() + string.slice(1);
-	}
-	
-	function dateCompare(a, b) {
-		var dateA = new Date(a.date);
-		var dateB = new Date(b.date);
-		return dateA - dateB;
-	}
-	
-	var emailRegex = exports.emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	
-	/**
-	 * Check if typed number is numeric
-	 * @param evt
-	 * @returns {boolean}
-	 */
-	function isNumeric(evt) {
-		evt = evt ? evt : window.event;
-		var charCode = evt.which ? evt.which : evt.keyCode;
-		if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-			return false;
-		}
-		return true;
-	}
 
 /***/ }),
 /* 500 */
@@ -58557,6 +58574,24 @@
 	
 	// React Engine needs exports, don't export default
 	module.exports = Index;
+
+/***/ }),
+/* 502 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.getImage = getImage;
+	function getImage(configuration) {
+		var image = null;
+		if (configuration && configuration.media) {
+			image = configuration.media.url;
+		}
+		return image;
+	}
 
 /***/ })
 /******/ ]);

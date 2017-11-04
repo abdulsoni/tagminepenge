@@ -42,3 +42,15 @@ export function isNumeric(evt){
 	}
 	return true;
 }
+
+/**
+ * Get background image style
+ * @param image
+ * @returns Object
+ */
+export function getBackgroundImageStyle(image){
+	if(!image || image==''){
+		return null;
+	}
+	return 'url(' + image + ')'
+}
