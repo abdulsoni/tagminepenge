@@ -14,7 +14,7 @@ Configuration.add({
 	name: { type: String, required: true },
 	value: { type: String, required: false},
 	media: { type: Types.CloudinaryImage, required: false },
-	description : { type: Types.Html, required: false },
+	description : { type: Types.Html, required: false,wysiwyg: true },
 });
 
 

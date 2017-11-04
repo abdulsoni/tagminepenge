@@ -5,6 +5,7 @@ import Product from './components/productPage';
 import WishList from './components/wishlist';
 import About from './components/aboutUs';
 import Contact from './containers/contactUs';
+import Privacy from './components/privacy-policy';
 import SubmitProduct from './containers/submit-product/stage-3';
 const Routes = {
 	"/" : {
@@ -28,5 +29,8 @@ const Routes = {
 	"/submit-product" : {
 		component : SubmitProduct
 	},
+	"/privacy-policy" : {
+		component : Privacy
+	}
 }
 module.exports = Routes;
