@@ -7,11 +7,11 @@ var view = function() {
 	return (
 		<div className="privacy-policy">
 			<div className="container details">
-				<h2 className="title">Privacy Policy</h2>
+				<h2 className="title">Fortrolighedspolitik</h2>
 				<div className="row">
 					<div className="col-md-12 col-lg-12 col-sm-24 col-xs-24">
 						<div className="text">
-							<p className="website">Tagminepinge.com<br/>PRIVACY POLICY</p>
+							<p className="website">TagMinePenge.dk<br/>Fortrolighedspolitik</p>
 							<p dangerouslySetInnerHTML={{__html : text?text.description:null}}></p>
 						</div>
 					</div>

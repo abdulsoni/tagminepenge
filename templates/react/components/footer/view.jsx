@@ -45,7 +45,7 @@ var view = function () {
 						</div>
 						<div className="links">
 							<ul>
-								<li><a href="/contact">Contact us</a></li>
+								<li><a href="/contact">Kontakt os</a></li>
 								<li><a href="/about">About us</a></li>
 								<li><a href="/submit-product">Submit a product</a></li>
 								<li><a href="/privacy-policy">Privacy Policy</a></li>
