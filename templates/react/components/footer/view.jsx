@@ -46,9 +46,9 @@ var view = function () {
 						<div className="links">
 							<ul>
 								<li><a href="/contact">Kontakt os</a></li>
-								<li><a href="/about">About us</a></li>
+								<li><a href="/about">Om os</a></li>
 								<li><a href="/submit-product">Submit a product</a></li>
-								<li><a href="/privacy-policy">Privacy Policy</a></li>
+								<li><a href="/privacy-policy">Fortrolighedspolitik</a></li>
 								{/*<li><a>Blog</a></li>*/}
 							</ul>
 						</div>

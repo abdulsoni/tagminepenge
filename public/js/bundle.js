@@ -54986,7 +54986,7 @@
 									_react2.default.createElement(
 										"a",
 										{ href: "/about" },
-										"About us"
+										"Om os"
 									)
 								),
 								_react2.default.createElement(
@@ -55004,7 +55004,7 @@
 									_react2.default.createElement(
 										"a",
 										{ href: "/privacy-policy" },
-										"Privacy Policy"
+										"Fortrolighedspolitik"
 									)
 								)
 							)
