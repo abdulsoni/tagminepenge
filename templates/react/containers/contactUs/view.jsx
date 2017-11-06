@@ -2,16 +2,17 @@ import React from 'react';
 import styles from "./style.scss";
 
 var view = function () {
-	const {handleChange,submit,state,config} = this;
+	const {handleChange,submit,state} = this;
+	const {config} = this.props;
 	const {loading,message} = this.state;
-	const titleText = config["contact-us-title-text"];
+	const titleText = config["contact-us-title"];
 	return (
 		<div className="container contact-us">
 			<div className="form">
 				<p className="title">Kontakt os</p>
 				{
 					(titleText && titleText!='')?(
-						<p className="title-text">{titleText}</p>
+						<p className="title-text">{titleText.value}</p>
 					):null
 				}
 				<form onSubmit={submit.bind(this)}>

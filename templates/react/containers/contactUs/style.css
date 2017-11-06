@@ -12,7 +12,9 @@
       font-size: 32px;
       margin-bottom: 10px; }
     .contact-us .form .title-text {
-      font-size: 20px; }
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: center; }
     .contact-us .form form {
       background: #f7f7f7;
       border-radius: 4px;

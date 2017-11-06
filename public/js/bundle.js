@@ -57766,11 +57766,29 @@
 		var image1 = config["about-us-image-1"];
 		var image2 = config["about-us-image-2"];
 		var text = config["about-us-text"];
+		var title = config["about-us-title"];
 		var text2 = config["about-us-text-2"];
 		return _react2.default.createElement(
 			'div',
 			{ className: 'about-us' },
 			_react2.default.createElement(_banner2.default, { banner: (0, _appUtil.getImage)(banner) }),
+			title ? _react2.default.createElement(
+				'div',
+				{ className: 'container title' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-12' },
+						_react2.default.createElement(
+							'div',
+							{ className: 'text' },
+							title.value
+						)
+					)
+				)
+			) : null,
 			_react2.default.createElement(
 				'div',
 				{ className: 'container details' },
@@ -57783,7 +57801,8 @@
 						_react2.default.createElement(
 							'div',
 							{ className: 'image-box' },
-							_react2.default.createElement('span', { className: 'image', style: { backgroundImage: (0, _common.getBackgroundImageStyle)((0, _appUtil.getImage)(image1)) } })
+							_react2.default.createElement('span', { className: 'image',
+								style: { backgroundImage: (0, _common.getBackgroundImageStyle)((0, _appUtil.getImage)(image1)) } })
 						)
 					),
 					_react2.default.createElement(
@@ -57814,7 +57833,8 @@
 						_react2.default.createElement(
 							'div',
 							{ className: 'image-box' },
-							_react2.default.createElement('span', { className: 'image', style: { backgroundImage: (0, _common.getBackgroundImageStyle)((0, _appUtil.getImage)(image2)) } })
+							_react2.default.createElement('span', { className: 'image',
+								style: { backgroundImage: (0, _common.getBackgroundImageStyle)((0, _appUtil.getImage)(image2)) } })
 						)
 					)
 				)
@@ -57863,11 +57883,13 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.about-us .details {\n  padding-top: 100px; }\n  .about-us .details .row .image-box .image {\n    display: block;\n    width: 95%;\n    height: 240px;\n    background: #e6e6e6; }\n  .about-us .details .row .text {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    line-height: 26px; }\n  .about-us .details .row.one {\n    margin-bottom: 70px; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.about-us .container.title {\n  text-align: center;\n  font-size: 20px;\n  padding-top: 50px; }\n\n.about-us .details {\n  padding-top: 50px; }\n  .about-us .details .row .image-box .image {\n    display: block;\n    width: 95%;\n    height: 240px;\n    background: #e6e6e6;\n    background-size: cover; }\n  .about-us .details .row .text {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    line-height: 26px; }\n  .about-us .details .row.one {\n    margin-bottom: 70px; }\n", ""]);
 	
 	// exports
 	exports.locals = {
 		"about-us": "about-us",
+		"container": "container",
+		"title": "title",
 		"details": "details",
 		"row": "row",
 		"image-box": "image-box",
@@ -58094,10 +58116,12 @@
 		var handleChange = this.handleChange,
 		    submit = this.submit,
 		    state = this.state;
+		var config = this.props.config;
 		var _state = this.state,
 		    loading = _state.loading,
 		    message = _state.message;
 	
+		var titleText = config["contact-us-title"];
 		return _react2.default.createElement(
 			"div",
 			{ className: "container contact-us" },
@@ -58109,6 +58133,11 @@
 					{ className: "title" },
 					"Kontakt os"
 				),
+				titleText && titleText != '' ? _react2.default.createElement(
+					"p",
+					{ className: "title-text" },
+					titleText.value
+				) : null,
 				_react2.default.createElement(
 					"form",
 					{ onSubmit: submit.bind(this) },
@@ -58208,13 +58237,14 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.contact-us {\n  padding-top: 50px; }\n  .contact-us .form {\n    width: 70%;\n    margin: auto; }\n    .contact-us .form .title {\n      font-size: 32px;\n      margin-bottom: 10px; }\n    .contact-us .form form {\n      background: #f7f7f7;\n      border-radius: 4px;\n      border: 1px solid #e9e9e9;\n      padding: 20px;\n      overflow: hidden; }\n      .contact-us .form form .btn {\n        margin-top: 10px; }\n  .contact-us p.title {\n    text-align: center; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.contact-us {\n  padding-top: 50px; }\n  .contact-us .form {\n    width: 70%;\n    margin: auto; }\n    .contact-us .form .title {\n      font-size: 32px;\n      margin-bottom: 10px; }\n    .contact-us .form .title-text {\n      font-size: 20px;\n      margin-bottom: 20px;\n      text-align: center; }\n    .contact-us .form form {\n      background: #f7f7f7;\n      border-radius: 4px;\n      border: 1px solid #e9e9e9;\n      padding: 20px;\n      overflow: hidden; }\n      .contact-us .form form .btn {\n        margin-top: 10px; }\n  .contact-us p.title {\n    text-align: center; }\n", ""]);
 	
 	// exports
 	exports.locals = {
 		"contact-us": "contact-us",
 		"form": "form",
 		"title": "title",
+		"title-text": "title-text",
 		"btn": "btn"
 	};
 
