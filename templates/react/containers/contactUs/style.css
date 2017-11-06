@@ -11,6 +11,8 @@
     .contact-us .form .title {
       font-size: 32px;
       margin-bottom: 10px; }
+    .contact-us .form .title-text {
+      font-size: 20px; }
     .contact-us .form form {
       background: #f7f7f7;
       border-radius: 4px;

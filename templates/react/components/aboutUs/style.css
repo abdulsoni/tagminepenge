@@ -9,7 +9,8 @@
     display: block;
     width: 95%;
     height: 240px;
-    background: #e6e6e6; }
+    background: #e6e6e6;
+    background-size: cover; }
   .about-us .details .row .text {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 26px; }
