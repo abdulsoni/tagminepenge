@@ -3,5 +3,12 @@
 /*text*/
 /*backgrounds*/
 /*border*/
+.faqs .item {
+  margin-bottom: 20px; }
+  .faqs .item .question {
+    font-weight: bold;
+    font-size: 16px; }
+  .faqs .item .answer {
+    font-size: 15px; }
 
 /*# sourceMappingURL=style.css.map */

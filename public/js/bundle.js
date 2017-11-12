@@ -57503,7 +57503,7 @@
 /* 482 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -57517,229 +57517,252 @@
 	
 	var _style2 = _interopRequireDefault(_style);
 	
+	var _testimonials = __webpack_require__(513);
+	
+	var _testimonials2 = _interopRequireDefault(_testimonials);
+	
+	var _faqs = __webpack_require__(518);
+	
+	var _faqs2 = _interopRequireDefault(_faqs);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
 		return _react2.default.createElement(
-			"div",
-			{ className: "product-pitch" },
+			'div',
+			{ className: 'product-pitch' },
 			_react2.default.createElement(
-				"div",
-				{ className: "content" },
+				'div',
+				{ className: 'content' },
 				_react2.default.createElement(
-					"div",
-					{ className: "item get-started" },
-					_react2.default.createElement("img", { src: "/images/cash.jpg", alt: "graphic" }),
+					'div',
+					{ className: 'item get-started' },
+					_react2.default.createElement('img', { src: '/images/cash.jpg', alt: 'graphic' }),
 					_react2.default.createElement(
-						"p",
-						{ className: "title" },
-						"Pitch Your Product"
+						'p',
+						{ className: 'title' },
+						'Pitch Your Product'
 					),
 					_react2.default.createElement(
-						"p",
-						{ className: "description" },
-						"We'll show it to our users for a short period - if your product's engagement with our readers is at least equal to or above the average of all products listed, it will earn a permanent spot on our site"
+						'p',
+						{ className: 'description' },
+						'We\'ll show it to our users for a short period - if your product\'s engagement with our readers is at least equal to or above the average of all products listed, it will earn a permanent spot on our site'
 					),
 					_react2.default.createElement(
-						"button",
-						{ className: "btn btn-yellow" },
-						"Get Started"
+						'button',
+						{ className: 'btn btn-yellow' },
+						'Get Started'
 					)
 				),
 				_react2.default.createElement(
-					"div",
-					{ className: "item working" },
+					'div',
+					{ className: 'item working' },
 					_react2.default.createElement(
-						"p",
-						{ className: "title" },
-						"How it works"
+						'p',
+						{ className: 'title' },
+						'How it works'
 					),
 					_react2.default.createElement(
-						"div",
-						{ className: "row container" },
+						'div',
+						{ className: 'row container' },
 						_react2.default.createElement(
-							"div",
-							{ className: "col-md-4" },
+							'div',
+							{ className: 'col-md-4' },
 							_react2.default.createElement(
-								"div",
-								{ className: "sub-item" },
+								'div',
+								{ className: 'sub-item' },
 								_react2.default.createElement(
-									"p",
-									{ className: "label" },
-									"Create Your Pitch"
+									'p',
+									{ className: 'label' },
+									'Create Your Pitch'
 								),
-								_react2.default.createElement("img", { src: "/images/screen.png", alt: "graphic" }),
+								_react2.default.createElement('img', { src: '/images/screen.png', alt: 'graphic' }),
 								_react2.default.createElement(
-									"p",
-									{ className: "description" },
-									"After creating your listing, your product will be shown to 20,000 of our verified unique users"
+									'p',
+									{ className: 'description' },
+									'After creating your listing, your product will be shown to 20,000 of our verified unique users'
 								)
 							)
 						),
 						_react2.default.createElement(
-							"div",
-							{ className: "col-md-4" },
+							'div',
+							{ className: 'col-md-4' },
 							_react2.default.createElement(
-								"div",
-								{ className: "sub-item" },
+								'div',
+								{ className: 'sub-item' },
 								_react2.default.createElement(
-									"p",
-									{ className: "label" },
-									"Our Readers Engage"
+									'p',
+									{ className: 'label' },
+									'Our Readers Engage'
 								),
-								_react2.default.createElement("img", { src: "/images/network.png", alt: "graphic" }),
+								_react2.default.createElement('img', { src: '/images/network.png', alt: 'graphic' }),
 								_react2.default.createElement(
-									"p",
-									{ className: "description" },
-									"Unique clicks and wishlist saves are measured and compared against the average engagement performance of all products currently listed"
+									'p',
+									{ className: 'description' },
+									'Unique clicks and wishlist saves are measured and compared against the average engagement performance of all products currently listed'
 								)
 							)
 						),
 						_react2.default.createElement(
-							"div",
-							{ className: "col-md-4" },
+							'div',
+							{ className: 'col-md-4' },
 							_react2.default.createElement(
-								"div",
-								{ className: "sub-item" },
+								'div',
+								{ className: 'sub-item' },
 								_react2.default.createElement(
-									"p",
-									{ className: "label" },
-									"Performance Is Tracked"
+									'p',
+									{ className: 'label' },
+									'Performance Is Tracked'
 								),
-								_react2.default.createElement("img", { src: "/images/gauge.png", alt: "graphic" }),
+								_react2.default.createElement('img', { src: '/images/gauge.png', alt: 'graphic' }),
 								_react2.default.createElement(
-									"p",
-									{ className: "description" },
-									"If your pitch performs at least equal to or above the average, it will be permanently listed, included in gift guides, newsletters, and social media"
+									'p',
+									{ className: 'description' },
+									'If your pitch performs at least equal to or above the average, it will be permanently listed, included in gift guides, newsletters, and social media'
 								)
 							)
 						)
 					)
 				),
 				_react2.default.createElement(
-					"div",
-					{ className: "item preview" },
-					_react2.default.createElement("img", { src: "/images/preview.png", alt: "graphic" }),
+					'div',
+					{ className: 'item preview' },
+					_react2.default.createElement('img', { src: '/images/preview.png', alt: 'graphic' }),
 					_react2.default.createElement(
-						"p",
-						{ className: "description" },
-						"Your product pitch will look identical to other posts on our site, ensuring a consistent experience for our users to engage with"
+						'p',
+						{ className: 'description' },
+						'Your product pitch will look identical to other posts on our site, ensuring a consistent experience for our users to engage with'
 					)
 				),
 				_react2.default.createElement(
-					"div",
-					{ className: "item stats" },
+					'div',
+					{ className: 'item stats' },
 					_react2.default.createElement(
-						"p",
-						{ className: "title" },
-						"The This Is Why I'm Broke Audience"
+						'p',
+						{ className: 'title' },
+						'The This Is Why I\'m Broke Audience'
 					),
 					_react2.default.createElement(
-						"div",
-						{ className: "row" },
-						_react2.default.createElement("div", { className: "col-md-1" }),
+						'div',
+						{ className: 'row' },
+						_react2.default.createElement('div', { className: 'col-md-1' }),
 						_react2.default.createElement(
-							"div",
-							{ className: "col-md-2" },
+							'div',
+							{ className: 'col-md-2' },
 							_react2.default.createElement(
-								"div",
+								'div',
 								null,
 								_react2.default.createElement(
-									"p",
-									{ className: "value" },
-									"2 million"
+									'p',
+									{ className: 'value' },
+									'2 million'
 								),
 								_react2.default.createElement(
-									"p",
-									{ className: "text" },
-									"monthly visitors"
+									'p',
+									{ className: 'text' },
+									'monthly visitors'
 								)
 							)
 						),
 						_react2.default.createElement(
-							"div",
-							{ className: "col-md-2" },
+							'div',
+							{ className: 'col-md-2' },
 							_react2.default.createElement(
-								"div",
+								'div',
 								null,
 								_react2.default.createElement(
-									"p",
-									{ className: "value" },
-									"427k"
+									'p',
+									{ className: 'value' },
+									'427k'
 								),
 								_react2.default.createElement(
-									"p",
-									{ className: "text" },
-									"email subscribers"
+									'p',
+									{ className: 'text' },
+									'email subscribers'
 								)
 							)
 						),
 						_react2.default.createElement(
-							"div",
-							{ className: "col-md-2" },
+							'div',
+							{ className: 'col-md-2' },
 							_react2.default.createElement(
-								"div",
+								'div',
 								null,
 								_react2.default.createElement(
-									"p",
-									{ className: "value" },
-									"391K"
+									'p',
+									{ className: 'value' },
+									'391K'
 								),
 								_react2.default.createElement(
-									"p",
-									{ className: "text" },
-									"social media followers"
+									'p',
+									{ className: 'text' },
+									'social media followers'
 								)
 							)
 						),
 						_react2.default.createElement(
-							"div",
-							{ className: "col-md-2" },
+							'div',
+							{ className: 'col-md-2' },
 							_react2.default.createElement(
-								"div",
+								'div',
 								null,
 								_react2.default.createElement(
-									"p",
-									{ className: "value" },
-									"18 - 34"
+									'p',
+									{ className: 'value' },
+									'18 - 34'
 								),
 								_react2.default.createElement(
-									"p",
-									{ className: "text" },
-									"average user age"
+									'p',
+									{ className: 'text' },
+									'average user age'
 								)
 							)
 						),
 						_react2.default.createElement(
-							"div",
-							{ className: "col-md-2" },
+							'div',
+							{ className: 'col-md-2' },
 							_react2.default.createElement(
-								"div",
+								'div',
 								null,
 								_react2.default.createElement(
-									"p",
-									{ className: "value" },
-									"73% : 27%"
+									'p',
+									{ className: 'value' },
+									'73% : 27%'
 								),
 								_react2.default.createElement(
-									"p",
-									{ className: "text" },
-									"male : female ratio"
+									'p',
+									{ className: 'text' },
+									'male : female ratio'
 								)
 							)
 						),
-						_react2.default.createElement("div", { className: "col-md-1" })
+						_react2.default.createElement('div', { className: 'col-md-1' })
 					)
 				),
 				_react2.default.createElement(
-					"div",
-					{ className: "item testimonials" },
-					"testimonials"
+					'div',
+					{ className: 'item testimonials' },
+					_react2.default.createElement(
+						'p',
+						{ className: 'title' },
+						'Success Stories'
+					),
+					_react2.default.createElement(_testimonials2.default, null),
+					_react2.default.createElement(
+						'button',
+						{ className: 'btn btn-yellow' },
+						'Get Started'
+					)
 				),
 				_react2.default.createElement(
-					"div",
-					{ className: "item faqs" },
-					"faqs"
+					'div',
+					{ className: 'item faqs container' },
+					_react2.default.createElement(
+						'p',
+						{ className: 'title' },
+						'Frequently Asked Questions'
+					),
+					_react2.default.createElement(_faqs2.default, null)
 				)
 			)
 		);
@@ -57786,7 +57809,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.product-pitch {\n  text-align: center;\n  font-family: 'Lato', sans-serif; }\n  .product-pitch .content .item .title {\n    font-size: 24px;\n    font-weight: bold;\n    margin-top: 10px; }\n  .product-pitch .content .item.get-started {\n    padding: 50px; }\n    .product-pitch .content .item.get-started .description {\n      width: 50%;\n      margin: 10px auto 20px auto;\n      font-size: 18px;\n      font-weight: 300; }\n  .product-pitch .content .item.working {\n    padding: 20px;\n    background-color: #ececec; }\n    .product-pitch .content .item.working .container {\n      width: 1200px;\n      margin: auto; }\n    .product-pitch .content .item.working .title {\n      color: #5b5b5b;\n      font-weight: bold;\n      font-size: 28px;\n      margin-bottom: 10px; }\n    .product-pitch .content .item.working .sub-item {\n      padding: 20px; }\n      .product-pitch .content .item.working .sub-item .label {\n        font-size: 18px;\n        color: #5b5b5b;\n        margin: 20px 0px;\n        display: block; }\n      .product-pitch .content .item.working .sub-item .description {\n        font-size: 18px; }\n  .product-pitch .content .item.preview {\n    padding: 50px; }\n    .product-pitch .content .item.preview img {\n      width: 500px; }\n    .product-pitch .content .item.preview .description {\n      width: 50%;\n      margin: 10px auto 20px auto;\n      font-size: 18px;\n      font-weight: 300; }\n  .product-pitch .content .item.stats {\n    padding: 20px 20px 30px 20px;\n    background-color: #ececec; }\n    .product-pitch .content .item.stats .title {\n      color: #5b5b5b;\n      font-size: 24px;\n      font-weight: bold;\n      margin-top: 10px;\n      margin-bottom: 25px; }\n    .product-pitch .content .item.stats .value {\n      color: #faab37;\n      font-size: 30px;\n      font-weight: bold;\n      letter-spacing: -2px; }\n    .product-pitch .content .item.stats .text {\n      font-size: 18px;\n      font-weight: 300; }\n  .product-pitch .content .item img {\n    width: 100px;\n    display: block;\n    margin: auto; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.product-pitch {\n  text-align: center;\n  font-family: 'Lato', sans-serif; }\n  .product-pitch .content .item .title {\n    font-size: 24px;\n    font-weight: bold;\n    margin-top: 10px; }\n  .product-pitch .content .item.get-started {\n    padding: 50px; }\n    .product-pitch .content .item.get-started .description {\n      width: 50%;\n      margin: 10px auto 20px auto;\n      font-size: 18px;\n      font-weight: 300; }\n  .product-pitch .content .item.working {\n    padding: 20px;\n    background-color: #ececec; }\n    .product-pitch .content .item.working .container {\n      width: 1200px;\n      margin: auto; }\n    .product-pitch .content .item.working .title {\n      color: #5b5b5b;\n      font-weight: bold;\n      font-size: 28px;\n      margin-bottom: 10px; }\n    .product-pitch .content .item.working .sub-item {\n      padding: 20px; }\n      .product-pitch .content .item.working .sub-item .label {\n        font-size: 18px;\n        color: #5b5b5b;\n        margin: 20px 0px;\n        display: block; }\n      .product-pitch .content .item.working .sub-item .description {\n        font-size: 18px; }\n  .product-pitch .content .item.preview {\n    padding: 50px; }\n    .product-pitch .content .item.preview img {\n      width: 500px; }\n    .product-pitch .content .item.preview .description {\n      width: 50%;\n      margin: 10px auto 20px auto;\n      font-size: 18px;\n      font-weight: 300; }\n  .product-pitch .content .item.stats {\n    padding: 20px 20px 30px 20px;\n    background-color: #ececec; }\n    .product-pitch .content .item.stats .title {\n      color: #5b5b5b;\n      font-size: 24px;\n      font-weight: bold;\n      margin-top: 10px;\n      margin-bottom: 25px; }\n    .product-pitch .content .item.stats .value {\n      color: #faab37;\n      font-size: 30px;\n      font-weight: bold;\n      letter-spacing: -2px; }\n    .product-pitch .content .item.stats .text {\n      font-size: 18px;\n      font-weight: 300; }\n  .product-pitch .content .item.testimonials {\n    padding: 20px;\n    border-bottom: 1px solid #e9e9e9; }\n    .product-pitch .content .item.testimonials .title {\n      color: #faab37;\n      font-size: 24px;\n      font-weight: bold;\n      margin-top: 10px;\n      margin-bottom: 25px; }\n    .product-pitch .content .item.testimonials button {\n      margin-top: 20px; }\n  .product-pitch .content .item.faqs {\n    padding: 20px;\n    text-align: left; }\n    .product-pitch .content .item.faqs .title {\n      text-align: center;\n      margin-bottom: 20px; }\n  .product-pitch .content .item img {\n    width: 100px;\n    display: block;\n    margin: auto; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -57803,7 +57826,9 @@
 		"preview": "preview",
 		"stats": "stats",
 		"value": "value",
-		"text": "text"
+		"text": "text",
+		"testimonials": "testimonials",
+		"faqs": "faqs"
 	};
 
 /***/ }),
@@ -59277,6 +59302,562 @@
 	
 	// React Engine needs exports, don't export default
 	module.exports = Index;
+
+/***/ }),
+/* 513 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(514);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 514 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(515);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _axios = __webpack_require__(354);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Component
+	 * @type Component
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+		}
+	
+		_createClass(Main, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {}
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	//Set display name to be used in React Dev Tools
+	
+	
+	exports.default = Main;
+	Main.displayName = 'Sample-Component';
+
+/***/ }),
+/* 515 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(516);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		return _react2.default.createElement(
+			"div",
+			{ className: "testimonials" },
+			_react2.default.createElement(
+				"div",
+				{ className: "item" },
+				_react2.default.createElement("span", { className: "image" }),
+				_react2.default.createElement(
+					"p",
+					{ className: "text" },
+					"\"After we launched our product we had our doubts that it would actually sell after numerous failed marketing ventures. The day it went on TIWIB everything changed - sales came rolling in daily and I don't think Drive Stein would be here today without it.\""
+				),
+				_react2.default.createElement(
+					"p",
+					{ className: "username" },
+					_react2.default.createElement(
+						"span",
+						{ className: "name" },
+						"Karol Krupa, "
+					),
+					_react2.default.createElement(
+						"a",
+						{ className: "position" },
+						"RAFINO Coffee Grinding System"
+					)
+				)
+			),
+			_react2.default.createElement(
+				"div",
+				{ className: "item" },
+				_react2.default.createElement("span", { className: "image" }),
+				_react2.default.createElement(
+					"p",
+					{ className: "text" },
+					"\"After we launched our product we had our doubts that it would actually sell after numerous failed marketing ventures. The day it went on TIWIB everything changed - sales came rolling in daily and I don't think Drive Stein would be here today without it.\""
+				),
+				_react2.default.createElement(
+					"p",
+					{ className: "username" },
+					_react2.default.createElement(
+						"span",
+						{ className: "name" },
+						"Karol Krupa, "
+					),
+					_react2.default.createElement(
+						"a",
+						{ className: "position" },
+						"RAFINO Coffee Grinding System"
+					)
+				)
+			),
+			_react2.default.createElement(
+				"div",
+				{ className: "item" },
+				_react2.default.createElement("span", { className: "image" }),
+				_react2.default.createElement(
+					"p",
+					{ className: "text" },
+					"\"After we launched our product we had our doubts that it would actually sell after numerous failed marketing ventures. The day it went on TIWIB everything changed - sales came rolling in daily and I don't think Drive Stein would be here today without it.\""
+				),
+				_react2.default.createElement(
+					"p",
+					{ className: "username" },
+					_react2.default.createElement(
+						"span",
+						{ className: "name" },
+						"Karol Krupa, "
+					),
+					_react2.default.createElement(
+						"a",
+						{ className: "position" },
+						"RAFINO Coffee Grinding System"
+					)
+				)
+			)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 516 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(517);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(403)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 517 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(402)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.testimonials {\n  width: 75%;\n  margin: auto; }\n  .testimonials .item {\n    border: 1px solid #faab37;\n    border-radius: 16px;\n    padding: 20px 210px 20px 20px;\n    height: 205px;\n    position: relative;\n    text-align: left;\n    margin-bottom: 20px;\n    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1); }\n    .testimonials .item .image {\n      width: 180px;\n      height: 180px;\n      border-radius: 10px;\n      background: #f7f7f7;\n      display: block;\n      position: absolute;\n      right: 12px;\n      top: 12px; }\n    .testimonials .item .text {\n      height: 140px;\n      font-size: 16px;\n      font-weight: 200; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"testimonials": "testimonials",
+		"item": "item",
+		"image": "image",
+		"text": "text"
+	};
+
+/***/ }),
+/* 518 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(519);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 519 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(520);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _axios = __webpack_require__(354);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Component
+	 * @type Component
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+		}
+	
+		_createClass(Main, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {}
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	//Set display name to be used in React Dev Tools
+	
+	
+	exports.default = Main;
+	Main.displayName = 'Sample-Component';
+
+/***/ }),
+/* 520 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(521);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		return _react2.default.createElement(
+			"div",
+			{ className: "faqs" },
+			_react2.default.createElement(
+				"div",
+				{ className: "row" },
+				_react2.default.createElement(
+					"div",
+					{ className: "col-md-6" },
+					_react2.default.createElement(
+						"div",
+						{ className: "list" },
+						_react2.default.createElement(
+							"div",
+							{ className: "item" },
+							_react2.default.createElement(
+								"p",
+								{ className: "question" },
+								"What is a product listing?"
+							),
+							_react2.default.createElement(
+								"p",
+								{ className: "answer" },
+								"A product listing means your product will show up on our homepage which shows new products in chronological order (newest to oldest), as well as being listing in all applicable gift guides."
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "item" },
+							_react2.default.createElement(
+								"p",
+								{ className: "question" },
+								"If my pitch performs below average do I get a refund?"
+							),
+							_react2.default.createElement(
+								"p",
+								{ className: "answer" },
+								"No."
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "item" },
+							_react2.default.createElement(
+								"p",
+								{ className: "question" },
+								"What is the average? How is it calculated?"
+							),
+							_react2.default.createElement(
+								"p",
+								{ className: "answer" },
+								"The average represents a weighted score based on the engagement metrics of uniqe clicks and wishlist saves for every single product currently listed on the site. Every 30 days we re-calculate the average to ensure accuracy within our pitch platform."
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "item" },
+							_react2.default.createElement(
+								"p",
+								{ className: "question" },
+								"How soon will my product pitch show up on the site?"
+							),
+							_react2.default.createElement(
+								"p",
+								{ className: "answer" },
+								"We typically approve product pitches within 24 hours."
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "item" },
+							_react2.default.createElement(
+								"p",
+								{ className: "question" },
+								"Are sexual/offensive/controversial products allowed?"
+							),
+							_react2.default.createElement(
+								"p",
+								{ className: "answer" },
+								"It depends. Any product that will reflect poorly on ThisIsWhyImBroke will not be approved and your money will be immediately refunded 100%."
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "col-md-6" },
+					_react2.default.createElement(
+						"div",
+						{ className: "list" },
+						_react2.default.createElement(
+							"div",
+							{ className: "item" },
+							_react2.default.createElement(
+								"p",
+								{ className: "question" },
+								"What will my product look like on the site?"
+							),
+							_react2.default.createElement(
+								"p",
+								{ className: "answer" },
+								"It will look identical to our regular content. Here\u2019s an example"
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "item" },
+							_react2.default.createElement(
+								"p",
+								{ className: "question" },
+								"Can I track my product\u2019s performance?"
+							),
+							_react2.default.createElement(
+								"p",
+								{ className: "answer" },
+								"Yes, you will be able to see performance in your product pitch dashboard."
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "item" },
+							_react2.default.createElement(
+								"p",
+								{ className: "question" },
+								"Why not just let me pay a higher price for a guaranteed product listing?"
+							),
+							_react2.default.createElement(
+								"p",
+								{ className: "answer" },
+								"To maintain our site\u2019s integrity as an authority on new and interesting products we have to ensure only high quality content is displayed to our users."
+							)
+						),
+						_react2.default.createElement(
+							"div",
+							{ className: "item" },
+							_react2.default.createElement(
+								"p",
+								{ className: "question" },
+								"I still have questions, who do I contact?"
+							),
+							_react2.default.createElement(
+								"p",
+								{ className: "answer" },
+								"You can reach us at ads@thisiswhyimbroke.com"
+							)
+						)
+					)
+				)
+			)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 521 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(522);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(403)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 522 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(402)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.faqs .item {\n  margin-bottom: 20px; }\n  .faqs .item .question {\n    font-weight: bold;\n    font-size: 16px; }\n  .faqs .item .answer {\n    font-size: 15px; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"faqs": "faqs",
+		"item": "item",
+		"question": "question",
+		"answer": "answer"
+	};
 
 /***/ })
 /******/ ]);

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from "./style.scss";
-
+import Testimonials from '../testimonials';
+import FAQs from '../faqs';
 var view = function () {
 	return (
 		<div className="product-pitch">
@@ -90,10 +91,13 @@ var view = function () {
 					</div>
 				</div>
 				<div className="item testimonials">
-					testimonials
+					<p className="title">Success Stories</p>
+					<Testimonials/>
+					<button className="btn btn-yellow">Get Started</button>
 				</div>
-				<div className="item faqs">
-					faqs
+				<div className="item faqs container">
+					<p className="title">Frequently Asked Questions</p>
+					<FAQs/>
 				</div>
 			</div>
 		</div>

@@ -63,6 +63,23 @@
     .product-pitch .content .item.stats .text {
       font-size: 18px;
       font-weight: 300; }
+  .product-pitch .content .item.testimonials {
+    padding: 20px;
+    border-bottom: 1px solid #e9e9e9; }
+    .product-pitch .content .item.testimonials .title {
+      color: #faab37;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 25px; }
+    .product-pitch .content .item.testimonials button {
+      margin-top: 20px; }
+  .product-pitch .content .item.faqs {
+    padding: 20px;
+    text-align: left; }
+    .product-pitch .content .item.faqs .title {
+      text-align: center;
+      margin-bottom: 20px; }
   .product-pitch .content .item img {
     width: 100px;
     display: block;
