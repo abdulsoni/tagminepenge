@@ -2,6 +2,7 @@ import Home from './containers/home';
 import Profile from './components/profile';
 import ProductGroup from './components/productGroup';
 import Product from './components/productPage';
+import ProductPitch from './components/productPitch';
 import WishList from './components/wishlist';
 import About from './components/aboutUs';
 import Contact from './containers/contactUs';
@@ -31,6 +32,9 @@ const Routes = {
 	},
 	"/privacy-policy" : {
 		component : Privacy
+	},
+	"/product-pitch" : {
+		component : ProductPitch
 	}
 }
 module.exports = Routes;
