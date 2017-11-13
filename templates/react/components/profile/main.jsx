@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ComponentView from './view';
+import {handleChange} from '../../utils/common'
 import axios from 'axios';
 /**
  * @name Sample Component
@@ -13,9 +14,20 @@ export default class Main extends Component {
 	 */
 	constructor(props){
 		super(props);
+		this.state = {
+			"email" : "name@gmail.com",
+			"password" : "***********",
+			"loading" : false,
+			"message" : null
+		}
+		this.handleChange = handleChange.bind(this)
 	}
 	componentDidMount(){
 		
+	}
+	submit(event){
+		event.preventDefault();
+		console.log('Form Submitting');
 	}
 	/**
 	 * Render the view
