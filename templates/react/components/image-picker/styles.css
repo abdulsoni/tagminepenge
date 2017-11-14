@@ -1,0 +1,34 @@
+@import url(~cropperjs/dist/cropper.css);
+.cropping-box {
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  overflow: hidden;
+  border-radius: 4px; }
+  .cropping-box .cropping-actions {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 20px;
+    background-color: #252d34; }
+    .cropping-box .cropping-actions button {
+      font-size: 18px;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 10px; }
+      .cropping-box .cropping-actions button.save-btn i {
+        color: #fff; }
+      .cropping-box .cropping-actions button img {
+        width: 18px; }
+  .cropping-box img {
+    max-height: 100%;
+    max-width: 100%;
+    display: block;
+    margin: auto; }
+
+.image-picker-upload-btn {
+  width: 100%;
+  background-color: #f7f7f7; }
+  .image-picker-upload-btn .ant-upload {
+    width: 100%; }
+
+/*# sourceMappingURL=styles.css.map */
