@@ -48086,10 +48086,10 @@
 	var map = {
 		"./index": 326,
 		"./index.jsx": 326,
-		"./index2": 521,
-		"./index2.jsx": 521,
-		"./test": 522,
-		"./test.jsx": 522
+		"./index2": 547,
+		"./index2.jsx": 547,
+		"./test": 548,
+		"./test.jsx": 548
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -52963,7 +52963,7 @@
 							_react2.default.createElement("div", { className: "dropdown-divider" }),
 							_react2.default.createElement(
 								"a",
-								{ className: "dropdown-item", href: "/submit-product" },
+								{ className: "dropdown-item", href: "/get-started" },
 								"Submit A Product"
 							),
 							_react2.default.createElement(
@@ -55227,9 +55227,17 @@
 	
 	var _privacyPolicy2 = _interopRequireDefault(_privacyPolicy);
 	
-	var _stage = __webpack_require__(516);
+	var _getStarted = __webpack_require__(521);
 	
-	var _stage2 = _interopRequireDefault(_stage);
+	var _getStarted2 = _interopRequireDefault(_getStarted);
+	
+	var _productForm = __webpack_require__(526);
+	
+	var _productForm2 = _interopRequireDefault(_productForm);
+	
+	var _checkout = __webpack_require__(550);
+	
+	var _checkout2 = _interopRequireDefault(_checkout);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -55252,8 +55260,14 @@
 		"/contact": {
 			component: _contactUs2.default
 		},
-		"/submit-product": {
-			component: _stage2.default
+		"/get-started": {
+			component: _getStarted2.default
+		},
+		"/product-form": {
+			component: _productForm2.default
+		},
+		"/checkout": {
+			component: _checkout2.default
 		},
 		"/privacy-policy": {
 			component: _privacyPolicy2.default
@@ -57652,8 +57666,8 @@
 						'We\'ll show it to our users for a short period - if your product\'s engagement with our readers is at least equal to or above the average of all products listed, it will earn a permanent spot on our site'
 					),
 					_react2.default.createElement(
-						'button',
-						{ className: 'btn btn-yellow' },
+						'a',
+						{ className: 'btn btn-yellow', href: '/product-form' },
 						'Get Started'
 					)
 				),
@@ -59544,7 +59558,12 @@
 	};
 
 /***/ }),
-/* 516 */
+/* 516 */,
+/* 517 */,
+/* 518 */,
+/* 519 */,
+/* 520 */,
+/* 521 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59553,7 +59572,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(517);
+	var _main = __webpack_require__(522);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -59562,7 +59581,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 517 */
+/* 522 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59577,13 +59596,13 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(518);
+	var _view = __webpack_require__(523);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
-	var _axios = __webpack_require__(354);
+	var _reactRedux = __webpack_require__(295);
 	
-	var _axios2 = _interopRequireDefault(_axios);
+	var _index = __webpack_require__(332);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -59594,8 +59613,8 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	/**
-	 * @name Sample Component
-	 * @type Component
+	 * @name Sample Container
+	 * @type Container
 	 * @author Inderdeep Singh
 	 */
 	var Main = function (_Component) {
@@ -59611,15 +59630,12 @@
 			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 		}
 	
-		_createClass(Main, [{
-			key: 'componentDidMount',
-			value: function componentDidMount() {}
-			/**
-	   * Render the view
-	   * @returns {*}
-	   */
+		/**
+	  * Render the view
+	  */
 	
-		}, {
+	
+		_createClass(Main, [{
 			key: 'render',
 			value: function render() {
 				return _view2.default.bind(this)();
@@ -59628,14 +59644,40 @@
 	
 		return Main;
 	}(_react.Component);
+	
+	/**
+	 * Bind Actions
+	 * @param dispatch
+	 * @returns Object
+	 */
+	
+	
+	function bindAction(dispatch) {
+		return {
+			sampleAction: function sampleAction() {
+				return dispatch((0, _index.sampleAction)());
+			}
+		};
+	}
+	
+	/**
+	 * Map the shared state to properties
+	 * @param state
+	 * @returns Object
+	 */
+	var mapStateToProps = function mapStateToProps(state) {
+		// console.log(state)
+		return {
+			sample: state.sample
+		};
+	};
 	//Set display name to be used in React Dev Tools
-	
-	
-	exports.default = Main;
-	Main.displayName = 'Sample-Component';
+	Main.displayName = 'Sample-Container';
+	//Connect to Redux
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
 
 /***/ }),
-/* 518 */
+/* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59648,98 +59690,33 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _style = __webpack_require__(519);
+	var _style = __webpack_require__(524);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
-	var _common = __webpack_require__(411);
+	var _productPitch = __webpack_require__(480);
+	
+	var _productPitch2 = _interopRequireDefault(_productPitch);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
 		return _react2.default.createElement(
 			'div',
-			{ className: 'container contact-us' },
-			_react2.default.createElement(
-				'div',
-				{ className: 'form' },
-				_react2.default.createElement(
-					'p',
-					{ className: 'title' },
-					'Submit a Product'
-				),
-				_react2.default.createElement(
-					'form',
-					null,
-					_react2.default.createElement(
-						'div',
-						{ className: 'form-group' },
-						_react2.default.createElement(
-							'label',
-							null,
-							'Product Title ',
-							_react2.default.createElement(
-								'span',
-								{ className: 'prefix' },
-								'(max 40 characters)'
-							)
-						),
-						_react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Enter your title', required: true })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'form-group' },
-						_react2.default.createElement(
-							'label',
-							null,
-							'Product Description ',
-							_react2.default.createElement(
-								'span',
-								{ className: 'prefix' },
-								'(max 250 characters)'
-							)
-						),
-						_react2.default.createElement('textarea', { className: 'form-control', name: 'description', rows: '5', placeholder: 'Write your description here, it can be up to 250 characters to describe your product.' })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'form-group' },
-						_react2.default.createElement(
-							'label',
-							null,
-							'Link'
-						),
-						_react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'http://www.mywebstore.com', required: true })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'form-group' },
-						_react2.default.createElement(
-							'label',
-							null,
-							'Price'
-						),
-						_react2.default.createElement('input', { onKeyPress: _common.isNumeric, type: 'text', className: 'form-control', placeholder: '19.99', required: true })
-					),
-					_react2.default.createElement(
-						'button',
-						{ type: 'submit', className: 'btn btn-yellow pull-right' },
-						'Submit'
-					)
-				)
-			)
+			{ className: 'step' },
+			_react2.default.createElement(_productPitch2.default, null)
 		);
 	};
 	exports.default = view;
 
 /***/ }),
-/* 519 */
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(520);
+	var content = __webpack_require__(525);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -59764,7 +59741,7 @@
 	}
 
 /***/ }),
-/* 520 */
+/* 525 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(402)(undefined);
@@ -59772,18 +59749,224 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.contact-us {\n  padding-top: 50px; }\n  .contact-us .form {\n    width: 70%;\n    margin: auto; }\n    .contact-us .form .title {\n      font-size: 32px;\n      margin-bottom: 10px; }\n    .contact-us .form form {\n      background: #f7f7f7;\n      border-radius: 4px;\n      border: 1px solid #e9e9e9;\n      padding: 20px;\n      overflow: hidden; }\n      .contact-us .form form .btn {\n        margin-top: 10px; }\n", ""]);
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
+
+/***/ }),
+/* 526 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(527);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 527 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(528);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _reactRedux = __webpack_require__(295);
+	
+	var _index = __webpack_require__(332);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Container
+	 * @type Container
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+		}
+	
+		/**
+	  * Render the view
+	  */
+	
+	
+		_createClass(Main, [{
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	
+	/**
+	 * Bind Actions
+	 * @param dispatch
+	 * @returns Object
+	 */
+	
+	
+	function bindAction(dispatch) {
+		return {
+			sampleAction: function sampleAction() {
+				return dispatch((0, _index.sampleAction)());
+			}
+		};
+	}
+	
+	/**
+	 * Map the shared state to properties
+	 * @param state
+	 * @returns Object
+	 */
+	var mapStateToProps = function mapStateToProps(state) {
+		// console.log(state)
+		return {
+			sample: state.sample
+		};
+	};
+	//Set display name to be used in React Dev Tools
+	Main.displayName = 'Sample-Container';
+	//Connect to Redux
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
+
+/***/ }),
+/* 528 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(529);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		return _react2.default.createElement(
+			'div',
+			{ className: 'step step-two' },
+			_react2.default.createElement(
+				'div',
+				{ className: 'container' },
+				_react2.default.createElement('img', { src: '/images/step2.png', alt: 'step' }),
+				_react2.default.createElement('form', null)
+			)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 529 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(530);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(403)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 530 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(402)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".step-two {\n  background: #f1f1f1;\n  padding: 50px; }\n  .step-two img {\n    width: 571px;\n    margin: 0 auto;\n    display: block; }\n  .step-two form {\n    background-color: white;\n    border: 1px solid rgba(0, 0, 0, 0.2);\n    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);\n    padding-top: 30px;\n    padding-bottom: 30px;\n    margin-top: 30px;\n    min-height: 400px; }\n", ""]);
 	
 	// exports
 	exports.locals = {
-		"contact-us": "contact-us",
-		"form": "form",
-		"title": "title",
-		"btn": "btn"
+		"step-two": "step-two"
 	};
 
 /***/ }),
-/* 521 */
+/* 531 */,
+/* 532 */,
+/* 533 */,
+/* 534 */,
+/* 535 */,
+/* 536 */,
+/* 537 */,
+/* 538 */,
+/* 539 */,
+/* 540 */,
+/* 541 */,
+/* 542 */,
+/* 543 */,
+/* 544 */,
+/* 545 */,
+/* 546 */,
+/* 547 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59921,7 +60104,7 @@
 	module.exports = Index;
 
 /***/ }),
-/* 522 */
+/* 548 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59961,6 +60144,195 @@
 	
 	// React Engine needs exports, don't export default
 	module.exports = Index;
+
+/***/ }),
+/* 549 */,
+/* 550 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(551);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 551 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(552);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _reactRedux = __webpack_require__(295);
+	
+	var _index = __webpack_require__(332);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Container
+	 * @type Container
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+		}
+	
+		/**
+	  * Render the view
+	  */
+	
+	
+		_createClass(Main, [{
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	
+	/**
+	 * Bind Actions
+	 * @param dispatch
+	 * @returns Object
+	 */
+	
+	
+	function bindAction(dispatch) {
+		return {
+			sampleAction: function sampleAction() {
+				return dispatch((0, _index.sampleAction)());
+			}
+		};
+	}
+	
+	/**
+	 * Map the shared state to properties
+	 * @param state
+	 * @returns Object
+	 */
+	var mapStateToProps = function mapStateToProps(state) {
+		// console.log(state)
+		return {
+			sample: state.sample
+		};
+	};
+	//Set display name to be used in React Dev Tools
+	Main.displayName = 'Sample-Container';
+	//Connect to Redux
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
+
+/***/ }),
+/* 552 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(553);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		return _react2.default.createElement(
+			'div',
+			{ className: 'step' },
+			'payment'
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 553 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(554);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(403)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 554 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(402)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "", ""]);
+	
+	// exports
+
 
 /***/ })
 /******/ ]);

@@ -12,7 +12,7 @@ var view = function () {
 					<p className="description">We'll show it to our users for a short period - if your product's engagement with our readers is
 						at least equal to or above the average of all products listed, it will earn a permanent spot on
 						our site</p>
-					<button className="btn btn-yellow">Get Started</button>
+					<a className="btn btn-yellow" href="/product-form">Get Started</a>
 				</div>
 				<div className="item working">
 					<p className="title">How it works</p>

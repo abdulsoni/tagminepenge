@@ -7,7 +7,9 @@ import WishList from './components/wishlist';
 import About from './components/aboutUs';
 import Contact from './containers/contactUs';
 import Privacy from './components/privacy-policy';
-import SubmitProduct from './containers/submit-product/stage-3';
+import GetStarted from './containers/submit-product/get-started';
+import ProductForm from './containers/submit-product/product-form';
+import Checkout from './containers/submit-product/checkout';
 const Routes = {
 	"/" : {
 		component : Home
@@ -27,8 +29,14 @@ const Routes = {
 	"/contact" : {
 		component : Contact
 	},
-	"/submit-product" : {
-		component : SubmitProduct
+	"/get-started" : {
+		component : GetStarted
+	},
+	"/product-form" : {
+		component : ProductForm
+	},
+	"/checkout" : {
+		component : Checkout
 	},
 	"/privacy-policy" : {
 		component : Privacy
