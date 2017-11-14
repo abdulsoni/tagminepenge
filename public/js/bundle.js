@@ -59979,130 +59979,226 @@
 				{ className: 'container' },
 				_react2.default.createElement('img', { src: '/images/step2.png', alt: 'step' }),
 				_react2.default.createElement(
-					'div',
-					{ className: 'row form' },
+					'form',
+					{ onSubmit: submit.bind(this), className: 'form' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'col-md-6' },
+						{ className: 'row' },
 						_react2.default.createElement(
-							'form',
-							{ onSubmit: submit.bind(this) },
-							message ? _react2.default.createElement(
-								'div',
-								{ className: "alert alert-" + message.type },
-								message.text
-							) : null,
+							'div',
+							{ className: 'col-md-7' },
 							_react2.default.createElement(
 								'div',
-								{ className: 'form-group' },
+								null,
+								message ? _react2.default.createElement(
+									'div',
+									{ className: "alert alert-" + message.type },
+									message.text
+								) : null,
 								_react2.default.createElement(
-									'label',
-									null,
-									'Product Title ',
+									'div',
+									{ className: 'form-group' },
 									_react2.default.createElement(
-										'span',
-										{ className: 'length' },
-										'(max 40 characters)'
-									)
+										'label',
+										null,
+										'Product Title ',
+										_react2.default.createElement(
+											'span',
+											{ className: 'length' },
+											'(max 40 characters)'
+										)
+									),
+									_react2.default.createElement('input', { readOnly: loading,
+										type: 'text',
+										onChange: handleChange.bind(this),
+										value: this.state.productTitle,
+										name: 'productTitle',
+										className: 'form-control',
+										required: true
+									})
 								),
-								_react2.default.createElement('input', { readOnly: loading,
-									type: 'text',
-									onChange: handleChange.bind(this),
-									value: this.state.productTitle,
-									name: 'productTitle',
-									className: 'form-control',
-									required: true
-								})
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'form-group' },
 								_react2.default.createElement(
-									'label',
-									null,
-									'Product Description ',
+									'div',
+									{ className: 'form-group' },
 									_react2.default.createElement(
-										'span',
-										{ className: 'length' },
-										'(max 250 characters)'
+										'label',
+										null,
+										'Product Description ',
+										_react2.default.createElement(
+											'span',
+											{
+												className: 'length' },
+											'(max 250 characters)'
+										)
+									),
+									_react2.default.createElement('textarea', { readOnly: loading,
+										className: 'form-control',
+										onChange: handleChange.bind(this),
+										value: this.state.productDescription,
+										name: 'productDescription',
+										required: true
+									})
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'form-group' },
+									_react2.default.createElement(
+										'label',
+										null,
+										'Link'
+									),
+									_react2.default.createElement('input', { readOnly: loading,
+										type: 'text',
+										onChange: handleChange.bind(this),
+										value: this.state.link,
+										name: 'link',
+										className: 'form-control',
+										required: true
+									})
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'form-group' },
+									_react2.default.createElement(
+										'label',
+										null,
+										'Price'
+									),
+									_react2.default.createElement('input', { readOnly: loading,
+										type: 'number',
+										onChange: handleChange.bind(this),
+										value: this.state.price,
+										name: 'price',
+										className: 'form-control',
+										required: true
+									})
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'form-group' },
+									_react2.default.createElement(
+										'label',
+										null,
+										'Image Upload'
 									)
-								),
-								_react2.default.createElement('textarea', { readOnly: loading,
-									className: 'form-control',
-									onChange: handleChange.bind(this),
-									value: this.state.productDescription,
-									name: 'productDescription',
-									required: true
-								})
-							),
+								)
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-md-5 right-column' },
 							_react2.default.createElement(
 								'div',
-								{ className: 'form-group' },
+								{ className: 'tips' },
+								_react2.default.createElement('img', { src: '/images/star.png' }),
 								_react2.default.createElement(
-									'label',
+									'h3',
 									null,
-									'Link'
+									'Tips for success'
 								),
-								_react2.default.createElement('input', { readOnly: loading,
-									type: 'text',
-									onChange: handleChange.bind(this),
-									value: this.state.link,
-									name: 'link',
-									className: 'form-control',
-									required: true
-								})
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'form-group' },
 								_react2.default.createElement(
-									'label',
+									'p',
 									null,
-									'Price'
-								),
-								_react2.default.createElement('input', { readOnly: loading,
-									type: 'number',
-									onChange: handleChange.bind(this),
-									value: this.state.price,
-									name: 'price',
-									className: 'form-control',
-									required: true
-								})
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'form-group' },
-								_react2.default.createElement(
-									'label',
-									null,
-									'Image Upload'
+									'Use the most engaging and instantly explanatory images, titles, and product descriptions to help increase your product\'s engagement during your audition with our readers.'
 								)
 							),
 							_react2.default.createElement(
-								'button',
-								{ disabled: loading, type: 'submit', className: 'btn btn-yellow pull-right' },
-								'Save and Continue'
+								'div',
+								{ className: 'preview' },
+								_react2.default.createElement(
+									'h3',
+									null,
+									'Your Product View'
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'card' },
+									_react2.default.createElement(
+										'div',
+										{ className: 'card-header' },
+										_react2.default.createElement(
+											'a',
+											{ href: '/product', className: 'product-title' },
+											'Twinkling Star Skirt'
+										)
+									),
+									_react2.default.createElement(
+										'div',
+										{ className: 'card-body' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'product-image' },
+											_react2.default.createElement(
+												'a',
+												{ href: '/product' },
+												_react2.default.createElement('span', { className: 'image' })
+											),
+											_react2.default.createElement(
+												'button',
+												{ className: 'btn btn-red save-btn' },
+												'Save'
+											)
+										),
+										_react2.default.createElement(
+											'div',
+											{ className: 'product-text' },
+											_react2.default.createElement(
+												'p',
+												{ className: 'text' },
+												'Brighten up any room you walk into by slipping into this eye-catching twinkling stars skirt. The skirt features a lovely blue hue and is accented with over 250 tiny LEDs powered by a battery pack that discreetly tucks away inside the waist.'
+											)
+										)
+									),
+									_react2.default.createElement(
+										'div',
+										{ className: 'card-footer' },
+										_react2.default.createElement(
+											'div',
+											{ className: 'product-range' },
+											_react2.default.createElement(
+												'p',
+												{ className: 'cost' },
+												'$59.99'
+											),
+											_react2.default.createElement(
+												'span',
+												{ className: 'saves' },
+												_react2.default.createElement(
+													'a',
+													{ className: 'icon' },
+													_react2.default.createElement('i', { className: 'glyphicon glyphicon-heart-empty' }),
+													' '
+												),
+												_react2.default.createElement(
+													'span',
+													{ className: 'count' },
+													'0'
+												),
+												_react2.default.createElement(
+													'span',
+													null,
+													' saves'
+												)
+											)
+										),
+										_react2.default.createElement(
+											'div',
+											{ className: 'product-action' },
+											_react2.default.createElement(
+												'button',
+												{ className: 'btn btn-yellow' },
+												'Check it out'
+											)
+										)
+									)
+								)
 							)
 						)
 					),
 					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-6' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'tips' },
-							_react2.default.createElement('img', { src: '/images/star.png' }),
-							_react2.default.createElement(
-								'h3',
-								null,
-								'Tips for success'
-							),
-							_react2.default.createElement(
-								'p',
-								null,
-								'Use the most engaging and instantly explanatory images, titles, and product descriptions to help increase your product\'s engagement during your audition with our readers.'
-							)
-						)
+						'button',
+						{ disabled: loading, type: 'submit', className: 'btn btn-yellow submit-btn' },
+						'Save and Continue >'
 					)
 				)
 			)
@@ -60150,13 +60246,16 @@
 	
 	
 	// module
-	exports.push([module.id, ".step-two {\n  background: #f1f1f1;\n  padding: 50px; }\n  .step-two img {\n    width: 571px;\n    margin: 0 auto;\n    display: block; }\n  .step-two .form {\n    background-color: white;\n    border: 1px solid rgba(0, 0, 0, 0.2);\n    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);\n    padding: 30px 15px 30px 15px;\n    margin-top: 30px;\n    min-height: 400px; }\n  .step-two .tips {\n    background-color: #f1f2de;\n    border: 2px solid rgba(0, 0, 0, 0.15);\n    border-radius: 5px;\n    margin-top: 30px;\n    margin-bottom: 40px;\n    padding: 15px;\n    width: 356px;\n    float: right; }\n    .step-two .tips img {\n      width: 30px;\n      float: left;\n      margin-top: 16px;\n      margin-left: -6px; }\n    .step-two .tips h3 {\n      font-size: 18px;\n      text-decoration: underline;\n      padding-bottom: 0px;\n      margin-bottom: 0px;\n      font-weight: normal; }\n    .step-two .tips p {\n      margin-top: 10px;\n      margin-bottom: 10px; }\n", ""]);
+	exports.push([module.id, ".step-two {\n  background: #f1f1f1;\n  padding: 50px; }\n  .step-two img {\n    width: 571px;\n    margin: 0 auto;\n    display: block; }\n  .step-two .form {\n    background-color: white;\n    border: 1px solid rgba(0, 0, 0, 0.2);\n    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);\n    padding: 30px 15px 15px 15px;\n    margin-top: 30px;\n    min-height: 400px;\n    overflow: hidden; }\n    .step-two .form .submit-btn {\n      width: 100%;\n      margin-top: 60px;\n      padding: 8px; }\n  .step-two .tips {\n    background-color: #f1f2de;\n    border: 2px solid rgba(0, 0, 0, 0.15);\n    border-radius: 5px;\n    margin-top: 23px;\n    margin-bottom: 40px;\n    padding: 15px;\n    float: right; }\n    .step-two .tips img {\n      width: 30px;\n      float: left;\n      margin-top: 16px;\n      margin-left: -6px; }\n    .step-two .tips h3 {\n      font-size: 18px;\n      text-decoration: underline;\n      padding-bottom: 0px;\n      margin-bottom: 0px;\n      font-weight: normal; }\n    .step-two .tips p {\n      margin-top: 10px;\n      margin-bottom: 10px;\n      line-height: 25px;\n      font-family: sans-serif; }\n  .step-two .preview {\n    text-align: center; }\n    .step-two .preview .card {\n      width: 80%;\n      margin: 20px auto auto auto; }\n", ""]);
 	
 	// exports
 	exports.locals = {
 		"step-two": "step-two",
 		"form": "form",
-		"tips": "tips"
+		"submit-btn": "submit-btn",
+		"tips": "tips",
+		"preview": "preview",
+		"card": "card"
 	};
 
 /***/ }),
