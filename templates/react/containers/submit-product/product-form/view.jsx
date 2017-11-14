@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './style.scss';
-import ImagePicker from '../../../components/image-picker';
+
 var view = function () {
-	const {handleChange, submit, state} = this;
-	const {config} = this.props;
-	const {loading, message, fileUrl,file} = this.state;
+	const {handleChange, submit} = this;
+	const {loading, message} = this.state;
 	return (
 		<div className="step step-two">
 			<div className="container">
@@ -65,27 +64,6 @@ var view = function () {
 							</div>
 							<div className="form-group">
 								<label>Image Upload</label>
-								<ImagePicker
-									file={file}
-									fileUrl={fileUrl}
-									accept="video/mp4,video/x-m4v,image/*,video/*"
-									crop={true}
-									cropWidth={'100%'}
-									cropHeight={332}
-									onFileChange={this.onFileChange.bind(this)}
-									onSave={this.onFileChange.bind(this)}>
-									{
-										fileUrl ? (
-											<div className="cropped-img">
-												<img src={fileUrl}/>
-											</div>
-										) : (
-											<div className="upload-btn">
-												<input type="file" name="file" />
-											</div>
-										)
-									}
-								</ImagePicker>
 							</div>
 							<button disabled={loading} type="submit" className="btn btn-yellow pull-right">Save and
 								Continue
@@ -93,11 +71,18 @@ var view = function () {
 						</form>
 					</div>
 					<div className="col-md-6">
-						
+						<div className="tips">
+							<img src="/images/star.png"/>
+							<h3>Tips for success</h3>
+							<p>Use the most engaging and instantly explanatory images, titles, and product
+								descriptions to help increase your product's engagement during your audition with
+								our readers.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	);
+);
 };
 export default view;
