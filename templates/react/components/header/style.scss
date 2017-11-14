@@ -264,11 +264,10 @@
   }
 }
 /* responsiveness */
-@media (min-width: 1400px){
+@media (min-width: 1500px){
   .header .header-nav ul{
-	width:1400px;
-	margin:auto;
-	border:1px solid red;
+	width:1500px;
+	margin:-6px auto auto auto;
   }
 }
 @media (max-width: 1024px){

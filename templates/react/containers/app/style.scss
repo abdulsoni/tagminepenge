@@ -68,10 +68,9 @@
 }
 
 /* responsiveness */
-@media (min-width: 1400px) {
+@media (min-width: 1500px) {
   .app .main-container {
-	width: 1400px;
-	border: 5px solid red;
+	width: 1500px;
 	margin: 123px auto auto auto;
   }
 }

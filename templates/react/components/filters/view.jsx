@@ -14,9 +14,6 @@ var view = function () {
 				<li>
 					<a>Price Range</a>
 				</li>
-				<li>
-					<a>Gifts Under $20</a>
-				</li>
 			</ul>
 		</div>
 	);

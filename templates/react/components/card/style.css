@@ -51,4 +51,10 @@
           .card .card-footer .product-range .saves i:hover {
             color: #cb1d00; }
 
+/* responsiveness */
+@media (max-width: 992px) {
+  .card {
+    margin-bottom: 30px; } }
+/* /responsiveness */
+
 /*# sourceMappingURL=style.css.map */

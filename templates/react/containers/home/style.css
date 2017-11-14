@@ -1,11 +1,9 @@
 .home .row {
   margin: 0px; }
   .home .row .column {
-    border: 1px solid red;
     padding: 0px; }
     .home .row .column .container {
-      width: 100%;
-      border: 1px solid green; }
+      width: 100%; }
     .home .row .column .banner {
       margin: 10px; }
     .home .row .column.left .banner {
