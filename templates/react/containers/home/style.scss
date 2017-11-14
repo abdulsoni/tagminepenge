@@ -1,0 +1,44 @@
+.home {
+  .row {
+	margin: 0px;
+	.column {
+	  border: 1px solid red;
+	  padding: 0px;
+	  .container {
+		width: 100%;
+		border: 1px solid green;
+	  }
+	  .banner {
+		margin: 10px;
+	  }
+	  &.left {
+		.banner {
+		  margin-right: 0px;
+		}
+	  }
+	  &.right {
+		.banner {
+		  margin-left: 0px;
+		}
+	  }
+	}
+  }
+}
+
+/* responsiveness */
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 1200px) {
+  .home .row .column.left{
+	display: none;
+  }
+  .home .row .column.right{
+	display: none;
+  }
+}
+
+@media (max-width: 520px) {
+
+}
+/* /responsiveness */

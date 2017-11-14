@@ -9,10 +9,20 @@ var view = function() {
 	const banner = (config.banner && config.banner.media)?config.banner.media.url:null;
 	return (
 		<div className="home">
-			<Banner banner = {banner}/>
-			<Filters/>
-			<PriceRange/>
-			<ProductGrid/>
+			<div className="row">
+				<div className="col-md-0 col-lg-2 column left">
+					<Banner/>
+				</div>
+				<div className="col-md-12 col-lg-8 column">
+					<Banner banner = {banner}/>
+					<Filters/>
+					<PriceRange/>
+					<ProductGrid/>
+				</div>
+				<div className="col-md-0 col-lg-2 column right">
+					<Banner/>
+				</div>
+			</div>
 		</div>
 	);
 };

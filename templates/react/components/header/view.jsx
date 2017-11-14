@@ -72,6 +72,12 @@ var view = function () {
 							)
 						})
 					}
+					<li className="mobile">
+						<a href="/" className="nav-link">
+							<span className="icon"><span className="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+							<span className="text">Search</span>
+						</a>
+					</li>
 					<li>
 						<a className="nav-link dropdown-toggle" data-toggle="dropdown">
 							<span className="icon">

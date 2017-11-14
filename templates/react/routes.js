@@ -43,6 +43,9 @@ const Routes = {
 	},
 	"/product-pitch" : {
 		component : ProductPitch
+	},
+	"/product-group" : {
+		component : ProductGroup
 	}
 }
 module.exports = Routes;
