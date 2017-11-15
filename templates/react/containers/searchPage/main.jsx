@@ -41,11 +41,13 @@ class Main extends Component {
 		} else {
 			this.setState({
 				query :{
-					$or : [
-						{title : { "$regex": text, "$options": "i" }},
-						{"content.brief" : { "$regex": text, "$options": "i" }},
-						{"categories.name" : { "$regex": text, "$options": "i" }}
-					]
+					query : {
+						$or : [
+							{title : { "$regex": text, "$options": "i" }},
+							{"content.brief" : { "$regex": text, "$options": "i" }},
+							{"categories.name" : { "$regex": text, "$options": "i" }}
+						]
+					}
 				}
 			});
 		}

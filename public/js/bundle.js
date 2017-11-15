@@ -58371,12 +58371,10 @@
 				    getProducts = _props.getProducts,
 				    query = _props.query;
 	
-				var obj = {
+				getProducts(_extends({}, query, {
 					limit: 10,
 					skip: (page - 1) * 10
-				};
-				obj.query = _extends({}, query, customQuery);
-				getProducts(obj).then(function (action) {
+				})).then(function (action) {
 					//console.log(action)
 				});
 			}
@@ -63271,8 +63269,10 @@
 						selectCategory: category,
 						category: category,
 						query: {
-							categories: {
-								$in: [category._id]
+							query: {
+								categories: {
+									$in: [category._id]
+								}
 							}
 						}
 					});
@@ -63625,7 +63625,9 @@
 				} else {
 					this.setState({
 						query: {
-							$or: [{ title: { "$regex": text, "$options": "i" } }, { "content.brief": { "$regex": text, "$options": "i" } }, { "categories.name": { "$regex": text, "$options": "i" } }]
+							query: {
+								$or: [{ title: { "$regex": text, "$options": "i" } }, { "content.brief": { "$regex": text, "$options": "i" } }, { "categories.name": { "$regex": text, "$options": "i" } }]
+							}
 						}
 					});
 				}

@@ -38,15 +38,11 @@ class Main extends Component {
 	getProducts(page,customQuery){
 		page = page || 1;
 		const {getProducts,query} = this.props;
-		let obj = {
+		getProducts({
+			...query,
 			limit : 10,
 			skip : (page-1)*10
-		};
-		obj.query = {
-			...query,
-			...customQuery
-		}
-		getProducts(obj).then(action=>{
+		}).then(action=>{
 			//console.log(action)
 		})
 	}

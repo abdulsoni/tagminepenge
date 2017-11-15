@@ -72,8 +72,10 @@ class Main extends Component {
 				selectCategory : category,
 				category,
 				query :{
-					categories : {
-						$in : [category._id]
+					query : {
+						categories : {
+							$in : [category._id]
+						}
 					}
 				} 
 			});
