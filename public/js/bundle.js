@@ -53139,7 +53139,7 @@
 							}).map(function (category) {
 								return _react2.default.createElement(
 									"a",
-									{ key: category._id, className: "dropdown-item", href: "/" },
+									{ href: "/category/" + category.key, key: category._id, className: "dropdown-item" },
 									category.name
 								);
 							}),

@@ -94,7 +94,7 @@ var view = function () {
 							{
 								(categories || []).filter(category=>category.displayType==2).map((category)=>{
 									return (
-										<a key = {category._id} className="dropdown-item" href="/">{category.name}</a>
+										<a href={"/category/"+category.key} key = {category._id} className="dropdown-item">{category.name}</a>
 									)
 								})
 							}
