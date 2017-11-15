@@ -73,3 +73,11 @@
 	}
   }
 }
+/* responsiveness */
+@media (max-width: 992px) {
+  .product-group .container .column .categories{
+	display: none;
+  }
+}
+
+/* /responsiveness */

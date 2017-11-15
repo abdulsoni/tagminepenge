@@ -43,4 +43,10 @@
     .product-group .container .column .category-wise .products .container .card .card-body .product-image .image {
       height: 200px; }
 
+/* responsiveness */
+@media (max-width: 992px) {
+  .product-group .container .column .categories {
+    display: none; } }
+/* /responsiveness */
+
 /*# sourceMappingURL=style.css.map */
