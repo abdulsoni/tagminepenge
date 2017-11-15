@@ -4,7 +4,7 @@ import styles from "./style.scss";
 var view = function () {
 	const {user,categories} = this.props;
 	return (
-		<div className="header">
+		<div className="header" ref={(ref)=>{this.headerRef=ref}}>
 			<div className="header-top">
 				<div className="container content">
 					<div className="search">

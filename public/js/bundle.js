@@ -48086,10 +48086,10 @@
 	var map = {
 		"./index": 326,
 		"./index.jsx": 326,
-		"./index2": 532,
-		"./index2.jsx": 532,
-		"./test": 533,
-		"./test.jsx": 533
+		"./index2": 521,
+		"./index2.jsx": 521,
+		"./test": 522,
+		"./test.jsx": 522
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -52728,7 +52728,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	/**
-	 * @name Sample Component
+	 * @name Header Component
 	 * @type Component
 	 * @author Inderdeep Singh
 	 */
@@ -52746,12 +52746,31 @@
 		}
 	
 		/**
-	  * Render the view
-	  * @returns {*}
+	  * Component Did Mount hook
 	  */
 	
 	
 		_createClass(Main, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				var _this2 = this;
+	
+				$(window).scroll(function () {
+					var scroll = $(window).scrollTop();
+	
+					if (scroll >= 300) {
+						$(_this2.headerRef).addClass("shrink");
+					} else {
+						$(_this2.headerRef).removeClass("shrink");
+					}
+				});
+			}
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
 			key: 'render',
 			value: function render() {
 				return _view2.default.bind(this)();
@@ -52787,13 +52806,17 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
+		var _this = this;
+	
 		var _props = this.props,
 		    user = _props.user,
 		    categories = _props.categories;
 	
 		return _react2.default.createElement(
 			"div",
-			{ className: "header" },
+			{ className: "header", ref: function ref(_ref) {
+					_this.headerRef = _ref;
+				} },
 			_react2.default.createElement(
 				"div",
 				{ className: "header-top" },
@@ -55248,15 +55271,15 @@
 	
 	var _privacyPolicy2 = _interopRequireDefault(_privacyPolicy);
 	
-	var _getStarted = __webpack_require__(516);
+	var _getStarted = __webpack_require__(523);
 	
 	var _getStarted2 = _interopRequireDefault(_getStarted);
 	
-	var _productForm = __webpack_require__(521);
+	var _productForm = __webpack_require__(528);
 	
 	var _productForm2 = _interopRequireDefault(_productForm);
 	
-	var _checkout = __webpack_require__(527);
+	var _checkout = __webpack_require__(534);
 	
 	var _checkout2 = _interopRequireDefault(_checkout);
 	
@@ -59743,7 +59766,192 @@
 	};
 
 /***/ }),
-/* 516 */
+/* 516 */,
+/* 517 */,
+/* 518 */,
+/* 519 */,
+/* 520 */,
+/* 521 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _default = __webpack_require__(327);
+	
+	var _default2 = _interopRequireDefault(_default);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Index = function Index(props) {
+		return _react2.default.createElement(
+			_default2.default,
+			props,
+			_react2.default.createElement(
+				'div',
+				{ className: 'container' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'jumbotron' },
+					_react2.default.createElement('img', { src: '/images/logo.svg', width: '160' }),
+					_react2.default.createElement(
+						'h1',
+						null,
+						'Welcome'
+					),
+					_react2.default.createElement(
+						'p',
+						null,
+						'This is your new ',
+						_react2.default.createElement(
+							'a',
+							{ href: 'http://keystonejs.com', target: '_blank' },
+							'KeystoneJS'
+						),
+						' website.'
+					),
+					_react2.default.createElement(
+						'p',
+						null,
+						'It includes the latest versions of ',
+						_react2.default.createElement(
+							'a',
+							{ href: 'http://getbootstrap.com/', target: '_blank' },
+							'Bootstrap'
+						),
+						' and ',
+						_react2.default.createElement(
+							'a',
+							{ href: 'http://www.jquery.com/', target: '_blank' },
+							'jQuery'
+						),
+						'.'
+					),
+					_react2.default.createElement(
+						'p',
+						null,
+						'Visit the ',
+						_react2.default.createElement(
+							'a',
+							{ href: 'http://keystonejs.com/guide', target: '_blank' },
+							'Getting Started'
+						),
+						' guide to learn how to customise it.'
+					),
+					_react2.default.createElement('hr', null),
+					props.user && props.user.canAccessKeystone ? _react2.default.createElement(
+						'p',
+						null,
+						_react2.default.createElement(
+							'a',
+							{ href: '/keystone', className: 'btn btn-lg btn-primary' },
+							'Open the Admin UI'
+						)
+					) : _react2.default.createElement(
+						'p',
+						null,
+						'We have created a default Admin user for you with the email ',
+						_react2.default.createElement(
+							'strong',
+							null,
+							'user@keystonejs.com'
+						),
+						' and the password ',
+						_react2.default.createElement(
+							'strong',
+							null,
+							'admin'
+						),
+						'.',
+						_react2.default.createElement('br', null),
+						_react2.default.createElement(
+							'a',
+							{ href: '/keystone/signin', style: { marginRight: '10px' }, className: 'btn btn-lg btn-primary' },
+							'Sign in'
+						),
+						'to use the Admin UI.'
+					),
+					_react2.default.createElement('hr', null),
+					_react2.default.createElement(
+						'p',
+						null,
+						'Remember to ',
+						_react2.default.createElement(
+							'a',
+							{ href: 'https://github.com/keystonejs/keystone', target: '_blank' },
+							'Star KeystoneJS on GitHub'
+						),
+						' and',
+						_react2.default.createElement(
+							'a',
+							{ href: 'https://twitter.com/keystonejs', target: '_blank' },
+							'follow @keystonejs'
+						),
+						' on twitter for updates.'
+					),
+					_react2.default.createElement('hr', null),
+					_react2.default.createElement(
+						'button',
+						{ className: 'btn btn-primary btn-large', onClick: function onClick() {
+								return alert('An alert from the frontend! with props, the section is: ' + props.section);
+							} },
+						'Click here to see frontend react in the works'
+					)
+				)
+			)
+		);
+	};
+	
+	// React Engine needs exports, don't export default
+	module.exports = Index;
+
+/***/ }),
+/* 522 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _default = __webpack_require__(327);
+	
+	var _default2 = _interopRequireDefault(_default);
+	
+	var _reactRedux = __webpack_require__(295);
+	
+	var _redux = __webpack_require__(329);
+	
+	var _redux2 = _interopRequireDefault(_redux);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var store = (0, _redux2.default)(_redux.initialState);
+	var Index = function Index(props) {
+		return _react2.default.createElement(
+			_default2.default,
+			props,
+			_react2.default.createElement(
+				_reactRedux.Provider,
+				{ store: store },
+				_react2.default.createElement(
+					'h1',
+					null,
+					'Test'
+				)
+			)
+		);
+	};
+	
+	// React Engine needs exports, don't export default
+	module.exports = Index;
+
+/***/ }),
+/* 523 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59752,7 +59960,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(517);
+	var _main = __webpack_require__(524);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -59761,7 +59969,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 517 */
+/* 524 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59776,7 +59984,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(518);
+	var _view = __webpack_require__(525);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -59857,7 +60065,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
 
 /***/ }),
-/* 518 */
+/* 525 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59870,7 +60078,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _style = __webpack_require__(519);
+	var _style = __webpack_require__(526);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
@@ -59890,13 +60098,13 @@
 	exports.default = view;
 
 /***/ }),
-/* 519 */
+/* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(520);
+	var content = __webpack_require__(527);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -59921,7 +60129,7 @@
 	}
 
 /***/ }),
-/* 520 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(402)(undefined);
@@ -59935,7 +60143,7 @@
 
 
 /***/ }),
-/* 521 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59944,7 +60152,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(522);
+	var _main = __webpack_require__(529);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -59953,7 +60161,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 522 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -59968,7 +60176,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(523);
+	var _view = __webpack_require__(530);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -59978,7 +60186,7 @@
 	
 	var _common = __webpack_require__(411);
 	
-	var _file = __webpack_require__(526);
+	var _file = __webpack_require__(533);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -60130,7 +60338,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
 
 /***/ }),
-/* 523 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60143,7 +60351,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _style = __webpack_require__(524);
+	var _style = __webpack_require__(531);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
@@ -60392,13 +60600,13 @@
 	exports.default = view;
 
 /***/ }),
-/* 524 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(525);
+	var content = __webpack_require__(532);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -60423,7 +60631,7 @@
 	}
 
 /***/ }),
-/* 525 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(402)(undefined);
@@ -60444,7 +60652,7 @@
 	};
 
 /***/ }),
-/* 526 */
+/* 533 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -60524,7 +60732,7 @@
 	}
 
 /***/ }),
-/* 527 */
+/* 534 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60533,7 +60741,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(528);
+	var _main = __webpack_require__(535);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -60542,7 +60750,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 528 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60557,7 +60765,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(529);
+	var _view = __webpack_require__(536);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -60638,7 +60846,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
 
 /***/ }),
-/* 529 */
+/* 536 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60651,7 +60859,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _style = __webpack_require__(530);
+	var _style = __webpack_require__(537);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
@@ -60667,13 +60875,13 @@
 	exports.default = view;
 
 /***/ }),
-/* 530 */
+/* 537 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(531);
+	var content = __webpack_require__(538);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -60698,7 +60906,7 @@
 	}
 
 /***/ }),
-/* 531 */
+/* 538 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(402)(undefined);
@@ -60710,186 +60918,6 @@
 	
 	// exports
 
-
-/***/ }),
-/* 532 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _default = __webpack_require__(327);
-	
-	var _default2 = _interopRequireDefault(_default);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var Index = function Index(props) {
-		return _react2.default.createElement(
-			_default2.default,
-			props,
-			_react2.default.createElement(
-				'div',
-				{ className: 'container' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'jumbotron' },
-					_react2.default.createElement('img', { src: '/images/logo.svg', width: '160' }),
-					_react2.default.createElement(
-						'h1',
-						null,
-						'Welcome'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'This is your new ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'http://keystonejs.com', target: '_blank' },
-							'KeystoneJS'
-						),
-						' website.'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'It includes the latest versions of ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'http://getbootstrap.com/', target: '_blank' },
-							'Bootstrap'
-						),
-						' and ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'http://www.jquery.com/', target: '_blank' },
-							'jQuery'
-						),
-						'.'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'Visit the ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'http://keystonejs.com/guide', target: '_blank' },
-							'Getting Started'
-						),
-						' guide to learn how to customise it.'
-					),
-					_react2.default.createElement('hr', null),
-					props.user && props.user.canAccessKeystone ? _react2.default.createElement(
-						'p',
-						null,
-						_react2.default.createElement(
-							'a',
-							{ href: '/keystone', className: 'btn btn-lg btn-primary' },
-							'Open the Admin UI'
-						)
-					) : _react2.default.createElement(
-						'p',
-						null,
-						'We have created a default Admin user for you with the email ',
-						_react2.default.createElement(
-							'strong',
-							null,
-							'user@keystonejs.com'
-						),
-						' and the password ',
-						_react2.default.createElement(
-							'strong',
-							null,
-							'admin'
-						),
-						'.',
-						_react2.default.createElement('br', null),
-						_react2.default.createElement(
-							'a',
-							{ href: '/keystone/signin', style: { marginRight: '10px' }, className: 'btn btn-lg btn-primary' },
-							'Sign in'
-						),
-						'to use the Admin UI.'
-					),
-					_react2.default.createElement('hr', null),
-					_react2.default.createElement(
-						'p',
-						null,
-						'Remember to ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'https://github.com/keystonejs/keystone', target: '_blank' },
-							'Star KeystoneJS on GitHub'
-						),
-						' and',
-						_react2.default.createElement(
-							'a',
-							{ href: 'https://twitter.com/keystonejs', target: '_blank' },
-							'follow @keystonejs'
-						),
-						' on twitter for updates.'
-					),
-					_react2.default.createElement('hr', null),
-					_react2.default.createElement(
-						'button',
-						{ className: 'btn btn-primary btn-large', onClick: function onClick() {
-								return alert('An alert from the frontend! with props, the section is: ' + props.section);
-							} },
-						'Click here to see frontend react in the works'
-					)
-				)
-			)
-		);
-	};
-	
-	// React Engine needs exports, don't export default
-	module.exports = Index;
-
-/***/ }),
-/* 533 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _default = __webpack_require__(327);
-	
-	var _default2 = _interopRequireDefault(_default);
-	
-	var _reactRedux = __webpack_require__(295);
-	
-	var _redux = __webpack_require__(329);
-	
-	var _redux2 = _interopRequireDefault(_redux);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var store = (0, _redux2.default)(_redux.initialState);
-	var Index = function Index(props) {
-		return _react2.default.createElement(
-			_default2.default,
-			props,
-			_react2.default.createElement(
-				_reactRedux.Provider,
-				{ store: store },
-				_react2.default.createElement(
-					'h1',
-					null,
-					'Test'
-				)
-			)
-		);
-	};
-	
-	// React Engine needs exports, don't export default
-	module.exports = Index;
 
 /***/ })
 /******/ ]);

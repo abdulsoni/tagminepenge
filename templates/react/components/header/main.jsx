@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ComponentView from './view';
 /**
- * @name Sample Component
+ * @name Header Component
  * @type Component
  * @author Inderdeep Singh
  */
@@ -14,6 +14,20 @@ export default class Main extends Component {
 		super(props);
 	}
 
+	/**
+	 * Component Did Mount hook
+	 */
+	componentDidMount(){
+		$(window).scroll(()=> {
+			var scroll = $(window).scrollTop();
+			
+			if (scroll >= 300) {
+				$(this.headerRef).addClass("shrink");
+			} else {
+				$(this.headerRef).removeClass("shrink");
+			}
+		});
+	}
 	/**
 	 * Render the view
 	 * @returns {*}
