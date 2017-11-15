@@ -55451,6 +55451,11 @@
 		var config = this.props.config;
 	
 		var banner = config.banner && config.banner.media ? config.banner.media.url : null;
+		var link = config.banner && config.banner.value ? config.banner.value : null;
+		var leftBanner = config.leftBanner && config.leftBanner.media ? config.leftBanner.media.url : null;
+		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
+		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
+		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
 		return _react2.default.createElement(
 			'div',
 			{ className: 'home' },
@@ -55460,12 +55465,12 @@
 				_react2.default.createElement(
 					'div',
 					{ className: 'col-md-0 col-lg-2 column left' },
-					_react2.default.createElement(_index2.default, null)
+					_react2.default.createElement(_index2.default, { banner: leftBanner, link: leftBannerlink })
 				),
 				_react2.default.createElement(
 					'div',
 					{ className: 'col-md-12 col-lg-8 column' },
-					_react2.default.createElement(_index2.default, { banner: banner }),
+					_react2.default.createElement(_index2.default, { banner: banner, link: link }),
 					_react2.default.createElement(_index4.default, null),
 					_react2.default.createElement(_index6.default, null),
 					_react2.default.createElement(_index8.default, null)
@@ -55473,7 +55478,7 @@
 				_react2.default.createElement(
 					'div',
 					{ className: 'col-md-0 col-lg-2 column right' },
-					_react2.default.createElement(_index2.default, null)
+					_react2.default.createElement(_index2.default, { banner: rightBanner, link: rightBannerlink })
 				)
 			)
 		);
@@ -55645,9 +55650,15 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		var banner = this.props.banner;
+		var _props = this.props,
+		    banner = _props.banner,
+		    link = _props.link;
 	
-		return _react2.default.createElement("div", { className: "banner content-center background", style: { backgroundImage: 'url(' + banner + ')' } });
+		return _react2.default.createElement(
+			"a",
+			{ target: "blank", href: link },
+			_react2.default.createElement("div", { className: "banner content-center background", style: { backgroundImage: 'url(' + banner + ')' } })
+		);
 	};
 	exports.default = view;
 
