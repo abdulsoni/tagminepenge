@@ -19,5 +19,33 @@
       .product-page .product .column .product-details .product-price {
         font-size: 30px;
         margin-bottom: 12px; }
+  .product-page .more .row {
+    margin: 0px; }
+    .product-page .more .row .column {
+      padding: 0px; }
+      .product-page .more .row .column .container {
+        width: 100%; }
+      .product-page .more .row .column .banner {
+        margin: 27px 10px 10px 10px; }
+      .product-page .more .row .column.left .banner {
+        margin-right: 0px; }
+      .product-page .more .row .column.right .banner {
+        margin-left: 0px; }
+
+/* responsiveness */
+@media (max-width: 1200px) {
+  .more .row .column.left {
+    display: none; }
+
+  .more .row .column.right {
+    display: none; } }
+@media (max-width: 992px) {
+  .product-page {
+    padding-top: 0px; }
+    .product-page .product .column {
+      padding: 20px; }
+      .product-page .product .column .carousel-indicators {
+        width: inherit; } }
+/* /responsiveness */
 
 /*# sourceMappingURL=style.css.map */

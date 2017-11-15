@@ -2,6 +2,8 @@ import React from 'react';
 import styles from "./style.scss";
 import Carousel from '../../components/carousel';
 import ProductGrid from '../../components/productGrid';
+import Banner from '../../components/banner/index';
+
 var view = function () {
 	return (
 		<div className="product-page">
@@ -16,7 +18,12 @@ var view = function () {
 								<p>Cafuer Watch</p>
 							</div>
 							<div className="product-description">
-								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+									exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+									irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+									pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+									deserunt mollit anim id est laborum."</p>
 							</div>
 							<div className="product-price">
 								<p>$350</p>
@@ -28,7 +35,19 @@ var view = function () {
 					</div>
 				</div>
 			</div>
-			<ProductGrid/>
+			<div className="more">
+				<div className="row">
+					<div className="col-md-0 col-lg-2 column left">
+						<Banner/>
+					</div>
+					<div className="col-md-12 col-lg-8 column">
+						<ProductGrid/>
+					</div>
+					<div className="col-md-0 col-lg-2 column right">
+						<Banner/>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

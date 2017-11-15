@@ -57176,6 +57176,10 @@
 	
 	var _productGrid2 = _interopRequireDefault(_productGrid);
 	
+	var _index = __webpack_require__(435);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
@@ -57239,7 +57243,29 @@
 					)
 				)
 			),
-			_react2.default.createElement(_productGrid2.default, null)
+			_react2.default.createElement(
+				'div',
+				{ className: 'more' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-0 col-lg-2 column left' },
+						_react2.default.createElement(_index2.default, null)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-12 col-lg-8 column' },
+						_react2.default.createElement(_productGrid2.default, null)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-0 col-lg-2 column right' },
+						_react2.default.createElement(_index2.default, null)
+					)
+				)
+			)
 		);
 	};
 	exports.default = view;
@@ -57284,7 +57310,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.product-page {\n  padding-top: 70px; }\n  .product-page .product {\n    margin-bottom: 100px; }\n    .product-page .product .column {\n      padding: 0px; }\n      .product-page .product .column .product-details .product-title {\n        font-size: 30px;\n        margin-bottom: 8px; }\n      .product-page .product .column .product-details .product-description {\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n        line-height: 24px;\n        margin-bottom: 8px; }\n      .product-page .product .column .product-details .product-price {\n        font-size: 30px;\n        margin-bottom: 12px; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n.product-page {\n  padding-top: 70px; }\n  .product-page .product {\n    margin-bottom: 100px; }\n    .product-page .product .column {\n      padding: 0px; }\n      .product-page .product .column .product-details .product-title {\n        font-size: 30px;\n        margin-bottom: 8px; }\n      .product-page .product .column .product-details .product-description {\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n        line-height: 24px;\n        margin-bottom: 8px; }\n      .product-page .product .column .product-details .product-price {\n        font-size: 30px;\n        margin-bottom: 12px; }\n  .product-page .more .row {\n    margin: 0px; }\n    .product-page .more .row .column {\n      padding: 0px; }\n      .product-page .more .row .column .container {\n        width: 100%; }\n      .product-page .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .product-page .more .row .column.left .banner {\n        margin-right: 0px; }\n      .product-page .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .product-page {\n    padding-top: 0px; }\n    .product-page .product .column {\n      padding: 20px; }\n      .product-page .product .column .carousel-indicators {\n        width: inherit; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -57294,7 +57320,14 @@
 		"product-details": "product-details",
 		"product-title": "product-title",
 		"product-description": "product-description",
-		"product-price": "product-price"
+		"product-price": "product-price",
+		"more": "more",
+		"row": "row",
+		"container": "container",
+		"banner": "banner",
+		"left": "left",
+		"right": "right",
+		"carousel-indicators": "carousel-indicators"
 	};
 
 /***/ }),
