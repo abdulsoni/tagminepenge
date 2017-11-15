@@ -26,3 +26,19 @@
 	}
   }
 }
+/* responsiveness */
+@media (max-width: 520px) {
+  .footer{
+	padding:20px 5px;
+	text-align: center;
+	.title {
+	  font-size: 15px;
+	}
+	.column{
+	  padding:0px;
+	  margin-bottom:10px;
+	}
+  }
+}
+
+/* /responsiveness */

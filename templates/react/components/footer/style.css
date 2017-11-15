@@ -22,4 +22,16 @@
       .footer .links ul li a:hover {
         color: #77b353; }
 
+/* responsiveness */
+@media (max-width: 520px) {
+  .footer {
+    padding: 20px 5px;
+    text-align: center; }
+    .footer .title {
+      font-size: 15px; }
+    .footer .column {
+      padding: 0px;
+      margin-bottom: 10px; } }
+/* /responsiveness */
+
 /*# sourceMappingURL=style.css.map */

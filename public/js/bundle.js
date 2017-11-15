@@ -48086,10 +48086,10 @@
 	var map = {
 		"./index": 326,
 		"./index.jsx": 326,
-		"./index2": 654,
-		"./index2.jsx": 654,
-		"./test": 655,
-		"./test.jsx": 655
+		"./index2": 532,
+		"./index2.jsx": 532,
+		"./test": 533,
+		"./test.jsx": 533
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -53037,7 +53037,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.header {\n  position: fixed;\n  width: 100%;\n  top: 0px;\n  left: 0;\n  z-index: 2; }\n  .header .header-top {\n    height: 57px;\n    background: #f7f7f7; }\n    .header .header-top .content {\n      position: relative; }\n      .header .header-top .content .search {\n        position: absolute;\n        left: 0;\n        top: 2px; }\n        .header .header-top .content .search input {\n          height: 33px; }\n      .header .header-top .content .logo {\n        text-align: center; }\n        .header .header-top .content .logo img {\n          width: 220px; }\n      .header .header-top .content .actions {\n        position: absolute;\n        right: 10px;\n        top: 15px; }\n        .header .header-top .content .actions .dropdown-menu {\n          min-width: 140px;\n          border-radius: 0px;\n          background-color: #ededed;\n          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n          border: none;\n          padding: 0px; }\n          .header .header-top .content .actions .dropdown-menu a {\n            font-size: 15px;\n            padding: 10px;\n            display: block;\n            margin: 0px; }\n            .header .header-top .content .actions .dropdown-menu a:hover {\n              background: #e6e6e6; }\n        .header .header-top .content .actions a {\n          color: #000;\n          font-size: 16px;\n          font-weight: bold;\n          margin-left: 10px; }\n          .header .header-top .content .actions a .icon {\n            margin-right: 5px; }\n  .header .header-nav .nav-accent {\n    display: block;\n    width: 50%;\n    height: 66px;\n    position: absolute;\n    top: 57px;\n    z-index: -10;\n    -webkit-transition: height .5s;\n    -moz-transition: height .5s;\n    -o-transition: height .5s;\n    -ms-transition: height .5s;\n    transition: height .5s;\n    z-index: 1; }\n  .header .header-nav .nav-accent-left {\n    background-color: #77b353; }\n  .header .header-nav .nav-accent-right {\n    background-color: #77b353;\n    right: 0; }\n  .header .header-nav ul {\n    text-align: center;\n    padding: 0;\n    list-style: none;\n    font-size: 1.5em;\n    font-weight: 300;\n    position: relative;\n    z-index: 2;\n    margin-top: -6px; }\n    .header .header-nav ul li {\n      display: inline-block;\n      width: 10%;\n      text-align: center;\n      -webkit-transition: border .5s;\n      -moz-transition: border .5s;\n      -o-transition: border .5s;\n      -ms-transition: border .5s;\n      transition: border .5s;\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n      position: relative; }\n      .header .header-nav ul li a.nav-link {\n        display: block;\n        width: auto;\n        height: 76.91px;\n        color: rgba(249, 249, 249, 0.9);\n        text-decoration: none;\n        -webkit-transition: color .5s, background .5s, height .5s;\n        -moz-transition: color .5s, background .5s, height .5s;\n        -o-transition: color .5s, background .5s, height .5s;\n        -ms-transition: color .5s, background .5s, height .5s;\n        transition: color .5s, background .5s, height .5s;\n        cursor: pointer; }\n        .header .header-nav ul li a.nav-link .icon {\n          display: block;\n          padding-top: .5em; }\n        .header .header-nav ul li a.nav-link .text {\n          display: block;\n          font-size: 14.4px;\n          font-weight: 600; }\n        .header .header-nav ul li a.nav-link:hover {\n          height: 82.77px; }\n      .header .header-nav ul li .dropdown-menu {\n        top: 98%;\n        min-width: 145px;\n        border-radius: 0px;\n        background-color: #ededed;\n        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n        border: none;\n        padding: 0px; }\n        .header .header-nav ul li .dropdown-menu a {\n          color: #333;\n          padding: 8px 10px;\n          text-decoration: none;\n          display: block;\n          font-size: 17px;\n          font-weight: 400; }\n          .header .header-nav ul li .dropdown-menu a:hover {\n            border: none !important;\n            background: #e6e6e6; }\n        .header .header-nav ul li .dropdown-menu .dropdown-divider {\n          background-color: #858e94;\n          height: 1px; }\n      .header .header-nav ul li:nth-child(1) {\n        background: #ededed;\n        background: -moz-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #8E35EF), color-stop(100%, #8E35EF));\n        background: -webkit-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -o-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -ms-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: linear-gradient(to bottom, #8E35EF 0, #8E35EF 100%);\n        box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n        .header .header-nav ul li:nth-child(1) a:hover {\n          border-bottom: 4px solid #650aca; }\n      .header .header-nav ul li:nth-child(2) {\n        background: #1569C7;\n        background: -moz-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1569C7), color-stop(100%, #1569C7));\n        background: -webkit-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -o-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -ms-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: linear-gradient(to bottom, #1569C7 0, #1569C7 100%); }\n        .header .header-nav ul li:nth-child(2) a:hover {\n          border-bottom: 4px solid #0d4a8c; }\n      .header .header-nav ul li:nth-child(3) {\n        background: #E8A317;\n        background: -moz-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E8A317), color-stop(100%, #E8A317));\n        background: -webkit-linear-gradient(top, #E8A317 0, #e9931a 100%);\n        background: -o-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: -ms-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: linear-gradient(to bottom, #E8A317 0, #E8A317 100%);\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n        .header .header-nav ul li:nth-child(3) a:hover {\n          border-bottom: 4px solid #af780b; }\n      .header .header-nav ul li:nth-child(4) {\n        background: #347C17;\n        background: -moz-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #347C17), color-stop(100%, #347C17));\n        background: -webkit-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -o-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -ms-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: linear-gradient(to bottom, #347C17 0, #347C17 100%); }\n        .header .header-nav ul li:nth-child(4) a:hover {\n          border-bottom: 4px solid #275f0f; }\n      .header .header-nav ul li:nth-child(5) {\n        background: #F70D1A;\n        background: -moz-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F70D1A), color-stop(100%, #F70D1A));\n        background: -webkit-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -o-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -ms-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: linear-gradient(to bottom, #F70D1A 0, #F70D1A 100%); }\n        .header .header-nav ul li:nth-child(5) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li:nth-child(6) {\n        background: #152836;\n        background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n        background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: linear-gradient(to bottom, #1c3648 0, #152836 100%);\n        -webkit-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n        -moz-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n        box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3); }\n        .header .header-nav ul li:nth-child(6) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li.mobile {\n        display: none; }\n  .header.shrink .nav-accent {\n    height: 37px; }\n  .header.shrink .header-nav ul {\n    margin-top: -5px; }\n    .header.shrink .header-nav ul li a.nav-link {\n      height: 46px; }\n      .header.shrink .header-nav ul li a.nav-link .icon {\n        display: none; }\n      .header.shrink .header-nav ul li a.nav-link .text {\n        padding-top: 13px; }\n      .header.shrink .header-nav ul li a.nav-link:hover {\n        height: 50px; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .header .header-nav ul {\n    width: 1500px;\n    margin: -6px auto auto auto; } }\n\n@media (max-width: 1024px) {\n  .header .header-nav ul {\n    margin-top: 0px; }\n  .header .header-nav ul li {\n    width: 20%;\n    box-shadow: none;\n    vertical-align: top; }\n  .header .header-nav ul li a.nav-link {\n    height: 66px; } }\n\n@media (max-width: 768px) {\n  .header .header-top .content .search {\n    display: none; }\n  .header .header-nav ul li:nth-child(3) {\n    display: none; }\n  .header .header-nav ul li:nth-child(4) {\n    display: none; }\n  .header .header-nav ul li.mobile {\n    display: inline-block; }\n    .header .header-nav ul li.mobile a {\n      background: #1691be;\n      background: -moz-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #19a2d5), color-stop(100%, #1691be));\n      background: -webkit-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: -o-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: -ms-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: linear-gradient(to bottom, #19a2d5 0, #1691be 100%); }\n      .header .header-nav ul li.mobile a a:hover {\n        border-bottom: 4px solid #0a4b75; }\n  .header .header-top .content .logo img {\n    position: absolute;\n    left: 2px;\n    top: 8px; } }\n\n@media (max-width: 520px) {\n  .header .header-nav ul li {\n    width: 25%; }\n  .header .header-nav ul li .dropdown-menu {\n    left: -30px; } }\n\n@media (max-width: 420px) {\n  .header .header-nav ul li .dropdown-menu {\n    left: -70px; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.header {\n  position: fixed;\n  width: 100%;\n  top: 0px;\n  left: 0;\n  z-index: 2; }\n  .header .header-top {\n    height: 57px;\n    background: #f7f7f7; }\n    .header .header-top .content {\n      position: relative; }\n      .header .header-top .content .search {\n        position: absolute;\n        left: 0;\n        top: 2px; }\n        .header .header-top .content .search input {\n          height: 33px; }\n      .header .header-top .content .logo {\n        text-align: center; }\n        .header .header-top .content .logo img {\n          width: 220px; }\n      .header .header-top .content .actions {\n        position: absolute;\n        right: 10px;\n        top: 15px; }\n        .header .header-top .content .actions .dropdown-menu {\n          min-width: 140px;\n          border-radius: 0px;\n          background-color: #ededed;\n          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n          border: none;\n          padding: 0px; }\n          .header .header-top .content .actions .dropdown-menu a {\n            font-size: 15px;\n            padding: 10px;\n            display: block;\n            margin: 0px; }\n            .header .header-top .content .actions .dropdown-menu a:hover {\n              background: #e6e6e6; }\n        .header .header-top .content .actions a {\n          color: #000;\n          font-size: 16px;\n          font-weight: bold;\n          margin-left: 10px; }\n          .header .header-top .content .actions a .icon {\n            margin-right: 5px; }\n  .header .header-nav .nav-accent {\n    display: block;\n    width: 50%;\n    height: 66px;\n    position: absolute;\n    top: 57px;\n    z-index: -10;\n    -webkit-transition: height .5s;\n    -moz-transition: height .5s;\n    -o-transition: height .5s;\n    -ms-transition: height .5s;\n    transition: height .5s;\n    z-index: 1; }\n  .header .header-nav .nav-accent-left {\n    background-color: #77b353; }\n  .header .header-nav .nav-accent-right {\n    background-color: #77b353;\n    right: 0; }\n  .header .header-nav ul {\n    text-align: center;\n    padding: 0;\n    list-style: none;\n    font-size: 1.5em;\n    font-weight: 300;\n    position: relative;\n    z-index: 2;\n    margin-top: -6px; }\n    .header .header-nav ul li {\n      display: inline-block;\n      width: 10%;\n      text-align: center;\n      -webkit-transition: border .5s;\n      -moz-transition: border .5s;\n      -o-transition: border .5s;\n      -ms-transition: border .5s;\n      transition: border .5s;\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n      position: relative; }\n      .header .header-nav ul li a.nav-link {\n        display: block;\n        width: auto;\n        height: 76.91px;\n        color: rgba(249, 249, 249, 0.9);\n        text-decoration: none;\n        -webkit-transition: color .5s, background .5s, height .5s;\n        -moz-transition: color .5s, background .5s, height .5s;\n        -o-transition: color .5s, background .5s, height .5s;\n        -ms-transition: color .5s, background .5s, height .5s;\n        transition: color .5s, background .5s, height .5s;\n        cursor: pointer; }\n        .header .header-nav ul li a.nav-link .icon {\n          display: block;\n          padding-top: .5em; }\n        .header .header-nav ul li a.nav-link .text {\n          display: block;\n          font-size: 14.4px;\n          font-weight: 600; }\n        .header .header-nav ul li a.nav-link:hover {\n          height: 82.77px; }\n      .header .header-nav ul li .dropdown-menu {\n        top: 98%;\n        min-width: 145px;\n        border-radius: 0px;\n        background-color: #ededed;\n        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n        border: none;\n        padding: 0px; }\n        .header .header-nav ul li .dropdown-menu a {\n          color: #333;\n          padding: 8px 10px;\n          text-decoration: none;\n          display: block;\n          font-size: 17px;\n          font-weight: 400; }\n          .header .header-nav ul li .dropdown-menu a:hover {\n            border: none !important;\n            background: #e6e6e6; }\n        .header .header-nav ul li .dropdown-menu .dropdown-divider {\n          background-color: #858e94;\n          height: 1px; }\n      .header .header-nav ul li:nth-child(1) {\n        background: #ededed;\n        background: -moz-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #8E35EF), color-stop(100%, #8E35EF));\n        background: -webkit-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -o-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -ms-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: linear-gradient(to bottom, #8E35EF 0, #8E35EF 100%); }\n        .header .header-nav ul li:nth-child(1) a:hover {\n          border-bottom: 4px solid #650aca; }\n      .header .header-nav ul li:nth-child(2) {\n        background: #1569C7;\n        background: -moz-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1569C7), color-stop(100%, #1569C7));\n        background: -webkit-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -o-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -ms-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: linear-gradient(to bottom, #1569C7 0, #1569C7 100%); }\n        .header .header-nav ul li:nth-child(2) a:hover {\n          border-bottom: 4px solid #0d4a8c; }\n      .header .header-nav ul li:nth-child(3) {\n        background: #E8A317;\n        background: -moz-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E8A317), color-stop(100%, #E8A317));\n        background: -webkit-linear-gradient(top, #E8A317 0, #e9931a 100%);\n        background: -o-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: -ms-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: linear-gradient(to bottom, #E8A317 0, #E8A317 100%);\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n        .header .header-nav ul li:nth-child(3) a:hover {\n          border-bottom: 4px solid #af780b; }\n      .header .header-nav ul li:nth-child(4) {\n        background: #347C17;\n        background: -moz-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #347C17), color-stop(100%, #347C17));\n        background: -webkit-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -o-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -ms-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: linear-gradient(to bottom, #347C17 0, #347C17 100%); }\n        .header .header-nav ul li:nth-child(4) a:hover {\n          border-bottom: 4px solid #275f0f; }\n      .header .header-nav ul li:nth-child(5) {\n        background: #F70D1A;\n        background: -moz-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F70D1A), color-stop(100%, #F70D1A));\n        background: -webkit-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -o-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -ms-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: linear-gradient(to bottom, #F70D1A 0, #F70D1A 100%); }\n        .header .header-nav ul li:nth-child(5) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li:nth-child(6) {\n        background: #152836;\n        background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n        background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: linear-gradient(to bottom, #1c3648 0, #152836 100%); }\n        .header .header-nav ul li:nth-child(6) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li.mobile {\n        display: none; }\n  .header.shrink .nav-accent {\n    height: 37px; }\n  .header.shrink .header-nav ul {\n    margin-top: -5px; }\n    .header.shrink .header-nav ul li a.nav-link {\n      height: 46px; }\n      .header.shrink .header-nav ul li a.nav-link .icon {\n        display: none; }\n      .header.shrink .header-nav ul li a.nav-link .text {\n        padding-top: 13px; }\n      .header.shrink .header-nav ul li a.nav-link:hover {\n        height: 50px; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .header .header-nav ul {\n    width: 1500px;\n    margin: -6px auto auto auto; } }\n\n@media (max-width: 1024px) {\n  .header .header-nav ul {\n    margin-top: 0px; }\n  .header .header-nav ul li {\n    width: 20%;\n    box-shadow: none;\n    vertical-align: top; }\n  .header .header-nav ul li a.nav-link {\n    height: 66px; } }\n\n@media (max-width: 768px) {\n  .header .header-top .content .search {\n    display: none; }\n  .header .header-nav ul li:nth-child(3) {\n    display: none; }\n  .header .header-nav ul li:nth-child(4) {\n    display: none; }\n  .header .header-nav ul li.mobile {\n    display: inline-block; }\n    .header .header-nav ul li.mobile a {\n      background: #1691be;\n      background: -moz-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #19a2d5), color-stop(100%, #1691be));\n      background: -webkit-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: -o-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: -ms-linear-gradient(top, #19a2d5 0, #1691be 100%);\n      background: linear-gradient(to bottom, #19a2d5 0, #1691be 100%); }\n      .header .header-nav ul li.mobile a a:hover {\n        border-bottom: 4px solid #0a4b75; }\n  .header .header-top .content .logo img {\n    position: absolute;\n    left: 2px;\n    top: 8px; } }\n\n@media (max-width: 520px) {\n  .header .header-nav ul li {\n    width: 25%; }\n  .header .header-nav ul li .dropdown-menu {\n    left: -30px; } }\n\n@media (max-width: 420px) {\n  .header .header-nav ul li .dropdown-menu {\n    left: -70px; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -54907,7 +54907,7 @@
 					{ className: "row" },
 					_react2.default.createElement(
 						"div",
-						{ className: "col-md-3" },
+						{ className: "col-xs-6 col-sm-3 col-md-3 column" },
 						_react2.default.createElement(
 							"div",
 							{ className: "title" },
@@ -54941,7 +54941,7 @@
 					),
 					_react2.default.createElement(
 						"div",
-						{ className: "col-md-3" },
+						{ className: "col-xs-6 col-sm-3 col-md-3 column" },
 						_react2.default.createElement(
 							"div",
 							{ className: "title" },
@@ -54975,7 +54975,7 @@
 					),
 					_react2.default.createElement(
 						"div",
-						{ className: "col-md-3" },
+						{ className: "col-xs-6 col-sm-3 col-md-3 column" },
 						_react2.default.createElement(
 							"div",
 							{ className: "title" },
@@ -55032,7 +55032,7 @@
 					),
 					_react2.default.createElement(
 						"div",
-						{ className: "col-md-3" },
+						{ className: "col-xs-6 col-sm-3 col-md-3 column" },
 						_react2.default.createElement(
 							"div",
 							{ className: "title" },
@@ -55142,13 +55142,14 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.footer {\n  padding: 50px;\n  margin-top: 100px;\n  background-color: #f7f7f7; }\n  .footer .title {\n    font-size: 18px;\n    margin-bottom: 14px;\n    font-weight: 700; }\n  .footer .links ul li {\n    list-style: none; }\n    .footer .links ul li a {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      font-size: 14px;\n      color: #333;\n      line-height: 28px; }\n      .footer .links ul li a:hover {\n        color: #77b353; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.footer {\n  padding: 50px;\n  margin-top: 100px;\n  background-color: #f7f7f7; }\n  .footer .title {\n    font-size: 18px;\n    margin-bottom: 14px;\n    font-weight: 700; }\n  .footer .links ul li {\n    list-style: none; }\n    .footer .links ul li a {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      font-size: 14px;\n      color: #333;\n      line-height: 28px; }\n      .footer .links ul li a:hover {\n        color: #77b353; }\n\n/* responsiveness */\n@media (max-width: 520px) {\n  .footer {\n    padding: 20px 5px;\n    text-align: center; }\n    .footer .title {\n      font-size: 15px; }\n    .footer .column {\n      padding: 0px;\n      margin-bottom: 10px; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
 		"footer": "footer",
 		"title": "title",
-		"links": "links"
+		"links": "links",
+		"column": "column"
 	};
 
 /***/ }),
@@ -55255,7 +55256,7 @@
 	
 	var _productForm2 = _interopRequireDefault(_productForm);
 	
-	var _checkout = __webpack_require__(649);
+	var _checkout = __webpack_require__(527);
 	
 	var _checkout2 = _interopRequireDefault(_checkout);
 	
@@ -59977,7 +59978,7 @@
 	
 	var _common = __webpack_require__(411);
 	
-	var _file = __webpack_require__(648);
+	var _file = __webpack_require__(526);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -60443,129 +60444,7 @@
 	};
 
 /***/ }),
-/* 526 */,
-/* 527 */,
-/* 528 */,
-/* 529 */,
-/* 530 */,
-/* 531 */,
-/* 532 */,
-/* 533 */,
-/* 534 */,
-/* 535 */,
-/* 536 */,
-/* 537 */,
-/* 538 */,
-/* 539 */,
-/* 540 */,
-/* 541 */,
-/* 542 */,
-/* 543 */,
-/* 544 */,
-/* 545 */,
-/* 546 */,
-/* 547 */,
-/* 548 */,
-/* 549 */,
-/* 550 */,
-/* 551 */,
-/* 552 */,
-/* 553 */,
-/* 554 */,
-/* 555 */,
-/* 556 */,
-/* 557 */,
-/* 558 */,
-/* 559 */,
-/* 560 */,
-/* 561 */,
-/* 562 */,
-/* 563 */,
-/* 564 */,
-/* 565 */,
-/* 566 */,
-/* 567 */,
-/* 568 */,
-/* 569 */,
-/* 570 */,
-/* 571 */,
-/* 572 */,
-/* 573 */,
-/* 574 */,
-/* 575 */,
-/* 576 */,
-/* 577 */,
-/* 578 */,
-/* 579 */,
-/* 580 */,
-/* 581 */,
-/* 582 */,
-/* 583 */,
-/* 584 */,
-/* 585 */,
-/* 586 */,
-/* 587 */,
-/* 588 */,
-/* 589 */,
-/* 590 */,
-/* 591 */,
-/* 592 */,
-/* 593 */,
-/* 594 */,
-/* 595 */,
-/* 596 */,
-/* 597 */,
-/* 598 */,
-/* 599 */,
-/* 600 */,
-/* 601 */,
-/* 602 */,
-/* 603 */,
-/* 604 */,
-/* 605 */,
-/* 606 */,
-/* 607 */,
-/* 608 */,
-/* 609 */,
-/* 610 */,
-/* 611 */,
-/* 612 */,
-/* 613 */,
-/* 614 */,
-/* 615 */,
-/* 616 */,
-/* 617 */,
-/* 618 */,
-/* 619 */,
-/* 620 */,
-/* 621 */,
-/* 622 */,
-/* 623 */,
-/* 624 */,
-/* 625 */,
-/* 626 */,
-/* 627 */,
-/* 628 */,
-/* 629 */,
-/* 630 */,
-/* 631 */,
-/* 632 */,
-/* 633 */,
-/* 634 */,
-/* 635 */,
-/* 636 */,
-/* 637 */,
-/* 638 */,
-/* 639 */,
-/* 640 */,
-/* 641 */,
-/* 642 */,
-/* 643 */,
-/* 644 */,
-/* 645 */,
-/* 646 */,
-/* 647 */,
-/* 648 */
+/* 526 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -60645,7 +60524,7 @@
 	}
 
 /***/ }),
-/* 649 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60654,7 +60533,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(650);
+	var _main = __webpack_require__(528);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -60663,7 +60542,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 650 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60678,7 +60557,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(651);
+	var _view = __webpack_require__(529);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -60759,7 +60638,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
 
 /***/ }),
-/* 651 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60772,7 +60651,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _style = __webpack_require__(652);
+	var _style = __webpack_require__(530);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
@@ -60788,13 +60667,13 @@
 	exports.default = view;
 
 /***/ }),
-/* 652 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(653);
+	var content = __webpack_require__(531);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -60819,7 +60698,7 @@
 	}
 
 /***/ }),
-/* 653 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(402)(undefined);
@@ -60833,7 +60712,7 @@
 
 
 /***/ }),
-/* 654 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -60971,7 +60850,7 @@
 	module.exports = Index;
 
 /***/ }),
-/* 655 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';

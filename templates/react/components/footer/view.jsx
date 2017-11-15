@@ -7,7 +7,7 @@ var view = function () {
 		<div className="footer">
 			<div className="container">
 				<div className="row">
-					<div className="col-md-3">
+					<div className="col-xs-6 col-sm-3 col-md-3 column">
 						<div className="title">
 							<p>By Recipient</p>
 						</div>
@@ -23,7 +23,7 @@ var view = function () {
 							</ul>
 						</div>
 					</div>
-					<div className="col-md-3">
+					<div className="col-xs-6 col-sm-3 col-md-3 column">
 						<div className="title">
 							<p>Affordable Gift Ideas</p>
 						</div>
@@ -39,7 +39,7 @@ var view = function () {
 							</ul>
 						</div>
 					</div>
-					<div className="col-md-3">
+					<div className="col-xs-6 col-sm-3 col-md-3 column">
 						<div className="title">
 							<p>Helpful Links</p>
 						</div>
@@ -53,7 +53,7 @@ var view = function () {
 							</ul>
 						</div>
 					</div>
-					<div className="col-md-3">
+					<div className="col-xs-6 col-sm-3 col-md-3 column">
 						<div className="title">
 							<p>Follow TagMinePenge</p>
 						</div>

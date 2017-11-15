@@ -160,7 +160,6 @@
 		  background: -o-linear-gradient(top, #8E35EF 0, #8E35EF 100%);
 		  background: -ms-linear-gradient(top, #8E35EF 0, #8E35EF 100%);
 		  background: linear-gradient(to bottom, #8E35EF 0, #8E35EF 100%);
-		  box-shadow: 3px 3.25px 7px rgba(0, 0, 0, .3);
 		  a {
 			&:hover {
 			  border-bottom: 4px solid #650aca;
@@ -224,9 +223,6 @@
 		  background: -o-linear-gradient(top, #1c3648 0, #152836 100%);
 		  background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);
 		  background: linear-gradient(to bottom, #1c3648 0, #152836 100%);
-		  -webkit-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, .3);
-		  -moz-box-shadow: 3px 3.25px 7px rgba(0, 0, 0, .3);
-		  box-shadow: 3px 3.25px 7px rgba(0, 0, 0, .3);
 		  a:hover {
 			border-bottom: 4px solid #000;
 		  }
