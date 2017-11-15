@@ -18,4 +18,4 @@ SubCategory.add({
 	menuOrder : { type: Number, required: false,label : "Menu Order",default : 100},
 });
 
-SubCategory.register();
+//SubCategory.register();

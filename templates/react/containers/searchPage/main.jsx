@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import ComponentView from './view';
 import axios from 'axios';
-import { connect } from 'react-redux';
 import { createAction,ActionNames } from '../../redux/actions/index';
+import {getError} from '../../utils/request';
+import { connect } from 'react-redux';
 /**
- * @name Product Grid Component
+ * @name Category Component
  * @type Component
  * @author Inderdeep Singh
  */
@@ -15,42 +16,40 @@ class Main extends Component {
 	 */
 	constructor(props){
 		super(props);
-		if(props.query){
-			this.getProducts();
-		}
-	}
-
-	/**
-	 * Component Did Mount
-	 */
-	componentDidMount(){
-		const {emitter} = this.props;
-		emitter.addListener("REFRESH_PRODUCTS",(query)=>{
-			console.log(query)
-			this.getProducts(1,query)
-		})
-	}
-
-	/**
-	 * Get products
-	 * @param page
-	 */
-	getProducts(page,customQuery){
-		page = page || 1;
-		const {getProducts,query} = this.props;
-		let obj = {
-			limit : 10,
-			skip : (page-1)*10
+		this.state = {
+			query : null
 		};
-		obj.query = {
-			...query,
-			...customQuery
-		}
-		getProducts(obj).then(action=>{
-			//console.log(action)
-		})
+	}
+	componentDidMount(){
+		this.getQuery();
 	}
 	
+	/**
+	 * Get Query
+	 * @returns {*}
+	 */
+	getQuery(){
+		if(typeof window=='undefined'){
+			return null;
+		}
+		const {categories} = this.props;
+		let pathname = window.location.pathname;
+		let text = pathname.split("/")[2] || "";
+		if(!text || text==''){
+			window.location.href = "/";
+			
+		} else {
+			this.setState({
+				query :{
+					$or : [
+						{title : { "$regex": text, "$options": "i" }},
+						{"content.brief" : { "$regex": text, "$options": "i" }},
+						{"categories.name" : { "$regex": text, "$options": "i" }}
+					]
+				}
+			});
+		}
+	}
 	/**
 	 * Render the view
 	 * @returns {*}
@@ -59,7 +58,6 @@ class Main extends Component {
 		return (ComponentView.bind(this))();
 	}
 }
-
 /**
  * Bind Actions
  * @param dispatch
@@ -67,8 +65,8 @@ class Main extends Component {
  */
 function bindAction(dispatch) {
 	return {
-		getProducts : (data)=>{
-			return dispatch(createAction(ActionNames.GET_PRODUCTS,data));
+		getProduct : (data)=>{
+			return dispatch(createAction(ActionNames.GET_PRODUCT,data));
 		}
 	};
 }
@@ -81,14 +79,13 @@ function bindAction(dispatch) {
 const mapStateToProps = state => {
 	// console.log(state)
 	return {
-		data: state.products.results || [],
-		hasMore : state.products.hasMore,
+		products: state.products.results,
 		emitter : state.emitter
 	};
 };
 
 //Set display name to be used in React Dev Tools
-Main.displayName = 'Product Grid';
+Main.displayName = 'Category-Page';
 
 export default connect(mapStateToProps, bindAction)(Main);
 

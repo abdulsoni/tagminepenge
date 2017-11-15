@@ -8,9 +8,9 @@ var view = function () {
 			<div className="header-top">
 				<div className="container content">
 					<div className="search">
-						<form className="navbar-form" role="search">
+						<form className="navbar-form" role="search" onSubmit={this.search.bind(this)}>
 							<div className="input-group add-on">
-								<input className="form-control" placeholder="Search" type="text"/>
+								<input value = {this.state.searchText} onChange = {(e)=>{this.setState({searchText : e.target.value})}} className="form-control" placeholder="Search" type="text"/>
 								<div className="input-group-btn">
 									<button className="btn btn-default" type="submit"><i
 										className="glyphicon glyphicon-search"></i></button>
@@ -69,7 +69,7 @@ var view = function () {
 						(categories || []).filter(category=>category.displayType==1).map((category)=>{
 							return (
 								<li key={category._id}>
-									<a href="/" className="nav-link">
+									<a href={"/category/"+category.key} className="nav-link">
 										<span className="icon"><span className={category.iconClass} aria-hidden="true"></span></span>
 										<span className="text">{category.name}</span>
 									</a>

@@ -13,7 +13,7 @@ var view = function () {
 			<div className="main-container">
 				<Header navLinks = {navLinks} user = {user} categories = {categories}/>
 				{
-					<routeInfo.component {...routeInfo.routeProps} filters = {filters} user = {user} config = {config}/>
+					<routeInfo.component categories = {categories} {...routeInfo.routeProps} filters = {filters} user = {user} config = {config}/>
 				}
 				<Footer config = {config} categories = {categories}/>
 				<LoginModal/>

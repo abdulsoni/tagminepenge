@@ -1,7 +1,8 @@
 export function getMaxPrice(products){
-	return 2000;
+	
+	return Math.max(...(products || []).map(elt => elt.price));
 }
 
 export function getMinPrice(products){
-	return 1000;
+	return Math.min(...(products || []).map(elt => elt.price));
 }

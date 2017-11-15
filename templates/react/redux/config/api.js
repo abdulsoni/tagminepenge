@@ -5,7 +5,7 @@
 //  */
 // export default api;
 export const HOST = typeof window!='undefined'?(window.location.protocol+"//"+window.location.host+"/"):"";
-export const SERVER = HOST + '/keystone/api/';
+export const SERVER = HOST + 'keystone/api/';
 export const AUTHENTICATE = SERVER + "session/signin";
 export const REGISTER = HOST + "auth/register";
 export const FORGOT = SERVER + "session/signin";

@@ -23,6 +23,7 @@ Product.add({
 		//extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
 	categories: { type: Types.Relationship, ref: 'Category', many: true },
+	//subcategories: { type: Types.Relationship, ref: 'SubCategory',filters: { category: ':categories' } },
 	link : { type: String, required: false,default : "" },
 	price : { type: Number, required: false,default : 0 },
 	saves : {type : Number,required : false,default : 0,noedit:true}

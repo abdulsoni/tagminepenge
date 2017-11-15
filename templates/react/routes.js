@@ -1,6 +1,7 @@
 import Home from './containers/home';
 import Profile from './components/profile';
-import ProductGroup from './components/productGroup';
+import ProductGroup from './containers/productGroup';
+import SearchPage from './containers/searchPage';
 import Product from './containers/productPage';
 import ProductPitch from './components/productPitch';
 import WishList from './components/wishlist';
@@ -50,6 +51,9 @@ const Routes = {
 	"/product/:id/:title" : {
 		component : Product
 	},
+	"/search/:text" : {
+		component : SearchPage
+	},
 	"/wishlist" : {
 		component : WishList
 	},
@@ -74,7 +78,7 @@ const Routes = {
 /*"/product-pitch" : {
 		component : ProductPitch
 	},*/
-	"/category" : {
+	"/category/:category" : {
 		component : ProductGroup
 	}
 }
