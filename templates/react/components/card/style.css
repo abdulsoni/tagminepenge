@@ -12,7 +12,7 @@
     font-weight: 400;
     margin-top: 0;
     font-size: 18px;
-    color: #606060;
+    color: #676767;
     display: block; }
   .card .card-body .product-image {
     position: relative; }
@@ -42,13 +42,13 @@
     display: flex;
     justify-content: space-between; }
     .card .card-footer .product-range {
-      color: #606060;
+      color: #676767;
       font-size: 16px;
       letter-spacing: 1px; }
       .card .card-footer .product-range .saves {
         font-size: 14px; }
         .card .card-footer .product-range .saves i {
-          color: #606060; }
+          color: #676767; }
           .card .card-footer .product-range .saves i:hover {
             color: #cb1d00; }
   .card .share ul {

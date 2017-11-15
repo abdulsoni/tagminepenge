@@ -37,18 +37,24 @@
     display: flex; }
   .app .btn-yellow {
     color: #ffffff;
-    background-color: #faab37;
-    border-color: #faab37; }
+    background-color: #77b353;
+    border-color: #77b353; }
+    .app .btn-yellow:hover {
+      background-color: #347C17;
+      border-color: #347C17; }
   .app .btn-red {
     color: #ffffff;
     background-color: #cb1d00;
     border-color: #cb1d00; }
+    .app .btn-red:hover {
+      background-color: #b91a00;
+      border-color: #b91a00; }
   .app .btn {
-    border-radius: 0px;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 400;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
-    padding: 2px 8px; }
+    padding: 5px 12px;
+    border-radius: 2px; }
   .app .input-group-btn .btn {
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;

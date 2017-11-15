@@ -43,18 +43,26 @@
 	color: $brand-white;
 	background-color: $primary-color;
 	border-color: $primary-color;
+	&:hover{
+	  background-color: $dark-primary-color;
+	  border-color: $dark-primary-color;
+	}
   }
   .btn-red {
 	color: $brand-white;
 	background-color: $brand-red;
 	border-color: $brand-red;
+	&:hover{
+	  background-color: $dark-brand-red;
+	  border-color: $dark-brand-red;
+	}
   }
   .btn {
-	border-radius: 0px;
-	font-size: 22px;
+	font-size: 16px;
 	font-weight: 400;
-	text-shadow: 1px 1px rgba(0, 0, 0, .25);
-	padding: 2px 8px;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+	padding: 5px 12px;
+	border-radius: 2px;
   }
   .input-group-btn {
 	.btn {
