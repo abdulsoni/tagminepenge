@@ -38,4 +38,40 @@
 	  }
 	}
   }
+  .more {
+	.row {
+	  margin: 0px;
+	  .column {
+		padding: 0px;
+		.container {
+		  width: 100%;
+		}
+		.banner {
+		  margin: 27px 10px 10px 10px;
+		}
+		&.left {
+		  .banner {
+			margin-right: 0px;
+		  }
+		}
+		&.right {
+		  .banner {
+			margin-left: 0px;
+		  }
+		}
+	  }
+	}
+  }
 }
+
+/* responsiveness */
+
+@media (max-width: 1200px) {
+  .more .row .column.left{
+	display: none;
+  }
+  .more .row .column.right{
+	display: none;
+  }
+}
+/* /responsiveness */

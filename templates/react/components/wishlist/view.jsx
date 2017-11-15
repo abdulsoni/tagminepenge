@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./style.scss";
 import ProductGrid from '../../components/productGrid';
-
+import Banner from '../../components/banner/index';
 var view = function () {
 	return (
 		<div className="wish-list">
@@ -19,7 +19,19 @@ var view = function () {
 					</ul>
 				</div>
 			</div>
-			<ProductGrid/>
+			<div className="more">
+				<div className="row">
+					<div className="col-md-0 col-lg-2 column left">
+						<Banner/>
+					</div>
+					<div className="col-md-12 col-lg-8 column">
+						<ProductGrid/>
+					</div>
+					<div className="col-md-0 col-lg-2 column right">
+						<Banner/>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 };

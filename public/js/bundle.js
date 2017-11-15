@@ -58768,6 +58768,10 @@
 	
 	var _productGrid2 = _interopRequireDefault(_productGrid);
 	
+	var _index = __webpack_require__(435);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
@@ -58836,7 +58840,29 @@
 					)
 				)
 			),
-			_react2.default.createElement(_productGrid2.default, null)
+			_react2.default.createElement(
+				'div',
+				{ className: 'more' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-0 col-lg-2 column left' },
+						_react2.default.createElement(_index2.default, null)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-12 col-lg-8 column' },
+						_react2.default.createElement(_productGrid2.default, null)
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-0 col-lg-2 column right' },
+						_react2.default.createElement(_index2.default, null)
+					)
+				)
+			)
 		);
 	};
 	exports.default = view;
@@ -58881,7 +58907,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.wish-list {\n  padding-top: 70px; }\n  .wish-list .heading {\n    overflow: hidden;\n    margin-bottom: 80px; }\n    .wish-list .heading .title {\n      float: left;\n      font-size: 32px;\n      margin-right: 10px; }\n    .wish-list .heading .share {\n      float: right;\n      display: flex; }\n      .wish-list .heading .share ul li {\n        display: inline-block; }\n        .wish-list .heading .share ul li a {\n          display: block;\n          font-size: 40px;\n          margin: 5px 5px 0px 0px;\n          line-height: 0px; }\n          .wish-list .heading .share ul li a.facebook {\n            color: #3c5a98; }\n          .wish-list .heading .share ul li a.twitter {\n            color: #1ea1f2; }\n          .wish-list .heading .share ul li a.pinterest {\n            color: #bd081b; }\n          .wish-list .heading .share ul li a.link {\n            color: #555; }\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.wish-list {\n  padding-top: 70px; }\n  .wish-list .heading {\n    overflow: hidden;\n    margin-bottom: 80px; }\n    .wish-list .heading .title {\n      float: left;\n      font-size: 32px;\n      margin-right: 10px; }\n    .wish-list .heading .share {\n      float: right;\n      display: flex; }\n      .wish-list .heading .share ul li {\n        display: inline-block; }\n        .wish-list .heading .share ul li a {\n          display: block;\n          font-size: 40px;\n          margin: 5px 5px 0px 0px;\n          line-height: 0px; }\n          .wish-list .heading .share ul li a.facebook {\n            color: #3c5a98; }\n          .wish-list .heading .share ul li a.twitter {\n            color: #1ea1f2; }\n          .wish-list .heading .share ul li a.pinterest {\n            color: #bd081b; }\n          .wish-list .heading .share ul li a.link {\n            color: #555; }\n  .wish-list .more .row {\n    margin: 0px; }\n    .wish-list .more .row .column {\n      padding: 0px; }\n      .wish-list .more .row .column .container {\n        width: 100%; }\n      .wish-list .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .wish-list .more .row .column.left .banner {\n        margin-right: 0px; }\n      .wish-list .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -58892,7 +58918,14 @@
 		"facebook": "facebook",
 		"twitter": "twitter",
 		"pinterest": "pinterest",
-		"link": "link"
+		"link": "link",
+		"more": "more",
+		"row": "row",
+		"column": "column",
+		"container": "container",
+		"banner": "banner",
+		"left": "left",
+		"right": "right"
 	};
 
 /***/ }),
