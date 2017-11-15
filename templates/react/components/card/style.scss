@@ -67,6 +67,28 @@
 
 	}
   }
+  .share{
+	ul{
+	  margin:0px;
+	  li{
+		display: inline-block;
+		margin-right: 5px;
+		a{
+		  font-size:22px;
+		  line-height: 22px;
+		  &.facebook{
+			color:$facebook-color;
+		  }
+		  &.twitter{
+			color:$twitter-color;
+		  }
+		  &.pinterest{
+			color:$pinterest-color;
+		  }
+		}
+	  }
+	}
+  }
 }
 
 /* responsiveness */

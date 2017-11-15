@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,SAAS;AAIT,UAAU;AAMV,QAAQ;AAIR,eAAe;AAIf,UAAU",
+"mappings": "AAAA,SAAS;AAIT,UAAU;AAMV,QAAQ;AAIR,eAAe;AAIf,UAAU;AAGV,UAAU",
 "sources": ["../../../../public/styles/variables.scss"],
 "names": [],
 "file": "style.css"

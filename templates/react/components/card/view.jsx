@@ -26,6 +26,19 @@ var view = function() {
 				</div>
 				<div className="product-action">
 					<button className="btn btn-yellow">Check it out</button>
+					<div className="share">
+						<ul>
+							<li>
+								<a className="facebook"><i className="fa fa-facebook-square" aria-hidden="true"></i></a>
+							</li>
+							<li>
+								<a className="twitter"><i className="fa fa-twitter-square" aria-hidden="true"></i></a>
+							</li>
+							<li>
+								<a className="pinterest"><i className="fa fa-pinterest-square" aria-hidden="true"></i></a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -20,6 +20,27 @@
 		  font-size: 30px;
 		  margin-bottom: 12px;
 		}
+		.share{
+		  margin-top: 10px;
+		  ul{
+			li{
+			  display: inline-block;
+			  margin-right: 8px;
+			  a{
+				font-size:35px;
+				&.facebook{
+				  color:$facebook-color;
+				}
+				&.twitter{
+				  color:$twitter-color;
+				}
+				&.pinterest{
+				  color:$pinterest-color;
+				}
+			  }
+			}
+		  }
+		}
 	  }
 	}
   }

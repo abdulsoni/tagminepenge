@@ -3,6 +3,7 @@
 /*text*/
 /*backgrounds*/
 /*border*/
+/*social*/
 .card {
   width: 100%; }
   .card .card-header .product-title {
@@ -50,6 +51,20 @@
           color: #606060; }
           .card .card-footer .product-range .saves i:hover {
             color: #cb1d00; }
+  .card .share ul {
+    margin: 0px; }
+    .card .share ul li {
+      display: inline-block;
+      margin-right: 5px; }
+      .card .share ul li a {
+        font-size: 22px;
+        line-height: 22px; }
+        .card .share ul li a.facebook {
+          color: #3c5a98; }
+        .card .share ul li a.twitter {
+          color: #1ea1f2; }
+        .card .share ul li a.pinterest {
+          color: #bc0718; }
 
 /* responsiveness */
 @media (max-width: 992px) {
