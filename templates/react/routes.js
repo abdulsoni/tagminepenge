@@ -1,7 +1,7 @@
 import Home from './containers/home';
 import Profile from './components/profile';
 import ProductGroup from './components/productGroup';
-import Product from './components/productPage';
+import Product from './containers/productPage';
 import ProductPitch from './components/productPitch';
 import WishList from './components/wishlist';
 import About from './components/aboutUs';
@@ -31,7 +31,7 @@ const Routes = {
 	"/profile" : {
 		component : Profile
 	},
-	"/product" : {
+	"/product/:id/:title" : {
 		component : Product
 	},
 	"/wishlist" : {
@@ -46,19 +46,19 @@ const Routes = {
 	"/get-started" : {
 		component : GetStarted
 	},
-	"/product-form" : {
+	/*"/product-form" : {
 		component : ProductForm
-	},
-	"/checkout" : {
+	},*/
+/*"/checkout" : {
 		component : Checkout
-	},
+	},*/
 	"/privacy-policy" : {
 		component : Privacy
 	},
-	"/product-pitch" : {
+/*"/product-pitch" : {
 		component : ProductPitch
-	},
-	"/product-group" : {
+	},*/
+	"/category" : {
 		component : ProductGroup
 	}
 }

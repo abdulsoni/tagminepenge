@@ -12,14 +12,15 @@ var Product = new keystone.List('Product', {
 });
 
 Product.add({
-	title: { type: String, required: true},
+	title: { type: String, required: true,max : 40,note : "Maximum 40 characters"},
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	author: { type: Types.Relationship, ref: 'User', index: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
-	image: { type: Types.CloudinaryImage },
+	image: { type: Types.CloudinaryImage,label : "Title Image"},
+	moreImages: { type: Types.CloudinaryImages,label : "More Images"  },
 	content: {
-		brief: { type: Types.Textarea, height: 150},
-		extended: { type: Types.Html, wysiwyg: true, height: 400 },
+		brief: { type: Types.Textarea, max : 250, height: 150,note : "Maximum 250 characters"}//,
+		//extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
 	categories: { type: Types.Relationship, ref: 'Category', many: true },
 	link : { type: String, required: false,default : "" },

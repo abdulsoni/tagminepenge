@@ -25,16 +25,19 @@ function validateAndGetActionConfig(name){
 function createAjaxAction(actionConfig,data){
   let {config,name} = actionConfig;
   config = config || {};
-  const {url,method,headers} = config;
-  let params = {};
-  /**
-   * Custom provided data always overrides the configuration
-   * - Input data is passed as an argument in case
-   * we wants to create params and data from input data
-   */
-  if(!data && typeof config.getData != 'undefined'){
-    data = config.getData(data);
+  let {url,method,headers,getUrl} = config;
+  if(getUrl){
+    url = getUrl(data);
   }
+  let params = {};
+  // /**
+  //  * Custom provided data always overrides the configuration
+  //  * - Input data is passed as an argument in case
+  //  * we wants to create params and data from input data
+  //  */
+  // if(!data && typeof config.getData != 'undefined'){
+  //   data = config.getData(data);
+  // }
   /**
    * In case of get method, Params = data and data becomes undefined
    */
@@ -54,6 +57,14 @@ function createAjaxAction(actionConfig,data){
     if(config.getParams){
       params = config.getParams(data);
     };
+  }
+  /**
+   * Custom provided data always overrides the configuration
+   * - Input data is passed as an argument in case
+   * we wants to create params and data from input data
+   */
+  if(typeof config.getData != 'undefined'){
+    data = config.getData(data);
   }
   /**
    * Create request config and make the request
@@ -98,7 +109,7 @@ function createNormalAction(actionConfig,data){
   } else {
     action.payload = data;
   }
-  console.log(action)
+  //console.log(action)
   return action;
 };
 /**

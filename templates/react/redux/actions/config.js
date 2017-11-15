@@ -15,7 +15,8 @@ const ActionNames = {
 	CHECK_DUPLICATE_EMAIL: "CHECK_DUPLICATE_EMAIL",
 	GET_PRODUCTS: "GET_PRODUCTS",
 	SUBMIT_PRODUCT : "SUBMIT_PRODUCT",
-	CONTACT_US : "CONTACT_US"
+	CONTACT_US : "CONTACT_US",
+	GET_PRODUCT : "GET_PRODUCT"
 };
 export const Names = ActionNames;
 /**
@@ -95,9 +96,20 @@ const config = [
 		type: "ajax",
 		config: {
 			url: api.PRODUCTS,
-			method: 'GET',
+			method: 'POST',
 			getParams : (data)=>{
 				return data;
+			}
+		}
+	},
+	{
+		name: ActionNames.GET_PRODUCT,
+		type: "ajax",
+		config: {
+			//url: api.PRODUCT,
+			method: 'GET',
+			getUrl : (data)=>{
+				return  api.PRODUCT + "/"+data;
 			}
 		}
 	},

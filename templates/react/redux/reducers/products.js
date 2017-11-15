@@ -5,7 +5,7 @@ import {
 	ActionNames
 } from '../actions';
 import {getError} from '../../utils/request';
-const initialState = {results : [],count : 0,hasMore : false}
+const initialState = {results : [],hasMore : false}
 /**
  * Reducer Function
  * @param state
@@ -19,10 +19,10 @@ export default function(state =initialState, action) {
 		case ActionNames.GET_PRODUCTS :
 			if (!getError(action)) {
 				data = action.payload.data;
+				console.log(data)
 				return {
-					...data,
-					results : state.results.concat(data.results),
-					hasMore : data.results.length>0
+					results : state.results.concat(data),
+					hasMore : data.length>0
 				};
 			}
 		case ActionNames.LOGOUT:

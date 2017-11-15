@@ -14,7 +14,7 @@ var view = function() {
 				>
 					{(data || []).map((product)=>{
 						return (
-							<div key = {product.id} className="col-xm-12 col-sm-6 col-md-4">
+							<div key = {product._id} className="col-xm-12 col-sm-6 col-md-4">
 								<Card data = {product}/>
 							</div>
 						)

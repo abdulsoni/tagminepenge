@@ -3,16 +3,16 @@ import styles from "./style.scss";
 import {getPlainText,getBackgroundImageStyle} from '../../utils/common'
 var view = function() {
 	const {data} = this.props;
-	const {fields,id} = data;
+	const {_id} = data;
 	let imageUrl = null;
-	if(fields.image){
-		imageUrl = fields.image.url;
+	if(data.image){
+		imageUrl = data.image.url;
 	}
-	const productLink = window.location.protocol+"//"+window.location.host+"/product/"+id+"/"+fields.title.split(" ").join("-");
+	const productLink = window.location.protocol+"//"+window.location.host+"/product/"+_id+"/"+data.title.split(" ").join("-");
 	return (
 		<div className="card">
 			<div className="card-header">
-				<a href={productLink} className="product-title">{fields.title}</a>
+				<a href={productLink} className="product-title">{data.title}</a>
 			</div>
 			<div className="card-body">
 				<div className="product-image">
@@ -20,20 +20,20 @@ var view = function() {
 					<button className="btn btn-red save-btn">Save</button>
 				</div>
 				<div className="product-text">
-					<p className="text">{getPlainText(fields["content.brief"])}</p>
+					<p className="text">{getPlainText(data.content.brief)}</p>
 				</div>
 			</div>
 			<div className="card-footer">
 				<div className="product-range">
-					<p className="cost">${fields.price || 0}</p>
+					<p className="cost">${data.price || 0}</p>
 					<span className="saves">
 						<a className="icon" onClick={this.addToWishList.bind(this)}><i className="glyphicon glyphicon-heart-empty"></i> </a>
-						<span className="count">{fields.saves || 0}</span>
+						<span className="count">{data.saves || 0}</span>
 						<span> saves</span>
 					</span>
 				</div>
 				<div className="product-action">
-					<a target="blank" href={fields.link}>
+					<a target="blank" href={data.link}>
 						<button className="btn btn-yellow">Check it out</button>
 					</a>
 					<div className="share">
@@ -49,7 +49,7 @@ var view = function() {
 							{/*</li>*/}
 						{/*</ul>*/}
 						<div 
-							data-url = {productLink} data-title={fields.title} data-description={getPlainText(fields["content.brief"])}
+							data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)}
 							 data-media={imageUrl} className="addthis_inline_share_toolbox"/>
 							
 						

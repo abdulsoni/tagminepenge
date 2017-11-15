@@ -8,6 +8,7 @@ import user from './user';
 import auth from './auth';
 import ui from './ui';
 import products from './products';
+import product from './product';
 const createRootReducer = function (thirdPartyReducers) {
   return combineReducers({
     ...thirdPartyReducers,
@@ -23,7 +24,8 @@ const createRootReducer = function (thirdPartyReducers) {
      * @param state
      */
     emitter: (state = null) => state,
-	  products
+	  products,
+	  product
   })
 }
 export default createRootReducer

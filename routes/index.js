@@ -36,6 +36,8 @@ var routes = {
 };
 var authApis = require('./api/auth');
 var contactApis = require('./api/contact');
+var products = require('./api/products');
+var product = require('./api/product');
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	/**
@@ -50,4 +52,6 @@ exports = module.exports = function (app) {
 	app.get('/auth/checkDuplicate',authApis.checkDuplicate);
 	app.post('/auth/register',authApis.register);
 	app.post('/contact',contactApis);
+	app.post('/getProducts',products);
+	app.get('/getProduct/:id',product)
 };
