@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ComponentView from './view';
-import axios from 'axios';
+import Slider from 'bootstrap-slider';
 /**
  * @name Sample Component
  * @type Component
@@ -15,7 +15,13 @@ export default class Main extends Component {
 		super(props);
 	}
 	componentDidMount(){
-		
+		setTimeout(()=>{
+			this.slider = new Slider('input.slider-input',{
+				formatter: function(value) {
+					return 'Current value: ' + value;
+				}
+			});
+		})
 	}
 	/**
 	 * Render the view
@@ -26,4 +32,4 @@ export default class Main extends Component {
 	}
 }
 //Set display name to be used in React Dev Tools
-Main.displayName = 'Sample-Component';
+Main.displayName = 'Price-Range';

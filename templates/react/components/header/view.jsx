@@ -94,7 +94,7 @@ var view = function () {
 								})
 							}
 							<div className="dropdown-divider"></div>
-							<a className="dropdown-item" href="/get-started">Submit A Product</a>
+							{/*<a className="dropdown-item" href="/get-started">Submit A Product</a>*/}
 							<a className="dropdown-item" href="/contact">Kontakt os</a>
 						</div>
 					</li>

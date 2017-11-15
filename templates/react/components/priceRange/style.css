@@ -1,7 +1,3 @@
-.sample {
-  background: yellow; }
-
-.sample2 {
-  background: red; }
+@import url(../../../../node_modules/bootstrap-slider/dist/css/bootstrap-slider.css);
 
 /*# sourceMappingURL=style.css.map */

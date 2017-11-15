@@ -16,6 +16,7 @@
 \*-------------------------------------------------------------------------------------------------------------------*/
 
 const production = process.env.NODE_ENV === 'production' ? true : false;
+const path = require('path');
 module.exports = {
 	devtool: production ? null : 'sourcemaps',
 
@@ -63,5 +64,8 @@ module.exports = {
 
 	resolve: {
 		extensions: ['', '.js', '.jsx', '.json','.css','.scss'],
-	},
+		alias: {
+			"jquery": path.join(__dirname, "./jquery-stub.js")
+		}
+	}
 };
