@@ -13,9 +13,14 @@ export default class Main extends Component {
 	 */
 	constructor(props){
 		super(props);
+		this.state = {
+			pathname : ''
+		}
 	}
 	componentDidMount(){
-		
+		this.setState({
+			pathname : window.location.pathname
+		})
 	}
 	/**
 	 * Render the view

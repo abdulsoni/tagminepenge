@@ -19,20 +19,39 @@ class Main extends Component {
 			this.getProducts();
 		}
 	}
+
+	/**
+	 * Component Did Mount
+	 */
 	componentDidMount(){
-		
+		const {emitter} = this.props;
+		emitter.addListener("REFRESH_PRODUCTS",(query)=>{
+			console.log(query)
+			this.getProducts(1,query)
+		})
 	}
-	getProducts(page){
+
+	/**
+	 * Get products
+	 * @param page
+	 */
+	getProducts(page,customQuery){
 		page = page || 1;
 		const {getProducts,query} = this.props;
-		getProducts({
+		let obj = {
 			...query,
 			limit : 10,
 			skip : (page-1)*10
-		}).then(action=>{
-			console.log(action)
+		};
+		obj.query = {
+			...obj.query,
+			...customQuery
+		}
+		getProducts(obj).then(action=>{
+			//console.log(action)
 		})
 	}
+	
 	/**
 	 * Render the view
 	 * @returns {*}
@@ -64,7 +83,8 @@ const mapStateToProps = state => {
 	// console.log(state)
 	return {
 		data: state.products.results || [],
-		hasMore : state.products.hasMore
+		hasMore : state.products.hasMore,
+		emitter : state.emitter
 	};
 };
 

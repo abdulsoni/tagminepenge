@@ -16,11 +16,19 @@ export default class Main extends Component {
 	}
 	componentDidMount(){
 		setTimeout(()=>{
+			const {min,max,onPriceChange} = this.props;
 			this.slider = new Slider('input.slider-input',{
 				formatter: function(value) {
-					return 'Current value: ' + value;
-				}
+					return 'Price : ' + value;
+				},
+				min,
+				max,
+				range : true,
+				step : 10
 			});
+			this.slider.on("slideStop",(val)=>{
+				onPriceChange?onPriceChange(val):null
+			})
 		})
 	}
 	/**

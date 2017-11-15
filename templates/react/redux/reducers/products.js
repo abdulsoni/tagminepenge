@@ -18,12 +18,23 @@ export default function(state =initialState, action) {
 	switch (action.type) {
 		case ActionNames.GET_PRODUCTS :
 			if (!getError(action)) {
+				let req = JSON.parse(action.payload.config.data);
 				data = action.payload.data;
-				console.log(data)
-				return {
-					results : state.results.concat(data),
-					hasMore : data.length>0
-				};
+				if((req.skip || 0)==0){
+					
+					return {
+						results :[].concat(data),
+						hasMore : data.length>0
+					};
+				} else {
+					data = action.payload.data;
+					
+					return {
+						results : state.results.concat(data),
+						hasMore : data.length>0
+					};
+				}
+				
 			}
 		case ActionNames.LOGOUT:
 			return initialState;

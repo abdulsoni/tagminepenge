@@ -15,18 +15,34 @@ const Routes = {
 		component : Home,
 		routeProps : {
 			query : {
-				"test" : "test"
+				sort : '-publishedDate'
 			}
 		}
 	},
 	"/new" : {
-		component : Home
+		component : Home,
+		routeProps : {
+			query : {
+				sort : '-publishedDate'
+			}
+		}
 	},
 	"/popular" : {
-		component : Home
+		component : Home,
+		routeProps : {
+			query : {
+				sort : '-saves'
+			}
+		}
 	},
 	"/wishlisted-price" : {
-		component : Home
+		component : Home,
+		routeProps : {
+			query : {
+				sort : 'price'
+			},
+			priceRange : true
+		}
 	},
 	"/profile" : {
 		component : Profile

@@ -4,8 +4,9 @@ import Banner from '../../components/banner/index';
 import Filters from '../../components/filters/index';
 import PriceRange from '../../components/priceRange/index';
 import ProductGrid from '../productGrid/index';
+import {getMaxPrice,getMinPrice} from '../../helpers/product'
 var view = function() {
-	const {config,filters,query} = this.props;
+	const {config,filters,query,priceRange,products} = this.props;
 	const banner = (config.banner && config.banner.media)?config.banner.media.url:null;
 	const link = (config.banner && config.banner.value)?config.banner.value:null;
 	const leftBanner = (config.leftBanner && config.leftBanner.media)?config.leftBanner.media.url:null;
@@ -21,7 +22,15 @@ var view = function() {
 				<div className="col-md-12 col-lg-8 column">
 					<Banner banner = {banner} link = {link}/>
 					<Filters data = {filters}/>
-					<PriceRange/>
+					{
+						priceRange?(
+							<PriceRange
+								max = {getMaxPrice(products)}
+								min = {getMinPrice(products)}
+								onPriceChange = {this.onPriceChange.bind(this)}
+							/>
+						):null
+					}
 					<ProductGrid
 						query = {query}
 					/>

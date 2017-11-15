@@ -52159,12 +52159,22 @@
 		switch (action.type) {
 			case _actions.ActionNames.GET_PRODUCTS:
 				if (!(0, _request.getError)(action)) {
+					var req = JSON.parse(action.payload.config.data);
 					data = action.payload.data;
-					console.log(data);
-					return {
-						results: state.results.concat(data),
-						hasMore: data.length > 0
-					};
+					if ((req.skip || 0) == 0) {
+	
+						return {
+							results: [].concat(data),
+							hasMore: data.length > 0
+						};
+					} else {
+						data = action.payload.data;
+	
+						return {
+							results: state.results.concat(data),
+							hasMore: data.length > 0
+						};
+					}
 				}
 			case _actions.ActionNames.LOGOUT:
 				return initialState;
@@ -52759,7 +52769,6 @@
 		    categories = _props.categories,
 		    filters = _props.filters;
 	
-		console.log(routeInfo);
 		return _react2.default.createElement(
 			'div',
 			{ className: 'app' },
@@ -55412,18 +55421,34 @@
 			component: _home2.default,
 			routeProps: {
 				query: {
-					"test": "test"
+					sort: '-publishedDate'
 				}
 			}
 		},
 		"/new": {
-			component: _home2.default
+			component: _home2.default,
+			routeProps: {
+				query: {
+					sort: '-publishedDate'
+				}
+			}
 		},
 		"/popular": {
-			component: _home2.default
+			component: _home2.default,
+			routeProps: {
+				query: {
+					sort: '-saves'
+				}
+			}
 		},
 		"/wishlisted-price": {
-			component: _home2.default
+			component: _home2.default,
+			routeProps: {
+				query: {
+					sort: 'price'
+				},
+				priceRange: true
+			}
 		},
 		"/profile": {
 			component: _profile2.default
@@ -55530,11 +55555,28 @@
 		}
 	
 		/**
-	  * Render the view
+	  * Price
+	  * @param price
 	  */
 	
 	
 		_createClass(Main, [{
+			key: 'onPriceChange',
+			value: function onPriceChange(price) {
+				var emitter = this.props.emitter;
+	
+				emitter.emit("REFRESH_PRODUCTS", {
+					price: {
+						$gte: price[0],
+						$lte: price[1]
+					}
+				});
+			}
+			/**
+	   * Render the view
+	   */
+	
+		}, {
 			key: 'render',
 			value: function render() {
 				return _view2.default.bind(this)();
@@ -55562,7 +55604,10 @@
 	 */
 	var mapStateToProps = function mapStateToProps(state) {
 		// console.log(state)
-		return {};
+		return {
+			products: state.products.results || [],
+			emitter: state.emitter
+		};
 	};
 	//Set display name to be used in React Dev Tools
 	Main.displayName = 'Home-Container';
@@ -55603,13 +55648,17 @@
 	
 	var _index8 = _interopRequireDefault(_index7);
 	
+	var _product = __webpack_require__(544);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
 		var _props = this.props,
 		    config = _props.config,
 		    filters = _props.filters,
-		    query = _props.query;
+		    query = _props.query,
+		    priceRange = _props.priceRange,
+		    products = _props.products;
 	
 		var banner = config.banner && config.banner.media ? config.banner.media.url : null;
 		var link = config.banner && config.banner.value ? config.banner.value : null;
@@ -55633,7 +55682,11 @@
 					{ className: 'col-md-12 col-lg-8 column' },
 					_react2.default.createElement(_index2.default, { banner: banner, link: link }),
 					_react2.default.createElement(_index4.default, { data: filters }),
-					_react2.default.createElement(_index6.default, null),
+					priceRange ? _react2.default.createElement(_index6.default, {
+						max: (0, _product.getMaxPrice)(products),
+						min: (0, _product.getMinPrice)(products),
+						onPriceChange: this.onPriceChange.bind(this)
+					}) : null,
 					_react2.default.createElement(_index8.default, {
 						query: query
 					})
@@ -55937,12 +55990,21 @@
 		function Main(props) {
 			_classCallCheck(this, Main);
 	
-			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+	
+			_this.state = {
+				pathname: ''
+			};
+			return _this;
 		}
 	
 		_createClass(Main, [{
 			key: 'componentDidMount',
-			value: function componentDidMount() {}
+			value: function componentDidMount() {
+				this.setState({
+					pathname: window.location.pathname
+				});
+			}
 			/**
 	   * Render the view
 	   * @returns {*}
@@ -55985,6 +56047,7 @@
 	
 	var view = function view() {
 		var data = this.props.data;
+		var pathname = this.state.pathname;
 	
 		return _react2.default.createElement(
 			"div",
@@ -55995,7 +56058,7 @@
 				(data || []).map(function (item) {
 					return _react2.default.createElement(
 						"li",
-						{ key: item._id },
+						{ className: pathname == item.link ? "active" : "", key: item._id },
 						_react2.default.createElement(
 							"a",
 							{ href: item.link },
@@ -56129,10 +56192,22 @@
 				var _this2 = this;
 	
 				setTimeout(function () {
+					var _props = _this2.props,
+					    min = _props.min,
+					    max = _props.max,
+					    onPriceChange = _props.onPriceChange;
+	
 					_this2.slider = new _bootstrapSlider2.default('input.slider-input', {
 						formatter: function formatter(value) {
-							return 'Current value: ' + value;
-						}
+							return 'Price : ' + value;
+						},
+						min: min,
+						max: max,
+						range: true,
+						step: 10
+					});
+					_this2.slider.on("slideStop", function (val) {
+						onPriceChange ? onPriceChange(val) : null;
 					});
 				});
 			}
@@ -58239,24 +58314,47 @@
 			return _this;
 		}
 	
+		/**
+	  * Component Did Mount
+	  */
+	
+	
 		_createClass(Main, [{
 			key: 'componentDidMount',
-			value: function componentDidMount() {}
+			value: function componentDidMount() {
+				var _this2 = this;
+	
+				var emitter = this.props.emitter;
+	
+				emitter.addListener("REFRESH_PRODUCTS", function (query) {
+					console.log(query);
+					_this2.getProducts(1, query);
+				});
+			}
+	
+			/**
+	   * Get products
+	   * @param page
+	   */
+	
 		}, {
 			key: 'getProducts',
-			value: function getProducts(page) {
+			value: function getProducts(page, customQuery) {
 				page = page || 1;
 				var _props = this.props,
 				    getProducts = _props.getProducts,
 				    query = _props.query;
 	
-				getProducts(_extends({}, query, {
+				var obj = _extends({}, query, {
 					limit: 10,
 					skip: (page - 1) * 10
-				})).then(function (action) {
-					console.log(action);
+				});
+				obj.query = _extends({}, obj.query, customQuery);
+				getProducts(obj).then(function (action) {
+					//console.log(action)
 				});
 			}
+	
 			/**
 	   * Render the view
 	   * @returns {*}
@@ -58296,7 +58394,8 @@
 		// console.log(state)
 		return {
 			data: state.products.results || [],
-			hasMore: state.products.hasMore
+			hasMore: state.products.hasMore,
+			emitter: state.emitter
 		};
 	};
 	
@@ -63085,9 +63184,9 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'col-md-6 column' },
-						_react2.default.createElement(_index2.default, { data: (product.moreImages || []).map(function (image) {
+						_react2.default.createElement(_index2.default, { data: [product.image.url].concat((product.moreImages || []).map(function (image) {
 								return image.url;
-							}) })
+							})) })
 					),
 					_react2.default.createElement(
 						'div',
@@ -63283,6 +63382,25 @@
 	var _actions = __webpack_require__(332);
 	
 	var _request = __webpack_require__(385);
+
+/***/ }),
+/* 544 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.getMaxPrice = getMaxPrice;
+	exports.getMinPrice = getMinPrice;
+	function getMaxPrice(products) {
+		return 2000;
+	}
+	
+	function getMinPrice(products) {
+		return 1000;
+	}
 
 /***/ })
 /******/ ]);

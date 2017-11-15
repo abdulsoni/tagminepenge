@@ -15,8 +15,20 @@ class Main extends Component {
 	constructor(props){
 		super(props);
 	}
-	
-	
+
+	/**
+	 * Price
+	 * @param price
+	 */
+	onPriceChange(price){
+		const {emitter} = this.props;
+		emitter.emit("REFRESH_PRODUCTS",{
+			price : {
+				$gte : price[0],
+				$lte : price[1]
+			}
+		});
+	}
 	/**
 	 * Render the view
 	 */
@@ -44,6 +56,8 @@ function bindAction(dispatch) {
 const mapStateToProps = state => {
 	// console.log(state)
 	return {
+		products : state.products.results || [],
+		emitter : state.emitter
 	};
 };
 //Set display name to be used in React Dev Tools

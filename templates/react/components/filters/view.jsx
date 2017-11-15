@@ -3,13 +3,14 @@ import styles from "./style.scss";
 
 var view = function () {
 	const {data} = this.props;
+	const {pathname} = this.state;
 	return (
 		<div className="filters container">
 			<ul>
 				{
 					(data || []).map((item)=>{
 						return (
-							<li key = {item._id}>
+							<li className={pathname==item.link?"active":""} key = {item._id}>
 								<a href = {item.link}>
 									{item.name}
 								</a>
