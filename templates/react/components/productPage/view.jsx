@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from "./style.scss";
 import Carousel from '../../components/carousel';
-import ProductGrid from '../../components/productGrid';
+import ProductGrid from '../../containers/productGrid';
 import Banner from '../../components/banner/index';
 
 var view = function () {

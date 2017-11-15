@@ -12,6 +12,20 @@ import ProductForm from './containers/submit-product/product-form';
 import Checkout from './containers/submit-product/checkout';
 const Routes = {
 	"/" : {
+		component : Home,
+		routeProps : {
+			query : {
+				"test" : "test"
+			}
+		}
+	},
+	"/new" : {
+		component : Home
+	},
+	"/popular" : {
+		component : Home
+	},
+	"/wishlisted-price" : {
 		component : Home
 	},
 	"/profile" : {

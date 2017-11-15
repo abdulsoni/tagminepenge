@@ -52,7 +52,8 @@ const Default = props => {
 		// - which generate links to edit content for users who can access Keystone
 		&& <script src="/keystone/js/content/editor.js"></script>
 		}
-
+		
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a"></script>
 		<script src="/js/bundle.js"></script>
 
 		{

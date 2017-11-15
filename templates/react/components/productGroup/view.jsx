@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./style.scss";
-import ProductGrid from '../../components/productGrid';
+import ProductGrid from '../../containers/productGrid';
 var view = function() {
 	return (
 		<div className="product-group">

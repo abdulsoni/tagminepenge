@@ -12,13 +12,13 @@ var Product = new keystone.List('Product', {
 });
 
 Product.add({
-	title: { type: String, required: true },
+	title: { type: String, required: true},
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	author: { type: Types.Relationship, ref: 'User', index: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
 	image: { type: Types.CloudinaryImage },
 	content: {
-		brief: { type: Types.Html, wysiwyg: true, height: 150 },
+		brief: { type: Types.Textarea, height: 150},
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
 	categories: { type: Types.Relationship, ref: 'Category', many: true },

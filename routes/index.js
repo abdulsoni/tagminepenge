@@ -27,6 +27,7 @@ var _ = require('lodash')
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('routes', middleware.populateCategories);
+keystone.pre('routes', middleware.populateFilters);
 keystone.pre('render', middleware.flashMessages);
 keystone.pre('routes', keystone.security.csrf.middleware.init);
 // Import Route Controllers
@@ -37,13 +38,11 @@ var authApis = require('./api/auth');
 var contactApis = require('./api/contact');
 // Setup Route Bindings
 exports = module.exports = function (app) {
-	console.log(clientSideRoutes)
 	/**
 	 * Dynamically construct routes
 	 */
 	
 	for(var key in clientSideRoutes){
-		console.log("Key is"+key)
 		app.get(key,routes.views.index)
 	}
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

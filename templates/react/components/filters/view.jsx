@@ -2,18 +2,21 @@ import React from 'react';
 import styles from "./style.scss";
 
 var view = function () {
+	const {data} = this.props;
 	return (
 		<div className="filters container">
 			<ul>
-				<li>
-					<a>Newest</a>
-				</li>
-				<li>
-					<a>Popular</a>
-				</li>
-				<li>
-					<a>Price Range</a>
-				</li>
+				{
+					(data || []).map((item)=>{
+						return (
+							<li key = {item._id}>
+								<a href = {item.link}>
+									{item.name}
+								</a>
+							</li>
+						);
+					})
+				}
 			</ul>
 		</div>
 	);

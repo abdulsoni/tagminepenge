@@ -11,6 +11,7 @@ var _ = require('lodash');
 var keystone = require('keystone');
 var Configuration = keystone.list('Configuration');
 var Category = keystone.list('Category');
+var Filter = keystone.list('Filter');
 /**
 	Initialises the standard view locals
 
@@ -53,6 +54,20 @@ exports.populateCategories = function (req, res, next) {
 			res.locals.categories = doc;
 		} else {
 			res.locals.categories = [];
+		}
+		next();
+	});
+};
+
+
+exports.populateFilters = function (req, res, next) {
+
+	var query = Filter.model.find().sort( { displayType:1,menuOrder: 1 } );
+	query.exec(function(err, doc) {
+		if(doc){
+			res.locals.filters = doc;
+		} else {
+			res.locals.filters = [];
 		}
 		next();
 	});

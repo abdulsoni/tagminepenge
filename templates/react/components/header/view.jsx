@@ -59,7 +59,12 @@ var view = function () {
 				<div className="nav-accent nav-accent-left"></div>
 				<div className="nav-accent nav-accent-right"></div>
 				<ul>
-					
+					<li>
+						<a href="/new" className="nav-link">
+							<span className="icon"><span className="glyphicon glyphicon-home" aria-hidden="true"></span></span>
+							<span className="text">New</span>
+						</a>
+					</li>
 					{
 						(categories || []).filter(category=>category.displayType==1).map((category)=>{
 							return (

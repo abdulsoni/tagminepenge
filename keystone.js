@@ -79,6 +79,7 @@ keystone.set('nav', {
 	categories: 'Category',
 	configuration: 'Configuration',
 	subcategories: 'SubCategory',
+	filter: 'Filter',
 });
 
 

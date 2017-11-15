@@ -3,9 +3,9 @@ import styles from "./style.scss";
 import Banner from '../../components/banner/index';
 import Filters from '../../components/filters/index';
 import PriceRange from '../../components/priceRange/index';
-import ProductGrid from '../../components/productGrid/index';
+import ProductGrid from '../productGrid/index';
 var view = function() {
-	const {config} = this.props;
+	const {config,filters,query} = this.props;
 	const banner = (config.banner && config.banner.media)?config.banner.media.url:null;
 	const link = (config.banner && config.banner.value)?config.banner.value:null;
 	const leftBanner = (config.leftBanner && config.leftBanner.media)?config.leftBanner.media.url:null;
@@ -20,9 +20,11 @@ var view = function() {
 				</div>
 				<div className="col-md-12 col-lg-8 column">
 					<Banner banner = {banner} link = {link}/>
-					<Filters/>
+					<Filters data = {filters}/>
 					<PriceRange/>
-					<ProductGrid/>
+					<ProductGrid
+						query = {query}
+					/>
 				</div>
 				<div className="col-md-0 col-lg-2 column right">
 					<Banner banner = {rightBanner} link = {rightBannerlink}/>

@@ -26,4 +26,4 @@ export default class Main extends Component {
 	}
 }
 //Set display name to be used in React Dev Tools
-Main.displayName = 'Sample-Component';
+Main.displayName = 'Filters-Component';

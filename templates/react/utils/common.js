@@ -52,7 +52,9 @@ export function getBackgroundImageStyle(image){
 	if(!image || image==''){
 		return null;
 	}
-	return 'url(' + image + ')'
+	return {
+		backgroundImage : 'url(' + image + ')'
+	}
 }
 /**
  * Handle input change
@@ -64,4 +66,15 @@ export function handleChange(event){
 	};
 	obj[event.target.name] = event.target.value
 	this.setState(obj)
+}
+/**
+ * Get plain text from html
+ * @param html
+ * @returns {string|string}
+ */
+export function getPlainText(html)
+{
+	var tmp = document.createElement("DIV");
+	tmp.innerHTML = html;
+	return tmp.textContent || tmp.innerText || "";
 }
