@@ -286,7 +286,13 @@
     left: -30px; } }
 @media (max-width: 420px) {
   .header .header-nav ul li .dropdown-menu {
-    left: -70px; } }
+    left: -70px; }
+
+  .header .header-top .content .actions {
+    top: 7px; }
+
+  .header .header-top .content .actions a {
+    display: block; } }
 /* /responsiveness */
 
 /*# sourceMappingURL=style.css.map */

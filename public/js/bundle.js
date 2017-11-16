@@ -53063,7 +53063,7 @@
 								"a",
 								{ className: "nav-link", href: "/keystone" },
 								_react2.default.createElement("span", {
-									className: "glyphicon glyphicon-home", "aria-hidden": "true" }),
+									className: "icon glyphicon glyphicon-home", "aria-hidden": "true" }),
 								_react2.default.createElement(
 									"span",
 									{
@@ -53261,7 +53261,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.header {\n  position: fixed;\n  width: 100%;\n  top: 0px;\n  left: 0;\n  z-index: 2; }\n  .header .header-top {\n    height: 57px;\n    background: #f7f7f7; }\n    .header .header-top .content {\n      position: relative; }\n      .header .header-top .content .search {\n        position: absolute;\n        left: 0;\n        top: 2px; }\n        .header .header-top .content .search input {\n          height: 33px; }\n      .header .header-top .content .logo {\n        text-align: center; }\n        .header .header-top .content .logo img {\n          width: 220px; }\n      .header .header-top .content .actions {\n        position: absolute;\n        right: 10px;\n        top: 15px; }\n        .header .header-top .content .actions .dropdown-menu {\n          min-width: 140px;\n          border-radius: 0px;\n          background-color: #ededed;\n          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n          border: none;\n          padding: 0px; }\n          .header .header-top .content .actions .dropdown-menu a {\n            font-size: 15px;\n            padding: 10px;\n            display: block;\n            margin: 0px; }\n            .header .header-top .content .actions .dropdown-menu a:hover {\n              background: #e6e6e6; }\n        .header .header-top .content .actions a {\n          color: #000;\n          font-size: 16px;\n          font-weight: bold;\n          margin-left: 10px; }\n          .header .header-top .content .actions a .icon {\n            margin-right: 5px; }\n  .header .header-nav .nav-accent {\n    display: block;\n    width: 50%;\n    height: 66px;\n    position: absolute;\n    top: 57px;\n    z-index: -10;\n    -webkit-transition: height .5s;\n    -moz-transition: height .5s;\n    -o-transition: height .5s;\n    -ms-transition: height .5s;\n    transition: height .5s;\n    z-index: 1; }\n  .header .header-nav .nav-accent-left {\n    background-color: #77b353; }\n  .header .header-nav .nav-accent-right {\n    background-color: #77b353;\n    right: 0; }\n  .header .header-nav ul {\n    text-align: center;\n    padding: 0;\n    list-style: none;\n    font-size: 1.5em;\n    font-weight: 300;\n    position: relative;\n    z-index: 2;\n    margin-top: -6px; }\n    .header .header-nav ul li {\n      display: inline-block;\n      width: 10%;\n      text-align: center;\n      -webkit-transition: border .5s;\n      -moz-transition: border .5s;\n      -o-transition: border .5s;\n      -ms-transition: border .5s;\n      transition: border .5s;\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n      position: relative; }\n      .header .header-nav ul li a.nav-link {\n        display: block;\n        width: auto;\n        height: 76.91px;\n        color: rgba(249, 249, 249, 0.9);\n        text-decoration: none;\n        -webkit-transition: color .5s, background .5s, height .5s;\n        -moz-transition: color .5s, background .5s, height .5s;\n        -o-transition: color .5s, background .5s, height .5s;\n        -ms-transition: color .5s, background .5s, height .5s;\n        transition: color .5s, background .5s, height .5s;\n        cursor: pointer; }\n        .header .header-nav ul li a.nav-link .icon {\n          display: block;\n          padding-top: .5em; }\n        .header .header-nav ul li a.nav-link .text {\n          display: block;\n          font-size: 14.4px;\n          font-weight: 600; }\n        .header .header-nav ul li a.nav-link:hover {\n          height: 82.77px; }\n      .header .header-nav ul li .dropdown-menu {\n        top: 98%;\n        min-width: 145px;\n        border-radius: 0px;\n        background-color: #ededed;\n        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n        border: none;\n        padding: 0px; }\n        .header .header-nav ul li .dropdown-menu a {\n          color: #333;\n          padding: 8px 10px;\n          text-decoration: none;\n          display: block;\n          font-size: 17px;\n          font-weight: 400; }\n          .header .header-nav ul li .dropdown-menu a:hover {\n            border: none !important;\n            background: #e6e6e6; }\n        .header .header-nav ul li .dropdown-menu .dropdown-divider {\n          background-color: #858e94;\n          height: 1px; }\n      .header .header-nav ul li:nth-child(1) {\n        background: #ededed;\n        background: -moz-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #8E35EF), color-stop(100%, #8E35EF));\n        background: -webkit-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -o-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -ms-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: linear-gradient(to bottom, #8E35EF 0, #8E35EF 100%); }\n        .header .header-nav ul li:nth-child(1) a:hover {\n          border-bottom: 4px solid #650aca; }\n      .header .header-nav ul li:nth-child(2) {\n        background: #1569C7;\n        background: -moz-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1569C7), color-stop(100%, #1569C7));\n        background: -webkit-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -o-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -ms-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: linear-gradient(to bottom, #1569C7 0, #1569C7 100%); }\n        .header .header-nav ul li:nth-child(2) a:hover {\n          border-bottom: 4px solid #0d4a8c; }\n      .header .header-nav ul li:nth-child(3) {\n        background: #E8A317;\n        background: -moz-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E8A317), color-stop(100%, #E8A317));\n        background: -webkit-linear-gradient(top, #E8A317 0, #e9931a 100%);\n        background: -o-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: -ms-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: linear-gradient(to bottom, #E8A317 0, #E8A317 100%);\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n        .header .header-nav ul li:nth-child(3) a:hover {\n          border-bottom: 4px solid #af780b; }\n      .header .header-nav ul li:nth-child(4) {\n        background: #347C17;\n        background: -moz-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #347C17), color-stop(100%, #347C17));\n        background: -webkit-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -o-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -ms-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: linear-gradient(to bottom, #347C17 0, #347C17 100%); }\n        .header .header-nav ul li:nth-child(4) a:hover {\n          border-bottom: 4px solid #275f0f; }\n      .header .header-nav ul li:nth-child(5) {\n        background: #F70D1A;\n        background: -moz-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F70D1A), color-stop(100%, #F70D1A));\n        background: -webkit-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -o-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -ms-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: linear-gradient(to bottom, #F70D1A 0, #F70D1A 100%); }\n        .header .header-nav ul li:nth-child(5) a:hover {\n          border-bottom: 4px solid #b10610; }\n      .header .header-nav ul li:nth-child(6) {\n        background: #152836;\n        background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n        background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: linear-gradient(to bottom, #1c3648 0, #152836 100%); }\n        .header .header-nav ul li:nth-child(6) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li:nth-child(7) {\n        background: #d06503;\n        background: -moz-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e97103), color-stop(100%, #d06503));\n        background: -webkit-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -o-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -ms-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: linear-gradient(to bottom, #e97103 0, #d06503 100%); }\n        .header .header-nav ul li:nth-child(7) a:hover {\n          border-bottom: 4px solid #a75103; }\n      .header .header-nav ul li:nth-child(9) {\n        background: #F70D1A;\n        background: -moz-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F70D1A), color-stop(100%, #F70D1A));\n        background: -webkit-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -o-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -ms-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: linear-gradient(to bottom, #F70D1A 0, #F70D1A 100%); }\n        .header .header-nav ul li:nth-child(9) a:hover {\n          border-bottom: 4px solid #b10610; }\n      .header .header-nav ul li:nth-child(8) {\n        background: #a54343;\n        background: -moz-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a54343), color-stop(100%, #a54343));\n        background: -webkit-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: -o-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: -ms-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: linear-gradient(to bottom, #a54343 0, #a54343 100%); }\n        .header .header-nav ul li:nth-child(8) a:hover {\n          border-bottom: 4px solid #6f2b2b; }\n      .header .header-nav ul li:nth-child(10) {\n        background: #09019c;\n        background: -moz-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #09019c), color-stop(100%, #09019c));\n        background: -webkit-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: -o-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: -ms-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: linear-gradient(to bottom, #09019c 0, #09019c 100%); }\n        .header .header-nav ul li:nth-child(10) a:hover {\n          border-bottom: 4px solid #070179; }\n      .header .header-nav ul li.mobile {\n        display: none; }\n      .header .header-nav ul li.desktop {\n        display: inline-block; }\n  .header.shrink .nav-accent {\n    height: 37px; }\n  .header.shrink .header-nav ul {\n    margin-top: -5px; }\n    .header.shrink .header-nav ul li a.nav-link {\n      height: 46px; }\n      .header.shrink .header-nav ul li a.nav-link .icon {\n        display: none; }\n      .header.shrink .header-nav ul li a.nav-link .text {\n        padding-top: 13px; }\n      .header.shrink .header-nav ul li a.nav-link:hover {\n        height: 50px; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .header .header-nav ul {\n    width: 1500px;\n    margin: -6px auto auto auto; } }\n\n@media (max-width: 1024px) {\n  .header .header-nav ul {\n    margin-top: 0px; }\n  .header .header-nav ul li {\n    width: 15%;\n    box-shadow: none;\n    vertical-align: top; }\n  .header .header-nav ul li a.nav-link {\n    height: 66px; } }\n\n@media (max-width: 768px) {\n  .header .header-top .content .search {\n    display: none; }\n  .header .header-nav ul li.desktop {\n    display: none; }\n  .header .header-nav ul li.mobile {\n    display: inline-block; }\n  .header .header-top .content .logo img {\n    position: absolute;\n    left: 2px;\n    top: 8px; } }\n\n@media (max-width: 520px) {\n  .header .header-nav ul li {\n    width: 25%; }\n  .header .header-nav ul li .dropdown-menu {\n    left: -30px; } }\n\n@media (max-width: 420px) {\n  .header .header-nav ul li .dropdown-menu {\n    left: -70px; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.header {\n  position: fixed;\n  width: 100%;\n  top: 0px;\n  left: 0;\n  z-index: 2; }\n  .header .header-top {\n    height: 57px;\n    background: #f7f7f7; }\n    .header .header-top .content {\n      position: relative; }\n      .header .header-top .content .search {\n        position: absolute;\n        left: 0;\n        top: 2px; }\n        .header .header-top .content .search input {\n          height: 33px; }\n      .header .header-top .content .logo {\n        text-align: center; }\n        .header .header-top .content .logo img {\n          width: 220px; }\n      .header .header-top .content .actions {\n        position: absolute;\n        right: 10px;\n        top: 15px; }\n        .header .header-top .content .actions .dropdown-menu {\n          min-width: 140px;\n          border-radius: 0px;\n          background-color: #ededed;\n          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n          border: none;\n          padding: 0px; }\n          .header .header-top .content .actions .dropdown-menu a {\n            font-size: 15px;\n            padding: 10px;\n            display: block;\n            margin: 0px; }\n            .header .header-top .content .actions .dropdown-menu a:hover {\n              background: #e6e6e6; }\n        .header .header-top .content .actions a {\n          color: #000;\n          font-size: 16px;\n          font-weight: bold;\n          margin-left: 10px; }\n          .header .header-top .content .actions a .icon {\n            margin-right: 5px; }\n  .header .header-nav .nav-accent {\n    display: block;\n    width: 50%;\n    height: 66px;\n    position: absolute;\n    top: 57px;\n    z-index: -10;\n    -webkit-transition: height .5s;\n    -moz-transition: height .5s;\n    -o-transition: height .5s;\n    -ms-transition: height .5s;\n    transition: height .5s;\n    z-index: 1; }\n  .header .header-nav .nav-accent-left {\n    background-color: #77b353; }\n  .header .header-nav .nav-accent-right {\n    background-color: #77b353;\n    right: 0; }\n  .header .header-nav ul {\n    text-align: center;\n    padding: 0;\n    list-style: none;\n    font-size: 1.5em;\n    font-weight: 300;\n    position: relative;\n    z-index: 2;\n    margin-top: -6px; }\n    .header .header-nav ul li {\n      display: inline-block;\n      width: 10%;\n      text-align: center;\n      -webkit-transition: border .5s;\n      -moz-transition: border .5s;\n      -o-transition: border .5s;\n      -ms-transition: border .5s;\n      transition: border .5s;\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n      position: relative; }\n      .header .header-nav ul li a.nav-link {\n        display: block;\n        width: auto;\n        height: 76.91px;\n        color: rgba(249, 249, 249, 0.9);\n        text-decoration: none;\n        -webkit-transition: color .5s, background .5s, height .5s;\n        -moz-transition: color .5s, background .5s, height .5s;\n        -o-transition: color .5s, background .5s, height .5s;\n        -ms-transition: color .5s, background .5s, height .5s;\n        transition: color .5s, background .5s, height .5s;\n        cursor: pointer; }\n        .header .header-nav ul li a.nav-link .icon {\n          display: block;\n          padding-top: .5em; }\n        .header .header-nav ul li a.nav-link .text {\n          display: block;\n          font-size: 14.4px;\n          font-weight: 600; }\n        .header .header-nav ul li a.nav-link:hover {\n          height: 82.77px; }\n      .header .header-nav ul li .dropdown-menu {\n        top: 98%;\n        min-width: 145px;\n        border-radius: 0px;\n        background-color: #ededed;\n        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n        border: none;\n        padding: 0px; }\n        .header .header-nav ul li .dropdown-menu a {\n          color: #333;\n          padding: 8px 10px;\n          text-decoration: none;\n          display: block;\n          font-size: 17px;\n          font-weight: 400; }\n          .header .header-nav ul li .dropdown-menu a:hover {\n            border: none !important;\n            background: #e6e6e6; }\n        .header .header-nav ul li .dropdown-menu .dropdown-divider {\n          background-color: #858e94;\n          height: 1px; }\n      .header .header-nav ul li:nth-child(1) {\n        background: #ededed;\n        background: -moz-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #8E35EF), color-stop(100%, #8E35EF));\n        background: -webkit-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -o-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -ms-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: linear-gradient(to bottom, #8E35EF 0, #8E35EF 100%); }\n        .header .header-nav ul li:nth-child(1) a:hover {\n          border-bottom: 4px solid #650aca; }\n      .header .header-nav ul li:nth-child(2) {\n        background: #1569C7;\n        background: -moz-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1569C7), color-stop(100%, #1569C7));\n        background: -webkit-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -o-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -ms-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: linear-gradient(to bottom, #1569C7 0, #1569C7 100%); }\n        .header .header-nav ul li:nth-child(2) a:hover {\n          border-bottom: 4px solid #0d4a8c; }\n      .header .header-nav ul li:nth-child(3) {\n        background: #E8A317;\n        background: -moz-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E8A317), color-stop(100%, #E8A317));\n        background: -webkit-linear-gradient(top, #E8A317 0, #e9931a 100%);\n        background: -o-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: -ms-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: linear-gradient(to bottom, #E8A317 0, #E8A317 100%);\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n        .header .header-nav ul li:nth-child(3) a:hover {\n          border-bottom: 4px solid #af780b; }\n      .header .header-nav ul li:nth-child(4) {\n        background: #347C17;\n        background: -moz-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #347C17), color-stop(100%, #347C17));\n        background: -webkit-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -o-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -ms-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: linear-gradient(to bottom, #347C17 0, #347C17 100%); }\n        .header .header-nav ul li:nth-child(4) a:hover {\n          border-bottom: 4px solid #275f0f; }\n      .header .header-nav ul li:nth-child(5) {\n        background: #F70D1A;\n        background: -moz-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F70D1A), color-stop(100%, #F70D1A));\n        background: -webkit-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -o-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -ms-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: linear-gradient(to bottom, #F70D1A 0, #F70D1A 100%); }\n        .header .header-nav ul li:nth-child(5) a:hover {\n          border-bottom: 4px solid #b10610; }\n      .header .header-nav ul li:nth-child(6) {\n        background: #152836;\n        background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n        background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: linear-gradient(to bottom, #1c3648 0, #152836 100%); }\n        .header .header-nav ul li:nth-child(6) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li:nth-child(7) {\n        background: #d06503;\n        background: -moz-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e97103), color-stop(100%, #d06503));\n        background: -webkit-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -o-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -ms-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: linear-gradient(to bottom, #e97103 0, #d06503 100%); }\n        .header .header-nav ul li:nth-child(7) a:hover {\n          border-bottom: 4px solid #a75103; }\n      .header .header-nav ul li:nth-child(9) {\n        background: #F70D1A;\n        background: -moz-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F70D1A), color-stop(100%, #F70D1A));\n        background: -webkit-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -o-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -ms-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: linear-gradient(to bottom, #F70D1A 0, #F70D1A 100%); }\n        .header .header-nav ul li:nth-child(9) a:hover {\n          border-bottom: 4px solid #b10610; }\n      .header .header-nav ul li:nth-child(8) {\n        background: #a54343;\n        background: -moz-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a54343), color-stop(100%, #a54343));\n        background: -webkit-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: -o-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: -ms-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: linear-gradient(to bottom, #a54343 0, #a54343 100%); }\n        .header .header-nav ul li:nth-child(8) a:hover {\n          border-bottom: 4px solid #6f2b2b; }\n      .header .header-nav ul li:nth-child(10) {\n        background: #09019c;\n        background: -moz-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #09019c), color-stop(100%, #09019c));\n        background: -webkit-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: -o-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: -ms-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: linear-gradient(to bottom, #09019c 0, #09019c 100%); }\n        .header .header-nav ul li:nth-child(10) a:hover {\n          border-bottom: 4px solid #070179; }\n      .header .header-nav ul li.mobile {\n        display: none; }\n      .header .header-nav ul li.desktop {\n        display: inline-block; }\n  .header.shrink .nav-accent {\n    height: 37px; }\n  .header.shrink .header-nav ul {\n    margin-top: -5px; }\n    .header.shrink .header-nav ul li a.nav-link {\n      height: 46px; }\n      .header.shrink .header-nav ul li a.nav-link .icon {\n        display: none; }\n      .header.shrink .header-nav ul li a.nav-link .text {\n        padding-top: 13px; }\n      .header.shrink .header-nav ul li a.nav-link:hover {\n        height: 50px; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .header .header-nav ul {\n    width: 1500px;\n    margin: -6px auto auto auto; } }\n\n@media (max-width: 1024px) {\n  .header .header-nav ul {\n    margin-top: 0px; }\n  .header .header-nav ul li {\n    width: 15%;\n    box-shadow: none;\n    vertical-align: top; }\n  .header .header-nav ul li a.nav-link {\n    height: 66px; } }\n\n@media (max-width: 768px) {\n  .header .header-top .content .search {\n    display: none; }\n  .header .header-nav ul li.desktop {\n    display: none; }\n  .header .header-nav ul li.mobile {\n    display: inline-block; }\n  .header .header-top .content .logo img {\n    position: absolute;\n    left: 2px;\n    top: 8px; } }\n\n@media (max-width: 520px) {\n  .header .header-nav ul li {\n    width: 25%; }\n  .header .header-nav ul li .dropdown-menu {\n    left: -30px; } }\n\n@media (max-width: 420px) {\n  .header .header-nav ul li .dropdown-menu {\n    left: -70px; }\n  .header .header-top .content .actions {\n    top: 7px; }\n  .header .header-top .content .actions a {\n    display: block; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -56204,11 +56204,12 @@
 	
 	
 	// module
-	exports.push([module.id, ".filters ul li {\n  display: inline-block; }\n  .filters ul li a {\n    display: block;\n    padding: 20px 20px 20px 0px;\n    font-size: 18px;\n    color: #4168ff; }\n", ""]);
+	exports.push([module.id, ".filters ul li {\n  display: inline-block;\n  margin-right: 5px; }\n  .filters ul li a {\n    display: block;\n    padding: 5px 10px;\n    font-size: 18px;\n    color: #4168ff;\n    border-radius: 4px; }\n  .filters ul li.active a {\n    background: #416dff;\n    color: #fff; }\n", ""]);
 	
 	// exports
 	exports.locals = {
-		"filters": "filters"
+		"filters": "filters",
+		"active": "active"
 	};
 
 /***/ }),
@@ -56349,10 +56350,43 @@
 	
 		return _react2.default.createElement(
 			"div",
-			{ className: "price-range-slider" },
-			_react2.default.createElement("input", { ref: function ref(_ref) {
-					_this.inputRef = _ref;
-				}, className: "slider-input", "data-slider-id": "ex1Slider", type: "text", "data-slider-min": "0", "data-slider-max": "20", "data-slider-step": "1", "data-slider-value": "14" })
+			{ className: "sorting" },
+			_react2.default.createElement(
+				"div",
+				{ className: "price-range-slider" },
+				_react2.default.createElement("input", { ref: function ref(_ref) {
+						_this.inputRef = _ref;
+					}, className: "slider-input", "data-slider-id": "ex1Slider", type: "text", "data-slider-min": "0",
+					"data-slider-max": "20", "data-slider-step": "1", "data-slider-value": "14" })
+			),
+			_react2.default.createElement(
+				"div",
+				{ className: "dropdown" },
+				_react2.default.createElement(
+					"select",
+					{ className: "selectpicker" },
+					_react2.default.createElement(
+						"option",
+						{ value: "high" },
+						"Highest to Lowest"
+					),
+					_react2.default.createElement(
+						"option",
+						{ value: "low" },
+						"Lowest to Highest"
+					),
+					_react2.default.createElement(
+						"option",
+						{ value: "new" },
+						"Newest"
+					),
+					_react2.default.createElement(
+						"option",
+						{ value: "popular" },
+						"Most Popular"
+					)
+				)
+			)
 		);
 	};
 	exports.default = view;
@@ -56397,10 +56431,19 @@
 	exports.i(__webpack_require__(452), "");
 	
 	// module
-	exports.push([module.id, "\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.sorting {\n  display: flex;\n  justify-content: space-between;\n  padding: 15px 15px 30px 15px; }\n  .sorting .price-range-slider .slider.slider-horizontal {\n    width: 400px; }\n  .sorting .price-range-slider .slider .slider-handle {\n    top: -3px;\n    height: 25px;\n    background-image: linear-gradient(to bottom, #77b353 0%, #77b353 100%); }\n    .sorting .price-range-slider .slider .slider-handle.round {\n      border-radius: 0; }\n  .sorting .price-range-slider .slider .slider-selection {\n    background-image: linear-gradient(to bottom, #cb1d00 0%, #cb1d00 100%); }\n  .sorting .selectpicker {\n    border: 1px solid #e9e9e9; }\n\n/* responsiveness */\n@media (max-width: 768px) {\n  .sorting {\n    display: block;\n    text-align: right; }\n    .sorting .price-range-slider {\n      margin-bottom: 20px; }\n      .sorting .price-range-slider .slider.slider-horizontal {\n        width: 100%; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
-
+	exports.locals = {
+		"sorting": "sorting",
+		"price-range-slider": "price-range-slider",
+		"slider": "slider",
+		"slider-horizontal": "slider-horizontal",
+		"slider-handle": "slider-handle",
+		"round": "round",
+		"slider-selection": "slider-selection",
+		"selectpicker": "selectpicker"
+	};
 
 /***/ }),
 /* 452 */
@@ -59594,7 +59637,8 @@
 	
 		var _props = this.props,
 		    products = _props.products,
-		    categories = _props.categories;
+		    categories = _props.categories,
+		    user = _props.user;
 		var _state = this.state,
 		    category = _state.category,
 		    query = _state.query;
@@ -59681,7 +59725,8 @@
 								'div',
 								{ className: 'products' },
 								_react2.default.createElement(_index2.default, {
-									query: query
+									query: query,
+									user: user
 								})
 							)
 						)
@@ -59934,7 +59979,9 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		var query = this.state.query;
+		var _state = this.state,
+		    query = _state.query,
+		    user = _state.user;
 	
 		return query ? _react2.default.createElement(
 			'div',
@@ -59955,6 +60002,7 @@
 								'div',
 								{ className: 'products' },
 								_react2.default.createElement(_index2.default, {
+									user: user,
 									query: query
 								})
 							)
@@ -60160,7 +60208,8 @@
 	var view = function view() {
 		var _props = this.props,
 		    product = _props.product,
-		    config = _props.config;
+		    config = _props.config,
+		    user = _props.user;
 	
 		var leftBanner = config.leftBanner && config.leftBanner.media ? config.leftBanner.media.url : null;
 		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
@@ -60235,6 +60284,23 @@
 										{ className: 'btn btn-yellow' },
 										'Check it out'
 									)
+								),
+								user ? _react2.default.createElement(
+									'a',
+									null,
+									_react2.default.createElement(
+										'button',
+										{ className: 'btn btn-red save-btn' },
+										'Save'
+									)
+								) : _react2.default.createElement(
+									'a',
+									{ 'data-toggle': 'modal', 'data-target': '#login-modal' },
+									_react2.default.createElement(
+										'button',
+										{ className: 'btn btn-red save-btn' },
+										'Save'
+									)
 								)
 							),
 							_react2.default.createElement(
@@ -60262,7 +60328,17 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'col-md-12 col-lg-8 column' },
-						_react2.default.createElement(_index4.default, null)
+						_react2.default.createElement(_index4.default, {
+							user: user,
+							query: {
+								query: {
+									categories: {
+										$in: product.categories || []
+									}
+								}
+							}
+	
+						})
 					),
 					_react2.default.createElement(
 						'div',
@@ -60315,7 +60391,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-page {\n  padding-top: 70px; }\n  .product-page .product {\n    margin-bottom: 100px; }\n    .product-page .product .column .product-details .product-title {\n      font-size: 30px;\n      margin-bottom: 8px; }\n    .product-page .product .column .product-details .product-description {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      line-height: 24px;\n      margin-bottom: 8px; }\n    .product-page .product .column .product-details .product-price {\n      font-size: 30px;\n      margin-bottom: 12px; }\n    .product-page .product .column .product-details .share {\n      margin-top: 10px; }\n      .product-page .product .column .product-details .share ul li {\n        display: inline-block;\n        margin-right: 8px; }\n        .product-page .product .column .product-details .share ul li a {\n          font-size: 35px; }\n          .product-page .product .column .product-details .share ul li a.facebook {\n            color: #3c5a98; }\n          .product-page .product .column .product-details .share ul li a.twitter {\n            color: #1ea1f2; }\n          .product-page .product .column .product-details .share ul li a.pinterest {\n            color: #bc0718; }\n  .product-page .more .row {\n    margin: 0px; }\n    .product-page .more .row .column {\n      padding: 0px; }\n      .product-page .more .row .column .container {\n        width: 100%; }\n      .product-page .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .product-page .more .row .column.left .banner {\n        margin-right: 0px; }\n      .product-page .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .product-page {\n    padding-top: 0px; }\n    .product-page .product .column {\n      padding: 20px; }\n      .product-page .product .column .carousel-indicators {\n        width: inherit; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-page {\n  padding-top: 70px; }\n  .product-page .product {\n    margin-bottom: 100px; }\n    .product-page .product .column .product-details .product-title {\n      font-size: 30px;\n      margin-bottom: 8px; }\n    .product-page .product .column .product-details .product-description {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      line-height: 24px;\n      margin-bottom: 8px; }\n    .product-page .product .column .product-details .product-price {\n      font-size: 30px;\n      margin-bottom: 12px; }\n    .product-page .product .column .product-details .product-actions .save-btn {\n      margin-left: 5px; }\n    .product-page .product .column .product-details .share {\n      margin-top: 10px; }\n      .product-page .product .column .product-details .share ul li {\n        display: inline-block;\n        margin-right: 8px; }\n        .product-page .product .column .product-details .share ul li a {\n          font-size: 35px; }\n          .product-page .product .column .product-details .share ul li a.facebook {\n            color: #3c5a98; }\n          .product-page .product .column .product-details .share ul li a.twitter {\n            color: #1ea1f2; }\n          .product-page .product .column .product-details .share ul li a.pinterest {\n            color: #bc0718; }\n  .product-page .more .row {\n    margin: 0px; }\n    .product-page .more .row .column {\n      padding: 0px; }\n      .product-page .more .row .column .container {\n        width: 100%; }\n      .product-page .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .product-page .more .row .column.left .banner {\n        margin-right: 0px; }\n      .product-page .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .product-page {\n    padding-top: 0px; }\n    .product-page .product .column {\n      padding: 20px; }\n      .product-page .product .column .carousel-indicators {\n        width: inherit; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -60326,6 +60402,8 @@
 		"product-title": "product-title",
 		"product-description": "product-description",
 		"product-price": "product-price",
+		"product-actions": "product-actions",
+		"save-btn": "save-btn",
 		"share": "share",
 		"facebook": "facebook",
 		"twitter": "twitter",
@@ -62840,706 +62918,15 @@
 	
 	var _view = __webpack_require__(532);
 	
-<<<<<<< HEAD
-	var _default2 = _interopRequireDefault(_default);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var Index = function Index(props) {
-		return _react2.default.createElement(
-			_default2.default,
-			props,
-			_react2.default.createElement(
-				'div',
-				{ className: 'container' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'jumbotron' },
-					_react2.default.createElement('img', { src: '/images/logo.svg', width: '160' }),
-					_react2.default.createElement(
-						'h1',
-						null,
-						'Welcome'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'This is your new ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'http://keystonejs.com', target: '_blank' },
-							'KeystoneJS'
-						),
-						' website.'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'It includes the latest versions of ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'http://getbootstrap.com/', target: '_blank' },
-							'Bootstrap'
-						),
-						' and ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'http://www.jquery.com/', target: '_blank' },
-							'jQuery'
-						),
-						'.'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'Visit the ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'http://keystonejs.com/guide', target: '_blank' },
-							'Getting Started'
-						),
-						' guide to learn how to customise it.'
-					),
-					_react2.default.createElement('hr', null),
-					props.user && props.user.canAccessKeystone ? _react2.default.createElement(
-						'p',
-						null,
-						_react2.default.createElement(
-							'a',
-							{ href: '/keystone', className: 'btn btn-lg btn-primary' },
-							'Open the Admin UI'
-						)
-					) : _react2.default.createElement(
-						'p',
-						null,
-						'We have created a default Admin user for you with the email ',
-						_react2.default.createElement(
-							'strong',
-							null,
-							'user@keystonejs.com'
-						),
-						' and the password ',
-						_react2.default.createElement(
-							'strong',
-							null,
-							'admin'
-						),
-						'.',
-						_react2.default.createElement('br', null),
-						_react2.default.createElement(
-							'a',
-							{ href: '/keystone/signin', style: { marginRight: '10px' }, className: 'btn btn-lg btn-primary' },
-							'Sign in'
-						),
-						'to use the Admin UI.'
-					),
-					_react2.default.createElement('hr', null),
-					_react2.default.createElement(
-						'p',
-						null,
-						'Remember to ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'https://github.com/keystonejs/keystone', target: '_blank' },
-							'Star KeystoneJS on GitHub'
-						),
-						' and',
-						_react2.default.createElement(
-							'a',
-							{ href: 'https://twitter.com/keystonejs', target: '_blank' },
-							'follow @keystonejs'
-						),
-						' on twitter for updates.'
-					),
-					_react2.default.createElement('hr', null),
-					_react2.default.createElement(
-						'button',
-						{ className: 'btn btn-primary btn-large', onClick: function onClick() {
-								return alert('An alert from the frontend! with props, the section is: ' + props.section);
-							} },
-						'Click here to see frontend react in the works'
-					)
-				)
-			)
-		);
-	};
-	
-	// React Engine needs exports, don't export default
-	module.exports = Index;
-
-/***/ }),
-/* 537 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _default = __webpack_require__(327);
-	
-	var _default2 = _interopRequireDefault(_default);
-	
-	var _reactRedux = __webpack_require__(295);
-	
-	var _redux = __webpack_require__(329);
-	
-	var _redux2 = _interopRequireDefault(_redux);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var store = (0, _redux2.default)(_redux.initialState);
-	var Index = function Index(props) {
-		return _react2.default.createElement(
-			_default2.default,
-			props,
-			_react2.default.createElement(
-				_reactRedux.Provider,
-				{ store: store },
-				_react2.default.createElement(
-					'h1',
-					null,
-					'Test'
-				)
-			)
-		);
-	};
-	
-	// React Engine needs exports, don't export default
-	module.exports = Index;
-
-/***/ }),
-/* 538 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _main = __webpack_require__(539);
-	
-	var _main2 = _interopRequireDefault(_main);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _main2.default;
-
-/***/ }),
-/* 539 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _view = __webpack_require__(540);
-	
 	var _view2 = _interopRequireDefault(_view);
 	
-	var _axios = __webpack_require__(354);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-=======
-	var _view2 = _interopRequireDefault(_view);
-	
->>>>>>> 0db70eeabdc76543d8ff85f15ff5e89e7d701fa0
 	var _reactRedux = __webpack_require__(295);
 	
 	var _index = __webpack_require__(332);
 	
-<<<<<<< HEAD
-	var _request = __webpack_require__(385);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	/**
-	 * @name Product  Component
-	 * @type Component
-	 * @author Inderdeep Singh
-	 */
-	var Main = function (_Component) {
-		_inherits(Main, _Component);
-	
-		/**
-	  * Constructor
-	  * @param props
-	  */
-		function Main(props) {
-			_classCallCheck(this, Main);
-	
-			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
-	
-			_this.state = {
-				loading: true
-			};
-			return _this;
-		}
-	
-		_createClass(Main, [{
-			key: 'componentDidMount',
-			value: function componentDidMount() {
-				this.getProduct();
-			}
-		}, {
-			key: 'getProduct',
-			value: function getProduct() {
-				var _this2 = this;
-	
-				var getProduct = this.props.getProduct;
-	
-				var pathname = window.location.pathname;
-				var id = pathname.split("/")[2];
-				if (id && id != "") {
-					console.log(id);
-					getProduct(id).then(function (action) {
-						console.log(action);
-						if ((0, _request.getError)(action)) {
-							//window.location.href="/";
-							return;
-						} else {
-							_this2.setState({
-								loading: true
-							});
-						}
-					});
-				} else {
-					//window.location.href="/";
-				}
-			}
-			/**
-	   * Render the view
-	   * @returns {*}
-	   */
-	
-		}, {
-			key: 'render',
-			value: function render() {
-				return _view2.default.bind(this)();
-			}
-		}]);
-	
-		return Main;
-	}(_react.Component);
-	
-	/**
-	 * Bind Actions
-	 * @param dispatch
-	 * @returns Object
-	 */
-	
-	
-	function bindAction(dispatch) {
-		return {
-			getProduct: function getProduct(data) {
-				return dispatch((0, _index.createAction)(_index.ActionNames.GET_PRODUCT, data));
-			}
-		};
-	}
-	
-	/**
-	 * Map the shared state to properties
-	 * @param state
-	 * @returns Object
-	 */
-	var mapStateToProps = function mapStateToProps(state) {
-		// console.log(state)
-		return {
-			product: state.product
-		};
-	};
-	
-	//Set display name to be used in React Dev Tools
-	Main.displayName = 'Product';
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
-
-/***/ }),
-/* 540 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _style = __webpack_require__(541);
-	
-	var _style2 = _interopRequireDefault(_style);
-	
-	var _index = __webpack_require__(479);
-	
-	var _index2 = _interopRequireDefault(_index);
-	
-	var _index3 = __webpack_require__(454);
-	
-	var _index4 = _interopRequireDefault(_index3);
-	
-	var _index5 = __webpack_require__(436);
-	
-	var _index6 = _interopRequireDefault(_index5);
-	
-	var _common = __webpack_require__(412);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var view = function view() {
-		var _props = this.props,
-		    product = _props.product,
-		    config = _props.config,
-		    user = _props.user;
-	
-		var leftBanner = config.leftBanner && config.leftBanner.media ? config.leftBanner.media.url : null;
-		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
-		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
-		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
-		var productLink = null;
-		var imageUrl = null;
-		if (typeof window != 'undefined' && product) {
-			productLink = window.location.protocol + "//" + window.location.host + "/product/" + product._id + "/" + product.title.split(" ").join("-");
-			if (product.image) {
-				imageUrl = product.image.url;
-			}
-		}
-		return product ? _react2.default.createElement(
-			'div',
-			{ className: 'product-page' },
-			_react2.default.createElement(
-				'div',
-				{ className: 'container product' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-6 column' },
-						_react2.default.createElement(_index2.default, { data: [product.image.url].concat((product.moreImages || []).map(function (image) {
-								return image.url;
-							})) })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-6 column' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'product-details' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'product-title' },
-								_react2.default.createElement(
-									'p',
-									null,
-									product.title
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'product-description' },
-								_react2.default.createElement(
-									'p',
-									null,
-									product.content.brief
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'product-price' },
-								_react2.default.createElement(
-									'p',
-									null,
-									'$',
-									product.price || 0
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'product-actions' },
-								_react2.default.createElement(
-									'a',
-									{ href: product.link },
-									_react2.default.createElement(
-										'button',
-										{ className: 'btn btn-yellow' },
-										'Check it out'
-									)
-								),
-								user ? _react2.default.createElement(
-									'a',
-									null,
-									_react2.default.createElement(
-										'button',
-										{ className: 'btn btn-red save-btn' },
-										'Save'
-									)
-								) : _react2.default.createElement(
-									'a',
-									{ 'data-toggle': 'modal', 'data-target': '#login-modal' },
-									_react2.default.createElement(
-										'button',
-										{ className: 'btn btn-red save-btn' },
-										'Save'
-									)
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'share' },
-								_react2.default.createElement('div', {
-									'data-url': productLink, 'data-title': product.title, 'data-description': (0, _common.getPlainText)(product.content.brief),
-									'data-media': imageUrl, className: 'addthis_inline_share_toolbox' })
-							)
-						)
-					)
-				)
-			),
-			_react2.default.createElement(
-				'div',
-				{ className: 'more' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-0 col-lg-2 column left' },
-						_react2.default.createElement(_index6.default, { banner: leftBanner, link: leftBannerlink })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-12 col-lg-8 column' },
-						_react2.default.createElement(_index4.default, {
-							user: user,
-							query: {
-								query: {
-									categories: {
-										$in: product.categories || []
-									}
-								}
-							}
-	
-						})
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-0 col-lg-2 column right' },
-						_react2.default.createElement(_index6.default, { banner: rightBanner, link: rightBannerlink })
-					)
-				)
-			)
-		) : null;
-	};
-	exports.default = view;
-
-/***/ }),
-/* 541 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(542);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// Prepare cssTransformation
-	var transform;
-	
-	var options = {"hmr":true}
-	options.transform = transform
-	// add the styles to the DOM
-	var update = __webpack_require__(404)(content, options);
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
-				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 542 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(403)(undefined);
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-page {\n  padding-top: 70px; }\n  .product-page .product {\n    margin-bottom: 100px; }\n    .product-page .product .column {\n      padding: 0px; }\n      .product-page .product .column .product-details .product-title {\n        font-size: 30px;\n        margin-bottom: 8px; }\n      .product-page .product .column .product-details .product-description {\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n        line-height: 24px;\n        margin-bottom: 8px; }\n      .product-page .product .column .product-details .product-price {\n        font-size: 30px;\n        margin-bottom: 12px; }\n      .product-page .product .column .product-details .share {\n        margin-top: 10px; }\n        .product-page .product .column .product-details .share ul li {\n          display: inline-block;\n          margin-right: 8px; }\n          .product-page .product .column .product-details .share ul li a {\n            font-size: 35px; }\n            .product-page .product .column .product-details .share ul li a.facebook {\n              color: #3c5a98; }\n            .product-page .product .column .product-details .share ul li a.twitter {\n              color: #1ea1f2; }\n            .product-page .product .column .product-details .share ul li a.pinterest {\n              color: #bc0718; }\n  .product-page .more .row {\n    margin: 0px; }\n    .product-page .more .row .column {\n      padding: 0px; }\n      .product-page .more .row .column .container {\n        width: 100%; }\n      .product-page .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .product-page .more .row .column.left .banner {\n        margin-right: 0px; }\n      .product-page .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .product-page {\n    padding-top: 0px; }\n    .product-page .product .column {\n      padding: 20px; }\n      .product-page .product .column .carousel-indicators {\n        width: inherit; } }\n\n/* /responsiveness */\n", ""]);
-	
-	// exports
-	exports.locals = {
-		"product-page": "product-page",
-		"product": "product",
-		"column": "column",
-		"product-details": "product-details",
-		"product-title": "product-title",
-		"product-description": "product-description",
-		"product-price": "product-price",
-		"share": "share",
-		"facebook": "facebook",
-		"twitter": "twitter",
-		"pinterest": "pinterest",
-		"more": "more",
-		"row": "row",
-		"container": "container",
-		"banner": "banner",
-		"left": "left",
-		"right": "right",
-		"carousel-indicators": "carousel-indicators"
-	};
-
-/***/ }),
-/* 543 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /**
-	                                                                                                                                                                                                                                                                   * Authentication Reducer
-	                                                                                                                                                                                                                                                                   */
-	
-	
-	/**
-	 * Reducer Function
-	 * @param state
-	 * @param action
-	 * @returns {*}
-	 */
-	
-	
-	exports.default = function () {
-	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-	    var action = arguments[1];
-	
-	
-	    switch (action.type) {
-	        case _actions.ActionNames.GET_PRODUCT:
-	            if (!(0, _request.getError)(action)) {
-	                var data = action.payload.data;
-	                return _extends({}, data);
-	            } else {
-	                return null;
-	            }
-	        case _actions.ActionNames.LOGOUT:
-	            return null;
-	    }
-	    return state;
-	};
-	
-	var _actions = __webpack_require__(332);
-	
-	var _request = __webpack_require__(385);
-
-/***/ }),
-/* 544 */
-/***/ (function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.getMaxPrice = getMaxPrice;
-	exports.getMinPrice = getMinPrice;
-	
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-	
-	function getMaxPrice(products) {
-	
-		return Math.max.apply(Math, _toConsumableArray((products || []).map(function (elt) {
-			return elt.price;
-		})));
-	}
-	
-	function getMinPrice(products) {
-		return Math.min.apply(Math, _toConsumableArray((products || []).map(function (elt) {
-			return elt.price;
-		})));
-	}
-
-/***/ }),
-/* 545 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _main = __webpack_require__(546);
-	
-	var _main2 = _interopRequireDefault(_main);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _main2.default;
-
-/***/ }),
-/* 546 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _view = __webpack_require__(547);
-	
-	var _view2 = _interopRequireDefault(_view);
-	
-	var _axios = __webpack_require__(354);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	var _index = __webpack_require__(332);
-	
-	var _request = __webpack_require__(385);
-	
-	var _reactRedux = __webpack_require__(295);
-=======
 	var _common = __webpack_require__(413);
 	
 	var _file = __webpack_require__(535);
->>>>>>> 0db70eeabdc76543d8ff85f15ff5e89e7d701fa0
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -63711,17 +63098,8 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-<<<<<<< HEAD
-		var _this = this;
-	
-		var _props = this.props,
-		    products = _props.products,
-		    categories = _props.categories,
-		    user = _props.user;
-=======
 		var handleChange = this.handleChange,
 		    submit = this.submit;
->>>>>>> 0db70eeabdc76543d8ff85f15ff5e89e7d701fa0
 		var _state = this.state,
 		    loading = _state.loading,
 		    message = _state.message;
@@ -63951,53 +63329,9 @@
 						)
 					),
 					_react2.default.createElement(
-<<<<<<< HEAD
-						'div',
-						{ className: 'col-md-9 column' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'category-wise' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'category-title' },
-								_react2.default.createElement(
-									'p',
-									null,
-									category.name
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'category-description' },
-								_react2.default.createElement(
-									'p',
-									null,
-									category.description
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'price-range' },
-								_react2.default.createElement(_index4.default, {
-									min: (0, _product.getMinPrice)(products),
-									max: (0, _product.getMaxPrice)(products),
-									onPriceChange: this.onPriceChange.bind(this)
-								})
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'products' },
-								_react2.default.createElement(_index2.default, {
-									query: query,
-									user: user
-								})
-							)
-						)
-=======
 						'button',
 						{ disabled: loading, type: 'submit', className: 'btn btn-yellow submit-btn' },
 						'Save and Continue >'
->>>>>>> 0db70eeabdc76543d8ff85f15ff5e89e7d701fa0
 					)
 				)
 			)
@@ -64272,15 +63606,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-<<<<<<< HEAD
-		var _state = this.state,
-		    query = _state.query,
-		    user = _state.user;
-	
-		return query ? _react2.default.createElement(
-=======
 		return _react2.default.createElement(
->>>>>>> 0db70eeabdc76543d8ff85f15ff5e89e7d701fa0
 			'div',
 			{ className: 'step' },
 			'payment'
@@ -64370,18 +63696,6 @@
 						null,
 						'This is your new ',
 						_react2.default.createElement(
-<<<<<<< HEAD
-							'div',
-							{ className: 'category-wise' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'products' },
-								_react2.default.createElement(_index2.default, {
-									user: user,
-									query: query
-								})
-							)
-=======
 							'a',
 							{ href: 'http://keystonejs.com', target: '_blank' },
 							'KeystoneJS'
@@ -64424,7 +63738,6 @@
 							'a',
 							{ href: '/keystone', className: 'btn btn-lg btn-primary' },
 							'Open the Admin UI'
->>>>>>> 0db70eeabdc76543d8ff85f15ff5e89e7d701fa0
 						)
 					) : _react2.default.createElement(
 						'p',

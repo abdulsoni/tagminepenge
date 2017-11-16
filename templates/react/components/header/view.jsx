@@ -40,7 +40,7 @@ var view = function () {
 									{
 										user.isAdmin ? (
 											<a className="nav-link" href="/keystone"><span
-												className="glyphicon glyphicon-home" aria-hidden="true"></span><span
+												className="icon glyphicon glyphicon-home" aria-hidden="true"></span><span
 												className="text">Go To Admin</span></a>
 										) : null
 									}

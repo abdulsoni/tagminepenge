@@ -18,6 +18,8 @@
     .product-page .product .column .product-details .product-price {
       font-size: 30px;
       margin-bottom: 12px; }
+    .product-page .product .column .product-details .product-actions .save-btn {
+      margin-left: 5px; }
     .product-page .product .column .product-details .share {
       margin-top: 10px; }
       .product-page .product .column .product-details .share ul li {

@@ -2,11 +2,19 @@
   ul{
 	li{
 	  display: inline-block;
+	  margin-right: 5px;
 	  a{
 		display: block;
-		padding:20px 20px 20px 0px;
+		padding:5px 10px;
 		font-size:18px;
 		color: rgb(65, 104, 255);
+		border-radius: 4px;
+	  }
+	  &.active{
+		a{
+		  background: #416dff;
+		  color:#fff;
+		}
 	  }
 	}
   }
