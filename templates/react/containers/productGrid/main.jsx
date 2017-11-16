@@ -47,6 +47,10 @@ class Main extends Component {
 		let obj = {
 			...query,
 			...customQuery,
+			query : {
+				...(query || {}).query,
+				...(customQuery || {}).query
+			},
 			limit : this.pageSize,
 			skip : (page-1)*this.pageSize
 		};

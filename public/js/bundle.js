@@ -58607,6 +58607,7 @@
 				    query = _props.query;
 	
 				var obj = _extends({}, query, customQuery, {
+					query: _extends({}, (query || {}).query, (customQuery || {}).query),
 					limit: this.pageSize,
 					skip: (page - 1) * this.pageSize
 				});
