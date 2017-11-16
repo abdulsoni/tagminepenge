@@ -60156,15 +60156,15 @@
 	
 	function getMaxPrice(products) {
 	
-		return Math.max.apply(Math, _toConsumableArray((products || []).map(function (elt) {
+		return products.length > 0 ? Math.max.apply(Math, _toConsumableArray((products || []).map(function (elt) {
 			return elt.price;
-		})));
+		}))) : 0;
 	}
 	
 	function getMinPrice(products) {
-		return Math.min.apply(Math, _toConsumableArray((products || []).map(function (elt) {
+		return products.length > 0 ? Math.min.apply(Math, _toConsumableArray((products || []).map(function (elt) {
 			return elt.price;
-		})));
+		}))) : 0;
 	}
 
 /***/ }),
