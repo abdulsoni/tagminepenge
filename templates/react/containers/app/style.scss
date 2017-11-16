@@ -107,6 +107,9 @@
   .pagination > li > a, .pagination > li > span{
 	color: #77b253;
   }
+  .pagination > li.active > a, .pagination > li > span{
+	color: #fff;
+  }
   .pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
 	background-color: #77b253;
 	border-color: #77b253;

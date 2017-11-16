@@ -90,6 +90,8 @@
     text-align: right; }
   .app .pagination > li > a, .app .pagination > li > span {
     color: #77b253; }
+  .app .pagination > li.active > a, .app .pagination > li > span {
+    color: #fff; }
   .app .pagination > .active > a, .app .pagination > .active > a:hover, .app .pagination > .active > a:focus, .app .pagination > .active > span, .app .pagination > .active > span:hover, .app .pagination > .active > span:focus {
     background-color: #77b253;
     border-color: #77b253; }

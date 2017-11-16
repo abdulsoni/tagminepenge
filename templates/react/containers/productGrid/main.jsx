@@ -62,7 +62,7 @@ class Main extends Component {
 		}
 		getProducts(obj).then(action=>{
 			//console.log(action)
-			document.body.scrollTop = document.documentElement.scrollTop = 0;
+			document.getElementById('product-grid').scrollIntoView();
 		})
 	}
 	

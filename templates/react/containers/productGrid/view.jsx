@@ -7,7 +7,7 @@ var view = function () {
 	const {data, hasMore, user, onSaveToWishList, count} = this.props;
 	const pages = (count % this.pageSize!=0)?(Math.floor(count / this.pageSize) + 1):Math.floor(count / this.pageSize);
 	return (
-		<div className="container">
+		<div className="container" id="product-grid">
 			<div className="row">
 				{(data || []).map((product) => {
 					return (
