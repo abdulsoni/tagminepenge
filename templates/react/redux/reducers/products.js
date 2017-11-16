@@ -5,7 +5,7 @@ import {
 	ActionNames
 } from '../actions';
 import {getError} from '../../utils/request';
-const initialState = {results : [],hasMore : false}
+const initialState = {results : [],count : 0,hasMore : false}
 /**
  * Reducer Function
  * @param state
@@ -21,21 +21,29 @@ export default function(state =initialState, action) {
 			if (!getError(action)) {
 				let req = JSON.parse(action.payload.config.data);
 				data = action.payload.data;
-				if((req.skip || 0)==0){
-					
-					return {
-						results :[].concat(data),
-						hasMore : data.length>0
-					};
-				} else {
+				// if((req.skip || 0)==0){
+				//	
+				// 	return {
+				// 		results :[].concat(data.results),
+				// 		count : data.count,
+				// 		hasMore : data.length>0
+				// 	};
+				// } else {
+				// 	data = action.payload.data;
+				//	
+				// 	return {
+				// 		results : state.results.concat(data.results),
+				// 		count : data.count,
+				// 		hasMore : data.length>0
+				// 	};
+				// }
 					data = action.payload.data;
-					
+
 					return {
-						results : state.results.concat(data),
+						results : [].concat(data.results),
+						count : data.count,
 						hasMore : data.length>0
 					};
-				}
-				
 			}
 		case ActionNames.SAVE_TO_WISHLIST:
 			if (!getError(action)) {

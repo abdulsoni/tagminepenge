@@ -52201,20 +52201,29 @@
 				if (!(0, _request.getError)(action)) {
 					var req = JSON.parse(action.payload.config.data);
 					data = action.payload.data;
-					if ((req.skip || 0) == 0) {
+					// if((req.skip || 0)==0){
+					//	
+					// 	return {
+					// 		results :[].concat(data.results),
+					// 		count : data.count,
+					// 		hasMore : data.length>0
+					// 	};
+					// } else {
+					// 	data = action.payload.data;
+					//	
+					// 	return {
+					// 		results : state.results.concat(data.results),
+					// 		count : data.count,
+					// 		hasMore : data.length>0
+					// 	};
+					// }
+					data = action.payload.data;
 	
-						return {
-							results: [].concat(data),
-							hasMore: data.length > 0
-						};
-					} else {
-						data = action.payload.data;
-	
-						return {
-							results: state.results.concat(data),
-							hasMore: data.length > 0
-						};
-					}
+					return {
+						results: [].concat(data.results),
+						count: data.count,
+						hasMore: data.length > 0
+					};
 				}
 			case _actions.ActionNames.SAVE_TO_WISHLIST:
 				if (!(0, _request.getError)(action)) {
@@ -52240,7 +52249,7 @@
 	
 	var _request = __webpack_require__(385);
 	
-	var initialState = { results: [], hasMore: false
+	var initialState = { results: [], count: 0, hasMore: false
 		/**
 	  * Reducer Function
 	  * @param state
@@ -58452,9 +58461,11 @@
 	
 			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 	
+			_this.pageSize = 9;
 			if (props.query) {
 				_this.getProducts();
 			}
+	
 			return _this;
 		}
 	
@@ -58471,7 +58482,6 @@
 				var emitter = this.props.emitter;
 	
 				emitter.addListener("REFRESH_PRODUCTS", function (query) {
-					console.log(query);
 					_this2.getProducts(1, query);
 				});
 			}
@@ -58490,14 +58500,15 @@
 		}, {
 			key: 'getProducts',
 			value: function getProducts(page, customQuery) {
+				console.log(page);
 				page = page || 1;
 				var _props = this.props,
 				    getProducts = _props.getProducts,
 				    query = _props.query;
 	
 				var obj = _extends({}, query, {
-					limit: 10,
-					skip: (page - 1) * 10
+					limit: this.pageSize,
+					skip: (page - 1) * this.pageSize
 				});
 				if (customQuery) {
 					obj.query = _extends({}, obj.query, customQuery);
@@ -58546,6 +58557,7 @@
 		// console.log(state)
 		return {
 			data: state.products.results || [],
+			count: state.products.count,
 			hasMore: state.products.hasMore,
 			emitter: state.emitter
 		};
@@ -58578,14 +58590,22 @@
 	
 	var _index2 = _interopRequireDefault(_index);
 	
+	var _reactPaginate = __webpack_require__(548);
+	
+	var _reactPaginate2 = _interopRequireDefault(_reactPaginate);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
+		var _this = this;
+	
 		var _props = this.props,
 		    data = _props.data,
 		    hasMore = _props.hasMore,
 		    user = _props.user,
-		    onSaveToWishList = _props.onSaveToWishList;
+		    onSaveToWishList = _props.onSaveToWishList,
+		    count = _props.count;
+	
 	
 		return _react2.default.createElement(
 			'div',
@@ -58593,26 +58613,30 @@
 			_react2.default.createElement(
 				'div',
 				{ className: 'row' },
-				_react2.default.createElement(
-					_reactInfiniteScroller2.default,
-					{
-						pageStart: 1,
-						loadMore: this.getProducts.bind(this),
-						hasMore: hasMore,
-						loader: _react2.default.createElement(
-							'div',
-							{ className: 'loader' },
-							'Loading ...'
-						)
+				(data || []).map(function (product) {
+					return _react2.default.createElement(
+						'div',
+						{ key: product._id, className: 'col-xm-12 col-sm-6 col-md-4' },
+						_react2.default.createElement(_index2.default, { onSaveToWishList: onSaveToWishList, user: user, data: product })
+					);
+				}),
+				_react2.default.createElement(_reactPaginate2.default, { previousLabel: "previous",
+					nextLabel: "next",
+					breakLabel: _react2.default.createElement(
+						'a',
+						{ href: '' },
+						'...'
+					),
+					breakClassName: "break-me",
+					pageCount: Math.floor(count / this.pageSize) + 1,
+					marginPagesDisplayed: 2,
+					pageRangeDisplayed: 5,
+					onPageChange: function onPageChange(page) {
+						_this.getProducts(page.selected + 1);
 					},
-					(data || []).map(function (product) {
-						return _react2.default.createElement(
-							'div',
-							{ key: product._id, className: 'col-xm-12 col-sm-6 col-md-4' },
-							_react2.default.createElement(_index2.default, { onSaveToWishList: onSaveToWishList, user: user, data: product })
-						);
-					})
-				)
+					containerClassName: "pagination",
+					subContainerClassName: "pages pagination",
+					activeClassName: "active" })
 			)
 		);
 	};
@@ -64108,6 +64132,789 @@
 		"title": "title",
 		"direction": "direction"
 	};
+
+/***/ }),
+/* 548 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _PaginationBoxView = __webpack_require__(549);
+	
+	var _PaginationBoxView2 = _interopRequireDefault(_PaginationBoxView);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	module.exports = _PaginationBoxView2.default;
+	//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 549 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _propTypes = __webpack_require__(297);
+	
+	var _propTypes2 = _interopRequireDefault(_propTypes);
+	
+	var _classnames = __webpack_require__(550);
+	
+	var _classnames2 = _interopRequireDefault(_classnames);
+	
+	var _reactAddonsCreateFragment = __webpack_require__(551);
+	
+	var _reactAddonsCreateFragment2 = _interopRequireDefault(_reactAddonsCreateFragment);
+	
+	var _PageView = __webpack_require__(552);
+	
+	var _PageView2 = _interopRequireDefault(_PageView);
+	
+	var _BreakView = __webpack_require__(553);
+	
+	var _BreakView2 = _interopRequireDefault(_BreakView);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var PaginationBoxView = function (_Component) {
+	  _inherits(PaginationBoxView, _Component);
+	
+	  function PaginationBoxView(props) {
+	    _classCallCheck(this, PaginationBoxView);
+	
+	    var _this = _possibleConstructorReturn(this, (PaginationBoxView.__proto__ || Object.getPrototypeOf(PaginationBoxView)).call(this, props));
+	
+	    _this.handlePreviousPage = function (evt) {
+	      evt.preventDefault ? evt.preventDefault() : evt.returnValue = false;
+	      if (_this.state.selected > 0) {
+	        _this.handlePageSelected(_this.state.selected - 1, evt);
+	      }
+	    };
+	
+	    _this.handleNextPage = function (evt) {
+	      evt.preventDefault ? evt.preventDefault() : evt.returnValue = false;
+	      if (_this.state.selected < _this.props.pageCount - 1) {
+	        _this.handlePageSelected(_this.state.selected + 1, evt);
+	      }
+	    };
+	
+	    _this.handlePageSelected = function (selected, evt) {
+	      evt.preventDefault ? evt.preventDefault() : evt.returnValue = false;
+	
+	      if (_this.state.selected === selected) return;
+	
+	      _this.setState({ selected: selected });
+	
+	      // Call the callback with the new selected item:
+	      _this.callCallback(selected);
+	    };
+	
+	    _this.callCallback = function (selectedItem) {
+	      if (typeof _this.props.onPageChange !== "undefined" && typeof _this.props.onPageChange === "function") {
+	        _this.props.onPageChange({ selected: selectedItem });
+	      }
+	    };
+	
+	    _this.pagination = function () {
+	      var items = {};
+	
+	      if (_this.props.pageCount <= _this.props.pageRangeDisplayed) {
+	
+	        for (var index = 0; index < _this.props.pageCount; index++) {
+	          items['key' + index] = _this.getPageElement(index);
+	        }
+	      } else {
+	
+	        var leftSide = _this.props.pageRangeDisplayed / 2;
+	        var rightSide = _this.props.pageRangeDisplayed - leftSide;
+	
+	        if (_this.state.selected > _this.props.pageCount - _this.props.pageRangeDisplayed / 2) {
+	          rightSide = _this.props.pageCount - _this.state.selected;
+	          leftSide = _this.props.pageRangeDisplayed - rightSide;
+	        } else if (_this.state.selected < _this.props.pageRangeDisplayed / 2) {
+	          leftSide = _this.state.selected;
+	          rightSide = _this.props.pageRangeDisplayed - leftSide;
+	        }
+	
+	        var _index = void 0;
+	        var page = void 0;
+	        var breakView = void 0;
+	        var createPageView = function createPageView(index) {
+	          return _this.getPageElement(index);
+	        };
+	
+	        for (_index = 0; _index < _this.props.pageCount; _index++) {
+	
+	          page = _index + 1;
+	
+	          if (page <= _this.props.marginPagesDisplayed) {
+	            items['key' + _index] = createPageView(_index);
+	            continue;
+	          }
+	
+	          if (page > _this.props.pageCount - _this.props.marginPagesDisplayed) {
+	            items['key' + _index] = createPageView(_index);
+	            continue;
+	          }
+	
+	          if (_index >= _this.state.selected - leftSide && _index <= _this.state.selected + rightSide) {
+	            items['key' + _index] = createPageView(_index);
+	            continue;
+	          }
+	
+	          var keys = Object.keys(items);
+	          var breakLabelKey = keys[keys.length - 1];
+	          var breakLabelValue = items[breakLabelKey];
+	
+	          if (_this.props.breakLabel && breakLabelValue !== breakView) {
+	            breakView = _react2.default.createElement(_BreakView2.default, {
+	              breakLabel: _this.props.breakLabel,
+	              breakClassName: _this.props.breakClassName
+	            });
+	
+	            items['key' + _index] = breakView;
+	          }
+	        }
+	      }
+	
+	      return items;
+	    };
+	
+	    _this.state = {
+	      selected: props.initialPage ? props.initialPage : props.forcePage ? props.forcePage : 0
+	    };
+	    return _this;
+	  }
+	
+	  _createClass(PaginationBoxView, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      // Call the callback with the initialPage item:
+	      if (typeof this.props.initialPage !== 'undefined' && !this.props.disableInitialCallback) {
+	        this.callCallback(this.props.initialPage);
+	      }
+	    }
+	  }, {
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(nextProps) {
+	      if (typeof nextProps.forcePage !== 'undefined' && this.props.forcePage !== nextProps.forcePage) {
+	        this.setState({ selected: nextProps.forcePage });
+	      }
+	    }
+	  }, {
+	    key: 'hrefBuilder',
+	    value: function hrefBuilder(pageIndex) {
+	      if (this.props.hrefBuilder && pageIndex !== this.state.selected && pageIndex >= 0 && pageIndex < this.props.pageCount) {
+	        return this.props.hrefBuilder(pageIndex + 1);
+	      }
+	    }
+	  }, {
+	    key: 'getPageElement',
+	    value: function getPageElement(index) {
+	      return _react2.default.createElement(_PageView2.default, {
+	        onClick: this.handlePageSelected.bind(null, index),
+	        selected: this.state.selected === index,
+	        pageClassName: this.props.pageClassName,
+	        pageLinkClassName: this.props.pageLinkClassName,
+	        activeClassName: this.props.activeClassName,
+	        extraAriaContext: this.props.extraAriaContext,
+	        href: this.hrefBuilder(index),
+	        page: index + 1 });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var disabled = this.props.disabledClassName;
+	
+	      var previousClasses = (0, _classnames2.default)(this.props.previousClassName, _defineProperty({}, disabled, this.state.selected === 0));
+	
+	      var nextClasses = (0, _classnames2.default)(this.props.nextClassName, _defineProperty({}, disabled, this.state.selected === this.props.pageCount - 1));
+	
+	      return _react2.default.createElement(
+	        'ul',
+	        { className: this.props.containerClassName },
+	        _react2.default.createElement(
+	          'li',
+	          { className: previousClasses },
+	          _react2.default.createElement(
+	            'a',
+	            { onClick: this.handlePreviousPage,
+	              className: this.props.previousLinkClassName,
+	              href: this.hrefBuilder(this.state.selected - 1),
+	              tabIndex: '0',
+	              onKeyPress: this.handlePreviousPage },
+	            this.props.previousLabel
+	          )
+	        ),
+	        (0, _reactAddonsCreateFragment2.default)(this.pagination()),
+	        _react2.default.createElement(
+	          'li',
+	          { className: nextClasses },
+	          _react2.default.createElement(
+	            'a',
+	            { onClick: this.handleNextPage,
+	              className: this.props.nextLinkClassName,
+	              href: this.hrefBuilder(this.state.selected + 1),
+	              tabIndex: '0',
+	              onKeyPress: this.handleNextPage },
+	            this.props.nextLabel
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return PaginationBoxView;
+	}(_react.Component);
+	
+	PaginationBoxView.propTypes = {
+	  pageCount: _propTypes2.default.number.isRequired,
+	  pageRangeDisplayed: _propTypes2.default.number.isRequired,
+	  marginPagesDisplayed: _propTypes2.default.number.isRequired,
+	  previousLabel: _propTypes2.default.node,
+	  nextLabel: _propTypes2.default.node,
+	  breakLabel: _propTypes2.default.node,
+	  hrefBuilder: _propTypes2.default.func,
+	  onPageChange: _propTypes2.default.func,
+	  initialPage: _propTypes2.default.number,
+	  forcePage: _propTypes2.default.number,
+	  disableInitialCallback: _propTypes2.default.bool,
+	  containerClassName: _propTypes2.default.string,
+	  pageClassName: _propTypes2.default.string,
+	  pageLinkClassName: _propTypes2.default.string,
+	  activeClassName: _propTypes2.default.string,
+	  previousClassName: _propTypes2.default.string,
+	  nextClassName: _propTypes2.default.string,
+	  previousLinkClassName: _propTypes2.default.string,
+	  nextLinkClassName: _propTypes2.default.string,
+	  disabledClassName: _propTypes2.default.string,
+	  breakClassName: _propTypes2.default.string
+	};
+	PaginationBoxView.defaultProps = {
+	  pageCount: 10,
+	  pageRangeDisplayed: 2,
+	  marginPagesDisplayed: 3,
+	  activeClassName: "selected",
+	  previousClassName: "previous",
+	  nextClassName: "next",
+	  previousLabel: "Previous",
+	  nextLabel: "Next",
+	  breakLabel: "...",
+	  disabledClassName: "disabled",
+	  disableInitialCallback: false
+	};
+	exports.default = PaginationBoxView;
+	;
+	//# sourceMappingURL=PaginationBoxView.js.map
+
+/***/ }),
+/* 550 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+	
+	(function () {
+		'use strict';
+	
+		var hasOwn = {}.hasOwnProperty;
+	
+		function classNames () {
+			var classes = [];
+	
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+	
+				var argType = typeof arg;
+	
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+	
+			return classes.join(' ');
+		}
+	
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
+
+/***/ }),
+/* 551 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(process) {/**
+	 * Copyright (c) 2015-present, Facebook, Inc.
+	 *
+	 * This source code is licensed under the MIT license found in the
+	 * LICENSE file in the root directory of this source tree.
+	 */
+	
+	'use strict';
+	
+	var React = __webpack_require__(237);
+	
+	var REACT_ELEMENT_TYPE =
+	  (typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element')) ||
+	  0xeac7;
+	
+	var emptyFunction = __webpack_require__(20);
+	var invariant = __webpack_require__(9);
+	var warning = __webpack_require__(19);
+	
+	var SEPARATOR = '.';
+	var SUBSEPARATOR = ':';
+	
+	var didWarnAboutMaps = false;
+	
+	var ITERATOR_SYMBOL = typeof Symbol === 'function' && Symbol.iterator;
+	var FAUX_ITERATOR_SYMBOL = '@@iterator'; // Before Symbol spec.
+	
+	function getIteratorFn(maybeIterable) {
+	  var iteratorFn =
+	    maybeIterable &&
+	    ((ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL]) ||
+	      maybeIterable[FAUX_ITERATOR_SYMBOL]);
+	  if (typeof iteratorFn === 'function') {
+	    return iteratorFn;
+	  }
+	}
+	
+	function escape(key) {
+	  var escapeRegex = /[=:]/g;
+	  var escaperLookup = {
+	    '=': '=0',
+	    ':': '=2'
+	  };
+	  var escapedString = ('' + key).replace(escapeRegex, function(match) {
+	    return escaperLookup[match];
+	  });
+	
+	  return '$' + escapedString;
+	}
+	
+	function getComponentKey(component, index) {
+	  // Do some typechecking here since we call this blindly. We want to ensure
+	  // that we don't block potential future ES APIs.
+	  if (component && typeof component === 'object' && component.key != null) {
+	    // Explicit key
+	    return escape(component.key);
+	  }
+	  // Implicit key determined by the index in the set
+	  return index.toString(36);
+	}
+	
+	function traverseAllChildrenImpl(
+	  children,
+	  nameSoFar,
+	  callback,
+	  traverseContext
+	) {
+	  var type = typeof children;
+	
+	  if (type === 'undefined' || type === 'boolean') {
+	    // All of the above are perceived as null.
+	    children = null;
+	  }
+	
+	  if (
+	    children === null ||
+	    type === 'string' ||
+	    type === 'number' ||
+	    // The following is inlined from ReactElement. This means we can optimize
+	    // some checks. React Fiber also inlines this logic for similar purposes.
+	    (type === 'object' && children.$$typeof === REACT_ELEMENT_TYPE)
+	  ) {
+	    callback(
+	      traverseContext,
+	      children,
+	      // If it's the only child, treat the name as if it was wrapped in an array
+	      // so that it's consistent if the number of children grows.
+	      nameSoFar === '' ? SEPARATOR + getComponentKey(children, 0) : nameSoFar
+	    );
+	    return 1;
+	  }
+	
+	  var child;
+	  var nextName;
+	  var subtreeCount = 0; // Count of children found in the current subtree.
+	  var nextNamePrefix = nameSoFar === '' ? SEPARATOR : nameSoFar + SUBSEPARATOR;
+	
+	  if (Array.isArray(children)) {
+	    for (var i = 0; i < children.length; i++) {
+	      child = children[i];
+	      nextName = nextNamePrefix + getComponentKey(child, i);
+	      subtreeCount += traverseAllChildrenImpl(
+	        child,
+	        nextName,
+	        callback,
+	        traverseContext
+	      );
+	    }
+	  } else {
+	    var iteratorFn = getIteratorFn(children);
+	    if (iteratorFn) {
+	      if (process.env.NODE_ENV !== 'production') {
+	        // Warn about using Maps as children
+	        if (iteratorFn === children.entries) {
+	          warning(
+	            didWarnAboutMaps,
+	            'Using Maps as children is unsupported and will likely yield ' +
+	              'unexpected results. Convert it to a sequence/iterable of keyed ' +
+	              'ReactElements instead.'
+	          );
+	          didWarnAboutMaps = true;
+	        }
+	      }
+	
+	      var iterator = iteratorFn.call(children);
+	      var step;
+	      var ii = 0;
+	      while (!(step = iterator.next()).done) {
+	        child = step.value;
+	        nextName = nextNamePrefix + getComponentKey(child, ii++);
+	        subtreeCount += traverseAllChildrenImpl(
+	          child,
+	          nextName,
+	          callback,
+	          traverseContext
+	        );
+	      }
+	    } else if (type === 'object') {
+	      var addendum = '';
+	      if (process.env.NODE_ENV !== 'production') {
+	        addendum =
+	          ' If you meant to render a collection of children, use an array ' +
+	          'instead or wrap the object using createFragment(object) from the ' +
+	          'React add-ons.';
+	      }
+	      var childrenString = '' + children;
+	      invariant(
+	        false,
+	        'Objects are not valid as a React child (found: %s).%s',
+	        childrenString === '[object Object]'
+	          ? 'object with keys {' + Object.keys(children).join(', ') + '}'
+	          : childrenString,
+	        addendum
+	      );
+	    }
+	  }
+	
+	  return subtreeCount;
+	}
+	
+	function traverseAllChildren(children, callback, traverseContext) {
+	  if (children == null) {
+	    return 0;
+	  }
+	
+	  return traverseAllChildrenImpl(children, '', callback, traverseContext);
+	}
+	
+	var userProvidedKeyEscapeRegex = /\/+/g;
+	function escapeUserProvidedKey(text) {
+	  return ('' + text).replace(userProvidedKeyEscapeRegex, '$&/');
+	}
+	
+	function cloneAndReplaceKey(oldElement, newKey) {
+	  return React.cloneElement(
+	    oldElement,
+	    {key: newKey},
+	    oldElement.props !== undefined ? oldElement.props.children : undefined
+	  );
+	}
+	
+	var DEFAULT_POOL_SIZE = 10;
+	var DEFAULT_POOLER = oneArgumentPooler;
+	
+	var oneArgumentPooler = function(copyFieldsFrom) {
+	  var Klass = this;
+	  if (Klass.instancePool.length) {
+	    var instance = Klass.instancePool.pop();
+	    Klass.call(instance, copyFieldsFrom);
+	    return instance;
+	  } else {
+	    return new Klass(copyFieldsFrom);
+	  }
+	};
+	
+	var addPoolingTo = function addPoolingTo(CopyConstructor, pooler) {
+	  // Casting as any so that flow ignores the actual implementation and trusts
+	  // it to match the type we declared
+	  var NewKlass = CopyConstructor;
+	  NewKlass.instancePool = [];
+	  NewKlass.getPooled = pooler || DEFAULT_POOLER;
+	  if (!NewKlass.poolSize) {
+	    NewKlass.poolSize = DEFAULT_POOL_SIZE;
+	  }
+	  NewKlass.release = standardReleaser;
+	  return NewKlass;
+	};
+	
+	var standardReleaser = function standardReleaser(instance) {
+	  var Klass = this;
+	  invariant(
+	    instance instanceof Klass,
+	    'Trying to release an instance into a pool of a different type.'
+	  );
+	  instance.destructor();
+	  if (Klass.instancePool.length < Klass.poolSize) {
+	    Klass.instancePool.push(instance);
+	  }
+	};
+	
+	var fourArgumentPooler = function fourArgumentPooler(a1, a2, a3, a4) {
+	  var Klass = this;
+	  if (Klass.instancePool.length) {
+	    var instance = Klass.instancePool.pop();
+	    Klass.call(instance, a1, a2, a3, a4);
+	    return instance;
+	  } else {
+	    return new Klass(a1, a2, a3, a4);
+	  }
+	};
+	
+	function MapBookKeeping(mapResult, keyPrefix, mapFunction, mapContext) {
+	  this.result = mapResult;
+	  this.keyPrefix = keyPrefix;
+	  this.func = mapFunction;
+	  this.context = mapContext;
+	  this.count = 0;
+	}
+	MapBookKeeping.prototype.destructor = function() {
+	  this.result = null;
+	  this.keyPrefix = null;
+	  this.func = null;
+	  this.context = null;
+	  this.count = 0;
+	};
+	addPoolingTo(MapBookKeeping, fourArgumentPooler);
+	
+	function mapSingleChildIntoContext(bookKeeping, child, childKey) {
+	  var result = bookKeeping.result;
+	  var keyPrefix = bookKeeping.keyPrefix;
+	  var func = bookKeeping.func;
+	  var context = bookKeeping.context;
+	
+	  var mappedChild = func.call(context, child, bookKeeping.count++);
+	  if (Array.isArray(mappedChild)) {
+	    mapIntoWithKeyPrefixInternal(
+	      mappedChild,
+	      result,
+	      childKey,
+	      emptyFunction.thatReturnsArgument
+	    );
+	  } else if (mappedChild != null) {
+	    if (React.isValidElement(mappedChild)) {
+	      mappedChild = cloneAndReplaceKey(
+	        mappedChild,
+	        // Keep both the (mapped) and old keys if they differ, just as
+	        // traverseAllChildren used to do for objects as children
+	        keyPrefix +
+	          (mappedChild.key && (!child || child.key !== mappedChild.key)
+	            ? escapeUserProvidedKey(mappedChild.key) + '/'
+	            : '') +
+	          childKey
+	      );
+	    }
+	    result.push(mappedChild);
+	  }
+	}
+	
+	function mapIntoWithKeyPrefixInternal(children, array, prefix, func, context) {
+	  var escapedPrefix = '';
+	  if (prefix != null) {
+	    escapedPrefix = escapeUserProvidedKey(prefix) + '/';
+	  }
+	  var traverseContext = MapBookKeeping.getPooled(
+	    array,
+	    escapedPrefix,
+	    func,
+	    context
+	  );
+	  traverseAllChildren(children, mapSingleChildIntoContext, traverseContext);
+	  MapBookKeeping.release(traverseContext);
+	}
+	
+	var numericPropertyRegex = /^\d+$/;
+	
+	var warnedAboutNumeric = false;
+	
+	function createReactFragment(object) {
+	  if (typeof object !== 'object' || !object || Array.isArray(object)) {
+	    warning(
+	      false,
+	      'React.addons.createFragment only accepts a single object. Got: %s',
+	      object
+	    );
+	    return object;
+	  }
+	  if (React.isValidElement(object)) {
+	    warning(
+	      false,
+	      'React.addons.createFragment does not accept a ReactElement ' +
+	        'without a wrapper object.'
+	    );
+	    return object;
+	  }
+	
+	  invariant(
+	    object.nodeType !== 1,
+	    'React.addons.createFragment(...): Encountered an invalid child; DOM ' +
+	      'elements are not valid children of React components.'
+	  );
+	
+	  var result = [];
+	
+	  for (var key in object) {
+	    if (process.env.NODE_ENV !== 'production') {
+	      if (!warnedAboutNumeric && numericPropertyRegex.test(key)) {
+	        warning(
+	          false,
+	          'React.addons.createFragment(...): Child objects should have ' +
+	            'non-numeric keys so ordering is preserved.'
+	        );
+	        warnedAboutNumeric = true;
+	      }
+	    }
+	    mapIntoWithKeyPrefixInternal(
+	      object[key],
+	      result,
+	      key,
+	      emptyFunction.thatReturnsArgument
+	    );
+	  }
+	
+	  return result;
+	}
+	
+	module.exports = createReactFragment;
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
+
+/***/ }),
+/* 552 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var PageView = function PageView(props) {
+	  var cssClassName = props.pageClassName;
+	  var linkClassName = props.pageLinkClassName;
+	  var onClick = props.onClick;
+	  var href = props.href;
+	  var ariaLabel = 'Page ' + props.page + (props.extraAriaContext ? ' ' + props.extraAriaContext : '');
+	  var ariaCurrent = null;
+	
+	  if (props.selected) {
+	    ariaCurrent = 'page';
+	    ariaLabel = 'Page ' + props.page + ' is your current page';
+	    if (typeof cssClassName !== 'undefined') {
+	      cssClassName = cssClassName + ' ' + props.activeClassName;
+	    } else {
+	      cssClassName = props.activeClassName;
+	    }
+	  }
+	
+	  return _react2.default.createElement(
+	    'li',
+	    { className: cssClassName },
+	    _react2.default.createElement(
+	      'a',
+	      { onClick: onClick,
+	        className: linkClassName,
+	        href: href,
+	        tabIndex: '0',
+	        'aria-label': ariaLabel,
+	        'aria-current': ariaCurrent,
+	        onKeyPress: onClick },
+	      props.page
+	    )
+	  );
+	};
+	
+	exports.default = PageView;
+	//# sourceMappingURL=PageView.js.map
+
+/***/ }),
+/* 553 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var BreakView = function BreakView(props) {
+	  var label = props.breakLabel;
+	  var className = props.breakClassName || 'break';
+	
+	  return _react2.default.createElement(
+	    'li',
+	    { className: className },
+	    label
+	  );
+	};
+	
+	exports.default = BreakView;
+	//# sourceMappingURL=BreakView.js.map
 
 /***/ })
 /******/ ]);

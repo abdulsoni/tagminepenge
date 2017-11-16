@@ -15,9 +15,11 @@ class Main extends Component {
 	 */
 	constructor(props){
 		super(props);
+		this.pageSize = 9;
 		if(props.query){
 			this.getProducts();
 		}
+		
 	}
 
 	/**
@@ -25,8 +27,7 @@ class Main extends Component {
 	 */
 	componentDidMount(){
 		const {emitter} = this.props;
-		emitter.addListener("REFRESH_PRODUCTS",(query)=>{
-			console.log(query)
+		emitter.addListener("REFRESH_PRODUCTS",(query)=>{				
 			this.getProducts(1,query)
 		})
 	}
@@ -40,12 +41,13 @@ class Main extends Component {
 	 * @param page
 	 */
 	getProducts(page,customQuery){
+		console.log(page);
 		page = page || 1;
 		const {getProducts,query} = this.props;
 		let obj = {
 			...query,
-			limit : 10,
-			skip : (page-1)*10
+			limit : this.pageSize,
+			skip : (page-1)*this.pageSize
 		};
 		if(customQuery){
 			obj.query = {
@@ -89,6 +91,7 @@ const mapStateToProps = state => {
 	// console.log(state)
 	return {
 		data: state.products.results || [],
+		count : state.products.count,
 		hasMore : state.products.hasMore,
 		emitter : state.emitter
 	};
