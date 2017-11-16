@@ -55242,7 +55242,7 @@
 										{ key: category._id },
 										_react2.default.createElement(
 											"a",
-											{ href: "/" },
+											{ href: "/category/" + category.key },
 											category.name
 										)
 									);
@@ -55276,7 +55276,7 @@
 										{ key: category._id },
 										_react2.default.createElement(
 											"a",
-											{ href: "/" },
+											{ href: "/category/" + category.key },
 											category.name
 										)
 									);

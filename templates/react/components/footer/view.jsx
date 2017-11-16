@@ -16,7 +16,7 @@ var view = function () {
 								{
 									(categories || []).filter(category=>category.footerDisplayType==1).map((category)=>{
 										return (
-											<li key = {category._id}><a href="/">{category.name}</a></li>
+											<li key = {category._id}><a href={"/category/" + category.key}>{category.name}</a></li>
 										)
 									})
 								}
@@ -32,7 +32,7 @@ var view = function () {
 								{
 									(categories || []).filter(category=>category.footerDisplayType==2).map((category)=>{
 										return (
-											<li key = {category._id}><a href="/">{category.name}</a></li>
+											<li key = {category._id}><a href={"/category/" + category.key}>{category.name}</a></li>
 										)
 									})
 								}
