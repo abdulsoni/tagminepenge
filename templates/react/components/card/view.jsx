@@ -33,7 +33,7 @@ var view = function() {
 					</span>
 				</div>
 				<div className="product-action">
-					<a target="blank" href={data.link}>
+					<a target="blank" href={data.link} className="checkout-btn">
 						<button className="btn btn-yellow">Check it out</button>
 					</a>
 					<div className="share">

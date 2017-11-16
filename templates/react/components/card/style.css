@@ -5,7 +5,8 @@
 /*border*/
 /*social*/
 .card {
-  width: 100%; }
+  width: 100%;
+  margin-bottom: 30px; }
   .card .card-header .product-title {
     margin-bottom: 2px;
     text-align: center;
@@ -13,7 +14,10 @@
     margin-top: 0;
     font-size: 18px;
     color: #676767;
-    display: block; }
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
   .card .card-body .product-image {
     position: relative; }
     .card .card-body .product-image .save-btn {
@@ -28,16 +32,29 @@
       display: block;
       width: 100%;
       height: 252px;
-      background-color: #e6e6e6; }
+      background-color: #e6e6e6;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; }
     .card .card-body .product-image:hover .save-btn {
       display: block; }
   .card .card-body .product-text {
-    line-height: 17px;
     text-align: justify;
-    font-size: 12px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .card .card-body .product-text p {
+      display: block;
+      display: -webkit-box;
+      max-width: 400px;
+      height: 100px;
+      margin: 0 auto;
+      font-size: 12px;
+      line-height: 17px;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis; }
   .card .card-footer {
     display: flex;
     justify-content: space-between; }
@@ -51,6 +68,12 @@
           color: #676767; }
           .card .card-footer .product-range .saves i:hover {
             color: #cb1d00; }
+    .card .card-footer .product-action {
+      text-align: right; }
+      .card .card-footer .product-action .checkout-btn {
+        display: block;
+        margin-top: -20px;
+        margin-bottom: 2px; }
   .card .share ul {
     margin: 0px; }
     .card .share ul li {

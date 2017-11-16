@@ -8,31 +8,29 @@
   padding-top: 70px; }
   .product-page .product {
     margin-bottom: 100px; }
-    .product-page .product .column {
-      padding: 0px; }
-      .product-page .product .column .product-details .product-title {
-        font-size: 30px;
-        margin-bottom: 8px; }
-      .product-page .product .column .product-details .product-description {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        line-height: 24px;
-        margin-bottom: 8px; }
-      .product-page .product .column .product-details .product-price {
-        font-size: 30px;
-        margin-bottom: 12px; }
-      .product-page .product .column .product-details .share {
-        margin-top: 10px; }
-        .product-page .product .column .product-details .share ul li {
-          display: inline-block;
-          margin-right: 8px; }
-          .product-page .product .column .product-details .share ul li a {
-            font-size: 35px; }
-            .product-page .product .column .product-details .share ul li a.facebook {
-              color: #3c5a98; }
-            .product-page .product .column .product-details .share ul li a.twitter {
-              color: #1ea1f2; }
-            .product-page .product .column .product-details .share ul li a.pinterest {
-              color: #bc0718; }
+    .product-page .product .column .product-details .product-title {
+      font-size: 30px;
+      margin-bottom: 8px; }
+    .product-page .product .column .product-details .product-description {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      line-height: 24px;
+      margin-bottom: 8px; }
+    .product-page .product .column .product-details .product-price {
+      font-size: 30px;
+      margin-bottom: 12px; }
+    .product-page .product .column .product-details .share {
+      margin-top: 10px; }
+      .product-page .product .column .product-details .share ul li {
+        display: inline-block;
+        margin-right: 8px; }
+        .product-page .product .column .product-details .share ul li a {
+          font-size: 35px; }
+          .product-page .product .column .product-details .share ul li a.facebook {
+            color: #3c5a98; }
+          .product-page .product .column .product-details .share ul li a.twitter {
+            color: #1ea1f2; }
+          .product-page .product .column .product-details .share ul li a.pinterest {
+            color: #bc0718; }
   .product-page .more .row {
     margin: 0px; }
     .product-page .more .row .column {

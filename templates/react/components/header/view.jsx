@@ -68,7 +68,7 @@ var view = function () {
 					{
 						(categories || []).filter(category=>category.displayType==1).map((category)=>{
 							return (
-								<li key={category._id}>
+								<li key={category._id} className="desktop">
 									<a href={"/category/"+category.key} className="nav-link">
 										<span className="icon"><span className={category.iconClass} aria-hidden="true"></span></span>
 										<span className="text">{category.name}</span>
@@ -81,6 +81,12 @@ var view = function () {
 						<a href="/" className="nav-link">
 							<span className="icon"><span className="glyphicon glyphicon-search" aria-hidden="true"></span></span>
 							<span className="text">Search</span>
+						</a>
+					</li>
+					<li className="mobile">
+						<a href="/" className="nav-link">
+							<span className="icon"><span className="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></span>
+							<span className="text">Wish List</span>
 						</a>
 					</li>
 					<li>
