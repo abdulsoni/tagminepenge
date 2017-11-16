@@ -17,7 +17,7 @@ var view = function() {
 			</div>
 			<div className="card-body">
 				<div className="product-image">
-					<a target="blank" href={productLink}><span style = {getBackgroundImageStyle(imageUrl)} className="image"></span></a>
+					<a href={productLink}><span style = {getBackgroundImageStyle(imageUrl)} className="image"></span></a>
 					{
 						user?(
 							<button onClick={this.addToWishList.bind(this)} className="btn btn-red save-btn">{!presentInWishList?"Save":"Remove"}</button>

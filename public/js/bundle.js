@@ -59204,7 +59204,7 @@
 					{ className: 'product-image' },
 					_react2.default.createElement(
 						'a',
-						{ target: 'blank', href: productLink },
+						{ href: productLink },
 						_react2.default.createElement('span', { style: (0, _common.getBackgroundImageStyle)(imageUrl), className: 'image' })
 					),
 					user ? _react2.default.createElement(
