@@ -56399,23 +56399,16 @@
 	
 				if (newProps.max != this.props.max || newProps.min != this.props.min) {
 					setTimeout(function () {
-						var _props2 = _this3.props,
-						    min = _props2.min,
-						    max = _props2.max,
-						    onPriceChange = _props2.onPriceChange;
+						var min = newProps.min,
+						    max = newProps.max;
 	
-						_this3.slider ? _this3.slider.destroy() : null;
-						_this3.slider = new _bootstrapSlider2.default('input.slider-input', {
-							formatter: function formatter(value) {
-								return 'Price : ' + value;
-							},
-							min: min,
-							max: max,
-							range: true,
-							step: 10
-						});
-						_this3.slider.on("slideStop", function (val) {
-							onPriceChange ? onPriceChange(val, _this3.state.sort) : null;
+						var minValue = min < _this3.props.min ? min : _this3.props.min;
+						var maxValue = max > _this3.props.max ? max : _this3.props.max;
+	
+						//this.slider.setAttribute("min",minValue)
+						_this3.slider.setAttribute("max", maxValue);
+						_this3.setState({
+							temp: !_this3.state.temp
 						});
 					});
 				}
