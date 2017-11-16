@@ -61213,6 +61213,9 @@
 				    user = _props.user,
 				    product = _props.product;
 	
+				if (!user) {
+					return false;
+				}
 				if (product) {
 					return user.savedProducts.indexOf(product._id) != -1;
 				} else {

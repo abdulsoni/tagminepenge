@@ -29,6 +29,9 @@ class Main extends Component {
 	 */
 	presentInWishList(){
 		const {user,product} = this.props;
+		if(!user){
+			return false;
+		}
 		if(product){
 			return user.savedProducts.indexOf(product._id)!=-1;	
 		} else {
