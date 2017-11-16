@@ -30,7 +30,11 @@ class Main extends Component {
 			this.getProducts(1,query)
 		})
 	}
-
+	componentWillReceiveProps(newProps){
+		if(JSON.stringify(this.props.query)!=JSON.stringify(newProps.query)){
+			this.getProducts(1)
+		}
+	}
 	/**
 	 * Get products
 	 * @param page
@@ -38,11 +42,18 @@ class Main extends Component {
 	getProducts(page,customQuery){
 		page = page || 1;
 		const {getProducts,query} = this.props;
-		getProducts({
+		let obj = {
 			...query,
 			limit : 10,
 			skip : (page-1)*10
-		}).then(action=>{
+		};
+		if(customQuery){
+			obj.query = {
+				...obj.query,
+				...customQuery
+			}
+		}
+		getProducts(obj).then(action=>{
 			//console.log(action)
 		})
 	}

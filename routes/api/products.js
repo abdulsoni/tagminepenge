@@ -19,7 +19,7 @@ exports = module.exports = function (req, res) {
 	}
 	//console.log(query)
 	query.exec(function(err, products) {
-		console.log(err,products)
+		//console.log(err,products)
 		if (err) {
 			console.log("Error while getting products",err)
 			return res.sendStatus(500);

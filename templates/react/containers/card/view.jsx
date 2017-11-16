@@ -8,6 +8,7 @@ var view = function() {
 	if(data.image){
 		imageUrl = data.image.url;
 	}
+	const presentInWishList = this.presentInWishList();
 	const productLink = window.location.protocol+"//"+window.location.host+"/product/"+_id+"/"+data.title.split(" ").join("-");
 	return (
 		<div className="card">
@@ -19,7 +20,7 @@ var view = function() {
 					<a target="blank" href={productLink}><span style = {getBackgroundImageStyle(imageUrl)} className="image"></span></a>
 					{
 						user?(
-							<button className="btn btn-red save-btn">Save</button>
+							<button onClick={this.addToWishList.bind(this)} className="btn btn-red save-btn">{!presentInWishList?"Save":"Remove"}</button>
 						):(
 							<a data-toggle="modal" data-target="#login-modal">
 								<button className="btn btn-red save-btn">Save</button>
@@ -37,7 +38,7 @@ var view = function() {
 					<span className="saves">
 						{
 							user?(
-								<a className="icon" onClick={this.addToWishList.bind(this)}><i className="glyphicon glyphicon-heart-empty"></i> </a>
+								<a className="icon" onClick={this.addToWishList.bind(this)}><i className={!presentInWishList?"glyphicon glyphicon-heart-empty":"glyphicon glyphicon-heart"}></i> </a>
 							):(
 								<a className="icon" data-toggle="modal" data-target="#login-modal"><i className="glyphicon glyphicon-heart-empty"></i> </a>
 							)

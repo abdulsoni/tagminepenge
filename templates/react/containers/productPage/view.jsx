@@ -6,6 +6,7 @@ import Banner from '../../components/banner/index';
 import {getPlainText,getBackgroundImageStyle} from '../../utils/common'
 var view = function () {
 	const {product,config,user} = this.props;
+	const presentInWishList = this.presentInWishList();
 	const leftBanner = (config.leftBanner && config.leftBanner.media)?config.leftBanner.media.url:null;
 	const leftBannerlink = (config.leftBanner && config.leftBanner.value)?config.leftBanner.value:null;
 	const rightBanner = (config.rightBanner && config.rightBanner.media)?config.rightBanner.media.url:null;
@@ -45,7 +46,7 @@ var view = function () {
 								{
 									user?(
 										<a>
-											<button className="btn btn-red save-btn">Save</button>
+											<button onClick={this.addToWishList.bind(this)} className="btn btn-red save-btn">{presentInWishList?"Remove":"Save"}</button>
 										</a>
 									):(
 										<a data-toggle="modal" data-target="#login-modal">
@@ -63,8 +64,8 @@ var view = function () {
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
+				</div>  
+			</div> 
 			<div className="more">
 				<div className="row">
 					<div className="col-md-0 col-lg-2 column left">

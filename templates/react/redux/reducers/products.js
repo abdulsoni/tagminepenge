@@ -14,7 +14,8 @@ const initialState = {results : [],hasMore : false}
  */
 export default function(state =initialState, action) {
 
-	let data = [];
+	let data = null;
+	let output = null;
 	switch (action.type) {
 		case ActionNames.GET_PRODUCTS :
 			if (!getError(action)) {
@@ -35,6 +36,21 @@ export default function(state =initialState, action) {
 					};
 				}
 				
+			}
+		case ActionNames.SAVE_TO_WISHLIST:
+			if (!getError(action)) {
+				data = action.payload.data;
+				output = [].concat(state.results);
+				for(var i=0;i<output.length;i++){
+					if(output[i]._id==data._id){
+						output[i] = data;
+						break;
+					}
+				}
+				return {
+					...state,
+					results : output,
+				};
 			}
 		case ActionNames.LOGOUT:
 			return initialState;

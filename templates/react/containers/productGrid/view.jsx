@@ -1,8 +1,8 @@
 import React from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
-import Card from '../../components/card/index';
+import Card from '../card/index';
 var view = function() {
-	const {data,hasMore,user} = this.props;
+	const {data,hasMore,user,onSaveToWishList} = this.props;
 	return (
 		<div className="container">
 			<div className="row">
@@ -15,7 +15,7 @@ var view = function() {
 					{(data || []).map((product)=>{
 						return (
 							<div key = {product._id} className="col-xm-12 col-sm-6 col-md-4">
-								<Card user = {user} data = {product}/>
+								<Card onSaveToWishList = {onSaveToWishList} user = {user} data = {product}/>
 							</div>
 						)
 					})}

@@ -29,6 +29,7 @@
     "react-engine": "^4.2.0",
     "react-infinite-scroller": "^1.1.1",
     "react-localize-redux": "2.4.1",
+    "react-paginate": "^5.0.0",
     "react-redux": "^5.0.5",
     "react-router-redux": "^4.0.8",
     "redux": "^3.7.1",

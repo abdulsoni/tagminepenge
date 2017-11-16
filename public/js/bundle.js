@@ -48685,7 +48685,9 @@
 		GET_PRODUCTS: "GET_PRODUCTS",
 		SUBMIT_PRODUCT: "SUBMIT_PRODUCT",
 		CONTACT_US: "CONTACT_US",
-		GET_PRODUCT: "GET_PRODUCT"
+		GET_PRODUCT: "GET_PRODUCT",
+		SAVE_TO_WISHLIST: "SAVE_TO_WISHLIST",
+		SAVE_PROFILE: "SAVE_PROFILE"
 	};
 	var Names = exports.Names = ActionNames;
 	/**
@@ -48784,6 +48786,20 @@
 			url: _config.api.ENQUIRY,
 			method: 'POST'
 		}
+	}, {
+		name: ActionNames.SAVE_TO_WISHLIST,
+		type: "ajax",
+		config: {
+			url: _config.api.WISHLIST,
+			method: 'POST'
+		}
+	}, {
+		name: ActionNames.SAVE_PROFILE,
+		type: "ajax",
+		config: {
+			url: _config.api.PROFILE,
+			method: 'POST'
+		}
 	}];
 	/**
 	 * Create a map so that it is easy to query
@@ -48861,7 +48877,9 @@
 	var CHECK_DUPLICATE_EMAIL = exports.CHECK_DUPLICATE_EMAIL = HOST + "auth/checkDuplicate";
 	var PRODUCTS = exports.PRODUCTS = HOST + "getProducts";
 	var PRODUCT = exports.PRODUCT = HOST + "getProduct";
+	var WISHLIST = exports.WISHLIST = HOST + "wishlist";
 	var ENQUIRY = exports.ENQUIRY = HOST + "contact";
+	var PROFILE = exports.PROFILE = HOST + "saveProfile";
 
 /***/ }),
 /* 336 */
@@ -52026,7 +52044,7 @@
 	  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 	  var action = arguments[1];
 	
-	
+	  var output = null;
 	  switch (action.type) {
 	    case _actions.ActionNames.GET_PROFILE:
 	      if (!(0, _request.getError)(action)) {
@@ -52042,6 +52060,22 @@
 	      } else {
 	        return null;
 	      }
+	    // case ActionNames.SAVE_TO_WISHLIST :
+	    // 	if (!getError(action)) {
+	    // 		output = {
+	    // 			...state
+	    // 		};
+	    // 		let productId = action.payload.data._id;
+	    // 		if(output.savedProducts.indexOf(productId)==-1){
+	    // 			output.savedProducts.push(productId)
+	    // 		} else {
+	    // 			output.savedProducts = output.savedProducts.filter((ele)=>{
+	    // 				return ele!=productId;
+	    // 			})
+	    // 		}
+	    // 		return output;
+	    // 	}
+	
 	  }
 	  return state;
 	};
@@ -52150,12 +52184,18 @@
 		value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /**
+	                                                                                                                                                                                                                                                                   * Products Reducer
+	                                                                                                                                                                                                                                                                   */
+	
+	
 	exports.default = function () {
 		var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
 		var action = arguments[1];
 	
 	
-		var data = [];
+		var data = null;
+		var output = null;
 		switch (action.type) {
 			case _actions.ActionNames.GET_PRODUCTS:
 				if (!(0, _request.getError)(action)) {
@@ -52176,6 +52216,20 @@
 						};
 					}
 				}
+			case _actions.ActionNames.SAVE_TO_WISHLIST:
+				if (!(0, _request.getError)(action)) {
+					data = action.payload.data;
+					output = [].concat(state.results);
+					for (var i = 0; i < output.length; i++) {
+						if (output[i]._id == data._id) {
+							output[i] = data;
+							break;
+						}
+					}
+					return _extends({}, state, {
+						results: output
+					});
+				}
 			case _actions.ActionNames.LOGOUT:
 				return initialState;
 		}
@@ -52186,9 +52240,6 @@
 	
 	var _request = __webpack_require__(385);
 	
-	/**
-	 * Products Reducer
-	 */
 	var initialState = { results: [], hasMore: false
 		/**
 	  * Reducer Function
@@ -53061,7 +53112,7 @@
 							),
 							user.isAdmin ? _react2.default.createElement(
 								"a",
-								{ className: "nav-link", href: "/keystone" },
+								{ className: "nav-link", target: "blank", href: "/keystone" },
 								_react2.default.createElement("span", {
 									className: "glyphicon glyphicon-home", "aria-hidden": "true" }),
 								_react2.default.createElement(
@@ -53081,7 +53132,7 @@
 								),
 								_react2.default.createElement(
 									"a",
-									{ className: "dropdown-item", href: "/wishlist" },
+									{ className: "dropdown-item", href: "/my-wishlist" },
 									"My Wishlist"
 								),
 								_react2.default.createElement(
@@ -55454,7 +55505,7 @@
 	
 	var _home2 = _interopRequireDefault(_home);
 	
-	var _profile = __webpack_require__(466);
+	var _profile = __webpack_require__(543);
 	
 	var _profile2 = _interopRequireDefault(_profile);
 	
@@ -55547,7 +55598,7 @@
 		"/search/:text": {
 			component: _searchPage2.default
 		},
-		"/wishlist": {
+		"/my-wishlist": {
 			component: _wishlist2.default
 		},
 		"/about": {
@@ -58424,7 +58475,13 @@
 					_this2.getProducts(1, query);
 				});
 			}
-	
+		}, {
+			key: 'componentWillReceiveProps',
+			value: function componentWillReceiveProps(newProps) {
+				if (JSON.stringify(this.props.query) != JSON.stringify(newProps.query)) {
+					this.getProducts(1);
+				}
+			}
 			/**
 	   * Get products
 	   * @param page
@@ -58438,10 +58495,14 @@
 				    getProducts = _props.getProducts,
 				    query = _props.query;
 	
-				getProducts(_extends({}, query, {
+				var obj = _extends({}, query, {
 					limit: 10,
 					skip: (page - 1) * 10
-				})).then(function (action) {
+				});
+				if (customQuery) {
+					obj.query = _extends({}, obj.query, customQuery);
+				}
+				getProducts(obj).then(function (action) {
 					//console.log(action)
 				});
 			}
@@ -58523,7 +58584,8 @@
 		var _props = this.props,
 		    data = _props.data,
 		    hasMore = _props.hasMore,
-		    user = _props.user;
+		    user = _props.user,
+		    onSaveToWishList = _props.onSaveToWishList;
 	
 		return _react2.default.createElement(
 			'div',
@@ -58547,7 +58609,7 @@
 						return _react2.default.createElement(
 							'div',
 							{ key: product._id, className: 'col-xm-12 col-sm-6 col-md-4' },
-							_react2.default.createElement(_index2.default, { user: user, data: product })
+							_react2.default.createElement(_index2.default, { onSaveToWishList: onSaveToWishList, user: user, data: product })
 						);
 					})
 				)
@@ -58810,6 +58872,12 @@
 	
 	var _axios2 = _interopRequireDefault(_axios);
 	
+	var _reactRedux = __webpack_require__(295);
+	
+	var _index = __webpack_require__(332);
+	
+	var _request = __webpack_require__(385);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -58819,7 +58887,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	/**
-	 * @name Sample Component
+	 * @name Product  Component
 	 * @type Component
 	 * @author Inderdeep Singh
 	 */
@@ -58833,15 +58901,83 @@
 		function Main(props) {
 			_classCallCheck(this, Main);
 	
-			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+	
+			_this.state = {
+				loading: false
+			};
+			return _this;
 		}
 	
 		_createClass(Main, [{
 			key: 'componentDidMount',
 			value: function componentDidMount() {}
+	
+			/**
+	   * Check if present in wishlist
+	   * @returns {boolean}
+	   */
+	
+		}, {
+			key: 'presentInWishList',
+			value: function presentInWishList() {
+				var _props = this.props,
+				    user = _props.user,
+				    data = _props.data;
+	
+				if (!user) {
+					return false;
+				}
+				return user.savedProducts.indexOf(data._id) != -1;
+			}
+	
+			/**
+	   * Add/Remove to wishlist- Add/Remove logic is handled by server
+	   */
+	
 		}, {
 			key: 'addToWishList',
-			value: function addToWishList() {}
+			value: function addToWishList() {
+				var _this2 = this;
+	
+				var _props2 = this.props,
+				    addToWishList = _props2.addToWishList,
+				    data = _props2.data,
+				    user = _props2.user,
+				    onSaveToWishList = _props2.onSaveToWishList,
+				    emitter = _props2.emitter;
+	
+				this.setState({
+					loading: true
+				});
+				addToWishList({
+					product: data._id
+				}).then(function (action) {
+					if (!action.error) {
+						/**
+	      * Since here redux is not used for user so no need to use a reducer.
+	      * Check if product is added or removed
+	      */
+						var productId = action.payload.data._id;
+						if (user.savedProducts.indexOf(productId) == -1) {
+							user.savedProducts.push(productId);
+						} else {
+							user.savedProducts = user.savedProducts.filter(function (ele) {
+								return ele != productId;
+							});
+						}
+						if (onSaveToWishList) {
+							onSaveToWishList();
+						}
+					}
+					/**
+	     * Reset Loading so that component can re-render to affect present in wishlist
+	     */
+					_this2.setState({
+						loading: false
+					});
+				});
+			}
 			/**
 	   * Render the view
 	   * @returns {*}
@@ -58856,11 +58992,38 @@
 	
 		return Main;
 	}(_react.Component);
+	
+	/**
+	 * Bind Actions
+	 * @param dispatch
+	 * @returns Object
+	 */
+	
+	
+	function bindAction(dispatch) {
+		return {
+			addToWishList: function addToWishList(data) {
+				return dispatch((0, _index.createAction)(_index.ActionNames.SAVE_TO_WISHLIST, data));
+			}
+		};
+	}
+	
+	/**
+	 * Map the shared state to properties
+	 * @param state
+	 * @returns Object
+	 */
+	var mapStateToProps = function mapStateToProps(state) {
+		// console.log(state)
+		return {
+			emitter: state.emitter
+		};
+	};
+	
 	//Set display name to be used in React Dev Tools
+	Main.displayName = 'Product-Card';
 	
-	
-	exports.default = Main;
-	Main.displayName = 'Sample-Component';
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
 
 /***/ }),
 /* 462 */
@@ -58894,6 +59057,7 @@
 		if (data.image) {
 			imageUrl = data.image.url;
 		}
+		var presentInWishList = this.presentInWishList();
 		var productLink = window.location.protocol + "//" + window.location.host + "/product/" + _id + "/" + data.title.split(" ").join("-");
 		return _react2.default.createElement(
 			'div',
@@ -58920,8 +59084,8 @@
 					),
 					user ? _react2.default.createElement(
 						'button',
-						{ className: 'btn btn-red save-btn' },
-						'Save'
+						{ onClick: this.addToWishList.bind(this), className: 'btn btn-red save-btn' },
+						!presentInWishList ? "Save" : "Remove"
 					) : _react2.default.createElement(
 						'a',
 						{ 'data-toggle': 'modal', 'data-target': '#login-modal' },
@@ -58960,7 +59124,7 @@
 						user ? _react2.default.createElement(
 							'a',
 							{ className: 'icon', onClick: this.addToWishList.bind(this) },
-							_react2.default.createElement('i', { className: 'glyphicon glyphicon-heart-empty' }),
+							_react2.default.createElement('i', { className: !presentInWishList ? "glyphicon glyphicon-heart-empty" : "glyphicon glyphicon-heart" }),
 							' '
 						) : _react2.default.createElement(
 							'a',
@@ -59096,270 +59260,11 @@
 	}
 
 /***/ }),
-/* 466 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _main = __webpack_require__(467);
-	
-	var _main2 = _interopRequireDefault(_main);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _main2.default;
-
-/***/ }),
-/* 467 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _view = __webpack_require__(468);
-	
-	var _view2 = _interopRequireDefault(_view);
-	
-	var _common = __webpack_require__(413);
-	
-	var _axios = __webpack_require__(354);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	/**
-	 * @name Sample Component
-	 * @type Component
-	 * @author Inderdeep Singh
-	 */
-	var Main = function (_Component) {
-		_inherits(Main, _Component);
-	
-		/**
-	  * Constructor
-	  * @param props
-	  */
-		function Main(props) {
-			_classCallCheck(this, Main);
-	
-			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
-	
-			_this.state = {
-				"email": "name@gmail.com",
-				"password": "***********",
-				"loading": false,
-				"message": null
-			};
-			_this.handleChange = _common.handleChange.bind(_this);
-			return _this;
-		}
-	
-		_createClass(Main, [{
-			key: 'componentDidMount',
-			value: function componentDidMount() {}
-		}, {
-			key: 'submit',
-			value: function submit(event) {
-				event.preventDefault();
-				console.log('Form Submitting');
-			}
-			/**
-	   * Render the view
-	   * @returns {*}
-	   */
-	
-		}, {
-			key: 'render',
-			value: function render() {
-				return _view2.default.bind(this)();
-			}
-		}]);
-	
-		return Main;
-	}(_react.Component);
-	//Set display name to be used in React Dev Tools
-	
-	
-	exports.default = Main;
-	Main.displayName = 'Sample-Component';
-
-/***/ }),
-/* 468 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _style = __webpack_require__(469);
-	
-	var _style2 = _interopRequireDefault(_style);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var view = function view() {
-		var handleChange = this.handleChange,
-		    submit = this.submit,
-		    state = this.state;
-		var _state = this.state,
-		    loading = _state.loading,
-		    message = _state.message;
-	
-		return _react2.default.createElement(
-			"div",
-			{ className: "profile" },
-			_react2.default.createElement(
-				"div",
-				{ className: "form container" },
-				_react2.default.createElement(
-					"p",
-					{ className: "title" },
-					"My Account"
-				),
-				_react2.default.createElement(
-					"p",
-					{ className: "direction" },
-					"Here you can update your details"
-				),
-				_react2.default.createElement(
-					"form",
-					{ onSubmit: submit.bind(this) },
-					message ? _react2.default.createElement(
-						"div",
-						{ className: "alert alert-" + message.type },
-						message.text
-					) : null,
-					_react2.default.createElement(
-						"div",
-						{ className: "form-group" },
-						_react2.default.createElement(
-							"label",
-							{ htmlFor: "exampleInputEmail1" },
-							"Change Email Address"
-						),
-						_react2.default.createElement("input", { readOnly: loading,
-							onChange: handleChange.bind(this),
-							name: "email",
-							value: this.state.email,
-							type: "email",
-							className: "form-control",
-							id: "exampleInputEmail1",
-							"aria-describedby": "emailHelp",
-							placeholder: "Enter email",
-							required: true
-						})
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "form-group" },
-						_react2.default.createElement(
-							"label",
-							{ htmlFor: "exampleInputPassword1" },
-							"Choose new Password"
-						),
-						_react2.default.createElement("input", { readOnly: loading,
-							onChange: handleChange.bind(this),
-							name: "password",
-							value: this.state.password,
-							type: "password",
-							className: "form-control",
-							id: "exampleInputPassword1",
-							placeholder: "Password",
-							required: true
-						})
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "actions" },
-						_react2.default.createElement(
-							"button",
-							{ disabled: loading, type: "submit", className: "btn btn-yellow submit-btn" },
-							"Submit"
-						)
-					)
-				)
-			)
-		);
-	};
-	exports.default = view;
-
-/***/ }),
-/* 469 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(470);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// Prepare cssTransformation
-	var transform;
-	
-	var options = {"hmr":true}
-	options.transform = transform
-	// add the styles to the DOM
-	var update = __webpack_require__(405)(content, options);
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
-				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 470 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(404)(undefined);
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".profile .form {\n  padding: 50px; }\n  .profile .form .title {\n    font-size: 25px;\n    font-weight: bold;\n    margin-bottom: 10px; }\n  .profile .form .direction {\n    font-weight: 300; }\n  .profile .form form {\n    width: 60%;\n    margin-top: 30px; }\n", ""]);
-	
-	// exports
-	exports.locals = {
-		"profile": "profile",
-		"form": "form",
-		"title": "title",
-		"direction": "direction"
-	};
-
-/***/ }),
+/* 466 */,
+/* 467 */,
+/* 468 */,
+/* 469 */,
+/* 470 */,
 /* 471 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -59594,7 +59499,8 @@
 	
 		var _props = this.props,
 		    products = _props.products,
-		    categories = _props.categories;
+		    categories = _props.categories,
+		    user = _props.user;
 		var _state = this.state,
 		    category = _state.category,
 		    query = _state.query;
@@ -59681,7 +59587,8 @@
 								'div',
 								{ className: 'products' },
 								_react2.default.createElement(_index2.default, {
-									query: query
+									query: query,
+									user: user
 								})
 							)
 						)
@@ -59934,7 +59841,9 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		var query = this.state.query;
+		var _state = this.state,
+		    query = _state.query,
+		    user = _state.user;
 	
 		return query ? _react2.default.createElement(
 			'div',
@@ -59955,6 +59864,7 @@
 								'div',
 								{ className: 'products' },
 								_react2.default.createElement(_index2.default, {
+									user: user,
 									query: query
 								})
 							)
@@ -60050,10 +59960,76 @@
 			value: function componentDidMount() {
 				this.getProduct();
 			}
+			/**
+	   * Check if present in wishlist
+	   * @returns {boolean}
+	   */
+	
+		}, {
+			key: 'presentInWishList',
+			value: function presentInWishList() {
+				var _props = this.props,
+				    user = _props.user,
+				    product = _props.product;
+	
+				if (product) {
+					return user.savedProducts.indexOf(product._id) != -1;
+				} else {
+					return false;
+				}
+			}
+	
+			/**
+	   * Add/Remove to wishlist- Add/Remove logic is handled by server
+	   */
+	
+		}, {
+			key: 'addToWishList',
+			value: function addToWishList() {
+				var _this2 = this;
+	
+				var _props2 = this.props,
+				    addToWishList = _props2.addToWishList,
+				    product = _props2.product,
+				    user = _props2.user;
+	
+				this.setState({
+					loading: true
+				});
+				addToWishList({
+					product: product._id
+				}).then(function (action) {
+					if (!action.error) {
+						/**
+	      * Since here redux is not used for user so no need to use a reducer.
+	      * Check if product is added or removed
+	      */
+						var productId = action.payload.data._id;
+						if (user.savedProducts.indexOf(productId) == -1) {
+							user.savedProducts.push(productId);
+						} else {
+							user.savedProducts = user.savedProducts.filter(function (ele) {
+								return ele != productId;
+							});
+						}
+					}
+					/**
+	     * Reset Loading so that component can re-render to affect present in wishlist
+	     */
+					_this2.setState({
+						loading: false
+					});
+				});
+			}
+	
+			/**
+	   * Get product
+	   */
+	
 		}, {
 			key: 'getProduct',
 			value: function getProduct() {
-				var _this2 = this;
+				var _this3 = this;
 	
 				var getProduct = this.props.getProduct;
 	
@@ -60067,7 +60043,7 @@
 							//window.location.href="/";
 							return;
 						} else {
-							_this2.setState({
+							_this3.setState({
 								loading: true
 							});
 						}
@@ -60102,6 +60078,9 @@
 		return {
 			getProduct: function getProduct(data) {
 				return dispatch((0, _index.createAction)(_index.ActionNames.GET_PRODUCT, data));
+			},
+			addToWishList: function addToWishList(data) {
+				return dispatch((0, _index.createAction)(_index.ActionNames.SAVE_TO_WISHLIST, data));
 			}
 		};
 	}
@@ -60160,8 +60139,10 @@
 	var view = function view() {
 		var _props = this.props,
 		    product = _props.product,
-		    config = _props.config;
+		    config = _props.config,
+		    user = _props.user;
 	
+		var presentInWishList = this.presentInWishList();
 		var leftBanner = config.leftBanner && config.leftBanner.media ? config.leftBanner.media.url : null;
 		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
 		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
@@ -60235,6 +60216,23 @@
 										{ className: 'btn btn-yellow' },
 										'Check it out'
 									)
+								),
+								user ? _react2.default.createElement(
+									'a',
+									null,
+									_react2.default.createElement(
+										'button',
+										{ onClick: this.addToWishList.bind(this), className: 'btn btn-red save-btn' },
+										presentInWishList ? "Remove" : "Save"
+									)
+								) : _react2.default.createElement(
+									'a',
+									{ 'data-toggle': 'modal', 'data-target': '#login-modal' },
+									_react2.default.createElement(
+										'button',
+										{ className: 'btn btn-red save-btn' },
+										'Save'
+									)
 								)
 							),
 							_react2.default.createElement(
@@ -60262,7 +60260,17 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'col-md-12 col-lg-8 column' },
-						_react2.default.createElement(_index4.default, null)
+						_react2.default.createElement(_index4.default, {
+							user: user,
+							query: {
+								query: {
+									categories: {
+										$in: product.categories || []
+									}
+								}
+							}
+	
+						})
 					),
 					_react2.default.createElement(
 						'div',
@@ -61591,12 +61599,41 @@
 		function Main(props) {
 			_classCallCheck(this, Main);
 	
-			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+	
+			_this.state = {
+				query: _this.getQuery()
+			};
+			return _this;
 		}
 	
 		_createClass(Main, [{
+			key: 'getQuery',
+			value: function getQuery() {
+				if (typeof window != 'undefined') {
+					if (!this.props.user) {
+						window.location.href = "/";
+						return;
+					}
+					return {
+						query: {
+							_id: {
+								$in: this.props.user.savedProducts
+							}
+						}
+					};
+				}
+			}
+		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {}
+		}, {
+			key: 'onSaveToWishList',
+			value: function onSaveToWishList() {
+				this.setState({
+					query: this.getQuery()
+				});
+			}
 			/**
 	   * Render the view
 	   * @returns {*}
@@ -61646,7 +61683,16 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		return _react2.default.createElement(
+		var _props = this.props,
+		    config = _props.config,
+		    user = _props.user;
+	
+		var leftBanner = config.leftBanner && config.leftBanner.media ? config.leftBanner.media.url : null;
+		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
+		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
+		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
+	
+		return user ? _react2.default.createElement(
 			'div',
 			{ className: 'wish-list' },
 			_react2.default.createElement(
@@ -61666,49 +61712,12 @@
 					{ className: 'share' },
 					_react2.default.createElement(
 						'span',
-						{ className: 'title' },
-						'Share: '
-					),
-					_react2.default.createElement(
-						'ul',
 						null,
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								'a',
-								{ className: 'facebook' },
-								_react2.default.createElement('i', { className: 'fa fa-facebook-square', 'aria-hidden': 'true' })
-							)
-						),
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								'a',
-								{ className: 'twitter' },
-								_react2.default.createElement('i', { className: 'fa fa-twitter-square', 'aria-hidden': 'true' })
-							)
-						),
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								'a',
-								{ className: 'pinterest' },
-								_react2.default.createElement('i', { className: 'fa fa-pinterest-square', 'aria-hidden': 'true' })
-							)
-						),
-						_react2.default.createElement(
-							'li',
-							null,
-							_react2.default.createElement(
-								'a',
-								{ className: 'link' },
-								_react2.default.createElement('i', { className: 'fa fa-share-square-o', 'aria-hidden': 'true' })
-							)
-						)
-					)
+						'Share: \xA0'
+					),
+					_react2.default.createElement('div', {
+						'data-title': "Check My WishList", 'data-description': "Check My WishList",
+						className: 'addthis_inline_share_toolbox' })
 				)
 			),
 			_react2.default.createElement(
@@ -61720,21 +61729,25 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'col-md-0 col-lg-2 column left' },
-						_react2.default.createElement(_index2.default, null)
+						_react2.default.createElement(_index2.default, { banner: leftBanner, link: leftBannerlink })
 					),
 					_react2.default.createElement(
 						'div',
 						{ className: 'col-md-12 col-lg-8 column' },
-						_react2.default.createElement(_productGrid2.default, null)
+						_react2.default.createElement(_productGrid2.default, {
+							query: this.state.query,
+							user: user,
+							onSaveToWishList: this.onSaveToWishList.bind(this)
+						})
 					),
 					_react2.default.createElement(
 						'div',
 						{ className: 'col-md-0 col-lg-2 column right' },
-						_react2.default.createElement(_index2.default, null)
+						_react2.default.createElement(_index2.default, { banner: rightBanner, link: rightBannerlink })
 					)
 				)
 			)
-		);
+		) : null;
 	};
 	exports.default = view;
 
@@ -62840,706 +62853,15 @@
 	
 	var _view = __webpack_require__(532);
 	
-<<<<<<< HEAD
-	var _default2 = _interopRequireDefault(_default);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var Index = function Index(props) {
-		return _react2.default.createElement(
-			_default2.default,
-			props,
-			_react2.default.createElement(
-				'div',
-				{ className: 'container' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'jumbotron' },
-					_react2.default.createElement('img', { src: '/images/logo.svg', width: '160' }),
-					_react2.default.createElement(
-						'h1',
-						null,
-						'Welcome'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'This is your new ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'http://keystonejs.com', target: '_blank' },
-							'KeystoneJS'
-						),
-						' website.'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'It includes the latest versions of ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'http://getbootstrap.com/', target: '_blank' },
-							'Bootstrap'
-						),
-						' and ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'http://www.jquery.com/', target: '_blank' },
-							'jQuery'
-						),
-						'.'
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						'Visit the ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'http://keystonejs.com/guide', target: '_blank' },
-							'Getting Started'
-						),
-						' guide to learn how to customise it.'
-					),
-					_react2.default.createElement('hr', null),
-					props.user && props.user.canAccessKeystone ? _react2.default.createElement(
-						'p',
-						null,
-						_react2.default.createElement(
-							'a',
-							{ href: '/keystone', className: 'btn btn-lg btn-primary' },
-							'Open the Admin UI'
-						)
-					) : _react2.default.createElement(
-						'p',
-						null,
-						'We have created a default Admin user for you with the email ',
-						_react2.default.createElement(
-							'strong',
-							null,
-							'user@keystonejs.com'
-						),
-						' and the password ',
-						_react2.default.createElement(
-							'strong',
-							null,
-							'admin'
-						),
-						'.',
-						_react2.default.createElement('br', null),
-						_react2.default.createElement(
-							'a',
-							{ href: '/keystone/signin', style: { marginRight: '10px' }, className: 'btn btn-lg btn-primary' },
-							'Sign in'
-						),
-						'to use the Admin UI.'
-					),
-					_react2.default.createElement('hr', null),
-					_react2.default.createElement(
-						'p',
-						null,
-						'Remember to ',
-						_react2.default.createElement(
-							'a',
-							{ href: 'https://github.com/keystonejs/keystone', target: '_blank' },
-							'Star KeystoneJS on GitHub'
-						),
-						' and',
-						_react2.default.createElement(
-							'a',
-							{ href: 'https://twitter.com/keystonejs', target: '_blank' },
-							'follow @keystonejs'
-						),
-						' on twitter for updates.'
-					),
-					_react2.default.createElement('hr', null),
-					_react2.default.createElement(
-						'button',
-						{ className: 'btn btn-primary btn-large', onClick: function onClick() {
-								return alert('An alert from the frontend! with props, the section is: ' + props.section);
-							} },
-						'Click here to see frontend react in the works'
-					)
-				)
-			)
-		);
-	};
-	
-	// React Engine needs exports, don't export default
-	module.exports = Index;
-
-/***/ }),
-/* 537 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _default = __webpack_require__(327);
-	
-	var _default2 = _interopRequireDefault(_default);
-	
-	var _reactRedux = __webpack_require__(295);
-	
-	var _redux = __webpack_require__(329);
-	
-	var _redux2 = _interopRequireDefault(_redux);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var store = (0, _redux2.default)(_redux.initialState);
-	var Index = function Index(props) {
-		return _react2.default.createElement(
-			_default2.default,
-			props,
-			_react2.default.createElement(
-				_reactRedux.Provider,
-				{ store: store },
-				_react2.default.createElement(
-					'h1',
-					null,
-					'Test'
-				)
-			)
-		);
-	};
-	
-	// React Engine needs exports, don't export default
-	module.exports = Index;
-
-/***/ }),
-/* 538 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _main = __webpack_require__(539);
-	
-	var _main2 = _interopRequireDefault(_main);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _main2.default;
-
-/***/ }),
-/* 539 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _view = __webpack_require__(540);
-	
 	var _view2 = _interopRequireDefault(_view);
 	
-	var _axios = __webpack_require__(354);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-=======
-	var _view2 = _interopRequireDefault(_view);
-	
->>>>>>> 0db70eeabdc76543d8ff85f15ff5e89e7d701fa0
 	var _reactRedux = __webpack_require__(295);
 	
 	var _index = __webpack_require__(332);
 	
-<<<<<<< HEAD
-	var _request = __webpack_require__(385);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	/**
-	 * @name Product  Component
-	 * @type Component
-	 * @author Inderdeep Singh
-	 */
-	var Main = function (_Component) {
-		_inherits(Main, _Component);
-	
-		/**
-	  * Constructor
-	  * @param props
-	  */
-		function Main(props) {
-			_classCallCheck(this, Main);
-	
-			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
-	
-			_this.state = {
-				loading: true
-			};
-			return _this;
-		}
-	
-		_createClass(Main, [{
-			key: 'componentDidMount',
-			value: function componentDidMount() {
-				this.getProduct();
-			}
-		}, {
-			key: 'getProduct',
-			value: function getProduct() {
-				var _this2 = this;
-	
-				var getProduct = this.props.getProduct;
-	
-				var pathname = window.location.pathname;
-				var id = pathname.split("/")[2];
-				if (id && id != "") {
-					console.log(id);
-					getProduct(id).then(function (action) {
-						console.log(action);
-						if ((0, _request.getError)(action)) {
-							//window.location.href="/";
-							return;
-						} else {
-							_this2.setState({
-								loading: true
-							});
-						}
-					});
-				} else {
-					//window.location.href="/";
-				}
-			}
-			/**
-	   * Render the view
-	   * @returns {*}
-	   */
-	
-		}, {
-			key: 'render',
-			value: function render() {
-				return _view2.default.bind(this)();
-			}
-		}]);
-	
-		return Main;
-	}(_react.Component);
-	
-	/**
-	 * Bind Actions
-	 * @param dispatch
-	 * @returns Object
-	 */
-	
-	
-	function bindAction(dispatch) {
-		return {
-			getProduct: function getProduct(data) {
-				return dispatch((0, _index.createAction)(_index.ActionNames.GET_PRODUCT, data));
-			}
-		};
-	}
-	
-	/**
-	 * Map the shared state to properties
-	 * @param state
-	 * @returns Object
-	 */
-	var mapStateToProps = function mapStateToProps(state) {
-		// console.log(state)
-		return {
-			product: state.product
-		};
-	};
-	
-	//Set display name to be used in React Dev Tools
-	Main.displayName = 'Product';
-	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
-
-/***/ }),
-/* 540 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _style = __webpack_require__(541);
-	
-	var _style2 = _interopRequireDefault(_style);
-	
-	var _index = __webpack_require__(479);
-	
-	var _index2 = _interopRequireDefault(_index);
-	
-	var _index3 = __webpack_require__(454);
-	
-	var _index4 = _interopRequireDefault(_index3);
-	
-	var _index5 = __webpack_require__(436);
-	
-	var _index6 = _interopRequireDefault(_index5);
-	
-	var _common = __webpack_require__(412);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var view = function view() {
-		var _props = this.props,
-		    product = _props.product,
-		    config = _props.config,
-		    user = _props.user;
-	
-		var leftBanner = config.leftBanner && config.leftBanner.media ? config.leftBanner.media.url : null;
-		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
-		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
-		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
-		var productLink = null;
-		var imageUrl = null;
-		if (typeof window != 'undefined' && product) {
-			productLink = window.location.protocol + "//" + window.location.host + "/product/" + product._id + "/" + product.title.split(" ").join("-");
-			if (product.image) {
-				imageUrl = product.image.url;
-			}
-		}
-		return product ? _react2.default.createElement(
-			'div',
-			{ className: 'product-page' },
-			_react2.default.createElement(
-				'div',
-				{ className: 'container product' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-6 column' },
-						_react2.default.createElement(_index2.default, { data: [product.image.url].concat((product.moreImages || []).map(function (image) {
-								return image.url;
-							})) })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-6 column' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'product-details' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'product-title' },
-								_react2.default.createElement(
-									'p',
-									null,
-									product.title
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'product-description' },
-								_react2.default.createElement(
-									'p',
-									null,
-									product.content.brief
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'product-price' },
-								_react2.default.createElement(
-									'p',
-									null,
-									'$',
-									product.price || 0
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'product-actions' },
-								_react2.default.createElement(
-									'a',
-									{ href: product.link },
-									_react2.default.createElement(
-										'button',
-										{ className: 'btn btn-yellow' },
-										'Check it out'
-									)
-								),
-								user ? _react2.default.createElement(
-									'a',
-									null,
-									_react2.default.createElement(
-										'button',
-										{ className: 'btn btn-red save-btn' },
-										'Save'
-									)
-								) : _react2.default.createElement(
-									'a',
-									{ 'data-toggle': 'modal', 'data-target': '#login-modal' },
-									_react2.default.createElement(
-										'button',
-										{ className: 'btn btn-red save-btn' },
-										'Save'
-									)
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'share' },
-								_react2.default.createElement('div', {
-									'data-url': productLink, 'data-title': product.title, 'data-description': (0, _common.getPlainText)(product.content.brief),
-									'data-media': imageUrl, className: 'addthis_inline_share_toolbox' })
-							)
-						)
-					)
-				)
-			),
-			_react2.default.createElement(
-				'div',
-				{ className: 'more' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-0 col-lg-2 column left' },
-						_react2.default.createElement(_index6.default, { banner: leftBanner, link: leftBannerlink })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-12 col-lg-8 column' },
-						_react2.default.createElement(_index4.default, {
-							user: user,
-							query: {
-								query: {
-									categories: {
-										$in: product.categories || []
-									}
-								}
-							}
-	
-						})
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-0 col-lg-2 column right' },
-						_react2.default.createElement(_index6.default, { banner: rightBanner, link: rightBannerlink })
-					)
-				)
-			)
-		) : null;
-	};
-	exports.default = view;
-
-/***/ }),
-/* 541 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(542);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// Prepare cssTransformation
-	var transform;
-	
-	var options = {"hmr":true}
-	options.transform = transform
-	// add the styles to the DOM
-	var update = __webpack_require__(404)(content, options);
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
-				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 542 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(403)(undefined);
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-page {\n  padding-top: 70px; }\n  .product-page .product {\n    margin-bottom: 100px; }\n    .product-page .product .column {\n      padding: 0px; }\n      .product-page .product .column .product-details .product-title {\n        font-size: 30px;\n        margin-bottom: 8px; }\n      .product-page .product .column .product-details .product-description {\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n        line-height: 24px;\n        margin-bottom: 8px; }\n      .product-page .product .column .product-details .product-price {\n        font-size: 30px;\n        margin-bottom: 12px; }\n      .product-page .product .column .product-details .share {\n        margin-top: 10px; }\n        .product-page .product .column .product-details .share ul li {\n          display: inline-block;\n          margin-right: 8px; }\n          .product-page .product .column .product-details .share ul li a {\n            font-size: 35px; }\n            .product-page .product .column .product-details .share ul li a.facebook {\n              color: #3c5a98; }\n            .product-page .product .column .product-details .share ul li a.twitter {\n              color: #1ea1f2; }\n            .product-page .product .column .product-details .share ul li a.pinterest {\n              color: #bc0718; }\n  .product-page .more .row {\n    margin: 0px; }\n    .product-page .more .row .column {\n      padding: 0px; }\n      .product-page .more .row .column .container {\n        width: 100%; }\n      .product-page .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .product-page .more .row .column.left .banner {\n        margin-right: 0px; }\n      .product-page .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .product-page {\n    padding-top: 0px; }\n    .product-page .product .column {\n      padding: 20px; }\n      .product-page .product .column .carousel-indicators {\n        width: inherit; } }\n\n/* /responsiveness */\n", ""]);
-	
-	// exports
-	exports.locals = {
-		"product-page": "product-page",
-		"product": "product",
-		"column": "column",
-		"product-details": "product-details",
-		"product-title": "product-title",
-		"product-description": "product-description",
-		"product-price": "product-price",
-		"share": "share",
-		"facebook": "facebook",
-		"twitter": "twitter",
-		"pinterest": "pinterest",
-		"more": "more",
-		"row": "row",
-		"container": "container",
-		"banner": "banner",
-		"left": "left",
-		"right": "right",
-		"carousel-indicators": "carousel-indicators"
-	};
-
-/***/ }),
-/* 543 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /**
-	                                                                                                                                                                                                                                                                   * Authentication Reducer
-	                                                                                                                                                                                                                                                                   */
-	
-	
-	/**
-	 * Reducer Function
-	 * @param state
-	 * @param action
-	 * @returns {*}
-	 */
-	
-	
-	exports.default = function () {
-	    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-	    var action = arguments[1];
-	
-	
-	    switch (action.type) {
-	        case _actions.ActionNames.GET_PRODUCT:
-	            if (!(0, _request.getError)(action)) {
-	                var data = action.payload.data;
-	                return _extends({}, data);
-	            } else {
-	                return null;
-	            }
-	        case _actions.ActionNames.LOGOUT:
-	            return null;
-	    }
-	    return state;
-	};
-	
-	var _actions = __webpack_require__(332);
-	
-	var _request = __webpack_require__(385);
-
-/***/ }),
-/* 544 */
-/***/ (function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.getMaxPrice = getMaxPrice;
-	exports.getMinPrice = getMinPrice;
-	
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-	
-	function getMaxPrice(products) {
-	
-		return Math.max.apply(Math, _toConsumableArray((products || []).map(function (elt) {
-			return elt.price;
-		})));
-	}
-	
-	function getMinPrice(products) {
-		return Math.min.apply(Math, _toConsumableArray((products || []).map(function (elt) {
-			return elt.price;
-		})));
-	}
-
-/***/ }),
-/* 545 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _main = __webpack_require__(546);
-	
-	var _main2 = _interopRequireDefault(_main);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _main2.default;
-
-/***/ }),
-/* 546 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _view = __webpack_require__(547);
-	
-	var _view2 = _interopRequireDefault(_view);
-	
-	var _axios = __webpack_require__(354);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	var _index = __webpack_require__(332);
-	
-	var _request = __webpack_require__(385);
-	
-	var _reactRedux = __webpack_require__(295);
-=======
 	var _common = __webpack_require__(413);
 	
 	var _file = __webpack_require__(535);
->>>>>>> 0db70eeabdc76543d8ff85f15ff5e89e7d701fa0
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -63711,17 +63033,8 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-<<<<<<< HEAD
-		var _this = this;
-	
-		var _props = this.props,
-		    products = _props.products,
-		    categories = _props.categories,
-		    user = _props.user;
-=======
 		var handleChange = this.handleChange,
 		    submit = this.submit;
->>>>>>> 0db70eeabdc76543d8ff85f15ff5e89e7d701fa0
 		var _state = this.state,
 		    loading = _state.loading,
 		    message = _state.message;
@@ -63951,53 +63264,9 @@
 						)
 					),
 					_react2.default.createElement(
-<<<<<<< HEAD
-						'div',
-						{ className: 'col-md-9 column' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'category-wise' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'category-title' },
-								_react2.default.createElement(
-									'p',
-									null,
-									category.name
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'category-description' },
-								_react2.default.createElement(
-									'p',
-									null,
-									category.description
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'price-range' },
-								_react2.default.createElement(_index4.default, {
-									min: (0, _product.getMinPrice)(products),
-									max: (0, _product.getMaxPrice)(products),
-									onPriceChange: this.onPriceChange.bind(this)
-								})
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'products' },
-								_react2.default.createElement(_index2.default, {
-									query: query,
-									user: user
-								})
-							)
-						)
-=======
 						'button',
 						{ disabled: loading, type: 'submit', className: 'btn btn-yellow submit-btn' },
 						'Save and Continue >'
->>>>>>> 0db70eeabdc76543d8ff85f15ff5e89e7d701fa0
 					)
 				)
 			)
@@ -64272,15 +63541,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-<<<<<<< HEAD
-		var _state = this.state,
-		    query = _state.query,
-		    user = _state.user;
-	
-		return query ? _react2.default.createElement(
-=======
 		return _react2.default.createElement(
->>>>>>> 0db70eeabdc76543d8ff85f15ff5e89e7d701fa0
 			'div',
 			{ className: 'step' },
 			'payment'
@@ -64370,18 +63631,6 @@
 						null,
 						'This is your new ',
 						_react2.default.createElement(
-<<<<<<< HEAD
-							'div',
-							{ className: 'category-wise' },
-							_react2.default.createElement(
-								'div',
-								{ className: 'products' },
-								_react2.default.createElement(_index2.default, {
-									user: user,
-									query: query
-								})
-							)
-=======
 							'a',
 							{ href: 'http://keystonejs.com', target: '_blank' },
 							'KeystoneJS'
@@ -64424,7 +63673,6 @@
 							'a',
 							{ href: '/keystone', className: 'btn btn-lg btn-primary' },
 							'Open the Admin UI'
->>>>>>> 0db70eeabdc76543d8ff85f15ff5e89e7d701fa0
 						)
 					) : _react2.default.createElement(
 						'p',
@@ -64525,6 +63773,341 @@
 	
 	// React Engine needs exports, don't export default
 	module.exports = Index;
+
+/***/ }),
+/* 543 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(544);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 544 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(545);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _common = __webpack_require__(413);
+	
+	var _index = __webpack_require__(332);
+	
+	var _request = __webpack_require__(385);
+	
+	var _reactRedux = __webpack_require__(295);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Component
+	 * @type Component
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+	
+			if (!_this.props.user) {
+				if (typeof window != 'undefined') {
+					window.location.href = "/";
+				}
+				_this.state = {};
+			} else {
+				_this.state = {
+					"email": props.user.email,
+					"password": "",
+					"loading": false,
+					"message": null
+				};
+			}
+	
+			_this.handleChange = _common.handleChange.bind(_this);
+	
+			return _this;
+		}
+	
+		_createClass(Main, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {}
+		}, {
+			key: 'submit',
+			value: function submit(event) {
+				var _this2 = this;
+	
+				event.preventDefault();
+				var saveProfile = this.props.saveProfile;
+	
+				if (!this.state.email || this.state.email == '') {
+					return;
+				}
+				var obj = {
+					email: this.state.email
+				};
+				if (this.state.password != '') {
+					obj.password = this.state.password;
+				}
+				this.setState({ loading: true });
+				saveProfile(obj).then(function (action) {
+					if (!action.error) {
+						_this2.setState({
+							loading: false,
+							message: {
+								"type": "success",
+								"text": "Profile Saved Successfully",
+								"password": ""
+							}
+						});
+					} else {
+						_this2.setState({
+							loading: false,
+							message: {
+								"type": "error",
+								"text": "Error while saving the details."
+							}
+						});
+					}
+				});
+			}
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	/**
+	 * Bind Actions
+	 * @param dispatch
+	 * @returns Object
+	 */
+	
+	
+	function bindAction(dispatch) {
+		return {
+			saveProfile: function saveProfile(data) {
+				return dispatch((0, _index.createAction)(_index.ActionNames.SAVE_PROFILE, data));
+			}
+		};
+	}
+	
+	/**
+	 * Map the shared state to properties
+	 * @param state
+	 * @returns Object
+	 */
+	var mapStateToProps = function mapStateToProps(state) {
+		// console.log(state)
+		return {
+			emitter: state.emitter
+		};
+	};
+	
+	//Set display name to be used in React Dev Tools
+	Main.displayName = 'Profile';
+	
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
+
+/***/ }),
+/* 545 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(546);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		var handleChange = this.handleChange,
+		    submit = this.submit,
+		    state = this.state;
+		var _state = this.state,
+		    loading = _state.loading,
+		    message = _state.message;
+	
+		return _react2.default.createElement(
+			"div",
+			{ className: "profile" },
+			_react2.default.createElement(
+				"div",
+				{ className: "form container" },
+				_react2.default.createElement(
+					"p",
+					{ className: "title" },
+					"My Account"
+				),
+				_react2.default.createElement(
+					"p",
+					{ className: "direction" },
+					"Here you can update your details"
+				),
+				_react2.default.createElement(
+					"form",
+					{ onSubmit: submit.bind(this) },
+					message ? _react2.default.createElement(
+						"div",
+						{ className: "alert alert-" + message.type },
+						message.text
+					) : null,
+					_react2.default.createElement(
+						"div",
+						{ className: "form-group" },
+						_react2.default.createElement(
+							"label",
+							{ htmlFor: "exampleInputEmail1" },
+							"Change Email Address"
+						),
+						_react2.default.createElement("input", { readOnly: loading,
+							onChange: handleChange.bind(this),
+							name: "email",
+							value: this.state.email,
+							type: "email",
+							className: "form-control",
+							id: "exampleInputEmail1",
+							"aria-describedby": "emailHelp",
+							placeholder: "Enter email",
+							maxLength: "50",
+							required: true
+						})
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "form-group" },
+						_react2.default.createElement(
+							"label",
+							{ htmlFor: "exampleInputPassword1" },
+							"Choose new Password"
+						),
+						_react2.default.createElement("input", { readOnly: loading,
+							onChange: handleChange.bind(this),
+							name: "password",
+							value: this.state.password,
+							type: "password",
+							className: "form-control",
+							id: "exampleInputPassword1",
+							placeholder: "Password",
+							maxLength: "20"
+						})
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "actions" },
+						_react2.default.createElement(
+							"button",
+							{ type: "submit", className: "btn btn-yellow submit-btn" },
+							"Submit"
+						)
+					)
+				)
+			)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 546 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(547);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(405)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 547 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(404)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".profile .form {\n  padding: 50px; }\n  .profile .form .title {\n    font-size: 25px;\n    font-weight: bold;\n    margin-bottom: 10px; }\n  .profile .form .direction {\n    font-weight: 300; }\n  .profile .form form {\n    width: 60%;\n    margin-top: 30px; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"profile": "profile",
+		"form": "form",
+		"title": "title",
+		"direction": "direction"
+	};
 
 /***/ })
 /******/ ]);

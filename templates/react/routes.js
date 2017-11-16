@@ -1,5 +1,5 @@
 import Home from './containers/home';
-import Profile from './components/profile';
+import Profile from './containers/profile';
 import ProductGroup from './containers/productGroup';
 import SearchPage from './containers/searchPage';
 import Product from './containers/productPage';
@@ -54,7 +54,7 @@ const Routes = {
 	"/search/:text" : {
 		component : SearchPage
 	},
-	"/wishlist" : {
+	"/my-wishlist" : {
 		component : WishList
 	},
 	"/about" : {

@@ -39,14 +39,14 @@ var view = function () {
 									</a>
 									{
 										user.isAdmin ? (
-											<a className="nav-link" href="/keystone"><span
+											<a className="nav-link" target="blank" href="/keystone"><span
 												className="glyphicon glyphicon-home" aria-hidden="true"></span><span
 												className="text">Go To Admin</span></a>
 										) : null
 									}
 									<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
 										<a className="dropdown-item" href="/profile">My Settings</a>
-										<a className="dropdown-item" href="/wishlist">My Wishlist</a>
+										<a className="dropdown-item" href="/my-wishlist">My Wishlist</a>
 										<a className="dropdown-item" href="/keystone/signout">Logout</a>
 									</div>
 								</div>

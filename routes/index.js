@@ -38,6 +38,7 @@ var authApis = require('./api/auth');
 var contactApis = require('./api/contact');
 var products = require('./api/products');
 var product = require('./api/product');
+var wishlist = require('./api/wishlist');
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	/**
@@ -51,7 +52,9 @@ exports = module.exports = function (app) {
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 	app.get('/auth/checkDuplicate',authApis.checkDuplicate);
 	app.post('/auth/register',authApis.register);
+	app.post('/saveProfile',authApis.saveProfile);
 	app.post('/contact',contactApis);
 	app.post('/getProducts',products);
-	app.get('/getProduct/:id',product)
+	app.get('/getProduct/:id',product);
+	app.post('/wishlist',wishlist);
 };

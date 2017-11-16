@@ -12,4 +12,6 @@ export const FORGOT = SERVER + "session/signin";
 export const CHECK_DUPLICATE_EMAIL = HOST+"auth/checkDuplicate";
 export const PRODUCTS = HOST+"getProducts";
 export const PRODUCT = HOST+"getProduct";
+export const WISHLIST = HOST+"wishlist";
 export const ENQUIRY = HOST+"contact";
+export const PROFILE = HOST+"saveProfile";
