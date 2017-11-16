@@ -55684,7 +55684,8 @@
 		    filters = _props.filters,
 		    query = _props.query,
 		    priceRange = _props.priceRange,
-		    products = _props.products;
+		    products = _props.products,
+		    user = _props.user;
 	
 		var banner = config.banner && config.banner.media ? config.banner.media.url : null;
 		var link = config.banner && config.banner.value ? config.banner.value : null;
@@ -55714,7 +55715,8 @@
 						onPriceChange: this.onPriceChange.bind(this)
 					}) : null,
 					_react2.default.createElement(_index8.default, {
-						query: query
+						query: query,
+						user: user
 					})
 				),
 				_react2.default.createElement(
@@ -58455,7 +58457,8 @@
 	var view = function view() {
 		var _props = this.props,
 		    data = _props.data,
-		    hasMore = _props.hasMore;
+		    hasMore = _props.hasMore,
+		    user = _props.user;
 	
 		return _react2.default.createElement(
 			'div',
@@ -58479,7 +58482,7 @@
 						return _react2.default.createElement(
 							'div',
 							{ key: product._id, className: 'col-xm-12 col-sm-6 col-md-4' },
-							_react2.default.createElement(_index2.default, { data: product })
+							_react2.default.createElement(_index2.default, { user: user, data: product })
 						);
 					})
 				)
@@ -58817,7 +58820,9 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		var data = this.props.data;
+		var _props = this.props,
+		    data = _props.data,
+		    user = _props.user;
 		var _id = data._id;
 	
 		var imageUrl = null;
@@ -58848,10 +58853,18 @@
 						{ target: 'blank', href: productLink },
 						_react2.default.createElement('span', { style: (0, _common.getBackgroundImageStyle)(imageUrl), className: 'image' })
 					),
-					_react2.default.createElement(
+					user ? _react2.default.createElement(
 						'button',
 						{ className: 'btn btn-red save-btn' },
 						'Save'
+					) : _react2.default.createElement(
+						'a',
+						{ 'data-toggle': 'modal', 'data-target': '#login-modal' },
+						_react2.default.createElement(
+							'button',
+							{ className: 'btn btn-red save-btn' },
+							'Save'
+						)
 					)
 				),
 				_react2.default.createElement(
@@ -58879,9 +58892,14 @@
 					_react2.default.createElement(
 						'span',
 						{ className: 'saves' },
-						_react2.default.createElement(
+						user ? _react2.default.createElement(
 							'a',
 							{ className: 'icon', onClick: this.addToWishList.bind(this) },
+							_react2.default.createElement('i', { className: 'glyphicon glyphicon-heart-empty' }),
+							' '
+						) : _react2.default.createElement(
+							'a',
+							{ className: 'icon', 'data-toggle': 'modal', 'data-target': '#login-modal' },
 							_react2.default.createElement('i', { className: 'glyphicon glyphicon-heart-empty' }),
 							' '
 						),
@@ -62873,7 +62891,8 @@
 	var view = function view() {
 		var _props = this.props,
 		    product = _props.product,
-		    config = _props.config;
+		    config = _props.config,
+		    user = _props.user;
 	
 		var leftBanner = config.leftBanner && config.leftBanner.media ? config.leftBanner.media.url : null;
 		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
@@ -62948,6 +62967,23 @@
 										{ className: 'btn btn-yellow' },
 										'Check it out'
 									)
+								),
+								user ? _react2.default.createElement(
+									'a',
+									null,
+									_react2.default.createElement(
+										'button',
+										{ className: 'btn btn-red save-btn' },
+										'Save'
+									)
+								) : _react2.default.createElement(
+									'a',
+									{ 'data-toggle': 'modal', 'data-target': '#login-modal' },
+									_react2.default.createElement(
+										'button',
+										{ className: 'btn btn-red save-btn' },
+										'Save'
+									)
 								)
 							),
 							_react2.default.createElement(
@@ -62975,7 +63011,17 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'col-md-12 col-lg-8 column' },
-						_react2.default.createElement(_index4.default, null)
+						_react2.default.createElement(_index4.default, {
+							user: user,
+							query: {
+								query: {
+									categories: {
+										$in: product.categories || []
+									}
+								}
+							}
+	
+						})
 					),
 					_react2.default.createElement(
 						'div',
@@ -63360,7 +63406,8 @@
 	
 		var _props = this.props,
 		    products = _props.products,
-		    categories = _props.categories;
+		    categories = _props.categories,
+		    user = _props.user;
 		var _state = this.state,
 		    category = _state.category,
 		    query = _state.query;
@@ -63447,7 +63494,8 @@
 								'div',
 								{ className: 'products' },
 								_react2.default.createElement(_index2.default, {
-									query: query
+									query: query,
+									user: user
 								})
 							)
 						)
@@ -63700,7 +63748,9 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		var query = this.state.query;
+		var _state = this.state,
+		    query = _state.query,
+		    user = _state.user;
 	
 		return query ? _react2.default.createElement(
 			'div',
@@ -63721,6 +63771,7 @@
 								'div',
 								{ className: 'products' },
 								_react2.default.createElement(_index2.default, {
+									user: user,
 									query: query
 								})
 							)

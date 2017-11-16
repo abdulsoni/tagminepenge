@@ -5,7 +5,7 @@ import ProductGrid from '../productGrid/index';
 import Banner from '../../components/banner/index';
 import {getPlainText,getBackgroundImageStyle} from '../../utils/common'
 var view = function () {
-	const {product,config} = this.props;
+	const {product,config,user} = this.props;
 	const leftBanner = (config.leftBanner && config.leftBanner.media)?config.leftBanner.media.url:null;
 	const leftBannerlink = (config.leftBanner && config.leftBanner.value)?config.leftBanner.value:null;
 	const rightBanner = (config.rightBanner && config.rightBanner.media)?config.rightBanner.media.url:null;
@@ -42,19 +42,20 @@ var view = function () {
 								<a href={product.link}>
 								<button className="btn btn-yellow">Check it out</button>
 								</a>
+								{
+									user?(
+										<a>
+											<button className="btn btn-red save-btn">Save</button>
+										</a>
+									):(
+										<a data-toggle="modal" data-target="#login-modal">
+											<button className="btn btn-red save-btn">Save</button>
+										</a>
+									)
+								}
+								
 							</div>
 							<div className="share">
-								{/*<ul>*/}
-									{/*<li>*/}
-										{/*<a className="facebook"><i className="fa fa-facebook-square" aria-hidden="true"></i></a>*/}
-									{/*</li>*/}
-									{/*<li>*/}
-										{/*<a className="twitter"><i className="fa fa-twitter-square" aria-hidden="true"></i></a>*/}
-									{/*</li>*/}
-									{/*<li>*/}
-										{/*<a className="pinterest"><i className="fa fa-pinterest-square" aria-hidden="true"></i></a>*/}
-									{/*</li>*/}
-								{/*</ul>*/}
 								<div
 									data-url = {productLink} data-title={product.title} data-description={getPlainText(product.content.brief)}
 									data-media={imageUrl} className="addthis_inline_share_toolbox"/>
@@ -70,7 +71,17 @@ var view = function () {
 						<Banner banner = {leftBanner} link = {leftBannerlink}/>
 					</div>
 					<div className="col-md-12 col-lg-8 column">
-						<ProductGrid/>
+						<ProductGrid
+							user = {user}
+							query = {{
+								query : {
+									categories : {
+										$in : product.categories || []
+									}
+								}
+							}}
+						
+						/>
 					</div>
 					<div className="col-md-0 col-lg-2 column right">
 						<Banner banner = {rightBanner} link = {rightBannerlink}/>

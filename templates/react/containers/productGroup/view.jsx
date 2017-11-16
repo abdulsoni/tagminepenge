@@ -4,7 +4,7 @@ import ProductGrid from '../productGrid/index';
 import PriceRange from '../../components/priceRange/index';
 import {getMinPrice,getMaxPrice} from '../../helpers/product'
 var view = function() {
-	const {products,categories} = this.props;
+	const {products,categories,user} = this.props;
 	const {category,query} = this.state;
 	return category?(
 		<div className="product-group">
@@ -63,6 +63,7 @@ var view = function() {
 							<div className="products">
 								<ProductGrid
 									query = {query}
+									user = {user}
 								/>
 							</div>
 						</div>

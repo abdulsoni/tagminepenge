@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductGrid from '../productGrid/index';
 var view = function() {
-	const {query} = this.state;
+	const {query,user} = this.state;
 	return query?(
 		<div className="product-group">
 			<div className="container">
@@ -10,6 +10,7 @@ var view = function() {
 						<div className="category-wise">
 							<div className="products">
 								<ProductGrid
+									user = {user}
 									query = {query}
 								/>
 							</div>

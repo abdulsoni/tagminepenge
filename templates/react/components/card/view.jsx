@@ -2,7 +2,7 @@ import React from 'react';
 import styles from "./style.scss";
 import {getPlainText,getBackgroundImageStyle} from '../../utils/common'
 var view = function() {
-	const {data} = this.props;
+	const {data,user} = this.props;
 	const {_id} = data;
 	let imageUrl = null;
 	if(data.image){
@@ -17,7 +17,15 @@ var view = function() {
 			<div className="card-body">
 				<div className="product-image">
 					<a target="blank" href={productLink}><span style = {getBackgroundImageStyle(imageUrl)} className="image"></span></a>
-					<button className="btn btn-red save-btn">Save</button>
+					{
+						user?(
+							<button className="btn btn-red save-btn">Save</button>
+						):(
+							<a data-toggle="modal" data-target="#login-modal">
+								<button className="btn btn-red save-btn">Save</button>
+							</a>
+						)
+					}
 				</div>
 				<div className="product-text">
 					<p className="text">{getPlainText(data.content.brief)}</p>
@@ -27,7 +35,13 @@ var view = function() {
 				<div className="product-range">
 					<p className="cost">${data.price || 0}</p>
 					<span className="saves">
-						<a className="icon" onClick={this.addToWishList.bind(this)}><i className="glyphicon glyphicon-heart-empty"></i> </a>
+						{
+							user?(
+								<a className="icon" onClick={this.addToWishList.bind(this)}><i className="glyphicon glyphicon-heart-empty"></i> </a>
+							):(
+								<a className="icon" data-toggle="modal" data-target="#login-modal"><i className="glyphicon glyphicon-heart-empty"></i> </a>
+							)
+						}
 						<span className="count">{data.saves || 0}</span>
 						<span> saves</span>
 					</span>
@@ -37,17 +51,6 @@ var view = function() {
 						<button className="btn btn-yellow">Check it out</button>
 					</a>
 					<div className="share">
-						{/*<ul>*/}
-							{/*<li>*/}
-								{/*<a className="facebook"><i className="fa fa-facebook-square" aria-hidden="true"></i></a>*/}
-							{/*</li>*/}
-							{/*<li>*/}
-								{/*<a className="twitter"><i className="fa fa-twitter-square" aria-hidden="true"></i></a>*/}
-							{/*</li>*/}
-							{/*<li>*/}
-								{/*<a className="pinterest"><i className="fa fa-pinterest-square" aria-hidden="true"></i></a>*/}
-							{/*</li>*/}
-						{/*</ul>*/}
 						<div 
 							data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)}
 							 data-media={imageUrl} className="addthis_inline_share_toolbox"/>
