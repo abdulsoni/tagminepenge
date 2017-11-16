@@ -16,7 +16,9 @@ const ActionNames = {
 	GET_PRODUCTS: "GET_PRODUCTS",
 	SUBMIT_PRODUCT : "SUBMIT_PRODUCT",
 	CONTACT_US : "CONTACT_US",
-	GET_PRODUCT : "GET_PRODUCT"
+	GET_PRODUCT : "GET_PRODUCT",
+	SAVE_TO_WISHLIST : "SAVE_TO_WISHLIST",
+	SAVE_PROFILE : "SAVE_PROFILE"
 };
 export const Names = ActionNames;
 /**
@@ -126,6 +128,22 @@ const config = [
 		type: "ajax",
 		config: {
 			url: api.ENQUIRY,
+			method: 'POST'
+		}
+	},
+	{
+		name: ActionNames.SAVE_TO_WISHLIST,
+		type: "ajax",
+		config: {
+			url: api.WISHLIST,
+			method: 'POST'
+		}
+	},
+	{
+		name: ActionNames.SAVE_PROFILE,
+		type: "ajax",
+		config: {
+			url: api.PROFILE,
 			method: 'POST'
 		}
 	}

@@ -15,9 +15,11 @@ class Main extends Component {
 	 */
 	constructor(props){
 		super(props);
+		this.pageSize = 9;
 		if(props.query){
 			this.getProducts();
 		}
+		
 	}
 
 	/**
@@ -25,24 +27,35 @@ class Main extends Component {
 	 */
 	componentDidMount(){
 		const {emitter} = this.props;
-		emitter.addListener("REFRESH_PRODUCTS",(query)=>{
-			console.log(query)
+		emitter.addListener("REFRESH_PRODUCTS",(query)=>{				
 			this.getProducts(1,query)
 		})
 	}
-
+	componentWillReceiveProps(newProps){
+		if(JSON.stringify(this.props.query)!=JSON.stringify(newProps.query)){
+			this.getProducts(1)
+		}
+	}
 	/**
 	 * Get products
 	 * @param page
 	 */
 	getProducts(page,customQuery){
+		console.log(page);
 		page = page || 1;
 		const {getProducts,query} = this.props;
-		getProducts({
+		let obj = {
 			...query,
-			limit : 10,
-			skip : (page-1)*10
-		}).then(action=>{
+			limit : this.pageSize,
+			skip : (page-1)*this.pageSize
+		};
+		if(customQuery){
+			obj.query = {
+				...obj.query,
+				...customQuery
+			}
+		}
+		getProducts(obj).then(action=>{
 			//console.log(action)
 		})
 	}
@@ -78,6 +91,7 @@ const mapStateToProps = state => {
 	// console.log(state)
 	return {
 		data: state.products.results || [],
+		count : state.products.count,
 		hasMore : state.products.hasMore,
 		emitter : state.emitter
 	};

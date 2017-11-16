@@ -13,9 +13,33 @@ export default class Main extends Component {
 	 */
 	constructor(props){
 		super(props);
+		this.state = {
+			query : this.getQuery()
+		}
+	}
+	getQuery(){
+		if(typeof window!='undefined'){
+			if(!this.props.user){
+				window.location.href="/";
+				return;
+			}
+			return {
+				query : {
+					_id : {
+						$in : this.props.user.savedProducts
+					}
+				}
+			}
+		}
+		
 	}
 	componentDidMount(){
 		
+	}
+	onSaveToWishList(){
+		this.setState({
+			query : this.getQuery()
+		})
 	}
 	/**
 	 * Render the view

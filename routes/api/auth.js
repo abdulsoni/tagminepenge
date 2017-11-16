@@ -45,6 +45,30 @@ export  function register(req, res) {
 
 };
 
+export  function saveProfile(req, res) {
+	if(!req.user){
+		return res.sendStatus(401)
+	}
+	if(req.body.email){
+		req.user.email = req.body.email;
+	} else {
+		console.log("Email is missing")
+		return res.sendStatus(500)
+	}
+	if(req.body.password){
+		req.user.password = req.body.password;
+	}
+	req.user.save(function (err) {
+		if (err) {
+			console.log("Error while saving user",err)
+			// handle error
+			return res.sendStatus(500);
+		}
+
+		return res.json(true)
+	});
+
+};
 export  function forgot(req, res) {
 	if(!req.body.email){
 		console.log("Email absent")

@@ -29,6 +29,7 @@ var view = function () {
 							   id="exampleInputEmail1"
 							   aria-describedby="emailHelp"
 							   placeholder="Enter email"
+							   maxLength="50"
 							   required
 						/>
 					</div>
@@ -42,11 +43,11 @@ var view = function () {
 							   className="form-control"
 							   id="exampleInputPassword1"
 							   placeholder="Password"
-							   required
+							   maxLength="20"
 						/>
 					</div>
 					<div className="actions">
-						<button disabled={loading} type="submit" className="btn btn-yellow submit-btn">Submit</button>
+						<button type="submit" className="btn btn-yellow submit-btn">Submit</button>
 					</div>
 				</form>
 			</div>

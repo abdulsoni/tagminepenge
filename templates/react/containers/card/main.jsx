@@ -17,36 +17,35 @@ class Main extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			loading : true
+			loading : false
 		}
 	}
 	componentDidMount(){
-		this.getProduct()
+		
 	}
+
 	/**
 	 * Check if present in wishlist
 	 * @returns {boolean}
 	 */
 	presentInWishList(){
-		const {user,product} = this.props;
-		if(product){
-			return user.savedProducts.indexOf(product._id)!=-1;	
-		} else {
+		const {user,data} = this.props;
+		if(!user){
 			return false;
 		}
-		
+		return user.savedProducts.indexOf(data._id)!=-1;
 	}
 
 	/**
 	 * Add/Remove to wishlist- Add/Remove logic is handled by server
 	 */
 	addToWishList(){
-		let {addToWishList,product,user} = this.props;
+		let {addToWishList,data,user,onSaveToWishList,emitter} = this.props;
 		this.setState({
 			loading : true
 		});
 		addToWishList({
-			product : product._id
+			product : data._id
 		}).then((action)=>{
 			if(!action.error){
 				/**
@@ -61,6 +60,9 @@ class Main extends Component {
 						return ele != productId;
 					})
 				}
+				if(onSaveToWishList){
+					onSaveToWishList()
+				}
 			}
 			/**
 			 * Reset Loading so that component can re-render to affect present in wishlist
@@ -70,33 +72,6 @@ class Main extends Component {
 			});
 		})
 
-	}
-
-	/**
-	 * Get product
-	 */
-	getProduct(){
-		const {getProduct} = this.props;
-		let pathname = window.location.pathname;
-		let id = pathname.split("/")[2];
-		if(id && id!=""){
-			console.log(id)
-			getProduct(id).then(action=>{
-				console.log(action)
-				if(getError(action)){
-					//window.location.href="/";
-					return;
-				} else {
-					this.setState({
-						loading : true
-					})
-				}
-
-			})
-		} else {
-			//window.location.href="/";
-		}
-		
 	}
 	/**
 	 * Render the view
@@ -114,9 +89,6 @@ class Main extends Component {
  */
 function bindAction(dispatch) {
 	return {
-		getProduct : (data)=>{
-			return dispatch(createAction(ActionNames.GET_PRODUCT,data));
-		},
 		addToWishList : (data)=>{
 			return dispatch(createAction(ActionNames.SAVE_TO_WISHLIST,data));
 		}
@@ -131,12 +103,12 @@ function bindAction(dispatch) {
 const mapStateToProps = state => {
 	// console.log(state)
 	return {
-		product: state.product
+		emitter : state.emitter
 	};
 };
 
 //Set display name to be used in React Dev Tools
-Main.displayName = 'Product';
+Main.displayName = 'Product-Card';
 
 export default connect(mapStateToProps, bindAction)(Main);
 
