@@ -33,7 +33,7 @@ class Main extends Component {
 	}
 	componentWillReceiveProps(newProps){
 		if(JSON.stringify(this.props.query)!=JSON.stringify(newProps.query)){
-			this.getProducts(1)
+			this.getProducts(1,(newProps.query || {}).query)
 		}
 	}
 	/**

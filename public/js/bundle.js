@@ -58536,7 +58536,7 @@
 			key: 'componentWillReceiveProps',
 			value: function componentWillReceiveProps(newProps) {
 				if (JSON.stringify(this.props.query) != JSON.stringify(newProps.query)) {
-					this.getProducts(1);
+					this.getProducts(1, (newProps.query || {}).query);
 				}
 			}
 			/**
@@ -58653,7 +58653,7 @@
 		    onSaveToWishList = _props.onSaveToWishList,
 		    count = _props.count;
 	
-	
+		var pages = Math.floor(count / this.pageSize) + 1;
 		return _react2.default.createElement(
 			'div',
 			{ className: 'container' },
@@ -58667,7 +58667,12 @@
 						_react2.default.createElement(_index2.default, { onSaveToWishList: onSaveToWishList, user: user, data: product })
 					);
 				}),
-				_react2.default.createElement(_reactPaginate2.default, { previousLabel: "previous",
+				data.length == 0 ? _react2.default.createElement(
+					'p',
+					null,
+					'No Products found'
+				) : null,
+				pages > 1 ? _react2.default.createElement(_reactPaginate2.default, { previousLabel: "previous",
 					nextLabel: "next",
 					breakLabel: _react2.default.createElement(
 						'a',
@@ -58683,7 +58688,7 @@
 					},
 					containerClassName: "pagination",
 					subContainerClassName: "pages pagination",
-					activeClassName: "active" })
+					activeClassName: "active" }) : null
 			)
 		);
 	};
@@ -62801,6 +62806,7 @@
 						window.location.href = "/";
 						return;
 					}
+					console.log(this.props.user.savedProducts);
 					return {
 						query: {
 							_id: {
