@@ -52882,11 +52882,20 @@
 				'div',
 				{ className: 'main-container' },
 				_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user, categories: categories }),
-				_react2.default.createElement(routeInfo.component, _extends({ categories: categories }, routeInfo.routeProps, { filters: filters, user: user, config: config })),
+				_react2.default.createElement(routeInfo.component, _extends({ categories: categories }, routeInfo.routeProps, { filters: filters, user: user,
+					config: config })),
 				_react2.default.createElement(_index8.default, { config: config, categories: categories }),
 				_react2.default.createElement(_login2.default, null),
 				_react2.default.createElement(_index4.default, null),
-				_react2.default.createElement(_index6.default, null)
+				_react2.default.createElement(_index6.default, null),
+				_react2.default.createElement(
+					'a',
+					{ href: '/contact', className: 'contact-us-btn' },
+					_react2.default.createElement('span', {
+						className: 'icon glyphicon glyphicon-earphone',
+						'aria-hidden': 'true' }),
+					' CONTACT US'
+				)
 			)
 		);
 	};
@@ -55494,7 +55503,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.app {\n  background: #ffffff;\n  font-family: Oswald, Arial, sans-serif; }\n  .app .container {\n    width: 1000px; }\n  .app ul {\n    padding: 0px; }\n  .app p {\n    margin: 0;\n    padding: 0; }\n  .app a {\n    text-decoration: none;\n    cursor: pointer; }\n  .app input {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .app textarea {\n    max-height: 200px;\n    height: 180px;\n    resize: none;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .app .main-container {\n    margin-top: 123px; }\n  .app .content-center {\n    -ms-flex-pack: center;\n    justify-content: center;\n    -ms-flex-align: center;\n    align-items: center;\n    vertical-align: middle;\n    text-align: center;\n    display: -ms-flexbox;\n    display: flex; }\n  .app .btn-yellow {\n    color: #ffffff;\n    background-color: #77b353;\n    border-color: #77b353; }\n    .app .btn-yellow:hover {\n      background-color: #347C17;\n      border-color: #347C17; }\n  .app .btn-red {\n    color: #ffffff;\n    background-color: #cb1d00;\n    border-color: #cb1d00; }\n    .app .btn-red:hover {\n      background-color: #b91a00;\n      border-color: #b91a00; }\n  .app .btn {\n    font-size: 16px;\n    font-weight: 400;\n    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);\n    padding: 5px 12px;\n    border-radius: 2px; }\n  .app .input-group-btn .btn {\n    border-bottom-right-radius: 4px;\n    border-top-right-radius: 4px;\n    text-shadow: none;\n    padding: 6px 12px;\n    font-size: 14px; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .app .main-container {\n    width: 1500px;\n    margin: 123px auto auto auto; } }\n\n@media (max-width: 1024px) {\n  .app .container {\n    width: 100%; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.app {\n  background: #ffffff;\n  font-family: Oswald, Arial, sans-serif; }\n  .app .container {\n    width: 1000px; }\n  .app ul {\n    padding: 0px; }\n  .app p {\n    margin: 0;\n    padding: 0; }\n  .app a {\n    text-decoration: none;\n    cursor: pointer; }\n  .app input {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .app textarea {\n    max-height: 200px;\n    height: 180px;\n    resize: none;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .app .main-container {\n    margin-top: 123px; }\n  .app .content-center {\n    -ms-flex-pack: center;\n    justify-content: center;\n    -ms-flex-align: center;\n    align-items: center;\n    vertical-align: middle;\n    text-align: center;\n    display: -ms-flexbox;\n    display: flex; }\n  .app .btn-yellow {\n    color: #ffffff;\n    background-color: #77b353;\n    border-color: #77b353; }\n    .app .btn-yellow:hover {\n      background-color: #347C17;\n      border-color: #347C17; }\n  .app .btn-red {\n    color: #ffffff;\n    background-color: #cb1d00;\n    border-color: #cb1d00; }\n    .app .btn-red:hover {\n      background-color: #b91a00;\n      border-color: #b91a00; }\n  .app .btn {\n    font-size: 16px;\n    font-weight: 400;\n    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);\n    padding: 5px 12px;\n    border-radius: 2px; }\n  .app .input-group-btn .btn {\n    border-bottom-right-radius: 4px;\n    border-top-right-radius: 4px;\n    text-shadow: none;\n    padding: 6px 12px;\n    font-size: 14px; }\n  .app .contact-us-btn {\n    color: #fff;\n    background-color: #a54343;\n    display: block;\n    line-height: 45px;\n    height: 50px;\n    font-size: 18px;\n    padding: 1px 15px;\n    margin-right: -35px;\n    -webkit-transition: all .15s ease-in-out;\n    -moz-transition: all .15s ease-in-out;\n    transition: all .15s ease-in-out;\n    font-weight: 400;\n    margin-bottom: -5px;\n    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.3);\n    position: fixed;\n    bottom: 0px;\n    right: 100px;\n    border-top-left-radius: 4px;\n    border-top-right-radius: 4px; }\n    .app .contact-us-btn:hover {\n      text-decoration: none;\n      margin-bottom: 0; }\n    .app .contact-us-btn .icon {\n      margin-right: 5px; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .app .main-container {\n    width: 1500px;\n    margin: 123px auto auto auto; } }\n\n@media (max-width: 1024px) {\n  .app .container {\n    width: 100%; } }\n\n@media (max-width: 762px) {\n  .app .contact-us-btn {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -55505,7 +55514,9 @@
 		"btn-yellow": "btn-yellow",
 		"btn-red": "btn-red",
 		"btn": "btn",
-		"input-group-btn": "input-group-btn"
+		"input-group-btn": "input-group-btn",
+		"contact-us-btn": "contact-us-btn",
+		"icon": "icon"
 	};
 
 /***/ }),

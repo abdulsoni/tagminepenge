@@ -73,6 +73,34 @@
 	  font-size: 14px;
 	}
   }
+  .contact-us-btn{
+	color: #fff;
+	background-color: #a54343;
+	display: block;
+	line-height: 45px;
+	height: 50px;
+	font-size: 18px;
+	padding: 1px 15px;
+	margin-right: -35px;
+	-webkit-transition: all .15s ease-in-out;
+	-moz-transition: all .15s ease-in-out;
+	transition: all .15s ease-in-out;
+	font-weight: 400;
+	margin-bottom: -5px;
+	box-shadow: -1px -1px 5px rgba(0,0,0,.3);
+	position:fixed;
+	bottom:0px;
+	right:100px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	&:hover {
+	  text-decoration: none;
+	  margin-bottom: 0;
+	}
+	.icon{
+	  margin-right: 5px;
+	}
+  }
 }
 
 /* responsiveness */
@@ -94,7 +122,9 @@
 }
 
 @media (max-width: 762px) {
-
+  .app .contact-us-btn{
+	display: none;
+  }
 }
 
 @media (max-width: 520px) {
