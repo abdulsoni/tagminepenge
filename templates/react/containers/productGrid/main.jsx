@@ -33,7 +33,7 @@ class Main extends Component {
 	}
 	componentWillReceiveProps(newProps){
 		if(JSON.stringify(this.props.query)!=JSON.stringify(newProps.query)){
-			this.getProducts(1,(newProps.query || {}).query)
+			this.getProducts(1,newProps.query)
 		}
 	}
 	/**
@@ -46,17 +46,23 @@ class Main extends Component {
 		const {getProducts,query} = this.props;
 		let obj = {
 			...query,
+			...customQuery,
 			limit : this.pageSize,
 			skip : (page-1)*this.pageSize
 		};
-		if(customQuery){
-			obj.query = {
-				...obj.query,
-				...customQuery
-			}
+		// if(customQuery){
+		// 	obj.query = {
+		// 		...obj.query,
+		// 		...customQuery
+		// 	}
+		// }
+		obj.query = {
+			...obj.query,
+			state : 'published'
 		}
 		getProducts(obj).then(action=>{
 			//console.log(action)
+			document.body.scrollTop = document.documentElement.scrollTop = 0;
 		})
 	}
 	

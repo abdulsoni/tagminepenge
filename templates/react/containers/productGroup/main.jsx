@@ -29,13 +29,16 @@ class Main extends Component {
 	 * Price
 	 * @param price
 	 */
-	onPriceChange(price){
+	onPriceChange(price,sort){
 		const {emitter} = this.props;
 		emitter.emit("REFRESH_PRODUCTS",{
-			price : {
-				$gte : price[0],
-				$lte : price[1]
-			}
+			query : {
+				price : {
+					$gte : price[0],
+					$lte : price[1]
+				}
+			},
+			sort
 		});
 	}
 

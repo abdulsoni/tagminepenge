@@ -5,7 +5,7 @@ import ReactPaginate from 'react-paginate';
 
 var view = function () {
 	const {data, hasMore, user, onSaveToWishList, count} = this.props;
-	const pages = Math.floor(count / this.pageSize) + 1;
+	const pages = (count % this.pageSize!=0)?(Math.floor(count / this.pageSize) + 1):Math.floor(count / this.pageSize);
 	return (
 		<div className="container">
 			<div className="row">
@@ -31,7 +31,7 @@ var view = function () {
 									   nextLabel={"next"}
 									   breakLabel={<a href="">...</a>}
 									   breakClassName={"break-me"}
-									   pageCount={(Math.floor(count / this.pageSize) + 1)}
+									   pageCount={pages}
 									   marginPagesDisplayed={2}
 									   pageRangeDisplayed={5}
 									   onPageChange={(page) => {

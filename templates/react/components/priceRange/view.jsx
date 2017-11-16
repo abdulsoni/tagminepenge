@@ -11,11 +11,11 @@ var view = function () {
 					   data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
 			</div>
 			<div className="dropdown">
-				<select className="selectpicker">
-					<option value="high">Highest to Lowest</option>
-					<option value="low">Lowest to Highest</option>
-					<option value="new">Newest</option>
-					<option value="popular">Most Popular</option>
+				<select onChange={this.onSortChange.bind(this)} value  ={this.state.sort} className="selectpicker">
+					<option value="-price">Highest to Lowest</option>
+					<option value="price">Lowest to Highest</option>
+					<option value="-publishedDate">Newest</option>
+					<option value="saves">Most Popular</option>
 				</select> 
 			</div>
 		</div>

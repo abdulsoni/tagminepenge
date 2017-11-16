@@ -53130,7 +53130,7 @@
 							),
 							user.isAdmin ? _react2.default.createElement(
 								"a",
-								{ className: "nav-link", href: "/keystone" },
+								{ target: "blank", className: "nav-link", href: "/keystone" },
 								_react2.default.createElement("span", {
 									className: "icon glyphicon glyphicon-home",
 									"aria-hidden": "true" }),
@@ -55732,14 +55732,17 @@
 	
 		_createClass(Main, [{
 			key: 'onPriceChange',
-			value: function onPriceChange(price) {
+			value: function onPriceChange(price, sort) {
 				var emitter = this.props.emitter;
 	
 				emitter.emit("REFRESH_PRODUCTS", {
-					price: {
-						$gte: price[0],
-						$lte: price[1]
-					}
+					query: {
+						price: {
+							$gte: price[0],
+							$lte: price[1]
+						}
+					},
+					sort: sort
 				});
 			}
 			/**
@@ -56356,7 +56359,12 @@
 		function Main(props) {
 			_classCallCheck(this, Main);
 	
-			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+	
+			_this.state = {
+				sort: "saves"
+			};
+			return _this;
 		}
 	
 		_createClass(Main, [{
@@ -56380,10 +56388,19 @@
 						step: 10
 					});
 					_this2.slider.on("slideStop", function (val) {
-						onPriceChange ? onPriceChange(val) : null;
+						onPriceChange ? onPriceChange(val, _this2.state.sort) : null;
 					});
 				});
 			}
+		}, {
+			key: 'onSortChange',
+			value: function onSortChange(e) {
+				var onPriceChange = this.props.onPriceChange;
+	
+				this.setState({ sort: e.target.value });
+				onPriceChange ? onPriceChange(this.slider.getValue(), e.target.value) : null;
+			}
+	
 			/**
 	   * Render the view
 	   * @returns {*}
@@ -56443,25 +56460,25 @@
 				{ className: "dropdown" },
 				_react2.default.createElement(
 					"select",
-					{ className: "selectpicker" },
+					{ onChange: this.onSortChange.bind(this), value: this.state.sort, className: "selectpicker" },
 					_react2.default.createElement(
 						"option",
-						{ value: "high" },
+						{ value: "-price" },
 						"Highest to Lowest"
 					),
 					_react2.default.createElement(
 						"option",
-						{ value: "low" },
+						{ value: "price" },
 						"Lowest to Highest"
 					),
 					_react2.default.createElement(
 						"option",
-						{ value: "new" },
+						{ value: "-publishedDate" },
 						"Newest"
 					),
 					_react2.default.createElement(
 						"option",
-						{ value: "popular" },
+						{ value: "saves" },
 						"Most Popular"
 					)
 				)
@@ -58551,7 +58568,7 @@
 			key: 'componentWillReceiveProps',
 			value: function componentWillReceiveProps(newProps) {
 				if (JSON.stringify(this.props.query) != JSON.stringify(newProps.query)) {
-					this.getProducts(1, (newProps.query || {}).query);
+					this.getProducts(1, newProps.query);
 				}
 			}
 			/**
@@ -58568,15 +58585,22 @@
 				    getProducts = _props.getProducts,
 				    query = _props.query;
 	
-				var obj = _extends({}, query, {
+				var obj = _extends({}, query, customQuery, {
 					limit: this.pageSize,
 					skip: (page - 1) * this.pageSize
 				});
-				if (customQuery) {
-					obj.query = _extends({}, obj.query, customQuery);
-				}
+				// if(customQuery){
+				// 	obj.query = {
+				// 		...obj.query,
+				// 		...customQuery
+				// 	}
+				// }
+				obj.query = _extends({}, obj.query, {
+					state: 'published'
+				});
 				getProducts(obj).then(function (action) {
 					//console.log(action)
+					document.body.scrollTop = document.documentElement.scrollTop = 0;
 				});
 			}
 	
@@ -58668,7 +58692,7 @@
 		    onSaveToWishList = _props.onSaveToWishList,
 		    count = _props.count;
 	
-		var pages = Math.floor(count / this.pageSize) + 1;
+		var pages = count % this.pageSize != 0 ? Math.floor(count / this.pageSize) + 1 : Math.floor(count / this.pageSize);
 		return _react2.default.createElement(
 			'div',
 			{ className: 'container' },
@@ -58703,7 +58727,7 @@
 						'...'
 					),
 					breakClassName: "break-me",
-					pageCount: Math.floor(count / this.pageSize) + 1,
+					pageCount: pages,
 					marginPagesDisplayed: 2,
 					pageRangeDisplayed: 5,
 					onPageChange: function onPageChange(page) {
@@ -60569,14 +60593,17 @@
 	
 		}, {
 			key: 'onPriceChange',
-			value: function onPriceChange(price) {
+			value: function onPriceChange(price, sort) {
 				var emitter = this.props.emitter;
 	
 				emitter.emit("REFRESH_PRODUCTS", {
-					price: {
-						$gte: price[0],
-						$lte: price[1]
-					}
+					query: {
+						price: {
+							$gte: price[0],
+							$lte: price[1]
+						}
+					},
+					sort: sort
 				});
 			}
 	
