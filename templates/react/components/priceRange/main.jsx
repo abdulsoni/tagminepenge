@@ -35,7 +35,26 @@ export default class Main extends Component {
 			})
 		})
 	}
-
+	componentWillReceiveProps(newProps){
+		if(newProps.max!=this.props.max || newProps.min!=this.props.min){
+			setTimeout(() => {
+				const {min, max, onPriceChange} = this.props;
+				this.slider?this.slider.destroy():null;
+				this.slider = new Slider('input.slider-input', {
+					formatter: function (value) {
+						return 'Price : ' + value;
+					},
+					min,
+					max,
+					range: true,
+					step: 10
+				});
+				this.slider.on("slideStop", (val) => {
+					onPriceChange ? onPriceChange(val, this.state.sort) : null
+				})
+			})
+		}
+	}
 	onSortChange(e) {
 		const {onPriceChange} = this.props;
 		this.setState({sort: e.target.value})

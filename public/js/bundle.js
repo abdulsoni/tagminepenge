@@ -56393,6 +56393,34 @@
 				});
 			}
 		}, {
+			key: 'componentWillReceiveProps',
+			value: function componentWillReceiveProps(newProps) {
+				var _this3 = this;
+	
+				if (newProps.max != this.props.max || newProps.min != this.props.min) {
+					setTimeout(function () {
+						var _props2 = _this3.props,
+						    min = _props2.min,
+						    max = _props2.max,
+						    onPriceChange = _props2.onPriceChange;
+	
+						_this3.slider ? _this3.slider.destroy() : null;
+						_this3.slider = new _bootstrapSlider2.default('input.slider-input', {
+							formatter: function formatter(value) {
+								return 'Price : ' + value;
+							},
+							min: min,
+							max: max,
+							range: true,
+							step: 10
+						});
+						_this3.slider.on("slideStop", function (val) {
+							onPriceChange ? onPriceChange(val, _this3.state.sort) : null;
+						});
+					});
+				}
+			}
+		}, {
 			key: 'onSortChange',
 			value: function onSortChange(e) {
 				var onPriceChange = this.props.onPriceChange;
