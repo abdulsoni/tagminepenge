@@ -23,6 +23,7 @@ export default class Main extends Component {
 				window.location.href="/";
 				return;
 			}
+			console.log(this.props.user.savedProducts);
 			return {
 				query : {
 					_id : {

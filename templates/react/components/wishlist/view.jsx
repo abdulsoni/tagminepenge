@@ -8,7 +8,7 @@ var view = function () {
 	const leftBannerlink = (config.leftBanner && config.leftBanner.value)?config.leftBanner.value:null;
 	const rightBanner = (config.rightBanner && config.rightBanner.media)?config.rightBanner.media.url:null;
 	const rightBannerlink = (config.rightBanner && config.rightBanner.value)?config.rightBanner.value:null;
-
+	
 	return user?(
 		<div className="wish-list">
 			<div className="heading container">
