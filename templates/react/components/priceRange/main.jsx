@@ -38,17 +38,17 @@ export default class Main extends Component {
 
 	componentWillReceiveProps(newProps) {
 		if (newProps.max != this.props.max || newProps.min != this.props.min) {
-			setTimeout(() => {
-				const {min, max} = newProps;
-				let minValue = (min < this.props.min) ? min : this.props.min;
-				let maxValue = (max > this.props.max) ? max : this.props.max;
-			
-				//this.slider.setAttribute("min",minValue)
+			const {min, max} = newProps;
+			if(this.slider){
+				let minValue = (min < parseInt(this.slider.getAttribute("min"))) ? min : parseInt(this.slider.getAttribute("min"));
+				let maxValue = (max > parseInt(this.slider.getAttribute("max"))) ? max : parseInt(this.slider.getAttribute("max"));
+				this.slider.setAttribute("min",minValue)
 				this.slider.setAttribute("max",maxValue);
 				this.setState({
 					temp : !this.state.temp
 				})
-			})
+			}	
+			
 		}
 	}
 

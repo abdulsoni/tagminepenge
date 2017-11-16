@@ -56395,22 +56395,19 @@
 		}, {
 			key: 'componentWillReceiveProps',
 			value: function componentWillReceiveProps(newProps) {
-				var _this3 = this;
-	
 				if (newProps.max != this.props.max || newProps.min != this.props.min) {
-					setTimeout(function () {
-						var min = newProps.min,
-						    max = newProps.max;
+					var min = newProps.min,
+					    max = newProps.max;
 	
-						var minValue = min < _this3.props.min ? min : _this3.props.min;
-						var maxValue = max > _this3.props.max ? max : _this3.props.max;
-	
-						//this.slider.setAttribute("min",minValue)
-						_this3.slider.setAttribute("max", maxValue);
-						_this3.setState({
-							temp: !_this3.state.temp
+					if (this.slider) {
+						var minValue = min < parseInt(this.slider.getAttribute("min")) ? min : parseInt(this.slider.getAttribute("min"));
+						var maxValue = max > parseInt(this.slider.getAttribute("max")) ? max : parseInt(this.slider.getAttribute("max"));
+						this.slider.setAttribute("min", minValue);
+						this.slider.setAttribute("max", maxValue);
+						this.setState({
+							temp: !this.state.temp
 						});
-					});
+					}
 				}
 			}
 		}, {
