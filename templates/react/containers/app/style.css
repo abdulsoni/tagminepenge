@@ -86,6 +86,16 @@
       margin-bottom: 0; }
     .app .contact-us-btn .icon {
       margin-right: 5px; }
+  .app .pagination-box {
+    text-align: right; }
+  .app .pagination > li > a, .app .pagination > li > span {
+    color: #77b253; }
+  .app .pagination > .active > a, .app .pagination > .active > a:hover, .app .pagination > .active > a:focus, .app .pagination > .active > span, .app .pagination > .active > span:hover, .app .pagination > .active > span:focus {
+    background-color: #77b253;
+    border-color: #77b253; }
+  .app .empty-msg {
+    text-align: center;
+    color: #d8d8d8; }
 
 /* responsiveness */
 @media (min-width: 1500px) {
