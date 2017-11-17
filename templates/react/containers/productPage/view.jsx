@@ -37,20 +37,20 @@ var view = function () {
 								<p>{product.content.brief}</p>
 							</div>
 							<div className="product-price">
-								<p>${product.price || 0}</p>
+								<p>{product.price || 0} kr.</p>
 							</div>
 							<div className="product-actions">
 								<a href={product.link}>
-								<button className="btn btn-yellow">Check it out</button>
+								<button className="btn btn-yellow">Tjek det ud</button>
 								</a>
 								{
 									user?(
 										<a>
-											<button onClick={this.addToWishList.bind(this)} className="btn btn-red save-btn">{presentInWishList?"Remove":"Save"}</button>
+											<button onClick={this.addToWishList.bind(this)} className="btn btn-red save-btn">{presentInWishList?"Fjern":"Save"}</button>
 										</a>
 									):(
 										<a data-toggle="modal" data-target="#login-modal">
-											<button className="btn btn-red save-btn">Save</button>
+											<button className="btn btn-yellow save-btn">Save</button>
 										</a>
 									)
 								}
@@ -69,7 +69,7 @@ var view = function () {
 			<div className="more">
 				<div className="row">
 					<div className="col-md-0 col-lg-2 column left">
-						<Banner banner = {leftBanner} link = {leftBannerlink}/>
+						<Banner style={{height:600}} banner = {leftBanner} link = {leftBannerlink}/>
 					</div>
 					<div className="col-md-12 col-lg-8 column">
 						<ProductGrid
@@ -85,7 +85,7 @@ var view = function () {
 						/>
 					</div>
 					<div className="col-md-0 col-lg-2 column right">
-						<Banner banner = {rightBanner} link = {rightBannerlink}/>
+						<Banner style={{height:600}} banner = {rightBanner} link = {rightBannerlink}/>
 					</div>
 				</div>
 			</div>

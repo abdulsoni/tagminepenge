@@ -20,9 +20,9 @@ var view = function () {
 				<LoginModal/>
 				<SignUpModal/>
 				<ForgotModal/>
-				<a href="/contact" className="contact-us-btn"><span
-					className="icon glyphicon glyphicon-earphone"
-					aria-hidden="true"></span> CONTACT US</a>
+				{/*<a href="/contact" className="contact-us-btn"><span*/}
+					{/*className="icon glyphicon glyphicon-earphone"*/}
+					{/*aria-hidden="true"></span> CONTACT US</a>*/}
 			</div>
 		</div>
 	);

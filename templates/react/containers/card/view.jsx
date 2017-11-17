@@ -17,13 +17,13 @@ var view = function() {
 			</div>
 			<div className="card-body">
 				<div className="product-image">
-					<a href={productLink}><span style = {getBackgroundImageStyle(imageUrl)} className="image"></span></a>
+					<a href={data.link}><span style = {getBackgroundImageStyle(imageUrl)} className="image"></span></a>
 					{
 						user?(
-							<button onClick={this.addToWishList.bind(this)} className="btn btn-red save-btn">{!presentInWishList?"Save":"Remove"}</button>
+							<button onClick={this.addToWishList.bind(this)} className="btn btn-red save-btn">{!presentInWishList?"Save":"Fjern"}</button>
 						):(
 							<a data-toggle="modal" data-target="#login-modal">
-								<button className="btn btn-red save-btn">Save</button>
+								<button className="btn btn-yellow save-btn">Save</button>
 							</a>
 						)
 					}
@@ -34,7 +34,7 @@ var view = function() {
 			</div>
 			<div className="card-footer">
 				<div className="product-range">
-					<p className="cost">${data.price || 0}</p>
+					<p className="cost">{data.price || 0} kr.</p>
 					<span className="saves">
 						{
 							user?(
@@ -44,12 +44,12 @@ var view = function() {
 							)
 						}
 						<span className="count">{data.saves || 0}</span>
-						<span> saves</span>
+						<span> Gemte</span>
 					</span>
 				</div>
 				<div className="product-action">
 					<a target="blank" href={data.link} className="checkout-btn">
-						<button className="btn btn-yellow">Check it out</button>
+						<button className="btn btn-yellow">Tjek det ud</button>
 					</a>
 					<div className="share">
 						<div 

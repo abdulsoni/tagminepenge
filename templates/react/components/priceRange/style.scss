@@ -4,8 +4,9 @@
 .sorting{
   display: flex;
   justify-content: space-between;
-  padding:15px 15px 30px 15px;
+  padding:15px 30px 30px 15px;
   .price-range-slider{
+	padding-left: 23px;
 	.slider{
 	  &.slider-horizontal{
 		width:400px;

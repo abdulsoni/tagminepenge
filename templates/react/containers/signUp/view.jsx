@@ -36,7 +36,7 @@ var view = function () {
 								<div className="secondary-action">
 									<span>By signing up you agree to our <a className="inline-block">Terms and Policies</a></span>
 								</div>
-								<button type="submit" className="btn btn-yellow submit-btn">Submit</button>
+								<button type="submit" className="btn btn-yellow submit-btn">Gem</button>
 							</div>
 						</form>
 					</div>

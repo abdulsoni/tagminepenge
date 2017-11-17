@@ -18,6 +18,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
+    .card .card-header .product-title:hover {
+      color: #77b353; }
   .card .card-body .product-image {
     position: relative; }
     .card .card-body .product-image .save-btn {
@@ -73,7 +75,7 @@
       .card .card-footer .product-action .checkout-btn {
         display: block;
         margin-top: -20px;
-        margin-bottom: 2px; }
+        margin-bottom: 4px; }
   .card .share ul {
     margin: 0px; }
     .card .share ul li {

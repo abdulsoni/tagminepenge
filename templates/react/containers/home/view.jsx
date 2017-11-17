@@ -17,10 +17,10 @@ var view = function() {
 		<div className="home">
 			<div className="row">
 				<div className="col-md-0 col-lg-2 column left">
-					<Banner banner = {leftBanner} link = {leftBannerlink}/>
+					<Banner style={{height:600}} banner = {leftBanner} link = {leftBannerlink}/>
 				</div>
 				<div className="col-md-12 col-lg-8 column">
-					<Banner banner = {banner} link = {link}/>
+					<Banner style = {{marginLeft : 30,marginRight : 30}} banner = {banner} link = {link}/>
 					<Filters data = {filters}/>
 					{
 						priceRange?(
@@ -37,7 +37,7 @@ var view = function() {
 					/>
 				</div>
 				<div className="col-md-0 col-lg-2 column right">
-					<Banner banner = {rightBanner} link = {rightBannerlink}/>
+					<Banner style={{height:600}} banner = {rightBanner} link = {rightBannerlink}/>
 				</div>
 			</div>
 		</div>

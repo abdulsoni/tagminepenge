@@ -8,17 +8,19 @@
 .sorting {
   display: flex;
   justify-content: space-between;
-  padding: 15px 15px 30px 15px; }
-  .sorting .price-range-slider .slider.slider-horizontal {
-    width: 400px; }
-  .sorting .price-range-slider .slider .slider-handle {
-    top: -3px;
-    height: 25px;
-    background-image: linear-gradient(to bottom, #77b353 0%, #77b353 100%); }
-    .sorting .price-range-slider .slider .slider-handle.round {
-      border-radius: 0; }
-  .sorting .price-range-slider .slider .slider-selection {
-    background-image: linear-gradient(to bottom, #cb1d00 0%, #cb1d00 100%); }
+  padding: 15px 30px 30px 15px; }
+  .sorting .price-range-slider {
+    padding-left: 23px; }
+    .sorting .price-range-slider .slider.slider-horizontal {
+      width: 400px; }
+    .sorting .price-range-slider .slider .slider-handle {
+      top: -3px;
+      height: 25px;
+      background-image: linear-gradient(to bottom, #77b353 0%, #77b353 100%); }
+      .sorting .price-range-slider .slider .slider-handle.round {
+        border-radius: 0; }
+    .sorting .price-range-slider .slider .slider-selection {
+      background-image: linear-gradient(to bottom, #cb1d00 0%, #cb1d00 100%); }
   .sorting .selectpicker {
     border: 1px solid #e9e9e9; }
 

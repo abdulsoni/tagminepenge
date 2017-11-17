@@ -28,6 +28,7 @@ var _ = require('lodash')
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('routes', middleware.populateCategories);
 keystone.pre('routes', middleware.populateFilters);
+keystone.pre('routes', middleware.populateEntity);
 keystone.pre('render', middleware.flashMessages);
 keystone.pre('routes', keystone.security.csrf.middleware.init);
 // Import Route Controllers

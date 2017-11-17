@@ -12,10 +12,10 @@ var view = function () {
 			</div>
 			<div className="dropdown">
 				<select onChange={this.onSortChange.bind(this)} value  ={this.state.sort} className="selectpicker">
-					<option value="-price">Highest to Lowest</option>
-					<option value="price">Lowest to Highest</option>
-					<option value="-publishedDate">Newest</option>
-					<option value="saves">Most Popular</option>
+					<option value="-price">Højeste til Laveste</option>
+					<option value="price">Laveste til Højeste</option>
+					<option value="-publishedDate">Nyeste</option>
+					<option value="saves">Mest Populæ</option>
 				</select> 
 			</div>
 		</div>

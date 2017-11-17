@@ -37,7 +37,7 @@ var view = function () {
 									<a data-dismiss="modal" data-toggle="modal" data-target="#forgot-modal" className="forgot-password">Forgot Password ?</a>
 									<a data-dismiss="modal" data-toggle="modal" data-target="#sign-up-modal">>> Not a member yet? Click here to create an account</a>
 								</div>
-								<button disabled={loading} type="submit"  className="btn btn-yellow submit-btn">Submit</button>
+								<button disabled={loading} type="submit"  className="btn btn-yellow submit-btn">Gem</button>
 							</div>
 						</form>
 					</div>

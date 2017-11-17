@@ -48192,6 +48192,9 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
+				_react2.default.createElement('meta', { property: 'og:title', content: props.fbTitle }),
+				_react2.default.createElement('meta', { property: 'og:description', content: props.fbDescription }),
+				_react2.default.createElement('meta', { property: 'og:image', content: props.fbImage }),
 				_react2.default.createElement(
 					'title',
 					null,
@@ -48219,13 +48222,13 @@
 				// - The KeystoneJS Content Editor provides support for ks-editable data attributes,
 				// - which generate links to edit content for users who can access Keystone
 				&& _react2.default.createElement('script', { src: '/keystone/js/content/editor.js' }),
-				_react2.default.createElement('script', { type: 'text/javascript', src: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a' }),
 				_react2.default.createElement('script', { src: '/js/bundle.js' }),
 	
 				// - Add scripts that are globally required by your site here.
 	
 				// - Include template-specific javascript files by extending the js block
-				props.js
+				props.js,
+				_react2.default.createElement('script', { type: 'text/javascript', src: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a' })
 			)
 		);
 	};
@@ -52887,15 +52890,7 @@
 				_react2.default.createElement(_index8.default, { config: config, categories: categories }),
 				_react2.default.createElement(_login2.default, null),
 				_react2.default.createElement(_index4.default, null),
-				_react2.default.createElement(_index6.default, null),
-				_react2.default.createElement(
-					'a',
-					{ href: '/contact', className: 'contact-us-btn' },
-					_react2.default.createElement('span', {
-						className: 'icon glyphicon glyphicon-earphone',
-						'aria-hidden': 'true' }),
-					' CONTACT US'
-				)
+				_react2.default.createElement(_index6.default, null)
 			)
 		);
 	};
@@ -53071,7 +53066,7 @@
 								{ className: "input-group add-on" },
 								_react2.default.createElement("input", { value: this.state.searchText, onChange: function onChange(e) {
 										_this.setState({ searchText: e.target.value });
-									}, className: "form-control", placeholder: "Search", type: "text" }),
+									}, className: "form-control", placeholder: "S\xF8g", type: "text" }),
 								_react2.default.createElement(
 									"div",
 									{ className: "input-group-btn" },
@@ -53088,7 +53083,11 @@
 					_react2.default.createElement(
 						"div",
 						{ className: "logo" },
-						_react2.default.createElement("img", { src: "/images/logo.png", alt: "logo" })
+						_react2.default.createElement(
+							"a",
+							{ href: "/" },
+							_react2.default.createElement("img", { src: "/images/logo.png", alt: "logo" })
+						)
 					),
 					!user ? _react2.default.createElement(
 						"div",
@@ -53125,7 +53124,7 @@
 								_react2.default.createElement(
 									"span",
 									{ className: "text" },
-									"My Account"
+									"Min Konto"
 								)
 							),
 							user.isAdmin ? _react2.default.createElement(
@@ -53146,17 +53145,17 @@
 								_react2.default.createElement(
 									"a",
 									{ className: "dropdown-item", href: "/profile" },
-									"My Settings"
+									"Mine Indstillinger"
 								),
 								_react2.default.createElement(
 									"a",
 									{ className: "dropdown-item", href: "/my-wishlist" },
-									"My Wishlist"
+									"Min \xD8nskeliste"
 								),
 								_react2.default.createElement(
 									"a",
 									{ className: "dropdown-item", href: "/keystone/signout" },
-									"Logout"
+									"Log ud"
 								)
 							)
 						)
@@ -53255,7 +53254,7 @@
 						null,
 						_react2.default.createElement(
 							"a",
-							{ className: "nav-link dropdown-toggle", "data-toggle": "dropdown" },
+							{ href: "/category/gadgets", className: "nav-link dropdown-toggle" },
 							_react2.default.createElement(
 								"span",
 								{ className: "icon" },
@@ -53264,27 +53263,7 @@
 							_react2.default.createElement(
 								"span",
 								{ className: "text" },
-								"Others"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "dropdown-menu", "aria-labelledby": "dropdownMenuLink" },
-							(categories || []).filter(function (category) {
-								return category.displayType == 2;
-							}).map(function (category) {
-								return _react2.default.createElement(
-									"a",
-									{ href: "/category/" + category.key, key: category._id,
-										className: "dropdown-item" },
-									category.name
-								);
-							}),
-							_react2.default.createElement("div", { className: "dropdown-divider" }),
-							_react2.default.createElement(
-								"a",
-								{ className: "dropdown-item", href: "/contact" },
-								"Kontakt os"
+								"Ting Til Hjemmet"
 							)
 						)
 					)
@@ -53334,7 +53313,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.header {\n  position: fixed;\n  width: 100%;\n  top: 0px;\n  left: 0;\n  z-index: 2; }\n  .header .header-top {\n    height: 57px;\n    background: #f7f7f7; }\n    .header .header-top .content {\n      position: relative; }\n      .header .header-top .content .search {\n        position: absolute;\n        left: 0;\n        top: 2px; }\n        .header .header-top .content .search input {\n          height: 33px; }\n      .header .header-top .content .logo {\n        text-align: center; }\n        .header .header-top .content .logo img {\n          width: 220px; }\n      .header .header-top .content .actions {\n        position: absolute;\n        right: 10px;\n        top: 15px; }\n        .header .header-top .content .actions .dropdown-menu {\n          min-width: 140px;\n          border-radius: 0px;\n          background-color: #ededed;\n          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n          border: none;\n          padding: 0px; }\n          .header .header-top .content .actions .dropdown-menu a {\n            font-size: 15px;\n            padding: 10px;\n            display: block;\n            margin: 0px; }\n            .header .header-top .content .actions .dropdown-menu a:hover {\n              background: #e6e6e6; }\n        .header .header-top .content .actions a {\n          color: #000;\n          font-size: 16px;\n          font-weight: bold;\n          margin-left: 10px; }\n          .header .header-top .content .actions a .icon {\n            margin-right: 5px; }\n  .header .header-nav .nav-accent {\n    display: block;\n    width: 50%;\n    height: 66px;\n    position: absolute;\n    top: 57px;\n    z-index: -10;\n    -webkit-transition: height .5s;\n    -moz-transition: height .5s;\n    -o-transition: height .5s;\n    -ms-transition: height .5s;\n    transition: height .5s;\n    z-index: 1; }\n  .header .header-nav .nav-accent-left {\n    background-color: #77b353; }\n  .header .header-nav .nav-accent-right {\n    background-color: #77b353;\n    right: 0; }\n  .header .header-nav ul {\n    text-align: center;\n    padding: 0;\n    list-style: none;\n    font-size: 1.5em;\n    font-weight: 300;\n    position: relative;\n    z-index: 2;\n    margin-top: -6px; }\n    .header .header-nav ul li {\n      display: inline-block;\n      width: 10%;\n      text-align: center;\n      -webkit-transition: border .5s;\n      -moz-transition: border .5s;\n      -o-transition: border .5s;\n      -ms-transition: border .5s;\n      transition: border .5s;\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n      position: relative; }\n      .header .header-nav ul li a.nav-link {\n        display: block;\n        width: auto;\n        height: 76.91px;\n        color: rgba(249, 249, 249, 0.9);\n        text-decoration: none;\n        -webkit-transition: color .5s, background .5s, height .5s;\n        -moz-transition: color .5s, background .5s, height .5s;\n        -o-transition: color .5s, background .5s, height .5s;\n        -ms-transition: color .5s, background .5s, height .5s;\n        transition: color .5s, background .5s, height .5s;\n        cursor: pointer; }\n        .header .header-nav ul li a.nav-link .icon {\n          display: block;\n          padding-top: .5em; }\n        .header .header-nav ul li a.nav-link .text {\n          display: block;\n          font-size: 14.4px;\n          font-weight: 600; }\n        .header .header-nav ul li a.nav-link:hover {\n          height: 82.77px; }\n      .header .header-nav ul li .dropdown-menu {\n        top: 98%;\n        min-width: 145px;\n        border-radius: 0px;\n        background-color: #ededed;\n        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n        border: none;\n        padding: 0px; }\n        .header .header-nav ul li .dropdown-menu a {\n          color: #333;\n          padding: 8px 10px;\n          text-decoration: none;\n          display: block;\n          font-size: 17px;\n          font-weight: 400; }\n          .header .header-nav ul li .dropdown-menu a:hover {\n            border: none !important;\n            background: #e6e6e6; }\n        .header .header-nav ul li .dropdown-menu .dropdown-divider {\n          background-color: #858e94;\n          height: 1px; }\n      .header .header-nav ul li:nth-child(1) {\n        background: #ededed;\n        background: -moz-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #8E35EF), color-stop(100%, #8E35EF));\n        background: -webkit-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -o-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -ms-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: linear-gradient(to bottom, #8E35EF 0, #8E35EF 100%); }\n        .header .header-nav ul li:nth-child(1) a:hover {\n          border-bottom: 4px solid #650aca; }\n      .header .header-nav ul li:nth-child(2) {\n        background: #1569C7;\n        background: -moz-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1569C7), color-stop(100%, #1569C7));\n        background: -webkit-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -o-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -ms-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: linear-gradient(to bottom, #1569C7 0, #1569C7 100%); }\n        .header .header-nav ul li:nth-child(2) a:hover {\n          border-bottom: 4px solid #0d4a8c; }\n      .header .header-nav ul li:nth-child(3) {\n        background: #E8A317;\n        background: -moz-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E8A317), color-stop(100%, #E8A317));\n        background: -webkit-linear-gradient(top, #E8A317 0, #e9931a 100%);\n        background: -o-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: -ms-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: linear-gradient(to bottom, #E8A317 0, #E8A317 100%);\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n        .header .header-nav ul li:nth-child(3) a:hover {\n          border-bottom: 4px solid #af780b; }\n      .header .header-nav ul li:nth-child(4) {\n        background: #347C17;\n        background: -moz-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #347C17), color-stop(100%, #347C17));\n        background: -webkit-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -o-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -ms-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: linear-gradient(to bottom, #347C17 0, #347C17 100%); }\n        .header .header-nav ul li:nth-child(4) a:hover {\n          border-bottom: 4px solid #275f0f; }\n      .header .header-nav ul li:nth-child(5) {\n        background: #F70D1A;\n        background: -moz-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F70D1A), color-stop(100%, #F70D1A));\n        background: -webkit-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -o-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -ms-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: linear-gradient(to bottom, #F70D1A 0, #F70D1A 100%); }\n        .header .header-nav ul li:nth-child(5) a:hover {\n          border-bottom: 4px solid #b10610; }\n      .header .header-nav ul li:nth-child(6) {\n        background: #152836;\n        background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n        background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: linear-gradient(to bottom, #1c3648 0, #152836 100%); }\n        .header .header-nav ul li:nth-child(6) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li:nth-child(7) {\n        background: #d06503;\n        background: -moz-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e97103), color-stop(100%, #d06503));\n        background: -webkit-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -o-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -ms-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: linear-gradient(to bottom, #e97103 0, #d06503 100%); }\n        .header .header-nav ul li:nth-child(7) a:hover {\n          border-bottom: 4px solid #a75103; }\n      .header .header-nav ul li:nth-child(9) {\n        background: #F70D1A;\n        background: -moz-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F70D1A), color-stop(100%, #F70D1A));\n        background: -webkit-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -o-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -ms-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: linear-gradient(to bottom, #F70D1A 0, #F70D1A 100%); }\n        .header .header-nav ul li:nth-child(9) a:hover {\n          border-bottom: 4px solid #b10610; }\n      .header .header-nav ul li:nth-child(8) {\n        background: #a54343;\n        background: -moz-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a54343), color-stop(100%, #a54343));\n        background: -webkit-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: -o-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: -ms-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: linear-gradient(to bottom, #a54343 0, #a54343 100%); }\n        .header .header-nav ul li:nth-child(8) a:hover {\n          border-bottom: 4px solid #6f2b2b; }\n      .header .header-nav ul li:nth-child(10) {\n        background: #09019c;\n        background: -moz-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #09019c), color-stop(100%, #09019c));\n        background: -webkit-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: -o-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: -ms-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: linear-gradient(to bottom, #09019c 0, #09019c 100%); }\n        .header .header-nav ul li:nth-child(10) a:hover {\n          border-bottom: 4px solid #070179; }\n      .header .header-nav ul li.mobile {\n        display: none; }\n      .header .header-nav ul li.desktop {\n        display: inline-block; }\n  .header.shrink .nav-accent {\n    height: 37px; }\n  .header.shrink .header-nav ul {\n    margin-top: -5px; }\n    .header.shrink .header-nav ul li a.nav-link {\n      height: 46px; }\n      .header.shrink .header-nav ul li a.nav-link .icon {\n        display: none; }\n      .header.shrink .header-nav ul li a.nav-link .text {\n        padding-top: 13px; }\n      .header.shrink .header-nav ul li a.nav-link:hover {\n        height: 50px; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .header .header-nav ul {\n    width: 1500px;\n    margin: -6px auto auto auto; } }\n\n@media (max-width: 1024px) {\n  .header .header-nav ul {\n    margin-top: 0px; }\n  .header .header-nav ul li {\n    width: 15%;\n    box-shadow: none;\n    vertical-align: top; }\n  .header .header-nav ul li a.nav-link {\n    height: 66px; } }\n\n@media (max-width: 768px) {\n  .header .header-top .content .search {\n    display: none; }\n  .header .header-nav ul li.desktop {\n    display: none; }\n  .header .header-nav ul li.mobile {\n    display: inline-block; }\n  .header .header-top .content .logo img {\n    position: absolute;\n    left: 2px;\n    top: 8px; } }\n\n@media (max-width: 520px) {\n  .header .header-nav ul li {\n    width: 25%; }\n  .header .header-nav ul li .dropdown-menu {\n    left: -30px; } }\n\n@media (max-width: 420px) {\n  .header .header-nav ul li .dropdown-menu {\n    left: -70px; }\n  .header .header-top .content .actions {\n    top: 7px; }\n  .header .header-top .content .actions a {\n    display: block; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.header {\n  position: fixed;\n  width: 100%;\n  top: 0px;\n  left: 0;\n  z-index: 2; }\n  .header .header-top {\n    height: 57px;\n    background: #f7f7f7; }\n    .header .header-top .content {\n      position: relative; }\n      .header .header-top .content .search {\n        position: absolute;\n        left: 0;\n        top: 2px; }\n        .header .header-top .content .search input {\n          height: 33px; }\n      .header .header-top .content .logo {\n        text-align: center; }\n        .header .header-top .content .logo img {\n          width: 220px; }\n      .header .header-top .content .actions {\n        position: absolute;\n        right: 10px;\n        top: 15px; }\n        .header .header-top .content .actions .dropdown-menu {\n          min-width: 140px;\n          border-radius: 0px;\n          background-color: #ededed;\n          box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n          border: none;\n          padding: 0px; }\n          .header .header-top .content .actions .dropdown-menu a {\n            font-size: 15px;\n            padding: 10px;\n            display: block;\n            margin: 0px; }\n            .header .header-top .content .actions .dropdown-menu a:hover {\n              background: #e6e6e6; }\n        .header .header-top .content .actions a {\n          color: #000;\n          font-size: 16px;\n          font-weight: bold;\n          margin-left: 10px; }\n          .header .header-top .content .actions a .icon {\n            margin-right: 5px; }\n  .header .header-nav .nav-accent {\n    display: block;\n    width: 50%;\n    height: 66px;\n    position: absolute;\n    top: 57px;\n    z-index: -10;\n    -webkit-transition: height .5s;\n    -moz-transition: height .5s;\n    -o-transition: height .5s;\n    -ms-transition: height .5s;\n    transition: height .5s;\n    z-index: 1; }\n  .header .header-nav .nav-accent-left {\n    background-color: #77b353; }\n  .header .header-nav .nav-accent-right {\n    background-color: #77b353;\n    right: 0; }\n  .header .header-nav ul {\n    text-align: center;\n    padding: 0;\n    list-style: none;\n    font-size: 1.5em;\n    font-weight: 300;\n    position: relative;\n    z-index: 2;\n    margin-top: -6px; }\n    .header .header-nav ul li {\n      display: inline-block;\n      width: 10%;\n      text-align: center;\n      -webkit-transition: border .5s;\n      -moz-transition: border .5s;\n      -o-transition: border .5s;\n      -ms-transition: border .5s;\n      transition: border .5s;\n      box-shadow: 3px 3.25px 7px rgba(0, 0, 0, 0.3);\n      position: relative; }\n      .header .header-nav ul li a.nav-link {\n        display: block;\n        width: auto;\n        height: 76.91px;\n        color: rgba(249, 249, 249, 0.9);\n        text-decoration: none;\n        -webkit-transition: color .5s, background .5s, height .5s;\n        -moz-transition: color .5s, background .5s, height .5s;\n        -o-transition: color .5s, background .5s, height .5s;\n        -ms-transition: color .5s, background .5s, height .5s;\n        transition: color .5s, background .5s, height .5s;\n        cursor: pointer; }\n        .header .header-nav ul li a.nav-link .icon {\n          display: block;\n          padding-top: .5em; }\n        .header .header-nav ul li a.nav-link .text {\n          display: block;\n          font-size: 14.4px;\n          font-weight: 600; }\n        .header .header-nav ul li a.nav-link:hover {\n          height: 82.77px; }\n      .header .header-nav ul li .dropdown-menu {\n        top: 98%;\n        min-width: 145px;\n        border-radius: 0px;\n        background-color: #ededed;\n        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);\n        border: none;\n        padding: 0px; }\n        .header .header-nav ul li .dropdown-menu a {\n          color: #333;\n          padding: 8px 10px;\n          text-decoration: none;\n          display: block;\n          font-size: 17px;\n          font-weight: 400; }\n          .header .header-nav ul li .dropdown-menu a:hover {\n            border: none !important;\n            background: #e6e6e6; }\n        .header .header-nav ul li .dropdown-menu .dropdown-divider {\n          background-color: #858e94;\n          height: 1px; }\n      .header .header-nav ul li:nth-child(1) {\n        background: #ededed;\n        background: -moz-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #8E35EF), color-stop(100%, #8E35EF));\n        background: -webkit-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -o-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: -ms-linear-gradient(top, #8E35EF 0, #8E35EF 100%);\n        background: linear-gradient(to bottom, #8E35EF 0, #8E35EF 100%); }\n        .header .header-nav ul li:nth-child(1) a:hover {\n          border-bottom: 4px solid #650aca; }\n      .header .header-nav ul li:nth-child(2) {\n        background: #1569C7;\n        background: -moz-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1569C7), color-stop(100%, #1569C7));\n        background: -webkit-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -o-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: -ms-linear-gradient(top, #1569C7 0, #1569C7 100%);\n        background: linear-gradient(to bottom, #1569C7 0, #1569C7 100%); }\n        .header .header-nav ul li:nth-child(2) a:hover {\n          border-bottom: 4px solid #0d4a8c; }\n      .header .header-nav ul li:nth-child(3) {\n        background: #E8A317;\n        background: -moz-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #E8A317), color-stop(100%, #E8A317));\n        background: -webkit-linear-gradient(top, #E8A317 0, #e9931a 100%);\n        background: -o-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: -ms-linear-gradient(top, #E8A317 0, #E8A317 100%);\n        background: linear-gradient(to bottom, #E8A317 0, #E8A317 100%);\n        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0); }\n        .header .header-nav ul li:nth-child(3) a:hover {\n          border-bottom: 4px solid #af780b; }\n      .header .header-nav ul li:nth-child(4) {\n        background: #347C17;\n        background: -moz-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #347C17), color-stop(100%, #347C17));\n        background: -webkit-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -o-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: -ms-linear-gradient(top, #347C17 0, #347C17 100%);\n        background: linear-gradient(to bottom, #347C17 0, #347C17 100%); }\n        .header .header-nav ul li:nth-child(4) a:hover {\n          border-bottom: 4px solid #275f0f; }\n      .header .header-nav ul li:nth-child(5) {\n        background: #F70D1A;\n        background: -moz-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F70D1A), color-stop(100%, #F70D1A));\n        background: -webkit-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -o-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -ms-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: linear-gradient(to bottom, #F70D1A 0, #F70D1A 100%); }\n        .header .header-nav ul li:nth-child(5) a:hover {\n          border-bottom: 4px solid #b10610; }\n      .header .header-nav ul li:nth-child(6) {\n        background: #152836;\n        background: -moz-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1c3648), color-stop(100%, #152836));\n        background: -webkit-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -o-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: -ms-linear-gradient(top, #1c3648 0, #152836 100%);\n        background: linear-gradient(to bottom, #1c3648 0, #152836 100%); }\n        .header .header-nav ul li:nth-child(6) a:hover {\n          border-bottom: 4px solid #000; }\n      .header .header-nav ul li:nth-child(7) {\n        background: #d06503;\n        background: -moz-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #e97103), color-stop(100%, #d06503));\n        background: -webkit-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -o-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: -ms-linear-gradient(top, #e97103 0, #d06503 100%);\n        background: linear-gradient(to bottom, #e97103 0, #d06503 100%); }\n        .header .header-nav ul li:nth-child(7) a:hover {\n          border-bottom: 4px solid #a75103; }\n      .header .header-nav ul li:nth-child(9) {\n        background: #F70D1A;\n        background: -moz-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #F70D1A), color-stop(100%, #F70D1A));\n        background: -webkit-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -o-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: -ms-linear-gradient(top, #F70D1A 0, #F70D1A 100%);\n        background: linear-gradient(to bottom, #F70D1A 0, #F70D1A 100%); }\n        .header .header-nav ul li:nth-child(9) a:hover {\n          border-bottom: 4px solid #b10610; }\n      .header .header-nav ul li:nth-child(8) {\n        background: #a54343;\n        background: -moz-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #a54343), color-stop(100%, #a54343));\n        background: -webkit-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: -o-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: -ms-linear-gradient(top, #a54343 0, #a54343 100%);\n        background: linear-gradient(to bottom, #a54343 0, #a54343 100%); }\n        .header .header-nav ul li:nth-child(8) a:hover {\n          border-bottom: 4px solid #6f2b2b; }\n      .header .header-nav ul li:nth-child(10) {\n        background: #09019c;\n        background: -moz-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #09019c), color-stop(100%, #09019c));\n        background: -webkit-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: -o-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: -ms-linear-gradient(top, #09019c 0, #09019c 100%);\n        background: linear-gradient(to bottom, #09019c 0, #09019c 100%); }\n        .header .header-nav ul li:nth-child(10) a:hover {\n          border-bottom: 4px solid #070179; }\n      .header .header-nav ul li.mobile {\n        display: none; }\n      .header .header-nav ul li.desktop {\n        display: inline-block; }\n  .header.shrink .nav-accent {\n    height: 37px; }\n  .header.shrink .header-nav ul {\n    margin-top: -5px; }\n    .header.shrink .header-nav ul li a.nav-link {\n      height: 46px; }\n      .header.shrink .header-nav ul li a.nav-link .icon {\n        display: none; }\n      .header.shrink .header-nav ul li a.nav-link .text {\n        padding-top: 13px; }\n      .header.shrink .header-nav ul li a.nav-link:hover {\n        height: 50px; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .header .header-nav ul {\n    width: 1500px;\n    margin: -6px auto auto auto; } }\n\n@media (max-width: 1024px) {\n  .header .header-nav ul {\n    margin-top: 0px; }\n  .header .header-nav ul li {\n    width: 15%;\n    box-shadow: none;\n    vertical-align: top; }\n  .header .header-nav ul li a.nav-link {\n    height: 66px; } }\n\n@media (max-width: 768px) {\n  .header .header-top .content .search {\n    display: none; }\n  .header .header-nav ul li.desktop {\n    display: none; }\n  .header .header-nav ul li.mobile {\n    display: inline-block; }\n  .header .header-top .content .logo img {\n    position: absolute;\n    left: 2px;\n    top: 8px; } }\n\n@media (max-width: 520px) {\n  .header .header-nav ul li {\n    width: 25%; }\n  .header .header-nav ul li .dropdown-menu {\n    left: -30px; } }\n\n@media (max-width: 420px) {\n  .header .header-nav ul li .dropdown-menu {\n    left: -70px; }\n  .header .header-top .content .actions {\n    top: 23px; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -54181,7 +54160,7 @@
 								_react2.default.createElement(
 									"button",
 									{ disabled: loading, type: "submit", className: "btn btn-yellow submit-btn" },
-									"Submit"
+									"Gem"
 								)
 							)
 						)
@@ -54707,7 +54686,7 @@
 								_react2.default.createElement(
 									"button",
 									{ type: "submit", className: "btn btn-yellow submit-btn" },
-									"Submit"
+									"Gem"
 								)
 							)
 						)
@@ -55026,7 +55005,7 @@
 								_react2.default.createElement(
 									"button",
 									{ disabled: loading, type: "submit", className: "btn btn-yellow submit-btn" },
-									"Submit"
+									"Gem"
 								)
 							)
 						)
@@ -55849,12 +55828,12 @@
 				_react2.default.createElement(
 					'div',
 					{ className: 'col-md-0 col-lg-2 column left' },
-					_react2.default.createElement(_index2.default, { banner: leftBanner, link: leftBannerlink })
+					_react2.default.createElement(_index2.default, { style: { height: 600 }, banner: leftBanner, link: leftBannerlink })
 				),
 				_react2.default.createElement(
 					'div',
 					{ className: 'col-md-12 col-lg-8 column' },
-					_react2.default.createElement(_index2.default, { banner: banner, link: link }),
+					_react2.default.createElement(_index2.default, { style: { marginLeft: 30, marginRight: 30 }, banner: banner, link: link }),
 					_react2.default.createElement(_index4.default, { data: filters }),
 					priceRange ? _react2.default.createElement(_index6.default, {
 						max: (0, _product.getMaxPrice)(products),
@@ -55869,7 +55848,7 @@
 				_react2.default.createElement(
 					'div',
 					{ className: 'col-md-0 col-lg-2 column right' },
-					_react2.default.createElement(_index2.default, { banner: rightBanner, link: rightBannerlink })
+					_react2.default.createElement(_index2.default, { style: { height: 600 }, banner: rightBanner, link: rightBannerlink })
 				)
 			)
 		);
@@ -56030,6 +56009,8 @@
 		value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _react = __webpack_require__(237);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -56043,12 +56024,14 @@
 	var view = function view() {
 		var _props = this.props,
 		    banner = _props.banner,
-		    link = _props.link;
+		    link = _props.link,
+		    style = _props.style,
+		    fixedWhenScrolling = _props.fixedWhenScrolling;
 	
 		return _react2.default.createElement(
 			"a",
 			{ target: "blank", href: link },
-			_react2.default.createElement("div", { className: "banner content-center background", style: { backgroundImage: 'url(' + banner + ')' } })
+			_react2.default.createElement("div", { className: "banner content-center background", style: _extends({ backgroundImage: 'url(' + banner + ')' }, style) })
 		);
 	};
 	exports.default = view;
@@ -56286,7 +56269,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".filters ul li {\n  display: inline-block;\n  margin-right: 5px; }\n  .filters ul li a {\n    display: block;\n    padding: 5px 10px;\n    font-size: 18px;\n    color: #4168ff;\n    border-radius: 4px; }\n  .filters ul li.active a {\n    background: #416dff;\n    color: #fff; }\n", ""]);
+	exports.push([module.id, ".filters ul {\n  padding-left: 4px; }\n  .filters ul li {\n    display: inline-block;\n    margin-right: 5px; }\n    .filters ul li a {\n      display: block;\n      padding: 5px 10px;\n      font-size: 18px;\n      color: #4168ff;\n      border-radius: 4px; }\n    .filters ul li.active a {\n      background: #416dff;\n      color: #fff; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -56482,22 +56465,22 @@
 					_react2.default.createElement(
 						"option",
 						{ value: "-price" },
-						"Highest to Lowest"
+						"H\xF8jeste til Laveste"
 					),
 					_react2.default.createElement(
 						"option",
 						{ value: "price" },
-						"Lowest to Highest"
+						"Laveste til H\xF8jeste"
 					),
 					_react2.default.createElement(
 						"option",
 						{ value: "-publishedDate" },
-						"Newest"
+						"Nyeste"
 					),
 					_react2.default.createElement(
 						"option",
 						{ value: "saves" },
-						"Most Popular"
+						"Mest Popul\xE6"
 					)
 				)
 			)
@@ -56545,7 +56528,7 @@
 	exports.i(__webpack_require__(452), "");
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.sorting {\n  display: flex;\n  justify-content: space-between;\n  padding: 15px 15px 30px 15px; }\n  .sorting .price-range-slider .slider.slider-horizontal {\n    width: 400px; }\n  .sorting .price-range-slider .slider .slider-handle {\n    top: -3px;\n    height: 25px;\n    background-image: linear-gradient(to bottom, #77b353 0%, #77b353 100%); }\n    .sorting .price-range-slider .slider .slider-handle.round {\n      border-radius: 0; }\n  .sorting .price-range-slider .slider .slider-selection {\n    background-image: linear-gradient(to bottom, #cb1d00 0%, #cb1d00 100%); }\n  .sorting .selectpicker {\n    border: 1px solid #e9e9e9; }\n\n/* responsiveness */\n@media (max-width: 768px) {\n  .sorting {\n    display: block;\n    text-align: right; }\n    .sorting .price-range-slider {\n      margin-bottom: 20px; }\n      .sorting .price-range-slider .slider.slider-horizontal {\n        width: 100%; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.sorting {\n  display: flex;\n  justify-content: space-between;\n  padding: 15px 30px 30px 15px; }\n  .sorting .price-range-slider {\n    padding-left: 23px; }\n    .sorting .price-range-slider .slider.slider-horizontal {\n      width: 400px; }\n    .sorting .price-range-slider .slider .slider-handle {\n      top: -3px;\n      height: 25px;\n      background-image: linear-gradient(to bottom, #77b353 0%, #77b353 100%); }\n      .sorting .price-range-slider .slider .slider-handle.round {\n        border-radius: 0; }\n    .sorting .price-range-slider .slider .slider-selection {\n      background-image: linear-gradient(to bottom, #cb1d00 0%, #cb1d00 100%); }\n  .sorting .selectpicker {\n    border: 1px solid #e9e9e9; }\n\n/* responsiveness */\n@media (max-width: 768px) {\n  .sorting {\n    display: block;\n    text-align: right; }\n    .sorting .price-range-slider {\n      margin-bottom: 20px; }\n      .sorting .price-range-slider .slider.slider-horizontal {\n        width: 100%; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -58740,8 +58723,8 @@
 			_react2.default.createElement(
 				'div',
 				{ className: 'pagination-box' },
-				pages > 1 ? _react2.default.createElement(_reactPaginate2.default, { previousLabel: "previous",
-					nextLabel: "next",
+				pages > 1 ? _react2.default.createElement(_reactPaginate2.default, { previousLabel: "Tjek det ud",
+					nextLabel: "Næste",
 					breakLabel: _react2.default.createElement(
 						'a',
 						{ href: '' },
@@ -59223,19 +59206,19 @@
 					{ className: 'product-image' },
 					_react2.default.createElement(
 						'a',
-						{ href: productLink },
+						{ href: data.link },
 						_react2.default.createElement('span', { style: (0, _common.getBackgroundImageStyle)(imageUrl), className: 'image' })
 					),
 					user ? _react2.default.createElement(
 						'button',
 						{ onClick: this.addToWishList.bind(this), className: 'btn btn-red save-btn' },
-						!presentInWishList ? "Save" : "Remove"
+						!presentInWishList ? "Save" : "Fjern"
 					) : _react2.default.createElement(
 						'a',
 						{ 'data-toggle': 'modal', 'data-target': '#login-modal' },
 						_react2.default.createElement(
 							'button',
-							{ className: 'btn btn-red save-btn' },
+							{ className: 'btn btn-yellow save-btn' },
 							'Save'
 						)
 					)
@@ -59259,8 +59242,8 @@
 					_react2.default.createElement(
 						'p',
 						{ className: 'cost' },
-						'$',
-						data.price || 0
+						data.price || 0,
+						' kr.'
 					),
 					_react2.default.createElement(
 						'span',
@@ -59284,7 +59267,7 @@
 						_react2.default.createElement(
 							'span',
 							null,
-							' saves'
+							' Gemte'
 						)
 					)
 				),
@@ -59297,7 +59280,7 @@
 						_react2.default.createElement(
 							'button',
 							{ className: 'btn btn-yellow' },
-							'Check it out'
+							'Tjek det ud'
 						)
 					),
 					_react2.default.createElement(
@@ -59353,7 +59336,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.card {\n  width: 100%;\n  margin-bottom: 30px; }\n  .card .card-header .product-title {\n    margin-bottom: 2px;\n    text-align: center;\n    font-weight: 400;\n    margin-top: 0;\n    font-size: 18px;\n    color: #676767;\n    display: block;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis; }\n  .card .card-body .product-image {\n    position: relative; }\n    .card .card-body .product-image .save-btn {\n      display: none;\n      position: absolute;\n      top: 15px;\n      right: 15px;\n      padding: 5px;\n      width: 76px;\n      font-size: 20px; }\n    .card .card-body .product-image .image {\n      display: block;\n      width: 100%;\n      height: 252px;\n      background-color: #e6e6e6;\n      background-size: cover;\n      background-position: center;\n      background-repeat: no-repeat; }\n    .card .card-body .product-image:hover .save-btn {\n      display: block; }\n  .card .card-body .product-text {\n    text-align: justify;\n    margin-top: 5px;\n    margin-bottom: 25px;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n    .card .card-body .product-text p {\n      display: block;\n      display: -webkit-box;\n      max-width: 400px;\n      height: 100px;\n      margin: 0 auto;\n      font-size: 12px;\n      line-height: 17px;\n      -webkit-line-clamp: 6;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n      text-overflow: ellipsis; }\n  .card .card-footer {\n    display: flex;\n    justify-content: space-between; }\n    .card .card-footer .product-range {\n      color: #676767;\n      font-size: 16px;\n      letter-spacing: 1px; }\n      .card .card-footer .product-range .saves {\n        font-size: 14px; }\n        .card .card-footer .product-range .saves i {\n          color: #676767; }\n          .card .card-footer .product-range .saves i:hover {\n            color: #cb1d00; }\n    .card .card-footer .product-action {\n      text-align: right; }\n      .card .card-footer .product-action .checkout-btn {\n        display: block;\n        margin-top: -20px;\n        margin-bottom: 2px; }\n  .card .share ul {\n    margin: 0px; }\n    .card .share ul li {\n      display: inline-block;\n      margin-right: 5px; }\n      .card .share ul li a {\n        font-size: 22px;\n        line-height: 22px; }\n        .card .share ul li a.facebook {\n          color: #3c5a98; }\n        .card .share ul li a.twitter {\n          color: #1ea1f2; }\n        .card .share ul li a.pinterest {\n          color: #bc0718; }\n\n/* responsiveness */\n@media (max-width: 992px) {\n  .card {\n    margin-bottom: 30px; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.card {\n  width: 100%;\n  margin-bottom: 30px; }\n  .card .card-header .product-title {\n    margin-bottom: 2px;\n    text-align: center;\n    font-weight: 400;\n    margin-top: 0;\n    font-size: 18px;\n    color: #676767;\n    display: block;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis; }\n    .card .card-header .product-title:hover {\n      color: #77b353; }\n  .card .card-body .product-image {\n    position: relative; }\n    .card .card-body .product-image .save-btn {\n      display: none;\n      position: absolute;\n      top: 15px;\n      right: 15px;\n      padding: 5px;\n      width: 76px;\n      font-size: 20px; }\n    .card .card-body .product-image .image {\n      display: block;\n      width: 100%;\n      height: 252px;\n      background-color: #e6e6e6;\n      background-size: cover;\n      background-position: center;\n      background-repeat: no-repeat; }\n    .card .card-body .product-image:hover .save-btn {\n      display: block; }\n  .card .card-body .product-text {\n    text-align: justify;\n    margin-top: 5px;\n    margin-bottom: 25px;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n    .card .card-body .product-text p {\n      display: block;\n      display: -webkit-box;\n      max-width: 400px;\n      height: 100px;\n      margin: 0 auto;\n      font-size: 12px;\n      line-height: 17px;\n      -webkit-line-clamp: 6;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n      text-overflow: ellipsis; }\n  .card .card-footer {\n    display: flex;\n    justify-content: space-between; }\n    .card .card-footer .product-range {\n      color: #676767;\n      font-size: 16px;\n      letter-spacing: 1px; }\n      .card .card-footer .product-range .saves {\n        font-size: 14px; }\n        .card .card-footer .product-range .saves i {\n          color: #676767; }\n          .card .card-footer .product-range .saves i:hover {\n            color: #cb1d00; }\n    .card .card-footer .product-action {\n      text-align: right; }\n      .card .card-footer .product-action .checkout-btn {\n        display: block;\n        margin-top: -20px;\n        margin-bottom: 4px; }\n  .card .share ul {\n    margin: 0px; }\n    .card .share ul li {\n      display: inline-block;\n      margin-right: 5px; }\n      .card .share ul li a {\n        font-size: 22px;\n        line-height: 22px; }\n        .card .share ul li a.facebook {\n          color: #3c5a98; }\n        .card .share ul li a.twitter {\n          color: #1ea1f2; }\n        .card .share ul li a.pinterest {\n          color: #bc0718; }\n\n/* responsiveness */\n@media (max-width: 992px) {\n  .card {\n    margin-bottom: 30px; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -60401,12 +60384,12 @@
 				_react2.default.createElement(
 					"p",
 					{ className: "title" },
-					"My Account"
+					"Min Konto"
 				),
 				_react2.default.createElement(
 					"p",
 					{ className: "direction" },
-					"Here you can update your details"
+					"Her kan du \xE6ndre dine oplysninger"
 				),
 				_react2.default.createElement(
 					"form",
@@ -60422,7 +60405,7 @@
 						_react2.default.createElement(
 							"label",
 							{ htmlFor: "exampleInputEmail1" },
-							"Change Email Address"
+							"Skift Email"
 						),
 						_react2.default.createElement("input", { readOnly: loading,
 							onChange: handleChange.bind(this),
@@ -60443,7 +60426,7 @@
 						_react2.default.createElement(
 							"label",
 							{ htmlFor: "exampleInputPassword1" },
-							"Choose new Password"
+							"Skift kodeord"
 						),
 						_react2.default.createElement("input", { readOnly: loading,
 							onChange: handleChange.bind(this),
@@ -60462,7 +60445,7 @@
 						_react2.default.createElement(
 							"button",
 							{ type: "submit", className: "btn btn-yellow submit-btn" },
-							"Submit"
+							"Gem"
 						)
 					)
 				)
@@ -60755,8 +60738,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		var _this = this;
-	
 		var _props = this.props,
 		    products = _props.products,
 		    categories = _props.categories,
@@ -60776,43 +60757,7 @@
 					{ className: 'row' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'col-md-3 column' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'categories' },
-							_react2.default.createElement(
-								'ul',
-								null,
-								(categories || []).map(function (category) {
-									var selected = category._id == _this.state.selectCategory._id;
-									var categoryLink = window.location.protocol + "//" + window.location.host + "/category/" + category.key;
-									return _react2.default.createElement(
-										'li',
-										{ key: category._id },
-										_react2.default.createElement(
-											'a',
-											{ href: categoryLink, className: selected ? "selected" : null },
-											category.name
-										),
-										selected ? _react2.default.createElement(
-											'div',
-											{ className: 'sub-categories' },
-											(category.subcategories || []).map(function (subcategory) {
-												return _react2.default.createElement(
-													'a',
-													{ key: subcategory._id },
-													subcategory.name
-												);
-											})
-										) : null
-									);
-								})
-							)
-						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-9 column' },
+						{ className: 'col-md-12 column' },
 						_react2.default.createElement(
 							'div',
 							{ className: 'category-wise' },
@@ -60899,7 +60844,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-group {\n  padding-top: 70px; }\n  .product-group .container .column .categories {\n    border-right: 1px solid #e9e9e9;\n    padding-left: 60px; }\n    .product-group .container .column .categories ul li {\n      list-style: none; }\n      .product-group .container .column .categories ul li a {\n        display: block;\n        padding: 10px 20px 10px 20px;\n        font-size: 16px;\n        font-weight: bold;\n        color: #333; }\n        .product-group .container .column .categories ul li a:hover {\n          color: #77b353; }\n        .product-group .container .column .categories ul li a.selected {\n          color: #77b353; }\n      .product-group .container .column .categories ul li .sub-categories a {\n        padding: 10px 10px 10px 30px;\n        font-weight: normal;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .product-group .container .column .category-wise .category-title {\n    font-size: 25px;\n    font-weight: bold;\n    margin-bottom: 10px; }\n  .product-group .container .column .category-wise .category-description {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-size: 12px;\n    line-height: 30px;\n    padding-bottom: 20px;\n    margin-bottom: 20px;\n    border-bottom: 1px solid #e9e9e9; }\n  .product-group .container .column .category-wise .products .container {\n    width: 100%; }\n    .product-group .container .column .category-wise .products .container .card .card-header .product-title {\n      font-size: 15px; }\n    .product-group .container .column .category-wise .products .container .card .card-body .product-image .image {\n      height: 200px; }\n\n/* responsiveness */\n@media (max-width: 992px) {\n  .product-group .container .column .categories {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-group {\n  padding-top: 70px; }\n  .product-group .container .column .categories {\n    border-right: 1px solid #e9e9e9;\n    padding-left: 60px; }\n    .product-group .container .column .categories ul li {\n      list-style: none; }\n      .product-group .container .column .categories ul li a {\n        display: block;\n        padding: 10px 20px 10px 20px;\n        font-size: 16px;\n        font-weight: bold;\n        color: #333; }\n        .product-group .container .column .categories ul li a:hover {\n          color: #77b353; }\n        .product-group .container .column .categories ul li a.selected {\n          color: #77b353; }\n      .product-group .container .column .categories ul li .sub-categories a {\n        padding: 10px 10px 10px 30px;\n        font-weight: normal;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .product-group .container .column .category-wise .category-title {\n    text-align: center;\n    font-size: 25px;\n    font-weight: bold;\n    margin-bottom: 10px; }\n  .product-group .container .column .category-wise .category-description {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-size: 12px;\n    line-height: 30px;\n    padding-bottom: 20px;\n    margin-bottom: 20px;\n    border-bottom: 1px solid #e9e9e9; }\n  .product-group .container .column .category-wise .products .container {\n    width: 100%; }\n    .product-group .container .column .category-wise .products .container .card .card-header .product-title {\n      font-size: 15px; }\n    .product-group .container .column .category-wise .products .container .card .card-body .product-image .image {\n      height: 200px; }\n\n/* responsiveness */\n@media (max-width: 992px) {\n  .product-group .container .column .categories {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -61464,8 +61409,8 @@
 								_react2.default.createElement(
 									'p',
 									null,
-									'$',
-									product.price || 0
+									product.price || 0,
+									' kr.'
 								)
 							),
 							_react2.default.createElement(
@@ -61477,7 +61422,7 @@
 									_react2.default.createElement(
 										'button',
 										{ className: 'btn btn-yellow' },
-										'Check it out'
+										'Tjek det ud'
 									)
 								),
 								user ? _react2.default.createElement(
@@ -61486,14 +61431,14 @@
 									_react2.default.createElement(
 										'button',
 										{ onClick: this.addToWishList.bind(this), className: 'btn btn-red save-btn' },
-										presentInWishList ? "Remove" : "Save"
+										presentInWishList ? "Fjern" : "Save"
 									)
 								) : _react2.default.createElement(
 									'a',
 									{ 'data-toggle': 'modal', 'data-target': '#login-modal' },
 									_react2.default.createElement(
 										'button',
-										{ className: 'btn btn-red save-btn' },
+										{ className: 'btn btn-yellow save-btn' },
 										'Save'
 									)
 								)
@@ -61518,7 +61463,7 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'col-md-0 col-lg-2 column left' },
-						_react2.default.createElement(_index6.default, { banner: leftBanner, link: leftBannerlink })
+						_react2.default.createElement(_index6.default, { style: { height: 600 }, banner: leftBanner, link: leftBannerlink })
 					),
 					_react2.default.createElement(
 						'div',
@@ -61538,7 +61483,7 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'col-md-0 col-lg-2 column right' },
-						_react2.default.createElement(_index6.default, { banner: rightBanner, link: rightBannerlink })
+						_react2.default.createElement(_index6.default, { style: { height: 600 }, banner: rightBanner, link: rightBannerlink })
 					)
 				)
 			)
@@ -62976,13 +62921,8 @@
 				_react2.default.createElement(
 					'div',
 					{ className: 'share' },
-					_react2.default.createElement(
-						'span',
-						null,
-						'Share: \xA0'
-					),
 					_react2.default.createElement('div', {
-						'data-title': "Check My WishList", 'data-description': "Check My WishList",
+						'data-title': "Check Min Ønskeliste", 'data-description': "Check Min Ønskeliste",
 						className: 'addthis_inline_share_toolbox' })
 				)
 			),
@@ -63057,7 +62997,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.wish-list {\n  padding-top: 70px; }\n  .wish-list .heading {\n    overflow: hidden;\n    margin-bottom: 80px; }\n    .wish-list .heading .title {\n      float: left;\n      font-size: 32px;\n      margin-right: 10px; }\n    .wish-list .heading .share {\n      float: right;\n      display: flex; }\n      .wish-list .heading .share ul li {\n        display: inline-block; }\n        .wish-list .heading .share ul li a {\n          display: block;\n          font-size: 40px;\n          margin: 5px 5px 0px 0px;\n          line-height: 0px; }\n          .wish-list .heading .share ul li a.facebook {\n            color: #3c5a98; }\n          .wish-list .heading .share ul li a.twitter {\n            color: #1ea1f2; }\n          .wish-list .heading .share ul li a.pinterest {\n            color: #bd081b; }\n          .wish-list .heading .share ul li a.link {\n            color: #555; }\n  .wish-list .more .row {\n    margin: 0px; }\n    .wish-list .more .row .column {\n      padding: 0px; }\n      .wish-list .more .row .column .container {\n        width: 100%; }\n      .wish-list .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .wish-list .more .row .column.left .banner {\n        margin-right: 0px; }\n      .wish-list .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.wish-list {\n  padding-top: 70px; }\n  .wish-list .heading {\n    overflow: hidden;\n    margin-bottom: 80px; }\n    .wish-list .heading .title {\n      font-size: 32px;\n      margin-right: 10px;\n      text-align: center; }\n    .wish-list .heading .share {\n      float: right;\n      display: flex;\n      padding-right: 32px; }\n      .wish-list .heading .share ul li {\n        display: inline-block; }\n        .wish-list .heading .share ul li a {\n          display: block;\n          font-size: 40px;\n          margin: 5px 5px 0px 0px;\n          line-height: 0px; }\n          .wish-list .heading .share ul li a.facebook {\n            color: #3c5a98; }\n          .wish-list .heading .share ul li a.twitter {\n            color: #1ea1f2; }\n          .wish-list .heading .share ul li a.pinterest {\n            color: #bd081b; }\n          .wish-list .heading .share ul li a.link {\n            color: #555; }\n  .wish-list .more .row {\n    margin: 0px; }\n    .wish-list .more .row .column {\n      padding: 0px; }\n      .wish-list .more .row .column .container {\n        width: 100%; }\n      .wish-list .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .wish-list .more .row .column.left .banner {\n        margin-right: 0px; }\n      .wish-list .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -64511,7 +64451,7 @@
 												_react2.default.createElement(
 													'span',
 													null,
-													' saves'
+													' Gemte'
 												)
 											)
 										),
@@ -64521,7 +64461,7 @@
 											_react2.default.createElement(
 												'button',
 												{ className: 'btn btn-yellow' },
-												'Check it out'
+												'Tjek det ud'
 											)
 										)
 									)

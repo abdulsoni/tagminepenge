@@ -7,8 +7,8 @@ var view = function () {
 	return (
 		<div className="profile">
 			<div className="form container">
-				<p className="title">My Account</p>
-				<p className="direction">Here you can update your details</p>
+				<p className="title">Min Konto</p>
+				<p className="direction">Her kan du ændre dine oplysninger</p>
 				<form onSubmit={submit.bind(this)}>
 					{
 						message ? (
@@ -19,7 +19,7 @@ var view = function () {
 						) : null
 					}
 					<div className="form-group">
-						<label htmlFor="exampleInputEmail1">Change Email Address</label>
+						<label htmlFor="exampleInputEmail1">Skift Email</label>
 						<input readOnly={loading}
 							   onChange={handleChange.bind(this)}
 							   name="email"
@@ -34,7 +34,7 @@ var view = function () {
 						/>
 					</div>
 					<div className="form-group">
-						<label htmlFor="exampleInputPassword1">Choose new Password</label>
+						<label htmlFor="exampleInputPassword1">Skift kodeord</label>
 						<input readOnly={loading}
 							   onChange={handleChange.bind(this)}
 							   name="password"
@@ -47,7 +47,7 @@ var view = function () {
 						/>
 					</div>
 					<div className="actions">
-						<button type="submit" className="btn btn-yellow submit-btn">Submit</button>
+						<button type="submit" className="btn btn-yellow submit-btn">Gem</button>
 					</div>
 				</form>
 			</div>

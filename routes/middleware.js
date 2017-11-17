@@ -12,6 +12,7 @@ var keystone = require('keystone');
 var Configuration = keystone.list('Configuration');
 var Category = keystone.list('Category');
 var Filter = keystone.list('Filter');
+var Product = keystone.list('Product');
 /**
 	Initialises the standard view locals
 
@@ -58,6 +59,30 @@ exports.populateCategories = function (req, res, next) {
 		next();
 	});
 };
+
+exports.populateEntity = function (req, res, next) {
+	console.log(req.url);
+	if(req.url.indexOf("/product/")!=-1){
+		var productId = req.url.split("/")[2];
+		console.log("Product Id ",productId);
+		Product.model.findById(productId).then((doc)=>{
+			if(doc){
+				//console.log(doc)
+				res.locals.product = doc;
+				res.locals.fbTitle = doc.title;
+				res.locals.fbDescription = doc.content.brief;
+				res.locals.fbImage = doc.image?doc.image.url:null;
+			} else {
+				console.log("Error while fetching product",err,doc)
+			}
+			next();
+		})
+	} else {
+		next();
+	}
+	
+};
+
 
 
 exports.populateFilters = function (req, res, next) {

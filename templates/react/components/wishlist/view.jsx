@@ -16,9 +16,9 @@ var view = function () {
 					<p>My Wish List</p>
 				</div>
 				<div className="share">
-					<span>Share: &nbsp;</span>
+					{/*<span>Share: &nbsp;</span>*/}
 					<div
-						data-title={"Check My WishList"} data-description={"Check My WishList"}
+						data-title={"Check Min Ønskeliste"} data-description={"Check Min Ønskeliste"}
 						className="addthis_inline_share_toolbox"/>
 
 				</div>

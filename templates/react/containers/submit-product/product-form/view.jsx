@@ -103,11 +103,11 @@ var view = function () {
 											<span className="saves">
 									<a className="icon"><i className="glyphicon glyphicon-heart-empty"></i> </a>
 									<span className="count">0</span>
-									<span> saves</span>
+									<span> Gemte</span>
 								</span>
 										</div>
 										<div className="product-action">
-											<button className="btn btn-yellow">Check it out</button>
+											<button className="btn btn-yellow">Tjek det ud</button>
 										</div>
 									</div>
 								</div>

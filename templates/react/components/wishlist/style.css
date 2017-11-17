@@ -10,12 +10,13 @@
     overflow: hidden;
     margin-bottom: 80px; }
     .wish-list .heading .title {
-      float: left;
       font-size: 32px;
-      margin-right: 10px; }
+      margin-right: 10px;
+      text-align: center; }
     .wish-list .heading .share {
       float: right;
-      display: flex; }
+      display: flex;
+      padding-right: 32px; }
       .wish-list .heading .share ul li {
         display: inline-block; }
         .wish-list .heading .share ul li a {

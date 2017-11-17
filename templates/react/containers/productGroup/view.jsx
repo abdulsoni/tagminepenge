@@ -10,37 +10,37 @@ var view = function() {
 		<div className="product-group">
 			<div className="container">
 				<div className="row">
-					<div className="col-md-3 column">
-						<div className="categories">
-							<ul>
-								{
-									(categories || []).map((category)=>{
-										let selected = category._id==this.state.selectCategory._id;
-										let categoryLink = window.location.protocol + "//"+window.location.host+"/category/"+category.key;
-										return (
-											<li key = {category._id}>
-												<a href={categoryLink} className={selected?"selected":null}>{category.name}</a>
-												{
-													selected?(
-														<div className="sub-categories">
-															{
-																(category.subcategories || []).map((subcategory)=>{
-																	return (
-																		<a key = {subcategory._id}>{subcategory.name}</a>
-																	);
-																})
-															}
-														</div>
-													):null
-												}
-											</li>
-										)
-									})
-								}
-							</ul>
-						</div>
-					</div>
-					<div className="col-md-9 column">
+					{/*<div className="col-md-3 column">*/}
+						{/*<div className="categories">*/}
+							{/*<ul>*/}
+								{/*{*/}
+									{/*(categories || []).map((category)=>{*/}
+										{/*let selected = category._id==this.state.selectCategory._id;*/}
+										{/*let categoryLink = window.location.protocol + "//"+window.location.host+"/category/"+category.key;*/}
+										{/*return (*/}
+											{/*<li key = {category._id}>*/}
+												{/*<a href={categoryLink} className={selected?"selected":null}>{category.name}</a>*/}
+												{/*{*/}
+													{/*selected?(*/}
+														{/*<div className="sub-categories">*/}
+															{/*{*/}
+																{/*(category.subcategories || []).map((subcategory)=>{*/}
+																	{/*return (*/}
+																		{/*<a key = {subcategory._id}>{subcategory.name}</a>*/}
+																	{/*);*/}
+																{/*})*/}
+															{/*}*/}
+														{/*</div>*/}
+													{/*):null*/}
+												{/*}*/}
+											{/*</li>*/}
+										{/*)*/}
+									{/*})*/}
+								{/*}*/}
+							{/*</ul>*/}
+						{/*</div>*/}
+					{/*</div>*/}
+					<div className="col-md-12 column">
 						<div className="category-wise">
 							<div className="category-title">
 								<p>{

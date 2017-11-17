@@ -6,13 +6,15 @@
 	overflow: hidden;
 	margin-bottom: 80px;
 	.title{
-	  float:left;
+	  //float:left;
 	  font-size: 32px;
 	  margin-right:10px;
+	  text-align: center;
 	}
 	.share{
 	  float:right;
 	  display: flex;
+	  padding-right: 32px;
 	  ul{
 		li{
 		  display:inline-block;

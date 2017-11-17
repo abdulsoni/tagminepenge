@@ -31,7 +31,7 @@ var view = function () {
 								<div className="secondary-action">
 									<a data-dismiss="modal" data-toggle="modal" data-target="#login-modal">Login</a>
 								</div>
-								<button disabled={loading} type="submit"  className="btn btn-yellow submit-btn">Submit</button>
+								<button disabled={loading} type="submit"  className="btn btn-yellow submit-btn">Gem</button>
 							</div>
 						</form>
 					</div>

@@ -14,7 +14,7 @@ var view = function () {
 							<div className="input-group add-on">
 								<input value={this.state.searchText} onChange={(e) => {
 									this.setState({searchText: e.target.value})
-								}} className="form-control" placeholder="Search" type="text"/>
+								}} className="form-control" placeholder="Søg" type="text"/>
 								<div className="input-group-btn">
 									<button className="btn btn-default" type="submit"><i
 										className="glyphicon glyphicon-search"></i></button>
@@ -23,7 +23,7 @@ var view = function () {
 						</form>
 					</div>
 					<div className="logo">
-						<img src="/images/logo.png" alt="logo"/>
+						<a href="/"><img src="/images/logo.png" alt="logo"/></a>
 					</div>
 					{
 						!user ? (
@@ -39,7 +39,7 @@ var view = function () {
 										<span className="icon">
 											<span className="glyphicon glyphicon-user" aria-hidden="true"></span>
 										</span>
-										<span className="text">My Account</span>
+										<span className="text">Min Konto</span>
 									</a>
 									{
 										user.isAdmin ? (
@@ -49,9 +49,9 @@ var view = function () {
 										) : null
 									}
 									<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-										<a className="dropdown-item" href="/profile">My Settings</a>
-										<a className="dropdown-item" href="/my-wishlist">My Wishlist</a>
-										<a className="dropdown-item" href="/keystone/signout">Logout</a>
+										<a className="dropdown-item" href="/profile">Mine Indstillinger</a>
+										<a className="dropdown-item" href="/my-wishlist">Min Ønskeliste</a>
+										<a className="dropdown-item" href="/keystone/signout">Log ud</a>
 									</div>
 								</div>
 							</div>
@@ -97,25 +97,25 @@ var view = function () {
 						</a>
 					</li>
 					<li>
-						<a className="nav-link dropdown-toggle" data-toggle="dropdown">
+						<a href="/category/gadgets" className="nav-link dropdown-toggle">
 							<span className="icon">
 								<span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
 							</span>
-							<span className="text">Others</span>
+							<span className="text">Ting Til Hjemmet</span>
 						</a>
-						<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							{
-								(categories || []).filter(category => category.displayType == 2).map((category) => {
-									return (
-										<a href={"/category/" + category.key} key={category._id}
-										   className="dropdown-item">{category.name}</a>
-									)
-								})
-							}
-							<div className="dropdown-divider"></div>
-							{/*<a className="dropdown-item" href="/get-started">Submit A Product</a>*/}
-							<a className="dropdown-item" href="/contact">Kontakt os</a>
-						</div>
+						{/*<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">*/}
+							{/*{*/}
+								{/*(categories || []).filter(category => category.displayType == 2).map((category) => {*/}
+									{/*return (*/}
+										{/*<a href={"/category/" + category.key} key={category._id}*/}
+										   {/*className="dropdown-item">{category.name}</a>*/}
+									{/*)*/}
+								{/*})*/}
+							{/*}*/}
+							{/*<div className="dropdown-divider"></div>*/}
+							{/*/!*<a className="dropdown-item" href="/get-started">Submit A Product</a>*!/*/}
+							{/*<a className="dropdown-item" href="/contact">Kontakt os</a>*/}
+						{/*</div>*/}
 					</li>
 				</ul>
 			</div>

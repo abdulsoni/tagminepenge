@@ -8,7 +8,9 @@ const Default = props => {
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-
+			<meta property="og:title" content={props.fbTitle} />
+			<meta property="og:description" content={props.fbDescription} />
+			<meta property="og:image" content={props.fbImage}/>
 			<title>TAG MINE PENGE!</title>
 
 			{/*<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon"/>*/}
@@ -53,7 +55,6 @@ const Default = props => {
 		&& <script src="/keystone/js/content/editor.js"></script>
 		}
 		
-		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a"></script>
 		<script src="/js/bundle.js"></script>
 
 		{
@@ -62,6 +63,7 @@ const Default = props => {
 			// - Include template-specific javascript files by extending the js block
 			props.js
 		}
+		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a"></script>
 		</body>
 		</html>
 	);
