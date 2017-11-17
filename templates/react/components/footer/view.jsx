@@ -7,6 +7,7 @@ var view = function () {
 		<div className="footer">
 			<div className="container">
 				<div className="row">
+					<p>{config["footer-text"]?config["footer-text"].value:""}</p>
 					<div className="col-xs-6 col-sm-3 col-md-3 column">
 						<div className="title">
 							<p>By Recipient</p>

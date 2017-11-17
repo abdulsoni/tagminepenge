@@ -23,12 +23,16 @@ export default class Main extends Component {
 			const {min, max, onPriceChange} = this.props;
 			this.slider = new Slider('input.slider-input', {
 				formatter: function (value) {
-					return 'Price : ' + value;
+					return value + ' kr.';
 				},
 				min,
 				max,
 				range: true,
-				step: 10
+				step: 10,
+				tooltip: 'always',
+				tooltip_split : true,
+				ticks : [min,max],
+				ticks_labels: [min.toString()+ " kr.", max.toString()+ " kr."],
 			});
 			this.slider.on("slideStop", (val) => {
 				onPriceChange ? onPriceChange(val, this.state.sort) : null
@@ -44,6 +48,8 @@ export default class Main extends Component {
 				let maxValue = (max > parseInt(this.slider.getAttribute("max"))) ? max : parseInt(this.slider.getAttribute("max"));
 				this.slider.setAttribute("min",minValue)
 				this.slider.setAttribute("max",maxValue);
+				this.slider.setAttribute("ticks",[minValue,maxValue]);
+				this.slider.setAttribute("ticks_labels",[min.toString()+ " kr.", max.toString()+ " kr."]);
 				this.setState({
 					temp : !this.state.temp
 				})

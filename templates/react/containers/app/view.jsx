@@ -14,7 +14,7 @@ var view = function () {
 				<Header navLinks={navLinks} user={user} categories={categories}/>
 				{
 					<routeInfo.component categories={categories} {...routeInfo.routeProps} filters={filters} user={user}
-										 config={config}/>
+										 config={config} {...this.props}/>
 				}
 				<Footer config={config} categories={categories}/>
 				<LoginModal/>

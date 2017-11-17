@@ -74,6 +74,9 @@ export function handleChange(event){
  */
 export function getPlainText(html)
 {
+	if(typeof document=='undefined'){
+		return "";
+	}
 	var tmp = document.createElement("DIV");
 	tmp.innerHTML = html;
 	return tmp.textContent || tmp.innerText || "";

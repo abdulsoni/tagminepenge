@@ -41,6 +41,7 @@ var view = function() {
 									min={getMinPrice(products)}
 									max={getMaxPrice(products)}
 									onPriceChange = {this.onPriceChange.bind(this)}
+									sortLinks = {true}	
 								/>
 								
 							</div>

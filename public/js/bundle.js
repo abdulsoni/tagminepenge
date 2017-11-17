@@ -52888,7 +52888,7 @@
 				{ className: 'main-container' },
 				_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user, categories: categories }),
 				_react2.default.createElement(routeInfo.component, _extends({ categories: categories }, routeInfo.routeProps, { filters: filters, user: user,
-					config: config })),
+					config: config }, this.props)),
 				_react2.default.createElement(_index8.default, { config: config, categories: categories }),
 				_react2.default.createElement(_login2.default, null),
 				_react2.default.createElement(_index4.default, null),
@@ -54337,6 +54337,9 @@
 	 * @returns {string|string}
 	 */
 	function getPlainText(html) {
+		if (typeof document == 'undefined') {
+			return "";
+		}
 		var tmp = document.createElement("DIV");
 		tmp.innerHTML = html;
 		return tmp.textContent || tmp.innerText || "";
@@ -55197,6 +55200,11 @@
 				_react2.default.createElement(
 					"div",
 					{ className: "row" },
+					_react2.default.createElement(
+						"p",
+						null,
+						config["footer-text"] ? config["footer-text"].value : ""
+					),
 					_react2.default.createElement(
 						"div",
 						{ className: "col-xs-6 col-sm-3 col-md-3 column" },
@@ -56365,12 +56373,16 @@
 	
 					_this2.slider = new _bootstrapSlider2.default('input.slider-input', {
 						formatter: function formatter(value) {
-							return 'Price : ' + value;
+							return value + ' kr.';
 						},
 						min: min,
 						max: max,
 						range: true,
-						step: 10
+						step: 10,
+						tooltip: 'always',
+						tooltip_split: true,
+						ticks: [min, max],
+						ticks_labels: [min.toString() + " kr.", max.toString() + " kr."]
 					});
 					_this2.slider.on("slideStop", function (val) {
 						onPriceChange ? onPriceChange(val, _this2.state.sort) : null;
@@ -56389,6 +56401,8 @@
 						var maxValue = max > parseInt(this.slider.getAttribute("max")) ? max : parseInt(this.slider.getAttribute("max"));
 						this.slider.setAttribute("min", minValue);
 						this.slider.setAttribute("max", maxValue);
+						this.slider.setAttribute("ticks", [minValue, maxValue]);
+						this.slider.setAttribute("ticks_labels", [min.toString() + " kr.", max.toString() + " kr."]);
 						this.setState({
 							temp: !this.state.temp
 						});
@@ -56447,6 +56461,8 @@
 	var view = function view() {
 		var _this = this;
 	
+		var sortLinks = this.props.sortLinks;
+	
 		return _react2.default.createElement(
 			"div",
 			{ className: "sorting" },
@@ -56458,7 +56474,7 @@
 					}, className: "slider-input", "data-slider-id": "ex1Slider", type: "text", "data-slider-min": "0",
 					"data-slider-max": "20", "data-slider-step": "1", "data-slider-value": "14" })
 			),
-			_react2.default.createElement(
+			sortLinks ? null : _react2.default.createElement(
 				"div",
 				{ className: "dropdown" },
 				_react2.default.createElement(
@@ -60807,7 +60823,8 @@
 							_react2.default.createElement(_index4.default, {
 								min: (0, _product.getMinPrice)(products),
 								max: (0, _product.getMaxPrice)(products),
-								onPriceChange: this.onPriceChange.bind(this)
+								onPriceChange: this.onPriceChange.bind(this),
+								sortLinks: true
 							})
 						),
 						_react2.default.createElement(
@@ -60870,7 +60887,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-group {\n  padding-top: 20px; }\n  .product-group .column .categories {\n    border-right: 1px solid #e9e9e9;\n    padding-left: 60px; }\n    .product-group .column .categories ul li {\n      list-style: none; }\n      .product-group .column .categories ul li a {\n        display: block;\n        padding: 10px 20px 10px 20px;\n        font-size: 16px;\n        font-weight: bold;\n        color: #333; }\n        .product-group .column .categories ul li a:hover {\n          color: #77b353; }\n        .product-group .column .categories ul li a.selected {\n          color: #77b353; }\n      .product-group .column .categories ul li .sub-categories a {\n        padding: 10px 10px 10px 30px;\n        font-weight: normal;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .product-group .column .category-wise .category-title {\n    text-align: center;\n    font-size: 25px;\n    font-weight: bold;\n    margin-bottom: 10px; }\n  .product-group .column .category-wise .category-description {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-size: 12px;\n    line-height: 30px;\n    padding-bottom: 20px;\n    margin-bottom: 20px;\n    border-bottom: 1px solid #e9e9e9; }\n  .product-group .column .category-wise .products .container {\n    width: 100%; }\n    .product-group .column .category-wise .products .container .card .card-header .product-title {\n      font-size: 15px; }\n    .product-group .column .category-wise .products .container .card .card-body .product-image .image {\n      height: 200px; }\n\n/* responsiveness */\n@media (max-width: 992px) {\n  .product-group .container .column .categories {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-group {\n  padding-top: 20px; }\n  .product-group .column .categories {\n    border-right: 1px solid #e9e9e9;\n    padding-left: 60px; }\n    .product-group .column .categories ul li {\n      list-style: none; }\n      .product-group .column .categories ul li a {\n        display: block;\n        padding: 10px 20px 10px 20px;\n        font-size: 16px;\n        font-weight: bold;\n        color: #333; }\n        .product-group .column .categories ul li a:hover {\n          color: #77b353; }\n        .product-group .column .categories ul li a.selected {\n          color: #77b353; }\n      .product-group .column .categories ul li .sub-categories a {\n        padding: 10px 10px 10px 30px;\n        font-weight: normal;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .product-group .column .category-wise .category-title {\n    text-align: center;\n    font-size: 25px;\n    font-weight: bold;\n    margin-top: 10px; }\n  .product-group .column .category-wise .category-description {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-size: 12px;\n    line-height: 30px;\n    padding-bottom: 20px;\n    margin-bottom: 20px;\n    border-bottom: 1px solid #e9e9e9; }\n  .product-group .column .category-wise .products .container {\n    width: 100%; }\n    .product-group .column .category-wise .products .container .card .card-header .product-title {\n      font-size: 15px; }\n    .product-group .column .category-wise .products .container .card .card-body .product-image .image {\n      height: 200px; }\n\n/* responsiveness */\n@media (max-width: 992px) {\n  .product-group .container .column .categories {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
