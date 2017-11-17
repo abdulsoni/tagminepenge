@@ -65,7 +65,7 @@ const Default = props => {
 			// - Include template-specific javascript files by extending the js block
 			props.js
 		}
-		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a"></script>
+		
 		</body>
 		</html>
 	);

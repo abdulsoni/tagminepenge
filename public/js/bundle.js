@@ -48229,8 +48229,7 @@
 				// - Add scripts that are globally required by your site here.
 	
 				// - Include template-specific javascript files by extending the js block
-				props.js,
-				_react2.default.createElement('script', { type: 'text/javascript', src: '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a' })
+				props.js
 			)
 		);
 	};
@@ -52807,13 +52806,21 @@
 			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 		}
 	
-		/**
-	  * Render the view
-	  * @returns {*}
-	  */
-	
-	
 		_createClass(Main, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				setTimeout(function () {
+					var script = document.createElement('script');
+					script.src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a";
+					document.getElementsByTagName('head')[0].appendChild(script);
+				}, 1000);
+			}
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
 			key: 'render',
 			value: function render() {
 	
