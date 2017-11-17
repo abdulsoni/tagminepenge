@@ -59208,7 +59208,7 @@
 					{ className: 'product-image' },
 					_react2.default.createElement(
 						'a',
-						{ href: data.link },
+						{ target: 'blank', href: data.link },
 						_react2.default.createElement('span', { style: (0, _common.getBackgroundImageStyle)(imageUrl), className: 'image' })
 					),
 					user ? _react2.default.createElement(
@@ -60739,6 +60739,10 @@
 	
 	var _banner2 = _interopRequireDefault(_banner);
 	
+	var _filters = __webpack_require__(442);
+	
+	var _filters2 = _interopRequireDefault(_filters);
+	
 	var _product = __webpack_require__(471);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -60747,6 +60751,7 @@
 		var _props = this.props,
 		    config = _props.config,
 		    products = _props.products,
+		    filters = _props.filters,
 		    categories = _props.categories,
 		    user = _props.user;
 		var _state = this.state,
@@ -60865,12 +60870,11 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-group {\n  padding-top: 70px; }\n  .product-group .container .column .categories {\n    border-right: 1px solid #e9e9e9;\n    padding-left: 60px; }\n    .product-group .container .column .categories ul li {\n      list-style: none; }\n      .product-group .container .column .categories ul li a {\n        display: block;\n        padding: 10px 20px 10px 20px;\n        font-size: 16px;\n        font-weight: bold;\n        color: #333; }\n        .product-group .container .column .categories ul li a:hover {\n          color: #77b353; }\n        .product-group .container .column .categories ul li a.selected {\n          color: #77b353; }\n      .product-group .container .column .categories ul li .sub-categories a {\n        padding: 10px 10px 10px 30px;\n        font-weight: normal;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .product-group .container .column .category-wise .category-title {\n    text-align: center;\n    font-size: 25px;\n    font-weight: bold;\n    margin-bottom: 10px; }\n  .product-group .container .column .category-wise .category-description {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-size: 12px;\n    line-height: 30px;\n    padding-bottom: 20px;\n    margin-bottom: 20px;\n    border-bottom: 1px solid #e9e9e9; }\n  .product-group .container .column .category-wise .products .container {\n    width: 100%; }\n    .product-group .container .column .category-wise .products .container .card .card-header .product-title {\n      font-size: 15px; }\n    .product-group .container .column .category-wise .products .container .card .card-body .product-image .image {\n      height: 200px; }\n\n/* responsiveness */\n@media (max-width: 992px) {\n  .product-group .container .column .categories {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-group {\n  padding-top: 20px; }\n  .product-group .column .categories {\n    border-right: 1px solid #e9e9e9;\n    padding-left: 60px; }\n    .product-group .column .categories ul li {\n      list-style: none; }\n      .product-group .column .categories ul li a {\n        display: block;\n        padding: 10px 20px 10px 20px;\n        font-size: 16px;\n        font-weight: bold;\n        color: #333; }\n        .product-group .column .categories ul li a:hover {\n          color: #77b353; }\n        .product-group .column .categories ul li a.selected {\n          color: #77b353; }\n      .product-group .column .categories ul li .sub-categories a {\n        padding: 10px 10px 10px 30px;\n        font-weight: normal;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .product-group .column .category-wise .category-title {\n    text-align: center;\n    font-size: 25px;\n    font-weight: bold;\n    margin-bottom: 10px; }\n  .product-group .column .category-wise .category-description {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-size: 12px;\n    line-height: 30px;\n    padding-bottom: 20px;\n    margin-bottom: 20px;\n    border-bottom: 1px solid #e9e9e9; }\n  .product-group .column .category-wise .products .container {\n    width: 100%; }\n    .product-group .column .category-wise .products .container .card .card-header .product-title {\n      font-size: 15px; }\n    .product-group .column .category-wise .products .container .card .card-body .product-image .image {\n      height: 200px; }\n\n/* responsiveness */\n@media (max-width: 992px) {\n  .product-group .container .column .categories {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
 		"product-group": "product-group",
-		"container": "container",
 		"column": "column",
 		"categories": "categories",
 		"selected": "selected",
@@ -60879,6 +60883,7 @@
 		"category-title": "category-title",
 		"category-description": "category-description",
 		"products": "products",
+		"container": "container",
 		"card": "card",
 		"card-header": "card-header",
 		"product-title": "product-title",

@@ -3,9 +3,10 @@ import styles from "./style.scss";
 import ProductGrid from '../productGrid/index';
 import PriceRange from '../../components/priceRange/index';
 import Banner from '../../components/banner'
+import Filters from '../../components/filters'
 import {getMinPrice,getMaxPrice} from '../../helpers/product'
 var view = function() {
-	const {config,products,categories,user} = this.props;
+	const {config,products,filters,categories,user} = this.props;
 	const {category,query} = this.state;
 	const banner = (config.banner && config.banner.media)?config.banner.media.url:null;
 	const link = (config.banner && config.banner.value)?config.banner.value:null;
@@ -18,41 +19,12 @@ var view = function() {
 		<div className="product-group">
 			
 				<div className="row">
-					{/*<div className="col-md-3 column">*/}
-						{/*<div className="categories">*/}
-							{/*<ul>*/}
-								{/*{*/}
-									{/*(categories || []).map((category)=>{*/}
-										{/*let selected = category._id==this.state.selectCategory._id;*/}
-										{/*let categoryLink = window.location.protocol + "//"+window.location.host+"/category/"+category.key;*/}
-										{/*return (*/}
-											{/*<li key = {category._id}>*/}
-												{/*<a href={categoryLink} className={selected?"selected":null}>{category.name}</a>*/}
-												{/*{*/}
-													{/*selected?(*/}
-														{/*<div className="sub-categories">*/}
-															{/*{*/}
-																{/*(category.subcategories || []).map((subcategory)=>{*/}
-																	{/*return (*/}
-																		{/*<a key = {subcategory._id}>{subcategory.name}</a>*/}
-																	{/*);*/}
-																{/*})*/}
-															{/*}*/}
-														{/*</div>*/}
-													{/*):null*/}
-												{/*}*/}
-											{/*</li>*/}
-										{/*)*/}
-									{/*})*/}
-								{/*}*/}
-							{/*</ul>*/}
-						{/*</div>*/}
-					{/*</div>*/}
 					<div className="col-md-0 col-lg-2 column left">
 						<Banner style={{height:600}} banner = {leftBanner} link = {leftBannerlink}/>
 					</div>
 					<div className="col-md-12 col-lg-8 column">
 						<Banner style = {{marginLeft : 30,marginRight : 30,height:150}} banner = {banner} link = {link}/>
+						{/*<Filters data = {filters}/>*/}
 						<div className="category-wise">
 							<div className="category-title">
 								<p>{

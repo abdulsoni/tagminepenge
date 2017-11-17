@@ -1,8 +1,8 @@
 @import '../../../../public/styles/variables';
 
 .product-group{
-  padding-top:70px;
-  .container{
+  padding-top:20px;
+  //.container{
 	.column{
 	  .categories{
 		border-right:1px solid $border-color;
@@ -72,7 +72,7 @@
 		}
 	  }
 	}
-  }
+  //}
 }
 /* responsiveness */
 @media (max-width: 992px) {

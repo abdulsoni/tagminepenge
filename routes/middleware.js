@@ -79,7 +79,31 @@ exports.populateEntity = function (req, res, next) {
 			}
 			next();
 		})
-	} else {
+	} else if(req.url.indexOf("/category/")!=-1){
+		var category = req.url.split("/")[2];
+		var categoryObj = (res.locals.categories || []).filter((ele)=>{
+			return ele.key=category;
+		});
+		if(categoryObj.length>0){
+			categoryObj = categoryObj[0]
+			res.locals.title = categoryObj.name;
+			res.locals.description = categoryObj.description;
+			res.locals.fbTitle = categoryObj.name;
+			res.locals.fbDescription = categoryObj.description;
+		}
+		next();
+	}
+	else {
+		var page = req.url.split("/")[1];
+		var config = res.locals.config;
+		if(config[page+"-title"]){
+			res.locals.title = config[page+"-title"].value;
+			res.locals.fbTitle = config[page+"-title"].value;
+		}
+		if(config[page+"-description"]){
+			res.locals.description = config[page+"-description"].value;
+			res.locals.fbDescription = config[page+"-description"].value;
+		}
 		next();
 	}
 	
