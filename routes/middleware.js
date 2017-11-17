@@ -69,6 +69,8 @@ exports.populateEntity = function (req, res, next) {
 			if(doc){
 				//console.log(doc)
 				res.locals.product = doc;
+				res.locals.title = doc.title;
+				res.locals.description = doc.content.brief;
 				res.locals.fbTitle = doc.title;
 				res.locals.fbDescription = doc.content.brief;
 				res.locals.fbImage = doc.image?doc.image.url:null;

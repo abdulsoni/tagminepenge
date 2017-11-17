@@ -48192,6 +48192,8 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
+				_react2.default.createElement('meta', { property: 'title', content: props.title }),
+				_react2.default.createElement('meta', { property: 'description', content: props.description }),
 				_react2.default.createElement('meta', { property: 'og:title', content: props.fbTitle }),
 				_react2.default.createElement('meta', { property: 'og:description', content: props.fbDescription }),
 				_react2.default.createElement('meta', { property: 'og:image', content: props.fbImage }),
@@ -60733,12 +60735,17 @@
 	
 	var _index4 = _interopRequireDefault(_index3);
 	
+	var _banner = __webpack_require__(437);
+	
+	var _banner2 = _interopRequireDefault(_banner);
+	
 	var _product = __webpack_require__(471);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
 		var _props = this.props,
+		    config = _props.config,
 		    products = _props.products,
 		    categories = _props.categories,
 		    user = _props.user;
@@ -60746,58 +60753,72 @@
 		    category = _state.category,
 		    query = _state.query;
 	
+		var banner = config.banner && config.banner.media ? config.banner.media.url : null;
+		var link = config.banner && config.banner.value ? config.banner.value : null;
+		var leftBanner = config.leftBanner && config.leftBanner.media ? config.leftBanner.media.url : null;
+		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
+		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
+		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
+	
 		return category ? _react2.default.createElement(
 			'div',
 			{ className: 'product-group' },
 			_react2.default.createElement(
 				'div',
-				{ className: 'container' },
+				{ className: 'row' },
 				_react2.default.createElement(
 					'div',
-					{ className: 'row' },
+					{ className: 'col-md-0 col-lg-2 column left' },
+					_react2.default.createElement(_banner2.default, { style: { height: 600 }, banner: leftBanner, link: leftBannerlink })
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'col-md-12 col-lg-8 column' },
+					_react2.default.createElement(_banner2.default, { style: { marginLeft: 30, marginRight: 30, height: 150 }, banner: banner, link: link }),
 					_react2.default.createElement(
 						'div',
-						{ className: 'col-md-12 column' },
+						{ className: 'category-wise' },
 						_react2.default.createElement(
 							'div',
-							{ className: 'category-wise' },
+							{ className: 'category-title' },
 							_react2.default.createElement(
-								'div',
-								{ className: 'category-title' },
-								_react2.default.createElement(
-									'p',
-									null,
-									category.name
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'category-description' },
-								_react2.default.createElement(
-									'p',
-									null,
-									category.description
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'price-range' },
-								_react2.default.createElement(_index4.default, {
-									min: (0, _product.getMinPrice)(products),
-									max: (0, _product.getMaxPrice)(products),
-									onPriceChange: this.onPriceChange.bind(this)
-								})
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'products' },
-								_react2.default.createElement(_index2.default, {
-									query: query,
-									user: user
-								})
+								'p',
+								null,
+								category.name
 							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'category-description' },
+							_react2.default.createElement(
+								'p',
+								null,
+								category.description
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'price-range' },
+							_react2.default.createElement(_index4.default, {
+								min: (0, _product.getMinPrice)(products),
+								max: (0, _product.getMaxPrice)(products),
+								onPriceChange: this.onPriceChange.bind(this)
+							})
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'products' },
+							_react2.default.createElement(_index2.default, {
+								query: query,
+								user: user
+							})
 						)
 					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'col-md-0 col-lg-2 column right' },
+					_react2.default.createElement(_banner2.default, { style: { height: 600 }, banner: rightBanner, link: rightBannerlink })
 				)
 			)
 		) : null;

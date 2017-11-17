@@ -8,6 +8,8 @@ const Default = props => {
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
+			<meta property="title" content={props.title} />
+			<meta property="description" content={props.description} />
 			<meta property="og:title" content={props.fbTitle} />
 			<meta property="og:description" content={props.fbDescription} />
 			<meta property="og:image" content={props.fbImage}/>
