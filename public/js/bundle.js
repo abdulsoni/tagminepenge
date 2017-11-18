@@ -55203,205 +55203,84 @@
 			{ className: "footer" },
 			_react2.default.createElement(
 				"div",
-				{ className: "container" },
+				{ className: "content" },
 				_react2.default.createElement(
 					"div",
-					{ className: "row" },
+					{ className: "social" },
+					_react2.default.createElement(
+						"ul",
+						null,
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(
+								"a",
+								{ className: "facebook", href: config.facebook ? config.facebook.value : "" },
+								_react2.default.createElement("i", { className: "fa fa-facebook-square", "aria-hidden": "true" })
+							)
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(
+								"a",
+								{ className: "twitter", href: config.twitter ? config.twitter.value : "" },
+								_react2.default.createElement("i", { className: "fa fa-twitter-square", "aria-hidden": "true" })
+							)
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(
+								"a",
+								{ className: "pinterest", href: config.pinterest ? config.pinterest.value : "" },
+								_react2.default.createElement("i", { className: "fa fa-pinterest-square", "aria-hidden": "true" })
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "links" },
+					_react2.default.createElement(
+						"ul",
+						null,
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(
+								"a",
+								{ href: "/about" },
+								"Om os"
+							)
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(
+								"a",
+								{ href: "/contact" },
+								"Kontakt os"
+							)
+						),
+						_react2.default.createElement(
+							"li",
+							null,
+							_react2.default.createElement(
+								"a",
+								{ href: "/privacy-policy" },
+								"Fortrolighedspolitik"
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "copyright" },
 					_react2.default.createElement(
 						"p",
 						null,
-						config["footer-text"] ? config["footer-text"].value : ""
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "col-xs-6 col-sm-3 col-md-3 column" },
-						_react2.default.createElement(
-							"div",
-							{ className: "title" },
-							_react2.default.createElement(
-								"p",
-								null,
-								"By Recipient"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "links" },
-							_react2.default.createElement(
-								"ul",
-								null,
-								(categories || []).filter(function (category) {
-									return category.footerDisplayType == 1;
-								}).map(function (category) {
-									return _react2.default.createElement(
-										"li",
-										{ key: category._id },
-										_react2.default.createElement(
-											"a",
-											{ href: "/category/" + category.key },
-											category.name
-										)
-									);
-								})
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "col-xs-6 col-sm-3 col-md-3 column" },
-						_react2.default.createElement(
-							"div",
-							{ className: "title" },
-							_react2.default.createElement(
-								"p",
-								null,
-								"Affordable Gift Ideas"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "links" },
-							_react2.default.createElement(
-								"ul",
-								null,
-								(categories || []).filter(function (category) {
-									return category.footerDisplayType == 2;
-								}).map(function (category) {
-									return _react2.default.createElement(
-										"li",
-										{ key: category._id },
-										_react2.default.createElement(
-											"a",
-											{ href: "/category/" + category.key },
-											category.name
-										)
-									);
-								})
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "col-xs-6 col-sm-3 col-md-3 column" },
-						_react2.default.createElement(
-							"div",
-							{ className: "title" },
-							_react2.default.createElement(
-								"p",
-								null,
-								"Helpful Links"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "links" },
-							_react2.default.createElement(
-								"ul",
-								null,
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: "/contact" },
-										"Kontakt os"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: "/about" },
-										"Om os"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: "/submit-product" },
-										"Submit a product"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: "/privacy-policy" },
-										"Fortrolighedspolitik"
-									)
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "col-xs-6 col-sm-3 col-md-3 column" },
-						_react2.default.createElement(
-							"div",
-							{ className: "title" },
-							_react2.default.createElement(
-								"p",
-								null,
-								"Follow TagMinePenge"
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "links" },
-							_react2.default.createElement(
-								"ul",
-								null,
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: config.facebook ? config.facebook.value : "" },
-										"Facebook"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: config.twitter ? config.twitter.value : "" },
-										"Twitter"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: config.tumbler ? config.tumbler.value : "" },
-										"Tumblr"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: config.pinterest ? config.pinterest.value : "" },
-										"Pinterest"
-									)
-								),
-								_react2.default.createElement(
-									"li",
-									null,
-									_react2.default.createElement(
-										"a",
-										{ href: config.rss ? config.rss.value : "" },
-										"RSS"
-									)
-								)
-							)
-						)
+						"\xA9 2017 Tag Mine Penge, All Rights Reserved."
 					)
 				)
 			)
@@ -55449,13 +55328,16 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.footer {\n  padding: 50px;\n  margin-top: 100px;\n  background-color: #f7f7f7; }\n  .footer .title {\n    font-size: 18px;\n    margin-bottom: 14px;\n    font-weight: 700; }\n  .footer .links ul li {\n    list-style: none; }\n    .footer .links ul li a {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      font-size: 14px;\n      color: #333;\n      line-height: 28px; }\n      .footer .links ul li a:hover {\n        color: #77b353; }\n\n/* responsiveness */\n@media (max-width: 520px) {\n  .footer {\n    padding: 20px 5px;\n    text-align: center; }\n    .footer .title {\n      font-size: 15px; }\n    .footer .column {\n      padding: 0px;\n      margin-bottom: 10px; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.footer {\n  padding: 40px 0px 0px 0px;\n  margin-top: 100px;\n  background-color: #f7f7f7;\n  text-align: center; }\n  .footer ul li {\n    list-style: none;\n    display: inline-block;\n    margin-right: 10px; }\n    .footer ul li a {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      font-size: 14px;\n      color: #333;\n      line-height: 28px; }\n      .footer ul li a:hover {\n        color: #77b353; }\n  .footer .social a {\n    font-size: 30px; }\n    .footer .social a.facebook:hover {\n      color: #3c5a98; }\n    .footer .social a.twitter:hover {\n      color: #1ea1f2; }\n    .footer .social a.pinterest:hover {\n      color: #bc0718; }\n  .footer .copyright {\n    font-size: 12px;\n    font-weight: 200;\n    padding: 10px;\n    margin-top: 30px;\n    background: #77b253;\n    color: #fff;\n    letter-spacing: 1px; }\n\n/* responsiveness */\n@media (max-width: 520px) {\n  .footer .column {\n    padding: 0px;\n    margin-bottom: 10px; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
 		"footer": "footer",
-		"title": "title",
-		"links": "links",
+		"social": "social",
+		"facebook": "facebook",
+		"twitter": "twitter",
+		"pinterest": "pinterest",
+		"copyright": "copyright",
 		"column": "column"
 	};
 
