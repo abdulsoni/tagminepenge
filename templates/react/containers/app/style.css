@@ -103,7 +103,9 @@
 @media (min-width: 1500px) {
   .app .main-container {
     width: 1500px;
-    margin: 123px auto auto auto; } }
+    margin: 123px auto auto auto; }
+    .app .main-container.contact-us-container {
+      width: 100%; } }
 @media (max-width: 1024px) {
   .app .container {
     width: 100%; } }
