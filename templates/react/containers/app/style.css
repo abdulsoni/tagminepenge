@@ -104,6 +104,8 @@
     top: 97px; }
   .app.scrolled .row .column.right .banner {
     top: 97px; }
+  .app .tooltip {
+    z-index: 5; }
 
 /* responsiveness */
 @media (min-width: 1500px) {

@@ -12,7 +12,7 @@ var view = function () {
 					   data-slider-max="20" data-slider-step="1" data-slider-value="14" />
 			</div>
 			{
-				sortLinks?(null):(
+				!sortLinks?(null):(
 					<div className="dropdown">
 						<select onChange={this.onSortChange.bind(this)} value  ={this.state.sort} className="selectpicker">
 							<option value="-price">Højeste til Laveste</option>
@@ -20,6 +20,18 @@ var view = function () {
 							<option value="-publishedDate">Nyeste</option>
 							<option value="saves">Mest Populæ</option>
 						</select>
+					</div>
+				)
+			}
+			{
+				sortLinks?(null):(
+					<div className="navigation">
+						<ul>
+							<li className="active"><a>Højeste til Laveste</a></li>
+							<li><a>Laveste til Højeste</a></li>
+							<li><a>Nyeste</a></li>
+							<li><a>Mest Populæ</a></li>
+						</ul>
 					</div>
 				)
 			}
