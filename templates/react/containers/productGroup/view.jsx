@@ -20,10 +20,10 @@ var view = function() {
 			
 				<div className="row">
 					<div className="col-md-0 col-lg-2 column left">
-						<Banner style={{height:600}} banner = {leftBanner} link = {leftBannerlink}/>
+						<Banner style={{height:500}} banner = {leftBanner} link = {leftBannerlink}/>
 					</div>
 					<div className="col-md-12 col-lg-8 column">
-						<Banner style = {{marginLeft : 30,marginRight : 30,height:150}} banner = {banner} link = {link}/>
+						<Banner style = {{height:150}} banner = {banner} link = {link}/>
 						{/*<Filters data = {filters}/>*/}
 						<div className="category-wise">
 							<div className="category-title">
@@ -43,7 +43,6 @@ var view = function() {
 									onPriceChange = {this.onPriceChange.bind(this)}
 									sortLinks = {true}	
 								/>
-								
 							</div>
 							<div className="products">
 								<ProductGrid
@@ -54,7 +53,7 @@ var view = function() {
 						</div>
 					</div>
 					<div className="col-md-0 col-lg-2 column right">
-						<Banner style={{height:600}} banner = {rightBanner} link = {rightBannerlink}/>
+						<Banner style={{height:500}} banner = {rightBanner} link = {rightBannerlink}/>
 					</div>
 				
 			</div>

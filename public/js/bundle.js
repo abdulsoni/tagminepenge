@@ -55755,7 +55755,7 @@
 				_react2.default.createElement(
 					'div',
 					{ className: 'col-md-12 col-lg-8 column' },
-					_react2.default.createElement(_index2.default, { style: { marginLeft: 30, marginRight: 30 }, banner: banner, link: link }),
+					_react2.default.createElement(_index2.default, { banner: banner, link: link }),
 					_react2.default.createElement(_index4.default, { data: filters }),
 					priceRange ? _react2.default.createElement(_index6.default, {
 						max: (0, _product.getMaxPrice)(products),
@@ -55817,7 +55817,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".home .row {\n  margin: 0px; }\n  .home .row .column {\n    padding: 0px; }\n    .home .row .column .container {\n      width: 100%; }\n    .home .row .column .banner {\n      margin: 10px; }\n    .home .row .column.left .banner {\n      margin-right: 0px;\n      position: fixed;\n      width: 16%; }\n    .home .row .column.right .banner {\n      margin-left: 0px;\n      position: fixed;\n      width: 16%; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .home .row .column.left .banner {\n    width: 230px; }\n  .home .row .column.right .banner {\n    width: 230px; } }\n\n@media (max-width: 1200px) {\n  .home .row .column.left {\n    display: none; }\n  .home .row .column.right {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, ".home .row {\n  margin: 0px; }\n  .home .row .column {\n    padding: 0px; }\n    .home .row .column .container {\n      width: 100%;\n      padding: 0; }\n      .home .row .column .container .row .col-md-4 {\n        padding-left: 10px;\n        padding-right: 10px; }\n      .home .row .column .container.filters {\n        padding: 30px 0px 20px 6px; }\n    .home .row .column .banner {\n      margin: 10px; }\n    .home .row .column.left .banner {\n      margin-right: 0px;\n      position: fixed;\n      width: 16%; }\n    .home .row .column.right .banner {\n      margin-left: 0px;\n      position: fixed;\n      width: 16%; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .home .row .column.left .banner {\n    width: 230px; }\n  .home .row .column.right .banner {\n    width: 230px; } }\n\n@media (max-width: 1200px) {\n  .home .row .column.left {\n    display: none; }\n  .home .row .column.right {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -55825,6 +55825,8 @@
 		"row": "row",
 		"column": "column",
 		"container": "container",
+		"col-md-4": "col-md-4",
+		"filters": "filters",
 		"banner": "banner",
 		"left": "left",
 		"right": "right"
@@ -60702,12 +60704,12 @@
 				_react2.default.createElement(
 					'div',
 					{ className: 'col-md-0 col-lg-2 column left' },
-					_react2.default.createElement(_banner2.default, { style: { height: 600 }, banner: leftBanner, link: leftBannerlink })
+					_react2.default.createElement(_banner2.default, { style: { height: 500 }, banner: leftBanner, link: leftBannerlink })
 				),
 				_react2.default.createElement(
 					'div',
 					{ className: 'col-md-12 col-lg-8 column' },
-					_react2.default.createElement(_banner2.default, { style: { marginLeft: 30, marginRight: 30, height: 150 }, banner: banner, link: link }),
+					_react2.default.createElement(_banner2.default, { style: { height: 150 }, banner: banner, link: link }),
 					_react2.default.createElement(
 						'div',
 						{ className: 'category-wise' },
@@ -60752,7 +60754,7 @@
 				_react2.default.createElement(
 					'div',
 					{ className: 'col-md-0 col-lg-2 column right' },
-					_react2.default.createElement(_banner2.default, { style: { height: 600 }, banner: rightBanner, link: rightBannerlink })
+					_react2.default.createElement(_banner2.default, { style: { height: 500 }, banner: rightBanner, link: rightBannerlink })
 				)
 			)
 		) : null;
@@ -60799,12 +60801,17 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-group {\n  padding-top: 20px; }\n  .product-group .column .categories {\n    border-right: 1px solid #e9e9e9;\n    padding-left: 60px; }\n    .product-group .column .categories ul li {\n      list-style: none; }\n      .product-group .column .categories ul li a {\n        display: block;\n        padding: 10px 20px 10px 20px;\n        font-size: 16px;\n        font-weight: bold;\n        color: #333; }\n        .product-group .column .categories ul li a:hover {\n          color: #77b353; }\n        .product-group .column .categories ul li a.selected {\n          color: #77b353; }\n      .product-group .column .categories ul li .sub-categories a {\n        padding: 10px 10px 10px 30px;\n        font-weight: normal;\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .product-group .column .category-wise .category-title {\n    text-align: center;\n    font-size: 25px;\n    font-weight: bold;\n    margin-top: 10px; }\n  .product-group .column .category-wise .category-description {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n    font-size: 12px;\n    line-height: 30px;\n    padding-bottom: 20px;\n    margin-bottom: 20px;\n    border-bottom: 1px solid #e9e9e9; }\n  .product-group .column .category-wise .products .container {\n    width: 100%; }\n    .product-group .column .category-wise .products .container .card .card-header .product-title {\n      font-size: 15px; }\n    .product-group .column .category-wise .products .container .card .card-body .product-image .image {\n      height: 200px; }\n\n/* responsiveness */\n@media (max-width: 992px) {\n  .product-group .container .column .categories {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-group .row {\n  margin: 0px; }\n  .product-group .row .column {\n    padding: 0px; }\n    .product-group .row .column .container {\n      width: 100%; }\n    .product-group .row .column .banner {\n      margin: 10px; }\n    .product-group .row .column.left .banner {\n      margin-right: 0px;\n      position: fixed;\n      width: 16%; }\n    .product-group .row .column.right .banner {\n      margin-left: 0px;\n      position: fixed;\n      width: 16%; }\n    .product-group .row .column .categories {\n      border-right: 1px solid #e9e9e9;\n      padding-left: 60px; }\n      .product-group .row .column .categories ul li {\n        list-style: none; }\n        .product-group .row .column .categories ul li a {\n          display: block;\n          padding: 10px 20px 10px 20px;\n          font-size: 16px;\n          font-weight: bold;\n          color: #333; }\n          .product-group .row .column .categories ul li a:hover {\n            color: #77b353; }\n          .product-group .row .column .categories ul li a.selected {\n            color: #77b353; }\n        .product-group .row .column .categories ul li .sub-categories a {\n          padding: 10px 10px 10px 30px;\n          font-weight: normal;\n          font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n    .product-group .row .column .category-wise .category-title {\n      text-align: center;\n      font-size: 25px;\n      font-weight: bold;\n      margin-top: 10px; }\n    .product-group .row .column .category-wise .category-description {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      font-size: 12px;\n      line-height: 30px;\n      padding-bottom: 20px;\n      margin-bottom: 20px;\n      border-bottom: 1px solid #e9e9e9; }\n    .product-group .row .column .category-wise .products .container {\n      width: 100%; }\n      .product-group .row .column .category-wise .products .container .card .card-header .product-title {\n        font-size: 15px; }\n      .product-group .row .column .category-wise .products .container .card .card-body .product-image .image {\n        height: 200px; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .product-group .row .column.left .banner {\n    width: 230px; }\n  .product-group .row .column.right .banner {\n    width: 230px; } }\n\n@media (max-width: 1200px) {\n  .product-group .row .column.left {\n    display: none; }\n  .product-group .row .column.right {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .product-group .container .column .categories {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
 		"product-group": "product-group",
+		"row": "row",
 		"column": "column",
+		"container": "container",
+		"banner": "banner",
+		"left": "left",
+		"right": "right",
 		"categories": "categories",
 		"selected": "selected",
 		"sub-categories": "sub-categories",
@@ -60812,7 +60819,6 @@
 		"category-title": "category-title",
 		"category-description": "category-description",
 		"products": "products",
-		"container": "container",
 		"card": "card",
 		"card-header": "card-header",
 		"product-title": "product-title",

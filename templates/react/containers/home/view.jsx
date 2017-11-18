@@ -20,7 +20,7 @@ var view = function() {
 					<Banner style={{height:500}} banner = {leftBanner} link = {leftBannerlink}/>
 				</div>
 				<div className="col-md-12 col-lg-8 column">
-					<Banner style = {{marginLeft : 30,marginRight : 30}} banner = {banner} link = {link}/>
+					<Banner banner = {banner} link = {link}/>
 					<Filters data = {filters}/>
 					{
 						priceRange?(
