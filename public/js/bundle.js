@@ -61330,128 +61330,120 @@
 			{ className: 'product-page' },
 			_react2.default.createElement(
 				'div',
-				{ className: 'container product' },
+				{ className: 'row' },
 				_react2.default.createElement(
 					'div',
-					{ className: 'row' },
+					{ className: 'col-md-0 col-lg-2 column left' },
+					_react2.default.createElement(_index6.default, { style: { height: 500 }, banner: leftBanner, link: leftBannerlink })
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'col-md-12 col-lg-8 column' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'col-md-6 column' },
-						_react2.default.createElement(_index2.default, { data: [product.image.url].concat((product.moreImages || []).map(function (image) {
-								return image.url;
-							})) })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-6 column' },
+						{ className: 'row product' },
 						_react2.default.createElement(
 							'div',
-							{ className: 'product-details' },
+							{ className: 'col-md-6 column' },
+							_react2.default.createElement(_index2.default, { data: [product.image.url].concat((product.moreImages || []).map(function (image) {
+									return image.url;
+								})) })
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-md-6 column' },
 							_react2.default.createElement(
 								'div',
-								{ className: 'product-title' },
+								{ className: 'product-details' },
 								_react2.default.createElement(
-									'p',
-									null,
-									product.title
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'product-description' },
-								_react2.default.createElement(
-									'p',
-									null,
-									product.content.brief
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'product-price' },
-								_react2.default.createElement(
-									'p',
-									null,
-									product.price || 0,
-									' kr.'
-								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'product-actions' },
-								_react2.default.createElement(
-									'a',
-									{ href: product.link },
+									'div',
+									{ className: 'product-title' },
 									_react2.default.createElement(
-										'button',
-										{ className: 'btn btn-yellow' },
-										'Tjek det ud'
+										'p',
+										null,
+										product.title
 									)
 								),
-								user ? _react2.default.createElement(
-									'a',
-									null,
+								_react2.default.createElement(
+									'div',
+									{ className: 'product-description' },
 									_react2.default.createElement(
-										'button',
-										{ onClick: this.addToWishList.bind(this), className: 'btn btn-red save-btn' },
-										presentInWishList ? "Fjern" : "Save"
+										'p',
+										null,
+										product.content.brief
 									)
-								) : _react2.default.createElement(
-									'a',
-									{ 'data-toggle': 'modal', 'data-target': '#login-modal' },
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'product-price' },
 									_react2.default.createElement(
-										'button',
-										{ className: 'btn btn-yellow save-btn' },
-										'Save'
+										'p',
+										null,
+										product.price || 0,
+										' kr.'
 									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'product-actions' },
+									_react2.default.createElement(
+										'a',
+										{ href: product.link },
+										_react2.default.createElement(
+											'button',
+											{ className: 'btn btn-yellow' },
+											'Tjek det ud'
+										)
+									),
+									user ? _react2.default.createElement(
+										'a',
+										null,
+										_react2.default.createElement(
+											'button',
+											{ onClick: this.addToWishList.bind(this),
+												className: 'btn btn-red save-btn' },
+											presentInWishList ? "Fjern" : "Save"
+										)
+									) : _react2.default.createElement(
+										'a',
+										{ 'data-toggle': 'modal', 'data-target': '#login-modal' },
+										_react2.default.createElement(
+											'button',
+											{ className: 'btn btn-yellow save-btn' },
+											'Save'
+										)
+									)
+								),
+								_react2.default.createElement(
+									'div',
+									{ className: 'share' },
+									_react2.default.createElement('div', {
+										'data-url': productLink, 'data-title': product.title,
+										'data-description': (0, _common.getPlainText)(product.content.brief),
+										'data-media': imageUrl, className: 'addthis_inline_share_toolbox' })
 								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'share' },
-								_react2.default.createElement('div', {
-									'data-url': productLink, 'data-title': product.title, 'data-description': (0, _common.getPlainText)(product.content.brief),
-									'data-media': imageUrl, className: 'addthis_inline_share_toolbox' })
 							)
 						)
-					)
-				)
-			),
-			_react2.default.createElement(
-				'div',
-				{ className: 'more' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-0 col-lg-2 column left' },
-						_react2.default.createElement(_index6.default, { style: { height: 600 }, banner: leftBanner, link: leftBannerlink })
 					),
 					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-12 col-lg-8 column' },
-						_react2.default.createElement(
-							'p',
-							{ className: 'more-text' },
-							'You may also enjoy throwing your hard earned cash away on...'
-						),
-						_react2.default.createElement(_index4.default, {
-							user: user,
+						'p',
+						{ className: 'more-text' },
+						'You may also enjoy throwing your hard earned cash away on...'
+					),
+					_react2.default.createElement(_index4.default, {
+						user: user,
+						query: {
 							query: {
-								query: {
-									categories: {
-										$in: product.categories || []
-									}
+								categories: {
+									$in: product.categories || []
 								}
 							}
-	
-						})
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-0 col-lg-2 column right' },
-						_react2.default.createElement(_index6.default, { style: { height: 600 }, banner: rightBanner, link: rightBannerlink })
-					)
+						} })
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'col-md-0 col-lg-2 column right' },
+					_react2.default.createElement(_index6.default, { style: { height: 500 }, banner: rightBanner, link: rightBannerlink })
 				)
 			)
 		) : null;
@@ -61498,13 +61490,21 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-page {\n  padding-top: 70px; }\n  .product-page .product {\n    margin-bottom: 100px; }\n    .product-page .product .column .product-details .product-title {\n      font-size: 30px;\n      margin-bottom: 8px; }\n    .product-page .product .column .product-details .product-description {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      line-height: 24px;\n      margin-bottom: 8px; }\n    .product-page .product .column .product-details .product-price {\n      font-size: 30px;\n      margin-bottom: 12px; }\n    .product-page .product .column .product-details .product-actions .save-btn {\n      margin-left: 5px; }\n    .product-page .product .column .product-details .share {\n      margin-top: 10px; }\n      .product-page .product .column .product-details .share ul li {\n        display: inline-block;\n        margin-right: 8px; }\n        .product-page .product .column .product-details .share ul li a {\n          font-size: 35px; }\n          .product-page .product .column .product-details .share ul li a.facebook {\n            color: #3c5a98; }\n          .product-page .product .column .product-details .share ul li a.twitter {\n            color: #1ea1f2; }\n          .product-page .product .column .product-details .share ul li a.pinterest {\n            color: #bc0718; }\n  .product-page .more .row {\n    margin: 0px; }\n    .product-page .more .row .column .more-text {\n      font-size: 16px;\n      padding: 0px 0px 40px 30px; }\n    .product-page .more .row .column .container {\n      width: 100%; }\n    .product-page .more .row .column .banner {\n      margin: 27px 10px 10px 10px; }\n    .product-page .more .row .column.left .banner {\n      margin-right: 0px; }\n    .product-page .more .row .column.right .banner {\n      margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .product-page {\n    padding-top: 0px; }\n    .product-page .product .column {\n      padding: 20px; }\n      .product-page .product .column .carousel-indicators {\n        width: inherit; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-page .row {\n  margin: 0px; }\n  .product-page .row .column {\n    padding: 0px; }\n    .product-page .row .column .container {\n      width: 100%;\n      padding: 0; }\n      .product-page .row .column .container .row .col-md-4 {\n        padding-left: 10px;\n        padding-right: 10px; }\n      .product-page .row .column .container.filters {\n        padding: 30px 0px 20px 6px; }\n    .product-page .row .column .banner {\n      margin: 10px; }\n    .product-page .row .column.left .banner {\n      margin-right: 0px;\n      position: fixed;\n      width: 16%; }\n    .product-page .row .column.right .banner {\n      margin-left: 0px;\n      position: fixed;\n      width: 16%; }\n\n.product-page .more-text {\n  padding: 20px 10px; }\n\n.product-page .product {\n  margin: 10px; }\n  .product-page .product .column .product-details {\n    padding-left: 10px; }\n    .product-page .product .column .product-details .product-title {\n      font-size: 30px;\n      margin-bottom: 8px; }\n    .product-page .product .column .product-details .product-description {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      line-height: 24px;\n      margin-bottom: 8px; }\n    .product-page .product .column .product-details .product-price {\n      font-size: 30px;\n      margin-bottom: 12px; }\n    .product-page .product .column .product-details .product-actions .save-btn {\n      margin-left: 5px; }\n    .product-page .product .column .product-details .share {\n      margin-top: 10px; }\n      .product-page .product .column .product-details .share ul li {\n        display: inline-block;\n        margin-right: 8px; }\n        .product-page .product .column .product-details .share ul li a {\n          font-size: 35px; }\n          .product-page .product .column .product-details .share ul li a.facebook {\n            color: #3c5a98; }\n          .product-page .product .column .product-details .share ul li a.twitter {\n            color: #1ea1f2; }\n          .product-page .product .column .product-details .share ul li a.pinterest {\n            color: #bc0718; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .product-page .row .column.left .banner {\n    width: 230px; }\n  .product-page .row .column.right .banner {\n    width: 230px; } }\n\n@media (max-width: 1200px) {\n  .product-page .row .column.left {\n    display: none; }\n  .product-page .row .column.right {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .product-page {\n    padding-top: 0px; }\n    .product-page .product .column {\n      padding: 20px; }\n      .product-page .product .column .carousel-indicators {\n        width: inherit; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
 		"product-page": "product-page",
-		"product": "product",
+		"row": "row",
 		"column": "column",
+		"container": "container",
+		"col-md-4": "col-md-4",
+		"filters": "filters",
+		"banner": "banner",
+		"left": "left",
+		"right": "right",
+		"more-text": "more-text",
+		"product": "product",
 		"product-details": "product-details",
 		"product-title": "product-title",
 		"product-description": "product-description",
@@ -61515,13 +61515,6 @@
 		"facebook": "facebook",
 		"twitter": "twitter",
 		"pinterest": "pinterest",
-		"more": "more",
-		"row": "row",
-		"more-text": "more-text",
-		"container": "container",
-		"banner": "banner",
-		"left": "left",
-		"right": "right",
 		"carousel-indicators": "carousel-indicators"
 	};
 
