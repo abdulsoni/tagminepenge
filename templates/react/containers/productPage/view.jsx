@@ -29,7 +29,7 @@ var view = function () {
 				<div className="col-md-12 col-lg-8 column">
 					<div className="row product">
 						<div className="col-md-6 column">
-							<Carousel data = {[product.image.url].concat((product.moreImages || []).map((image)=>{
+							<Carousel data = {(product.image?[product.image.url]:[]).concat((product.moreImages || []).map((image)=>{
 								return image.url;
 							}))}/>
 						</div>

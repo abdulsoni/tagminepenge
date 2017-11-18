@@ -53203,7 +53203,7 @@
 							_react2.default.createElement(
 								"span",
 								{ className: "icon" },
-								_react2.default.createElement("span", { className: "glyphicon glyphicon-home", "aria-hidden": "true" })
+								_react2.default.createElement("span", { className: "fa fa-home", "aria-hidden": "true" })
 							),
 							_react2.default.createElement(
 								"span",
@@ -53282,7 +53282,7 @@
 							_react2.default.createElement(
 								"span",
 								{ className: "icon" },
-								_react2.default.createElement("span", { className: "glyphicon glyphicon-menu-hamburger", "aria-hidden": "true" })
+								_react2.default.createElement("span", { className: "fa fa-gift", "aria-hidden": "true" })
 							),
 							_react2.default.createElement(
 								"span",
@@ -61349,7 +61349,7 @@
 						_react2.default.createElement(
 							'div',
 							{ className: 'col-md-6 column' },
-							_react2.default.createElement(_index2.default, { data: [product.image.url].concat((product.moreImages || []).map(function (image) {
+							_react2.default.createElement(_index2.default, { data: (product.image ? [product.image.url] : []).concat((product.moreImages || []).map(function (image) {
 									return image.url;
 								})) })
 						),
@@ -63053,7 +63053,18 @@
 	
 		_createClass(Main, [{
 			key: 'componentDidMount',
-			value: function componentDidMount() {}
+			value: function componentDidMount() {
+				setTimeout(function () {
+					$(".main-container").addClass("contact-us-container");
+				}, 100);
+			}
+		}, {
+			key: 'componentWillUnmount',
+			value: function componentWillUnmount() {
+				setTimeout(function () {
+					$(".main-container").removeClass("contact-us-container");
+				}, 100);
+			}
 			/**
 	   * Render the view
 	   * @returns {*}
@@ -63072,7 +63083,7 @@
 	
 	
 	exports.default = Main;
-	Main.displayName = 'Sample-Component';
+	Main.displayName = 'About-Us';
 
 /***/ }),
 /* 517 */
