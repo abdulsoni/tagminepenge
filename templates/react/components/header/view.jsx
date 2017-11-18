@@ -65,7 +65,7 @@ var view = function () {
 				<ul>
 					<li>
 						<a href="/new" className="nav-link">
-							<span className="icon"><span className="glyphicon glyphicon-home" aria-hidden="true"></span></span>
+							<span className="icon"><span className="fa fa-home" aria-hidden="true"></span></span>
 							<span className="text">New</span>
 						</a>
 					</li>
@@ -99,7 +99,7 @@ var view = function () {
 					<li>
 						<a href="/category/gadgets" className="nav-link dropdown-toggle">
 							<span className="icon">
-								<span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+								<span className="fa fa-gift" aria-hidden="true"></span>
 							</span>
 							<span className="text">Ting Til Hjemmet</span>
 						</a>

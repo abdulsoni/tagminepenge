@@ -15,7 +15,15 @@ export default class Main extends Component {
 		super(props);
 	}
 	componentDidMount(){
-		
+		setTimeout(()=>{
+			$(".main-container").addClass("contact-us-container");
+		},100)
+	}
+	componentWillUnmount(){
+		setTimeout(()=>{
+			$(".main-container").removeClass("contact-us-container");
+		},100)
+	
 	}
 	/**
 	 * Render the view
@@ -26,4 +34,4 @@ export default class Main extends Component {
 	}
 }
 //Set display name to be used in React Dev Tools
-Main.displayName = 'Sample-Component';
+Main.displayName = 'About-Us';
