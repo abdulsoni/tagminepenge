@@ -55209,16 +55209,20 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		var _props = this.props,
-		    config = _props.config,
-		    categories = _props.categories;
+		var config = this.props.config;
 	
+		var footerText = config["footer-text"] ? config["footer-text"].value : null;
 		return _react2.default.createElement(
 			"div",
 			{ className: "footer" },
 			_react2.default.createElement(
 				"div",
 				{ className: "content" },
+				footerText ? _react2.default.createElement(
+					"p",
+					{ className: "footer-text" },
+					footerText
+				) : null,
 				_react2.default.createElement(
 					"div",
 					{ className: "social" },
