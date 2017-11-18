@@ -118,6 +118,17 @@
 	text-align: center;
 	color:#d8d8d8;
   }
+  .fixed{
+	position:fixed;
+  }
+  &.scrolled{
+	.row .column.left .banner {
+	  top: 97px;
+	}
+	.row .column.right .banner{
+	  top: 97px;
+	}
+  }
 }
 
 /* responsiveness */

@@ -19,6 +19,15 @@ export default class Main extends Component {
 			script.src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a";
 			document.getElementsByTagName('head')[0].appendChild(script);
 		},1000)
+		$(window).scroll(()=> {
+			var scroll = $(window).scrollTop();
+
+			if (scroll >= 300) {
+				$(this.appRef).addClass("scrolled");
+			} else {
+				$(this.appRef).removeClass("scrolled");
+			}
+		});
 	}
 	/**
 	 * Render the view

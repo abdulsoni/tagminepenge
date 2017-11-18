@@ -52809,11 +52809,22 @@
 		_createClass(Main, [{
 			key: 'componentDidMount',
 			value: function componentDidMount() {
+				var _this2 = this;
+	
 				setTimeout(function () {
 					var script = document.createElement('script');
 					script.src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a";
 					document.getElementsByTagName('head')[0].appendChild(script);
 				}, 1000);
+				$(window).scroll(function () {
+					var scroll = $(window).scrollTop();
+	
+					if (scroll >= 300) {
+						$(_this2.appRef).addClass("scrolled");
+					} else {
+						$(_this2.appRef).removeClass("scrolled");
+					}
+				});
 			}
 			/**
 	   * Render the view
@@ -52879,6 +52890,8 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
+		var _this = this;
+	
 		var _props = this.props,
 		    routeInfo = _props.routeInfo,
 		    navLinks = _props.navLinks,
@@ -52889,7 +52902,9 @@
 	
 		return _react2.default.createElement(
 			'div',
-			{ className: 'app' },
+			{ className: 'app', ref: function ref(_ref) {
+					_this.appRef = _ref;
+				} },
 			_react2.default.createElement(
 				'div',
 				{ className: 'main-container' },
@@ -55381,7 +55396,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.app {\n  background: #ffffff;\n  font-family: Oswald, Arial, sans-serif; }\n  .app .container {\n    width: 1000px; }\n  .app ul {\n    padding: 0px; }\n  .app p {\n    margin: 0;\n    padding: 0; }\n  .app a {\n    text-decoration: none;\n    cursor: pointer; }\n  .app input {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .app textarea {\n    max-height: 200px;\n    height: 180px;\n    resize: none;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .app .main-container {\n    margin-top: 123px; }\n  .app .content-center {\n    -ms-flex-pack: center;\n    justify-content: center;\n    -ms-flex-align: center;\n    align-items: center;\n    vertical-align: middle;\n    text-align: center;\n    display: -ms-flexbox;\n    display: flex; }\n  .app .btn-yellow {\n    color: #ffffff;\n    background-color: #77b353;\n    border-color: #77b353; }\n    .app .btn-yellow:hover {\n      background-color: #347C17;\n      border-color: #347C17; }\n  .app .btn-red {\n    color: #ffffff;\n    background-color: #cb1d00;\n    border-color: #cb1d00; }\n    .app .btn-red:hover {\n      background-color: #b91a00;\n      border-color: #b91a00; }\n  .app .btn {\n    font-size: 16px;\n    font-weight: 400;\n    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);\n    padding: 5px 12px;\n    border-radius: 2px; }\n  .app .input-group-btn .btn {\n    border-bottom-right-radius: 4px;\n    border-top-right-radius: 4px;\n    text-shadow: none;\n    padding: 6px 12px;\n    font-size: 14px; }\n  .app .contact-us-btn {\n    color: #fff;\n    background-color: #a54343;\n    display: block;\n    line-height: 45px;\n    height: 50px;\n    font-size: 18px;\n    padding: 1px 15px;\n    margin-right: -35px;\n    -webkit-transition: all .15s ease-in-out;\n    -moz-transition: all .15s ease-in-out;\n    transition: all .15s ease-in-out;\n    font-weight: 400;\n    margin-bottom: -5px;\n    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.3);\n    position: fixed;\n    bottom: 0px;\n    right: 100px;\n    border-top-left-radius: 4px;\n    border-top-right-radius: 4px; }\n    .app .contact-us-btn:hover {\n      text-decoration: none;\n      margin-bottom: 0; }\n    .app .contact-us-btn .icon {\n      margin-right: 5px; }\n  .app .pagination-box {\n    text-align: right; }\n  .app .pagination > li > a, .app .pagination > li > span {\n    color: #77b253; }\n  .app .pagination > li.active > a, .app .pagination > li > span {\n    color: #fff; }\n  .app .pagination > .active > a, .app .pagination > .active > a:hover, .app .pagination > .active > a:focus, .app .pagination > .active > span, .app .pagination > .active > span:hover, .app .pagination > .active > span:focus {\n    background-color: #77b253;\n    border-color: #77b253; }\n  .app .empty-msg {\n    text-align: center;\n    color: #d8d8d8; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .app .main-container {\n    width: 1500px;\n    margin: 123px auto auto auto; }\n    .app .main-container.contact-us-container {\n      width: 100%; } }\n\n@media (max-width: 1024px) {\n  .app .container {\n    width: 100%; } }\n\n@media (max-width: 762px) {\n  .app .contact-us-btn {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.app {\n  background: #ffffff;\n  font-family: Oswald, Arial, sans-serif; }\n  .app .container {\n    width: 1000px; }\n  .app ul {\n    padding: 0px; }\n  .app p {\n    margin: 0;\n    padding: 0; }\n  .app a {\n    text-decoration: none;\n    cursor: pointer; }\n  .app input {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .app textarea {\n    max-height: 200px;\n    height: 180px;\n    resize: none;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .app .main-container {\n    margin-top: 123px; }\n  .app .content-center {\n    -ms-flex-pack: center;\n    justify-content: center;\n    -ms-flex-align: center;\n    align-items: center;\n    vertical-align: middle;\n    text-align: center;\n    display: -ms-flexbox;\n    display: flex; }\n  .app .btn-yellow {\n    color: #ffffff;\n    background-color: #77b353;\n    border-color: #77b353; }\n    .app .btn-yellow:hover {\n      background-color: #347C17;\n      border-color: #347C17; }\n  .app .btn-red {\n    color: #ffffff;\n    background-color: #cb1d00;\n    border-color: #cb1d00; }\n    .app .btn-red:hover {\n      background-color: #b91a00;\n      border-color: #b91a00; }\n  .app .btn {\n    font-size: 16px;\n    font-weight: 400;\n    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);\n    padding: 5px 12px;\n    border-radius: 2px; }\n  .app .input-group-btn .btn {\n    border-bottom-right-radius: 4px;\n    border-top-right-radius: 4px;\n    text-shadow: none;\n    padding: 6px 12px;\n    font-size: 14px; }\n  .app .contact-us-btn {\n    color: #fff;\n    background-color: #a54343;\n    display: block;\n    line-height: 45px;\n    height: 50px;\n    font-size: 18px;\n    padding: 1px 15px;\n    margin-right: -35px;\n    -webkit-transition: all .15s ease-in-out;\n    -moz-transition: all .15s ease-in-out;\n    transition: all .15s ease-in-out;\n    font-weight: 400;\n    margin-bottom: -5px;\n    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.3);\n    position: fixed;\n    bottom: 0px;\n    right: 100px;\n    border-top-left-radius: 4px;\n    border-top-right-radius: 4px; }\n    .app .contact-us-btn:hover {\n      text-decoration: none;\n      margin-bottom: 0; }\n    .app .contact-us-btn .icon {\n      margin-right: 5px; }\n  .app .pagination-box {\n    text-align: right; }\n  .app .pagination > li > a, .app .pagination > li > span {\n    color: #77b253; }\n  .app .pagination > li.active > a, .app .pagination > li > span {\n    color: #fff; }\n  .app .pagination > .active > a, .app .pagination > .active > a:hover, .app .pagination > .active > a:focus, .app .pagination > .active > span, .app .pagination > .active > span:hover, .app .pagination > .active > span:focus {\n    background-color: #77b253;\n    border-color: #77b253; }\n  .app .empty-msg {\n    text-align: center;\n    color: #d8d8d8; }\n  .app .fixed {\n    position: fixed; }\n  .app.scrolled .row .column.left .banner {\n    top: 97px; }\n  .app.scrolled .row .column.right .banner {\n    top: 97px; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .app .main-container {\n    width: 1500px;\n    margin: 123px auto auto auto; }\n    .app .main-container.contact-us-container {\n      width: 100%; } }\n\n@media (max-width: 1024px) {\n  .app .container {\n    width: 100%; } }\n\n@media (max-width: 762px) {\n  .app .contact-us-btn {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -55399,6 +55414,13 @@
 		"pagination": "pagination",
 		"active": "active",
 		"empty-msg": "empty-msg",
+		"fixed": "fixed",
+		"scrolled": "scrolled",
+		"row": "row",
+		"column": "column",
+		"left": "left",
+		"banner": "banner",
+		"right": "right",
 		"contact-us-container": "contact-us-container"
 	};
 
@@ -55728,7 +55750,7 @@
 				_react2.default.createElement(
 					'div',
 					{ className: 'col-md-0 col-lg-2 column left' },
-					_react2.default.createElement(_index2.default, { style: { height: 600 }, banner: leftBanner, link: leftBannerlink })
+					_react2.default.createElement(_index2.default, { style: { height: 500 }, banner: leftBanner, link: leftBannerlink })
 				),
 				_react2.default.createElement(
 					'div',
@@ -55748,7 +55770,7 @@
 				_react2.default.createElement(
 					'div',
 					{ className: 'col-md-0 col-lg-2 column right' },
-					_react2.default.createElement(_index2.default, { style: { height: 600 }, banner: rightBanner, link: rightBannerlink })
+					_react2.default.createElement(_index2.default, { style: { height: 500 }, banner: rightBanner, link: rightBannerlink })
 				)
 			)
 		);
@@ -55795,7 +55817,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".home .row {\n  margin: 0px; }\n  .home .row .column {\n    padding: 0px; }\n    .home .row .column .container {\n      width: 100%; }\n    .home .row .column .banner {\n      margin: 10px; }\n    .home .row .column.left .banner {\n      margin-right: 0px; }\n    .home .row .column.right .banner {\n      margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .home .row .column.left {\n    display: none; }\n  .home .row .column.right {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, ".home .row {\n  margin: 0px; }\n  .home .row .column {\n    padding: 0px; }\n    .home .row .column .container {\n      width: 100%; }\n    .home .row .column .banner {\n      margin: 10px; }\n    .home .row .column.left .banner {\n      margin-right: 0px;\n      position: fixed;\n      width: 16%; }\n    .home .row .column.right .banner {\n      margin-left: 0px;\n      position: fixed;\n      width: 16%; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .home .row .column.left .banner {\n    width: 230px; }\n  .home .row .column.right .banner {\n    width: 230px; } }\n\n@media (max-width: 1200px) {\n  .home .row .column.left {\n    display: none; }\n  .home .row .column.right {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -56169,7 +56191,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".filters ul {\n  padding-left: 4px; }\n  .filters ul li {\n    display: inline-block;\n    margin-right: 5px; }\n    .filters ul li a {\n      display: block;\n      padding: 5px 10px;\n      font-size: 18px;\n      color: #4168ff;\n      border-radius: 4px; }\n    .filters ul li.active a {\n      background: #416dff;\n      color: #fff; }\n", ""]);
+	exports.push([module.id, ".filters {\n  padding: 20px 25px; }\n  .filters ul {\n    padding-left: 4px; }\n    .filters ul li {\n      display: inline-block;\n      margin-right: 5px; }\n      .filters ul li a {\n        display: block;\n        padding: 5px 10px;\n        font-size: 18px;\n        color: #4168ff;\n        border-radius: 4px; }\n      .filters ul li.active a {\n        background: #416dff;\n        color: #fff; }\n", ""]);
 	
 	// exports
 	exports.locals = {

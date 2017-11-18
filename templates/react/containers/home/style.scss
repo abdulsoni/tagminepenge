@@ -12,11 +12,15 @@
 	  &.left {
 		.banner {
 		  margin-right: 0px;
+		  position:fixed;
+		  width: 16%;
 		}
 	  }
 	  &.right {
 		.banner {
 		  margin-left: 0px;
+		  position:fixed;
+		  width: 16%;
 		}
 	  }
 	}
@@ -24,7 +28,13 @@
 }
 
 /* responsiveness */
-@media (max-width: 1200px) {
+@media (min-width: 1500px) {
+  .home .row .column.left .banner{
+	width:230px;
+  }
+  .home .row .column.right .banner{
+	width:230px;
+  }
 }
 
 @media (max-width: 1200px) {

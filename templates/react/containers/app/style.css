@@ -98,6 +98,12 @@
   .app .empty-msg {
     text-align: center;
     color: #d8d8d8; }
+  .app .fixed {
+    position: fixed; }
+  .app.scrolled .row .column.left .banner {
+    top: 97px; }
+  .app.scrolled .row .column.right .banner {
+    top: 97px; }
 
 /* responsiveness */
 @media (min-width: 1500px) {

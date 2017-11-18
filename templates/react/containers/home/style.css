@@ -7,11 +7,21 @@
     .home .row .column .banner {
       margin: 10px; }
     .home .row .column.left .banner {
-      margin-right: 0px; }
+      margin-right: 0px;
+      position: fixed;
+      width: 16%; }
     .home .row .column.right .banner {
-      margin-left: 0px; }
+      margin-left: 0px;
+      position: fixed;
+      width: 16%; }
 
 /* responsiveness */
+@media (min-width: 1500px) {
+  .home .row .column.left .banner {
+    width: 230px; }
+
+  .home .row .column.right .banner {
+    width: 230px; } }
 @media (max-width: 1200px) {
   .home .row .column.left {
     display: none; }
