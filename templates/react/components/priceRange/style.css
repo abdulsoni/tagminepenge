@@ -48,7 +48,10 @@
     .sorting .price-range-slider {
       margin-bottom: 20px; }
       .sorting .price-range-slider .slider.slider-horizontal {
-        width: 100%; } }
+        width: 100%; }
+
+  .slider-tick-label {
+    width: inherit !important; } }
 /* /responsiveness */
 
 /*# sourceMappingURL=style.css.map */
