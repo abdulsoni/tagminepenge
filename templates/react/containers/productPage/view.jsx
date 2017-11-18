@@ -72,6 +72,7 @@ var view = function () {
 						<Banner style={{height:600}} banner = {leftBanner} link = {leftBannerlink}/>
 					</div>
 					<div className="col-md-12 col-lg-8 column">
+						<p className="more-text">You may also enjoy throwing your hard earned cash away on...</p>
 						<ProductGrid
 							user = {user}
 							query = {{

@@ -52,7 +52,10 @@
 	.row {
 	  margin: 0px;
 	  .column {
-		padding: 0px;
+		.more-text{
+		  font-size: 16px;
+		  padding: 0px 0px 40px 30px;
+		}
 		.container {
 		  width: 100%;
 		}

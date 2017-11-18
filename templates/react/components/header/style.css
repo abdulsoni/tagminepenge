@@ -9,7 +9,7 @@
   width: 100%;
   top: 0px;
   left: 0;
-  z-index: 2; }
+  z-index: 9999; }
   .header .header-top {
     height: 57px;
     background: #f7f7f7; }
@@ -289,7 +289,7 @@
     left: -70px; }
 
   .header .header-top .content .actions {
-    top: px; } }
+    top: 23px; } }
 /* /responsiveness */
 
 /*# sourceMappingURL=style.css.map */

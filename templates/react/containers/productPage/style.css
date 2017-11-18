@@ -35,16 +35,17 @@
             color: #bc0718; }
   .product-page .more .row {
     margin: 0px; }
-    .product-page .more .row .column {
-      padding: 0px; }
-      .product-page .more .row .column .container {
-        width: 100%; }
-      .product-page .more .row .column .banner {
-        margin: 27px 10px 10px 10px; }
-      .product-page .more .row .column.left .banner {
-        margin-right: 0px; }
-      .product-page .more .row .column.right .banner {
-        margin-left: 0px; }
+    .product-page .more .row .column .more-text {
+      font-size: 16px;
+      padding: 0px 0px 40px 30px; }
+    .product-page .more .row .column .container {
+      width: 100%; }
+    .product-page .more .row .column .banner {
+      margin: 27px 10px 10px 10px; }
+    .product-page .more .row .column.left .banner {
+      margin-right: 0px; }
+    .product-page .more .row .column.right .banner {
+      margin-left: 0px; }
 
 /* responsiveness */
 @media (max-width: 1200px) {
