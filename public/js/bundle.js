@@ -52879,6 +52879,10 @@
 	
 	var _index6 = _interopRequireDefault(_index5);
 	
+	var _bottomText = __webpack_require__(549);
+	
+	var _bottomText2 = _interopRequireDefault(_bottomText);
+	
 	var _index7 = __webpack_require__(424);
 	
 	var _index8 = _interopRequireDefault(_index7);
@@ -52911,6 +52915,7 @@
 				_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user, categories: categories }),
 				_react2.default.createElement(routeInfo.component, _extends({ categories: categories }, routeInfo.routeProps, { filters: filters, user: user,
 					config: config }, this.props)),
+				_react2.default.createElement(_bottomText2.default, null),
 				_react2.default.createElement(_index8.default, { config: config, categories: categories }),
 				_react2.default.createElement(_login2.default, null),
 				_react2.default.createElement(_index4.default, null),
@@ -64997,6 +65002,192 @@
 	
 	// React Engine needs exports, don't export default
 	module.exports = Index;
+
+/***/ }),
+/* 549 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(550);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 550 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(551);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _axios = __webpack_require__(354);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Component
+	 * @type Component
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+		}
+	
+		_createClass(Main, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {}
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	//Set display name to be used in React Dev Tools
+	
+	
+	exports.default = Main;
+	Main.displayName = 'Sample-Component';
+
+/***/ }),
+/* 551 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(552);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		return _react2.default.createElement(
+			"div",
+			{ className: "bottom-text" },
+			_react2.default.createElement(
+				"div",
+				{ className: "row" },
+				_react2.default.createElement("div", { className: "col-md-2" }),
+				_react2.default.createElement(
+					"div",
+					{ className: "col-md-8" },
+					_react2.default.createElement(
+						"p",
+						null,
+						"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+					),
+					_react2.default.createElement(
+						"p",
+						null,
+						"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+					)
+				),
+				_react2.default.createElement("div", { className: "col-md-2" })
+			)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 552 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(553);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(405)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 553 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(404)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.bottom-text {\n  margin-top: 20px; }\n  .bottom-text p {\n    margin-bottom: 20px !important;\n    font-weight: 300;\n    line-height: 26px; }\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"bottom-text": "bottom-text"
+	};
 
 /***/ })
 /******/ ]);
