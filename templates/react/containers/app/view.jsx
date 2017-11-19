@@ -20,7 +20,7 @@ var view = function () {
 										 config={config} {...this.props}/>
 				}
 
-				<BottomText/>
+				<BottomText text={config["footer-text"]?config["footer-text"].value:null}/>
 				<Footer config={config} categories={categories}/>
 				<LoginModal/>
 				<SignUpModal/>
