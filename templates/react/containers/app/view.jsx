@@ -9,6 +9,7 @@ import styles from "./style.scss";
 
 var view = function () {
 	const {routeInfo, navLinks, user, config, categories, filters} = this.props;
+	
 	return (
 		<div className="app" ref={(ref) => {
 			this.appRef = ref

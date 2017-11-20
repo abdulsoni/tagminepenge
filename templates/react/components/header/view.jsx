@@ -63,7 +63,7 @@ var view = function () {
 				<div className="nav-accent nav-accent-left"></div>
 				<div className="nav-accent nav-accent-right"></div>
 				<ul>
-					<li>
+					<li className="category-others">
 						<a href="/new" className="nav-link">
 							<span className="icon"><span className="fa fa-home" aria-hidden="true"></span></span>
 							<span className="text">New</span>
@@ -72,7 +72,7 @@ var view = function () {
 					{
 						(categories || []).filter(category => category.displayType == 1).map((category) => {
 							return (
-								<li key={category._id} className="desktop">
+								<li key={category._id} className={"desktop category-"+category.key}>
 									<a href={"/category/" + category.key} className="nav-link">
 										<span className="icon"><span className={category.iconClass}
 																	 aria-hidden="true"></span></span>
@@ -97,7 +97,7 @@ var view = function () {
 						</a>
 					</li>
 					<li>
-						<a href="/category/gadgets" className="nav-link dropdown-toggle">
+						<a href="/category/gadgets" className="nav-link dropdown-toggle category-others">
 							<span className="icon">
 								<span className="fa fa-gift" aria-hidden="true"></span>
 							</span>

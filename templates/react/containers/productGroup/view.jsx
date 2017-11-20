@@ -16,7 +16,7 @@ var view = function() {
 	const rightBannerlink = (config.rightBanner && config.rightBanner.value)?config.rightBanner.value:null;
 
 	return category?(
-		<div className="product-group">
+		<div className={"product-group category-"+category.key}>
 			
 				<div className="row">
 					<div className="col-md-0 col-lg-2 column left">

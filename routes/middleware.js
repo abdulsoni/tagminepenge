@@ -53,6 +53,7 @@ exports.populateCategories = function (req, res, next) {
 	query.exec(function(err, doc) {
 		if(doc){
 			res.locals.categories = doc;
+			
 		} else {
 			res.locals.categories = [];
 		}
@@ -64,7 +65,7 @@ exports.populateEntity = function (req, res, next) {
 	console.log(req.url);
 	if(req.url.indexOf("/product/")!=-1){
 		var productId = req.url.split("/")[2];
-		console.log("Product Id ",productId);
+		
 		Product.model.findById(productId).then((doc)=>{
 			if(doc){
 				//console.log(doc)
@@ -80,9 +81,10 @@ exports.populateEntity = function (req, res, next) {
 			next();
 		})
 	} else if(req.url.indexOf("/category/")!=-1){
+		
 		var category = req.url.split("/")[2];
 		var categoryObj = (res.locals.categories || []).filter((ele)=>{
-			return ele.key=category;
+			return ele.key==category;
 		});
 		if(categoryObj.length>0){
 			categoryObj = categoryObj[0]

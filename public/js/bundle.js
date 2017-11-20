@@ -52904,6 +52904,7 @@
 		    categories = _props.categories,
 		    filters = _props.filters;
 	
+	
 		return _react2.default.createElement(
 			'div',
 			{ className: 'app', ref: function ref(_ref) {
@@ -53201,7 +53202,7 @@
 					null,
 					_react2.default.createElement(
 						"li",
-						null,
+						{ className: "category-others" },
 						_react2.default.createElement(
 							"a",
 							{ href: "/new", className: "nav-link" },
@@ -53222,7 +53223,7 @@
 					}).map(function (category) {
 						return _react2.default.createElement(
 							"li",
-							{ key: category._id, className: "desktop" },
+							{ key: category._id, className: "desktop category-" + category.key },
 							_react2.default.createElement(
 								"a",
 								{ href: "/category/" + category.key, className: "nav-link" },
@@ -53283,7 +53284,7 @@
 						null,
 						_react2.default.createElement(
 							"a",
-							{ href: "/category/gadgets", className: "nav-link dropdown-toggle" },
+							{ href: "/category/gadgets", className: "nav-link dropdown-toggle category-others" },
 							_react2.default.createElement(
 								"span",
 								{ className: "icon" },
@@ -56456,7 +56457,7 @@
 			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 	
 			_this.state = {
-				sort: "saves"
+				sort: "-publishedDate"
 			};
 			return _this;
 		}
@@ -56512,11 +56513,11 @@
 			}
 		}, {
 			key: 'onSortChange',
-			value: function onSortChange(e) {
+			value: function onSortChange(value) {
 				var onPriceChange = this.props.onPriceChange;
 	
-				this.setState({ sort: e.target.value });
-				onPriceChange ? onPriceChange(this.slider.getValue(), e.target.value) : null;
+				this.setState({ sort: value });
+				onPriceChange ? onPriceChange(this.slider.getValue(), value) : null;
 			}
 	
 			/**
@@ -56567,6 +56568,47 @@
 		return _react2.default.createElement(
 			"div",
 			{ className: "sorting" },
+			!sortLinks ? null : _react2.default.createElement(
+				"div",
+				{ className: "navigation" },
+				_react2.default.createElement(
+					"ul",
+					null,
+					_react2.default.createElement(
+						"li",
+						{ onClick: function onClick() {
+								_this.onSortChange("-publishedDate");
+							}, className: this.state.sort == '-publishedDate' ? "active" : null },
+						_react2.default.createElement(
+							"a",
+							null,
+							"Nyeste"
+						)
+					),
+					_react2.default.createElement(
+						"li",
+						{ onClick: function onClick() {
+								_this.onSortChange("saves");
+							}, className: this.state.sort == 'saves' ? "active" : null },
+						_react2.default.createElement(
+							"a",
+							null,
+							"Popul\xE6r"
+						)
+					),
+					_react2.default.createElement(
+						"li",
+						{ onClick: function onClick() {
+								_this.onSortChange("price");
+							}, className: this.state.sort == 'price' ? "active" : null },
+						_react2.default.createElement(
+							"a",
+							null,
+							"Pris"
+						)
+					)
+				)
+			),
 			_react2.default.createElement(
 				"div",
 				{ className: "price-range-slider" },
@@ -56575,12 +56617,14 @@
 					}, className: "slider-input", "data-slider-id": "ex1Slider", type: "text", "data-slider-min": "0",
 					"data-slider-max": "20", "data-slider-step": "1", "data-slider-value": "14" })
 			),
-			!sortLinks ? null : _react2.default.createElement(
+			sortLinks ? null : _react2.default.createElement(
 				"div",
 				{ className: "dropdown" },
 				_react2.default.createElement(
 					"select",
-					{ onChange: this.onSortChange.bind(this), value: this.state.sort, className: "selectpicker" },
+					{ onChange: function onChange(e) {
+							return _this.onSortChange(e.target.value);
+						}, value: this.state.sort, className: "selectpicker" },
 					_react2.default.createElement(
 						"option",
 						{ value: "-price" },
@@ -56600,50 +56644,6 @@
 						"option",
 						{ value: "saves" },
 						"Mest Popul\xE6"
-					)
-				)
-			),
-			sortLinks ? null : _react2.default.createElement(
-				"div",
-				{ className: "navigation" },
-				_react2.default.createElement(
-					"ul",
-					null,
-					_react2.default.createElement(
-						"li",
-						{ className: "active" },
-						_react2.default.createElement(
-							"a",
-							null,
-							"H\xF8jeste til Laveste"
-						)
-					),
-					_react2.default.createElement(
-						"li",
-						null,
-						_react2.default.createElement(
-							"a",
-							null,
-							"Laveste til H\xF8jeste"
-						)
-					),
-					_react2.default.createElement(
-						"li",
-						null,
-						_react2.default.createElement(
-							"a",
-							null,
-							"Nyeste"
-						)
-					),
-					_react2.default.createElement(
-						"li",
-						null,
-						_react2.default.createElement(
-							"a",
-							null,
-							"Mest Popul\xE6"
-						)
 					)
 				)
 			)
@@ -56691,7 +56691,7 @@
 	exports.i(__webpack_require__(457), "");
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.sorting {\n  display: flex;\n  justify-content: space-between;\n  padding: 15px 30px 30px 15px; }\n  .sorting .price-range-slider {\n    padding-left: 23px; }\n    .sorting .price-range-slider .slider.slider-horizontal {\n      width: 300px; }\n    .sorting .price-range-slider .slider .slider-handle {\n      top: -3px;\n      height: 25px;\n      background-image: linear-gradient(to bottom, #77b353 0%, #77b353 100%); }\n      .sorting .price-range-slider .slider .slider-handle.round {\n        border-radius: 0; }\n    .sorting .price-range-slider .slider .slider-selection {\n      background-image: linear-gradient(to bottom, #cb1d00 0%, #cb1d00 100%); }\n  .sorting .selectpicker {\n    border: 1px solid #e9e9e9; }\n  .sorting .navigation {\n    margin-top: -6px; }\n    .sorting .navigation ul {\n      padding-left: 4px; }\n      .sorting .navigation ul li {\n        display: inline-block;\n        margin-right: 5px; }\n        .sorting .navigation ul li a {\n          display: block;\n          padding: 5px 10px;\n          font-size: 14px;\n          color: #4168ff;\n          border-radius: 4px; }\n        .sorting .navigation ul li.active a {\n          background: #416dff;\n          color: #fff; }\n\n/* responsiveness */\n@media (max-width: 768px) {\n  .sorting {\n    display: block;\n    text-align: right; }\n    .sorting .price-range-slider {\n      margin-bottom: 20px; }\n      .sorting .price-range-slider .slider.slider-horizontal {\n        width: 100%; }\n  .slider-tick-label {\n    width: inherit !important; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.sorting {\n  display: flex;\n  justify-content: space-between;\n  padding: 15px 30px 30px 15px; }\n  .sorting .price-range-slider {\n    padding-left: 23px; }\n    .sorting .price-range-slider .slider.slider-horizontal {\n      width: 300px; }\n    .sorting .price-range-slider .slider .slider-handle {\n      top: -3px;\n      height: 25px;\n      background-image: linear-gradient(to bottom, #77b353 0%, #77b353 100%); }\n      .sorting .price-range-slider .slider .slider-handle.round {\n        border-radius: 0; }\n    .sorting .price-range-slider .slider .slider-selection {\n      background-image: linear-gradient(to bottom, #cb1d00 0%, #cb1d00 100%); }\n  .sorting .selectpicker {\n    border: 1px solid #e9e9e9; }\n  .sorting .navigation {\n    margin-top: -6px; }\n    .sorting .navigation ul {\n      padding-left: 4px; }\n      .sorting .navigation ul li {\n        display: inline-block;\n        margin-right: 5px; }\n        .sorting .navigation ul li a {\n          display: block;\n          padding: 5px 10px;\n          font-size: 18px;\n          color: #4168ff;\n          border-radius: 4px; }\n        .sorting .navigation ul li.active a {\n          background: #416dff;\n          color: #fff; }\n\n/* responsiveness */\n@media (max-width: 768px) {\n  .sorting {\n    display: block;\n    text-align: right; }\n    .sorting .price-range-slider {\n      margin-bottom: 20px; }\n      .sorting .price-range-slider .slider.slider-horizontal {\n        width: 100%; }\n  .slider-tick-label {\n    width: inherit !important; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -60807,7 +60807,6 @@
 				var category = categories.filter(function (category) {
 					return category.key.toLowerCase() == name.toLowerCase();
 				});
-				console.log(category);
 				if (category.length == 0) {
 					window.location.href = "/";
 					return null;
@@ -60931,7 +60930,7 @@
 	
 		return category ? _react2.default.createElement(
 			'div',
-			{ className: 'product-group' },
+			{ className: "product-group category-" + category.key },
 			_react2.default.createElement(
 				'div',
 				{ className: 'row' },
@@ -61035,7 +61034,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-group .row {\n  margin: 0px; }\n  .product-group .row .column {\n    padding: 0px; }\n    .product-group .row .column .container {\n      width: 100%; }\n    .product-group .row .column .banner {\n      margin: 10px; }\n    .product-group .row .column.left .banner {\n      margin-right: 0px;\n      position: fixed;\n      width: 16%; }\n    .product-group .row .column.right .banner {\n      margin-left: 0px;\n      position: fixed;\n      width: 16%; }\n    .product-group .row .column .categories {\n      border-right: 1px solid #e9e9e9;\n      padding-left: 60px; }\n      .product-group .row .column .categories ul li {\n        list-style: none; }\n        .product-group .row .column .categories ul li a {\n          display: block;\n          padding: 10px 20px 10px 20px;\n          font-size: 16px;\n          font-weight: bold;\n          color: #333; }\n          .product-group .row .column .categories ul li a:hover {\n            color: #77b353; }\n          .product-group .row .column .categories ul li a.selected {\n            color: #77b353; }\n        .product-group .row .column .categories ul li .sub-categories a {\n          padding: 10px 10px 10px 30px;\n          font-weight: normal;\n          font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n    .product-group .row .column .category-wise .category-title {\n      text-align: center;\n      font-size: 25px;\n      font-weight: bold;\n      margin-top: 10px; }\n    .product-group .row .column .category-wise .category-description {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      font-size: 12px;\n      line-height: 30px;\n      padding-bottom: 20px;\n      margin-bottom: 20px;\n      border-bottom: 1px solid #e9e9e9; }\n    .product-group .row .column .category-wise .products .container {\n      width: 100%;\n      padding: 0; }\n      .product-group .row .column .category-wise .products .container .row .col-md-4 {\n        padding-left: 10px;\n        padding-right: 10px; }\n      .product-group .row .column .category-wise .products .container .card .card-header .product-title {\n        font-size: 15px; }\n      .product-group .row .column .category-wise .products .container .card .card-body .product-image .image {\n        height: 252px; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .product-group .row .column.left .banner {\n    width: 230px; }\n  .product-group .row .column.right .banner {\n    width: 230px; } }\n\n@media (max-width: 1200px) {\n  .product-group .row .column.left {\n    display: none; }\n  .product-group .row .column.right {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .product-group .container .column .categories {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-group .row {\n  margin: 0px; }\n  .product-group .row .column {\n    padding: 0px; }\n    .product-group .row .column .container {\n      width: 100%; }\n    .product-group .row .column .banner {\n      margin: 10px; }\n    .product-group .row .column.left .banner {\n      margin-right: 0px;\n      position: fixed;\n      width: 16%; }\n    .product-group .row .column.right .banner {\n      margin-left: 0px;\n      position: fixed;\n      width: 16%; }\n    .product-group .row .column .categories {\n      border-right: 1px solid #e9e9e9;\n      padding-left: 60px; }\n      .product-group .row .column .categories ul li {\n        list-style: none; }\n        .product-group .row .column .categories ul li a {\n          display: block;\n          padding: 10px 20px 10px 20px;\n          font-size: 16px;\n          font-weight: bold;\n          color: #333; }\n          .product-group .row .column .categories ul li a:hover {\n            color: #77b353; }\n          .product-group .row .column .categories ul li a.selected {\n            color: #77b353; }\n        .product-group .row .column .categories ul li .sub-categories a {\n          padding: 10px 10px 10px 30px;\n          font-weight: normal;\n          font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n    .product-group .row .column .category-wise .category-title {\n      text-align: center;\n      font-size: 25px;\n      font-weight: bold;\n      margin-top: 10px; }\n    .product-group .row .column .category-wise .category-description {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      font-size: 12px;\n      line-height: 30px;\n      padding-bottom: 20px;\n      margin-bottom: 20px;\n      border-bottom: 1px solid #e9e9e9; }\n    .product-group .row .column .category-wise .products .container {\n      width: 100%;\n      padding: 0; }\n      .product-group .row .column .category-wise .products .container .row .col-md-4 {\n        padding-left: 10px;\n        padding-right: 10px; }\n      .product-group .row .column .category-wise .products .container .card .card-header .product-title {\n        font-size: 15px; }\n      .product-group .row .column .category-wise .products .container .card .card-body .product-image .image {\n        height: 252px; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .product-group .row .column.left .banner {\n    width: 230px; }\n  .product-group .row .column.right .banner {\n    width: 230px; } }\n\n@media (max-width: 1200px) {\n  .product-group .row .column.left {\n    display: none; }\n  .product-group .row .column.right {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .product-group .container .column .categories {\n    display: none; } }\n\n/* /responsiveness */\n.category-gadgets .column .category-wise .category-title {\n  background: linear-gradient(to bottom, #1569C7 0, #1569C7 100%);\n  color: #FFFFFF;\n  width: 150px;\n  margin: auto;\n  margin-top: 10px;\n  border-radius: 6px; }\n\n.category-experiences .column .category-wise .category-title {\n  background: linear-gradient(to bottom, #E8A317 0, #E8A317 100%);\n  color: #FFFFFF;\n  width: 150px;\n  margin: auto;\n  margin-top: 10px;\n  border-radius: 6px; }\n\n.category-food-and-drink .column .category-wise .category-title {\n  background: linear-gradient(to bottom, #347C17 0, #347C17 100%);\n  color: #FFFFFF;\n  width: 150px;\n  margin: auto;\n  margin-top: 10px;\n  border-radius: 6px; }\n\n.category-others .column .category-wise .category-title {\n  background: linear-gradient(to bottom, #e97103 0, #d06503 100%);\n  color: #FFFFFF;\n  width: 150px;\n  margin: auto;\n  margin-top: 10px;\n  border-radius: 6px; }\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -61059,7 +61058,11 @@
 		"product-title": "product-title",
 		"card-body": "card-body",
 		"product-image": "product-image",
-		"image": "image"
+		"image": "image",
+		"category-gadgets": "category-gadgets",
+		"category-experiences": "category-experiences",
+		"category-food-and-drink": "category-food-and-drink",
+		"category-others": "category-others"
 	};
 
 /***/ }),
@@ -61553,6 +61556,7 @@
 		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
 		var productLink = null;
 		var imageUrl = null;
+		var productText = config["product-text"] ? config["product-text"].value : null;
 		if (typeof window != 'undefined' && product) {
 			productLink = window.location.protocol + "//" + window.location.host + "/product/" + product._id + "/" + product.title.split(" ").join("-");
 			if (product.image) {
@@ -61662,7 +61666,7 @@
 					_react2.default.createElement(
 						'p',
 						{ className: 'more-text' },
-						'You may also enjoy throwing your hard earned cash away on...'
+						productText
 					),
 					_react2.default.createElement(_index4.default, {
 						user: user,

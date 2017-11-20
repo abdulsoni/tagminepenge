@@ -14,7 +14,7 @@ export default class Main extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			sort: "saves"
+			sort: "-publishedDate"
 		}
 	}
 
@@ -58,10 +58,10 @@ export default class Main extends Component {
 		}
 	}
 
-	onSortChange(e) {
+	onSortChange(value) {
 		const {onPriceChange} = this.props;
-		this.setState({sort: e.target.value})
-		onPriceChange ? onPriceChange(this.slider.getValue(), e.target.value) : null
+		this.setState({sort: value})
+		onPriceChange ? onPriceChange(this.slider.getValue(),value) : null
 	}
 
 	/**

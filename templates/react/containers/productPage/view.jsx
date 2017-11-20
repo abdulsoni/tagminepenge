@@ -14,6 +14,7 @@ var view = function () {
 	const rightBannerlink = (config.rightBanner && config.rightBanner.value) ? config.rightBanner.value : null;
 	let productLink = null;
 	let imageUrl = null;
+	let productText = config["product-text"]?config["product-text"].value:null;
 	if (typeof window != 'undefined' && product) {
 		productLink = window.location.protocol + "//" + window.location.host + "/product/" + product._id + "/" + product.title.split(" ").join("-");
 		if (product.image) {
@@ -72,7 +73,7 @@ var view = function () {
 							</div>
 						</div>
 					</div>
-					<p className="more-text">You may also enjoy throwing your hard earned cash away on...</p>
+					<p className="more-text">{productText}</p>
 					<ProductGrid
 						user={user}
 						query={{

@@ -65,7 +65,6 @@ class Main extends Component {
 		let category = categories.filter((category)=>{
 			return category.key.toLowerCase()==name.toLowerCase();
 		});
-		console.log(category);
 		if(category.length==0){
 			window.location.href = "/";
 			return null;

@@ -79,5 +79,36 @@
   .product-group .container .column .categories {
     display: none; } }
 /* /responsiveness */
+.category-gadgets .column .category-wise .category-title {
+  background: linear-gradient(to bottom, #1569C7 0, #1569C7 100%);
+  color: #FFFFFF;
+  width: 150px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 6px; }
+
+.category-experiences .column .category-wise .category-title {
+  background: linear-gradient(to bottom, #E8A317 0, #E8A317 100%);
+  color: #FFFFFF;
+  width: 150px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 6px; }
+
+.category-food-and-drink .column .category-wise .category-title {
+  background: linear-gradient(to bottom, #347C17 0, #347C17 100%);
+  color: #FFFFFF;
+  width: 150px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 6px; }
+
+.category-others .column .category-wise .category-title {
+  background: linear-gradient(to bottom, #e97103 0, #d06503 100%);
+  color: #FFFFFF;
+  width: 150px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 6px; }
 
 /*# sourceMappingURL=style.css.map */
