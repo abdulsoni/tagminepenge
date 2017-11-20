@@ -55948,7 +55948,8 @@
 					priceRange ? _react2.default.createElement(_index6.default, {
 						max: (0, _product.getMaxPrice)(products),
 						min: (0, _product.getMinPrice)(products),
-						onPriceChange: this.onPriceChange.bind(this)
+						onPriceChange: this.onPriceChange.bind(this),
+						sortLinks: false
 					}) : null,
 					_react2.default.createElement(_index8.default, {
 						query: query,
@@ -56489,7 +56490,7 @@
 					_this2.slider.on("slideStop", function (val) {
 						onPriceChange ? onPriceChange(val, _this2.state.sort) : null;
 					});
-				});
+				}, 1000);
 			}
 		}, {
 			key: 'componentWillReceiveProps',

@@ -37,7 +37,7 @@ export default class Main extends Component {
 			this.slider.on("slideStop", (val) => {
 				onPriceChange ? onPriceChange(val, this.state.sort) : null
 			})
-		})
+		},1000)
 	}
 
 	componentWillReceiveProps(newProps) {
