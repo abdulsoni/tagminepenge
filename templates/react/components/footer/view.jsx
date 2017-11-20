@@ -3,16 +3,9 @@ import styles from "./style.scss";
 
 var view = function () {
 	const {config} = this.props;
-	const footerText = config["footer-text"]?config["footer-text"].value:null;
 	return (
 		<div className="footer">
 			<div className="content">
-				
-				{
-					footerText?(
-						<p className="footer-text">{footerText}</p>		
-					):null
-				}
 				<div className="social">
 					<ul>
 						<li><a className="facebook" href={config.facebook?config.facebook.value:""}><i className="fa fa-facebook-square" aria-hidden="true"></i></a></li>

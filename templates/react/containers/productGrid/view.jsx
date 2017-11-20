@@ -27,7 +27,7 @@ var view = function () {
 			<div className="pagination-box">
 				{
 					pages > 1 ? (
-						<ReactPaginate previousLabel={"Tjek det ud"}
+						<ReactPaginate previousLabel={"Forrige"}
 									   nextLabel={"Næste"}
 									   breakLabel={<a href="">...</a>}
 									   breakClassName={"break-me"}
