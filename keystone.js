@@ -53,7 +53,9 @@ keystone.init({
 	'user model': 'User',
 	'signin url' : '/',
 	'signin redirect' : "/",
-	'signout redirect' : "/"
+	'signout redirect' : "/",
+	'wysiwyg override toolbar' : true,
+	'wysiwyg additional buttons' : "formatselect,bold,italic,underline,link"
 });
 
 // Load your project's Models

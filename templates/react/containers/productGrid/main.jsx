@@ -15,7 +15,7 @@ class Main extends Component {
 	 */
 	constructor(props){
 		super(props);
-		this.pageSize = 9;
+		this.pageSize = 300;
 		if(props.query){
 			this.getProducts();
 		}

@@ -12,6 +12,7 @@ var Category = new keystone.List('Category', {
 Category.add({
 	name: { type: String, required: true },
 	description: { type: Types.Textarea, required: false },
+	footerText : { type: Types.Html, required: false,wysiwyg: true },
 	displayType: { type: Types.Select,label:"Display Type", numeric: true, options: [{ value: 1, label: 'Menu' }, { value: 2, label: 'Others in header' },{ value: 3, label: 'None' }],default : 3 },
 	footerDisplayType: { type: Types.Select,label:"Display Category in Footer", numeric: true, options: [{ value: 1, label: 'Recipients' }, { value: 2, label: 'More Gift Ideas' },{ value: 3, label: 'None' }],default : 3 },
 	iconClass : { type: String, required: false,label : "Icon",default : "",
