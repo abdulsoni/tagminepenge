@@ -78,8 +78,11 @@
 		font-size: 14px;
 		i {
 		  color: $link-grey-color;
+		  &.glyphicon-heart{
+			color: #F52887;
+		  }
 		  &:hover {
-			color: $brand-red;
+			color: #F52887;
 		  }
 		}
 	  }
@@ -90,6 +93,9 @@
 		display: block;
 		margin-top: -20px;
 		margin-bottom: 4px;
+		.checkout{
+		  text-transform: uppercase;
+		}
 	  }
 	}
   }

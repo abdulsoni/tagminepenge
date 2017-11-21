@@ -47,17 +47,17 @@ var view = function () {
 								</div>
 								<div className="product-actions">
 									<a href={product.link}>
-										<button className="btn btn-yellow">Tjek det ud</button>
+										<button className="btn btn-yellow checkout-btn">Tjek det ud</button>
 									</a>
 									{
 										user ? (
 											<a>
 												<button onClick={this.addToWishList.bind(this)}
-														className="btn btn-red save-btn">{presentInWishList ? "Fjern" : "Save"}</button>
+														className="btn btn-red save-btn">{presentInWishList ? "Fjern" : "GEM"}</button>
 											</a>
 										) : (
 											<a data-toggle="modal" data-target="#login-modal">
-												<button className="btn btn-yellow save-btn">Save</button>
+												<button className="btn btn-yellow save-btn">GEM</button>
 											</a>
 										)
 									}

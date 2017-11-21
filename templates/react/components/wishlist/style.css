@@ -11,8 +11,12 @@
     margin-bottom: 80px; }
     .wish-list .heading .title {
       font-size: 32px;
-      margin-right: 10px;
-      text-align: center; }
+      text-align: center;
+      background: linear-gradient(to bottom, #DC381F 0, #DC381F 100%);
+      color: #FFFFFF;
+      width: 200px;
+      margin: auto;
+      border-radius: 6px; }
     .wish-list .heading .share {
       float: right;
       display: flex;

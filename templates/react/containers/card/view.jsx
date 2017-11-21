@@ -20,10 +20,10 @@ var view = function() {
 					<a target="blank" href={data.link}><span style = {getBackgroundImageStyle(imageUrl)} className="image"></span></a>
 					{
 						user?(
-							<button onClick={this.addToWishList.bind(this)} className="btn btn-red save-btn">{!presentInWishList?"Save":"Fjern"}</button>
+							<button onClick={this.addToWishList.bind(this)} className="btn btn-red save-btn">{!presentInWishList?"GEM":"Fjern"}</button>
 						):(
 							<a data-toggle="modal" data-target="#login-modal">
-								<button className="btn btn-yellow save-btn">Save</button>
+								<button className="btn btn-yellow save-btn">GEM</button>
 							</a>
 						)
 					}
@@ -49,7 +49,7 @@ var view = function() {
 				</div>
 				<div className="product-action">
 					<a target="blank" href={data.link} className="checkout-btn">
-						<button className="btn btn-yellow">Tjek det ud</button>
+						<button className="btn btn-yellow checkout">Tjek det ud</button>
 					</a>
 					<div className="share">
 						<div 

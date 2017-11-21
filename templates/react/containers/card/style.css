@@ -68,14 +68,18 @@
         font-size: 14px; }
         .card .card-footer .product-range .saves i {
           color: #676767; }
+          .card .card-footer .product-range .saves i.glyphicon-heart {
+            color: #F52887; }
           .card .card-footer .product-range .saves i:hover {
-            color: #cb1d00; }
+            color: #F52887; }
     .card .card-footer .product-action {
       text-align: right; }
       .card .card-footer .product-action .checkout-btn {
         display: block;
         margin-top: -20px;
         margin-bottom: 4px; }
+        .card .card-footer .product-action .checkout-btn .checkout {
+          text-transform: uppercase; }
   .card .share ul {
     margin: 0px; }
     .card .share ul li {

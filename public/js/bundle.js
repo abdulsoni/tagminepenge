@@ -53125,7 +53125,7 @@
 						_react2.default.createElement(
 							"a",
 							{ "data-toggle": "modal", "data-target": "#login-modal" },
-							"Login"
+							"Log ind"
 						),
 						_react2.default.createElement(
 							"span",
@@ -53135,7 +53135,7 @@
 						_react2.default.createElement(
 							"a",
 							{ "data-toggle": "modal", "data-target": "#sign-up-modal" },
-							"Register"
+							"Opret"
 						)
 					) : _react2.default.createElement(
 						"div",
@@ -54134,7 +54134,7 @@
 						_react2.default.createElement(
 							"h2",
 							{ className: "modal-title" },
-							"Login"
+							"Log ind"
 						)
 					),
 					_react2.default.createElement(
@@ -54154,10 +54154,10 @@
 								_react2.default.createElement(
 									"label",
 									{ htmlFor: "exampleInputEmail1" },
-									"Email address"
+									"Email"
 								),
 								_react2.default.createElement("input", { readOnly: loading, onChange: handleChange.bind(this), name: "email", value: this.state.email, type: "email", className: "form-control", id: "exampleInputEmail1",
-									"aria-describedby": "emailHelp", placeholder: "Enter email", required: true })
+									"aria-describedby": "emailHelp", placeholder: "", required: true })
 							),
 							_react2.default.createElement(
 								"div",
@@ -54165,10 +54165,10 @@
 								_react2.default.createElement(
 									"label",
 									{ htmlFor: "exampleInputPassword1" },
-									"Password"
+									"Kodeord"
 								),
 								_react2.default.createElement("input", { readOnly: loading, onChange: handleChange.bind(this), name: "password", value: this.state.password, type: "password", className: "form-control", id: "exampleInputPassword1",
-									placeholder: "Password", required: true })
+									placeholder: "", required: true })
 							),
 							_react2.default.createElement(
 								"div",
@@ -54179,18 +54179,18 @@
 									_react2.default.createElement(
 										"a",
 										{ "data-dismiss": "modal", "data-toggle": "modal", "data-target": "#forgot-modal", className: "forgot-password" },
-										"Forgot Password ?"
+										"Glemt Kodeord ?"
 									),
 									_react2.default.createElement(
 										"a",
 										{ "data-dismiss": "modal", "data-toggle": "modal", "data-target": "#sign-up-modal" },
-										">> Not a member yet? Click here to create an account"
+										">> Ikke medlem endnu? Klik her for at oprette en konto"
 									)
 								),
 								_react2.default.createElement(
 									"button",
 									{ disabled: loading, type: "submit", className: "btn btn-yellow submit-btn" },
-									"Gem"
+									"Log ind"
 								)
 							)
 						)
@@ -54663,7 +54663,7 @@
 						_react2.default.createElement(
 							"h2",
 							{ className: "modal-title" },
-							"Create Account"
+							"Opret Konto"
 						)
 					),
 					_react2.default.createElement(
@@ -54683,10 +54683,10 @@
 								_react2.default.createElement(
 									"label",
 									{ htmlFor: "exampleInputEmail1" },
-									"Email address"
+									"Email"
 								),
 								_react2.default.createElement("input", { readOnly: loading, onChange: handleChange.bind(this), name: "email", value: this.state.email, type: "email", className: "form-control", id: "exampleInputEmail1",
-									"aria-describedby": "emailHelp", placeholder: "Enter email", required: true })
+									"aria-describedby": "emailHelp", placeholder: "", required: true })
 							),
 							_react2.default.createElement(
 								"div",
@@ -54694,10 +54694,10 @@
 								_react2.default.createElement(
 									"label",
 									{ htmlFor: "exampleInputPassword1" },
-									"Password"
+									"Kodeord"
 								),
 								_react2.default.createElement("input", { readOnly: loading, onChange: handleChange.bind(this), name: "password", value: this.state.password, type: "password", className: "form-control", id: "exampleInputPassword1",
-									placeholder: "Password", required: true })
+									placeholder: "", required: true })
 							),
 							_react2.default.createElement(
 								"div",
@@ -54708,7 +54708,7 @@
 									_react2.default.createElement(
 										"span",
 										null,
-										"By signing up you agree to our ",
+										"Ved oprettelse accepterer du vores Fortrolighedsspolitik ",
 										_react2.default.createElement(
 											"a",
 											{ className: "inline-block" },
@@ -54719,7 +54719,7 @@
 								_react2.default.createElement(
 									"button",
 									{ type: "submit", className: "btn btn-yellow submit-btn" },
-									"Gem"
+									"Opret"
 								)
 							)
 						)
@@ -55583,7 +55583,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.app {\n  background: #ffffff;\n  font-family: Oswald, Arial, sans-serif; }\n  .app .container {\n    width: 1000px; }\n  .app ul {\n    padding: 0px; }\n  .app p {\n    margin: 0;\n    padding: 0; }\n  .app a {\n    text-decoration: none;\n    cursor: pointer; }\n  .app input {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .app textarea {\n    max-height: 200px;\n    height: 180px;\n    resize: none;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .app .main-container {\n    margin-top: 123px; }\n  .app .content-center {\n    -ms-flex-pack: center;\n    justify-content: center;\n    -ms-flex-align: center;\n    align-items: center;\n    vertical-align: middle;\n    text-align: center;\n    display: -ms-flexbox;\n    display: flex; }\n  .app .btn-yellow {\n    color: #ffffff;\n    background-color: #77b353;\n    border-color: #77b353; }\n    .app .btn-yellow:hover {\n      background-color: #347C17;\n      border-color: #347C17; }\n  .app .btn-red {\n    color: #ffffff;\n    background-color: #cb1d00;\n    border-color: #cb1d00; }\n    .app .btn-red:hover {\n      background-color: #b91a00;\n      border-color: #b91a00; }\n  .app .btn {\n    font-size: 16px;\n    font-weight: 400;\n    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);\n    padding: 5px 12px;\n    border-radius: 2px; }\n  .app .input-group-btn .btn {\n    border-bottom-right-radius: 4px;\n    border-top-right-radius: 4px;\n    text-shadow: none;\n    padding: 6px 12px;\n    font-size: 14px; }\n  .app .contact-us-btn {\n    color: #fff;\n    background-color: #a54343;\n    display: block;\n    line-height: 45px;\n    height: 50px;\n    font-size: 18px;\n    padding: 1px 15px;\n    margin-right: -35px;\n    -webkit-transition: all .15s ease-in-out;\n    -moz-transition: all .15s ease-in-out;\n    transition: all .15s ease-in-out;\n    font-weight: 400;\n    margin-bottom: -5px;\n    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.3);\n    position: fixed;\n    bottom: 0px;\n    right: 100px;\n    border-top-left-radius: 4px;\n    border-top-right-radius: 4px; }\n    .app .contact-us-btn:hover {\n      text-decoration: none;\n      margin-bottom: 0; }\n    .app .contact-us-btn .icon {\n      margin-right: 5px; }\n  .app .pagination-box {\n    text-align: right; }\n  .app .pagination > li > a, .app .pagination > li > span {\n    color: #77b253; }\n  .app .pagination > li.active > a, .app .pagination > li > span {\n    color: #fff; }\n  .app .pagination > .active > a, .app .pagination > .active > a:hover, .app .pagination > .active > a:focus, .app .pagination > .active > span, .app .pagination > .active > span:hover, .app .pagination > .active > span:focus {\n    background-color: #77b253;\n    border-color: #77b253; }\n  .app .empty-msg {\n    text-align: center;\n    color: #d8d8d8; }\n  .app .fixed {\n    position: fixed; }\n  .app.scrolled .row .column.left .banner {\n    top: 97px; }\n  .app.scrolled .row .column.right .banner {\n    top: 97px; }\n  .app .tooltip {\n    z-index: 5; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .app .main-container {\n    width: 1500px;\n    margin: 123px auto auto auto; }\n    .app .main-container.contact-us-container {\n      width: 100%; } }\n\n@media (max-width: 1024px) {\n  .app .container {\n    width: 100%; } }\n\n@media (max-width: 762px) {\n  .app .contact-us-btn {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.app {\n  background: #ffffff;\n  font-family: Oswald, Arial, sans-serif; }\n  .app .container {\n    width: 1000px; }\n  .app ul {\n    padding: 0px; }\n  .app p {\n    margin: 0;\n    padding: 0; }\n  .app a {\n    text-decoration: none;\n    cursor: pointer; }\n  .app input {\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .app textarea {\n    max-height: 200px;\n    height: 180px;\n    resize: none;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n  .app .main-container {\n    margin-top: 150px; }\n  .app .content-center {\n    -ms-flex-pack: center;\n    justify-content: center;\n    -ms-flex-align: center;\n    align-items: center;\n    vertical-align: middle;\n    text-align: center;\n    display: -ms-flexbox;\n    display: flex; }\n  .app .btn-yellow {\n    color: #ffffff;\n    background-color: #77b353;\n    border-color: #77b353; }\n    .app .btn-yellow:hover {\n      background-color: #347C17;\n      border-color: #347C17; }\n  .app .btn-red {\n    color: #ffffff;\n    background-color: #cb1d00;\n    border-color: #cb1d00; }\n    .app .btn-red:hover {\n      background-color: #b91a00;\n      border-color: #b91a00; }\n  .app .btn {\n    font-size: 16px;\n    font-weight: 400;\n    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);\n    padding: 5px 12px;\n    border-radius: 2px; }\n  .app .input-group-btn .btn {\n    border-bottom-right-radius: 4px;\n    border-top-right-radius: 4px;\n    text-shadow: none;\n    padding: 6px 12px;\n    font-size: 14px; }\n  .app .contact-us-btn {\n    color: #fff;\n    background-color: #a54343;\n    display: block;\n    line-height: 45px;\n    height: 50px;\n    font-size: 18px;\n    padding: 1px 15px;\n    margin-right: -35px;\n    -webkit-transition: all .15s ease-in-out;\n    -moz-transition: all .15s ease-in-out;\n    transition: all .15s ease-in-out;\n    font-weight: 400;\n    margin-bottom: -5px;\n    box-shadow: -1px -1px 5px rgba(0, 0, 0, 0.3);\n    position: fixed;\n    bottom: 0px;\n    right: 100px;\n    border-top-left-radius: 4px;\n    border-top-right-radius: 4px; }\n    .app .contact-us-btn:hover {\n      text-decoration: none;\n      margin-bottom: 0; }\n    .app .contact-us-btn .icon {\n      margin-right: 5px; }\n  .app .pagination-box {\n    text-align: center; }\n  .app .pagination > li > a, .app .pagination > li > span {\n    color: #77b253; }\n  .app .pagination > li.active > a, .app .pagination > li > span {\n    color: #fff; }\n  .app .pagination > .active > a, .app .pagination > .active > a:hover, .app .pagination > .active > a:focus, .app .pagination > .active > span, .app .pagination > .active > span:hover, .app .pagination > .active > span:focus {\n    background-color: #77b253;\n    border-color: #77b253; }\n  .app .empty-msg {\n    text-align: center;\n    color: #d8d8d8; }\n  .app .fixed {\n    position: fixed; }\n  .app.scrolled .row .column.left .banner {\n    top: 97px; }\n  .app.scrolled .row .column.right .banner {\n    top: 97px; }\n  .app .tooltip {\n    z-index: 5; }\n  .app .at-share-btn.at-svc-link {\n    background: linear-gradient(to bottom, #E8A317 0, #E8A317 100%) !important; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .app .main-container {\n    width: 1500px;\n    margin: 123px auto auto auto; }\n    .app .main-container.contact-us-container {\n      width: 100%; } }\n\n@media (max-width: 1024px) {\n  .app .container {\n    width: 100%; } }\n\n@media (max-width: 762px) {\n  .app .contact-us-btn {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -55609,6 +55609,8 @@
 		"banner": "banner",
 		"right": "right",
 		"tooltip": "tooltip",
+		"at-share-btn": "at-share-btn",
+		"at-svc-link": "at-svc-link",
 		"contact-us-container": "contact-us-container"
 	};
 
@@ -56122,8 +56124,6 @@
 		value: true
 	});
 	
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	
 	var _react = __webpack_require__(237);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -56140,12 +56140,15 @@
 		    link = _props.link,
 		    style = _props.style,
 		    fixedWhenScrolling = _props.fixedWhenScrolling;
+		// return (
+		// 	<a target="blank" href={link}>
+		// 		<div className="banner content-center background" style={{backgroundImage : 'url('+banner+')',...style}}>
+		// 			<p>banner</p>
+		// 		</div>
+		// 	</a>
+		// );
 	
-		return _react2.default.createElement(
-			"a",
-			{ target: "blank", href: link },
-			_react2.default.createElement("div", { className: "banner content-center background", style: _extends({ backgroundImage: 'url(' + banner + ')' }, style) })
-		);
+		return null;
 	};
 	exports.default = view;
 
@@ -56692,7 +56695,7 @@
 	exports.i(__webpack_require__(457), "");
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.sorting {\n  display: flex;\n  justify-content: space-between;\n  padding: 15px 30px 30px 15px; }\n  .sorting .price-range-slider {\n    padding-left: 23px; }\n    .sorting .price-range-slider .slider.slider-horizontal {\n      width: 300px; }\n    .sorting .price-range-slider .slider .slider-handle {\n      top: -3px;\n      height: 25px;\n      background-image: linear-gradient(to bottom, #77b353 0%, #77b353 100%); }\n      .sorting .price-range-slider .slider .slider-handle.round {\n        border-radius: 0; }\n    .sorting .price-range-slider .slider .slider-selection {\n      background-image: linear-gradient(to bottom, #cb1d00 0%, #cb1d00 100%); }\n  .sorting .selectpicker {\n    border: 1px solid #e9e9e9; }\n  .sorting .navigation {\n    margin-top: -6px; }\n    .sorting .navigation ul {\n      padding-left: 4px; }\n      .sorting .navigation ul li {\n        display: inline-block;\n        margin-right: 5px; }\n        .sorting .navigation ul li a {\n          display: block;\n          padding: 5px 10px;\n          font-size: 18px;\n          color: #4168ff;\n          border-radius: 4px; }\n        .sorting .navigation ul li.active a {\n          background: #416dff;\n          color: #fff; }\n\n/* responsiveness */\n@media (max-width: 768px) {\n  .sorting {\n    display: block;\n    text-align: right; }\n    .sorting .price-range-slider {\n      margin-bottom: 20px; }\n      .sorting .price-range-slider .slider.slider-horizontal {\n        width: 100%; }\n  .slider-tick-label {\n    width: inherit !important; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.sorting {\n  display: flex;\n  justify-content: space-between;\n  padding: 15px 30px 30px 0px; }\n  .sorting .price-range-slider {\n    padding-left: 23px; }\n    .sorting .price-range-slider .slider.slider-horizontal {\n      width: 300px; }\n    .sorting .price-range-slider .slider .slider-handle {\n      top: -3px;\n      height: 25px;\n      background-image: linear-gradient(to bottom, #77b353 0%, #77b353 100%); }\n      .sorting .price-range-slider .slider .slider-handle.round {\n        border-radius: 0; }\n    .sorting .price-range-slider .slider .slider-selection {\n      background-image: linear-gradient(to bottom, #cb1d00 0%, #cb1d00 100%); }\n  .sorting .selectpicker {\n    border: 1px solid #e9e9e9; }\n  .sorting .navigation {\n    margin-top: -6px; }\n    .sorting .navigation ul {\n      padding-left: 4px; }\n      .sorting .navigation ul li {\n        display: inline-block;\n        margin-right: 5px; }\n        .sorting .navigation ul li a {\n          display: block;\n          padding: 5px 10px;\n          font-size: 18px;\n          color: #4168ff;\n          border-radius: 4px; }\n        .sorting .navigation ul li.active a {\n          background: #416dff;\n          color: #fff; }\n\n/* responsiveness */\n@media (max-width: 768px) {\n  .sorting {\n    display: block;\n    text-align: right; }\n    .sorting .price-range-slider {\n      margin-bottom: 20px; }\n      .sorting .price-range-slider .slider.slider-horizontal {\n        width: 100%; }\n  .slider-tick-label {\n    width: inherit !important; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -59379,14 +59382,14 @@
 					user ? _react2.default.createElement(
 						'button',
 						{ onClick: this.addToWishList.bind(this), className: 'btn btn-red save-btn' },
-						!presentInWishList ? "Save" : "Fjern"
+						!presentInWishList ? "GEM" : "Fjern"
 					) : _react2.default.createElement(
 						'a',
 						{ 'data-toggle': 'modal', 'data-target': '#login-modal' },
 						_react2.default.createElement(
 							'button',
 							{ className: 'btn btn-yellow save-btn' },
-							'Save'
+							'GEM'
 						)
 					)
 				),
@@ -59446,7 +59449,7 @@
 						{ target: 'blank', href: data.link, className: 'checkout-btn' },
 						_react2.default.createElement(
 							'button',
-							{ className: 'btn btn-yellow' },
+							{ className: 'btn btn-yellow checkout' },
 							'Tjek det ud'
 						)
 					),
@@ -59503,7 +59506,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.card {\n  width: 100%;\n  margin-bottom: 30px; }\n  .card .card-header .product-title {\n    margin-bottom: 2px;\n    text-align: center;\n    font-weight: 400;\n    margin-top: 0;\n    font-size: 18px;\n    color: #676767;\n    display: block;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis; }\n    .card .card-header .product-title:hover {\n      color: #77b353; }\n  .card .card-body .product-image {\n    position: relative; }\n    .card .card-body .product-image .save-btn {\n      display: none;\n      position: absolute;\n      top: 15px;\n      right: 15px;\n      padding: 5px;\n      width: 76px;\n      font-size: 20px; }\n    .card .card-body .product-image .image {\n      display: block;\n      width: 100%;\n      height: 252px;\n      background-color: #e6e6e6;\n      background-size: cover;\n      background-position: center;\n      background-repeat: no-repeat; }\n    .card .card-body .product-image:hover .save-btn {\n      display: block; }\n  .card .card-body .product-text {\n    text-align: justify;\n    margin-top: 5px;\n    margin-bottom: 25px;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n    .card .card-body .product-text p {\n      display: block;\n      display: -webkit-box;\n      max-width: 400px;\n      height: 100px;\n      margin: 0 auto;\n      font-size: 12px;\n      line-height: 17px;\n      -webkit-line-clamp: 6;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n      text-overflow: ellipsis; }\n  .card .card-footer {\n    display: flex;\n    justify-content: space-between; }\n    .card .card-footer .product-range {\n      color: #676767;\n      font-size: 16px;\n      letter-spacing: 1px; }\n      .card .card-footer .product-range .saves {\n        font-size: 14px; }\n        .card .card-footer .product-range .saves i {\n          color: #676767; }\n          .card .card-footer .product-range .saves i:hover {\n            color: #cb1d00; }\n    .card .card-footer .product-action {\n      text-align: right; }\n      .card .card-footer .product-action .checkout-btn {\n        display: block;\n        margin-top: -20px;\n        margin-bottom: 4px; }\n  .card .share ul {\n    margin: 0px; }\n    .card .share ul li {\n      display: inline-block;\n      margin-right: 5px; }\n      .card .share ul li a {\n        font-size: 22px;\n        line-height: 22px; }\n        .card .share ul li a.facebook {\n          color: #3c5a98; }\n        .card .share ul li a.twitter {\n          color: #1ea1f2; }\n        .card .share ul li a.pinterest {\n          color: #bc0718; }\n\n/* responsiveness */\n@media (max-width: 992px) {\n  .card {\n    margin-bottom: 30px; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.card {\n  width: 100%;\n  margin-bottom: 30px; }\n  .card .card-header .product-title {\n    margin-bottom: 2px;\n    text-align: center;\n    font-weight: 400;\n    margin-top: 0;\n    font-size: 18px;\n    color: #676767;\n    display: block;\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis; }\n    .card .card-header .product-title:hover {\n      color: #77b353; }\n  .card .card-body .product-image {\n    position: relative; }\n    .card .card-body .product-image .save-btn {\n      display: none;\n      position: absolute;\n      top: 15px;\n      right: 15px;\n      padding: 5px;\n      width: 76px;\n      font-size: 20px; }\n    .card .card-body .product-image .image {\n      display: block;\n      width: 100%;\n      height: 252px;\n      background-color: #e6e6e6;\n      background-size: cover;\n      background-position: center;\n      background-repeat: no-repeat; }\n    .card .card-body .product-image:hover .save-btn {\n      display: block; }\n  .card .card-body .product-text {\n    text-align: justify;\n    margin-top: 5px;\n    margin-bottom: 25px;\n    font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif; }\n    .card .card-body .product-text p {\n      display: block;\n      display: -webkit-box;\n      max-width: 400px;\n      height: 100px;\n      margin: 0 auto;\n      font-size: 12px;\n      line-height: 17px;\n      -webkit-line-clamp: 6;\n      -webkit-box-orient: vertical;\n      overflow: hidden;\n      text-overflow: ellipsis; }\n  .card .card-footer {\n    display: flex;\n    justify-content: space-between; }\n    .card .card-footer .product-range {\n      color: #676767;\n      font-size: 16px;\n      letter-spacing: 1px; }\n      .card .card-footer .product-range .saves {\n        font-size: 14px; }\n        .card .card-footer .product-range .saves i {\n          color: #676767; }\n          .card .card-footer .product-range .saves i.glyphicon-heart {\n            color: #F52887; }\n          .card .card-footer .product-range .saves i:hover {\n            color: #F52887; }\n    .card .card-footer .product-action {\n      text-align: right; }\n      .card .card-footer .product-action .checkout-btn {\n        display: block;\n        margin-top: -20px;\n        margin-bottom: 4px; }\n        .card .card-footer .product-action .checkout-btn .checkout {\n          text-transform: uppercase; }\n  .card .share ul {\n    margin: 0px; }\n    .card .share ul li {\n      display: inline-block;\n      margin-right: 5px; }\n      .card .share ul li a {\n        font-size: 22px;\n        line-height: 22px; }\n        .card .share ul li a.facebook {\n          color: #3c5a98; }\n        .card .share ul li a.twitter {\n          color: #1ea1f2; }\n        .card .share ul li a.pinterest {\n          color: #bc0718; }\n\n/* responsiveness */\n@media (max-width: 992px) {\n  .card {\n    margin-bottom: 30px; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -59518,8 +59521,10 @@
 		"card-footer": "card-footer",
 		"product-range": "product-range",
 		"saves": "saves",
+		"glyphicon-heart": "glyphicon-heart",
 		"product-action": "product-action",
 		"checkout-btn": "checkout-btn",
+		"checkout": "checkout",
 		"share": "share",
 		"facebook": "facebook",
 		"twitter": "twitter",
@@ -61630,7 +61635,7 @@
 										{ href: product.link },
 										_react2.default.createElement(
 											'button',
-											{ className: 'btn btn-yellow' },
+											{ className: 'btn btn-yellow checkout-btn' },
 											'Tjek det ud'
 										)
 									),
@@ -61641,7 +61646,7 @@
 											'button',
 											{ onClick: this.addToWishList.bind(this),
 												className: 'btn btn-red save-btn' },
-											presentInWishList ? "Fjern" : "Save"
+											presentInWishList ? "Fjern" : "GEM"
 										)
 									) : _react2.default.createElement(
 										'a',
@@ -61649,7 +61654,7 @@
 										_react2.default.createElement(
 											'button',
 											{ className: 'btn btn-yellow save-btn' },
-											'Save'
+											'GEM'
 										)
 									)
 								),
@@ -61729,7 +61734,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-page .row {\n  margin: 0px; }\n  .product-page .row .column {\n    padding: 0px; }\n    .product-page .row .column .container {\n      width: 100%;\n      padding: 0; }\n      .product-page .row .column .container .row .col-md-4 {\n        padding-left: 10px;\n        padding-right: 10px; }\n      .product-page .row .column .container.filters {\n        padding: 30px 0px 20px 6px; }\n    .product-page .row .column .banner {\n      margin: 10px; }\n    .product-page .row .column.left .banner {\n      margin-right: 0px;\n      position: fixed;\n      width: 16%; }\n    .product-page .row .column.right .banner {\n      margin-left: 0px;\n      position: fixed;\n      width: 16%; }\n\n.product-page .more-text {\n  padding: 20px 10px; }\n\n.product-page .product {\n  margin: 10px; }\n  .product-page .product .column .product-details {\n    padding-left: 10px; }\n    .product-page .product .column .product-details .product-title {\n      font-size: 30px;\n      margin-bottom: 8px; }\n    .product-page .product .column .product-details .product-description {\n      font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n      line-height: 24px;\n      margin-bottom: 8px; }\n    .product-page .product .column .product-details .product-price {\n      font-size: 30px;\n      margin-bottom: 12px; }\n    .product-page .product .column .product-details .product-actions .save-btn {\n      margin-left: 5px; }\n    .product-page .product .column .product-details .share {\n      margin-top: 10px; }\n      .product-page .product .column .product-details .share ul li {\n        display: inline-block;\n        margin-right: 8px; }\n        .product-page .product .column .product-details .share ul li a {\n          font-size: 35px; }\n          .product-page .product .column .product-details .share ul li a.facebook {\n            color: #3c5a98; }\n          .product-page .product .column .product-details .share ul li a.twitter {\n            color: #1ea1f2; }\n          .product-page .product .column .product-details .share ul li a.pinterest {\n            color: #bc0718; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .product-page .row .column.left .banner {\n    width: 230px; }\n  .product-page .row .column.right .banner {\n    width: 230px; } }\n\n@media (max-width: 1200px) {\n  .product-page .row .column.left {\n    display: none; }\n  .product-page .row .column.right {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .product-page {\n    padding-top: 0px; }\n    .product-page .product .column {\n      padding: 20px; }\n      .product-page .product .column .carousel-indicators {\n        width: inherit; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.product-page {\n  padding-top: 10px; }\n  .product-page .row {\n    margin: 0px; }\n    .product-page .row .column {\n      padding: 0px; }\n      .product-page .row .column .container {\n        width: 100%;\n        padding: 0; }\n        .product-page .row .column .container .row .col-md-4 {\n          padding-left: 10px;\n          padding-right: 10px; }\n        .product-page .row .column .container.filters {\n          padding: 30px 0px 20px 6px; }\n      .product-page .row .column .banner {\n        margin: 10px; }\n      .product-page .row .column.left .banner {\n        margin-right: 0px;\n        position: fixed;\n        width: 16%; }\n      .product-page .row .column.right .banner {\n        margin-left: 0px;\n        position: fixed;\n        width: 16%; }\n  .product-page .more-text {\n    padding: 20px 10px; }\n  .product-page .product {\n    margin: 10px; }\n    .product-page .product .column .product-details {\n      padding-left: 10px; }\n      .product-page .product .column .product-details .product-title {\n        font-size: 30px;\n        margin-bottom: 8px; }\n      .product-page .product .column .product-details .product-description {\n        font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n        line-height: 24px;\n        margin-bottom: 8px; }\n      .product-page .product .column .product-details .product-price {\n        font-size: 30px;\n        margin-bottom: 12px; }\n      .product-page .product .column .product-details .product-actions .save-btn {\n        margin-left: 5px;\n        text-transform: uppercase; }\n      .product-page .product .column .product-details .product-actions .checkout-btn {\n        text-transform: uppercase; }\n      .product-page .product .column .product-details .share {\n        margin-top: 10px; }\n        .product-page .product .column .product-details .share ul li {\n          display: inline-block;\n          margin-right: 8px; }\n          .product-page .product .column .product-details .share ul li a {\n            font-size: 35px; }\n            .product-page .product .column .product-details .share ul li a.facebook {\n              color: #3c5a98; }\n            .product-page .product .column .product-details .share ul li a.twitter {\n              color: #1ea1f2; }\n            .product-page .product .column .product-details .share ul li a.pinterest {\n              color: #bc0718; }\n\n/* responsiveness */\n@media (min-width: 1500px) {\n  .product-page .row .column.left .banner {\n    width: 230px; }\n  .product-page .row .column.right .banner {\n    width: 230px; } }\n\n@media (max-width: 1200px) {\n  .product-page .row .column.left {\n    display: none; }\n  .product-page .row .column.right {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .product-page {\n    padding-top: 0px; }\n    .product-page .product .column {\n      padding: 20px; }\n      .product-page .product .column .carousel-indicators {\n        width: inherit; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -61750,6 +61755,7 @@
 		"product-price": "product-price",
 		"product-actions": "product-actions",
 		"save-btn": "save-btn",
+		"checkout-btn": "checkout-btn",
 		"share": "share",
 		"facebook": "facebook",
 		"twitter": "twitter",
@@ -63115,7 +63121,7 @@
 					_react2.default.createElement(
 						'p',
 						null,
-						'My Wish List'
+						'Min \xD8nskeliste'
 					)
 				),
 				_react2.default.createElement(
@@ -63197,7 +63203,7 @@
 	
 	
 	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.wish-list {\n  padding-top: 70px; }\n  .wish-list .heading {\n    overflow: hidden;\n    margin-bottom: 80px; }\n    .wish-list .heading .title {\n      font-size: 32px;\n      margin-right: 10px;\n      text-align: center; }\n    .wish-list .heading .share {\n      float: right;\n      display: flex;\n      padding-right: 32px; }\n      .wish-list .heading .share ul li {\n        display: inline-block; }\n        .wish-list .heading .share ul li a {\n          display: block;\n          font-size: 40px;\n          margin: 5px 5px 0px 0px;\n          line-height: 0px; }\n          .wish-list .heading .share ul li a.facebook {\n            color: #3c5a98; }\n          .wish-list .heading .share ul li a.twitter {\n            color: #1ea1f2; }\n          .wish-list .heading .share ul li a.pinterest {\n            color: #bd081b; }\n          .wish-list .heading .share ul li a.link {\n            color: #555; }\n  .wish-list .more .row {\n    margin: 0px; }\n    .wish-list .more .row .column {\n      padding: 0px; }\n      .wish-list .more .row .column .container {\n        width: 100%; }\n      .wish-list .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .wish-list .more .row .column.left .banner {\n        margin-right: 0px; }\n      .wish-list .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.wish-list {\n  padding-top: 70px; }\n  .wish-list .heading {\n    overflow: hidden;\n    margin-bottom: 80px; }\n    .wish-list .heading .title {\n      font-size: 32px;\n      text-align: center;\n      background: linear-gradient(to bottom, #DC381F 0, #DC381F 100%);\n      color: #FFFFFF;\n      width: 200px;\n      margin: auto;\n      border-radius: 6px; }\n    .wish-list .heading .share {\n      float: right;\n      display: flex;\n      padding-right: 32px; }\n      .wish-list .heading .share ul li {\n        display: inline-block; }\n        .wish-list .heading .share ul li a {\n          display: block;\n          font-size: 40px;\n          margin: 5px 5px 0px 0px;\n          line-height: 0px; }\n          .wish-list .heading .share ul li a.facebook {\n            color: #3c5a98; }\n          .wish-list .heading .share ul li a.twitter {\n            color: #1ea1f2; }\n          .wish-list .heading .share ul li a.pinterest {\n            color: #bd081b; }\n          .wish-list .heading .share ul li a.link {\n            color: #555; }\n  .wish-list .more .row {\n    margin: 0px; }\n    .wish-list .more .row .column {\n      padding: 0px; }\n      .wish-list .more .row .column .container {\n        width: 100%; }\n      .wish-list .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .wish-list .more .row .column.left .banner {\n        margin-right: 0px; }\n      .wish-list .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
 	
 	// exports
 	exports.locals = {
@@ -63974,9 +63980,7 @@
 							_react2.default.createElement(
 								'p',
 								{ className: 'website' },
-								'TagMinePenge.dk',
-								_react2.default.createElement('br', null),
-								'Fortrolighedspolitik'
+								'TagMinePenge.dk'
 							),
 							_react2.default.createElement('p', { dangerouslySetInnerHTML: { __html: text ? text.description : null } })
 						)

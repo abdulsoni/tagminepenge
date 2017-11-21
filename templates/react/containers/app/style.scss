@@ -27,7 +27,7 @@
 	font-family: $helvetica-font;
   }
   .main-container {
-	margin-top: 123px;
+	margin-top: 150px;
   }
   .content-center {
 	-ms-flex-pack: center;
@@ -102,7 +102,7 @@
 	}
   }
   .pagination-box {
-	text-align: right;
+	text-align: center;
   }
   .pagination > li > a, .pagination > li > span{
 	color: #77b253;
@@ -131,6 +131,9 @@
   }
   .tooltip{
 	z-index: 5;
+  }
+  .at-share-btn.at-svc-link{
+	background: linear-gradient(to bottom, #E8A317 0, #E8A317 100%) !important;
   }
 }
 

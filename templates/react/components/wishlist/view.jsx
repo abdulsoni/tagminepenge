@@ -13,7 +13,7 @@ var view = function () {
 		<div className="wish-list">
 			<div className="heading container">
 				<div className="title">
-					<p>My Wish List</p>
+					<p>Min Ønskeliste</p>
 				</div>
 				<div className="share">
 					{/*<span>Share: &nbsp;</span>*/}

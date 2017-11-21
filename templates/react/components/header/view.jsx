@@ -28,9 +28,9 @@ var view = function () {
 					{
 						!user ? (
 							<div className="actions">
-								<a data-toggle="modal" data-target="#login-modal">Login</a>
+								<a data-toggle="modal" data-target="#login-modal">Log ind</a>
 								<span> | </span>
-								<a data-toggle="modal" data-target="#sign-up-modal">Register</a>
+								<a data-toggle="modal" data-target="#sign-up-modal">Opret</a>
 							</div>
 						) : (
 							<div className="actions">

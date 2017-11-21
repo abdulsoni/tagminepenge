@@ -11,7 +11,7 @@ var view = function() {
 				<div className="row">
 					<div className="col-md-12 col-lg-12 col-sm-24 col-xs-24">
 						<div className="text">
-							<p className="website">TagMinePenge.dk<br/>Fortrolighedspolitik</p>
+							<p className="website">TagMinePenge.dk</p>
 							<p dangerouslySetInnerHTML={{__html : text?text.description:null}}></p>
 						</div>
 					</div>
