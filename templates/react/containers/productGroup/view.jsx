@@ -4,7 +4,8 @@ import ProductGrid from '../productGrid/index';
 import PriceRange from '../../components/priceRange/index';
 import Banner from '../../components/banner'
 import Filters from '../../components/filters'
-import {getMinPrice,getMaxPrice} from '../../helpers/product'
+import {getMinPrice,getMaxPrice} from '../../helpers/product';
+import BottomText from '../../components/bottomText'
 var view = function() {
 	const {config,products,filters,categories,user} = this.props;
 	const {category,query} = this.state;
@@ -51,6 +52,7 @@ var view = function() {
 								/>
 							</div>
 						</div>
+						<BottomText text = {category.footerText}/>
 					</div>
 					<div className="col-md-0 col-lg-2 column right">
 						<Banner style={{height:500}} banner = {rightBanner} link = {rightBannerlink}/>

@@ -66,7 +66,7 @@ var view = function () {
 					<li className="category-others">
 						<a href="/new" className="nav-link">
 							<span className="icon"><span className="fa fa-home" aria-hidden="true"></span></span>
-							<span className="text">New</span>
+							<span className="text">Nyt</span>
 						</a>
 					</li>
 					{
@@ -96,13 +96,13 @@ var view = function () {
 							<span className="text">Wish List</span>
 						</a>
 					</li>
-					<li>
-						<a href="/category/gadgets" className="nav-link dropdown-toggle category-others">
-							<span className="icon">
-								<span className="fa fa-gift" aria-hidden="true"></span>
-							</span>
-							<span className="text">Ting Til Hjemmet</span>
-						</a>
+					{/*<li>*/}
+						{/*<a href="/category/gadgets" className="nav-link dropdown-toggle category-others">*/}
+							{/*<span className="icon">*/}
+								{/*<span className="fa fa-gift" aria-hidden="true"></span>*/}
+							{/*</span>*/}
+							{/*<span className="text">Ting Til Hjemmet</span>*/}
+						{/*</a>*/}
 						{/*<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">*/}
 							{/*{*/}
 								{/*(categories || []).filter(category => category.displayType == 2).map((category) => {*/}
@@ -116,7 +116,7 @@ var view = function () {
 							{/*/!*<a className="dropdown-item" href="/get-started">Submit A Product</a>*!/*/}
 							{/*<a className="dropdown-item" href="/contact">Kontakt os</a>*/}
 						{/*</div>*/}
-					</li>
+					{/*</li>*/}
 				</ul>
 			</div>
 		</div>

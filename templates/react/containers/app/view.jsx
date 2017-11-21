@@ -21,7 +21,7 @@ var view = function () {
 										 config={config} {...this.props}/>
 				}
 
-				<BottomText text={config["footer-text"]?config["footer-text"].value:null}/>
+				{/*<BottomText text={config["footer-text"]?config["footer-text"].value:null}/>*/}
 				<Footer config={config} categories={categories}/>
 				<LoginModal/>
 				<SignUpModal/>

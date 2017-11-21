@@ -52826,6 +52826,7 @@
 					}
 				});
 			}
+	
 			/**
 	   * Render the view
 	   * @returns {*}
@@ -52916,7 +52917,6 @@
 				_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user, categories: categories }),
 				_react2.default.createElement(routeInfo.component, _extends({ categories: categories }, routeInfo.routeProps, { filters: filters, user: user,
 					config: config }, this.props)),
-				_react2.default.createElement(_bottomText2.default, { text: config["footer-text"] ? config["footer-text"].value : null }),
 				_react2.default.createElement(_index8.default, { config: config, categories: categories }),
 				_react2.default.createElement(_login2.default, null),
 				_react2.default.createElement(_index4.default, null),
@@ -53214,7 +53214,7 @@
 							_react2.default.createElement(
 								"span",
 								{ className: "text" },
-								"New"
+								"Nyt"
 							)
 						)
 					),
@@ -53276,24 +53276,6 @@
 								"span",
 								{ className: "text" },
 								"Wish List"
-							)
-						)
-					),
-					_react2.default.createElement(
-						"li",
-						null,
-						_react2.default.createElement(
-							"a",
-							{ href: "/category/gadgets", className: "nav-link dropdown-toggle category-others" },
-							_react2.default.createElement(
-								"span",
-								{ className: "icon" },
-								_react2.default.createElement("span", { className: "fa fa-gift", "aria-hidden": "true" })
-							),
-							_react2.default.createElement(
-								"span",
-								{ className: "text" },
-								"Ting Til Hjemmet"
 							)
 						)
 					)
@@ -55223,17 +55205,11 @@
 			_react2.default.createElement(
 				"div",
 				{ className: "row" },
-				_react2.default.createElement("div", { className: "col-md-2" }),
 				_react2.default.createElement(
 					"div",
-					{ className: "col-md-8" },
-					_react2.default.createElement(
-						"p",
-						null,
-						text
-					)
-				),
-				_react2.default.createElement("div", { className: "col-md-2" })
+					{ className: "col-md-12" },
+					_react2.default.createElement("p", { dangerouslySetInnerHTML: { __html: text } })
+				)
 			)
 		) : null;
 	};
@@ -58708,7 +58684,7 @@
 	
 			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 	
-			_this.pageSize = 9;
+			_this.pageSize = 300;
 			if (props.query) {
 				_this.getProducts();
 			}
@@ -60909,6 +60885,10 @@
 	
 	var _product = __webpack_require__(476);
 	
+	var _bottomText = __webpack_require__(424);
+	
+	var _bottomText2 = _interopRequireDefault(_bottomText);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
@@ -60983,7 +60963,8 @@
 								user: user
 							})
 						)
-					)
+					),
+					_react2.default.createElement(_bottomText2.default, { text: category.footerText })
 				),
 				_react2.default.createElement(
 					'div',
@@ -63102,7 +63083,10 @@
 		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
 		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
 		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
-	
+		var wishlistLink = "";
+		if (typeof window != 'undefined' && product) {
+			wishlistLink = window.location.protocol + "//" + window.location.host + "/my-Wishlist/";
+		}
 		return user ? _react2.default.createElement(
 			'div',
 			{ className: 'wish-list' },
@@ -63122,6 +63106,7 @@
 					'div',
 					{ className: 'share' },
 					_react2.default.createElement('div', {
+						'data-url': productLink,
 						'data-title': "Check Min Ønskeliste", 'data-description': "Check Min Ønskeliste",
 						className: 'addthis_inline_share_toolbox' })
 				)

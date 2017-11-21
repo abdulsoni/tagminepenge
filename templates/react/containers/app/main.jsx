@@ -30,6 +30,7 @@ export default class Main extends Component {
 			}
 		});
 	}
+	
 	/**
 	 * Render the view
 	 * @returns {*}

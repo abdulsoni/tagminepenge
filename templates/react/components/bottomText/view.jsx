@@ -6,11 +6,11 @@ var view = function () {
 	return text?(
 		<div className="bottom-text">
 			<div className="row">
-				<div className="col-md-2"></div>
-				<div className="col-md-8">
-					<p>{text}</p>
+				{/*<div className="col-md-2"></div>*/}
+				<div className="col-md-12">
+					<p dangerouslySetInnerHTML={{__html : text}}></p>
 				</div>
-				<div className="col-md-2"></div>
+				{/*<div className="col-md-2"></div>*/}
 			</div>
 		</div>
 	):null;
