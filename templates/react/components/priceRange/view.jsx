@@ -29,7 +29,7 @@ var view = function () {
 							<option value="-price">Højeste til Laveste</option>
 							<option value="price">Laveste til Højeste</option>
 							<option value="-publishedDate">Nyeste</option>
-							<option value="saves">Mest Populæ</option>
+							<option value="saves">Mest Populær</option>
 						</select>
 					</div>
 				)
