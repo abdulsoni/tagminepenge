@@ -55,7 +55,7 @@ class Main extends Component {
 					loading : false,
 					message : {
 						type : "success",
-						text : "An email has been sent to your email with instructions to reset password"
+						text : "En email er blevet sendt til din email med instruktioner for at nulstille adgangskoden"
 					}
 				});
 				

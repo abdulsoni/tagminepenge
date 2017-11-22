@@ -67,6 +67,10 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 			subject: 'New Enquiry for tagminepinge',
 			enquiry: enquiry,
 			brand: brand,
+			settings: {
+			'view cache' : false,
+				'views' : __dirname + '../templates/emails'
+			}
 		}, callback);
 	});
 };

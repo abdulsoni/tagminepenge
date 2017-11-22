@@ -74,27 +74,41 @@ export  function forgot(req, res) {
 		console.log("Email absent")
 		return res.sendStatus(500)
 	}
-	keystone.list('User').model.find().where('email', req.query.email).exec(function (err, user) {
+	keystone.list('User').model.findOne().where('email', req.body.email).exec(function (err, user) {
 		if (err) {
 			console.log("Error while getting user",err)
 			return res.sendStatus(500)
 		}
 		if(user){
-			new keystone.Email({
-				templateName: 'Forgot Password',
-				transport: 'mailgun',
-			}).send({
-				to: user.email,
-				from: {
-					name: 'Admin-TAGMINEPENGE',
-					email: 'contact@tagminepenge.com',
-				},
-				subject: 'Instructions for resetting password'
-				//Put the template here
-			}, (response)=>{
-				console.log(response)
-				return res.json(true)
-			});
+			//console.log(user)
+			let newPassword = Math.random().toString(36).slice(-8);
+			user.password = newPassword;
+			user.save().then(()=>{
+				new keystone.Email({
+					templateName: 'forgot-password.jsx',
+					transport: 'mailgun',
+				}).send({
+					to: user.email,
+					from: {
+						name: 'Admin-TAGMINEPENGE',
+						email: 'contact@tagminepenge.com',
+					},
+					subject: 'Your New Password',
+					user : user,
+					newPassword : newPassword,
+					settings: {
+						'view cache' : false,
+						'views' : __dirname + '../../templates/emails'
+					}
+				}, (response)=>{
+					console.log(response)
+					return res.json(true)
+				});
+			}).catch(err=>{
+				console.log("Error while resetting the password",err);
+				return res.status(500);
+			})
+			
 		} else {
 			return res.json(false)
 		}
