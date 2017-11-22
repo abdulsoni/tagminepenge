@@ -8,10 +8,7 @@ var view = function () {
 	const leftBannerlink = (config.leftBanner && config.leftBanner.value)?config.leftBanner.value:null;
 	const rightBanner = (config.rightBanner && config.rightBanner.media)?config.rightBanner.media.url:null;
 	const rightBannerlink = (config.rightBanner && config.rightBanner.value)?config.rightBanner.value:null;
-	let wishlistLink = "";
-	if (typeof window != 'undefined' && product) {
-		wishlistLink = window.location.protocol + "//" + window.location.host + "/my-Wishlist/";
-	}
+	const {wishlistLink} = this.state;
 	return user?(
 		<div className="wish-list">
 			<div className="heading container">
@@ -21,7 +18,7 @@ var view = function () {
 				<div className="share">
 					{/*<span>Share: &nbsp;</span>*/}
 					<div
-						data-url={productLink}
+						data-url={wishlistLink?wishlistLink:null}
 						data-title={"Check Min Ønskeliste"} data-description={"Check Min Ønskeliste"}
 						className="addthis_inline_share_toolbox"/>
 

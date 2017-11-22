@@ -6,8 +6,9 @@ import {getImage} from '../../utils/app-util';
 var view = function () {
 	const {config} = this.props;
 	const banner = config["about-us-banner"];
-	const image1 = config["about-us-image-1"];
-	const image2 = config["about-us-image-2"];
+	const image1 = config["about-us-image-1"]?config["about-us-image-1"].media.url:null;
+	const image2 = config["about-us-image-2"]?config["about-us-image-2"].media.url:null;
+	console.log(image1,image2)
 	const text = config["about-us-text"];
 	const title = config["about-us-title"];
 	const text2 = config["about-us-text-2"];
@@ -32,7 +33,7 @@ var view = function () {
 					<div className="col-md-5">
 						<div className="image-box">
 							<span className="image"
-								  style={{backgroundImage: getBackgroundImageStyle(getImage(image1))}}></span>
+								  style={ getBackgroundImageStyle(image1)}></span>
 						</div>
 					</div>
 					<div className="col-md-7">
@@ -50,7 +51,7 @@ var view = function () {
 					<div className="col-md-5">
 						<div className="image-box">
 							<span className="image"
-								  style={{backgroundImage: getBackgroundImageStyle(getImage(image2))}}></span>
+								  style={getBackgroundImageStyle(image2)}></span>
 						</div>
 					</div>
 				</div>

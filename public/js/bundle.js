@@ -55881,6 +55881,10 @@
 	
 	var _product = __webpack_require__(476);
 	
+	var _bottomText = __webpack_require__(424);
+	
+	var _bottomText2 = _interopRequireDefault(_bottomText);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
@@ -55898,6 +55902,7 @@
 		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
 		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
 		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
+		var bottomText = config["footer-text-new"] ? config["footer-text-new"].description : null;
 		return _react2.default.createElement(
 			'div',
 			{ className: 'home' },
@@ -55923,7 +55928,8 @@
 					_react2.default.createElement(_index8.default, {
 						query: query,
 						user: user
-					})
+					}),
+					_react2.default.createElement(_bottomText2.default, { text: bottomText })
 				),
 				_react2.default.createElement(
 					'div',
@@ -60793,7 +60799,8 @@
 								categories: {
 									$in: [category._id]
 								}
-							}
+							},
+							sort: '-publishedDate'
 						}
 					});
 				}
@@ -63013,7 +63020,10 @@
 			}
 		}, {
 			key: 'componentDidMount',
-			value: function componentDidMount() {}
+			value: function componentDidMount() {
+				var wishlistLink = window.location.protocol + "//" + window.location.host + "/my-Wishlist/";
+				this.setState({ wishlistLink: wishlistLink });
+			}
 		}, {
 			key: 'onSaveToWishList',
 			value: function onSaveToWishList() {
@@ -63039,7 +63049,7 @@
 	
 	
 	exports.default = Main;
-	Main.displayName = 'Sample-Component';
+	Main.displayName = 'My-Wishlist';
 
 /***/ }),
 /* 517 */
@@ -63078,10 +63088,8 @@
 		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
 		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
 		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
-		var wishlistLink = "";
-		if (typeof window != 'undefined' && product) {
-			wishlistLink = window.location.protocol + "//" + window.location.host + "/my-Wishlist/";
-		}
+		var wishlistLink = this.state.wishlistLink;
+	
 		return user ? _react2.default.createElement(
 			'div',
 			{ className: 'wish-list' },
@@ -63101,7 +63109,7 @@
 					'div',
 					{ className: 'share' },
 					_react2.default.createElement('div', {
-						'data-url': productLink,
+						'data-url': wishlistLink ? wishlistLink : null,
 						'data-title': "Check Min Ønskeliste", 'data-description': "Check Min Ønskeliste",
 						className: 'addthis_inline_share_toolbox' })
 				)
@@ -63332,8 +63340,9 @@
 		var config = this.props.config;
 	
 		var banner = config["about-us-banner"];
-		var image1 = config["about-us-image-1"];
-		var image2 = config["about-us-image-2"];
+		var image1 = config["about-us-image-1"] ? config["about-us-image-1"].media.url : null;
+		var image2 = config["about-us-image-2"] ? config["about-us-image-2"].media.url : null;
+		console.log(image1, image2);
 		var text = config["about-us-text"];
 		var title = config["about-us-title"];
 		var text2 = config["about-us-text-2"];
@@ -63371,7 +63380,7 @@
 							'div',
 							{ className: 'image-box' },
 							_react2.default.createElement('span', { className: 'image',
-								style: { backgroundImage: (0, _common.getBackgroundImageStyle)((0, _appUtil.getImage)(image1)) } })
+								style: (0, _common.getBackgroundImageStyle)(image1) })
 						)
 					),
 					_react2.default.createElement(
@@ -63403,7 +63412,7 @@
 							'div',
 							{ className: 'image-box' },
 							_react2.default.createElement('span', { className: 'image',
-								style: { backgroundImage: (0, _common.getBackgroundImageStyle)((0, _appUtil.getImage)(image2)) } })
+								style: (0, _common.getBackgroundImageStyle)(image2) })
 						)
 					)
 				)

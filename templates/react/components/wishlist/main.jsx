@@ -35,7 +35,8 @@ export default class Main extends Component {
 		
 	}
 	componentDidMount(){
-		
+		let wishlistLink = window.location.protocol + "//" + window.location.host + "/my-Wishlist/";
+		this.setState({wishlistLink})
 	}
 	onSaveToWishList(){
 		this.setState({
@@ -51,4 +52,4 @@ export default class Main extends Component {
 	}
 }
 //Set display name to be used in React Dev Tools
-Main.displayName = 'Sample-Component';
+Main.displayName = 'My-Wishlist';

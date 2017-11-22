@@ -88,8 +88,8 @@ exports.populateEntity = function (req, res, next) {
 		});
 		if(categoryObj.length>0){
 			categoryObj = categoryObj[0]
-			res.locals.title = categoryObj.name;
-			res.locals.description = categoryObj.description;
+			res.locals.title = categoryObj.metaTitle;
+			res.locals.description = categoryObj.metaDescription;
 			res.locals.fbTitle = categoryObj.name;
 			res.locals.fbDescription = categoryObj.description;
 		}

@@ -78,7 +78,8 @@ class Main extends Component {
 						categories : {
 							$in : [category._id]
 						}
-					}
+					},
+					sort : '-publishedDate'
 				} 
 			});
 		}

@@ -5,6 +5,7 @@ import Filters from '../../components/filters/index';
 import PriceRange from '../../components/priceRange/index';
 import ProductGrid from '../productGrid/index';
 import {getMaxPrice,getMinPrice} from '../../helpers/product'
+import BottomText from '../../components/bottomText'
 var view = function() {
 	const {config,filters,query,priceRange,products,user} = this.props;
 	const banner = (config.banner && config.banner.media)?config.banner.media.url:null;
@@ -13,6 +14,7 @@ var view = function() {
 	const leftBannerlink = (config.leftBanner && config.leftBanner.value)?config.leftBanner.value:null;
 	const rightBanner = (config.rightBanner && config.rightBanner.media)?config.rightBanner.media.url:null;
 	const rightBannerlink = (config.rightBanner && config.rightBanner.value)?config.rightBanner.value:null;
+	const bottomText = config["footer-text-new"]?config["footer-text-new"].description:null;
 	return (
 		<div className="home">
 			<div className="row">
@@ -36,6 +38,7 @@ var view = function() {
 						query = {query}
 						user = {user}
 					/>
+					<BottomText text = {bottomText}/>
 				</div>
 				<div className="col-md-0 col-lg-2 column right">
 					<Banner style={{height:500}} banner = {rightBanner} link = {rightBannerlink}/>
