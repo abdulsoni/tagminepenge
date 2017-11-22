@@ -59354,7 +59354,7 @@
 					),
 					user ? _react2.default.createElement(
 						'button',
-						{ onClick: this.addToWishList.bind(this), className: 'btn btn-red save-btn' },
+						{ onClick: this.addToWishList.bind(this), className: 'btn btn-yellow save-btn' },
 						!presentInWishList ? "GEM" : "Fjern"
 					) : _react2.default.createElement(
 						'a',
@@ -61626,7 +61626,7 @@
 										_react2.default.createElement(
 											'button',
 											{ onClick: this.addToWishList.bind(this),
-												className: 'btn btn-red save-btn' },
+												className: 'btn btn-yellow save-btn' },
 											presentInWishList ? "Fjern" : "GEM"
 										)
 									) : _react2.default.createElement(

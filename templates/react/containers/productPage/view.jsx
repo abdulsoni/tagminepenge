@@ -53,7 +53,7 @@ var view = function () {
 										user ? (
 											<a>
 												<button onClick={this.addToWishList.bind(this)}
-														className="btn btn-red save-btn">{presentInWishList ? "Fjern" : "GEM"}</button>
+														className="btn btn-yellow save-btn">{presentInWishList ? "Fjern" : "GEM"}</button>
 											</a>
 										) : (
 											<a data-toggle="modal" data-target="#login-modal">

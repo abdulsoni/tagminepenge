@@ -20,7 +20,7 @@ var view = function() {
 					<a target="blank" href={data.link}><span style = {getBackgroundImageStyle(imageUrl)} className="image"></span></a>
 					{
 						user?(
-							<button onClick={this.addToWishList.bind(this)} className="btn btn-red save-btn">{!presentInWishList?"GEM":"Fjern"}</button>
+							<button onClick={this.addToWishList.bind(this)} className="btn btn-yellow save-btn">{!presentInWishList?"GEM":"Fjern"}</button>
 						):(
 							<a data-toggle="modal" data-target="#login-modal">
 								<button className="btn btn-yellow save-btn">GEM</button>
