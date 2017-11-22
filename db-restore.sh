@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #mongodump --db tagminepenge-cms
 #cd dump/
 #mv tagminepenge-cms/ dump
