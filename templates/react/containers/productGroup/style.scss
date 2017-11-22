@@ -2,7 +2,6 @@
 
 .product-group {
   padding-top: 25px;
-  //.container{
   .row {
 	margin: 0px;
 	.column {
@@ -102,7 +101,46 @@
 	  }
 	}
   }
-  //}
+  &.category-gadgets-and-grej{
+	.category-title{
+	  background: linear-gradient(to bottom, #1569C7 0, #1569C7 100%);
+	  color: #FFFFFF;
+	  width: 200px;
+	  margin: auto;
+	  margin-top: 50px;
+	  border-radius: 6px;
+	}
+  }
+  &.category-oplevelser{
+	.category-title{
+	  background: linear-gradient(to bottom, #E8A317 0, #E8A317 100%);
+	  color: #FFFFFF;
+	  width: 150px;
+	  margin: auto;
+	  margin-top: 50px;
+	  border-radius: 6px;
+	}
+  }
+  &.category-mad-and-drikke{
+	.category-title{
+	  background: linear-gradient(to bottom, #347C17 0, #347C17 100%);
+	  color: #FFFFFF;
+	  width: 190px;
+	  margin: auto;
+	  margin-top: 50px;
+	  border-radius: 6px;
+	}
+  }
+  &.category-ting-til-hjemmet{
+	.category-title{
+	  background: linear-gradient(to bottom, #F70D1A 0, #F70D1A 100%);
+	  color: #FFFFFF;
+	  width: 220px;
+	  margin: auto;
+	  margin-top: 50px;
+	  border-radius: 6px;
+	}
+  }
 }
 
 /* responsiveness */
