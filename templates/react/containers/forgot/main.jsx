@@ -47,7 +47,7 @@ class Main extends Component {
 					loading : false,
 					message : {
 						type : "danger",
-						text : "No such email exists in our system"
+						text : "Emailen eksisterer ikke i vores system"
 					}
 				});		
 			} else {

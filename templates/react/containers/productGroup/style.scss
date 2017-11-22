@@ -1,6 +1,7 @@
 @import '../../../../public/styles/variables';
 
 .product-group {
+  padding-top: 25px;
   //.container{
   .row {
 	margin: 0px;
@@ -86,7 +87,6 @@
 			.card {
 			  .card-header {
 				.product-title {
-				  font-size: 15px;
 				}
 			  }
 			  .card-body {

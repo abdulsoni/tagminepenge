@@ -34,7 +34,7 @@ var view = function () {
 							</div>
 							<div className="actions">
 								<div className="secondary-action">
-									<span>Ved oprettelse accepterer du vores Fortrolighedsspolitik <a className="inline-block">Terms and Policies</a></span>
+									<span>Ved oprettelse accepterer du vores <a className="inline-block">Fortrolighedsspolitik</a></span>
 								</div>
 								<button type="submit" className="btn btn-yellow submit-btn">Opret</button>
 							</div>

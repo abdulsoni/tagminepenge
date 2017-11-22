@@ -13,7 +13,7 @@ var view = function () {
 	const text2 = config["about-us-text-2"];
 	return (
 		<div className="about-us">
-			<Banner banner={getImage(banner)}/>
+			<Banner show={true} banner={getImage(banner)}/>
 			{
 				title?(
 					<div className="container title">
