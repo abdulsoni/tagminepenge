@@ -52,7 +52,7 @@ class Main extends Component {
 					loading : false,
 					message : {
 						type : "success",
-						text : "We have received your message. We will get back to you shortly"
+						text : "Vi har modtaget din besked. Vi vil kontakte dig snarest."
 					}
 				});
 			}

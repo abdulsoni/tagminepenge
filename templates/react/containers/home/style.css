@@ -1,25 +1,27 @@
-.home .row {
-  margin: 0px; }
-  .home .row .column {
-    padding: 0px; }
-    .home .row .column .container {
-      width: 100%;
-      padding: 0; }
-      .home .row .column .container .row .col-md-4 {
-        padding-left: 10px;
-        padding-right: 10px; }
-      .home .row .column .container.filters {
-        padding: 30px 0px 20px 6px; }
-    .home .row .column .banner {
-      margin: 10px; }
-    .home .row .column.left .banner {
-      margin-right: 0px;
-      position: fixed;
-      width: 16%; }
-    .home .row .column.right .banner {
-      margin-left: 0px;
-      position: fixed;
-      width: 16%; }
+.home {
+  padding-top: 25px; }
+  .home .row {
+    margin: 0px; }
+    .home .row .column {
+      padding: 0px; }
+      .home .row .column .container {
+        width: 100%;
+        padding: 0; }
+        .home .row .column .container .row .col-md-4 {
+          padding-left: 10px;
+          padding-right: 10px; }
+        .home .row .column .container.filters {
+          padding: 30px 0px 20px 6px; }
+      .home .row .column .banner {
+        margin: 10px; }
+      .home .row .column.left .banner {
+        margin-right: 0px;
+        position: fixed;
+        width: 16%; }
+      .home .row .column.right .banner {
+        margin-left: 0px;
+        position: fixed;
+        width: 16%; }
 
 /* responsiveness */
 @media (min-width: 1500px) {
