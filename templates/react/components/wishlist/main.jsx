@@ -35,7 +35,7 @@ export default class Main extends Component {
 		
 	}
 	componentDidMount(){
-		let wishlistLink = window.location.protocol + "//" + window.location.host + "/my-Wishlist/";
+		let wishlistLink = window.location.protocol + "//" + window.location.host + "/my-wishlist/";
 		this.setState({wishlistLink})
 	}
 	onSaveToWishList(){

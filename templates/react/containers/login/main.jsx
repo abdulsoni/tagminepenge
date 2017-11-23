@@ -51,7 +51,7 @@ class Main extends Component {
 					loading : false,
 					message : {
 						type : "success",
-						text : "You are successfully logged in"
+						text : "Dit brugernavn eller kodeord er forkert."
 					}
 				});
 				window.location.reload();

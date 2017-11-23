@@ -25,7 +25,7 @@ Product.add({
 	categories: { type: Types.Relationship, ref: 'Category', many: true },
 	//subcategories: { type: Types.Relationship, ref: 'SubCategory',filters: { category: ':categories' } },
 	link : { type: String, required: false,default : "" },
-	price : { type: Number, required: false,default : 0 },
+	price : { type: Number, required: true,default : 0 },
 	saves : {type : Number,required : false,default : 0,noedit:true}
 	
 });

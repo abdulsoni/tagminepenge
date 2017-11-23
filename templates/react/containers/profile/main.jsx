@@ -55,7 +55,7 @@ class Main extends Component {
 					loading : false,
 					message : {
 						"type" : "success",
-						"text" : "Profile Saved Successfully",
+						"text" : "Ændringer Gemt",
 						"password" : ""
 					}
 				})
@@ -64,7 +64,7 @@ class Main extends Component {
 					loading : false,
 					message : {
 						"type" : "error",
-						"text" : "Error while saving the details."
+						"text" : "Fejl under opbevaring af detaljerne."
 					}
 				})
 			}

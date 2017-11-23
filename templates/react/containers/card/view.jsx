@@ -34,7 +34,7 @@ var view = function() {
 			</div>
 			<div className="card-footer">
 				<div className="product-range">
-					<p className="cost">{data.price || 0} kr.</p>
+					<p className="cost">{data.price?data.price + " kr.":""}</p>
 					<span className="saves">
 						{
 							user?(

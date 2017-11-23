@@ -102,6 +102,10 @@ exports.populateEntity = function (req, res, next) {
 			res.locals.title = config[page+"-title"].value;
 			res.locals.fbTitle = config[page+"-title"].value;
 		}
+		if(config[page+"-image"]){
+			res.locals.image = config[page+"-image"].media?config[page+"-image"].media.url:null;
+			res.locals.fbImage = config[page+"-image"].media?config[page+"-image"].media.url:null
+		}
 		if(config[page+"-description"]){
 			res.locals.description = config[page+"-description"].value;
 			res.locals.fbDescription = config[page+"-description"].value;
@@ -115,8 +119,9 @@ exports.populateEntity = function (req, res, next) {
 
 exports.populateFilters = function (req, res, next) {
 
-	var query = Filter.model.find().sort( { displayType:1,menuOrder: 1 } );
+	var query = Filter.model.find();
 	query.exec(function(err, doc) {
+		console.log(doc)
 		if(doc){
 			res.locals.filters = doc;
 		} else {

@@ -59,10 +59,10 @@ Enquiry.schema.methods.sendNotificationEmail = function (callback) {
 			templateName: 'enquiry-notification.jsx',
 			transport: 'mailgun',
 		}).send({
-			to: admins,
+			to: process.env.CONTACT_EMAIL || "contact@tagminepenge.com",
 			from: {
 				name: 'tagminepinge-contact',
-				email: process.env.CONTACT_EMAIL || 'contact@tagminepinge.com',
+				email: enquiry.email || "contact@tagminepenge.com"
 			},
 			subject: 'New Enquiry for tagminepinge',
 			enquiry: enquiry,

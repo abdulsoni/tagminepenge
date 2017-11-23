@@ -54015,7 +54015,7 @@
 							loading: false,
 							message: {
 								type: "success",
-								text: "You are successfully logged in"
+								text: "Dit brugernavn eller kodeord er forkert."
 							}
 						});
 						window.location.reload();
@@ -54457,7 +54457,7 @@
 							loading: false,
 							message: {
 								type: "danger",
-								text: "Error while registering you in, please contact us"
+								text: "Fejl under registrering af dig, kontakt os venligst"
 							}
 						});
 						return false;
@@ -54467,7 +54467,7 @@
 								loading: false,
 								message: {
 									type: "danger",
-									text: "This email already exists in our system"
+									text: "Denne email findes allerede i systemet"
 								}
 							});
 							return false;
@@ -59385,8 +59385,7 @@
 					_react2.default.createElement(
 						'p',
 						{ className: 'cost' },
-						data.price || 0,
-						' kr.'
+						data.price ? data.price + " kr." : ""
 					),
 					_react2.default.createElement(
 						'span',
@@ -60431,7 +60430,7 @@
 							loading: false,
 							message: {
 								"type": "success",
-								"text": "Profile Saved Successfully",
+								"text": "Ændringer Gemt",
 								"password": ""
 							}
 						});
@@ -60440,7 +60439,7 @@
 							loading: false,
 							message: {
 								"type": "error",
-								"text": "Error while saving the details."
+								"text": "Fejl under opbevaring af detaljerne."
 							}
 						});
 					}
@@ -61604,8 +61603,7 @@
 									_react2.default.createElement(
 										'p',
 										null,
-										product.price || 0,
-										' kr.'
+										product.price ? product.price + " kr." : ""
 									)
 								),
 								_react2.default.createElement(
@@ -61658,11 +61656,12 @@
 					_react2.default.createElement(_index4.default, {
 						user: user,
 						query: {
-							query: {
-								categories: {
-									$in: product.categories || []
-								}
-							}
+							// query: {
+							// 	categories: {
+							// 		$in: product.categories || []
+							// 	}
+							// },
+							sort: '-publishedDate'
 						} })
 				),
 				_react2.default.createElement(
@@ -63025,7 +63024,7 @@
 		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
-				var wishlistLink = window.location.protocol + "//" + window.location.host + "/my-Wishlist/";
+				var wishlistLink = window.location.protocol + "//" + window.location.host + "/my-wishlist/";
 				this.setState({ wishlistLink: wishlistLink });
 			}
 		}, {

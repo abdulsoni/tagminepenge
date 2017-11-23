@@ -38,7 +38,7 @@ class Main extends Component {
 					loading : false,
 					message : {
 						type : "danger",
-						text : "Error while registering you in, please contact us"
+						text : "Fejl under registrering af dig, kontakt os venligst"
 					}
 				});
 				return false;
@@ -48,7 +48,7 @@ class Main extends Component {
 						loading : false,
 						message : {
 							type : "danger",
-							text : "This email already exists in our system"
+							text : "Denne email findes allerede i systemet"
 						}
 					});
 					return false;

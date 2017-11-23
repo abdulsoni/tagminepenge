@@ -43,7 +43,7 @@ var view = function () {
 									<p>{product.content.brief}</p>
 								</div>
 								<div className="product-price">
-									<p>{product.price || 0} kr.</p>
+									<p>{product.price?product.price + " kr.":""}</p>
 								</div>
 								<div className="product-actions">
 									<a href={product.link}>
@@ -77,11 +77,12 @@ var view = function () {
 					<ProductGrid
 						user={user}
 						query={{
-							query: {
-								categories: {
-									$in: product.categories || []
-								}
-							}
+							// query: {
+							// 	categories: {
+							// 		$in: product.categories || []
+							// 	}
+							// },
+							sort : '-publishedDate'
 						}}/>
 				</div>
 				<div className="col-md-0 col-lg-2 column right">
