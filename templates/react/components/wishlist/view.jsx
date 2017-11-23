@@ -9,6 +9,9 @@ var view = function () {
 	const rightBanner = (config.rightBanner && config.rightBanner.media)?config.rightBanner.media.url:null;
 	const rightBannerlink = (config.rightBanner && config.rightBanner.value)?config.rightBanner.value:null;
 	const {wishlistLink} = this.state;
+	const title = config["my-wishlist-title"]?config["my-wishlist-title"].value:"Check Min Ønskeliste";
+	const description = config["my-wishlist-description"]?config["my-wishlist-description"].value:"Check Min Ønskeliste";
+	const image = (config["my-wishlist-image"] && config["my-wishlist-image"].media)?config["my-wishlist-image"].media.url:"Check Min Ønskeliste";
 	return user?(
 		<div className="wish-list">
 			<div className="heading container">
@@ -19,8 +22,10 @@ var view = function () {
 					{/*<span>Share: &nbsp;</span>*/}
 					<div
 						data-url={wishlistLink?wishlistLink:null}
-						data-title={"Check Min Ønskeliste"} data-description={"Check Min Ønskeliste"}
-						className="addthis_inline_share_toolbox"/>
+						data-title={title} data-description={description}
+						className="addthis_inline_share_toolbox"
+						data-media={image}
+					/>
 
 				</div>
 			</div>

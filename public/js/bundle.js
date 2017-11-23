@@ -63093,6 +63093,9 @@
 		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
 		var wishlistLink = this.state.wishlistLink;
 	
+		var title = config["my-wishlist-title"] ? config["my-wishlist-title"].value : "Check Min Ønskeliste";
+		var description = config["my-wishlist-description"] ? config["my-wishlist-description"].value : "Check Min Ønskeliste";
+		var image = config["my-wishlist-image"] && config["my-wishlist-image"].media ? config["my-wishlist-image"].media.url : "Check Min Ønskeliste";
 		return user ? _react2.default.createElement(
 			'div',
 			{ className: 'wish-list' },
@@ -63113,8 +63116,10 @@
 					{ className: 'share' },
 					_react2.default.createElement('div', {
 						'data-url': wishlistLink ? wishlistLink : null,
-						'data-title': "Check Min Ønskeliste", 'data-description': "Check Min Ønskeliste",
-						className: 'addthis_inline_share_toolbox' })
+						'data-title': title, 'data-description': description,
+						className: 'addthis_inline_share_toolbox',
+						'data-media': image
+					})
 				)
 			),
 			_react2.default.createElement(
