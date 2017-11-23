@@ -43,7 +43,7 @@ class Main extends Component {
 					loading : false,
 					message : {
 						type : "danger",
-						text : "Your username or password was incorrect."
+						text : "Dit brugernavn eller kodeord er forkert."
 					}
 				});		
 			} else {
@@ -51,7 +51,7 @@ class Main extends Component {
 					loading : false,
 					message : {
 						type : "success",
-						text : "Dit brugernavn eller kodeord er forkert."
+						text : "Du er logget ind."
 					}
 				});
 				window.location.reload();

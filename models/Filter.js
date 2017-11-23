@@ -10,6 +10,7 @@ var Filter = new keystone.List('Filter');
 Filter.add({
 	name: { type: String, required: true },
 	link: { type: String, required: false},
+	menuOrder : { type: Number, required: false,label : "Menu Order",default : 100}
 });
 
 

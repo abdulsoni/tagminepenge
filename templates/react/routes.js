@@ -5,6 +5,7 @@ import SearchPage from './containers/searchPage';
 import Product from './containers/productPage';
 import ProductPitch from './components/productPitch';
 import WishList from './components/wishlist';
+import UserWishList from './components/user-wishlist';
 import About from './components/aboutUs';
 import Contact from './containers/contactUs';
 import Privacy from './components/privacy-policy';
@@ -56,6 +57,9 @@ const Routes = {
 	},
 	"/my-wishlist" : {
 		component : WishList
+	},
+	"/user-wishlist/:userId" : {
+		component : UserWishList
 	},
 	"/about" : {
 		component : About

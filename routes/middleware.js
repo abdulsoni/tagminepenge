@@ -13,6 +13,7 @@ var Configuration = keystone.list('Configuration');
 var Category = keystone.list('Category');
 var Filter = keystone.list('Filter');
 var Product = keystone.list('Product');
+var User = keystone.list('User');
 /**
 	Initialises the standard view locals
 
@@ -63,6 +64,7 @@ exports.populateCategories = function (req, res, next) {
 
 exports.populateEntity = function (req, res, next) {
 	console.log(req.url);
+	
 	if(req.url.indexOf("/product/")!=-1){
 		var productId = req.url.split("/")[2];
 		
@@ -110,7 +112,30 @@ exports.populateEntity = function (req, res, next) {
 			res.locals.description = config[page+"-description"].value;
 			res.locals.fbDescription = config[page+"-description"].value;
 		}
-		next();
+		if(req.url.indexOf("/user-wishlist/")!=-1){
+
+			var userId = req.url.split("/")[2];
+			console.log(userId)
+			if(userId){
+				var userObj = User.model.findById(userId,function(err,doc){
+					console.log("doc is",doc);
+					if(doc){
+						res.locals.savedProducts = doc.savedProducts;
+						res.locals.title = doc.email.split("@")[0] + "'s Ønskeliste";
+						res.locals.pageTitle = doc.email.split("@")[0] + "'s Ønskeliste";
+					}
+					next();
+				});
+					
+			} else {
+				next();	
+			}
+			
+			
+		} else {
+			next();	
+		}
+		
 	}
 	
 };
@@ -119,7 +144,7 @@ exports.populateEntity = function (req, res, next) {
 
 exports.populateFilters = function (req, res, next) {
 
-	var query = Filter.model.find();
+	var query = Filter.model.find().sort( {menuOrder: 1 } );
 	query.exec(function(err, doc) {
 		console.log(doc)
 		if(doc){

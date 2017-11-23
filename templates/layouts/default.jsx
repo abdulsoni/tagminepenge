@@ -13,9 +13,9 @@ const Default = props => {
 			<meta property="og:title" content={props.fbTitle} />
 			<meta property="og:description" content={props.fbDescription} />
 			<meta property="og:image" content={props.fbImage}/>
-			<title>TAG MINE PENGE!</title>
+			<title>{props.pageTitle?props.pageTitle:"TAG MINE PENGE!"}</title>
 
-			{/*<link rel="shortcut icon" href="/images/logo.png" type="image/x-icon"/>*/}
+			<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
 
 			<link href="/styles/site.css" rel="stylesheet"/>
 			<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700" rel="stylesheet"/>

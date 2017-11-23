@@ -48200,8 +48200,9 @@
 				_react2.default.createElement(
 					'title',
 					null,
-					'TAG MINE PENGE!'
+					props.pageTitle ? props.pageTitle : "TAG MINE PENGE!"
 				),
+				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
 				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
 				_react2.default.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Oswald:300,400,500,700', rel: 'stylesheet' }),
 				props.user && props.user.canAccessKeystone && _react2.default.createElement('link', { href: '/keystone/styles/content/editor.min.css', rel: 'stylesheet' }),
@@ -54007,7 +54008,7 @@
 							loading: false,
 							message: {
 								type: "danger",
-								text: "Your username or password was incorrect."
+								text: "Dit brugernavn eller kodeord er forkert."
 							}
 						});
 					} else {
@@ -54015,7 +54016,7 @@
 							loading: false,
 							message: {
 								type: "success",
-								text: "Dit brugernavn eller kodeord er forkert."
+								text: "Du er logget ind."
 							}
 						});
 						window.location.reload();
@@ -55615,6 +55616,10 @@
 	
 	var _wishlist2 = _interopRequireDefault(_wishlist);
 	
+	var _userWishlist = __webpack_require__(554);
+	
+	var _userWishlist2 = _interopRequireDefault(_userWishlist);
+	
 	var _aboutUs = __webpack_require__(520);
 	
 	var _aboutUs2 = _interopRequireDefault(_aboutUs);
@@ -55686,6 +55691,9 @@
 		},
 		"/my-wishlist": {
 			component: _wishlist2.default
+		},
+		"/user-wishlist/:userId": {
+			component: _userWishlist2.default
 		},
 		"/about": {
 			component: _aboutUs2.default
@@ -63011,7 +63019,6 @@
 						window.location.href = "/";
 						return;
 					}
-					console.log(this.props.user.savedProducts);
 					return {
 						query: {
 							_id: {
@@ -63024,7 +63031,7 @@
 		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
-				var wishlistLink = window.location.protocol + "//" + window.location.host + "/my-wishlist/";
+				var wishlistLink = window.location.protocol + "//" + window.location.host + "/user-wishlist/" + this.props.user._id;
 				this.setState({ wishlistLink: wishlistLink });
 			}
 		}, {
@@ -65185,6 +65192,289 @@
 	
 	// React Engine needs exports, don't export default
 	module.exports = Index;
+
+/***/ }),
+/* 554 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(555);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 555 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(556);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _axios = __webpack_require__(354);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Component
+	 * @type Component
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+	
+			_this.state = {
+				query: _this.getQuery()
+			};
+			return _this;
+		}
+	
+		_createClass(Main, [{
+			key: 'getQuery',
+			value: function getQuery() {
+				if (typeof window != 'undefined') {
+					if (!this.props.savedProducts) {
+						window.location.href = "/";
+						return;
+					}
+					return {
+						query: {
+							_id: {
+								$in: this.props.savedProducts
+							}
+						}
+					};
+				}
+			}
+		}, {
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				var wishlistLink = window.location.href; //window.location.protocol + "//" + window.location.host + "/user-wishlist/"+this.props.user._id;
+				this.setState({ wishlistLink: wishlistLink });
+			}
+		}, {
+			key: 'onSaveToWishList',
+			value: function onSaveToWishList() {
+				this.setState({
+					query: this.getQuery()
+				});
+			}
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	//Set display name to be used in React Dev Tools
+	
+	
+	exports.default = Main;
+	Main.displayName = 'My-Wishlist';
+
+/***/ }),
+/* 556 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(557);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	var _productGrid = __webpack_require__(460);
+	
+	var _productGrid2 = _interopRequireDefault(_productGrid);
+	
+	var _index = __webpack_require__(442);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		var _props = this.props,
+		    config = _props.config,
+		    user = _props.user;
+	
+		var leftBanner = config.leftBanner && config.leftBanner.media ? config.leftBanner.media.url : null;
+		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
+		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
+		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
+		var wishlistLink = this.state.wishlistLink;
+	
+		var title = config["my-wishlist-title"] ? config["my-wishlist-title"].value : "Check Min Ønskeliste";
+		var description = config["my-wishlist-description"] ? config["my-wishlist-description"].value : "Check Min Ønskeliste";
+		var image = config["my-wishlist-image"] && config["my-wishlist-image"].media ? config["my-wishlist-image"].media.url : "Check Min Ønskeliste";
+		return _react2.default.createElement(
+			'div',
+			{ className: 'wish-list' },
+			_react2.default.createElement(
+				'div',
+				{ className: 'heading container' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'title' },
+					_react2.default.createElement(
+						'p',
+						null,
+						'Min \xD8nskeliste'
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'share' },
+					_react2.default.createElement('div', {
+						'data-url': wishlistLink ? wishlistLink : null,
+						'data-title': title, 'data-description': description,
+						className: 'addthis_inline_share_toolbox',
+						'data-media': image
+					})
+				)
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'more' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-0 col-lg-2 column left' },
+						_react2.default.createElement(_index2.default, { banner: leftBanner, link: leftBannerlink })
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-12 col-lg-8 column' },
+						_react2.default.createElement(_productGrid2.default, {
+							query: this.state.query,
+							user: user,
+							onSaveToWishList: this.onSaveToWishList.bind(this)
+						})
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-0 col-lg-2 column right' },
+						_react2.default.createElement(_index2.default, { banner: rightBanner, link: rightBannerlink })
+					)
+				)
+			)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 557 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(558);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(405)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 558 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(404)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.wish-list {\n  padding-top: 70px; }\n  .wish-list .heading {\n    overflow: hidden;\n    margin-bottom: 80px; }\n    .wish-list .heading .title {\n      font-size: 32px;\n      text-align: center;\n      background: linear-gradient(to bottom, #DC381F 0, #DC381F 100%);\n      color: #FFFFFF;\n      width: 200px;\n      margin: auto;\n      border-radius: 6px; }\n    .wish-list .heading .share {\n      float: right;\n      display: flex;\n      padding-right: 32px; }\n      .wish-list .heading .share ul li {\n        display: inline-block; }\n        .wish-list .heading .share ul li a {\n          display: block;\n          font-size: 40px;\n          margin: 5px 5px 0px 0px;\n          line-height: 0px; }\n          .wish-list .heading .share ul li a.facebook {\n            color: #3c5a98; }\n          .wish-list .heading .share ul li a.twitter {\n            color: #1ea1f2; }\n          .wish-list .heading .share ul li a.pinterest {\n            color: #bd081b; }\n          .wish-list .heading .share ul li a.link {\n            color: #555; }\n  .wish-list .more .row {\n    margin: 0px; }\n    .wish-list .more .row .column {\n      padding: 0px; }\n      .wish-list .more .row .column .container {\n        width: 100%; }\n      .wish-list .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .wish-list .more .row .column.left .banner {\n        margin-right: 0px; }\n      .wish-list .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"wish-list": "wish-list",
+		"heading": "heading",
+		"title": "title",
+		"share": "share",
+		"facebook": "facebook",
+		"twitter": "twitter",
+		"pinterest": "pinterest",
+		"link": "link",
+		"more": "more",
+		"row": "row",
+		"column": "column",
+		"container": "container",
+		"banner": "banner",
+		"left": "left",
+		"right": "right"
+	};
 
 /***/ })
 /******/ ]);

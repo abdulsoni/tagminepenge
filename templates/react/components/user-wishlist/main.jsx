@@ -19,14 +19,14 @@ export default class Main extends Component {
 	}
 	getQuery(){
 		if(typeof window!='undefined'){
-			if(!this.props.user){
+			if(!this.props.savedProducts){
 				window.location.href="/";
 				return;
 			}
 			return {
 				query : {
 					_id : {
-						$in : this.props.user.savedProducts
+						$in : this.props.savedProducts
 					}
 				}
 			}
@@ -34,7 +34,7 @@ export default class Main extends Component {
 		
 	}
 	componentDidMount(){
-		let wishlistLink = window.location.protocol + "//" + window.location.host + "/user-wishlist/"+this.props.user._id;
+		let wishlistLink = window.location.href;//window.location.protocol + "//" + window.location.host + "/user-wishlist/"+this.props.user._id;
 		this.setState({wishlistLink})
 	}
 	onSaveToWishList(){
