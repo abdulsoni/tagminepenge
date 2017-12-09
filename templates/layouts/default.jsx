@@ -31,7 +31,7 @@ const Default = props => {
 		<body>
 
 
-		<div id="body">
+		<div id="body" >
 			{
 				// - The children block should contain the body of your template's content
 				props.children

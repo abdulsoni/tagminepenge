@@ -98,6 +98,6 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 
 keystone.start();
 var http = require("http");
-setInterval(function() {
-	http.get("http://tagminepenge.herokuapp.com");
-}, 300000)
+// setInterval(function() {
+// 	http.get("http://localhost:3000/");
+// }, 300000)

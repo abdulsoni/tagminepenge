@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ComponentView from './view';
+import { connect } from 'react-redux';
 /**
  * @name Main Container
  * @type Component
@@ -12,9 +13,27 @@ export default class Main extends Component {
 	 */
 	constructor(props){
 		super(props);
-		
+		this.state = {
+			hidden : "hidden", // flag for API
+			loading: true
+		};
 	}
+	componentWillMount() {
+		console.log('componentWillMount');
+		var that = this;
+		// if(this.props.products){
+		// 	this.setState({loading:false});
+		// }
+		setTimeout(function() {
+			that.show();
+		}, 5000);
+	}
+	show() {
+		this.setState({loading:false});
+	}
+   
 	componentDidMount(){
+		console.log('componentDidMount');
 		setTimeout(()=>{
 			var script = document.createElement('script');
 			script.src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a";
@@ -29,6 +48,7 @@ export default class Main extends Component {
 				$(this.appRef).removeClass("scrolled");
 			}
 		});
+		this.setState({loading: true})
 	}
 	
 	/**
@@ -40,5 +60,13 @@ export default class Main extends Component {
 		return (ComponentView.bind(this))();
 	}
 }
+const mapStateToProps = state => {
+	// console.log(state)
+	return {
+		products : state.products.results || [],
+		emitter : state.emitter
+	};
+};
 //Set display name to be used in React Dev Tools
 Main.displayName = 'Main';
+ connect(mapStateToProps)(Main);

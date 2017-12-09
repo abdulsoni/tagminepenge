@@ -13,8 +13,20 @@ export default class Main extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			searchText : ""
+			searchText : "",
+			hidden : "hidden" // flag for API
 		}
+	}
+	componentWillMount() {
+		console.log('componentWillMount');
+		var that = this;
+		setTimeout(function() {
+			that.show();
+		}, 5000);
+	}
+	show() {
+		if (this.refs.myRef)
+			this.setState({hidden : ""});
 	}
 
 	/**

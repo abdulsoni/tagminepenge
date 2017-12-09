@@ -8,7 +8,7 @@ var view = function () {
 			this.headerRef = ref
 		}}>
 			<div className="header-top">
-				<div className="container content">
+				<div className="container content" >
 					<div className="search">
 						<form className="navbar-form" role="search" onSubmit={this.search.bind(this)}>
 							<div className="input-group add-on">

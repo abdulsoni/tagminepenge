@@ -48086,10 +48086,10 @@
 	var map = {
 		"./index": 326,
 		"./index.jsx": 326,
-		"./index2": 552,
-		"./index2.jsx": 552,
-		"./test": 553,
-		"./test.jsx": 553
+		"./index2": 557,
+		"./index2.jsx": 557,
+		"./test": 558,
+		"./test.jsx": 558
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -50611,7 +50611,7 @@
 	/*!
 	 * Determine if an object is a Buffer
 	 *
-	 * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+	 * @author   Feross Aboukhadijeh <https://feross.org>
 	 * @license  MIT
 	 */
 	
@@ -52781,6 +52781,8 @@
 	
 	var _view2 = _interopRequireDefault(_view);
 	
+	var _reactRedux = __webpack_require__(295);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52804,14 +52806,38 @@
 		function Main(props) {
 			_classCallCheck(this, Main);
 	
-			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+	
+			_this.state = {
+				hidden: "hidden", // flag for API
+				loading: true
+			};
+			return _this;
 		}
 	
 		_createClass(Main, [{
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				console.log('componentWillMount');
+				var that = this;
+				// if(this.props.products){
+				// 	this.setState({loading:false});
+				// }
+				setTimeout(function () {
+					that.show();
+				}, 5000);
+			}
+		}, {
+			key: 'show',
+			value: function show() {
+				this.setState({ loading: false });
+			}
+		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				var _this2 = this;
 	
+				console.log('componentDidMount');
 				setTimeout(function () {
 					var script = document.createElement('script');
 					script.src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a";
@@ -52826,6 +52852,7 @@
 						$(_this2.appRef).removeClass("scrolled");
 					}
 				});
+				this.setState({ loading: true });
 			}
 	
 			/**
@@ -52843,11 +52870,19 @@
 	
 		return Main;
 	}(_react.Component);
-	//Set display name to be used in React Dev Tools
-	
 	
 	exports.default = Main;
+	
+	var mapStateToProps = function mapStateToProps(state) {
+		// console.log(state)
+		return {
+			products: state.products.results || [],
+			emitter: state.emitter
+		};
+	};
+	//Set display name to be used in React Dev Tools
 	Main.displayName = 'Main';
+	(0, _reactRedux.connect)(mapStateToProps)(Main);
 
 /***/ }),
 /* 398 */
@@ -52906,24 +52941,35 @@
 		    categories = _props.categories,
 		    filters = _props.filters;
 	
-	
-		return _react2.default.createElement(
-			'div',
-			{ className: 'app', ref: function ref(_ref) {
-					_this.appRef = _ref;
-				} },
-			_react2.default.createElement(
+		if (this.state.loading) {
+			return _react2.default.createElement(
 				'div',
-				{ className: 'main-container' },
-				_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user, categories: categories }),
-				_react2.default.createElement(routeInfo.component, _extends({ categories: categories }, routeInfo.routeProps, { filters: filters, user: user,
-					config: config }, this.props)),
-				_react2.default.createElement(_index8.default, { config: config, categories: categories }),
-				_react2.default.createElement(_login2.default, null),
-				_react2.default.createElement(_index4.default, null),
-				_react2.default.createElement(_index6.default, null)
-			)
-		);
+				{ className: 'my-nice-tab-container' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'loading-state' },
+					'Loading...'
+				)
+			);
+		} else {
+			return _react2.default.createElement(
+				'div',
+				{ className: 'app', ref: function ref(_ref) {
+						_this.appRef = _ref;
+					} },
+				_react2.default.createElement(
+					'div',
+					{ className: 'main-container' },
+					_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user, categories: categories }),
+					_react2.default.createElement(routeInfo.component, _extends({ categories: categories }, routeInfo.routeProps, { filters: filters, user: user,
+						config: config }, this.props)),
+					_react2.default.createElement(_index8.default, { config: config, categories: categories }),
+					_react2.default.createElement(_login2.default, null),
+					_react2.default.createElement(_index4.default, null),
+					_react2.default.createElement(_index6.default, null)
+				)
+			);
+		}
 	};
 	exports.default = view;
 
@@ -52991,17 +53037,32 @@
 			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 	
 			_this.state = {
-				searchText: ""
+				searchText: "",
+				hidden: "hidden" // flag for API
 			};
 			return _this;
 		}
 	
-		/**
-	  * Component Did Mount hook
-	  */
-	
-	
 		_createClass(Main, [{
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				console.log('componentWillMount');
+				var that = this;
+				setTimeout(function () {
+					that.show();
+				}, 5000);
+			}
+		}, {
+			key: 'show',
+			value: function show() {
+				if (this.refs.myRef) this.setState({ hidden: "" });
+			}
+	
+			/**
+	   * Component Did Mount hook
+	   */
+	
+		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				var _this2 = this;
@@ -55616,31 +55677,31 @@
 	
 	var _wishlist2 = _interopRequireDefault(_wishlist);
 	
-	var _userWishlist = __webpack_require__(554);
+	var _userWishlist = __webpack_require__(520);
 	
 	var _userWishlist2 = _interopRequireDefault(_userWishlist);
 	
-	var _aboutUs = __webpack_require__(520);
+	var _aboutUs = __webpack_require__(525);
 	
 	var _aboutUs2 = _interopRequireDefault(_aboutUs);
 	
-	var _contactUs = __webpack_require__(526);
+	var _contactUs = __webpack_require__(531);
 	
 	var _contactUs2 = _interopRequireDefault(_contactUs);
 	
-	var _privacyPolicy = __webpack_require__(531);
+	var _privacyPolicy = __webpack_require__(536);
 	
 	var _privacyPolicy2 = _interopRequireDefault(_privacyPolicy);
 	
-	var _getStarted = __webpack_require__(536);
+	var _getStarted = __webpack_require__(541);
 	
 	var _getStarted2 = _interopRequireDefault(_getStarted);
 	
-	var _productForm = __webpack_require__(541);
+	var _productForm = __webpack_require__(546);
 	
 	var _productForm2 = _interopRequireDefault(_productForm);
 	
-	var _checkout = __webpack_require__(547);
+	var _checkout = __webpack_require__(552);
 	
 	var _checkout2 = _interopRequireDefault(_checkout);
 	
@@ -63286,6 +63347,289 @@
 		function Main(props) {
 			_classCallCheck(this, Main);
 	
+			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+	
+			_this.state = {
+				query: _this.getQuery()
+			};
+			return _this;
+		}
+	
+		_createClass(Main, [{
+			key: 'getQuery',
+			value: function getQuery() {
+				if (typeof window != 'undefined') {
+					if (!this.props.savedProducts) {
+						window.location.href = "/";
+						return;
+					}
+					return {
+						query: {
+							_id: {
+								$in: this.props.savedProducts
+							}
+						}
+					};
+				}
+			}
+		}, {
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				var wishlistLink = window.location.href; //window.location.protocol + "//" + window.location.host + "/user-wishlist/"+this.props.user._id;
+				this.setState({ wishlistLink: wishlistLink });
+			}
+		}, {
+			key: 'onSaveToWishList',
+			value: function onSaveToWishList() {
+				this.setState({
+					query: this.getQuery()
+				});
+			}
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
+			key: 'render',
+			value: function render() {
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	//Set display name to be used in React Dev Tools
+	
+	
+	exports.default = Main;
+	Main.displayName = 'My-Wishlist';
+
+/***/ }),
+/* 522 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _style = __webpack_require__(523);
+	
+	var _style2 = _interopRequireDefault(_style);
+	
+	var _productGrid = __webpack_require__(460);
+	
+	var _productGrid2 = _interopRequireDefault(_productGrid);
+	
+	var _index = __webpack_require__(442);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		var _props = this.props,
+		    config = _props.config,
+		    user = _props.user;
+	
+		var leftBanner = config.leftBanner && config.leftBanner.media ? config.leftBanner.media.url : null;
+		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
+		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
+		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
+		var wishlistLink = this.state.wishlistLink;
+	
+		var title = config["my-wishlist-title"] ? config["my-wishlist-title"].value : "Check Min Ønskeliste";
+		var description = config["my-wishlist-description"] ? config["my-wishlist-description"].value : "Check Min Ønskeliste";
+		var image = config["my-wishlist-image"] && config["my-wishlist-image"].media ? config["my-wishlist-image"].media.url : "Check Min Ønskeliste";
+		return _react2.default.createElement(
+			'div',
+			{ className: 'wish-list' },
+			_react2.default.createElement(
+				'div',
+				{ className: 'heading container' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'title' },
+					_react2.default.createElement(
+						'p',
+						null,
+						'Min \xD8nskeliste'
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'share' },
+					_react2.default.createElement('div', {
+						'data-url': wishlistLink ? wishlistLink : null,
+						'data-title': title, 'data-description': description,
+						className: 'addthis_inline_share_toolbox',
+						'data-media': image
+					})
+				)
+			),
+			_react2.default.createElement(
+				'div',
+				{ className: 'more' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'row' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-0 col-lg-2 column left' },
+						_react2.default.createElement(_index2.default, { banner: leftBanner, link: leftBannerlink })
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-12 col-lg-8 column' },
+						_react2.default.createElement(_productGrid2.default, {
+							query: this.state.query,
+							user: user,
+							onSaveToWishList: this.onSaveToWishList.bind(this)
+						})
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-md-0 col-lg-2 column right' },
+						_react2.default.createElement(_index2.default, { banner: rightBanner, link: rightBannerlink })
+					)
+				)
+			)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 523 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(524);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// Prepare cssTransformation
+	var transform;
+	
+	var options = {"hmr":true}
+	options.transform = transform
+	// add the styles to the DOM
+	var update = __webpack_require__(405)(content, options);
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
+				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 524 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(404)(undefined);
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.wish-list {\n  padding-top: 70px; }\n  .wish-list .heading {\n    overflow: hidden;\n    margin-bottom: 80px; }\n    .wish-list .heading .title {\n      font-size: 32px;\n      text-align: center;\n      background: linear-gradient(to bottom, #DC381F 0, #DC381F 100%);\n      color: #FFFFFF;\n      width: 200px;\n      margin: auto;\n      border-radius: 6px; }\n    .wish-list .heading .share {\n      float: right;\n      display: flex;\n      padding-right: 32px; }\n      .wish-list .heading .share ul li {\n        display: inline-block; }\n        .wish-list .heading .share ul li a {\n          display: block;\n          font-size: 40px;\n          margin: 5px 5px 0px 0px;\n          line-height: 0px; }\n          .wish-list .heading .share ul li a.facebook {\n            color: #3c5a98; }\n          .wish-list .heading .share ul li a.twitter {\n            color: #1ea1f2; }\n          .wish-list .heading .share ul li a.pinterest {\n            color: #bd081b; }\n          .wish-list .heading .share ul li a.link {\n            color: #555; }\n  .wish-list .more .row {\n    margin: 0px; }\n    .wish-list .more .row .column {\n      padding: 0px; }\n      .wish-list .more .row .column .container {\n        width: 100%; }\n      .wish-list .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .wish-list .more .row .column.left .banner {\n        margin-right: 0px; }\n      .wish-list .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
+	
+	// exports
+	exports.locals = {
+		"wish-list": "wish-list",
+		"heading": "heading",
+		"title": "title",
+		"share": "share",
+		"facebook": "facebook",
+		"twitter": "twitter",
+		"pinterest": "pinterest",
+		"link": "link",
+		"more": "more",
+		"row": "row",
+		"column": "column",
+		"container": "container",
+		"banner": "banner",
+		"left": "left",
+		"right": "right"
+	};
+
+/***/ }),
+/* 525 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(526);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 526 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(527);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _axios = __webpack_require__(354);
+	
+	var _axios2 = _interopRequireDefault(_axios);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Sample Component
+	 * @type Component
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
 			return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 		}
 	
@@ -63324,7 +63668,7 @@
 	Main.displayName = 'About-Us';
 
 /***/ }),
-/* 522 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -63337,7 +63681,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _style = __webpack_require__(523);
+	var _style = __webpack_require__(528);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
@@ -63347,7 +63691,7 @@
 	
 	var _common = __webpack_require__(413);
 	
-	var _appUtil = __webpack_require__(525);
+	var _appUtil = __webpack_require__(530);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -63437,13 +63781,13 @@
 	exports.default = view;
 
 /***/ }),
-/* 523 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(524);
+	var content = __webpack_require__(529);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -63468,7 +63812,7 @@
 	}
 
 /***/ }),
-/* 524 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(404)(undefined);
@@ -63492,7 +63836,7 @@
 	};
 
 /***/ }),
-/* 525 */
+/* 530 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -63510,7 +63854,7 @@
 	}
 
 /***/ }),
-/* 526 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -63519,7 +63863,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(527);
+	var _main = __webpack_require__(532);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -63528,7 +63872,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 527 */
+/* 532 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -63543,7 +63887,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(528);
+	var _view = __webpack_require__(533);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -63686,7 +64030,7 @@
 	});
 
 /***/ }),
-/* 528 */
+/* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -63699,7 +64043,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _style = __webpack_require__(529);
+	var _style = __webpack_require__(534);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
@@ -63791,13 +64135,13 @@
 	exports.default = view;
 
 /***/ }),
-/* 529 */
+/* 534 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(530);
+	var content = __webpack_require__(535);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -63822,7 +64166,7 @@
 	}
 
 /***/ }),
-/* 530 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(404)(undefined);
@@ -63842,7 +64186,7 @@
 	};
 
 /***/ }),
-/* 531 */
+/* 536 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -63851,7 +64195,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(532);
+	var _main = __webpack_require__(537);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -63860,7 +64204,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 532 */
+/* 537 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -63875,7 +64219,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(533);
+	var _view = __webpack_require__(538);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -63933,7 +64277,7 @@
 	Main.displayName = 'Sample-Component';
 
 /***/ }),
-/* 533 */
+/* 538 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -63946,7 +64290,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	__webpack_require__(534);
+	__webpack_require__(539);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -63990,13 +64334,13 @@
 	exports.default = view;
 
 /***/ }),
-/* 534 */
+/* 539 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(535);
+	var content = __webpack_require__(540);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -64021,7 +64365,7 @@
 	}
 
 /***/ }),
-/* 535 */
+/* 540 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(404)(undefined);
@@ -64045,7 +64389,7 @@
 	};
 
 /***/ }),
-/* 536 */
+/* 541 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64054,7 +64398,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(537);
+	var _main = __webpack_require__(542);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -64063,7 +64407,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 537 */
+/* 542 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64078,7 +64422,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(538);
+	var _view = __webpack_require__(543);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -64159,7 +64503,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
 
 /***/ }),
-/* 538 */
+/* 543 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64172,7 +64516,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _style = __webpack_require__(539);
+	var _style = __webpack_require__(544);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
@@ -64192,13 +64536,13 @@
 	exports.default = view;
 
 /***/ }),
-/* 539 */
+/* 544 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(540);
+	var content = __webpack_require__(545);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -64223,7 +64567,7 @@
 	}
 
 /***/ }),
-/* 540 */
+/* 545 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(404)(undefined);
@@ -64237,7 +64581,7 @@
 
 
 /***/ }),
-/* 541 */
+/* 546 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64246,7 +64590,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(542);
+	var _main = __webpack_require__(547);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -64255,7 +64599,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 542 */
+/* 547 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64270,7 +64614,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(543);
+	var _view = __webpack_require__(548);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -64280,7 +64624,7 @@
 	
 	var _common = __webpack_require__(413);
 	
-	var _file = __webpack_require__(546);
+	var _file = __webpack_require__(551);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -64432,7 +64776,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
 
 /***/ }),
-/* 543 */
+/* 548 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64445,7 +64789,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _style = __webpack_require__(544);
+	var _style = __webpack_require__(549);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
@@ -64694,13 +65038,13 @@
 	exports.default = view;
 
 /***/ }),
-/* 544 */
+/* 549 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(545);
+	var content = __webpack_require__(550);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -64725,7 +65069,7 @@
 	}
 
 /***/ }),
-/* 545 */
+/* 550 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(404)(undefined);
@@ -64746,7 +65090,7 @@
 	};
 
 /***/ }),
-/* 546 */
+/* 551 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -64826,7 +65170,7 @@
 	}
 
 /***/ }),
-/* 547 */
+/* 552 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64835,7 +65179,7 @@
 	  value: true
 	});
 	
-	var _main = __webpack_require__(548);
+	var _main = __webpack_require__(553);
 	
 	var _main2 = _interopRequireDefault(_main);
 
@@ -64844,7 +65188,7 @@
 	exports.default = _main2.default;
 
 /***/ }),
-/* 548 */
+/* 553 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64859,7 +65203,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _view = __webpack_require__(549);
+	var _view = __webpack_require__(554);
 	
 	var _view2 = _interopRequireDefault(_view);
 	
@@ -64940,7 +65284,7 @@
 	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
 
 /***/ }),
-/* 549 */
+/* 554 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -64953,7 +65297,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _style = __webpack_require__(550);
+	var _style = __webpack_require__(555);
 	
 	var _style2 = _interopRequireDefault(_style);
 	
@@ -64969,13 +65313,13 @@
 	exports.default = view;
 
 /***/ }),
-/* 550 */
+/* 555 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(551);
+	var content = __webpack_require__(556);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// Prepare cssTransformation
 	var transform;
@@ -65000,7 +65344,7 @@
 	}
 
 /***/ }),
-/* 551 */
+/* 556 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(404)(undefined);
@@ -65014,7 +65358,7 @@
 
 
 /***/ }),
-/* 552 */
+/* 557 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -65152,7 +65496,7 @@
 	module.exports = Index;
 
 /***/ }),
-/* 553 */
+/* 558 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -65192,289 +65536,6 @@
 	
 	// React Engine needs exports, don't export default
 	module.exports = Index;
-
-/***/ }),
-/* 554 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _main = __webpack_require__(555);
-	
-	var _main2 = _interopRequireDefault(_main);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = _main2.default;
-
-/***/ }),
-/* 555 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _view = __webpack_require__(556);
-	
-	var _view2 = _interopRequireDefault(_view);
-	
-	var _axios = __webpack_require__(354);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	/**
-	 * @name Sample Component
-	 * @type Component
-	 * @author Inderdeep Singh
-	 */
-	var Main = function (_Component) {
-		_inherits(Main, _Component);
-	
-		/**
-	  * Constructor
-	  * @param props
-	  */
-		function Main(props) {
-			_classCallCheck(this, Main);
-	
-			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
-	
-			_this.state = {
-				query: _this.getQuery()
-			};
-			return _this;
-		}
-	
-		_createClass(Main, [{
-			key: 'getQuery',
-			value: function getQuery() {
-				if (typeof window != 'undefined') {
-					if (!this.props.savedProducts) {
-						window.location.href = "/";
-						return;
-					}
-					return {
-						query: {
-							_id: {
-								$in: this.props.savedProducts
-							}
-						}
-					};
-				}
-			}
-		}, {
-			key: 'componentDidMount',
-			value: function componentDidMount() {
-				var wishlistLink = window.location.href; //window.location.protocol + "//" + window.location.host + "/user-wishlist/"+this.props.user._id;
-				this.setState({ wishlistLink: wishlistLink });
-			}
-		}, {
-			key: 'onSaveToWishList',
-			value: function onSaveToWishList() {
-				this.setState({
-					query: this.getQuery()
-				});
-			}
-			/**
-	   * Render the view
-	   * @returns {*}
-	   */
-	
-		}, {
-			key: 'render',
-			value: function render() {
-				return _view2.default.bind(this)();
-			}
-		}]);
-	
-		return Main;
-	}(_react.Component);
-	//Set display name to be used in React Dev Tools
-	
-	
-	exports.default = Main;
-	Main.displayName = 'My-Wishlist';
-
-/***/ }),
-/* 556 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	
-	var _react = __webpack_require__(237);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _style = __webpack_require__(557);
-	
-	var _style2 = _interopRequireDefault(_style);
-	
-	var _productGrid = __webpack_require__(460);
-	
-	var _productGrid2 = _interopRequireDefault(_productGrid);
-	
-	var _index = __webpack_require__(442);
-	
-	var _index2 = _interopRequireDefault(_index);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var view = function view() {
-		var _props = this.props,
-		    config = _props.config,
-		    user = _props.user;
-	
-		var leftBanner = config.leftBanner && config.leftBanner.media ? config.leftBanner.media.url : null;
-		var leftBannerlink = config.leftBanner && config.leftBanner.value ? config.leftBanner.value : null;
-		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
-		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
-		var wishlistLink = this.state.wishlistLink;
-	
-		var title = config["my-wishlist-title"] ? config["my-wishlist-title"].value : "Check Min Ønskeliste";
-		var description = config["my-wishlist-description"] ? config["my-wishlist-description"].value : "Check Min Ønskeliste";
-		var image = config["my-wishlist-image"] && config["my-wishlist-image"].media ? config["my-wishlist-image"].media.url : "Check Min Ønskeliste";
-		return _react2.default.createElement(
-			'div',
-			{ className: 'wish-list' },
-			_react2.default.createElement(
-				'div',
-				{ className: 'heading container' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'title' },
-					_react2.default.createElement(
-						'p',
-						null,
-						'Min \xD8nskeliste'
-					)
-				),
-				_react2.default.createElement(
-					'div',
-					{ className: 'share' },
-					_react2.default.createElement('div', {
-						'data-url': wishlistLink ? wishlistLink : null,
-						'data-title': title, 'data-description': description,
-						className: 'addthis_inline_share_toolbox',
-						'data-media': image
-					})
-				)
-			),
-			_react2.default.createElement(
-				'div',
-				{ className: 'more' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-0 col-lg-2 column left' },
-						_react2.default.createElement(_index2.default, { banner: leftBanner, link: leftBannerlink })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-12 col-lg-8 column' },
-						_react2.default.createElement(_productGrid2.default, {
-							query: this.state.query,
-							user: user,
-							onSaveToWishList: this.onSaveToWishList.bind(this)
-						})
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-0 col-lg-2 column right' },
-						_react2.default.createElement(_index2.default, { banner: rightBanner, link: rightBannerlink })
-					)
-				)
-			)
-		);
-	};
-	exports.default = view;
-
-/***/ }),
-/* 557 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(558);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// Prepare cssTransformation
-	var transform;
-	
-	var options = {"hmr":true}
-	options.transform = transform
-	// add the styles to the DOM
-	var update = __webpack_require__(405)(content, options);
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss", function() {
-				var newContent = require("!!../../../../node_modules/css-loader/index.js?module&localIdentName=[local]!../../../../node_modules/sass-loader/lib/loader.js!./style.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 558 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(404)(undefined);
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "/*fonts*/\n/*colors*/\n/*text*/\n/*backgrounds*/\n/*border*/\n/*social*/\n.wish-list {\n  padding-top: 70px; }\n  .wish-list .heading {\n    overflow: hidden;\n    margin-bottom: 80px; }\n    .wish-list .heading .title {\n      font-size: 32px;\n      text-align: center;\n      background: linear-gradient(to bottom, #DC381F 0, #DC381F 100%);\n      color: #FFFFFF;\n      width: 200px;\n      margin: auto;\n      border-radius: 6px; }\n    .wish-list .heading .share {\n      float: right;\n      display: flex;\n      padding-right: 32px; }\n      .wish-list .heading .share ul li {\n        display: inline-block; }\n        .wish-list .heading .share ul li a {\n          display: block;\n          font-size: 40px;\n          margin: 5px 5px 0px 0px;\n          line-height: 0px; }\n          .wish-list .heading .share ul li a.facebook {\n            color: #3c5a98; }\n          .wish-list .heading .share ul li a.twitter {\n            color: #1ea1f2; }\n          .wish-list .heading .share ul li a.pinterest {\n            color: #bd081b; }\n          .wish-list .heading .share ul li a.link {\n            color: #555; }\n  .wish-list .more .row {\n    margin: 0px; }\n    .wish-list .more .row .column {\n      padding: 0px; }\n      .wish-list .more .row .column .container {\n        width: 100%; }\n      .wish-list .more .row .column .banner {\n        margin: 27px 10px 10px 10px; }\n      .wish-list .more .row .column.left .banner {\n        margin-right: 0px; }\n      .wish-list .more .row .column.right .banner {\n        margin-left: 0px; }\n\n/* responsiveness */\n@media (max-width: 1200px) {\n  .more .row .column.left {\n    display: none; }\n  .more .row .column.right {\n    display: none; } }\n\n/* /responsiveness */\n", ""]);
-	
-	// exports
-	exports.locals = {
-		"wish-list": "wish-list",
-		"heading": "heading",
-		"title": "title",
-		"share": "share",
-		"facebook": "facebook",
-		"twitter": "twitter",
-		"pinterest": "pinterest",
-		"link": "link",
-		"more": "more",
-		"row": "row",
-		"column": "column",
-		"container": "container",
-		"banner": "banner",
-		"left": "left",
-		"right": "right"
-	};
 
 /***/ })
 /******/ ]);
