@@ -48205,6 +48205,9 @@
 				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
 				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
 				_react2.default.createElement('link', { href: 'https://fonts.googleapis.com/css?family=Oswald:300,400,500,700', rel: 'stylesheet' }),
+				_react2.default.createElement('link', { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' }),
+				_react2.default.createElement('script', { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js' }),
+				_react2.default.createElement('script', { src: 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js' }),
 				props.user && props.user.canAccessKeystone && _react2.default.createElement('link', { href: '/keystone/styles/content/editor.min.css', rel: 'stylesheet' }),
 				props.css,
 				props.head
@@ -52824,13 +52827,15 @@
 				// 	this.setState({loading:false});
 				// }
 				setTimeout(function () {
-					that.show();
+					// that.show();
 				}, 5000);
 			}
 		}, {
 			key: 'show',
 			value: function show() {
-				this.setState({ loading: false });
+				// if (this.state.loading) {
+				// 	//this.setState({loading: false});
+				// }
 			}
 		}, {
 			key: 'componentDidMount',
@@ -52852,7 +52857,7 @@
 						$(_this2.appRef).removeClass("scrolled");
 					}
 				});
-				this.setState({ loading: true });
+				this.setState({ loading: false });
 			}
 	
 			/**
@@ -52940,6 +52945,7 @@
 		    config = _props.config,
 		    categories = _props.categories,
 		    filters = _props.filters;
+	
 	
 		if (this.state.loading) {
 			return _react2.default.createElement(
@@ -59497,9 +59503,7 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'share' },
-						_react2.default.createElement('div', {
-							'data-url': productLink, 'data-title': data.title, 'data-description': (0, _common.getPlainText)(data.content.brief),
-							'data-media': imageUrl, className: 'addthis_inline_share_toolbox' })
+						_react2.default.createElement('div', { className: 'addthis_inline_share_toolbox' })
 					)
 				)
 			)

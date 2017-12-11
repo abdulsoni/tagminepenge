@@ -52,12 +52,7 @@ var view = function() {
 						<button className="btn btn-yellow checkout">Tjek det ud</button>
 					</a>
 					<div className="share">
-						<div 
-							data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)}
-							 data-media={imageUrl} className="addthis_inline_share_toolbox"/>
-							
-						
-					</div>
+						<div className="addthis_inline_share_toolbox"/></div>
 				</div>
 			</div>
 		</div>

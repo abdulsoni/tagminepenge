@@ -25,11 +25,13 @@ export default class Main extends Component {
 		// 	this.setState({loading:false});
 		// }
 		setTimeout(function() {
-			that.show();
+			// that.show();
 		}, 5000);
 	}
 	show() {
-		this.setState({loading:false});
+		// if (this.state.loading) {
+		// 	//this.setState({loading: false});
+		// }
 	}
    
 	componentDidMount(){
@@ -48,7 +50,7 @@ export default class Main extends Component {
 				$(this.appRef).removeClass("scrolled");
 			}
 		});
-		this.setState({loading: true})
+		this.setState({loading: false})
 	}
 	
 	/**

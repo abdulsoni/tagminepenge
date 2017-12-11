@@ -7,6 +7,8 @@
  * you have more middleware you may want to group it as separate
  * modules in your project's /lib directory.
  */
+import {PRODUCTS} from "../templates/react/redux/config/api";
+
 var _ = require('lodash');
 var keystone = require('keystone');
 var Configuration = keystone.list('Configuration');
@@ -61,7 +63,19 @@ exports.populateCategories = function (req, res, next) {
 		next();
 	});
 };
+exports.populateProduct = function (req, res, next) {
 
+	var query = Product.model.find().sort( { displayType:1,menuOrder: 1 } );
+	query.exec(function(err, doc) {
+		if(doc){
+			res.locals.products = doc;
+
+		} else {
+			res.locals.products = [];
+		}
+		next();
+	});
+};
 exports.populateEntity = function (req, res, next) {
 	console.log(req.url);
 	

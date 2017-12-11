@@ -9,6 +9,7 @@ import styles from "./style.scss";
 
 var view = function () {
 	const {routeInfo, navLinks, user, config, categories, filters} = this.props;
+
 	if (this.state.loading) {
 		return (
 			<div className='my-nice-tab-container'>
@@ -36,6 +37,7 @@ var view = function () {
 					{/*aria-hidden="true"></span> CONTACT US</a>*/}
 				</div>
 			</div>);
-	    }
+	}
+	    
 };
 export default view;

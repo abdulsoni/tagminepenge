@@ -19,6 +19,9 @@ const Default = props => {
 
 			<link href="/styles/site.css" rel="stylesheet"/>
 			<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700" rel="stylesheet"/>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 			{props.user && props.user.canAccessKeystone
 			&& <link href="/keystone/styles/content/editor.min.css" rel="stylesheet"/>

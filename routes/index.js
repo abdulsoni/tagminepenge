@@ -21,6 +21,7 @@
 
 var keystone = require('keystone');
 var middleware = require('./middleware');
+var express = require('express');
 var importRoutes = keystone.importer(__dirname);
 var clientSideRoutes = require('../templates/react/routes');
 var _ = require('lodash')
@@ -28,6 +29,7 @@ var _ = require('lodash')
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('routes', middleware.populateCategories);
 keystone.pre('routes', middleware.populateFilters);
+keystone.pre('routes', middleware.populateProduct);
 keystone.pre('routes', middleware.populateEntity);
 keystone.pre('render', middleware.flashMessages);
 keystone.pre('routes', keystone.security.csrf.middleware.init);
@@ -51,6 +53,8 @@ exports = module.exports = function (app) {
 	}
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
+	//app.use('/styles', less(__dirname + '/../../public/styles', lessOptions));
+	app.use(express.static(__dirname + '/../../public'));
 	app.use('/auth/forgot', authApis.forgot);
 	app.get('/auth/checkDuplicate',authApis.checkDuplicate);
 	app.post('/auth/register',authApis.register);

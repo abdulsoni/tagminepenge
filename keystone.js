@@ -38,6 +38,9 @@ keystone.init({
 	'brand': 'TAGMINEPENGE',
 
 	'sass': 'public',
+	'sass options': {
+		force: true
+	},
 	'static': 'public',
 	'favicon': 'public/favicon.png',
 	'views': 'templates/views',
@@ -94,7 +97,14 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	+ '\n\nCreate a mailgun account and add the credentials to the .env file to'
 	+ '\nset up your mailgun integration');
 }
-
+// if (keystone.get('env') === 'development') {
+// 	keystone.app.use(sassMiddleware({
+// 		src: path.join(__dirname, 'public'),
+// 		dest: path.join(__dirname, 'public'),
+// 		debug: true,
+// 		force: true
+// 	}));
+// }
 
 keystone.start();
 var http = require("http");
