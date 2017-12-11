@@ -10,17 +10,11 @@ import styles from "./style.scss";
 var view = function () {
 	const {routeInfo, navLinks, user, config, categories, filters} = this.props;
 
-	if (this.state.loading) {
-		return (
-			<div className='my-nice-tab-container'>
-				<div className='loading-state'>Loading...</div>
-			</div>)
-	} else {
 		return (
 			<div className="app" ref={(ref) => {
 				this.appRef = ref
 			}}>
-				<div className="main-container">
+				<div className={'main-container'+ ' ' + this.state.hidden} ref="MyRef">
 					<Header navLinks={navLinks} user={user} categories={categories}/>
 					{
 						<routeInfo.component categories={categories} {...routeInfo.routeProps} filters={filters} user={user}
@@ -37,7 +31,6 @@ var view = function () {
 					{/*aria-hidden="true"></span> CONTACT US</a>*/}
 				</div>
 			</div>);
-	}
 	    
 };
 export default view;

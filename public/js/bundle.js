@@ -52823,19 +52823,24 @@
 			value: function componentWillMount() {
 				console.log('componentWillMount');
 				var that = this;
-				// if(this.props.products){
-				// 	this.setState({loading:false});
-				// }
 				setTimeout(function () {
-					// that.show();
-				}, 5000);
+					that.hide();
+				}, 1000);
+				// setTimeout(function() {
+				// 	 //that.show();
+				// }, 5000);
+			}
+		}, {
+			key: 'hide',
+			value: function hide() {
+				if (this.refs.MyRef) {
+					this.setState({ hidden: "" });
+				}
 			}
 		}, {
 			key: 'show',
 			value: function show() {
-				if (this.state.loading) {
-					this.setState({ loading: false });
-				}
+				//this.setState({loading: false});
 			}
 		}, {
 			key: 'componentDidMount',
@@ -52947,35 +52952,23 @@
 		    filters = _props.filters;
 	
 	
-		if (this.state.loading) {
-			return _react2.default.createElement(
+		return _react2.default.createElement(
+			'div',
+			{ className: 'app', ref: function ref(_ref) {
+					_this.appRef = _ref;
+				} },
+			_react2.default.createElement(
 				'div',
-				{ className: 'my-nice-tab-container' },
-				_react2.default.createElement(
-					'div',
-					{ className: 'loading-state' },
-					'Loading...'
-				)
-			);
-		} else {
-			return _react2.default.createElement(
-				'div',
-				{ className: 'app', ref: function ref(_ref) {
-						_this.appRef = _ref;
-					} },
-				_react2.default.createElement(
-					'div',
-					{ className: 'main-container' },
-					_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user, categories: categories }),
-					_react2.default.createElement(routeInfo.component, _extends({ categories: categories }, routeInfo.routeProps, { filters: filters, user: user,
-						config: config }, this.props)),
-					_react2.default.createElement(_index8.default, { config: config, categories: categories }),
-					_react2.default.createElement(_login2.default, null),
-					_react2.default.createElement(_index4.default, null),
-					_react2.default.createElement(_index6.default, null)
-				)
-			);
-		}
+				{ className: 'main-container' + ' ' + this.state.hidden, ref: 'MyRef' },
+				_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user, categories: categories }),
+				_react2.default.createElement(routeInfo.component, _extends({ categories: categories }, routeInfo.routeProps, { filters: filters, user: user,
+					config: config }, this.props)),
+				_react2.default.createElement(_index8.default, { config: config, categories: categories }),
+				_react2.default.createElement(_login2.default, null),
+				_react2.default.createElement(_index4.default, null),
+				_react2.default.createElement(_index6.default, null)
+			)
+		);
 	};
 	exports.default = view;
 

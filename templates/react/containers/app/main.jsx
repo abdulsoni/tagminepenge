@@ -15,23 +15,26 @@ export default class Main extends Component {
 		super(props);
 		this.state = {
 			hidden : "hidden", // flag for API
-			loading: true
+			loading: true,
 		};
 	}
 	componentWillMount() {
 		console.log('componentWillMount');
 		var that = this;
-		// if(this.props.products){
-		// 	this.setState({loading:false});
-		// }
 		setTimeout(function() {
-			// that.show();
-		}, 5000);
+			that.hide();
+		}, 1000);
+		// setTimeout(function() {
+		// 	 //that.show();
+		// }, 5000);
+	}
+	hide(){
+		if(this.refs.MyRef){
+			this.setState({hidden : ""});
+		}
 	}
 	show() {
-		if (this.state.loading) {
-			this.setState({loading: false});
-		}
+		//this.setState({loading: false});
 	}
    
 	componentDidMount(){
