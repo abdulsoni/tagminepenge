@@ -29,9 +29,9 @@ export default class Main extends Component {
 		}, 5000);
 	}
 	show() {
-		// if (this.state.loading) {
-		// 	//this.setState({loading: false});
-		// }
+		if (this.state.loading) {
+			this.setState({loading: false});
+		}
 	}
    
 	componentDidMount(){

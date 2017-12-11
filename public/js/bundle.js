@@ -52833,9 +52833,9 @@
 		}, {
 			key: 'show',
 			value: function show() {
-				// if (this.state.loading) {
-				// 	//this.setState({loading: false});
-				// }
+				if (this.state.loading) {
+					this.setState({ loading: false });
+				}
 			}
 		}, {
 			key: 'componentDidMount',
