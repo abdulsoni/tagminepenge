@@ -52824,24 +52824,24 @@
 			value: function componentWillMount() {
 				console.log('componentWillMount');
 				var that = this;
-				setTimeout(function () {
-					that.hide();
-				}, 5000);
 				// setTimeout(function() {
-				// 	 //that.show();
+				// 	//that.hide();
+				// }, 5000);
+				// setTimeout(function() {
+				// 	 that.show();
 				// }, 5000);
 			}
 		}, {
 			key: 'hide',
 			value: function hide() {
-				if (this.refs.MyRef) {
-					this.setState({ hidden: "" });
-				}
+				// if(this.refs.MyRef){
+				//	this.setState({hidden : ""});
+				//}
 			}
 		}, {
 			key: 'show',
 			value: function show() {
-				//this.setState({loading: false});
+				this.setState({ loading: false });
 			}
 		}, {
 			key: 'componentDidMount',

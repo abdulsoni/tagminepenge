@@ -21,20 +21,20 @@ export default class Main extends Component {
 	componentWillMount() {
 		console.log('componentWillMount');
 		var that = this;
-		setTimeout(function() {
-			that.hide();
-		}, 5000);
 		// setTimeout(function() {
-		// 	 //that.show();
+		// 	//that.hide();
+		// }, 5000);
+		// setTimeout(function() {
+		// 	 that.show();
 		// }, 5000);
 	}
 	hide(){
-		if(this.refs.MyRef){
-			this.setState({hidden : ""});
-		}
+		// if(this.refs.MyRef){
+		//	this.setState({hidden : ""});
+		//}
 	}
 	show() {
-		//this.setState({loading: false});
+		this.setState({loading: false});
 	}
    
 	componentDidMount(){
