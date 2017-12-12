@@ -53018,27 +53018,24 @@
 			};
 			return _this;
 		}
+		// componentWillMount() {
+		// 	console.log('componentWillMount');
+		// 	var that = this;
+		// 	setTimeout(function() {
+		// 		that.show();
+		// 	}, 5000);
+		// }
+		// show() {
+		// 	if (this.refs.myRef)
+		// 		this.setState({hidden : ""});
+		// }
+	
+		/**
+	  * Component Did Mount hook
+	  */
+	
 	
 		_createClass(Main, [{
-			key: 'componentWillMount',
-			value: function componentWillMount() {
-				console.log('componentWillMount');
-				var that = this;
-				setTimeout(function () {
-					that.show();
-				}, 5000);
-			}
-		}, {
-			key: 'show',
-			value: function show() {
-				if (this.refs.myRef) this.setState({ hidden: "" });
-			}
-	
-			/**
-	   * Component Did Mount hook
-	   */
-	
-		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
 				var _this2 = this;
