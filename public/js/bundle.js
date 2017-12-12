@@ -48220,7 +48220,7 @@
 					{ id: 'body' },
 	
 					// - The children block should contain the body of your template's content
-					props.children[0]
+					props.children
 				),
 				_react2.default.createElement('script', { src: '/js/jquery/jquery-1.11.3.min.js' }),
 				_react2.default.createElement('script', { src: '/js/bootstrap/bootstrap-3.3.5.min.js' }),
