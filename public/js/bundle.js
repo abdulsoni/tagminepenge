@@ -52846,23 +52846,21 @@
 		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
-				var _this2 = this;
-	
 				console.log('componentDidMount');
-				setTimeout(function () {
-					var script = document.createElement('script');
-					script.src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a";
-					document.getElementsByTagName('head')[0].appendChild(script);
-				}, 1000);
-				$(window).scroll(function () {
-					var scroll = $(window).scrollTop();
-	
-					if (scroll >= 300) {
-						$(_this2.appRef).addClass("scrolled");
-					} else {
-						$(_this2.appRef).removeClass("scrolled");
-					}
-				});
+				// setTimeout(()=>{
+				// 	var script = document.createElement('script');
+				// 	script.src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a";
+				// 	document.getElementsByTagName('head')[0].appendChild(script);
+				// },1000)
+				// $(window).scroll(()=> {
+				// 	var scroll = $(window).scrollTop();
+				//
+				// 	if (scroll >= 300) {
+				// 		$(this.appRef).addClass("scrolled");
+				// 	} else {
+				// 		$(this.appRef).removeClass("scrolled");
+				// 	}
+				// });
 				this.setState({ loading: false });
 			}
 	
