@@ -59496,7 +59496,8 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'share' },
-						_react2.default.createElement('div', { className: 'addthis_inline_share_toolbox' })
+						_react2.default.createElement('div', { className: 'addthis_inline_share_toolbox', 'data-url': productLink, 'data-title': data.title, 'data-description': (0, _common.getPlainText)(data.content.brief),
+							'data-media': imageUrl })
 					)
 				)
 			)
