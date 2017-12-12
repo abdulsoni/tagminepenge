@@ -6,19 +6,19 @@ var view = function () {
 	const {pathname} = this.state;
 	return (
 		<div className="filters container">
-			{/*<ul>*/}
-				{/*{*/}
-					{/*(data || []).map((item)=>{*/}
-						{/*return (*/}
-							{/*<li className={pathname==item.link?"active":""} key = {item._id}>*/}
-								{/*<a href = {item.link}>*/}
-									{/*{item.name}*/}
-								{/*</a>*/}
-							{/*</li>*/}
-						{/*);*/}
-					{/*})*/}
-				{/*}*/}
-			{/*</ul>*/}
+			<ul>
+				{
+					(data || []).map((item)=>{
+						return (
+							<li className={pathname==item.link?"active":""} key = {item._id}>
+								<a href = {item.link}>
+									{item.name}
+								</a>
+							</li>
+						);
+					})
+				}
+			</ul>
 		</div>
 	);
 };

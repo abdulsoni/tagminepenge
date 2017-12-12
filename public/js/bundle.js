@@ -56365,7 +56365,25 @@
 		var data = this.props.data;
 		var pathname = this.state.pathname;
 	
-		return _react2.default.createElement("div", { className: "filters container" });
+		return _react2.default.createElement(
+			"div",
+			{ className: "filters container" },
+			_react2.default.createElement(
+				"ul",
+				null,
+				(data || []).map(function (item) {
+					return _react2.default.createElement(
+						"li",
+						{ className: pathname == item.link ? "active" : "", key: item._id },
+						_react2.default.createElement(
+							"a",
+							{ href: item.link },
+							item.name
+						)
+					);
+				})
+			)
+		);
 	};
 	exports.default = view;
 
@@ -59475,12 +59493,6 @@
 							{ className: 'btn btn-yellow checkout' },
 							'Tjek det ud'
 						)
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'share' },
-						_react2.default.createElement('div', { className: 'addthis_inline_share_toolbox', 'data-url': productLink, 'data-title': data.title, 'data-description': (0, _common.getPlainText)(data.content.brief),
-							'data-media': imageUrl })
 					)
 				)
 			)
