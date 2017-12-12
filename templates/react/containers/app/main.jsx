@@ -23,7 +23,7 @@ export default class Main extends Component {
 		var that = this;
 		setTimeout(function() {
 			that.hide();
-		}, 1000);
+		}, 5000);
 		// setTimeout(function() {
 		// 	 //that.show();
 		// }, 5000);
