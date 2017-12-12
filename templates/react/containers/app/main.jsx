@@ -53,7 +53,7 @@ export default class Main extends Component {
 				$(this.appRef).removeClass("scrolled");
 			}
 		});
-		this.setState({loading: false})
+		this.setState({hidden : ""});
 	}
 	
 	/**

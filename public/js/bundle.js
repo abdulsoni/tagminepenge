@@ -52863,7 +52863,7 @@
 						$(_this2.appRef).removeClass("scrolled");
 					}
 				});
-				this.setState({ loading: false });
+				this.setState({ hidden: "" });
 			}
 	
 			/**
