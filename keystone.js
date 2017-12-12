@@ -108,7 +108,28 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 
 keystone.start();
 
-var http = require("http");
-setInterval(function() {
-	http.get("http://tagminepenge.herokuapp.com");
-}, 1000); // every 5 minutes (300000)
+var http = require('http'); //importing http
+
+function startKeepAlive() {
+	setInterval(function() {
+		var options = {
+			host: 'http://tagminepenge.herokuapp.com',
+			port: 3000,
+			path: '/'
+		};
+		http.get(options, function(res) {
+			res.on('data', function(chunk) {
+				try {
+					// optional logging... disable after it's working
+					console.log("HEROKU RESPONSE: " + chunk);
+				} catch (err) {
+					console.log(err.message);
+				}
+			});
+		}).on('error', function(err) {
+			console.log("Error: " + err.message);
+		});
+	},  1000); // load every 1 minutes
+}
+
+startKeepAlive();
