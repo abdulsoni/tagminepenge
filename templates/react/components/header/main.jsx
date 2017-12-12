@@ -14,7 +14,7 @@ export default class Main extends Component {
 		super(props);
 		this.state = {
 			searchText : "",
-			hidden : "hidden" // flag for API
+			//hidden : "hidden" // flag for API
 		}
 	}
 	// componentWillMount() {

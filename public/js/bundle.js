@@ -52936,7 +52936,7 @@
 				} },
 			_react2.default.createElement(
 				'div',
-				{ className: 'main-container' + ' ' + this.state.hidden, ref: 'MyRef' },
+				{ className: 'main-container' + ' ' + this.state.hidden },
 				_react2.default.createElement(_index2.default, { navLinks: navLinks, user: user, categories: categories }),
 				_react2.default.createElement(routeInfo.component, _extends({ categories: categories }, routeInfo.routeProps, { filters: filters, user: user,
 					config: config }, this.props)),
@@ -53013,8 +53013,8 @@
 			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 	
 			_this.state = {
-				searchText: "",
-				hidden: "hidden" // flag for API
+				searchText: ""
+				//hidden : "hidden" // flag for API
 			};
 			return _this;
 		}

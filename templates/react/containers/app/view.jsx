@@ -14,7 +14,7 @@ var view = function () {
 			<div className="app" ref={(ref) => {
 				this.appRef = ref
 			}}>
-				<div className={'main-container'+ ' ' + this.state.hidden} ref="MyRef">
+				<div className={'main-container'+ ' ' + this.state.hidden}>
 					<Header navLinks={navLinks} user={user} categories={categories}/>
 					{
 						<routeInfo.component categories={categories} {...routeInfo.routeProps} filters={filters} user={user}
