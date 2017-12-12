@@ -114,7 +114,7 @@ function startKeepAlive() {
 	setInterval(function() {
 		var options = {
 			host: 'http://tagminepenge.herokuapp.com',
-			port: 3000,
+			port: 80,
 			path: '/'
 		};
 		http.get(options, function(res) {
@@ -129,7 +129,7 @@ function startKeepAlive() {
 		}).on('error', function(err) {
 			console.log("Error: " + err.message);
 		});
-	},  1000); // load every 1 minutes
+	}, 20 * 60 * 1000); // load every 20 minutes
 }
 
 startKeepAlive();
