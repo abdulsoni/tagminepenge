@@ -53,7 +53,9 @@ var view = function() {
 					</a>
 					<div className="share">
 						<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)}
-							 data-media={imageUrl}/></div>
+							 data-media={imageUrl}>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

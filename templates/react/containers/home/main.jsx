@@ -14,9 +14,20 @@ class Main extends Component {
 	 */
 	constructor(props){
 		super(props);
+		this.state = {
+			loading: true,
+		}
 	    
 	}
-
+	componentWillMount() {
+		var that = this;
+		setTimeout(function() {
+			that.show();
+		}, 2000);
+	}
+	show() {
+		this.setState({loading : false});
+	}
 
 	/**
 	 * Price
