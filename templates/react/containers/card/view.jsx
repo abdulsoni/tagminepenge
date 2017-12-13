@@ -51,9 +51,9 @@ var view = function() {
 					<a target="blank" href={data.link} className="checkout-btn">
 						<button className="btn btn-yellow checkout">Tjek det ud</button>
 					</a>
-					{/*<div className="share">*/}
-						{/*<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)}*/}
-							 {/*data-media={imageUrl}/></div>*/}
+					<div className="share">
+						<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)}
+							 data-media={imageUrl}/></div>
 				</div>
 			</div>
 		</div>
