@@ -41,8 +41,9 @@ class Main extends Component {
 	 * @param page
 	 */
 	getProducts(page,customQuery){
-		console.log(page);
+		//console.log(page);
 		page = page || 1;
+		console.log(page);
 		const {getProducts,query} = this.props;
 		let obj = {
 			...query,

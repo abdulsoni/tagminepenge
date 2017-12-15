@@ -19,15 +19,15 @@ class Main extends Component {
 		}
 	    
 	}
-	componentWillMount() {
-		var that = this;
-		setTimeout(function() {
-			that.show();
-		}, 2000);
-	}
-	show() {
-		this.setState({loading : false});
-	}
+	// componentWillMount() {
+	// 	var that = this;
+	// 	setTimeout(function() {
+	// 		that.show();
+	// 	}, 2000);
+	// }
+	// show() {
+	// 	this.setState({loading : false});
+	// }
 
 	/**
 	 * Price
