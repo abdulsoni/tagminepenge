@@ -16,12 +16,18 @@ class Main extends Component {
 	constructor(props){
 		super(props);
 		this.pageSize = 300;
+		this.state = {
+			data:[],
+		}
 		if(props.query){
 			this.getProducts();
 		}
 		
 	}
-
+	componentWillMount() {
+		axios.post('/getProducts')
+			.then(response => this.setState({data:response.data.results}));
+	}
 	/**
 	 * Component Did Mount
 	 */
@@ -30,11 +36,14 @@ class Main extends Component {
 		emitter.addListener("REFRESH_PRODUCTS",(query)=>{				
 			this.getProducts(1,query)
 		})
+		this.setState({data:this.props.data})
 	}
 	componentWillReceiveProps(newProps){
 		if(JSON.stringify(this.props.query)!=JSON.stringify(newProps.query)){
 			this.getProducts(1,newProps.query)
+			
 		}
+		
 	}
 	/**
 	 * Get products

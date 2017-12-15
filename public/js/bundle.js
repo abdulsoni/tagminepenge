@@ -58738,6 +58738,9 @@
 			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 	
 			_this.pageSize = 300;
+			_this.state = {
+				data: []
+			};
 			if (props.query) {
 				_this.getProducts();
 			}
@@ -58745,21 +58748,30 @@
 			return _this;
 		}
 	
-		/**
-	  * Component Did Mount
-	  */
-	
-	
 		_createClass(Main, [{
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				var _this2 = this;
+	
+				_axios2.default.post('/getProducts').then(function (response) {
+					return _this2.setState({ data: response.data.results });
+				});
+			}
+			/**
+	   * Component Did Mount
+	   */
+	
+		}, {
 			key: 'componentDidMount',
 			value: function componentDidMount() {
-				var _this2 = this;
+				var _this3 = this;
 	
 				var emitter = this.props.emitter;
 	
 				emitter.addListener("REFRESH_PRODUCTS", function (query) {
-					_this2.getProducts(1, query);
+					_this3.getProducts(1, query);
 				});
+				this.setState({ data: this.props.data });
 			}
 		}, {
 			key: 'componentWillReceiveProps',
