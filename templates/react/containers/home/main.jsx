@@ -63,11 +63,11 @@ class Main extends Component {
  * @param dispatch
  * @returns Object
  */
-function bindAction(dispatch) {
-	return {
-		
-	};
-}
+// function bindAction(dispatch) {
+// 	return {
+//		
+// 	};
+// }
 
 /**
  * Map the shared state to properties
@@ -83,5 +83,5 @@ const mapStateToProps = state => {
 };
 //Set display name to be used in React Dev Tools
 Main.displayName = 'Home-Container';
-//Connect to Redux
+//Connect to Redux , bindAction
 export default connect(mapStateToProps)(Main);

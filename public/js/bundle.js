@@ -55883,17 +55883,19 @@
 	 * @param dispatch
 	 * @returns Object
 	 */
-	
-	
-	function bindAction(dispatch) {
-		return {};
-	}
+	// function bindAction(dispatch) {
+	// 	return {
+	//		
+	// 	};
+	// }
 	
 	/**
 	 * Map the shared state to properties
 	 * @param state
 	 * @returns Object
 	 */
+	
+	
 	var mapStateToProps = function mapStateToProps(state) {
 		// console.log(state)
 		return {
@@ -55903,7 +55905,7 @@
 	};
 	//Set display name to be used in React Dev Tools
 	Main.displayName = 'Home-Container';
-	//Connect to Redux
+	//Connect to Redux , bindAction
 	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Main);
 
 /***/ }),
