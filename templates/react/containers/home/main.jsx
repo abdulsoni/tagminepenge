@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ComponentView from './view';
 import { connect } from 'react-redux';
 import { createAction,ActionNames } from '../../redux/actions';
+import axios from "axios/index";
 /**
  * @name Home Container
  * @type Container
@@ -25,9 +26,13 @@ class Main extends Component {
 	// 		that.show();
 	// 	}, 2000);
 	// }
-	// show() {
-	// 	this.setState({loading : false});
-	// }
+	componentWillMount() {
+		axios.post('/getProducts')
+			.then(response => this.setState({loading:false}));
+	}
+	show() {
+		this.setState({loading : false});
+	}
 
 	/**
 	 * Price
