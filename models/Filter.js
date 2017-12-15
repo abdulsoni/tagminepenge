@@ -5,7 +5,9 @@ var Types = keystone.Field.Types;
  * ==================
  */
 
-var Filter = new keystone.List('Filter');
+var Filter = new keystone.List('Filter',{
+	defaultSort: 'name'
+});
 
 Filter.add({
 	name: { type: String, required: true },

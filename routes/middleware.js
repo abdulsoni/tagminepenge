@@ -158,7 +158,7 @@ exports.populateEntity = function (req, res, next) {
 
 exports.populateFilters = function (req, res, next) {
 
-	var query = Filter.model.find().sort( {menuOrder: 1 } );
+	var query = Filter.model.find().sort({name: 1 });
 	query.exec(function(err, doc) {
 		console.log(doc)
 		if(doc){
