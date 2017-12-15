@@ -84,4 +84,4 @@ const mapStateToProps = state => {
 //Set display name to be used in React Dev Tools
 Main.displayName = 'Home-Container';
 //Connect to Redux
-export default connect(mapStateToProps, bindAction)(Main);
+export default connect(mapStateToProps)(Main);

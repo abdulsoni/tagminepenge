@@ -55904,7 +55904,7 @@
 	//Set display name to be used in React Dev Tools
 	Main.displayName = 'Home-Container';
 	//Connect to Redux
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
+	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Main);
 
 /***/ }),
 /* 439 */
