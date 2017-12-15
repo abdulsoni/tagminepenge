@@ -55835,29 +55835,21 @@
 		// 		that.show();
 		// 	}, 2000);
 		// }
+		// componentWillMount() {
+		// 	axios.post('/getProducts')
+		// 		.then(response => this.setState({loading:false}));
+		// }
+		// show() {
+		// 	this.setState({loading : false});
+		// }
+	
+		/**
+	  * Price
+	  * @param price
+	  */
 	
 	
 		_createClass(Main, [{
-			key: 'componentWillMount',
-			value: function componentWillMount() {
-				var _this2 = this;
-	
-				_index2.default.post('/getProducts').then(function (response) {
-					return _this2.setState({ loading: false });
-				});
-			}
-		}, {
-			key: 'show',
-			value: function show() {
-				this.setState({ loading: false });
-			}
-	
-			/**
-	   * Price
-	   * @param price
-	   */
-	
-		}, {
 			key: 'onPriceChange',
 			value: function onPriceChange(price, sort) {
 				var emitter = this.props.emitter;
@@ -55948,10 +55940,6 @@
 	
 	var _index8 = _interopRequireDefault(_index7);
 	
-	var _axios = __webpack_require__(354);
-	
-	var _axios2 = _interopRequireDefault(_axios);
-	
 	var _product = __webpack_require__(476);
 	
 	var _bottomText = __webpack_require__(424);
@@ -55976,59 +55964,41 @@
 		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
 		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
 		var bottomText = config["footer-text-new"] ? config["footer-text-new"].description : null;
-		if (this.state.loading) {
-			return _react2.default.createElement(
+		return _react2.default.createElement(
+			'div',
+			{ className: 'home' },
+			_react2.default.createElement(
 				'div',
-				{ className: 'my-nice-tab-container' },
+				{ className: 'row' },
 				_react2.default.createElement(
 					'div',
-					{ className: 'row' },
-					_react2.default.createElement('div', { className: 'col-md-4 col-lg-4' }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-4 col-lg-4 loading-state' },
-						_react2.default.createElement('img', { src: '/images/Loading_icon.gif' })
-					),
-					_react2.default.createElement('div', { className: 'col-md-4 col-lg-4' })
-				)
-			);
-		} else {
-			return _react2.default.createElement(
-				'div',
-				{ className: 'home' },
+					{ className: 'col-md-0 col-lg-2 column left' },
+					_react2.default.createElement(_index2.default, { style: { height: 500 }, banner: leftBanner, link: leftBannerlink })
+				),
 				_react2.default.createElement(
 					'div',
-					{ className: 'row' },
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-0 col-lg-2 column left' },
-						_react2.default.createElement(_index2.default, { style: { height: 500 }, banner: leftBanner, link: leftBannerlink })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-12 col-lg-8 column' },
-						_react2.default.createElement(_index2.default, { banner: banner, link: link }),
-						_react2.default.createElement(_index4.default, { data: filters }),
-						priceRange ? _react2.default.createElement(_index6.default, {
-							max: (0, _product.getMaxPrice)(products),
-							min: (0, _product.getMinPrice)(products),
-							onPriceChange: this.onPriceChange.bind(this),
-							sortLinks: false
-						}) : null,
-						_react2.default.createElement(_index8.default, {
-							query: query,
-							user: user
-						}),
-						_react2.default.createElement(_bottomText2.default, { text: bottomText })
-					),
-					_react2.default.createElement(
-						'div',
-						{ className: 'col-md-0 col-lg-2 column right' },
-						_react2.default.createElement(_index2.default, { style: { height: 500 }, banner: rightBanner, link: rightBannerlink })
-					)
+					{ className: 'col-md-12 col-lg-8 column' },
+					_react2.default.createElement(_index2.default, { banner: banner, link: link }),
+					_react2.default.createElement(_index4.default, { data: filters }),
+					priceRange ? _react2.default.createElement(_index6.default, {
+						max: (0, _product.getMaxPrice)(products),
+						min: (0, _product.getMinPrice)(products),
+						onPriceChange: this.onPriceChange.bind(this),
+						sortLinks: false
+					}) : null,
+					_react2.default.createElement(_index8.default, {
+						query: query,
+						user: user
+					}),
+					_react2.default.createElement(_bottomText2.default, { text: bottomText })
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'col-md-0 col-lg-2 column right' },
+					_react2.default.createElement(_index2.default, { style: { height: 500 }, banner: rightBanner, link: rightBannerlink })
 				)
-			);
-		}
+			)
+		);
 	};
 	exports.default = view;
 

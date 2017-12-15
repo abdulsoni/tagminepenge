@@ -26,13 +26,13 @@ class Main extends Component {
 	// 		that.show();
 	// 	}, 2000);
 	// }
-	componentWillMount() {
-		axios.post('/getProducts')
-			.then(response => this.setState({loading:false}));
-	}
-	show() {
-		this.setState({loading : false});
-	}
+	// componentWillMount() {
+	// 	axios.post('/getProducts')
+	// 		.then(response => this.setState({loading:false}));
+	// }
+	// show() {
+	// 	this.setState({loading : false});
+	// }
 
 	/**
 	 * Price

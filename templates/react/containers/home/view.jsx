@@ -4,7 +4,6 @@ import Banner from '../../components/banner/index';
 import Filters from '../../components/filters/index';
 import PriceRange from '../../components/priceRange/index';
 import ProductGrid from '../productGrid/index';
-import axios from 'axios';
 import {getMaxPrice,getMinPrice} from '../../helpers/product'
 import BottomText from '../../components/bottomText'
 var view = function() {
@@ -16,52 +15,37 @@ var view = function() {
 	const rightBanner = (config.rightBanner && config.rightBanner.media)?config.rightBanner.media.url:null;
 	const rightBannerlink = (config.rightBanner && config.rightBanner.value)?config.rightBanner.value:null;
 	const bottomText = config["footer-text-new"]?config["footer-text-new"].description:null;
-	if (this.state.loading) {
-		return (
-			<div className='my-nice-tab-container'>
-				<div className="row">
-					<div className="col-md-4 col-lg-4">
-					</div>
-					<div className='col-md-4 col-lg-4 loading-state'>
-						<img src="/images/Loading_icon.gif"></img>
-					</div>
-					<div className="col-md-4 col-lg-4">
-					</div>
+	return (
+		<div className="home">
+			<div className="row">
+				<div className="col-md-0 col-lg-2 column left">
+					<Banner style={{height:500}} banner = {leftBanner} link = {leftBannerlink}/>
 				</div>
-			</div>)
-	} else {
-		return (
-			<div className="home">
-				<div className="row">
-					<div className="col-md-0 col-lg-2 column left">
-						<Banner style={{height:500}} banner = {leftBanner} link = {leftBannerlink}/>
-					</div>
-					<div className="col-md-12 col-lg-8 column">
-						<Banner banner = {banner} link = {link}/>
-						<Filters data = {filters}/>
-						{
-							priceRange?(
-								<PriceRange
-									max = {getMaxPrice(products)}
-									min = {getMinPrice(products)}
-									onPriceChange = {this.onPriceChange.bind(this)}
-									sortLinks = {false}
-								/>
-							):null
-						}
-						<ProductGrid
-							query = {query}
-							user = {user}
-						/>
-						<BottomText text = {bottomText}/>
-					</div>
-					<div className="col-md-0 col-lg-2 column right">
-						<Banner style={{height:500}} banner = {rightBanner} link = {rightBannerlink}/>
-					</div>
+				<div className="col-md-12 col-lg-8 column">
+					<Banner banner = {banner} link = {link}/>
+					<Filters data = {filters}/>
+					{
+						priceRange?(
+							<PriceRange
+								max = {getMaxPrice(products)}
+								min = {getMinPrice(products)}
+								onPriceChange = {this.onPriceChange.bind(this)}
+								sortLinks = {false}
+							/>
+						):null
+					}
+					<ProductGrid
+						query = {query}
+						user = {user}
+					/>
+					<BottomText text = {bottomText}/>
+				</div>
+				<div className="col-md-0 col-lg-2 column right">
+					<Banner style={{height:500}} banner = {rightBanner} link = {rightBannerlink}/>
 				</div>
 			</div>
-		);
-	}
+		</div>
+	);
 };
 export default view;
  
