@@ -59405,6 +59405,11 @@
 		}
 		var presentInWishList = this.presentInWishList();
 		var productLink = window.location.protocol + "//" + window.location.host + "/product/" + _id + "/" + data.title.split(" ").join("-");
+		var divStyle = {
+			fontSize: '15px',
+			fontFamily: 'open sans condensed',
+			texttransform: 'uppercase'
+		};
 		return _react2.default.createElement(
 			'div',
 			{ className: 'card' },
@@ -59497,7 +59502,7 @@
 						{ target: 'blank', href: data.link, className: 'checkout-btn' },
 						_react2.default.createElement(
 							'button',
-							{ className: 'btn btn-yellow checkout' },
+							{ className: 'btn btn-yellow checkout', style: divStyle },
 							'Tjek det ud'
 						)
 					),

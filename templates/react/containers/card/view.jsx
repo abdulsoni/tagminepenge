@@ -10,6 +10,11 @@ var view = function() {
 	}
 	const presentInWishList = this.presentInWishList();
 	const productLink = window.location.protocol+"//"+window.location.host+"/product/"+_id+"/"+data.title.split(" ").join("-");
+	var divStyle = {
+		fontSize:'15px',
+	  fontFamily:'open sans condensed',
+	  texttransform:'uppercase'
+	};
 	return (
 		<div className="card">
 			<div className="card-header">
@@ -49,7 +54,7 @@ var view = function() {
 				</div>
 				<div className="product-action">
 					<a target="blank" href={data.link} className="checkout-btn">
-						<button className="btn btn-yellow checkout">Tjek det ud</button>
+						<button className="btn btn-yellow checkout" style={divStyle}>Tjek det ud</button>
 					</a>
 					<div className="share">
 						<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)}
