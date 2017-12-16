@@ -1,7 +1,6 @@
 @import '../../../../public/styles/variables.scss';
 
 .header {
-  font-weight: 800;
   position: fixed;
   width: 100%;
   top: 0px;
@@ -59,7 +58,6 @@
 	}
   }
   .header-nav {
-	font-weight: 800;
 	.nav-accent {
 	  display: block;
 	  width: 50%;
@@ -86,7 +84,7 @@
 	  padding: 0;
 	  list-style: none;
 	  font-size: 1.5em;
-	  font-weight: 800;
+	  font-weight: 300;
 	  position: relative;
 	  z-index: 2;
 	  margin-top: -6px;
@@ -142,7 +140,7 @@
 			text-decoration: none;
 			display: block;
 			font-size: 17px;
-			font-weight: 800;
+			font-weight: 400;
 			&:hover {
 			  border: none !important;
 			  background: $thumbnail-bg;
