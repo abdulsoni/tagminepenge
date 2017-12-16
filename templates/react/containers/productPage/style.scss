@@ -1,12 +1,10 @@
 @import '../../../../public/styles/variables';
 
 .product-page {
-  font-weight: bold;
   padding-top: 25px;
   .row {
 	margin: 0px;
 	.column {
-	  font-weight: bold;
 	  padding: 0px;
 	  .container {
 		width: 100%;
@@ -49,7 +47,6 @@
 	.column {
 	  .product-details {
 		padding-left:10px;
-		font-weight: bold;
 		.product-title {
 		  font-size: 30px;
 		  margin-bottom: 8px;
