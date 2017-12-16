@@ -1,10 +1,12 @@
 @import '../../../../public/styles/variables';
 
 .product-page {
+  font-weight: bold;
   padding-top: 25px;
   .row {
 	margin: 0px;
 	.column {
+	  font-weight: bold;
 	  padding: 0px;
 	  .container {
 		width: 100%;
@@ -40,15 +42,18 @@
   }
   .more-text{
 	padding:20px 10px;
+	font-weight: bold;
   }
   .product {
 	margin: 10px;
 	.column {
 	  .product-details {
 		padding-left:10px;
+		font-weight: bold;
 		.product-title {
 		  font-size: 30px;
 		  margin-bottom: 8px;
+		  font-weight: bold;
 		}
 		.product-description {
 		  font-family: $helvetica-font;
@@ -115,6 +120,7 @@
 
 @media (max-width: 992px) {
   .product-page {
+	font-weight: bold;
 	padding-top: 0px;
 	.product {
 	  .column {

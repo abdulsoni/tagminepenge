@@ -24,12 +24,12 @@ var view = function () {
 							}
 							<div className="form-group">
 								<label htmlFor="exampleInputEmail1">Email</label>
-								<input readOnly={loading} onChange = {handleChange.bind(this)} name="email" value = {this.state.email} type="email" className="form-control" id="exampleInputEmail1"
+								<input readOnly={loading} onChange = {handleChange.bind(this)} name="email" value = {this.state.email} type="email" className="form-control" 
 									   aria-describedby="emailHelp" placeholder="" required/>
 							</div>
 							<div className="form-group">
 								<label htmlFor="exampleInputPassword1">Kodeord</label>
-								<input readOnly={loading} onChange = {handleChange.bind(this)} name="password" value = {this.state.password} type="password" className="form-control" id="exampleInputPassword1"
+								<input readOnly={loading} onChange = {handleChange.bind(this)} name="password" value = {this.state.password} type="password" className="form-control" 
 									   placeholder="" required/>
 							</div>
 							<div className="actions">
