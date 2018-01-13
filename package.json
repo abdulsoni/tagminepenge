@@ -20,7 +20,7 @@
     "keystone-email": "1.0.5",
     "keystone-forgotten-password": "^1.4.0",
     "lodash": "^4.10.1",
-    "node-sass": "4.5.0",
+    "node-sass": "^4.7.2",
     "node-sass-middleware": "0.11.0",
     "rc-animate": "^2.4.1",
     "rc-upload": "^2.4.3",
