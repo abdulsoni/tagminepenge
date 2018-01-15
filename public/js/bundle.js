@@ -53045,7 +53045,7 @@
 						$(_this2.headerRef).removeClass("shrink");
 					}
 				});
-				if (window.location.pathname.indexOf("/search") != -1) {
+				if (window.location.pathname.indexOf("/soeg") != -1) {
 					var searchText = window.location.pathname.split("/")[2];
 					this.setState({ searchText: searchText });
 				}
@@ -53055,7 +53055,7 @@
 			value: function search(e) {
 				e.preventDefault();
 				if (this.state.searchText && this.state.searchText.trim() != '') {
-					window.location.href = "/search/" + this.state.searchText;
+					window.location.href = "/soeg/" + this.state.searchText;
 				}
 			}
 			/**
@@ -53205,12 +53205,12 @@
 								{ className: "dropdown-menu", "aria-labelledby": "dropdownMenuLink" },
 								_react2.default.createElement(
 									"a",
-									{ className: "dropdown-item", href: "/profile" },
+									{ className: "dropdown-item", href: "/min-konto" },
 									"Mine Indstillinger"
 								),
 								_react2.default.createElement(
 									"a",
-									{ className: "dropdown-item", href: "/my-wishlist" },
+									{ className: "dropdown-item", href: "/min-oenskeliste" },
 									"Min \xD8nskeliste"
 								),
 								_react2.default.createElement(
@@ -53236,7 +53236,7 @@
 						{ className: "category-others" },
 						_react2.default.createElement(
 							"a",
-							{ href: "/new", className: "nav-link" },
+							{ href: "/nyt", className: "nav-link" },
 							_react2.default.createElement(
 								"span",
 								{ className: "icon" },
@@ -53257,7 +53257,7 @@
 							{ key: category._id, className: "desktop category-" + category.key },
 							_react2.default.createElement(
 								"a",
-								{ href: "/category/" + category.key, className: "nav-link" },
+								{ href: "/kategori/" + category.key, className: "nav-link" },
 								_react2.default.createElement(
 									"span",
 									{ className: "icon" },
@@ -55451,7 +55451,7 @@
 							null,
 							_react2.default.createElement(
 								"a",
-								{ href: "/about" },
+								{ href: "/om-os" },
 								"Om os"
 							)
 						),
@@ -55460,7 +55460,7 @@
 							null,
 							_react2.default.createElement(
 								"a",
-								{ href: "/contact" },
+								{ href: "/kontakt-os" },
 								"Kontakt os"
 							)
 						),
@@ -55469,7 +55469,7 @@
 							null,
 							_react2.default.createElement(
 								"a",
-								{ href: "/privacy-policy" },
+								{ href: "/fortrolighedspolitik" },
 								"Fortrolighedspolitik"
 							)
 						)
@@ -55686,7 +55686,7 @@
 				}
 			}
 		},
-		"/new": {
+		"/nyt": {
 			component: _home2.default,
 			routeProps: {
 				query: {
@@ -55694,7 +55694,7 @@
 				}
 			}
 		},
-		"/popular": {
+		"/populaer": {
 			component: _home2.default,
 			routeProps: {
 				query: {
@@ -55702,7 +55702,7 @@
 				}
 			}
 		},
-		"/wishlisted-price": {
+		"/pris": {
 			component: _home2.default,
 			routeProps: {
 				query: {
@@ -55711,25 +55711,25 @@
 				priceRange: true
 			}
 		},
-		"/profile": {
+		"/min-konto": {
 			component: _profile2.default
 		},
-		"/product/:id/:title": {
+		"/produkt/:id/:title": {
 			component: _productPage2.default
 		},
-		"/search/:text": {
+		"/soeg/:text": {
 			component: _searchPage2.default
 		},
-		"/my-wishlist": {
+		"/min-oenskeliste": {
 			component: _wishlist2.default
 		},
 		"/user-wishlist/:userId": {
 			component: _userWishlist2.default
 		},
-		"/about": {
+		"/om-os": {
 			component: _aboutUs2.default
 		},
-		"/contact": {
+		"/kontakt-os": {
 			component: _contactUs2.default
 		},
 		"/get-started": {
@@ -55741,13 +55741,13 @@
 		/*"/checkout" : {
 	 		component : Checkout
 	 	},*/
-		"/privacy-policy": {
+		"/fortrolighedspolitik": {
 			component: _privacyPolicy2.default
 		},
 		/*"/product-pitch" : {
 	 		component : ProductPitch
 	 	},*/
-		"/category/:category": {
+		"/kategori/:category": {
 			component: _productGroup2.default
 		}
 	};
@@ -56361,7 +56361,7 @@
 		var pathname = this.state.pathname;
 	
 		if (pathname == '/') {
-			pathname = "/new";
+			pathname = "/nyt";
 		}
 		return _react2.default.createElement(
 			'div',
@@ -59408,7 +59408,7 @@
 			imageUrl = data.image.url;
 		}
 		var presentInWishList = this.presentInWishList();
-		var productLink = window.location.protocol + "//" + window.location.host + "/product/" + _id + "/" + data.title.split(" ").join("-");
+		var productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + _id + "/" + data.title.split(" ").join("-");
 		var divStyle = {
 			fontSize: '15px',
 			fontFamily: 'open sans condensed',

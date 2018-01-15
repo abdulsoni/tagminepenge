@@ -21,7 +21,7 @@ const Routes = {
 			}
 		}
 	},
-	"/new" : {
+	"/nyt" : {
 		component : Home,
 		routeProps : {
 			query : {
@@ -29,7 +29,7 @@ const Routes = {
 			}
 		}
 	},
-	"/popular" : {
+	"/populaer" : {
 		component : Home,
 		routeProps : {
 			query : {
@@ -37,7 +37,7 @@ const Routes = {
 			}
 		}
 	},
-	"/wishlisted-price" : {
+	"/pris" : {
 		component : Home,
 		routeProps : {
 			query : {
@@ -46,25 +46,25 @@ const Routes = {
 			priceRange : true
 		}
 	},
-	"/profile" : {
+	"/min-konto" : {
 		component : Profile
 	},
-	"/product/:id/:title" : {
+	"/produkt/:id/:title" : {
 		component : Product
 	},
-	"/search/:text" : {
+	"/soeg/:text" : {
 		component : SearchPage
 	},
-	"/my-wishlist" : {
+	"/min-oenskeliste" : {
 		component : WishList
 	},
 	"/user-wishlist/:userId" : {
 		component : UserWishList
 	},
-	"/about" : {
+	"/om-os" : {
 		component : About
 	},
-	"/contact" : {
+	"/kontakt-os" : {
 		component : Contact
 	},
 	"/get-started" : {
@@ -76,13 +76,13 @@ const Routes = {
 /*"/checkout" : {
 		component : Checkout
 	},*/
-	"/privacy-policy" : {
+	"/fortrolighedspolitik" : {
 		component : Privacy
 	},
 /*"/product-pitch" : {
 		component : ProductPitch
 	},*/
-	"/category/:category" : {
+	"/kategori/:category" : {
 		component : ProductGroup
 	}
 }

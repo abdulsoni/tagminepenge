@@ -5,7 +5,7 @@ var view = function () {
 	const {data} = this.props;
 	let {pathname} = this.state;
 	if(pathname=='/'){
-		 pathname ="/new";
+		 pathname ="/nyt";
 		
 	}
 	return (

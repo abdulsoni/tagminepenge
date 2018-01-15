@@ -15,9 +15,9 @@ var view = function () {
 				</div>
 				<div className="links">
 					<ul>
-						<li><a href="/about">Om os</a></li>
-						<li><a href="/contact">Kontakt os</a></li>
-						<li><a href="/privacy-policy">Fortrolighedspolitik</a></li>
+						<li><a href="/om-os">Om os</a></li>
+						<li><a href="/kontakt-os">Kontakt os</a></li>
+						<li><a href="/fortrolighedspolitik">Fortrolighedspolitik</a></li>
 					</ul>
 				</div>
 				<div className="copyright">

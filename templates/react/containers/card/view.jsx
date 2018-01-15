@@ -9,7 +9,7 @@ var view = function() {
 		imageUrl = data.image.url;
 	}
 	const presentInWishList = this.presentInWishList();
-	const productLink = window.location.protocol+"//"+window.location.host+"/product/"+_id+"/"+data.title.split(" ").join("-");
+	const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
 	var divStyle = {
 		fontSize:'15px',
 	  fontFamily:'open sans condensed',

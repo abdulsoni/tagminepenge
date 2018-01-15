@@ -49,8 +49,8 @@ var view = function () {
 										) : null
 									}
 									<div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-										<a className="dropdown-item" href="/profile">Mine Indstillinger</a>
-										<a className="dropdown-item" href="/my-wishlist">Min Ønskeliste</a>
+										<a className="dropdown-item" href="/min-konto">Mine Indstillinger</a>
+										<a className="dropdown-item" href="/min-oenskeliste">Min Ønskeliste</a>
 										<a className="dropdown-item" href="/keystone/signout">Log ud</a>
 									</div>
 								</div>
@@ -64,7 +64,7 @@ var view = function () {
 				<div className="nav-accent nav-accent-right"></div>
 				<ul>
 					<li className="category-others">
-						<a href="/new" className="nav-link">
+						<a href="/nyt" className="nav-link">
 							<span className="icon"><span className="fa fa-home" aria-hidden="true"></span></span>
 							<span className="text">Nyt</span>
 						</a>
@@ -73,7 +73,7 @@ var view = function () {
 						(categories || []).filter(category => category.displayType == 1).map((category) => {
 							return (
 								<li key={category._id} className={"desktop category-"+category.key}>
-									<a href={"/category/" + category.key} className="nav-link">
+									<a href={"/kategori/" + category.key} className="nav-link">
 										<span className="icon"><span className={category.iconClass}
 																	 aria-hidden="true"></span></span>
 										<span className="text">{category.name}</span>
