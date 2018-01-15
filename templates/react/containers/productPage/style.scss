@@ -2,6 +2,13 @@
 
 .product-page {
   padding-top: 25px;
+  .carousel-inner{
+	.item{
+	  img{
+		border: 1px solid #ccc;
+	  }
+	}
+  }
   .row {
 	margin: 0px;
 	.column {
