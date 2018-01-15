@@ -53,8 +53,7 @@ var view = function() {
 					</span>
 				</div>
 				<div className="product-action">
-					<a  href={data.link} onclick="window.open(this.href, 'Snopzer',
-'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"  className="checkout-btn">
+					<a  href={data.link} target="_blank"  className="checkout-btn">
 						<button className="btn btn-yellow checkout" style={divStyle}>Tjek det ud</button>
 					</a>
 					<div className="share">

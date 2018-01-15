@@ -34,7 +34,7 @@ var view = function () {
 							</div>
 						) : (
 							<div className="actions">
-								<div>
+								<div className="dropdown_box">
 									<a className="nav-link dropdown-toggle" data-toggle="dropdown">
 										<span className="icon">
 											<span className="glyphicon glyphicon-user" aria-hidden="true"></span>

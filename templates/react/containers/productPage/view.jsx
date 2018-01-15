@@ -46,7 +46,7 @@ var view = function () {
 									<p>{product.price?product.price + " kr.":""}</p>
 								</div>
 								<div className="product-actions">
-									<a href={product.link}>
+									<a href={product.link} target="_blank">
 										<button className="btn btn-yellow checkout-btn">Tjek det ud</button>
 									</a>
 									{

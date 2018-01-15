@@ -43,6 +43,7 @@
 			margin: 0px;
 			&:hover {
 			  background: $thumbnail-bg;
+
 			}
 		  }
 		}
@@ -55,6 +56,13 @@
 		  }
 		  .icon {
 			margin-right: 5px;
+		  }
+		}
+		.dropdown_box{
+		  &:hover {
+			.dropdown-menu {
+			  display: block;
+			}
 		  }
 		}
 	  }
@@ -164,7 +172,7 @@
 		  background: linear-gradient(to bottom, #F88017 0, #A83000 100%);
 		  a {
 			&:hover {
-			  border-bottom: 4px solid #650aca;
+			  //border-bottom: 4px solid #650aca;
 			}
 		  }
 		}

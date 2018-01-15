@@ -3,7 +3,11 @@ import styles from "./style.scss";
 
 var view = function () {
 	const {data} = this.props;
-	const {pathname} = this.state;
+	let {pathname} = this.state;
+	if(pathname=='/'){
+		 pathname ="/new";
+		
+	}
 	return (
 		<div className="filters container">
 			<ul>
