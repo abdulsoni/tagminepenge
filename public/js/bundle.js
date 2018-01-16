@@ -54725,7 +54725,7 @@
 										"Ved oprettelse accepterer du vores ",
 										_react2.default.createElement(
 											"a",
-											{ href: "/privacy-policy", className: "inline-block" },
+											{ href: "/fortrolighedspolitik", className: "inline-block" },
 											"Fortrolighedsspolitik"
 										)
 									)
