@@ -53105,6 +53105,7 @@
 		    user = _props.user,
 		    categories = _props.categories;
 	
+	
 		return _react2.default.createElement(
 			"div",
 			{ className: "header", ref: function ref(_ref) {
@@ -53252,25 +53253,71 @@
 					(categories || []).filter(function (category) {
 						return category.displayType == 1;
 					}).map(function (category) {
-						return _react2.default.createElement(
-							"li",
-							{ key: category._id, className: "desktop category-" + category.key },
-							_react2.default.createElement(
-								"a",
-								{ href: "/kategori/" + category.key, className: "nav-link" },
-								_react2.default.createElement(
-									"span",
-									{ className: "icon" },
-									_react2.default.createElement("span", { className: category.iconClass,
-										"aria-hidden": "true" })
-								),
-								_react2.default.createElement(
-									"span",
-									{ className: "text" },
-									category.name
-								)
-							)
-						);
+						{
+							if (category.key == 'gadgets-og-grej') {
+								var gadgets = 'Gadgets & Grej';
+								return _react2.default.createElement(
+									"li",
+									{ key: category._id, className: "desktop category-" + category.key },
+									_react2.default.createElement(
+										"a",
+										{ href: "/kategori/" + category.key, className: "nav-link" },
+										_react2.default.createElement(
+											"span",
+											{ className: "icon" },
+											_react2.default.createElement("span", { className: category.iconClass,
+												"aria-hidden": "true" })
+										),
+										_react2.default.createElement(
+											"span",
+											{ className: "text" },
+											gadgets
+										)
+									)
+								);
+							} else if (category.key == 'mad-og-drikke') {
+								var Mad = 'Mad & Drikke';
+								return _react2.default.createElement(
+									"li",
+									{ key: category._id, className: "desktop category-" + category.key },
+									_react2.default.createElement(
+										"a",
+										{ href: "/kategori/" + category.key, className: "nav-link" },
+										_react2.default.createElement(
+											"span",
+											{ className: "icon" },
+											_react2.default.createElement("span", { className: category.iconClass,
+												"aria-hidden": "true" })
+										),
+										_react2.default.createElement(
+											"span",
+											{ className: "text" },
+											Mad
+										)
+									)
+								);
+							} else {
+								return _react2.default.createElement(
+									"li",
+									{ key: category._id, className: "desktop category-" + category.key },
+									_react2.default.createElement(
+										"a",
+										{ href: "/kategori/" + category.key, className: "nav-link" },
+										_react2.default.createElement(
+											"span",
+											{ className: "icon" },
+											_react2.default.createElement("span", { className: category.iconClass,
+												"aria-hidden": "true" })
+										),
+										_react2.default.createElement(
+											"span",
+											{ className: "text" },
+											category.name
+										)
+									)
+								);
+							}
+						}
 					}),
 					_react2.default.createElement(
 						"li",

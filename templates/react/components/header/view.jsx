@@ -3,6 +3,7 @@ import styles from "./style.scss";
 
 var view = function () {
 	const {user, categories} = this.props;
+	
 	return (
 		<div className="header" ref={(ref) => {
 			this.headerRef = ref
@@ -71,15 +72,44 @@ var view = function () {
 					</li>
 					{
 						(categories || []).filter(category => category.displayType == 1).map((category) => {
-							return (
-								<li key={category._id} className={"desktop category-"+category.key}>
-									<a href={"/kategori/" + category.key} className="nav-link">
+							{
+								if(category.key=='gadgets-og-grej'){
+								 	let gadgets = 'Gadgets & Grej';
+									return (
+										<li key={category._id} className={"desktop category-"+category.key}>
+											<a href={"/kategori/" + category.key} className="nav-link">
 										<span className="icon"><span className={category.iconClass}
 																	 aria-hidden="true"></span></span>
-										<span className="text">{category.name}</span>
-									</a>
-								</li>
-							)
+												<span className="text">{gadgets}</span>
+											</a>
+										</li>
+									)
+								}
+								else if(category.key=='mad-og-drikke'){
+									let Mad = 'Mad & Drikke';
+									return (
+										<li key={category._id} className={"desktop category-"+category.key}>
+											<a href={"/kategori/" + category.key} className="nav-link">
+										<span className="icon"><span className={category.iconClass}
+																	 aria-hidden="true"></span></span>
+												<span className="text">{Mad}</span>
+											</a>
+										</li>
+									)
+								}
+								else{
+									return (
+										<li key={category._id} className={"desktop category-"+category.key}>
+											<a href={"/kategori/" + category.key} className="nav-link">
+										<span className="icon"><span className={category.iconClass}
+																	 aria-hidden="true"></span></span>
+												<span className="text">{category.name}</span>
+											</a>
+										</li>
+									)
+								}
+								
+							}
 						})
 					}
 					<li className="mobile">
