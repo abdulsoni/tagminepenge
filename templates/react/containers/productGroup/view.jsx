@@ -15,7 +15,7 @@ var view = function() {
 	const leftBannerlink = (config.leftBanner && config.leftBanner.value)?config.leftBanner.value:null;
 	const rightBanner = (config.rightBanner && config.rightBanner.media)?config.rightBanner.media.url:null;
 	const rightBannerlink = (config.rightBanner && config.rightBanner.value)?config.rightBanner.value:null;
-
+	
 	return category?(
 		<div className={"product-group category-"+category.key}>
 			
@@ -29,7 +29,7 @@ var view = function() {
 						<div className="category-wise">
 							<div className="category-title">
 								<p>{
-									category.name
+									this.state.title
 								}</p>
 							</div>
 							<div className="category-description">

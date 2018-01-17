@@ -19,6 +19,7 @@ class Main extends Component {
 		this.state = {
 			selectCategory : null,
 			category : null,
+			title:'',
 			query : null
 		};
 	}
@@ -70,6 +71,16 @@ class Main extends Component {
 			return null;
 		} else {
 			category = category[0];
+			if(category.key=='mad-og-drikke'){
+				this.setState({
+					title:'Mad & Drikke'
+				});
+			}
+			if(category.key=='gadgets-og-grej '){
+				this.setState({
+					title:'Gadgets & Grej '
+				});
+			}
 			this.setState({
 				selectCategory : category,
 				category,

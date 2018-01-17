@@ -60855,6 +60855,7 @@
 			_this.state = {
 				selectCategory: null,
 				category: null,
+				title: '',
 				query: null
 			};
 			return _this;
@@ -60921,6 +60922,16 @@
 					return null;
 				} else {
 					category = category[0];
+					if (category.key == 'mad-og-drikke') {
+						this.setState({
+							title: 'Mad & Drikke'
+						});
+					}
+					if (category.key == 'gadgets-og-grej ') {
+						this.setState({
+							title: 'Gadgets & Grej '
+						});
+					}
 					this.setState({
 						selectCategory: category,
 						category: category,
@@ -61066,7 +61077,7 @@
 							_react2.default.createElement(
 								'p',
 								null,
-								category.name
+								this.state.title
 							)
 						),
 						_react2.default.createElement(
