@@ -76,9 +76,19 @@ class Main extends Component {
 					title:'Mad & Drikke'
 				});
 			}
-			if(category.key=='gadgets-og-grej '){
+			if(category.key=='gadgets-og-grej'){
 				this.setState({
 					title:'Gadgets & Grej '
+				});
+			}
+			if(category.key=='oplevelser'){
+				this.setState({
+					title:'Oplevelser'
+				});
+			}
+			if(category.key=='ting-til-hjemmet'){
+				this.setState({
+					title:'Ting Til Hjemmet'
 				});
 			}
 			this.setState({
