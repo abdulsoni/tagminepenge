@@ -48200,7 +48200,7 @@
 				_react2.default.createElement('meta', { property: 'og:description', content: 'Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med h\xE6sbl\xE6sende action, som finder sted i selveste Ungarn.' }),
 				_react2.default.createElement('meta', { property: 'og:url', content: 'http://www.tagminepenge.dk' }),
 				_react2.default.createElement('meta', { name: 'og:locale', content: 'Denmark' }),
-				_react2.default.createElement('meta', { name: 'fb:app_id', content: '140586622674265' }),
+				_react2.default.createElement('meta', { property: 'fb:app_id', content: '140586622674265' }),
 				_react2.default.createElement(
 					'title',
 					null,

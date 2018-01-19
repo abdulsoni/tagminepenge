@@ -16,7 +16,7 @@ const Default = props => {
 			<meta property="og:description" content="Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med hæsblæsende action, som finder sted i selveste Ungarn." />
 			<meta property="og:url" content="http://www.tagminepenge.dk" />
 			<meta name="og:locale" content="Denmark" />
-					<meta name="fb:app_id" content="140586622674265" />
+					<meta property="fb:app_id" content="140586622674265" />
 							
 			<title>{props.pageTitle?props.pageTitle:"TAG MINE PENGE!"}</title>
 
