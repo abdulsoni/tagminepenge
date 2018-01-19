@@ -57,7 +57,14 @@ var view = function() {
 						<button className="btn btn-yellow checkout" style={divStyle}>Tjek det ud</button>
 					</a>
 					<div className="share">
-						<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl}/></div>
+						{/*<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl}/>*/}
+						<div className="addthis_inline_share_toolbox">
+							<a className="addthis_button_facebook"
+							   data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl}>
+								<i className="ico ico-facebook"></i>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

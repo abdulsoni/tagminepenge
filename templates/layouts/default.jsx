@@ -73,7 +73,6 @@ const Default = props => {
 			// - Include template-specific javascript files by extending the js block
 			props.js
 		}
-
 		
 		</body>
 		</html>
