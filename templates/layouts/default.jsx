@@ -10,9 +10,11 @@ const Default = props => {
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 			<meta property="og:type" content="business.business"/>
-				<meta property="og:title" content="tagminepenge"/>
-					<meta property="og:url" content="http://www.tagminepenge.dk"/>
-						<meta property="og:image" content="http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png"/>
+				<meta property="og:title" content="Online Shopping Website tagminepenge.com"/>
+					<meta property="og:description" content="Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med hæsblæsende action, som finder sted i selveste Ungarn."/>
+						<meta property="og:url" content="http://www.tagminepenge.dk/"/>
+							<meta property="og:image" content="http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png"/>
+								
 							
 			<title>{props.pageTitle?props.pageTitle:"TAG MINE PENGE!"}</title>
 
