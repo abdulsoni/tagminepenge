@@ -48183,6 +48183,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Default = function Default(props) {
+		console.log(props);
 		return _react2.default.createElement(
 			'html',
 			null,
@@ -48192,11 +48193,12 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
-				_react2.default.createElement('meta', { property: 'title', content: props.title }),
-				_react2.default.createElement('meta', { property: 'description', content: props.description }),
-				_react2.default.createElement('meta', { property: 'og:title', content: props.fbTitle }),
-				_react2.default.createElement('meta', { property: 'og:description', content: props.fbDescription }),
-				_react2.default.createElement('meta', { property: 'og:image', content: props.fbImage }),
+				_react2.default.createElement('meta', { property: 'title', content: 'tagminepenge' }),
+				_react2.default.createElement('meta', { property: 'description', content: 'tagminepenge is the best website' }),
+				_react2.default.createElement('meta', { property: 'og:title', content: 'Tagminepenge' }),
+				_react2.default.createElement('meta', { property: 'og:type', content: 'Tagminepenge is the best website' }),
+				_react2.default.createElement('meta', { property: 'og:url', content: 'http://www.tagminepenge.dk/produkt/5a354154a86dca00046d8139/Candyfloss-Maskine' }),
+				_react2.default.createElement('meta', { property: 'og:image', content: 'http://res.cloudinary.com/tagminepenge/image/upload/v1513374251/rxkcwheqjyf4rye8jzng.png' }),
 				_react2.default.createElement(
 					'title',
 					null,
