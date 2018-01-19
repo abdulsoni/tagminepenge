@@ -9,12 +9,11 @@ const Default = props => {
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-			<meta property="title" content="tagminepenge" />
-			<meta property="description" content="tagminepenge is the best website" />
-			<meta property="og:title" content="Tagminepenge" />
-			<meta property="og:type" content="Tagminepenge is the best website" />
-			<meta property="og:url" content="http://www.tagminepenge.dk/produkt/5a354154a86dca00046d8139/Candyfloss-Maskine" />
-			<meta property="og:image" content="http://res.cloudinary.com/tagminepenge/image/upload/v1513374251/rxkcwheqjyf4rye8jzng.png" />
+			<meta property="og:type" content="business.business">
+				<meta property="og:title" content="tagminepenge">
+					<meta property="og:url" content="http://www.tagminepenge.dk">
+						<meta property="og:image" content="http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png">
+							
 			<title>{props.pageTitle?props.pageTitle:"TAG MINE PENGE!"}</title>
 
 			<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
