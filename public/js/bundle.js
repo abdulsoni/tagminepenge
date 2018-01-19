@@ -48117,7 +48117,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _default = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../layouts/default\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _default = __webpack_require__(327);
 	
 	var _default2 = _interopRequireDefault(_default);
 	
@@ -48163,8 +48163,134 @@
 	module.exports = Index;
 
 /***/ }),
-/* 327 */,
-/* 328 */,
+/* 327 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _flashMessages = __webpack_require__(328);
+	
+	var _flashMessages2 = _interopRequireDefault(_flashMessages);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var Default = function Default(props) {
+	
+		return _react2.default.createElement(
+			'html',
+			null,
+			_react2.default.createElement(
+				'head',
+				null,
+				_react2.default.createElement('meta', { charSet: 'utf-8' }),
+				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
+				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
+				_react2.default.createElement('meta', { name: 'twitter:card', content: 'summary' }),
+				_react2.default.createElement('meta', { name: 'og:image', content: 'http://res.cloudinary.com/tagminepenge/image/upload/v1511985292/hzr2vz4xrjigz0iezgov.png' }),
+				_react2.default.createElement('meta', { name: 'og:url', content: 'http://www.tagminepenge.dk/' }),
+				_react2.default.createElement('meta', { name: 'og:site_name', content: 'TAG MINE PENGE' }),
+				_react2.default.createElement('meta', { name: 'og:locale', content: 'Denmark' }),
+				_react2.default.createElement('meta', { name: 'fb:admins', content: '140586622674265' }),
+				_react2.default.createElement('meta', { name: 'fb:app_id', content: '175421933053003' }),
+				_react2.default.createElement('meta', { name: 'og:type', content: 'online shoping website' }),
+				_react2.default.createElement(
+					'title',
+					null,
+					props.pageTitle ? props.pageTitle : "TAG MINE PENGE!"
+				),
+				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
+				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
+				_react2.default.createElement('style', { dangerouslySetInnerHTML: { __html: props.children } }),
+				props.user && props.user.canAccessKeystone && _react2.default.createElement('link', { href: '/keystone/styles/content/editor.min.css', rel: 'stylesheet' }),
+				props.css,
+				props.head
+			),
+			_react2.default.createElement(
+				'body',
+				null,
+				_react2.default.createElement(
+					'div',
+					{ id: 'body' },
+	
+					// - The children block should contain the body of your template's content
+					props.children
+				),
+				_react2.default.createElement('script', { src: '/js/jquery/jquery-1.11.3.min.js' }),
+				_react2.default.createElement('script', { src: '/js/bootstrap/bootstrap-3.3.5.min.js' }),
+				props.user && props.user.canAccessKeystone
+				// - The KeystoneJS Content Editor provides support for ks-editable data attributes,
+				// - which generate links to edit content for users who can access Keystone
+				&& _react2.default.createElement('script', { src: '/keystone/js/content/editor.js' }),
+				_react2.default.createElement('script', { src: '/js/bundle.js' }),
+	
+				// - Add scripts that are globally required by your site here.
+	
+				// - Include template-specific javascript files by extending the js block
+				props.js
+			)
+		);
+	};
+	
+	exports.default = Default;
+
+/***/ }),
+/* 328 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	       value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var FlashMessages = function FlashMessages(props) {
+	       // TODO: recreate this component
+	       return _react2.default.createElement('div', null);
+	};
+	
+	exports.default = FlashMessages;
+	
+	// mixin flash-messages(messages)
+	// 	if messages
+	// 		#flash-messages.container
+	// 			each message in messages.info
+	// 				+flash-message(message, 'info')
+	// 			each message in messages.success
+	// 				+flash-message(message, 'success')
+	// 			each message in messages.warning
+	// 				+flash-message(message, 'warning')
+	// 			each message in messages.error
+	// 				+flash-message(message, 'danger')
+	//
+	// mixin flash-message(message, type)
+	// 	div(class='alert alert-' + type)
+	// 		if utils.isObject(message)
+	// 			if message.title
+	// 				h4= message.title
+	// 			if message.detail
+	// 				p= message.detail
+	// 			if message.list
+	// 				ul
+	// 					each item in message.list
+	// 						li= item
+	// 		else
+	// 			= message
+
+/***/ }),
 /* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -65330,7 +65456,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _default = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../layouts/default\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _default = __webpack_require__(327);
 	
 	var _default2 = _interopRequireDefault(_default);
 	
@@ -65468,7 +65594,7 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _default = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../layouts/default\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var _default = __webpack_require__(327);
 	
 	var _default2 = _interopRequireDefault(_default);
 	

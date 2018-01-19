@@ -2,21 +2,21 @@ import React from 'react';
 import FlashMessages from '../mixins/flash-messages';
 
 const Default = props => {
-	console.log(props);
+	
 	return (
 		<html>
 		<head>
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-			<meta name="og:image" content="http://res.cloudinary.com/tagminepenge/image/upload/v1511985292/hzr2vz4xrjigz0iezgov.png"/>
-				<meta name="og:url" content="http://www.tagminepenge.dk/">
-					<meta name="og:site_name" content="TAG MINE PENGE"/>
-						<meta name="og:locale" content="Denmark"/>
-							<meta name="fb:admins" content="140586622674265"/>
-								<meta name="fb:app_id" content="175421933053003"/>
-									<meta name="og:type" content="website"/>
-								
+			<meta name="twitter:card" content="summary" />
+			<meta name="og:image" content="http://res.cloudinary.com/tagminepenge/image/upload/v1511985292/hzr2vz4xrjigz0iezgov.png" />
+			<meta name="og:url" content="http://www.tagminepenge.dk/" />
+			<meta name="og:site_name" content="TAG MINE PENGE" />
+			<meta name="og:locale" content="Denmark" />
+			<meta name="fb:admins" content="140586622674265" />
+			<meta name="fb:app_id" content="175421933053003" />
+			<meta name="og:type" content="online shoping website" />			
 							
 			<title>{props.pageTitle?props.pageTitle:"TAG MINE PENGE!"}</title>
 
