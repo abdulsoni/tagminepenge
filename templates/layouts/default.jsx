@@ -9,14 +9,16 @@ const Default = props => {
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-			<meta property="og:type" content="business.business"/>
-				<meta property="og:title" content="Online Shopping Website tagminepenge.com"/>
-					<meta property="og:description" content="Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med hæsblæsende action, som finder sted i selveste Ungarn."/>
-						<meta property="og:url" content="http://www.tagminepenge.dk/"/>
-							<meta property="og:image" content="http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png"/>
+			<meta name="og:image" content="http://res.cloudinary.com/tagminepenge/image/upload/v1511985292/hzr2vz4xrjigz0iezgov.png"/>
+				<meta name="og:url" content="http://www.tagminepenge.dk/">
+					<meta name="og:site_name" content="TAG MINE PENGE"/>
+						<meta name="og:locale" content="Denmark"/>
+							<meta name="fb:admins" content="140586622674265"/>
+								<meta name="fb:app_id" content="175421933053003"/>
+									<meta name="og:type" content="website"/>
 								
 							
-			{/*<title>{props.pageTitle?props.pageTitle:"TAG MINE PENGE!"}</title>*/}
+			<title>{props.pageTitle?props.pageTitle:"TAG MINE PENGE!"}</title>
 
 			<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
 
