@@ -16,7 +16,7 @@ const Default = props => {
 							<meta property="og:image" content="http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png"/>
 								
 							
-			<title>{props.pageTitle?props.pageTitle:"TAG MINE PENGE!"}</title>
+			{/*<title>{props.pageTitle?props.pageTitle:"TAG MINE PENGE!"}</title>*/}
 
 			<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
 

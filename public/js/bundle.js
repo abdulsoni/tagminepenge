@@ -48198,11 +48198,6 @@
 				_react2.default.createElement('meta', { property: 'og:description', content: 'Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med h\xE6sbl\xE6sende action, som finder sted i selveste Ungarn.' }),
 				_react2.default.createElement('meta', { property: 'og:url', content: 'http://www.tagminepenge.dk/' }),
 				_react2.default.createElement('meta', { property: 'og:image', content: 'http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png' }),
-				_react2.default.createElement(
-					'title',
-					null,
-					props.pageTitle ? props.pageTitle : "TAG MINE PENGE!"
-				),
 				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
 				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
 				_react2.default.createElement('style', { dangerouslySetInnerHTML: { __html: props.children } }),
