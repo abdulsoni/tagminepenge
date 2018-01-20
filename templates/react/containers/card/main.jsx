@@ -27,7 +27,7 @@ class Main extends Component {
 	}
 	changeprop(productLink,e){
 		//console.log(productLink);
-		//console.log(this.props);
+		console.log(this.props);
 		this.props.meta.title=this.props.data.title;
 		this.props.meta.description=this.props.data.content.brief;
 		this.props.meta.image=this.props.data.image.url;
