@@ -18,6 +18,7 @@ class Main extends Component {
 		this.pageSize = 300;
 		this.state = {
 			data:[],
+			link:''
 		}
 		if(props.query){
 			this.getProducts();

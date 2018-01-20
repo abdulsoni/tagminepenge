@@ -48139,6 +48139,9 @@
 	
 	var store = (0, _redux2.default)(_redux.initialState);
 	var Index = function Index(props) {
+	
+		// props.meta.title="abdul";
+		// console.log(props.meta.title);
 		var url = props.url;
 		var route = null;
 		url = "/" + url.split("/")[1];
@@ -48183,7 +48186,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Default = function Default(props) {
-	
+		console.log(props);
 		return _react2.default.createElement(
 			'html',
 			null,
@@ -48196,15 +48199,15 @@
 				_react2.default.createElement('meta', { property: 'og:type', content: 'website' }),
 				_react2.default.createElement('meta', { property: 'twitter:card', content: 'summary' }),
 				_react2.default.createElement('meta', { property: 'og:title', content: 'Online Shopping Website tagminepenge.com' }),
-				_react2.default.createElement('meta', { property: 'og:image', content: 'http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png' }),
-				_react2.default.createElement('meta', { property: 'og:description', content: 'Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med h\xE6sbl\xE6sende action, som finder sted i selveste Ungarn.' }),
-				_react2.default.createElement('meta', { property: 'og:url', content: 'http://www.tagminepenge.dk' }),
+				_react2.default.createElement('meta', { property: 'og:image', content: props.meta.image }),
+				_react2.default.createElement('meta', { property: 'og:description', content: props.meta.description }),
+				_react2.default.createElement('meta', { property: 'og:url', content: props.meta.url }),
 				_react2.default.createElement('meta', { name: 'og:locale', content: 'Denmark' }),
 				_react2.default.createElement('meta', { property: 'fb:app_id', content: '140586622674265' }),
 				_react2.default.createElement(
 					'title',
 					null,
-					props.pageTitle ? props.pageTitle : "TAG MINE PENGE!"
+					props.pageTitle ? props.pageTitle : props.meta.title
 				),
 				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
 				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
@@ -52814,7 +52817,8 @@
 	
 			_this.state = {
 				hidden: "hidden", // flag for API
-				loading: true
+				loading: true,
+				title: ''
 			};
 			return _this;
 		}
@@ -52824,7 +52828,7 @@
 			value: function componentDidMount() {
 				var _this2 = this;
 	
-				console.log('componentDidMount');
+				//console.log(this.props);
 				setTimeout(function () {
 					var script = document.createElement('script');
 					script.src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a";
@@ -56042,7 +56046,8 @@
 					}) : null,
 					_react2.default.createElement(_index8.default, {
 						query: query,
-						user: user
+						user: user,
+						meta: this.props.meta
 					}),
 					_react2.default.createElement(_bottomText2.default, { text: bottomText })
 				),
@@ -58804,7 +58809,8 @@
 	
 			_this.pageSize = 300;
 			_this.state = {
-				data: []
+				data: [],
+				link: ''
 			};
 			if (props.query) {
 				_this.getProducts();
@@ -58981,7 +58987,7 @@
 					return _react2.default.createElement(
 						'div',
 						{ key: product._id, className: 'col-xm-12 col-sm-6 col-md-4' },
-						_react2.default.createElement(_index2.default, { onSaveToWishList: onSaveToWishList, user: user, data: product })
+						_react2.default.createElement(_index2.default, { onSaveToWishList: onSaveToWishList, user: user, data: product, meta: _this.props.meta })
 					);
 				})
 			),
@@ -59305,14 +59311,27 @@
 			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
 	
 			_this.state = {
-				loading: false
+				loading: false,
+				link: ''
 			};
+	
 			return _this;
 		}
 	
 		_createClass(Main, [{
 			key: 'componentDidMount',
 			value: function componentDidMount() {}
+		}, {
+			key: 'changeprop',
+			value: function changeprop(productLink, e) {
+				//console.log(productLink);
+				console.log(this.props.data);
+				this.props.meta.title = this.props.data.title;
+				this.props.meta.description = this.props.data.content.brief;
+				this.props.meta.image = this.props.data.image.url;
+				this.props.meta.url = productLink;
+				console.log('working');
+			}
 	
 			/**
 	   * Check if present in wishlist
@@ -59460,6 +59479,7 @@
 		}
 		var presentInWishList = this.presentInWishList();
 		var productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + _id + "/" + data.title.split(" ").join("-");
+	
 		var divStyle = {
 			fontSize: '15px',
 			fontFamily: 'open sans condensed',
@@ -59564,16 +59584,7 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'share' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'addthis_inline_share_toolbox' },
-							_react2.default.createElement(
-								'a',
-								{ className: 'addthis_button_facebook',
-									'data-url': productLink, 'data-title': data.title, 'data-description': (0, _common.getPlainText)(data.content.brief), 'data-media': imageUrl },
-								_react2.default.createElement('i', { className: 'ico ico-facebook' })
-							)
-						)
+						_react2.default.createElement('div', { className: 'addthis_inline_share_toolbox', 'data-url': productLink, 'data-title': data.title, 'data-description': (0, _common.getPlainText)(data.content.brief), 'data-media': imageUrl, onClick: this.changeprop.bind(this, productLink) })
 					)
 				)
 			)

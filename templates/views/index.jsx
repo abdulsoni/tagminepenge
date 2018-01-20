@@ -6,6 +6,9 @@ import App from '../react/containers/app';
 import Routes from '../react/routes';
 const store = createStore(initialState);
 const Index = props => {
+	
+	// props.meta.title="abdul";
+	// console.log(props.meta.title);
 	let url = props.url;
 	let route = null;
 	url = "/"+url.split("/")[1];

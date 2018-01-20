@@ -37,6 +37,7 @@ var view = function() {
 					<ProductGrid
 						query = {query}
 						user = {user}
+						meta={this.props.meta}
 					/>
 					<BottomText text = {bottomText}/>
 				</div>

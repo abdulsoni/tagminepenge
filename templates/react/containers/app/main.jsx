@@ -16,10 +16,11 @@ export default class Main extends Component {
 		this.state = {
 			hidden : "hidden", // flag for API
 			loading: true,
+			title:'',
 		};
 	}
 	componentDidMount(){
-		console.log('componentDidMount');
+		//console.log(this.props);
 		setTimeout(()=>{
 			var script = document.createElement('script');
 			script.src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a0ad3e012097c2a";

@@ -17,11 +17,22 @@ class Main extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			loading : false
+			loading : false,
+			link:''
 		}
+		
 	}
 	componentDidMount(){
 		
+	}
+	changeprop(productLink,e){
+		//console.log(productLink);
+		console.log(this.props.data);
+		this.props.meta.title=this.props.data.title;
+		this.props.meta.description=this.props.data.content.brief;
+		this.props.meta.image=this.props.data.image.url;
+		this.props.meta.url=productLink;
+		console.log('working');
 	}
 
 	/**

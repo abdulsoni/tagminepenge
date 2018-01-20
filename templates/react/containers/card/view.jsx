@@ -10,6 +10,7 @@ var view = function() {
 	}
 	const presentInWishList = this.presentInWishList();
 	const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
+
 	var divStyle = {
 		fontSize:'15px',
 	  fontFamily:'open sans condensed',
@@ -57,13 +58,13 @@ var view = function() {
 						<button className="btn btn-yellow checkout" style={divStyle}>Tjek det ud</button>
 					</a>
 					<div className="share">
-						{/*<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl}/>*/}
-						<div className="addthis_inline_share_toolbox">
-							<a className="addthis_button_facebook"
-							   data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl}>
-								<i className="ico ico-facebook"></i>
-							</a>
-						</div>
+						<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl} onClick={this.changeprop.bind(this,productLink)}/>
+						{/*<div className="addthis_inline_share_toolbox">*/}
+							{/*<a className="addthis_button_facebook"*/}
+							   {/*data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl} >*/}
+								{/*<i className="ico ico-facebook"></i>*/}
+							{/*</a>*/}
+						{/*</div>*/}
 					</div>
 				</div>
 			</div>

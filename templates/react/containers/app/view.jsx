@@ -8,6 +8,7 @@ import Footer from '../../components/footer/index';
 import styles from "./style.scss";
 
 var view = function () {
+	
 	const {routeInfo, navLinks, user, config, categories, filters} = this.props;
 
 		return (
