@@ -48201,7 +48201,7 @@
 				_react2.default.createElement('meta', { property: 'og:title', content: props.meta.title }),
 				_react2.default.createElement('meta', { property: 'og:image', content: props.meta.image }),
 				_react2.default.createElement('meta', { property: 'og:description', content: props.meta.descriptionction }),
-				_react2.default.createElement('meta', { property: 'og:url', content: props.meta.url }),
+				_react2.default.createElement('meta', { property: 'og:url', content: props.meta.url ? props.meta.url : "http://www.tagminepenge.dk" }),
 				_react2.default.createElement('meta', { name: 'og:locale', content: 'Denmark' }),
 				_react2.default.createElement('meta', { property: 'fb:app_id', content: '140586622674265' }),
 				_react2.default.createElement(
@@ -59593,7 +59593,16 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'share' },
-						_react2.default.createElement('div', { className: 'addthis_inline_share_toolbox', 'data-url': productLink, 'data-title': data.title, 'data-description': (0, _common.getPlainText)(data.content.brief), 'data-media': imageUrl, onClick: this.changeprop.bind(this, productLink) })
+						_react2.default.createElement(
+							'div',
+							{ className: 'addthis_inline_share_toolbox' },
+							_react2.default.createElement(
+								'a',
+								{ className: 'addthis_button_facebook',
+									'data-url': productLink, 'data-title': data.title, 'data-description': (0, _common.getPlainText)(data.content.brief), 'data-media': imageUrl },
+								_react2.default.createElement('i', { className: 'ico ico-facebook' })
+							)
+						)
 					)
 				)
 			)

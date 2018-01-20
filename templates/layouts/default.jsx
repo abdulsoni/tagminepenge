@@ -14,7 +14,7 @@ const Default = props => {
 			<meta property="og:title" content={props.meta.title}/>
 			<meta property="og:image" content={props.meta.image}/>
 			<meta property="og:description" content={props.meta.descriptionction } />
-			<meta property="og:url" content={props.meta.url} />
+			<meta property="og:url" content={props.meta.url?props.meta.url:"http://www.tagminepenge.dk"} />
 			<meta name="og:locale" content="Denmark" />
 			<meta property="fb:app_id" content="140586622674265" />
 
