@@ -48198,7 +48198,7 @@
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
 				_react2.default.createElement('meta', { property: 'og:type', content: 'website' }),
 				_react2.default.createElement('meta', { property: 'twitter:card', content: 'summary' }),
-				_react2.default.createElement('meta', { property: 'og:title', content: 'Online Shopping Website tagminepenge.com' }),
+				_react2.default.createElement('meta', { property: 'og:title', content: props.meta.title }),
 				_react2.default.createElement('meta', { property: 'og:image', content: props.meta.image }),
 				_react2.default.createElement('meta', { property: 'og:description', content: props.meta.description }),
 				_react2.default.createElement('meta', { property: 'og:url', content: props.meta.url }),

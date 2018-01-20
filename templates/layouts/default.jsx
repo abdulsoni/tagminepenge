@@ -11,7 +11,7 @@ const Default = props => {
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 			<meta property ="og:type" content="website"/>
 			<meta property ="twitter:card" content="summary" />
-			<meta property="og:title" content="Online Shopping Website tagminepenge.com"/>
+			<meta property="og:title" content={props.meta.title}/>
 			<meta property="og:image" content={props.meta.image} />
 			<meta property="og:description" content={props.meta.description} />
 			<meta property="og:url" content={props.meta.url} />
