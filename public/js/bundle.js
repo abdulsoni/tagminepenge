@@ -48198,10 +48198,10 @@
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
 				_react2.default.createElement('meta', { property: 'og:type', content: 'website' }),
 				_react2.default.createElement('meta', { property: 'twitter:card', content: 'summary' }),
-				_react2.default.createElement('meta', { property: 'og:title', content: props.meta.title ? props.meta.title : "Online Shopping Website tagminepenge.com" }),
-				_react2.default.createElement('meta', { property: 'og:image', content: props.meta.image ? props.meta.image : "http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png" }),
-				_react2.default.createElement('meta', { property: 'og:description', content: props.meta.description ? props.meta.description : "Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med hæsblæsende action, som finder sted i selveste Ungarn." }),
-				_react2.default.createElement('meta', { property: 'og:url', content: props.meta.url ? props.meta.url : "http://www.tagminepenge.dk" }),
+				_react2.default.createElement('meta', { property: 'og:title', content: props.meta.title }),
+				_react2.default.createElement('meta', { property: 'og:image', content: props.meta.image }),
+				_react2.default.createElement('meta', { property: 'og:description', content: props.meta.descriptionction }),
+				_react2.default.createElement('meta', { property: 'og:url', content: props.meta.url }),
 				_react2.default.createElement('meta', { name: 'og:locale', content: 'Denmark' }),
 				_react2.default.createElement('meta', { property: 'fb:app_id', content: '140586622674265' }),
 				_react2.default.createElement(
@@ -59314,7 +59314,7 @@
 				loading: false,
 				link: ''
 			};
-	
+			_this.forceUpdateHandler = _this.forceUpdateHandler.bind(_this);
 			return _this;
 		}
 	
@@ -59322,15 +59322,24 @@
 			key: 'componentDidMount',
 			value: function componentDidMount() {}
 		}, {
+			key: 'forceUpdateHandler',
+			value: function forceUpdateHandler() {
+	
+				console.log('update ');
+				this.forceUpdate();
+			}
+		}, {
 			key: 'changeprop',
 			value: function changeprop(productLink, e) {
 				//console.log(productLink);
-				console.log(this.props);
+				console.log(this.props.meta);
 				this.props.meta.title = this.props.data.title;
 				this.props.meta.description = this.props.data.content.brief;
 				this.props.meta.image = this.props.data.image.url;
 				this.props.meta.url = productLink;
 				console.log('working');
+				console.log(this.props);
+				this.forceUpdateHandler();
 			}
 	
 			/**

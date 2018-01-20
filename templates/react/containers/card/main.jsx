@@ -20,19 +20,26 @@ class Main extends Component {
 			loading : false,
 			link:''
 		}
-		
+		this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
 	}
 	componentDidMount(){
 		
 	}
+	forceUpdateHandler(){
+		
+		console.log('update ');
+		this.forceUpdate();
+	};
 	changeprop(productLink,e){
 		//console.log(productLink);
-		console.log(this.props);
+		 console.log(this.props.meta);
 		this.props.meta.title=this.props.data.title;
 		this.props.meta.description=this.props.data.content.brief;
 		this.props.meta.image=this.props.data.image.url;
 		this.props.meta.url=productLink;
 		console.log('working');
+		console.log(this.props);
+		this.forceUpdateHandler();
 	}
 
 	/**
