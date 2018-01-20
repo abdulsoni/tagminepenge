@@ -48198,16 +48198,16 @@
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
 				_react2.default.createElement('meta', { property: 'og:type', content: 'website' }),
 				_react2.default.createElement('meta', { property: 'twitter:card', content: 'summary' }),
-				_react2.default.createElement('meta', { property: 'og:title', content: 'Online Shopping Website tagminepenge.com' }),
-				_react2.default.createElement('meta', { property: 'og:image', content: 'http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png' }),
-				_react2.default.createElement('meta', { property: 'og:description', content: 'Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med h\xE6sbl\xE6sende action, som finder sted i selveste Ungarn.' }),
-				_react2.default.createElement('meta', { property: 'og:url', content: 'http://www.tagminepenge.dk' }),
+				_react2.default.createElement('meta', { property: 'og:title', content: props.meta.title ? props.meta.title : "Online Shopping Website tagminepenge.com" }),
+				_react2.default.createElement('meta', { property: 'og:image', content: props.meta.image ? props.meta.image : "http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png" }),
+				_react2.default.createElement('meta', { property: 'og:description', content: props.meta.description ? props.meta.description : "Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med hæsblæsende action, som finder sted i selveste Ungarn." }),
+				_react2.default.createElement('meta', { property: 'og:url', content: props.meta.url ? props.meta.url : "http://www.tagminepenge.dk" }),
 				_react2.default.createElement('meta', { name: 'og:locale', content: 'Denmark' }),
 				_react2.default.createElement('meta', { property: 'fb:app_id', content: '140586622674265' }),
 				_react2.default.createElement(
 					'title',
 					null,
-					props.pageTitle ? props.pageTitle : "TAG MINE PENGE!"
+					props.meta.title ? props.meta.title : "Online Shopping Website tagminepenge.com"
 				),
 				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
 				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
@@ -59325,7 +59325,7 @@
 			key: 'changeprop',
 			value: function changeprop(productLink, e) {
 				//console.log(productLink);
-				console.log(this.props.data);
+				//console.log(this.props);
 				this.props.meta.title = this.props.data.title;
 				this.props.meta.description = this.props.data.content.brief;
 				this.props.meta.image = this.props.data.image.url;

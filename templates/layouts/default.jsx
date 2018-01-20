@@ -11,14 +11,14 @@ const Default = props => {
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 			<meta property ="og:type" content="website"/>
 			<meta property ="twitter:card" content="summary" />
-			<meta property="og:title" content="Online Shopping Website tagminepenge.com"/>
-			<meta property="og:image" content="http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png" />
-			<meta property="og:description" content="Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med hæsblæsende action, som finder sted i selveste Ungarn." />
-			<meta property="og:url" content="http://www.tagminepenge.dk" />
+			<meta property="og:title" content={props.meta.title?props.meta.title:"Online Shopping Website tagminepenge.com"}/>
+			<meta property="og:image" content={props.meta.image?props.meta.image:"http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png"}/>
+			<meta property="og:description" content={props.meta.description?props.meta.description:"Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med hæsblæsende action, som finder sted i selveste Ungarn."} />
+			<meta property="og:url" content={props.meta.url?props.meta.url:"http://www.tagminepenge.dk"} />
 			<meta name="og:locale" content="Denmark" />
-					<meta property="fb:app_id" content="140586622674265" />
-							
-			<title>{props.pageTitle?props.pageTitle:"TAG MINE PENGE!"}</title>
+			<meta property="fb:app_id" content="140586622674265" />
+
+			<title>{props.meta.title?props.meta.title:"Online Shopping Website tagminepenge.com"}</title>
 
 			<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
 
