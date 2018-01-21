@@ -59593,16 +59593,7 @@
 					_react2.default.createElement(
 						'div',
 						{ className: 'share' },
-						_react2.default.createElement(
-							'div',
-							{ className: 'addthis_inline_share_toolbox' },
-							_react2.default.createElement(
-								'a',
-								{ className: 'addthis_button_facebook',
-									'data-url': productLink, 'data-title': data.title, 'data-description': (0, _common.getPlainText)(data.content.brief), 'data-media': imageUrl },
-								_react2.default.createElement('i', { className: 'ico ico-facebook' })
-							)
-						)
+						_react2.default.createElement('div', { className: 'addthis_inline_share_toolbox', 'data-url': productLink, 'data-title': data.title, 'data-description': (0, _common.getPlainText)(data.content.brief), 'data-media': imageUrl, onClick: this.changeprop.bind(this, productLink) })
 					)
 				)
 			)
