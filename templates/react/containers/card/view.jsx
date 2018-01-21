@@ -1,5 +1,10 @@
 import React from 'react';
 import styles from "./style.scss";
+import {
+	ShareButtons,
+	ShareCounts,
+	generateShareIcon
+} from 'react-share';
 import {getPlainText,getBackgroundImageStyle} from '../../utils/common'
 var view = function() {
 	const {data,user} = this.props;
@@ -10,7 +15,8 @@ var view = function() {
 	}
 	const presentInWishList = this.presentInWishList();
 	const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
-
+	const FacebookIcon = generateShareIcon('facebook');
+	const {FacebookShareButton} = ShareButtons;
 	var divStyle = {
 		fontSize:'15px',
 	  fontFamily:'open sans condensed',
@@ -58,7 +64,11 @@ var view = function() {
 						<button className="btn btn-yellow checkout" style={divStyle}>Tjek det ud</button>
 					</a>
 					<div className="share">
-						<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl} onClick={this.changeprop.bind(this,productLink)}/>
+						<FacebookShareButton url={productLink} title={data.title}>
+							<FacebookIcon size={32} round />
+						</FacebookShareButton>
+						<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl} onClick={this.changeprop.bind(this,productLink)}
+						/>
 						{/*<div className="addthis_inline_share_toolbox">*/}
 							{/*<a className="addthis_button_facebook"*/}
 							   {/*data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl} >*/}

@@ -18,7 +18,7 @@ const Default = props => {
 			<meta name="og:locale" content="Denmark" />
 			<meta property="fb:app_id" content="140586622674265" />
 
-			<title>{props.meta.title?props.meta.title:"Online Shopping Website tagminepenge.com"}</title>
+			<title>{props.meta.title?props.meta.title:"Tagmine Penge"}</title>
 
 			<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
 
