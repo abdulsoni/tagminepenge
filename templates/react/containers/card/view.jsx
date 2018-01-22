@@ -105,7 +105,7 @@ var view = function() {
 							</div>
 						</div>
 						
-						{/*<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl} onClick={this.changeprop.bind(this,productLink)}*/}
+						{/*<div className="addthis_inline_share_toolbox" data-url = {facebookProductLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl} onClick={this.changeprop.bind(this,productLink)}*/}
 						{/*/>*/}
 						{/*<div className="addthis_inline_share_toolbox">*/}
 							{/*<a className="addthis_button_facebook"*/}
