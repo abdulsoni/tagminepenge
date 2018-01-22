@@ -12,10 +12,7 @@ const Default = props => {
 			<meta property ="og:type" content="website"/>
 			<meta property ="twitter:card" content="summary" />
 			<meta property="og:title" content="Online Shopping Website tagminepenge.com"/>
-			<meta property="og:image" content="http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png"/>
-			<meta property="og:description" content="Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med hæsblæsende action, som finder sted i selveste Ungarn." />
-			<meta property="og:url" content="http://www.tagminepenge.dk" />
-			<meta property="fb:app_id" content="140586622674265" />
+
 
 			<title>{props.meta.title?props.meta.title:"Tagmine Penge"}</title>
 

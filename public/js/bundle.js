@@ -48199,10 +48199,6 @@
 				_react2.default.createElement('meta', { property: 'og:type', content: 'website' }),
 				_react2.default.createElement('meta', { property: 'twitter:card', content: 'summary' }),
 				_react2.default.createElement('meta', { property: 'og:title', content: 'Online Shopping Website tagminepenge.com' }),
-				_react2.default.createElement('meta', { property: 'og:image', content: 'http://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png' }),
-				_react2.default.createElement('meta', { property: 'og:description', content: 'Tagminepenge is online leading shopping sucha as En historisk oplevelse pakket med h\xE6sbl\xE6sende action, som finder sted i selveste Ungarn.' }),
-				_react2.default.createElement('meta', { property: 'og:url', content: 'http://www.tagminepenge.dk' }),
-				_react2.default.createElement('meta', { property: 'fb:app_id', content: '140586622674265' }),
 				_react2.default.createElement(
 					'title',
 					null,
@@ -59487,15 +59483,32 @@
 		if (data.image) {
 			imageUrl = data.image.url;
 		}
+		var title = "<h1>" + data.title.split(" ").join("-") + "</h1>";
+		var text = "<p>" + data.content.brief + "</p>";
+		var ShareText = title.concat(text);
+		console.log(ShareText);
 		var presentInWishList = this.presentInWishList();
 		var productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + _id + "/" + data.title.split(" ").join("-");
+		var facebookProductLink = "http://www.tagminepenge.dk/produkt/" + _id + "/" + data.title.split(" ").join("-");
 		var FacebookIcon = (0, _reactShare.generateShareIcon)('facebook');
-		var FacebookShareButton = _reactShare.ShareButtons.FacebookShareButton;
+		var TwitterIcon = (0, _reactShare.generateShareIcon)('twitter');
+		var PinterestIcon = (0, _reactShare.generateShareIcon)('pinterest');
+		var VKIcon = (0, _reactShare.generateShareIcon)('vk');
+		var FacebookShareButton = _reactShare.ShareButtons.FacebookShareButton,
+		    TwitterShareButton = _reactShare.ShareButtons.TwitterShareButton,
+		    PinterestShareButton = _reactShare.ShareButtons.PinterestShareButton,
+		    VKShareButton = _reactShare.ShareButtons.VKShareButton;
 	
 		var divStyle = {
 			fontSize: '15px',
 			fontFamily: 'open sans condensed',
 			texttransform: 'uppercase'
+		};
+		console.log(productLink);
+		var IconStyle = {
+			'width': '130px',
+			'marginRight': '7px',
+			'paddingTop': '3px'
 		};
 		return _react2.default.createElement(
 			'div',
@@ -59597,12 +59610,41 @@
 						'div',
 						{ className: 'share' },
 						_react2.default.createElement(
-							FacebookShareButton,
-							{ url: productLink, title: data.title },
-							_react2.default.createElement(FacebookIcon, { size: 32, round: true })
-						),
-						_react2.default.createElement('div', { className: 'addthis_inline_share_toolbox', 'data-url': productLink, 'data-title': data.title, 'data-description': (0, _common.getPlainText)(data.content.brief), 'data-media': imageUrl, onClick: this.changeprop.bind(this, productLink)
-						})
+							'div',
+							{ className: 'row', style: IconStyle },
+							_react2.default.createElement(
+								'div',
+								{ className: 'col-sm-3' },
+								_react2.default.createElement(
+									FacebookShareButton,
+									{ url: facebookProductLink, quote: ShareText, image: imageUrl },
+									_react2.default.createElement(FacebookIcon, { size: 25, round: false })
+								)
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'col-sm-3' },
+								_react2.default.createElement(
+									TwitterShareButton,
+									{ url: facebookProductLink, title: data.title, via: (0, _common.getPlainText)(data.content.brief), image: imageUrl },
+									_react2.default.createElement(TwitterIcon, { size: 25, round: false })
+								)
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'col-sm-3' },
+								_react2.default.createElement(
+									PinterestShareButton,
+									{ url: facebookProductLink, description: (0, _common.getPlainText)(data.content.brief), media: imageUrl },
+									_react2.default.createElement(PinterestIcon, { size: 25, round: false })
+								)
+							),
+							_react2.default.createElement(
+								'div',
+								{ className: 'col-sm-3' },
+								_react2.default.createElement('div', { className: 'addthis_inline_share_toolbox' })
+							)
+						)
 					)
 				)
 			)

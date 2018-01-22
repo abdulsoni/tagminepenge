@@ -8,19 +8,34 @@ import {
 import {getPlainText,getBackgroundImageStyle} from '../../utils/common'
 var view = function() {
 	const {data,user} = this.props;
+	
 	const {_id} = data;
 	let imageUrl = null;
 	if(data.image){
 		imageUrl = data.image.url;
 	}
+	let title="<h1>"+data.title.split(" ").join("-")+"</h1>";
+	let text="<p>"+data.content.brief+"</p>";
+	let ShareText = title.concat(text);
+	console.log(ShareText);
 	const presentInWishList = this.presentInWishList();
-	const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
+	 const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
+	const facebookProductLink = "http://www.tagminepenge.dk/produkt/"+_id+"/"+data.title.split(" ").join("-");
 	const FacebookIcon = generateShareIcon('facebook');
-	const {FacebookShareButton} = ShareButtons;
+	const TwitterIcon = generateShareIcon('twitter');
+	const PinterestIcon = generateShareIcon('pinterest');
+	const VKIcon = generateShareIcon('vk');
+	const {FacebookShareButton,TwitterShareButton,PinterestShareButton,VKShareButton} = ShareButtons;
 	var divStyle = {
 		fontSize:'15px',
 	  fontFamily:'open sans condensed',
 	  texttransform:'uppercase'
+	};
+	console.log(productLink);
+	var IconStyle={
+		'width':'130px',
+	'marginRight': '7px',
+	'paddingTop':'3px'
 	};
 	return (
 		<div className="card">
@@ -63,12 +78,34 @@ var view = function() {
 					<a  href={data.link} target="_blank"  className="checkout-btn">
 						<button className="btn btn-yellow checkout" style={divStyle}>Tjek det ud</button>
 					</a>
-					<div className="share">
-						<FacebookShareButton url={productLink} title={data.title}>
-							<FacebookIcon size={32} round />
-						</FacebookShareButton>
-						<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl} onClick={this.changeprop.bind(this,productLink)}
-						/>
+					<div className="share" >
+						<div className="row" style={IconStyle}>
+							<div className="col-sm-3">
+								<FacebookShareButton url={facebookProductLink} quote={ShareText} image={imageUrl}>
+									<FacebookIcon size={25} round={false} />
+								</FacebookShareButton>
+							</div>
+							<div className="col-sm-3">
+								<TwitterShareButton url={facebookProductLink} title={data.title} via={getPlainText(data.content.brief)} image={imageUrl}>
+									<TwitterIcon size={25} round={false} />
+								</TwitterShareButton>
+							</div>
+							<div className="col-sm-3">
+								<PinterestShareButton url={facebookProductLink}  description={getPlainText(data.content.brief)} media={imageUrl}>
+									<PinterestIcon size={25} round={false} />
+								</PinterestShareButton>
+							</div>
+							<div className="col-sm-3">
+								{/*<VKShareButton url={facebookProductLink} quote={ShareText} quote={getPlainText(data.content.brief)} image={imageUrl}>*/}
+									{/*<VKIcon size={25} round={false} />*/}
+								{/*</VKShareButton>*/}
+								<div className="addthis_inline_share_toolbox">
+								</div>
+							</div>
+						</div>
+						
+						{/*<div className="addthis_inline_share_toolbox" data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl} onClick={this.changeprop.bind(this,productLink)}*/}
+						{/*/>*/}
 						{/*<div className="addthis_inline_share_toolbox">*/}
 							{/*<a className="addthis_button_facebook"*/}
 							   {/*data-url = {productLink} data-title={data.title} data-description={getPlainText(data.content.brief)} data-media={imageUrl} >*/}
