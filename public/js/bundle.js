@@ -59476,17 +59476,18 @@
 		    user = _props.user;
 		var _id = data._id;
 	
+		var id = _id;
 		var imageUrl = null;
 		if (data.image) {
 			imageUrl = data.image.url;
 		}
-		var title = "<h1>" + data.title.split(" ").join("-") + "</h1>";
+		var title = data.title.split(" ").join("-");
 		var text = "<p>" + data.content.brief + "</p>";
 		var ShareText = title.concat(text);
 		console.log(ShareText);
 		var presentInWishList = this.presentInWishList();
 		var productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + _id + "/" + data.title.split(" ").join("-");
-		var facebookProductLink = "http://www.tagminepenge.dk/produkt/" + _id + "/" + data.title.split(" ").join("-");
+		var facebookProductLink = "http://www.tagminepenge.dk/produkt/" + id + "/" + title;
 		var FacebookIcon = (0, _reactShare.generateShareIcon)('facebook');
 		var TwitterIcon = (0, _reactShare.generateShareIcon)('twitter');
 		var PinterestIcon = (0, _reactShare.generateShareIcon)('pinterest');

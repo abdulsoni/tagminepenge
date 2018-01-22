@@ -10,17 +10,18 @@ var view = function() {
 	const {data,user} = this.props;
 	
 	const {_id} = data;
+	let id=_id;
 	let imageUrl = null;
 	if(data.image){
 		imageUrl = data.image.url;
 	}
-	let title="<h1>"+data.title.split(" ").join("-")+"</h1>";
+	let title=data.title.split(" ").join("-");
 	let text="<p>"+data.content.brief+"</p>";
 	let ShareText = title.concat(text);
 	console.log(ShareText);
 	const presentInWishList = this.presentInWishList();
 	 const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
-	const facebookProductLink = "http://www.tagminepenge.dk/produkt/"+_id+"/"+data.title.split(" ").join("-");
+	const facebookProductLink = "http://www.tagminepenge.dk/produkt/"+id+"/"+title;
 	const FacebookIcon = generateShareIcon('facebook');
 	const TwitterIcon = generateShareIcon('twitter');
 	const PinterestIcon = generateShareIcon('pinterest');
