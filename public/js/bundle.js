@@ -48196,9 +48196,6 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
-				_react2.default.createElement('meta', { property: 'og:type', content: 'website' }),
-				_react2.default.createElement('meta', { property: 'twitter:card', content: 'summary' }),
-				_react2.default.createElement('meta', { property: 'og:title', content: 'Online Shopping Website tagminepenge.com' }),
 				_react2.default.createElement(
 					'title',
 					null,
@@ -59617,7 +59614,7 @@
 								{ className: 'col-sm-3' },
 								_react2.default.createElement(
 									FacebookShareButton,
-									{ url: facebookProductLink, quote: ShareText, image: imageUrl },
+									{ url: facebookProductLink, title: data.title, description: (0, _common.getPlainText)(data.content.brief), media: imageUrl },
 									_react2.default.createElement(FacebookIcon, { size: 25, round: false })
 								)
 							),

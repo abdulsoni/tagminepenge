@@ -80,8 +80,8 @@ var view = function() {
 					</a>
 					<div className="share" >
 						<div className="row" style={IconStyle}>
-							<div className="col-sm-3">
-								<FacebookShareButton url={facebookProductLink} quote={ShareText} image={imageUrl}>
+				            <div className="col-sm-3">
+								<FacebookShareButton url={facebookProductLink} title={data.title} description={getPlainText(data.content.brief)} media={imageUrl}>
 									<FacebookIcon size={25} round={false} />
 								</FacebookShareButton>
 							</div>

@@ -9,9 +9,7 @@ const Default = props => {
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-			<meta property ="og:type" content="website"/>
-			<meta property ="twitter:card" content="summary" />
-			<meta property="og:title" content="Online Shopping Website tagminepenge.com"/>
+		
 
 
 			<title>{props.meta.title?props.meta.title:"Tagmine Penge"}</title>
