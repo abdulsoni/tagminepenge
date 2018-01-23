@@ -79,7 +79,7 @@ keystone.set('locals', {
 	  },
 	  url:null,
 	  image:{
-	  	url:null,
+	  	url:'http://res.cloudinary.com/tagminepenge/image/upload/v1516602897/bhufrddrh6qji2gq8anz.png',
 	  }
 	
 });
