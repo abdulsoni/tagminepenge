@@ -59488,7 +59488,7 @@
 		console.log(ShareText);
 		var presentInWishList = this.presentInWishList();
 		var productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + _id + "/" + data.title.split(" ").join("-");
-		var facebookProductLink = "http://www.tagminepenge.dk/produkt/" + id + "/" + title;
+		var facebookProductLink = "www.tagminepenge.dk/produkt/" + id + "/" + title;
 		var FacebookIcon = (0, _reactShare.generateShareIcon)('facebook');
 		var TwitterIcon = (0, _reactShare.generateShareIcon)('twitter');
 		var PinterestIcon = (0, _reactShare.generateShareIcon)('pinterest');

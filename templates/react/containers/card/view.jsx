@@ -21,7 +21,7 @@ var view = function() {
 	console.log(ShareText);
 	const presentInWishList = this.presentInWishList();
 	 const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
-	const facebookProductLink = "http://www.tagminepenge.dk/produkt/"+id+"/"+title;
+	const facebookProductLink = "www.tagminepenge.dk/produkt/"+id+"/"+title;
 	const FacebookIcon = generateShareIcon('facebook');
 	const TwitterIcon = generateShareIcon('twitter');
 	const PinterestIcon = generateShareIcon('pinterest');
