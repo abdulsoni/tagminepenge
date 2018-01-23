@@ -48196,7 +48196,7 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
-				_react2.default.createElement('meta', { property: 'og:url', content: props.url ? props.url : "" }),
+				_react2.default.createElement('meta', { property: 'og:url', content: props.url ? props.url : "https://www.tagminepenge.dk" }),
 				_react2.default.createElement('meta', { property: 'og:title', content: props.title ? props.title : "" }),
 				_react2.default.createElement('meta', { property: 'og:type', content: 'article' }),
 				_react2.default.createElement('meta', { property: 'og:image', content: props.moreImages ? moreImages : "" }),
@@ -48204,7 +48204,7 @@
 				_react2.default.createElement(
 					'title',
 					null,
-					props.title ? props.title : "Tagmine Penge"
+					props.title ? props.title : ""
 				),
 				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
 				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
@@ -59507,7 +59507,8 @@
 			fontFamily: 'open sans condensed',
 			texttransform: 'uppercase'
 		};
-		console.log(productLink);
+		var NewImageUrl = imageUrl.replace("http", "https");
+		//console.log(res);
 		var IconStyle = {
 			'width': '90px',
 			'marginRight': '7px',
@@ -59534,7 +59535,7 @@
 					_react2.default.createElement(
 						'a',
 						{ target: 'blank', href: data.link },
-						_react2.default.createElement('span', { style: (0, _common.getBackgroundImageStyle)(imageUrl), className: 'image' })
+						_react2.default.createElement('span', { style: (0, _common.getBackgroundImageStyle)(NewImageUrl), className: 'image' })
 					),
 					user ? _react2.default.createElement(
 						'button',
@@ -59620,7 +59621,7 @@
 								{ className: 'col-sm-4' },
 								_react2.default.createElement(
 									FacebookShareButton,
-									{ url: facebookProductLink, quote: data.title, text: (0, _common.getPlainText)(data.content.brief), image: imageUrl },
+									{ url: facebookProductLink, quote: data.title + (0, _common.getPlainText)(data.content.brief) + NewImageUrl, image: NewImageUrl },
 									_react2.default.createElement(FacebookIcon, { size: 25, round: false })
 								)
 							),
@@ -59629,7 +59630,7 @@
 								{ className: 'col-sm-4' },
 								_react2.default.createElement(
 									TwitterShareButton,
-									{ url: facebookProductLink, title: data.title, via: (0, _common.getPlainText)(data.content.brief), image: imageUrl },
+									{ url: facebookProductLink, title: data.title, via: (0, _common.getPlainText)(data.content.brief), image: NewImageUrl },
 									_react2.default.createElement(TwitterIcon, { size: 25, round: false })
 								)
 							),
@@ -59638,7 +59639,7 @@
 								{ className: 'col-sm-4' },
 								_react2.default.createElement(
 									PinterestShareButton,
-									{ url: facebookProductLink, description: (0, _common.getPlainText)(data.content.brief), media: imageUrl },
+									{ url: facebookProductLink, description: (0, _common.getPlainText)(data.content.brief), media: NewImageUrl },
 									_react2.default.createElement(PinterestIcon, { size: 25, round: false })
 								)
 							)

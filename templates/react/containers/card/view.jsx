@@ -32,7 +32,8 @@ var view = function() {
 	  fontFamily:'open sans condensed',
 	  texttransform:'uppercase'
 	};
-	console.log(productLink);
+	var NewImageUrl = imageUrl.replace("http", "https");
+	//console.log(res);
 	var IconStyle={
 		'width':'90px',
 	'marginRight': '7px',
@@ -45,7 +46,7 @@ var view = function() {
 			</div>
 			<div className="card-body">
 				<div className="product-image">
-					<a target="blank" href={data.link}><span style = {getBackgroundImageStyle(imageUrl)} className="image"></span></a>
+					<a target="blank" href={data.link}><span style = {getBackgroundImageStyle(NewImageUrl)} className="image"></span></a>
 					{
 						user?(
 							<button onClick={this.addToWishList.bind(this)} className="btn btn-yellow save-btn">{!presentInWishList?"GEM":"Fjern"}</button>
@@ -82,17 +83,17 @@ var view = function() {
 					<div className="share" >
 						<div className="row" style={IconStyle}>
 				            <div className="col-sm-4">
-								<FacebookShareButton url={facebookProductLink} quote={data.title} text={getPlainText(data.content.brief)} image={imageUrl}>
+								<FacebookShareButton url={facebookProductLink} quote={data.title+getPlainText(data.content.brief)+NewImageUrl} image={NewImageUrl}>
 									<FacebookIcon size={25} round={false} />
 								</FacebookShareButton>
 							</div>
 							<div className="col-sm-4">
-								<TwitterShareButton url={facebookProductLink} title={data.title} via={getPlainText(data.content.brief)} image={imageUrl}>
+								<TwitterShareButton url={facebookProductLink} title={data.title} via={getPlainText(data.content.brief)} image={NewImageUrl}>
 									<TwitterIcon size={25} round={false} />
 								</TwitterShareButton>
 							</div>
 							<div className="col-sm-4">
-								<PinterestShareButton url={facebookProductLink}  description={getPlainText(data.content.brief)} media={imageUrl}>
+								<PinterestShareButton url={facebookProductLink}  description={getPlainText(data.content.brief)} media={NewImageUrl}>
 									<PinterestIcon size={25} round={false} />
 								</PinterestShareButton>
 							</div>
