@@ -48196,6 +48196,7 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
+				_react2.default.createElement('meta', { property: 'og:url', content: 'www.tagminepenge.dk/produkt/5a3104b1962e4a0004abbea7/Intelligent-Seng' }),
 				_react2.default.createElement('meta', { property: 'og:title', content: props.title ? props.title : "Tagmine Penge" }),
 				_react2.default.createElement(
 					'title',
@@ -59488,7 +59489,7 @@
 		console.log(ShareText);
 		var presentInWishList = this.presentInWishList();
 		var productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + _id + "/" + data.title.split(" ").join("-");
-		var facebookProductLink = "www.tagminepenge.dk/produkt/" + id + "/" + title;
+		var facebookProductLink = "www.tagminepenge.dk/produkt/5a3104b1962e4a0004abbea7/Intelligent-Seng";
 		var FacebookIcon = (0, _reactShare.generateShareIcon)('facebook');
 		var TwitterIcon = (0, _reactShare.generateShareIcon)('twitter');
 		var PinterestIcon = (0, _reactShare.generateShareIcon)('pinterest');
@@ -59616,7 +59617,7 @@
 								{ className: 'col-sm-3' },
 								_react2.default.createElement(
 									FacebookShareButton,
-									{ url: facebookProductLink, title: data.title, description: (0, _common.getPlainText)(data.content.brief), media: imageUrl },
+									{ url: '{facebookProductLink}', title: data.title, description: (0, _common.getPlainText)(data.content.brief), media: imageUrl },
 									_react2.default.createElement(FacebookIcon, { size: 25, round: false })
 								)
 							),
