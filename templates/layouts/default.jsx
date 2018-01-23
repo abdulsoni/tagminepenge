@@ -2,6 +2,7 @@ import React from 'react';
 import FlashMessages from '../mixins/flash-messages';
 
 const Default = props => {
+
 	console.log(props);
 	return (
 		<html>
@@ -9,8 +10,10 @@ const Default = props => {
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-			<meta property="og:url"           content="www.tagminepenge.dk/produkt/5a3104b1962e4a0004abbea7/Intelligent-Seng"/>
-		    <meta property="og:title" content={props.title?props.title:"Tagmine Penge"}/>
+			<meta property="og:url" content={props.url?"http://localhost:3000"+props.url:""}/>
+		    <meta property="og:title" content={props.title?props.title:""}/>
+		    <meta property="og:image" content={props.image.url?props.image.url:""}/>
+		    <meta property="og:description" content={props.content.brief?props.content.brief:""}/>
 		
 	
 
@@ -70,6 +73,7 @@ const Default = props => {
 			// - Include template-specific javascript files by extending the js block
 			props.js
 		}
+
 		
 		</body>
 		</html>
