@@ -101,3 +101,10 @@ export function toFormData(obj, form, namespace) {
 export function isEnterPress(event) {
 	return event.which == 13;
 }
+
+export function AddmetaTag(NewImageUrl){
+	//console.log(NewImageUrl);
+	$('#MetaImage').attr('content', NewImageUrl);
+	let value=$('#MetaImage').attr('content');
+	alert(value);
+}

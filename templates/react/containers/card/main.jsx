@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { findDOMNode } from 'react-dom';
+import $ from 'jquery';
 import ComponentView from './view';
 import axios from 'axios';
 import { connect } from 'react-redux';
@@ -53,7 +55,10 @@ class Main extends Component {
 		}
 		return user.savedProducts.indexOf(data._id)!=-1;
 	}
-
+   	AddmetaTag(){
+		const el = findDOMNode(this.refs.MetaImage);
+		console.log(el);
+	}
 	/**
 	 * Add/Remove to wishlist- Add/Remove logic is handled by server
 	 */

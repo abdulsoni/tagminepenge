@@ -37,7 +37,7 @@ export default class Main extends Component {
 		});
 		this.setState({hidden : ""});
 	}
-	
+
 	/**
 	 * Render the view
 	 * @returns {*}

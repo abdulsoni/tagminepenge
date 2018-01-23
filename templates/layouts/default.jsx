@@ -1,21 +1,22 @@
 import React from 'react';
 import FlashMessages from '../mixins/flash-messages';
-
+import MetaTags from 'react-meta-tags';
 const Default = props => {
-	console.log(props);
+	
 	return (
 		<html>
 		<head>
+	
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 			<meta property="og:url" content={props.url?props.url:"https://www.tagminepenge.dk"} />
-            <meta property="og:title" content={props.title?props.title:""}  />
+            <meta property="og:title" content="My new title"  />
 			<meta property="og:type" content="article" />
-			<meta property="og:image" content={props.moreImages?moreImages:""} />
-			<meta property="og:description" content={props.description?props.description:""}  />
+			<meta property="og:image" content="abdul"/>
+			<meta property="og:description" content=""  />
 			
-  
+    
 			<title>{props.title?props.title:""}</title>
 
 			<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>

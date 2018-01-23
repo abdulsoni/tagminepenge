@@ -72,12 +72,6 @@ keystone.set('locals', {
 	env: keystone.get('env'),
 	utils: keystone.utils,
 	editable: keystone.content.editable,
-	meta:{
-	  title:null,
-	  description:null,
-	  url:null,
-	  image:null
-	},
 });
 
 // Load your project's Routes

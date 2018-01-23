@@ -5,7 +5,8 @@ import {
 	ShareCounts,
 	generateShareIcon
 } from 'react-share';
-import {getPlainText,getBackgroundImageStyle} from '../../utils/common'
+import {getPlainText,getBackgroundImageStyle} from '../../utils/common';
+import {AddmetaTag} from '../../utils/web';
 var view = function() {
 	const {data,user} = this.props;
 	
@@ -18,7 +19,7 @@ var view = function() {
 	let title=data.title.split(" ").join("-");
 	let text="<p>"+data.content.brief+"</p>";
 	let ShareText = title.concat(text);
-	console.log(ShareText);
+	//console.log(ShareText);
 	const presentInWishList = this.presentInWishList();
 	 const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
 	const facebookProductLink = "https://www.tagminepenge.dk/produkt/"+id+"/"+title;
@@ -83,7 +84,7 @@ var view = function() {
 					<div className="share" >
 						<div className="row" style={IconStyle}>
 				            <div className="col-sm-4">
-								<FacebookShareButton url={facebookProductLink} quote={data.title+getPlainText(data.content.brief)+NewImageUrl} image={NewImageUrl}>
+								<FacebookShareButton url={facebookProductLink} quote={data.title+getPlainText(data.content.brief)+NewImageUrl} image={NewImageUrl}  onClick={this.AddmetaTag.bind(this)}>
 									<FacebookIcon size={25} round={false} />
 								</FacebookShareButton>
 							</div>

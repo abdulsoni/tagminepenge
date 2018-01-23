@@ -6,9 +6,15 @@ import App from '../react/containers/app';
 import Routes from '../react/routes';
 const store = createStore(initialState);
 const Index = props => {
-	
+	console.log(props);
 	// props.meta.title="abdul";
 	// console.log(props.meta.title);
+	let meta={
+	  title:null,
+	  description:null,
+	  url:null,
+	  image:null
+	};
 	let url = props.url;
 	let route = null;
 	url = "/"+url.split("/")[1];
@@ -19,7 +25,7 @@ const Index = props => {
 		}
 	}
 	return (
-		<Default {...props}>
+		<Default {...props} meta={meta}>
 			<Provider store={store}>
 				<App routeInfo = {route} {...props}></App>
 			</Provider>
