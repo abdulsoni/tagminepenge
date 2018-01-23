@@ -48196,10 +48196,11 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
+				_react2.default.createElement('meta', { property: 'og:title', content: props.title ? props.title : "Tagmine Penge" }),
 				_react2.default.createElement(
 					'title',
 					null,
-					props.meta.title ? props.meta.title : "Tagmine Penge"
+					props.title ? props.title : "Tagmine Penge"
 				),
 				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
 				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
