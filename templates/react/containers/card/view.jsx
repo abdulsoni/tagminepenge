@@ -21,7 +21,7 @@ var view = function() {
 	console.log(ShareText);
 	const presentInWishList = this.presentInWishList();
 	 const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
-	const facebookProductLink = "http://www.tagminepenge.dk/produkt/"+id+"/"+title;
+	const facebookProductLink = "https://www.tagminepenge.dk/produkt/"+id+"/"+title;
 	const FacebookIcon = generateShareIcon('facebook');
 	const TwitterIcon = generateShareIcon('twitter');
 	const PinterestIcon = generateShareIcon('pinterest');
@@ -34,7 +34,7 @@ var view = function() {
 	};
 	console.log(productLink);
 	var IconStyle={
-		'width':'130px',
+		'width':'90px',
 	'marginRight': '7px',
 	'paddingTop':'3px'
 	};
@@ -81,27 +81,20 @@ var view = function() {
 					</a>
 					<div className="share" >
 						<div className="row" style={IconStyle}>
-				            <div className="col-sm-3">
-								<FacebookShareButton url={facebookProductLink} title={data.title} description={getPlainText(data.content.brief)} media={imageUrl}>
+				            <div className="col-sm-4">
+								<FacebookShareButton url={facebookProductLink} quote={data.title} description={getPlainText(data.content.brief)} media={imageUrl}>
 									<FacebookIcon size={25} round={false} />
 								</FacebookShareButton>
 							</div>
-							<div className="col-sm-3">
+							<div className="col-sm-4">
 								<TwitterShareButton url={facebookProductLink} title={data.title} via={getPlainText(data.content.brief)} image={imageUrl}>
 									<TwitterIcon size={25} round={false} />
 								</TwitterShareButton>
 							</div>
-							<div className="col-sm-3">
+							<div className="col-sm-4">
 								<PinterestShareButton url={facebookProductLink}  description={getPlainText(data.content.brief)} media={imageUrl}>
 									<PinterestIcon size={25} round={false} />
 								</PinterestShareButton>
-							</div>
-							<div className="col-sm-3">
-								{/*<VKShareButton url={facebookProductLink} quote={ShareText} quote={getPlainText(data.content.brief)} image={imageUrl}>*/}
-									{/*<VKIcon size={25} round={false} />*/}
-								{/*</VKShareButton>*/}
-								<div className="addthis_inline_share_toolbox">
-								</div>
 							</div>
 						</div>
 						

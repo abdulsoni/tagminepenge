@@ -48196,8 +48196,11 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
+				_react2.default.createElement('meta', { property: 'og:url', content: props.url ? props.url : "" }),
 				_react2.default.createElement('meta', { property: 'og:title', content: props.title ? props.title : "" }),
 				_react2.default.createElement('meta', { property: 'og:type', content: 'article' }),
+				_react2.default.createElement('meta', { property: 'og:image', content: props.image ? props.image : "" }),
+				_react2.default.createElement('meta', { property: 'og:description', content: props.message ? props.message : "" }),
 				_react2.default.createElement(
 					'title',
 					null,
@@ -59489,7 +59492,7 @@
 		console.log(ShareText);
 		var presentInWishList = this.presentInWishList();
 		var productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + _id + "/" + data.title.split(" ").join("-");
-		var facebookProductLink = "http://www.tagminepenge.dk/produkt/" + id + "/" + title;
+		var facebookProductLink = "https://www.tagminepenge.dk/produkt/" + id + "/" + title;
 		var FacebookIcon = (0, _reactShare.generateShareIcon)('facebook');
 		var TwitterIcon = (0, _reactShare.generateShareIcon)('twitter');
 		var PinterestIcon = (0, _reactShare.generateShareIcon)('pinterest');
@@ -59506,7 +59509,7 @@
 		};
 		console.log(productLink);
 		var IconStyle = {
-			'width': '130px',
+			'width': '90px',
 			'marginRight': '7px',
 			'paddingTop': '3px'
 		};
@@ -59614,16 +59617,16 @@
 							{ className: 'row', style: IconStyle },
 							_react2.default.createElement(
 								'div',
-								{ className: 'col-sm-3' },
+								{ className: 'col-sm-4' },
 								_react2.default.createElement(
 									FacebookShareButton,
-									{ url: facebookProductLink, title: data.title, description: (0, _common.getPlainText)(data.content.brief), media: imageUrl },
+									{ url: facebookProductLink, quote: data.title, description: (0, _common.getPlainText)(data.content.brief), media: imageUrl },
 									_react2.default.createElement(FacebookIcon, { size: 25, round: false })
 								)
 							),
 							_react2.default.createElement(
 								'div',
-								{ className: 'col-sm-3' },
+								{ className: 'col-sm-4' },
 								_react2.default.createElement(
 									TwitterShareButton,
 									{ url: facebookProductLink, title: data.title, via: (0, _common.getPlainText)(data.content.brief), image: imageUrl },
@@ -59632,17 +59635,12 @@
 							),
 							_react2.default.createElement(
 								'div',
-								{ className: 'col-sm-3' },
+								{ className: 'col-sm-4' },
 								_react2.default.createElement(
 									PinterestShareButton,
 									{ url: facebookProductLink, description: (0, _common.getPlainText)(data.content.brief), media: imageUrl },
 									_react2.default.createElement(PinterestIcon, { size: 25, round: false })
 								)
-							),
-							_react2.default.createElement(
-								'div',
-								{ className: 'col-sm-3' },
-								_react2.default.createElement('div', { className: 'addthis_inline_share_toolbox' })
 							)
 						)
 					)

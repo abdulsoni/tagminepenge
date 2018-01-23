@@ -9,10 +9,11 @@ const Default = props => {
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-		
+			<meta property="og:url" content={props.url?props.url:""} />
             <meta property="og:title" content={props.title?props.title:""}  />
 			<meta property="og:type" content="article" />
-			
+			<meta property="og:image" content={props.image?props.image:""} />
+			<meta property="og:description" content={props.message?props.message:""}  />
 			
   
 			<title>{props.title?props.title:"Tagmine Penge"}</title>
