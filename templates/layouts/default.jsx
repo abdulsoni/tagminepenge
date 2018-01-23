@@ -18,7 +18,8 @@ const Default = props => {
 		    <meta property="og:title" content={props.title?props.title:""}/>
 		    <meta property="og:image" content={props.image.url?props.image.url:""}/>
 		    <meta property="og:description" content={props.content.brief?props.content.brief:""}/>
-		
+		    <meta property="fb:app_id"          content="1015012577744568" /> 
+			<meta property="og:type"            content="Tagmine Penge" /> 
 	
 
 
