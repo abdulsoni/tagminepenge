@@ -21,7 +21,7 @@ var view = function() {
 	console.log(ShareText);
 	const presentInWishList = this.presentInWishList();
 	 const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
-	const facebookProductLink = "www.tagminepenge.dk/produkt/"+id+"/"+title;
+	const facebookProductLink = "https://www.tagminepenge.dk/produkt/5a3104b1962e4a0004abbea7/Intelligent-Seng";
 	const FacebookIcon = generateShareIcon('facebook');
 	const TwitterIcon = generateShareIcon('twitter');
 	const PinterestIcon = generateShareIcon('pinterest');
