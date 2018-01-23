@@ -48206,10 +48206,12 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
-				_react2.default.createElement('meta', { property: 'og:url', content: props.url ? 'https://www.tagminepenge.dk' + props.url : "" }),
+				_react2.default.createElement('meta', { property: 'og:url', content: props.url ? 'https%3A%2F%2Fwww.tagminepenge.dk' + props.url : "" }),
 				_react2.default.createElement('meta', { property: 'og:title', content: props.title ? props.title : "" }),
 				_react2.default.createElement('meta', { property: 'og:image', content: props.image.url ? props.image.url : "" }),
 				_react2.default.createElement('meta', { property: 'og:description', content: props.content.brief ? props.content.brief : "" }),
+				_react2.default.createElement('meta', { property: 'fb:app_id', content: '1015012577744568' }),
+				_react2.default.createElement('meta', { property: 'og:type', content: 'Tagmine Penge' }),
 				_react2.default.createElement(
 					'title',
 					null,
