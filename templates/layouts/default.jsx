@@ -11,9 +11,9 @@ const Default = props => {
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
 			<meta property="og:url" content={props.url?props.url:""} />
             <meta property="og:title" content={props.title?props.title:""}  />
-			<meta property="og:type" content="article" />
-			<meta property="og:image" content={props.image?props.image:""} />
-			<meta property="og:description" content={props.message?props.message:""}  />
+			<meta property="og:type" content="shoping website" />
+			<meta property="og:image" content={props.moreImages?props.moreImages:""} />
+			<meta property="og:description" content={props.description?props.description:""}  />
 			
   
 			<title>{props.title?props.title:"Tagmine Penge"}</title>
