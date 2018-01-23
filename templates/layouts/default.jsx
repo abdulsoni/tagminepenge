@@ -1,28 +1,20 @@
 import React from 'react';
 import FlashMessages from '../mixins/flash-messages';
-import {getPlainText,getBackgroundImageStyle} from '../react/utils/web';
-import  path  from'path';
+
 const Default = props => {
-    if (typeof window === 'undefined') {
-    global.window = {}
-}
-    console.log(path);
-	//console.log(props);
+	console.log(props);
 	return (
 		<html>
 		<head>
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-			<meta property="og:url" content={props.url?'https://www.tagminepenge.dk'+props.url:""}/>
-		    <meta property="og:title" content={props.title?props.title:""}/>
-		    <meta property="og:image" content={props.image.url?props.image.url:""}/>
-		    <meta property="og:description" content={props.content.brief?props.content.brief:""}/>
-		    <meta property="fb:app_id"          content="1015012577744568" /> 
-			<meta property="og:type"            content="Tagmine Penge" /> 
-	
-
-
+		
+            <meta property="og:title" content={props.title?props.title:""}  />
+			<meta property="og:type" content="article" />
+			
+			
+  
 			<title>{props.title?props.title:"Tagmine Penge"}</title>
 
 			<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
@@ -78,7 +70,6 @@ const Default = props => {
 			// - Include template-specific javascript files by extending the js block
 			props.js
 		}
-
 		
 		</body>
 		</html>

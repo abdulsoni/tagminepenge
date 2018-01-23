@@ -21,7 +21,7 @@ var view = function() {
 	console.log(ShareText);
 	const presentInWishList = this.presentInWishList();
 	 const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
-	const facebookProductLink = "localhost:3000/produkt/5a6585bace261915c0b3812b/Det-Vandrette-Brusebad";
+	const facebookProductLink = "http://www.tagminepenge.dk/produkt/"+id+"/"+title;
 	const FacebookIcon = generateShareIcon('facebook');
 	const TwitterIcon = generateShareIcon('twitter');
 	const PinterestIcon = generateShareIcon('pinterest');
@@ -82,7 +82,7 @@ var view = function() {
 					<div className="share" >
 						<div className="row" style={IconStyle}>
 				            <div className="col-sm-3">
-								<FacebookShareButton url="{productLink}" >
+								<FacebookShareButton url={facebookProductLink} title={data.title} description={getPlainText(data.content.brief)} media={imageUrl}>
 									<FacebookIcon size={25} round={false} />
 								</FacebookShareButton>
 							</div>
