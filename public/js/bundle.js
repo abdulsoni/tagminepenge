@@ -59620,7 +59620,7 @@
 								{ className: 'col-sm-4' },
 								_react2.default.createElement(
 									FacebookShareButton,
-									{ url: facebookProductLink, quote: data.title, description: (0, _common.getPlainText)(data.content.brief), media: imageUrl },
+									{ url: facebookProductLink, quote: data.title, text: (0, _common.getPlainText)(data.content.brief), imagelink: imageUrl },
 									_react2.default.createElement(FacebookIcon, { size: 25, round: false })
 								)
 							),
