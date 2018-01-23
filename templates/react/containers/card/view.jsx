@@ -82,7 +82,7 @@ var view = function() {
 					<div className="share" >
 						<div className="row" style={IconStyle}>
 				            <div className="col-sm-3">
-								<FacebookShareButton url="https://www.tagminepenge.dk/produkt/5a3104b1962e4a0004abbea7/Intelligent-Seng" title={data.title} description={getPlainText(data.content.brief)} media={imageUrl}>
+								<FacebookShareButton url="{facebookProductLink}" title={data.title} description={getPlainText(data.content.brief)} media={imageUrl}>
 									<FacebookIcon size={25} round={false} />
 								</FacebookShareButton>
 							</div>
