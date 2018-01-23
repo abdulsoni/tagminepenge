@@ -1,16 +1,20 @@
 import React from 'react';
 import FlashMessages from '../mixins/flash-messages';
-
+import {getPlainText,getBackgroundImageStyle} from '../react/utils/web';
+import  path  from'path';
 const Default = props => {
-
-	console.log(props);
+    if (typeof window === 'undefined') {
+    global.window = {}
+}
+    console.log(path);
+	//console.log(props);
 	return (
 		<html>
 		<head>
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-			<meta property="og:url" content={props.url?"www.tagminepenge.dk"+props.url:""}/>
+			<meta property="og:url" content={props.url?'https://www.tagminepenge.dk'+props.url:""}/>
 		    <meta property="og:title" content={props.title?props.title:""}/>
 		    <meta property="og:image" content={props.image.url?props.image.url:""}/>
 		    <meta property="og:description" content={props.content.brief?props.content.brief:""}/>

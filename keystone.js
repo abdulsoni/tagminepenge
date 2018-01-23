@@ -75,7 +75,7 @@ keystone.set('locals', {
 	
 	  title:null,
 	  content:{
-	  	brief:null,
+	  	brief:'Det vandrette brusebad tager det at gå i bad til det næste niveau. Seks unikke vandbjælker lader det regne behageligt ned over dig, mens du ligger på en briks af høj kvalitet, som kombineret giver et særligt luksuriøst og afslappende bad.',
 	  },
 	  url:null,
 	  image:{
