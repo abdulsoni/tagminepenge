@@ -48199,8 +48199,8 @@
 				_react2.default.createElement('meta', { property: 'og:url', content: props.url ? props.url : "" }),
 				_react2.default.createElement('meta', { property: 'og:title', content: props.title ? props.title : "" }),
 				_react2.default.createElement('meta', { property: 'og:type', content: 'article' }),
-				_react2.default.createElement('meta', { property: 'og:image', content: props.image ? props.image : "" }),
-				_react2.default.createElement('meta', { property: 'og:description', content: props.message ? props.message : "" }),
+				_react2.default.createElement('meta', { property: 'og:image', content: props.moreImages ? moreImages : "" }),
+				_react2.default.createElement('meta', { property: 'og:description', content: props.description ? props.description : "" }),
 				_react2.default.createElement(
 					'title',
 					null,
@@ -59620,7 +59620,7 @@
 								{ className: 'col-sm-4' },
 								_react2.default.createElement(
 									FacebookShareButton,
-									{ url: facebookProductLink, quote: data.title, text: (0, _common.getPlainText)(data.content.brief), imagelink: imageUrl },
+									{ url: facebookProductLink, quote: data.title, text: (0, _common.getPlainText)(data.content.brief), image: imageUrl },
 									_react2.default.createElement(FacebookIcon, { size: 25, round: false })
 								)
 							),
