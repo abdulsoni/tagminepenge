@@ -27,6 +27,7 @@ var clientSideRoutes = require('../templates/react/routes');
 var _ = require('lodash')
 // Common Middleware
 keystone.pre('routes', middleware.redirectToFullDomainName);
+keystone.pre('routes', middleware.redirectToFullDomain);
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('routes', middleware.populateCategories);
 keystone.pre('routes', middleware.populateFilters);
