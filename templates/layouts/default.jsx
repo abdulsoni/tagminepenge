@@ -2,7 +2,7 @@ import React from 'react';
 import FlashMessages from '../mixins/flash-messages';
 import MetaTags from 'react-meta-tags';
 const Default = props => {
-	
+	console.log(props.children);
 	return (
 		<html>
 		<head>
@@ -10,11 +10,11 @@ const Default = props => {
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-			<meta property="og:url" content={props.url} />
+			<meta property="og:url" content={props.productLink} />
             <meta property="og:title" content={props.title}  />
 			<meta property="og:type" content="article" />
-			<meta property="og:image" content={props.moreImages}/>
-			<meta property="og:description" content={props.content} />
+			<meta property="og:image" content={props.image}/>
+			<meta property="og:description" content={props.description} />
 			
     
 			<title>{props.metaTitle?props.metaTitle:""}</title>

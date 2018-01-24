@@ -48196,7 +48196,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Default = function Default(props) {
-	
+		console.log(props.children);
 		return _react2.default.createElement(
 			'html',
 			null,
@@ -48206,11 +48206,11 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
-				_react2.default.createElement('meta', { property: 'og:url', content: props.url }),
+				_react2.default.createElement('meta', { property: 'og:url', content: props.productLink }),
 				_react2.default.createElement('meta', { property: 'og:title', content: props.title }),
 				_react2.default.createElement('meta', { property: 'og:type', content: 'article' }),
-				_react2.default.createElement('meta', { property: 'og:image', content: props.moreImages }),
-				_react2.default.createElement('meta', { property: 'og:description', content: props.content }),
+				_react2.default.createElement('meta', { property: 'og:image', content: props.image }),
+				_react2.default.createElement('meta', { property: 'og:description', content: props.description }),
 				_react2.default.createElement(
 					'title',
 					null,
