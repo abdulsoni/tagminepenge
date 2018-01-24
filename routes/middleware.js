@@ -206,7 +206,7 @@ if (!req.secure &&
   
 };
 exports.redirectToFullDomain = function(req, res, next) {
-	if(req.get("host") === 'tagminepenge.dk') {
+	if(req.headers.host === 'tagminepenge.dk') {
 		res.redirect(301, `https://${req.get("host")}${req.url}`);
 	}
 	next();
