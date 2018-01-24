@@ -48206,10 +48206,8 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
-				_react2.default.createElement('meta', { property: 'og:url', content: props.productLink }),
 				_react2.default.createElement('meta', { property: 'og:title', content: props.title }),
-				_react2.default.createElement('meta', { property: 'og:type', content: 'article' }),
-				_react2.default.createElement('meta', { property: 'og:image', content: props.image }),
+				_react2.default.createElement('meta', { property: 'og:image', content: props.media }),
 				_react2.default.createElement('meta', { property: 'og:description', content: props.description }),
 				_react2.default.createElement(
 					'title',
