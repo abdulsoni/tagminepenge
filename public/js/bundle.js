@@ -67175,6 +67175,8 @@
 	
 	var _common = __webpack_require__(418);
 	
+	var _reactShare = __webpack_require__(475);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
@@ -67191,12 +67193,36 @@
 		var productLink = null;
 		var imageUrl = null;
 		var productText = config["product-text"] ? config["product-text"].value : null;
+		var id = void 0;
+		var title = void 0;
 		if (typeof window != 'undefined' && product) {
-			productLink = window.location.protocol + "//" + window.location.host + "/product/" + product._id + "/" + product.title.split(" ").join("-");
+			productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + product._id + "/" + product.title.split(" ").join("-");
+			var data = this.props.data;
+	
+			console.log(product);
+			//const {_id} = data;
+			id = product._id;
+			title = product.title.split(" ").join("-");
+	
 			if (product.image) {
 				imageUrl = product.image.url;
 			}
 		}
+		var facebookProductLink = "https://www.tagminepenge.dk/produkt/" + id + "/" + title;
+		var FacebookIcon = (0, _reactShare.generateShareIcon)('facebook');
+		var TwitterIcon = (0, _reactShare.generateShareIcon)('twitter');
+		var PinterestIcon = (0, _reactShare.generateShareIcon)('pinterest');
+		var VKIcon = (0, _reactShare.generateShareIcon)('vk');
+		var FacebookShareButton = _reactShare.ShareButtons.FacebookShareButton,
+		    TwitterShareButton = _reactShare.ShareButtons.TwitterShareButton,
+		    PinterestShareButton = _reactShare.ShareButtons.PinterestShareButton,
+		    VKShareButton = _reactShare.ShareButtons.VKShareButton;
+	
+		var IconStyle = {
+			'width': '90px',
+			'marginRight': '7px',
+			'paddingTop': '3px'
+		};
 		return product ? _react2.default.createElement(
 			'div',
 			{ className: 'product-page' },
@@ -67288,10 +67314,37 @@
 								_react2.default.createElement(
 									'div',
 									{ className: 'share' },
-									_react2.default.createElement('div', {
-										'data-url': productLink, 'data-title': product.title,
-										'data-description': (0, _common.getPlainText)(product.content.brief),
-										'data-media': imageUrl, className: 'addthis_inline_share_toolbox' })
+									_react2.default.createElement(
+										'div',
+										{ className: 'row', style: IconStyle },
+										_react2.default.createElement(
+											'div',
+											{ className: 'col-sm-4' },
+											_react2.default.createElement(
+												FacebookShareButton,
+												{ url: facebookProductLink, quote: product.title, image: imageUrl },
+												_react2.default.createElement(FacebookIcon, { size: 25, round: false })
+											)
+										),
+										_react2.default.createElement(
+											'div',
+											{ className: 'col-sm-4' },
+											_react2.default.createElement(
+												TwitterShareButton,
+												{ url: facebookProductLink, title: product.title, via: (0, _common.getPlainText)(product.content.brief), image: imageUrl },
+												_react2.default.createElement(TwitterIcon, { size: 25, round: false })
+											)
+										),
+										_react2.default.createElement(
+											'div',
+											{ className: 'col-sm-4' },
+											_react2.default.createElement(
+												PinterestShareButton,
+												{ url: facebookProductLink, description: (0, _common.getPlainText)(product.content.brief), media: imageUrl },
+												_react2.default.createElement(PinterestIcon, { size: 25, round: false })
+											)
+										)
+									)
 								)
 							)
 						)
@@ -68734,6 +68787,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
+		//console.log(this.props);
 		var _props = this.props,
 		    config = _props.config,
 		    user = _props.user;
@@ -68743,12 +68797,13 @@
 		var rightBanner = config.rightBanner && config.rightBanner.media ? config.rightBanner.media.url : null;
 		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
 		var wishlistLink = this.state.wishlistLink;
+		//console.log(wishlistLink);
 	
-		console.log(wishlistLink);
 		var title = config["my-wishlist-title"] ? config["my-wishlist-title"].value : "Check Min Ønskeliste";
 		var description = config["my-wishlist-description"] ? config["my-wishlist-description"].value : "Check Min Ønskeliste";
 		var image = config["my-wishlist-image"] && config["my-wishlist-image"].media ? config["my-wishlist-image"].media.url : "Check Min Ønskeliste";
-	
+		// let facebookProductLink = "https://www.tagminepenge.dk/produkt/"+id+"/"+title;
+		var facebookProductLink = "http://localhost:3000/min-oenskeliste";
 		var FacebookIcon = (0, _reactShare.generateShareIcon)('facebook');
 		var TwitterIcon = (0, _reactShare.generateShareIcon)('twitter');
 		var PinterestIcon = (0, _reactShare.generateShareIcon)('pinterest');
@@ -68798,7 +68853,7 @@
 							{ className: 'col-sm-4' },
 							_react2.default.createElement(
 								TwitterShareButton,
-								{ url: wishlistLink ? wishlistLink : null, title: title, via: description, image: image },
+								{ url: facebookProductLink, title: title, via: description, image: image },
 								_react2.default.createElement(TwitterIcon, { size: 25, round: false })
 							)
 						),
@@ -68807,7 +68862,7 @@
 							{ className: 'col-sm-4' },
 							_react2.default.createElement(
 								PinterestShareButton,
-								{ url: wishlistLink ? wishlistLink : null, description: description, media: image },
+								{ url: facebookProductLink, description: description, media: image },
 								_react2.default.createElement(PinterestIcon, { size: 25, round: false })
 							)
 						)
