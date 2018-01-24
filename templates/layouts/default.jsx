@@ -10,14 +10,14 @@ const Default = props => {
 			<meta charSet="utf-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-			<meta property="og:url" content={props.url?props.url:"https://www.tagminepenge.dk"} />
-            <meta property="og:title" content="My new title"  />
+			<meta property="og:url" content={props.url} />
+            <meta property="og:title" content={props.title}  />
 			<meta property="og:type" content="article" />
-			<meta property="og:image" content="abdul"/>
-			<meta property="og:description" content=""  />
+			<meta property="og:image" content={props.moreImages}/>
+			<meta property="og:description" content={props.content} />
 			
     
-			<title>{props.title?props.title:""}</title>
+			<title>{props.metaTitle?props.metaTitle:""}</title>
 
 			<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
 
