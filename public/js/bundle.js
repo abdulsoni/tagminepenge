@@ -48206,7 +48206,9 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
+				_react2.default.createElement('meta', { property: 'og:url', content: props.productLink }),
 				_react2.default.createElement('meta', { property: 'og:title', content: props.title }),
+				_react2.default.createElement('meta', { property: 'og:type', content: 'article' }),
 				_react2.default.createElement('meta', { property: 'og:image', content: props.media }),
 				_react2.default.createElement('meta', { property: 'og:description', content: props.description }),
 				_react2.default.createElement(
@@ -68727,6 +68729,8 @@
 	
 	var _index2 = _interopRequireDefault(_index);
 	
+	var _reactShare = __webpack_require__(475);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
@@ -68740,9 +68744,25 @@
 		var rightBannerlink = config.rightBanner && config.rightBanner.value ? config.rightBanner.value : null;
 		var wishlistLink = this.state.wishlistLink;
 	
+		console.log(wishlistLink);
 		var title = config["my-wishlist-title"] ? config["my-wishlist-title"].value : "Check Min Ønskeliste";
 		var description = config["my-wishlist-description"] ? config["my-wishlist-description"].value : "Check Min Ønskeliste";
 		var image = config["my-wishlist-image"] && config["my-wishlist-image"].media ? config["my-wishlist-image"].media.url : "Check Min Ønskeliste";
+	
+		var FacebookIcon = (0, _reactShare.generateShareIcon)('facebook');
+		var TwitterIcon = (0, _reactShare.generateShareIcon)('twitter');
+		var PinterestIcon = (0, _reactShare.generateShareIcon)('pinterest');
+		var VKIcon = (0, _reactShare.generateShareIcon)('vk');
+		var FacebookShareButton = _reactShare.ShareButtons.FacebookShareButton,
+		    TwitterShareButton = _reactShare.ShareButtons.TwitterShareButton,
+		    PinterestShareButton = _reactShare.ShareButtons.PinterestShareButton,
+		    VKShareButton = _reactShare.ShareButtons.VKShareButton;
+	
+		var IconStyle = {
+			'width': '90px',
+			'marginRight': '7px',
+			'paddingTop': '3px'
+		};
 		return user ? _react2.default.createElement(
 			'div',
 			{ className: 'wish-list' },
@@ -68761,12 +68781,37 @@
 				_react2.default.createElement(
 					'div',
 					{ className: 'share' },
-					_react2.default.createElement('div', {
-						'data-url': wishlistLink ? wishlistLink : null,
-						'data-title': title, 'data-description': description,
-						className: 'addthis_inline_share_toolbox',
-						'data-media': image
-					})
+					_react2.default.createElement(
+						'div',
+						{ className: 'row', style: IconStyle },
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-sm-4' },
+							_react2.default.createElement(
+								FacebookShareButton,
+								{ url: wishlistLink ? wishlistLink : null, quote: title, image: image },
+								_react2.default.createElement(FacebookIcon, { size: 25, round: false })
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-sm-4' },
+							_react2.default.createElement(
+								TwitterShareButton,
+								{ url: wishlistLink ? wishlistLink : null, title: title, via: description, image: image },
+								_react2.default.createElement(TwitterIcon, { size: 25, round: false })
+							)
+						),
+						_react2.default.createElement(
+							'div',
+							{ className: 'col-sm-4' },
+							_react2.default.createElement(
+								PinterestShareButton,
+								{ url: wishlistLink ? wishlistLink : null, description: description, media: image },
+								_react2.default.createElement(PinterestIcon, { size: 25, round: false })
+							)
+						)
+					)
 				)
 			),
 			_react2.default.createElement(
