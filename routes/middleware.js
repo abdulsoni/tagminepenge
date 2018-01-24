@@ -196,9 +196,13 @@ exports.requireUser = function (req, res, next) {
 	}
 };
 exports.redirectToFullDomainName = function(req, res, next) {
-    if(req.headers.host === 'tagminepenge.dk' || req.headers.host==='www.tagminepenge.dk') {
-        return res.redirect('https://www.tagminepenge.dk'+req.url);
-    }
+if (!req.secure &&
+    req.get("x-forwarded-proto") !== "https" &&
+    process.env.NODE_ENV === "production") {
+    res.redirect(301, `https://${req.get("host")}${req.url}`);
+  } else {
     next();
+  }
+  
 };
 
