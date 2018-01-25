@@ -23,7 +23,7 @@ var view = function() {
 	const presentInWishList = this.presentInWishList();
 	 const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
 	const facebookProductLink = "https://www.tagminepenge.dk/produkt/"+id+"/"+title;
-	let facebookurl="http://www.facebook.com/share.php?u=http://localhost:3000/produkt/"+id+"/"+title+"&title=Farmers+for+Britain+have+made+the+sensible+decision+to+Vote+Leave.+Be+part+of+a+better+future+for+us+all.+Please+share!";
+	let facebookurl="http://www.facebook.com/share.php?u=https://www.tagminepenge.dk/produkt/"+id+"/"+title+"&title=Farmers+for+Britain+have+made+the+sensible+decision+to+Vote+Leave.+Be+part+of+a+better+future+for+us+all.+Please+share!";
 	const FacebookIcon = generateShareIcon('facebook');
 	const TwitterIcon = generateShareIcon('twitter');
 	const PinterestIcon = generateShareIcon('pinterest');

@@ -59967,7 +59967,7 @@
 		var presentInWishList = this.presentInWishList();
 		var productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + _id + "/" + data.title.split(" ").join("-");
 		var facebookProductLink = "https://www.tagminepenge.dk/produkt/" + id + "/" + title;
-		var facebookurl = "http://www.facebook.com/share.php?u=http://localhost:3000/produkt/" + id + "/" + title + "&title=Farmers+for+Britain+have+made+the+sensible+decision+to+Vote+Leave.+Be+part+of+a+better+future+for+us+all.+Please+share!";
+		var facebookurl = "http://www.facebook.com/share.php?u=https://www.tagminepenge.dk/produkt/" + id + "/" + title + "&title=Farmers+for+Britain+have+made+the+sensible+decision+to+Vote+Leave.+Be+part+of+a+better+future+for+us+all.+Please+share!";
 		var FacebookIcon = (0, _reactShare.generateShareIcon)('facebook');
 		var TwitterIcon = (0, _reactShare.generateShareIcon)('twitter');
 		var PinterestIcon = (0, _reactShare.generateShareIcon)('pinterest');
