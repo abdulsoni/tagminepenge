@@ -71112,7 +71112,7 @@
 				hidden: "hidden", // flag for API
 				loading: true,
 				title: 'My Title',
-				image: 'This is my image',
+				image: 'https://res.cloudinary.com/tagminepenge/image/upload/v1513439651/u18duf7qtfhgsgp7fabg.png',
 				description: 'this is My description',
 				productLink: 'https://www.tagminepenge.dk/produkt/5a354154a86dca00046d8139/Candyfloss-Maskine',
 				metaTitle: 'this is my metaTitle'
