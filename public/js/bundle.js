@@ -48086,10 +48086,10 @@
 	var map = {
 		"./index": 326,
 		"./index.jsx": 326,
-		"./index2": 674,
-		"./index2.jsx": 674,
-		"./test": 675,
-		"./test.jsx": 675
+		"./index2": 677,
+		"./index2.jsx": 677,
+		"./test": 678,
+		"./test.jsx": 678
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -48135,9 +48135,14 @@
 	
 	var _routes2 = _interopRequireDefault(_routes);
 	
+	var _appHandler = __webpack_require__(674);
+	
+	var _appHandler2 = _interopRequireDefault(_appHandler);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var store = (0, _redux2.default)(_redux.initialState);
+	
 	var Index = function Index(props) {
 		console.log(props);
 		// props.meta.title="abdul";
@@ -48158,8 +48163,8 @@
 			}
 		}
 		return _react2.default.createElement(
-			_default2.default,
-			_extends({}, props, { meta: meta }),
+			_appHandler2.default,
+			props,
 			_react2.default.createElement(
 				_reactRedux.Provider,
 				{ store: store },
@@ -48196,7 +48201,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Default = function Default(props) {
-		console.log(props.children);
+	
 		return _react2.default.createElement(
 			'html',
 			null,
@@ -59962,6 +59967,7 @@
 		var presentInWishList = this.presentInWishList();
 		var productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + _id + "/" + data.title.split(" ").join("-");
 		var facebookProductLink = "https://www.tagminepenge.dk/produkt/" + id + "/" + title;
+		var facebookurl = "http://www.facebook.com/share.php?u=http://localhost:3000/produkt/" + id + "/" + title + "&title=Farmers+for+Britain+have+made+the+sensible+decision+to+Vote+Leave.+Be+part+of+a+better+future+for+us+all.+Please+share!";
 		var FacebookIcon = (0, _reactShare.generateShareIcon)('facebook');
 		var TwitterIcon = (0, _reactShare.generateShareIcon)('twitter');
 		var PinterestIcon = (0, _reactShare.generateShareIcon)('pinterest');
@@ -60090,7 +60096,7 @@
 								{ className: 'col-sm-4' },
 								_react2.default.createElement(
 									FacebookShareButton,
-									{ url: facebookProductLink, quote: data.title + (0, _common.getPlainText)(data.content.brief) + NewImageUrl, image: NewImageUrl, onClick: this.AddmetaTag.bind(this) },
+									{ url: productLink, quote: data.title + (0, _common.getPlainText)(data.content.brief) + NewImageUrl, image: NewImageUrl, onClick: this.AddmetaTag.bind(this) },
 									_react2.default.createElement(FacebookIcon, { size: 25, round: false })
 								)
 							),
@@ -60099,7 +60105,7 @@
 								{ className: 'col-sm-4' },
 								_react2.default.createElement(
 									TwitterShareButton,
-									{ url: facebookProductLink, title: data.title, via: (0, _common.getPlainText)(data.content.brief), image: NewImageUrl },
+									{ url: productLink, title: data.title, via: (0, _common.getPlainText)(data.content.brief), image: NewImageUrl },
 									_react2.default.createElement(TwitterIcon, { size: 25, round: false })
 								)
 							),
@@ -60108,7 +60114,7 @@
 								{ className: 'col-sm-4' },
 								_react2.default.createElement(
 									PinterestShareButton,
-									{ url: facebookProductLink, description: (0, _common.getPlainText)(data.content.brief), media: NewImageUrl },
+									{ url: productLink, description: (0, _common.getPlainText)(data.content.brief), media: NewImageUrl },
 									_react2.default.createElement(PinterestIcon, { size: 25, round: false })
 								)
 							)
@@ -71043,6 +71049,192 @@
 
 	'use strict';
 	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _main = __webpack_require__(675);
+	
+	var _main2 = _interopRequireDefault(_main);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _main2.default;
+
+/***/ }),
+/* 675 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _view = __webpack_require__(676);
+	
+	var _view2 = _interopRequireDefault(_view);
+	
+	var _reactRedux = __webpack_require__(295);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/**
+	 * @name Main Container
+	 * @type Component
+	 * @author Inderdeep Singh
+	 */
+	var Main = function (_Component) {
+		_inherits(Main, _Component);
+	
+		/**
+	  * Constructor
+	  * @param props
+	  */
+		function Main(props) {
+			_classCallCheck(this, Main);
+	
+			var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+	
+			_this.state = {
+				hidden: "hidden", // flag for API
+				loading: true,
+				title: 'My Title',
+				image: 'This is my image',
+				description: 'this is My description',
+				productLink: 'https://www.tagminepenge.dk/produkt/5a354154a86dca00046d8139/Candyfloss-Maskine',
+				metaTitle: 'this is my metaTitle'
+			};
+			return _this;
+		}
+	
+		_createClass(Main, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {}
+	
+			/**
+	   * Render the view
+	   * @returns {*}
+	   */
+	
+		}, {
+			key: 'render',
+			value: function render() {
+	
+				return _view2.default.bind(this)();
+			}
+		}]);
+	
+		return Main;
+	}(_react.Component);
+	
+	exports.default = Main;
+	
+	var mapStateToProps = function mapStateToProps(state) {
+		// console.log(state)
+		return {
+			products: state.products.results || [],
+			emitter: state.emitter
+		};
+	};
+	//Set display name to be used in React Dev Tools
+	Main.displayName = 'Main';
+	(0, _reactRedux.connect)(mapStateToProps)(Main);
+
+/***/ }),
+/* 676 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _react = __webpack_require__(237);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var view = function view() {
+		var _props = this.props,
+		    routeInfo = _props.routeInfo,
+		    navLinks = _props.navLinks,
+		    user = _props.user,
+		    config = _props.config,
+		    categories = _props.categories,
+		    filters = _props.filters;
+	
+	
+		return _react2.default.createElement(
+			"html",
+			null,
+			_react2.default.createElement(
+				"head",
+				null,
+				_react2.default.createElement("meta", { charSet: "utf-8" }),
+				_react2.default.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
+				_react2.default.createElement("meta", { httpEquiv: "X-UA-Compatible", content: "IE=edge" }),
+				_react2.default.createElement("meta", { property: "og:url", content: this.state.productLink }),
+				_react2.default.createElement("meta", { property: "og:title", content: this.state.title }),
+				_react2.default.createElement("meta", { property: "og:type", content: "shoping website" }),
+				_react2.default.createElement("meta", { property: "og:image", content: this.state.image }),
+				_react2.default.createElement("meta", { property: "og:description", content: this.state.description }),
+				_react2.default.createElement(
+					"title",
+					null,
+					this.state.metaTitle
+				),
+				_react2.default.createElement("link", { rel: "shortcut icon", href: "/favicon.png", type: "image/x-icon" }),
+				_react2.default.createElement("link", { href: "/styles/site.css", rel: "stylesheet" }),
+				this.props.user && this.props.user.canAccessKeystone && _react2.default.createElement("link", { href: "/keystone/styles/content/editor.min.css", rel: "stylesheet" })
+			),
+			_react2.default.createElement(
+				"body",
+				null,
+				_react2.default.createElement(
+					"div",
+					{ id: "body" },
+	
+					// - The children block should contain the body of your template's content
+					this.props.children
+				),
+				_react2.default.createElement("script", { src: "/js/jquery/jquery-1.11.3.min.js" }),
+				_react2.default.createElement("script", { src: "/js/bootstrap/bootstrap-3.3.5.min.js" }),
+				this.props.user && this.props.user.canAccessKeystone
+				// - The KeystoneJS Content Editor provides support for ks-editable data attributes,
+				// - which generate links to edit content for users who can access Keystone
+				&& _react2.default.createElement("script", { src: "/keystone/js/content/editor.js" }),
+				_react2.default.createElement("script", { src: "/js/bundle.js" }),
+	
+				// - Add scripts that are globally required by your site here.
+	
+				// - Include template-specific javascript files by extending the js block
+				this.props.js
+			)
+		);
+	};
+	exports.default = view;
+
+/***/ }),
+/* 677 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
 	var _react = __webpack_require__(237);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -71176,7 +71368,7 @@
 	module.exports = Index;
 
 /***/ }),
-/* 675 */
+/* 678 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';

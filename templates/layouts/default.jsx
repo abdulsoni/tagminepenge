@@ -2,7 +2,7 @@ import React from 'react';
 import FlashMessages from '../mixins/flash-messages';
 import MetaTags from 'react-meta-tags';
 const Default = props => {
-	console.log(props.children);
+	
 	return (
 		<html>
 		<head>

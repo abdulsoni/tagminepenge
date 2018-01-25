@@ -5,6 +5,7 @@ import createStore,{initialState} from '../react/redux';
 import App from '../react/containers/app';
 import Routes from '../react/routes';
 const store = createStore(initialState);
+import AppHandler from '../react/containers/appHandler';
 const Index = props => {
 	console.log(props);
 	// props.meta.title="abdul";
@@ -25,12 +26,12 @@ const Index = props => {
 		}
 	}
 	return (
-		<Default {...props} meta={meta}>
+		<AppHandler {...props}>
 			<Provider store={store}>
 				<App routeInfo = {route} {...props}></App>
 			</Provider>
-		</Default>
-	);
+		</AppHandler>
+	);		
 };
 
 

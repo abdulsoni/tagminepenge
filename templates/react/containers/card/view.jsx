@@ -23,6 +23,7 @@ var view = function() {
 	const presentInWishList = this.presentInWishList();
 	 const productLink = window.location.protocol+"//"+window.location.host+"/produkt/"+_id+"/"+data.title.split(" ").join("-");
 	const facebookProductLink = "https://www.tagminepenge.dk/produkt/"+id+"/"+title;
+	let facebookurl="http://www.facebook.com/share.php?u=http://localhost:3000/produkt/"+id+"/"+title+"&title=Farmers+for+Britain+have+made+the+sensible+decision+to+Vote+Leave.+Be+part+of+a+better+future+for+us+all.+Please+share!";
 	const FacebookIcon = generateShareIcon('facebook');
 	const TwitterIcon = generateShareIcon('twitter');
 	const PinterestIcon = generateShareIcon('pinterest');
@@ -84,17 +85,17 @@ var view = function() {
 					<div className="share" >
 						<div className="row" style={IconStyle}>
 				            <div className="col-sm-4">
-								<FacebookShareButton url={facebookProductLink} quote={data.title+getPlainText(data.content.brief)+NewImageUrl} image={NewImageUrl}  onClick={this.AddmetaTag.bind(this)}>
+								<FacebookShareButton url={productLink} quote={data.title+getPlainText(data.content.brief)+NewImageUrl} image={NewImageUrl}  onClick={this.AddmetaTag.bind(this)}>
 									<FacebookIcon size={25} round={false} />
 								</FacebookShareButton>
 							</div>
 							<div className="col-sm-4">
-								<TwitterShareButton url={facebookProductLink} title={data.title} via={getPlainText(data.content.brief)} image={NewImageUrl}>
+								<TwitterShareButton url={productLink} title={data.title} via={getPlainText(data.content.brief)} image={NewImageUrl}>
 									<TwitterIcon size={25} round={false} />
 								</TwitterShareButton>
 							</div>
 							<div className="col-sm-4">
-								<PinterestShareButton url={facebookProductLink}  description={getPlainText(data.content.brief)} media={NewImageUrl}>
+								<PinterestShareButton url={productLink}  description={getPlainText(data.content.brief)} media={NewImageUrl}>
 									<PinterestIcon size={25} round={false} />
 								</PinterestShareButton>
 							</div>
