@@ -12,7 +12,7 @@ var view = function () {
 				{(data || []).map((product) => {
 					return (
 						<div key={product._id} className="col-xm-12 col-sm-6 col-md-4">
-							<Card onSaveToWishList={onSaveToWishList} user={user} data={product} meta={this.props.meta}/>
+							<Card onSaveToWishList={onSaveToWishList} user={user} data={product} meta={this.props.meta} changeprop={this.props.changeprop}/>
 						</div>
 					)
 				})}

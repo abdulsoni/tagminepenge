@@ -1,15 +1,24 @@
 import React from 'react';
 import Default from '../layouts/default';
 import { Provider } from 'react-redux';
+import { applyMiddleware } from 'redux';
 import createStore,{initialState} from '../react/redux';
+import {createRootReducer} from '../react/redux/reducers';
 import App from '../react/containers/app';
 import Routes from '../react/routes';
-const store = createStore(initialState);
+
+ 
+ 
 import AppHandler from '../react/containers/appHandler';
+
 const Index = props => {
-	console.log(props);
-	// props.meta.title="abdul";
-	// console.log(props.meta.title);
+	const mylogger=(store)=>(next)=>(action)=>{
+		console.log("Logged Action:",action);
+		next(action);
+	}
+	const store = createStore(createRootReducer,{},applyMiddleware(mylogger));
+
+	let newState= store.getState();
 	let meta={
 	  title:null,
 	  description:null,
@@ -26,11 +35,11 @@ const Index = props => {
 		}
 	}
 	return (
-		<AppHandler {...props}>
-			<Provider store={store}>
-				<App routeInfo = {route} {...props}></App>
-			</Provider>
-		</AppHandler>
+		<Provider store={store}>
+			<AppHandler {...props} newState={store.getState()} store={store}>
+					<App routeInfo = {route} {...props}></App>
+			</AppHandler>
+		</Provider>
 	);		
 };
 

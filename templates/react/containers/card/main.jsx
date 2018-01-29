@@ -32,17 +32,17 @@ class Main extends Component {
 		console.log('update ');
 		this.forceUpdate();
 	};
-	changeprop(productLink,e){
-		//console.log(productLink);
-		 console.log(this.props.meta);
-		this.props.meta.title=this.props.data.title;
-		this.props.meta.description=this.props.data.content.brief;
-		this.props.meta.image=this.props.data.image.url;
-		this.props.meta.url=productLink;
-		console.log('working');
-		console.log(this.props);
-		this.forceUpdateHandler();
-	}
+	// changeprop(productLink,e){
+	// 	console.log(productLink);
+	// 	 console.log(this.props.meta);
+	// 	this.props.meta.title=this.props.data.title;
+	// 	this.props.meta.description=this.props.data.content.brief;
+	// 	this.props.meta.image=this.props.data.image.url;
+	// 	this.props.meta.url=productLink;
+	// 	console.log('working');
+	// 	console.log(this.props);
+	// 	this.forceUpdateHandler();
+	// }
 
 	/**
 	 * Check if present in wishlist
@@ -55,9 +55,8 @@ class Main extends Component {
 		}
 		return user.savedProducts.indexOf(data._id)!=-1;
 	}
-   	AddmetaTag(){
-		const el = findDOMNode(this.refs.MetaImage);
-		console.log(el);
+   	Myfunction(){
+	console.log('i am working');
 	}
 	/**
 	 * Add/Remove to wishlist- Add/Remove logic is handled by server
@@ -114,6 +113,19 @@ function bindAction(dispatch) {
 	return {
 		addToWishList : (data)=>{
 			return dispatch(createAction(ActionNames.SAVE_TO_WISHLIST,data));
+		},
+		changeMetaTag:(data,productLink) =>{
+			console.log(data);
+			let myData={
+				title:data.title,
+				productLink:productLink,
+				image:data.moreImages[0].secure_url,
+				description:data.content.brief
+			};
+			return dispatch({
+				type:"SET_METATAG",
+				payload:myData
+			});
 		}
 	};
 }

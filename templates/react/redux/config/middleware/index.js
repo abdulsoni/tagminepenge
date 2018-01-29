@@ -9,7 +9,6 @@ const history = browserHistory;
 export {
   history,
 };
-
 /*
  Create History
  */

@@ -38,6 +38,7 @@ var view = function() {
 						query = {query}
 						user = {user}
 						meta={this.props.meta}
+						changeprop={this.changeprop}
 					/>
 					<BottomText text = {bottomText}/>
 				</div>

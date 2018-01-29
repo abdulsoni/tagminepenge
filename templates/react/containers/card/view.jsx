@@ -85,7 +85,7 @@ var view = function() {
 					<div className="share" >
 						<div className="row" style={IconStyle}>
 				            <div className="col-sm-4">
-								<FacebookShareButton url={productLink} quote={data.title+getPlainText(data.content.brief)+NewImageUrl} image={NewImageUrl}  onClick={this.AddmetaTag.bind(this)}>
+								<FacebookShareButton url={productLink} quote={data.title+getPlainText(data.content.brief)+NewImageUrl} image={NewImageUrl}  onClick={()=>this.props.changeMetaTag(data,productLink)}>
 									<FacebookIcon size={25} round={false} />
 								</FacebookShareButton>
 							</div>

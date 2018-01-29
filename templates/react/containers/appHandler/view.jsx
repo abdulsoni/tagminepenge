@@ -1,22 +1,35 @@
 import React from 'react';
+import MetaTags from 'react-meta-tags';
 var view = function () {
 	
-	const {routeInfo, navLinks, user, config, categories, filters} = this.props;
-
+	const {routeInfo, navLinks, user, config, categories, filters,newState} = this.props;
+	let title;
+	let productLink;
+	let image;
+	let description;
+	this.props.store.subscribe(()=>{
+		this.setState({ key: Math.random() });
+		let NewTag=this.props.store.getState();
+		console.log(NewTag)
+		 title=NewTag.metaTag.title;
+		 productLink=NewTag.metaTag.productLink;
+		image=NewTag.metaTag.image;
+		description=NewTag.metaTag.description;
+	})
 		return (
 			<html>
 			<head>
+				<MetaTags>
+					<meta charSet="utf-8"/>
+					<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+					<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
+					<meta property="og:url" content={productLink?productLink:newState.metaTag.productLink} />
+					<meta property="og:title" content={title?title:newState.metaTag.title}  />
+					<meta property="og:type" content="shoping website" />
+					<meta property="og:image" content={image?image:newState.metaTag.image}/>
+					<meta property="og:description" content={description?description:newState.metaTag.description} />
 
-				<meta charSet="utf-8"/>
-				<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-				<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-				<meta property="og:url" content={this.state.productLink} />
-				<meta property="og:title" content={this.state.title}  />
-				<meta property="og:type" content="shoping website" />
-				<meta property="og:image" content={this.state.image}/>
-				<meta property="og:description" content={this.state.description} />
-
-
+				</MetaTags>
 				<title>{this.state.metaTitle}</title>
 
 				<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
@@ -38,9 +51,10 @@ var view = function () {
 
 
 			<div id="body" >
+
 				{
 					// - The children block should contain the body of your template's content
-					this.props.children
+					React.cloneElement(this.props.children, {meta: this.state.meta},{changeprop:this.changeprop})
 				}
 			</div>
 

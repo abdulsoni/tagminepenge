@@ -9,6 +9,7 @@ import auth from './auth';
 import ui from './ui';
 import products from './products';
 import product from './product';
+import metaTag from './metaTag';
 const createRootReducer = function (thirdPartyReducers) {
   return combineReducers({
     ...thirdPartyReducers,
@@ -17,6 +18,7 @@ const createRootReducer = function (thirdPartyReducers) {
     user,
     auth,
     ui,
+	metaTag,  
     /**
      * The reason why here emitter is not initialized as due
      * to server side rendering we should keep it to null and

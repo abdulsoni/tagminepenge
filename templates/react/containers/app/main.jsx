@@ -51,7 +51,8 @@ const mapStateToProps = state => {
 	// console.log(state)
 	return {
 		products : state.products.results || [],
-		emitter : state.emitter
+		emitter : state.emitter,
+		meta:meta
 	};
 };
 //Set display name to be used in React Dev Tools

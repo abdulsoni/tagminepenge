@@ -2,6 +2,7 @@
  Bootstrap redux
  */
 import { createStore, applyMiddleware, compose } from 'redux';
+import { Provider } from 'react-redux';
 import createRootReducer from './reducers/index';
 import { history, middleware, enhancers, initialState } from './config/index';
 import { routerReducer } from 'react-router-redux';
@@ -10,9 +11,12 @@ import { EventEmitter } from 'fbemitter';
 /**
  Combine enhancers and middlewares
  */
+
+
+
 const composedEnhancers = compose(
   applyMiddleware(...middleware),
-  ...enhancers
+  ...enhancers,
 );
 /**
  * Create Third party reducers
@@ -82,5 +86,6 @@ export function configureActions(dispatch) {
 export {
   history,
   initialState,
+	
 };
 export default store;

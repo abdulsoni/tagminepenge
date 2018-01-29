@@ -4,5 +4,5 @@ export default {
 	},
 	config: {
 		test: 'test',
-	},
+	}
 };
