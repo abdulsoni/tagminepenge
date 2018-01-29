@@ -24,7 +24,7 @@ var view = function () {
 	if (typeof window != 'undefined' && product) {
 		productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + product._id + "/" + product.title.split(" ").join("-");
 		const {data} = this.props;
-       console.log(product);
+       
 		//const {_id} = data;
 	 id=product._id;
 	 title=product.title.split(" ").join("-");

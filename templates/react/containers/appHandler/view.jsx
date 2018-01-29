@@ -1,8 +1,8 @@
 import React from 'react';
-import MetaTags from 'react-meta-tags';
 var view = function () {
 	
-	const {routeInfo, navLinks, user, config, categories, filters,newState} = this.props;
+	const {routeInfo, navLinks, user, config, categories, filters,newState,product} = this.props;
+	
 	let title;
 	let productLink;
 	let image;
@@ -10,25 +10,30 @@ var view = function () {
 	this.props.store.subscribe(()=>{
 		let NewTag=this.props.store.getState();
 		// console.log(NewTag)
-		 title=NewTag.metaTag.title;
-		 productLink=NewTag.metaTag.productLink;
-		image=NewTag.metaTag.image;
-		description=NewTag.metaTag.description;
-	})
+	});
+	if (typeof window != 'undefined' && product) {
+		productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + product._id + "/" + product.title.split(" ").join("-");
+		const {data} = this.props;
+		console.log(product);
+		title=product.title;
+		image=product.image.secure_url;
+		description=product.content.brief;
+	
+	}
 		return (
 			<html>
 			<head>
-				<MetaTags>
+				
 					<meta charSet="utf-8"/>
 					<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 					<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-					<meta property="og:url" content={this.props.metaTag.productLink} />
-					<meta property="og:title" content={this.props.metaTag.title}  />
+					<meta property="og:url" content={productLink?productLink:this.props.metaTag.productLink} />
+					<meta property="og:title" content={title?title:this.props.metaTag.title}  />
 					<meta property="og:type" content="shoping website" />
-					<meta property="og:image" content={this.props.metaTag.image}/>
-					<meta property="og:description" content={this.props.metaTag.description} />
+					<meta property="og:image" content={image?image:this.props.metaTag.image}/>
+					<meta property="og:description" content={description?description:this.props.metaTag.description} />
 
-				</MetaTags>
+				
 				<title>{this.state.metaTitle}</title>
 
 				<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>

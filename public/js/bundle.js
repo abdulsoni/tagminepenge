@@ -67278,8 +67278,8 @@
 			productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + product._id + "/" + product.title.split(" ").join("-");
 			var data = this.props.data;
 	
-			console.log(product);
 			//const {_id} = data;
+	
 			id = product._id;
 			title = product.title.split(" ").join("-");
 	
@@ -71154,6 +71154,8 @@
 	
 	var _view2 = _interopRequireDefault(_view);
 	
+	var _index = __webpack_require__(337);
+	
 	var _reactRedux = __webpack_require__(295);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -71199,12 +71201,44 @@
 	
 		_createClass(Main, [{
 			key: 'componentDidMount',
-			value: function componentDidMount() {}
+			value: function componentDidMount() {
+				this.getProduct();
+			}
 		}, {
 			key: 'changeprop',
 			value: function changeprop() {
 	
 				alert('abc');
+			}
+			/**
+	   * Get product
+	   */
+	
+		}, {
+			key: 'getProduct',
+			value: function getProduct() {
+				var _this2 = this;
+	
+				var getProduct = this.props.getProduct;
+	
+				var pathname = window.location.pathname;
+				var id = pathname.split("/")[2];
+				if (id && id != "") {
+					console.log(id);
+					getProduct(id).then(function (action) {
+						console.log(action);
+						if (getError(action)) {
+							//window.location.href="/";
+							return;
+						} else {
+							_this2.setState({
+								loading: true
+							});
+						}
+					});
+				} else {
+					//window.location.href="/";
+				}
 			}
 			// changeprop(productLink,e){
 			// 	console.log(productLink);
@@ -71234,17 +71268,28 @@
 		return Main;
 	}(_react.Component);
 	
+	function bindAction(dispatch) {
+		return {
+			getProduct: function getProduct(data) {
+				return dispatch((0, _index.createAction)(_index.ActionNames.GET_PRODUCT, data));
+			},
+			addToWishList: function addToWishList(data) {
+				return dispatch((0, _index.createAction)(_index.ActionNames.SAVE_TO_WISHLIST, data));
+			}
+		};
+	}
 	var mapStateToProps = function mapStateToProps(state) {
 		// console.log(state)
 		return {
 			products: state.products.results || [],
 			emitter: state.emitter,
-			metaTag: state.metaTag
+			metaTag: state.metaTag,
+			product: state.product
 		};
 	};
 	//Set display name to be used in React Dev Tools
 	Main.displayName = 'Main';
-	exports.default = (0, _reactRedux.connect)(mapStateToProps)(Main);
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, bindAction)(Main);
 
 /***/ }),
 /* 677 */
@@ -71260,10 +71305,6 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactMetaTags = __webpack_require__(329);
-	
-	var _reactMetaTags2 = _interopRequireDefault(_reactMetaTags);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
@@ -71276,7 +71317,9 @@
 		    config = _props.config,
 		    categories = _props.categories,
 		    filters = _props.filters,
-		    newState = _props.newState;
+		    newState = _props.newState,
+		    product = _props.product;
+	
 	
 		var title = void 0;
 		var productLink = void 0;
@@ -71285,29 +71328,30 @@
 		this.props.store.subscribe(function () {
 			var NewTag = _this.props.store.getState();
 			// console.log(NewTag)
-			title = NewTag.metaTag.title;
-			productLink = NewTag.metaTag.productLink;
-			image = NewTag.metaTag.image;
-			description = NewTag.metaTag.description;
 		});
+		if (typeof window != 'undefined' && product) {
+			productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + product._id + "/" + product.title.split(" ").join("-");
+			var data = this.props.data;
+	
+			console.log(product);
+			title = product.title;
+			image = product.image.secure_url;
+			description = product.content.brief;
+		}
 		return _react2.default.createElement(
 			'html',
 			null,
 			_react2.default.createElement(
 				'head',
 				null,
-				_react2.default.createElement(
-					_reactMetaTags2.default,
-					null,
-					_react2.default.createElement('meta', { charSet: 'utf-8' }),
-					_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
-					_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
-					_react2.default.createElement('meta', { property: 'og:url', content: this.props.metaTag.productLink }),
-					_react2.default.createElement('meta', { property: 'og:title', content: this.props.metaTag.title }),
-					_react2.default.createElement('meta', { property: 'og:type', content: 'shoping website' }),
-					_react2.default.createElement('meta', { property: 'og:image', content: this.props.metaTag.image }),
-					_react2.default.createElement('meta', { property: 'og:description', content: this.props.metaTag.description })
-				),
+				_react2.default.createElement('meta', { charSet: 'utf-8' }),
+				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
+				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
+				_react2.default.createElement('meta', { property: 'og:url', content: productLink ? productLink : this.props.metaTag.productLink }),
+				_react2.default.createElement('meta', { property: 'og:title', content: title ? title : this.props.metaTag.title }),
+				_react2.default.createElement('meta', { property: 'og:type', content: 'shoping website' }),
+				_react2.default.createElement('meta', { property: 'og:image', content: image ? image : this.props.metaTag.image }),
+				_react2.default.createElement('meta', { property: 'og:description', content: description ? description : this.props.metaTag.description }),
 				_react2.default.createElement(
 					'title',
 					null,
