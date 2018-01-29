@@ -20,7 +20,7 @@ class Main extends Component {
 		super(props);
 		this.state = {
 			loading : false,
-			link:''
+			key:''
 		}
 		this.forceUpdateHandler = this.forceUpdateHandler.bind(this);
 	}
@@ -55,8 +55,9 @@ class Main extends Component {
 		}
 		return user.savedProducts.indexOf(data._id)!=-1;
 	}
-   	Myfunction(){
-	console.log('i am working');
+	myChange(){
+		this.setState({ key: Math.random() });
+		this.forceUpdate();
 	}
 	/**
 	 * Add/Remove to wishlist- Add/Remove logic is handled by server
@@ -115,7 +116,6 @@ function bindAction(dispatch) {
 			return dispatch(createAction(ActionNames.SAVE_TO_WISHLIST,data));
 		},
 		changeMetaTag:(data,productLink) =>{
-			console.log(data);
 			let myData={
 				title:data.title,
 				productLink:productLink,

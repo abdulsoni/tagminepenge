@@ -1,5 +1,4 @@
 import React from 'react';
-import MetaTags from 'react-meta-tags';
 var view = function () {
 	
 	const {routeInfo, navLinks, user, config, categories, filters,newState} = this.props;
@@ -10,7 +9,7 @@ var view = function () {
 	this.props.store.subscribe(()=>{
 		this.setState({ key: Math.random() });
 		let NewTag=this.props.store.getState();
-		console.log(NewTag)
+		// console.log(NewTag)
 		 title=NewTag.metaTag.title;
 		 productLink=NewTag.metaTag.productLink;
 		image=NewTag.metaTag.image;
@@ -19,7 +18,7 @@ var view = function () {
 		return (
 			<html>
 			<head>
-				<MetaTags>
+				
 					<meta charSet="utf-8"/>
 					<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 					<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
@@ -29,7 +28,7 @@ var view = function () {
 					<meta property="og:image" content={image?image:newState.metaTag.image}/>
 					<meta property="og:description" content={description?description:newState.metaTag.description} />
 
-				</MetaTags>
+				
 				<title>{this.state.metaTitle}</title>
 
 				<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>

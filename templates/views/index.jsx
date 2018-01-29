@@ -17,8 +17,16 @@ const Index = props => {
 		next(action);
 	}
 	const store = createStore(createRootReducer,{},applyMiddleware(mylogger));
-
+    
 	let newState= store.getState();
+	store.subscribe(()=>{
+		 newState= store.getState();
+		stateChange();
+	});
+	function stateChange(){
+		newState= store.getState();
+		console.log(newState);
+	}
 	let meta={
 	  title:null,
 	  description:null,
@@ -36,7 +44,7 @@ const Index = props => {
 	}
 	return (
 		<Provider store={store}>
-			<AppHandler {...props} newState={store.getState()} store={store}>
+			<AppHandler {...props} newState={newState} store={store}>
 					<App routeInfo = {route} {...props}></App>
 			</AppHandler>
 		</Provider>
