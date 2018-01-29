@@ -30,7 +30,7 @@ class Main extends Component {
 	forceUpdateHandler(){
 		
 		console.log('update ');
-		this.forceUpdate();
+	
 	};
 	// changeprop(productLink,e){
 	// 	console.log(productLink);
@@ -56,8 +56,7 @@ class Main extends Component {
 		return user.savedProducts.indexOf(data._id)!=-1;
 	}
 	myChange(){
-		this.setState({ key: Math.random() });
-		this.forceUpdate();
+	
 	}
 	/**
 	 * Add/Remove to wishlist- Add/Remove logic is handled by server

@@ -1,4 +1,5 @@
 import React from 'react';
+import MetaTags from 'react-meta-tags';
 var view = function () {
 	
 	const {routeInfo, navLinks, user, config, categories, filters,newState} = this.props;
@@ -7,7 +8,6 @@ var view = function () {
 	let image;
 	let description;
 	this.props.store.subscribe(()=>{
-		this.setState({ key: Math.random() });
 		let NewTag=this.props.store.getState();
 		// console.log(NewTag)
 		 title=NewTag.metaTag.title;
@@ -18,17 +18,17 @@ var view = function () {
 		return (
 			<html>
 			<head>
-				
+				<MetaTags>
 					<meta charSet="utf-8"/>
 					<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 					<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-					<meta property="og:url" content={productLink?productLink:newState.metaTag.productLink} />
-					<meta property="og:title" content={title?title:newState.metaTag.title}  />
+					<meta property="og:url" content={this.props.metaTag.productLink} />
+					<meta property="og:title" content={this.props.metaTag.title}  />
 					<meta property="og:type" content="shoping website" />
-					<meta property="og:image" content={image?image:newState.metaTag.image}/>
-					<meta property="og:description" content={description?description:newState.metaTag.description} />
+					<meta property="og:image" content={this.props.metaTag.image}/>
+					<meta property="og:description" content={this.props.metaTag.description} />
 
-				
+				</MetaTags>
 				<title>{this.state.metaTitle}</title>
 
 				<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>

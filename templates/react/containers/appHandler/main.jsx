@@ -28,8 +28,9 @@ import { connect } from 'react-redux';
 		
 	}
 	componentDidMount(){
-		this.forceUpdate();
+		
 	}
+
 	changeprop(){
 		
 		alert('abc');

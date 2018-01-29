@@ -59853,7 +59853,6 @@
 			value: function forceUpdateHandler() {
 	
 				console.log('update ');
-				this.forceUpdate();
 			}
 		}, {
 			key: 'presentInWishList',
@@ -59886,10 +59885,7 @@
 			}
 		}, {
 			key: 'myChange',
-			value: function myChange() {
-				this.setState({ key: Math.random() });
-				this.forceUpdate();
-			}
+			value: function myChange() {}
 			/**
 	   * Add/Remove to wishlist- Add/Remove logic is handled by server
 	   */
@@ -71203,9 +71199,7 @@
 	
 		_createClass(Main, [{
 			key: 'componentDidMount',
-			value: function componentDidMount() {
-				this.forceUpdate();
-			}
+			value: function componentDidMount() {}
 		}, {
 			key: 'changeprop',
 			value: function changeprop() {
@@ -71256,7 +71250,7 @@
 /* 677 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -71265,6 +71259,10 @@
 	var _react = __webpack_require__(237);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactMetaTags = __webpack_require__(329);
+	
+	var _reactMetaTags2 = _interopRequireDefault(_reactMetaTags);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -71285,7 +71283,6 @@
 		var image = void 0;
 		var description = void 0;
 		this.props.store.subscribe(function () {
-			_this.setState({ key: Math.random() });
 			var NewTag = _this.props.store.getState();
 			// console.log(NewTag)
 			title = NewTag.metaTag.title;
@@ -71294,45 +71291,49 @@
 			description = NewTag.metaTag.description;
 		});
 		return _react2.default.createElement(
-			"html",
+			'html',
 			null,
 			_react2.default.createElement(
-				"head",
+				'head',
 				null,
-				_react2.default.createElement("meta", { charSet: "utf-8" }),
-				_react2.default.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
-				_react2.default.createElement("meta", { httpEquiv: "X-UA-Compatible", content: "IE=edge" }),
-				_react2.default.createElement("meta", { property: "og:url", content: productLink ? productLink : newState.metaTag.productLink }),
-				_react2.default.createElement("meta", { property: "og:title", content: title ? title : newState.metaTag.title }),
-				_react2.default.createElement("meta", { property: "og:type", content: "shoping website" }),
-				_react2.default.createElement("meta", { property: "og:image", content: image ? image : newState.metaTag.image }),
-				_react2.default.createElement("meta", { property: "og:description", content: description ? description : newState.metaTag.description }),
 				_react2.default.createElement(
-					"title",
+					_reactMetaTags2.default,
+					null,
+					_react2.default.createElement('meta', { charSet: 'utf-8' }),
+					_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
+					_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
+					_react2.default.createElement('meta', { property: 'og:url', content: this.props.metaTag.productLink }),
+					_react2.default.createElement('meta', { property: 'og:title', content: this.props.metaTag.title }),
+					_react2.default.createElement('meta', { property: 'og:type', content: 'shoping website' }),
+					_react2.default.createElement('meta', { property: 'og:image', content: this.props.metaTag.image }),
+					_react2.default.createElement('meta', { property: 'og:description', content: this.props.metaTag.description })
+				),
+				_react2.default.createElement(
+					'title',
 					null,
 					this.state.metaTitle
 				),
-				_react2.default.createElement("link", { rel: "shortcut icon", href: "/favicon.png", type: "image/x-icon" }),
-				_react2.default.createElement("link", { href: "/styles/site.css", rel: "stylesheet" }),
-				this.props.user && this.props.user.canAccessKeystone && _react2.default.createElement("link", { href: "/keystone/styles/content/editor.min.css", rel: "stylesheet" })
+				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
+				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
+				this.props.user && this.props.user.canAccessKeystone && _react2.default.createElement('link', { href: '/keystone/styles/content/editor.min.css', rel: 'stylesheet' })
 			),
 			_react2.default.createElement(
-				"body",
+				'body',
 				null,
 				_react2.default.createElement(
-					"div",
-					{ id: "body" },
+					'div',
+					{ id: 'body' },
 	
 					// - The children block should contain the body of your template's content
 					_react2.default.cloneElement(this.props.children, { meta: this.state.meta }, { changeprop: this.changeprop })
 				),
-				_react2.default.createElement("script", { src: "/js/jquery/jquery-1.11.3.min.js" }),
-				_react2.default.createElement("script", { src: "/js/bootstrap/bootstrap-3.3.5.min.js" }),
+				_react2.default.createElement('script', { src: '/js/jquery/jquery-1.11.3.min.js' }),
+				_react2.default.createElement('script', { src: '/js/bootstrap/bootstrap-3.3.5.min.js' }),
 				this.props.user && this.props.user.canAccessKeystone
 				// - The KeystoneJS Content Editor provides support for ks-editable data attributes,
 				// - which generate links to edit content for users who can access Keystone
-				&& _react2.default.createElement("script", { src: "/keystone/js/content/editor.js" }),
-				_react2.default.createElement("script", { src: "/js/bundle.js" }),
+				&& _react2.default.createElement('script', { src: '/keystone/js/content/editor.js' }),
+				_react2.default.createElement('script', { src: '/js/bundle.js' }),
 	
 				// - Add scripts that are globally required by your site here.
 	
