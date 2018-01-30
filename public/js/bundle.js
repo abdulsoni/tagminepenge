@@ -48086,10 +48086,10 @@
 	var map = {
 		"./index": 326,
 		"./index.jsx": 326,
-		"./index2": 678,
-		"./index2.jsx": 678,
-		"./test": 679,
-		"./test.jsx": 679
+		"./index2": 679,
+		"./index2.jsx": 679,
+		"./test": 680,
+		"./test.jsx": 680
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -48182,7 +48182,7 @@
 		}
 		return _react2.default.createElement(
 			_reactRedux.Provider,
-			{ store: store },
+			{ store: store, routeInfo: route },
 			_react2.default.createElement(
 				_appHandler2.default,
 				_extends({}, props, { newState: newState, store: store }),
@@ -71156,6 +71156,8 @@
 	
 	var _index = __webpack_require__(337);
 	
+	var _request = __webpack_require__(390);
+	
 	var _reactRedux = __webpack_require__(295);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -71165,6 +71167,9 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var global = __webpack_require__(678);
+	var window = __webpack_require__(678);
 	
 	/**
 	 * @name Main Container
@@ -71202,7 +71207,24 @@
 		_createClass(Main, [{
 			key: 'componentDidMount',
 			value: function componentDidMount() {
-				this.getProduct();
+				console.log(this.state.meta);
+			}
+		}, {
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				var _this2 = this;
+	
+				console.log(this.state.meta);
+				var pathname = this.props.url;
+				var productLink = "https://www.tagminepenge.dk" + pathname;
+				this.getProduct().then(function (data) {
+					var meta = Object.assign({}, _this2.state.meta);
+					meta.title = data.title;
+					meta.image = data.image.secure_url;
+					meta.description = data.content.brief;
+					meta.productLink = productLink;
+					_this2.setState({ meta: meta });
+				});
 			}
 		}, {
 			key: 'changeprop',
@@ -71217,28 +71239,46 @@
 		}, {
 			key: 'getProduct',
 			value: function getProduct() {
-				var _this2 = this;
-	
 				var getProduct = this.props.getProduct;
 	
-				var pathname = window.location.pathname;
+				var location = window.location;
+				var pathname = this.props.url;
 				var id = pathname.split("/")[2];
-				if (id && id != "") {
-					console.log(id);
+				var productLink = "https://www.tagminepenge.dk" + pathname;
+				console.log(productLink);
+				var promise = new Promise(function (resolve, reject) {
 					getProduct(id).then(function (action) {
-						console.log(action);
-						if (getError(action)) {
+						if ((0, _request.getError)(action)) {
 							//window.location.href="/";
 							return;
 						} else {
-							_this2.setState({
-								loading: true
-							});
+							var data = action.payload.data;
+							resolve(data);
 						}
 					});
-				} else {
-					//window.location.href="/";
-				}
+				});
+				return promise;
+				// if(id && id!=""){
+				// 	getProduct(id).then(action=>{
+				// 		console.log(action)
+				// 		if(getError(action)){
+				// 			//window.location.href="/";
+				// 			return;
+				// 		} else {
+				// 			let data= action.payload.data;
+				// 			let meta = Object.assign({}, this.state.meta);
+				// 			meta.title = data.title;
+				// 			meta.image = data.image.secure_url;
+				// 			meta.description = data.content.brief;
+				// 			meta.productLink = productLink;
+				// 			this.setState({meta});
+				// 			return data;
+				// 		}
+				//
+				// 	})
+				// } else {
+				// 	//window.location.href="/";
+				// }
 			}
 			// changeprop(productLink,e){
 			// 	console.log(productLink);
@@ -71295,7 +71335,7 @@
 /* 677 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -71329,56 +71369,65 @@
 			var NewTag = _this.props.store.getState();
 			// console.log(NewTag)
 		});
-		if (typeof window != 'undefined' && product) {
-			productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + product._id + "/" + product.title.split(" ").join("-");
-			var data = this.props.data;
-	
-			console.log(product);
-			title = product.title;
-			image = product.image.secure_url;
-			description = product.content.brief;
-		}
-		console.log(title);
+		// if (typeof window != 'undefined' && product) {
+		// 	productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + product._id + "/" + product.title.split(" ").join("-");
+		// 	const {data} = this.props;
+		// 	// console.log(product);
+		// 	title=product.title;
+		// 	image=product.image.secure_url;
+		// 	description=product.content.brief;
+		// 	// this.setState({
+		// 	// 	meta:{
+		// 	// 		title:title,
+		// 	// 		image:image,
+		// 	// 		description:description,
+		// 	// 		productLink:productLink,
+		// 	// 	}
+		// 	// });
+		//
+		//
+		// }
+		// console.log(title);
 		return _react2.default.createElement(
-			'html',
+			"html",
 			null,
 			_react2.default.createElement(
-				'head',
+				"head",
 				null,
-				_react2.default.createElement('meta', { charSet: 'utf-8' }),
-				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
-				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
-				_react2.default.createElement('meta', { property: 'og:url', content: productLink }),
-				_react2.default.createElement('meta', { property: 'og:title', content: title }),
-				_react2.default.createElement('meta', { property: 'og:type', content: 'shoping website' }),
-				_react2.default.createElement('meta', { property: 'og:image', content: image }),
-				_react2.default.createElement('meta', { property: 'og:description', content: description }),
+				_react2.default.createElement("meta", { charSet: "utf-8" }),
+				_react2.default.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
+				_react2.default.createElement("meta", { httpEquiv: "X-UA-Compatible", content: "IE=edge" }),
+				_react2.default.createElement("meta", { property: "og:url", content: this.state.meta.productLink }),
+				_react2.default.createElement("meta", { property: "og:title", content: this.state.meta.title }),
+				_react2.default.createElement("meta", { property: "og:type", content: "shoping website" }),
+				_react2.default.createElement("meta", { property: "og:image", content: this.state.meta.image }),
+				_react2.default.createElement("meta", { property: "og:description", content: this.state.meta.description }),
 				_react2.default.createElement(
-					'title',
+					"title",
 					null,
-					productLink
+					this.state.metaTitle
 				),
-				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
-				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
-				this.props.user && this.props.user.canAccessKeystone && _react2.default.createElement('link', { href: '/keystone/styles/content/editor.min.css', rel: 'stylesheet' })
+				_react2.default.createElement("link", { rel: "shortcut icon", href: "/favicon.png", type: "image/x-icon" }),
+				_react2.default.createElement("link", { href: "/styles/site.css", rel: "stylesheet" }),
+				this.props.user && this.props.user.canAccessKeystone && _react2.default.createElement("link", { href: "/keystone/styles/content/editor.min.css", rel: "stylesheet" })
 			),
 			_react2.default.createElement(
-				'body',
+				"body",
 				null,
 				_react2.default.createElement(
-					'div',
-					{ id: 'body' },
+					"div",
+					{ id: "body" },
 	
 					// - The children block should contain the body of your template's content
 					_react2.default.cloneElement(this.props.children, { meta: this.state.meta }, { changeprop: this.changeprop })
 				),
-				_react2.default.createElement('script', { src: '/js/jquery/jquery-1.11.3.min.js' }),
-				_react2.default.createElement('script', { src: '/js/bootstrap/bootstrap-3.3.5.min.js' }),
+				_react2.default.createElement("script", { src: "/js/jquery/jquery-1.11.3.min.js" }),
+				_react2.default.createElement("script", { src: "/js/bootstrap/bootstrap-3.3.5.min.js" }),
 				this.props.user && this.props.user.canAccessKeystone
 				// - The KeystoneJS Content Editor provides support for ks-editable data attributes,
 				// - which generate links to edit content for users who can access Keystone
-				&& _react2.default.createElement('script', { src: '/keystone/js/content/editor.js' }),
-				_react2.default.createElement('script', { src: '/js/bundle.js' }),
+				&& _react2.default.createElement("script", { src: "/keystone/js/content/editor.js" }),
+				_react2.default.createElement("script", { src: "/js/bundle.js" }),
 	
 				// - Add scripts that are globally required by your site here.
 	
@@ -71391,6 +71440,26 @@
 
 /***/ }),
 /* 678 */
+/***/ (function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {var win;
+	
+	if (typeof window !== "undefined") {
+	    win = window;
+	} else if (typeof global !== "undefined") {
+	    win = global;
+	} else if (typeof self !== "undefined"){
+	    win = self;
+	} else {
+	    win = {};
+	}
+	
+	module.exports = win;
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ }),
+/* 679 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -71528,7 +71597,7 @@
 	module.exports = Index;
 
 /***/ }),
-/* 679 */
+/* 680 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';

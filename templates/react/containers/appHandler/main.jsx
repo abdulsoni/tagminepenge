@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ComponentView from './view';
 import { createAction,ActionNames } from '../../redux/actions/index';
+var global = require("global");
+var window = require("global/window");
+import {getError} from '../../utils/request';
 import { connect } from 'react-redux';
 /**
  * @name Main Container
@@ -29,9 +32,25 @@ import { connect } from 'react-redux';
 		
 	}
 	componentDidMount(){
-		this.getProduct()
+		console.log(this.state.meta);
 	}
-
+	componentWillMount(){
+		console.log(this.state.meta);
+		let pathname=this.props.url;
+		let productLink="https://www.tagminepenge.dk"+pathname;
+		this.getProduct()
+			.then((data) => {
+							let meta = Object.assign({}, this.state.meta);
+							meta.title = data.title;
+							meta.image = data.image.secure_url;
+							meta.description = data.content.brief;
+							meta.productLink = productLink;
+							this.setState({meta});
+							
+			});
+		
+	
+	}
 
 	changeprop(){
 		
@@ -42,25 +61,45 @@ import { connect } from 'react-redux';
 	 */
 	getProduct(){
 		const {getProduct} = this.props;
-		let pathname = window.location.pathname;
-		let id = pathname.split("/")[2];
-		if(id && id!=""){
-			console.log(id)
+		let location = window.location;
+		let pathname=this.props.url;
+		let id = pathname.split("/")[2]
+		let productLink="https://www.tagminepenge.dk"+pathname;
+		console.log(productLink);
+		var promise = new Promise((resolve, reject) => {
 			getProduct(id).then(action=>{
-				console.log(action)
 				if(getError(action)){
 					//window.location.href="/";
 					return;
 				} else {
-					this.setState({
-						loading : true
-					})
+					let data= action.payload.data;
+					resolve(data);
 				}
 
 			})
-		} else {
-			//window.location.href="/";
-		}
+		});
+		return promise;
+		// if(id && id!=""){
+		// 	getProduct(id).then(action=>{
+		// 		console.log(action)
+		// 		if(getError(action)){
+		// 			//window.location.href="/";
+		// 			return;
+		// 		} else {
+		// 			let data= action.payload.data;
+		// 			let meta = Object.assign({}, this.state.meta);
+		// 			meta.title = data.title;
+		// 			meta.image = data.image.secure_url;
+		// 			meta.description = data.content.brief;
+		// 			meta.productLink = productLink;
+		// 			this.setState({meta});
+		// 			return data;
+		// 		}
+        //
+		// 	})
+		// } else {
+		// 	//window.location.href="/";
+		// }
 
 	}
 	// changeprop(productLink,e){

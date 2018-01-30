@@ -11,16 +11,25 @@ var view = function () {
 		let NewTag=this.props.store.getState();
 		// console.log(NewTag)
 	});
-	if (typeof window != 'undefined' && product) {
-		productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + product._id + "/" + product.title.split(" ").join("-");
-		const {data} = this.props;
-		console.log(product);
-		title=product.title;
-		image=product.image.secure_url;
-		description=product.content.brief;
-	
-	}
-	console.log(title);
+	// if (typeof window != 'undefined' && product) {
+	// 	productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + product._id + "/" + product.title.split(" ").join("-");
+	// 	const {data} = this.props;
+	// 	// console.log(product);
+	// 	title=product.title;
+	// 	image=product.image.secure_url;
+	// 	description=product.content.brief;
+	// 	// this.setState({
+	// 	// 	meta:{
+	// 	// 		title:title,
+	// 	// 		image:image,
+	// 	// 		description:description,
+	// 	// 		productLink:productLink,
+	// 	// 	}
+	// 	// });
+	//
+	//
+	// }
+	// console.log(title);
 		return (
 			<html>
 			<head>
@@ -28,11 +37,11 @@ var view = function () {
 					<meta charSet="utf-8"/>
 					<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 					<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-					<meta property="og:url" content={productLink} />
-					<meta property="og:title" content={title}  />
+					<meta property="og:url" content={this.state.meta.productLink} />
+					<meta property="og:title" content={this.state.meta.title}  />
 					<meta property="og:type" content="shoping website" />
-					<meta property="og:image" content={image}/>
-					<meta property="og:description" content={description} />
+					<meta property="og:image" content={this.state.meta.image}/>
+					<meta property="og:description" content={this.state.meta.description} />
 
 				
 				<title>{this.state.metaTitle}</title>

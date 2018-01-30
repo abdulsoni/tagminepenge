@@ -43,7 +43,7 @@ const Index = props => {
 		}
 	}
 	return (
-		<Provider store={store}>
+		<Provider store={store} routeInfo = {route}>
 			<AppHandler {...props} newState={newState} store={store}>
 					<App routeInfo = {route} {...props}></App>
 			</AppHandler>

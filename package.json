@@ -15,12 +15,15 @@
     "dotenv": "4.0.0",
     "extract-text-webpack-plugin": "^3.0.1",
     "fbemitter": "^2.1.1",
+    "global": "^4.3.2",
+    "global-paths": "^1.0.0",
     "jquery": "^3.3.1",
     "json-loader": "^0.5.4",
     "keystone": "4.0.0-beta.5",
     "keystone-email": "1.0.5",
     "keystone-forgotten-password": "^1.4.0",
     "lodash": "^4.10.1",
+    "node-global-paths": "^1.0.0",
     "node-sass": "^4.7.2",
     "node-sass-middleware": "0.11.0",
     "rc-animate": "^2.4.1",
@@ -39,7 +42,8 @@
     "redux": "^3.7.1",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
-    "webpack": "^1.15.0"
+    "webpack": "^1.15.0",
+    "window-or-global": "^1.0.1"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
