@@ -1,4 +1,5 @@
 import React from 'react';
+import MetaTags from 'react-meta-tags';
 var view = function () {
 	
 	const {routeInfo, navLinks, user, config, categories, filters,newState,product} = this.props;
@@ -33,7 +34,7 @@ var view = function () {
 		return (
 			<html>
 			<head>
-				
+				<MetaTags>
 					<meta charSet="utf-8"/>
 					<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 					<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
@@ -43,7 +44,7 @@ var view = function () {
 					<meta property="og:image" content={this.state.meta.image}/>
 					<meta property="og:description" content={this.state.meta.description} />
 
-				
+				</MetaTags>
 				<title>{this.state.metaTitle}</title>
 
 				<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>

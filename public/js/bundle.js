@@ -71224,6 +71224,7 @@
 					meta.description = data.content.brief;
 					meta.productLink = productLink;
 					_this2.setState({ meta: meta });
+					_this2.setState({ metaTitle: 'My Title' });
 				});
 			}
 		}, {
@@ -71335,7 +71336,7 @@
 /* 677 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -71344,6 +71345,10 @@
 	var _react = __webpack_require__(237);
 	
 	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactMetaTags = __webpack_require__(329);
+	
+	var _reactMetaTags2 = _interopRequireDefault(_reactMetaTags);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -71389,45 +71394,49 @@
 		// }
 		// console.log(title);
 		return _react2.default.createElement(
-			"html",
+			'html',
 			null,
 			_react2.default.createElement(
-				"head",
+				'head',
 				null,
-				_react2.default.createElement("meta", { charSet: "utf-8" }),
-				_react2.default.createElement("meta", { name: "viewport", content: "width=device-width, initial-scale=1.0" }),
-				_react2.default.createElement("meta", { httpEquiv: "X-UA-Compatible", content: "IE=edge" }),
-				_react2.default.createElement("meta", { property: "og:url", content: this.state.meta.productLink }),
-				_react2.default.createElement("meta", { property: "og:title", content: this.state.meta.title }),
-				_react2.default.createElement("meta", { property: "og:type", content: "shoping website" }),
-				_react2.default.createElement("meta", { property: "og:image", content: this.state.meta.image }),
-				_react2.default.createElement("meta", { property: "og:description", content: this.state.meta.description }),
 				_react2.default.createElement(
-					"title",
+					_reactMetaTags2.default,
+					null,
+					_react2.default.createElement('meta', { charSet: 'utf-8' }),
+					_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
+					_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
+					_react2.default.createElement('meta', { property: 'og:url', content: this.state.meta.productLink }),
+					_react2.default.createElement('meta', { property: 'og:title', content: this.state.meta.title }),
+					_react2.default.createElement('meta', { property: 'og:type', content: 'shoping website' }),
+					_react2.default.createElement('meta', { property: 'og:image', content: this.state.meta.image }),
+					_react2.default.createElement('meta', { property: 'og:description', content: this.state.meta.description })
+				),
+				_react2.default.createElement(
+					'title',
 					null,
 					this.state.metaTitle
 				),
-				_react2.default.createElement("link", { rel: "shortcut icon", href: "/favicon.png", type: "image/x-icon" }),
-				_react2.default.createElement("link", { href: "/styles/site.css", rel: "stylesheet" }),
-				this.props.user && this.props.user.canAccessKeystone && _react2.default.createElement("link", { href: "/keystone/styles/content/editor.min.css", rel: "stylesheet" })
+				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
+				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
+				this.props.user && this.props.user.canAccessKeystone && _react2.default.createElement('link', { href: '/keystone/styles/content/editor.min.css', rel: 'stylesheet' })
 			),
 			_react2.default.createElement(
-				"body",
+				'body',
 				null,
 				_react2.default.createElement(
-					"div",
-					{ id: "body" },
+					'div',
+					{ id: 'body' },
 	
 					// - The children block should contain the body of your template's content
 					_react2.default.cloneElement(this.props.children, { meta: this.state.meta }, { changeprop: this.changeprop })
 				),
-				_react2.default.createElement("script", { src: "/js/jquery/jquery-1.11.3.min.js" }),
-				_react2.default.createElement("script", { src: "/js/bootstrap/bootstrap-3.3.5.min.js" }),
+				_react2.default.createElement('script', { src: '/js/jquery/jquery-1.11.3.min.js' }),
+				_react2.default.createElement('script', { src: '/js/bootstrap/bootstrap-3.3.5.min.js' }),
 				this.props.user && this.props.user.canAccessKeystone
 				// - The KeystoneJS Content Editor provides support for ks-editable data attributes,
 				// - which generate links to edit content for users who can access Keystone
-				&& _react2.default.createElement("script", { src: "/keystone/js/content/editor.js" }),
-				_react2.default.createElement("script", { src: "/js/bundle.js" }),
+				&& _react2.default.createElement('script', { src: '/keystone/js/content/editor.js' }),
+				_react2.default.createElement('script', { src: '/js/bundle.js' }),
 	
 				// - Add scripts that are globally required by your site here.
 	

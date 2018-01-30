@@ -35,7 +35,7 @@ import { connect } from 'react-redux';
 		console.log(this.state.meta);
 	}
 	componentWillMount(){
-		console.log(this.state.meta);
+	
 		let pathname=this.props.url;
 		let productLink="https://www.tagminepenge.dk"+pathname;
 		this.getProduct()
@@ -46,6 +46,7 @@ import { connect } from 'react-redux';
 							meta.description = data.content.brief;
 							meta.productLink = productLink;
 							this.setState({meta});
+				
 							
 			});
 		
