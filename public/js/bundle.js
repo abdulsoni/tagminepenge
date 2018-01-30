@@ -71338,6 +71338,7 @@
 			image = product.image.secure_url;
 			description = product.content.brief;
 		}
+		console.log(title);
 		return _react2.default.createElement(
 			'html',
 			null,
@@ -71347,15 +71348,15 @@
 				_react2.default.createElement('meta', { charSet: 'utf-8' }),
 				_react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }),
 				_react2.default.createElement('meta', { httpEquiv: 'X-UA-Compatible', content: 'IE=edge' }),
-				_react2.default.createElement('meta', { property: 'og:url', content: productLink ? productLink : this.props.metaTag.productLink }),
-				_react2.default.createElement('meta', { property: 'og:title', content: title ? title : this.props.metaTag.title }),
+				_react2.default.createElement('meta', { property: 'og:url', content: productLink }),
+				_react2.default.createElement('meta', { property: 'og:title', content: title }),
 				_react2.default.createElement('meta', { property: 'og:type', content: 'shoping website' }),
-				_react2.default.createElement('meta', { property: 'og:image', content: image ? image : this.props.metaTag.image }),
-				_react2.default.createElement('meta', { property: 'og:description', content: description ? description : this.props.metaTag.description }),
+				_react2.default.createElement('meta', { property: 'og:image', content: image }),
+				_react2.default.createElement('meta', { property: 'og:description', content: description }),
 				_react2.default.createElement(
 					'title',
 					null,
-					this.state.metaTitle
+					productLink
 				),
 				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
 				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),

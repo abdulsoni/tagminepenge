@@ -20,6 +20,7 @@ var view = function () {
 		description=product.content.brief;
 	
 	}
+	console.log(title);
 		return (
 			<html>
 			<head>
@@ -27,11 +28,11 @@ var view = function () {
 					<meta charSet="utf-8"/>
 					<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 					<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-					<meta property="og:url" content={productLink?productLink:this.props.metaTag.productLink} />
-					<meta property="og:title" content={title?title:this.props.metaTag.title}  />
+					<meta property="og:url" content={productLink} />
+					<meta property="og:title" content={title}  />
 					<meta property="og:type" content="shoping website" />
-					<meta property="og:image" content={image?image:this.props.metaTag.image}/>
-					<meta property="og:description" content={description?description:this.props.metaTag.description} />
+					<meta property="og:image" content={image}/>
+					<meta property="og:description" content={description} />
 
 				
 				<title>{this.state.metaTitle}</title>
