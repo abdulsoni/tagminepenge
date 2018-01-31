@@ -71401,6 +71401,7 @@
 				_react2.default.createElement('meta', { property: 'og:description', content: this.props.fbDescription }),
 				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
 				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
+				_react2.default.createElement('style', { dangerouslySetInnerHTML: { __html: this.props.children } }),
 				this.props.user && this.props.user.canAccessKeystone && _react2.default.createElement('link', { href: '/keystone/styles/content/editor.min.css', rel: 'stylesheet' })
 			),
 			_react2.default.createElement(
