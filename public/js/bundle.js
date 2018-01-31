@@ -60019,8 +60019,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var view = function view() {
-		var _this = this;
-	
 		var _props = this.props,
 		    data = _props.data,
 		    user = _props.user;
@@ -60167,9 +60165,7 @@
 								{ className: 'col-sm-4', onClick: this.myChange.bind(this) },
 								_react2.default.createElement(
 									FacebookShareButton,
-									{ url: productLink, quote: data.title + (0, _common.getPlainText)(data.content.brief) + NewImageUrl, image: NewImageUrl, onClick: function onClick() {
-											return _this.props.changeMetaTag(data, productLink);
-										} },
+									{ url: productLink },
 									_react2.default.createElement(FacebookIcon, { size: 25, round: false })
 								)
 							),
