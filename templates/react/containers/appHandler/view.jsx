@@ -55,7 +55,14 @@ var view = function () {
 						<meta property="og:image" content={this.props.fbImage}/>
 						<meta property="og:description" content={this.props.fbDescription} />
 
-                       
+				{/*Twitter Card data */}
+				<meta name="twitter:card" content="summary"/>
+				<meta name="twitter:site" content="shoping website"/>
+				<meta name="twitter:title" content={this.props.fbTitle}/>
+				<meta name="twitter:description" content={this.props.fbDescription}/>
+				<meta name="twitter:creator" content="@author_handle"/>
+
+				<meta name="twitter:image" content={this.props.fbImage}/>
 				
 
 				<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>

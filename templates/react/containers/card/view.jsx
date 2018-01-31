@@ -90,7 +90,7 @@ var view = function() {
 								</FacebookShareButton>
 							</div>
 							<div className="col-sm-4">
-								<TwitterShareButton url={productLink} title={data.title} via={getPlainText(data.content.brief)} image={NewImageUrl}>
+								<TwitterShareButton url={productLink}>
 									<TwitterIcon size={25} round={false} />
 								</TwitterShareButton>
 							</div>
