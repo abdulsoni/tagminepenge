@@ -5,6 +5,7 @@ var global = require("global");
 var window = require("global/window");
 import {getError} from '../../utils/request';
 import { connect } from 'react-redux';
+import {Helmet} from "react-helmet";
 /**
  * @name Main Container
  * @type Component
@@ -27,28 +28,33 @@ import { connect } from 'react-redux';
 				productLink:'https://www.tagminepenge.dk/produkt/5a354154a86dca00046d8139/Candyfloss-Maskine',
 			},
 			key:'',
-			metaTitle:'Tagmine Penge'
+			metaTitle:'Tagmine Penge',
+			
 		};
 		
 	}
 	componentDidMount(){
-		console.log(this.state.meta);
+		 console.log(this.state.meta);
 	}
 	componentWillMount(){
-	
+	   
 		let pathname=this.props.url;
 		let productLink="https://www.tagminepenge.dk"+pathname;
-		this.getProduct()
-			.then((data) => {
-							let meta = Object.assign({}, this.state.meta);
-							meta.title = data.title;
-							meta.image = data.image.secure_url;
-							meta.description = data.content.brief;
-							meta.productLink = productLink;
-							this.setState({meta});
-				
-							
-			});
+		let id = pathname.split("/")[2];
+		
+			// this.getProduct()
+			// 	.then((data) => {
+			// 		let meta = Object.assign({}, this.state.product);
+			// 		meta.title = data.title;
+			// 		meta.image = data.image.secure_url;
+			// 		meta.description = data.content.brief;
+			// 		meta.productLink = productLink;
+			// 		this.setState({meta});
+			// 		this.setState({ loading: false});
+            //
+			// 	});
+		
+
 		
 	
 	}
@@ -64,7 +70,7 @@ import { connect } from 'react-redux';
 		const {getProduct} = this.props;
 		let location = window.location;
 		let pathname=this.props.url;
-		let id = pathname.split("/")[2]
+		let id = pathname.split("/")[2];
 		let productLink="https://www.tagminepenge.dk"+pathname;
 		console.log(productLink);
 		var promise = new Promise((resolve, reject) => {
@@ -80,28 +86,6 @@ import { connect } from 'react-redux';
 			})
 		});
 		return promise;
-		// if(id && id!=""){
-		// 	getProduct(id).then(action=>{
-		// 		console.log(action)
-		// 		if(getError(action)){
-		// 			//window.location.href="/";
-		// 			return;
-		// 		} else {
-		// 			let data= action.payload.data;
-		// 			let meta = Object.assign({}, this.state.meta);
-		// 			meta.title = data.title;
-		// 			meta.image = data.image.secure_url;
-		// 			meta.description = data.content.brief;
-		// 			meta.productLink = productLink;
-		// 			this.setState({meta});
-		// 			return data;
-		// 		}
-        //
-		// 	})
-		// } else {
-		// 	//window.location.href="/";
-		// }
-
 	}
 	// changeprop(productLink,e){
 	// 	console.log(productLink);
@@ -120,8 +104,8 @@ import { connect } from 'react-redux';
 	 * @returns {*}
 	 */
 	render() {
-		
-		return (ComponentView.bind(this))();
+	
+			return (ComponentView.bind(this))();
 	}
 }
 function bindAction(dispatch) {

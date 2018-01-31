@@ -1,51 +1,62 @@
 import React from 'react';
-import MetaTags from 'react-meta-tags';
+import {getError} from '../../utils/request';
 var view = function () {
 	
 	const {routeInfo, navLinks, user, config, categories, filters,newState,product} = this.props;
-	
+	       // console.log(this.props.product);
+	let pathname=this.props.url;
+	let id = pathname.split("/")[2];
+	let productLink="https://www.tagminepenge.dk"+pathname;
+	if(id){
+		// getProduct(id).then((data)=>{
+		// 	console.log(data);
+		// });
+	}
+	function  getProduct(id) {
+		
+		var promise = new Promise((resolve, reject) => {
+			getProduct(id).then(action=>{
+				if(getError(action)){
+					//window.location.href="/";
+					return;
+				} else {
+					let data= action.payload.data;
+					resolve(data);
+				}
+
+			})
+		});
+		return promise;
+	}
+
 	let title;
-	let productLink;
 	let image;
 	let description;
-	this.props.store.subscribe(()=>{
-		let NewTag=this.props.store.getState();
-		// console.log(NewTag)
-	});
-	// if (typeof window != 'undefined' && product) {
-	// 	productLink = window.location.protocol + "//" + window.location.host + "/produkt/" + product._id + "/" + product.title.split(" ").join("-");
-	// 	const {data} = this.props;
-	// 	// console.log(product);
-	// 	title=product.title;
-	// 	image=product.image.secure_url;
-	// 	description=product.content.brief;
-	// 	// this.setState({
-	// 	// 	meta:{
-	// 	// 		title:title,
-	// 	// 		image:image,
-	// 	// 		description:description,
-	// 	// 		productLink:productLink,
-	// 	// 	}
-	// 	// });
-	//
-	//
-	// }
-	// console.log(title);
+	if(this.props.product){
+		 title=this.props.product.title;
+		 image=this.props.product.image.secure_url;
+		 description=this.props.product.content.brief;
+	}else{
+		 title='My Title';
+		 image='https://res.cloudinary.com/tagminepenge/image/upload/v1516602897/bhufrddrh6qji2gq8anz.png';
+		 description='My description';
+	}
+
 		return (
 			<html>
 			<head>
-				<MetaTags>
-					<meta charSet="utf-8"/>
-					<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-					<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
-					<meta property="og:url" content={this.state.meta.productLink} />
-					<meta property="og:title" content={this.state.meta.title}  />
-					<meta property="og:type" content="shoping website" />
-					<meta property="og:image" content={this.state.meta.image}/>
-					<meta property="og:description" content={this.state.meta.description} />
+						<title>{this.state.metaTitle}</title>
+						<meta charSet="utf-8"/>
+						<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+						<meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
+						<meta property="og:url" content={productLink} />
+						<meta property="og:title" content={this.props.fbTitle}  />
+						<meta property="og:type" content="shoping website" />
+						<meta property="og:image" content={this.props.fbImage}/>
+						<meta property="og:description" content={this.props.fbDescription} />
+					
 
-				</MetaTags>
-				<title>{this.state.metaTitle}</title>
+				
 
 				<link rel="shortcut icon" href="/favicon.png" type="image/x-icon"/>
 
@@ -63,7 +74,7 @@ var view = function () {
 			</head>
 
 			<body>
-
+			
 
 			<div id="body" >
 

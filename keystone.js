@@ -28,7 +28,8 @@ var engine = renderer.server.create({
 	},
 	// your options here
 });
-
+var {Helmet} =require("react-helmet");
+const helmet = Helmet.renderStatic();
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.

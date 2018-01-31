@@ -79,7 +79,7 @@ exports.populateProduct = function (req, res, next) {
 exports.populateEntity = function (req, res, next) {
 	console.log(req.url);
 	
-	if(req.url.indexOf("/product/")!=-1){
+	if(req.url.indexOf("/produkt/")!=-1){
 		var productId = req.url.split("/")[2];
 		
 		Product.model.findById(productId).then((doc)=>{
@@ -96,7 +96,7 @@ exports.populateEntity = function (req, res, next) {
 			}
 			next();
 		})
-	} else if(req.url.indexOf("/category/")!=-1){
+	} else if(req.url.indexOf("/kategori/")!=-1){
 		
 		var category = req.url.split("/")[2];
 		var categoryObj = (res.locals.categories || []).filter((ele)=>{
