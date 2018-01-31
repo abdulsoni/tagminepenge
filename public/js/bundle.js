@@ -71399,12 +71399,6 @@
 				_react2.default.createElement('meta', { property: 'og:type', content: 'shoping website' }),
 				_react2.default.createElement('meta', { property: 'og:image', content: this.props.fbImage }),
 				_react2.default.createElement('meta', { property: 'og:description', content: this.props.fbDescription }),
-				_react2.default.createElement('meta', { name: 'twitter:card', content: 'summary' }),
-				_react2.default.createElement('meta', { name: 'twitter:site', content: 'shoping website' }),
-				_react2.default.createElement('meta', { name: 'twitter:title', content: this.props.fbTitle }),
-				_react2.default.createElement('meta', { name: 'twitter:description', content: this.props.fbDescription }),
-				_react2.default.createElement('meta', { name: 'twitter:creator', content: '@author_handle' }),
-				_react2.default.createElement('meta', { name: 'twitter:image', content: this.props.fbImage }),
 				_react2.default.createElement('link', { rel: 'shortcut icon', href: '/favicon.png', type: 'image/x-icon' }),
 				_react2.default.createElement('link', { href: '/styles/site.css', rel: 'stylesheet' }),
 				this.props.user && this.props.user.canAccessKeystone && _react2.default.createElement('link', { href: '/keystone/styles/content/editor.min.css', rel: 'stylesheet' })
